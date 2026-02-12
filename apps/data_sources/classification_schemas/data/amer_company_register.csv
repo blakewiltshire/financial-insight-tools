@@ -1,0 +1,924 @@
+﻿Index,Unique Identifier,Regions,Sub-Regions,Country,Company Name,Industry Tag,CUSIP,ISIN,SEDOL,FIGI,CIK,Ticker,MIC Code,Exchange,Market Currency
+1,AR-1,Americas,Latin America,Argentina,Adecoagro Sa,Food & Tobacco,,,B65BNQ6,,,AGRO,XNYS,New York Stock Exchange,USD
+2,AR-2,Americas,Latin America,Argentina,Arcos Dorados Holdings Inc.,Hotels & Entertainment Services,,,B529PQ0,,,ARCO,XNYS,New York Stock Exchange,USD
+3,AR-3,Americas,Latin America,Argentina,Banco Bbva Argentina Sa,Banking Services,,,BKT4TC7,,,BBAR,XNYS,New York Stock Exchange,USD
+4,AR-4,Americas,Latin America,Argentina,Bioceres Crop Solutions Corp.,Chemicals,,,BJT1RX8,,,BIOX,XNAS,Nasdaq Stock Market,USD
+5,AR-5,Americas,Latin America,Argentina,Banco Macro Sa,Banking Services,,,B0Y62M9,,,BMA,XNYS,New York Stock Exchange,USD
+6,AR-6,Americas,Latin America,Argentina,Corporacion America Airports Sa,Transport Infrastructure,,,BD45SN0,,,CAAP,XNYS,New York Stock Exchange,USD
+7,AR-7,Americas,Latin America,Argentina,Central Puerto Sa,Electrical Utilities & IPPs,,,BDVP1Y5,,,CEPU,XNYS,New York Stock Exchange,USD
+8,AR-8,Americas,Latin America,Argentina,Cresud Inc.,Food & Tobacco,,,2226893,,,CRESY,XNAS,Nasdaq Stock Market,USD
+9,AR-9,Americas,Latin America,Argentina,"Despegar.Com, Corp.",Hotels & Entertainment Services,,,BDFS4G3,,,DESP,XNYS,New York Stock Exchange,USD
+10,AR-10,Americas,Latin America,Argentina,Empresa Distribuidora Y Comercializadora Norte Sa,Electrical Utilities & IPPs,,,B1W9D79,,,EDN,XNYS,New York Stock Exchange,USD
+11,AR-11,Americas,Latin America,Argentina,Grupo Financiero Galicia Sa,Banking Services,,,2613570,,,GGAL,XNAS,Nasdaq Stock Market,USD
+12,AR-12,Americas,Latin America,Argentina,Irsa Investments And Representations Inc.,Real Estate Operations,,,2473020,,,IRS,XNYS,New York Stock Exchange,USD
+13,AR-13,Americas,Latin America,Argentina,Lithium Americas Corp.,Metals & Mining,,,BF4X225,,,LAC,XNYS,New York Stock Exchange,USD
+14,AR-14,Americas,Latin America,Argentina,Loma Negra Compania Industrial Argentina Sa,Construction Materials,,,BYP6YP3,,,LOMA,XNYS,New York Stock Exchange,USD
+15,AR-15,Americas,Latin America,Argentina,"Mercadolibre, Inc.",Software & IT Solutions / Digital Services,,,B23X1H3,,,MELI,XNAS,Nasdaq Stock Market,USD
+16,AR-16,Americas,Latin America,Argentina,Pampa Energia Sa,Electrical Utilities & IPPs,,,B41HK52,,,PAM,XNYS,New York Stock Exchange,USD
+17,AR-17,Americas,Latin America,Argentina,Ssr Mining Inc.,Metals & Mining,,,BF7MPL9,,,SSRM,XNAS,Nasdaq Stock Market,USD
+18,AR-18,Americas,Latin America,Argentina,Grupo Supervielle Sa,Banking Services,,,BYZJRN1,,,SUPV,XNYS,New York Stock Exchange,USD
+19,AR-19,Americas,Latin America,Argentina,Telecom Argentina Sa,Telecommunications Services,,,2878829,,,TEO,XNYS,New York Stock Exchange,USD
+20,AR-20,Americas,Latin America,Argentina,Transportadora De Gas Del Sur Sa,Oil & Gas,,,2902944,,,TGS,XNYS,New York Stock Exchange,USD
+21,AR-21,Americas,Latin America,Argentina,"United Breweries Company, Inc",Beverages,,,2196189,,,TGS,XNYS,New York Stock Exchange,USD
+22,AR-22,Americas,Latin America,Argentina,Ypf Sa,Oil & Gas,,,2985945,,,YPF,XNYS,New York Stock Exchange,USD
+23,BR-1,Americas,Latin America,Brazil,Allianca Saude E Participacoes Sa,Healthcare Providers & Services,,BRAALRACNOR6,BYX8VJ4,,,AALR3,BVMF,B3 - Brazil Stock Exchange,BRL
+24,BR-2,Americas,Latin America,Brazil,Banco Abc Brasil Sa,Banking Services,,BRABCBACNPR4,B23DMP8,,,ABCB4,BVMF,B3 - Brazil Stock Exchange,BRL
+25,BR-3,Americas,Latin America,Brazil,Ambev Sa,Beverages,,BRABEVACNOR1,BG7ZWY7,,,ABEV3,BVMF,B3 - Brazil Stock Exchange,BRL
+26,BR-4,Americas,Latin America,Brazil,Aes Brasil Energia Sa,Electrical Utilities & IPPs,,BRAESBACNOR7,BMYVVL0,,,AESB3,BVMF,B3 - Brazil Stock Exchange,BRL
+27,BR-5,Americas,Latin America,Brazil,Brasilagro - Brazilian Agricultural Real Estate Company,Food & Tobacco,,BRAGROACNOR7,B1428Z9,,,AGRO3,BVMF,B3 - Brazil Stock Exchange,BRL
+28,BR-6,Americas,Latin America,Brazil,Alpargatas Sa,Textiles & Apparel,,BRALPAACNPR7,B07C796,,,ALPA4,BVMF,B3 - Brazil Stock Exchange,BRL
+29,BR-7,Americas,Latin America,Brazil,Aliansce Sonae Shopping Centers Sa,Real Estate Operations,,BRALSOACNOR5,BJVHGR1,,,ALSO3,BVMF,B3 - Brazil Stock Exchange,BRL
+30,BR-8,Americas,Latin America,Brazil,Ambipar Participacoes E Empreendimentos Sa,Professional & Commercial Services,,BRAMBPACNOR6,BN2R805,,,AMBP3,BVMF,B3 - Brazil Stock Exchange,BRL
+31,BR-9,Americas,Latin America,Brazil,Armac Locacao Logistica E Servicos Sa,Professional & Commercial Services,,BRARMLACNOR1,BN94NV5,,,ARML3,BVMF,B3 - Brazil Stock Exchange,BRL
+32,BR-10,Americas,Latin America,Brazil,Arezzo Industria E Comercio Sa,Textiles & Apparel,,BRARZZACNOR3,B3NS1W0,,,ARZZ3,BVMF,B3 - Brazil Stock Exchange,BRL
+33,BR-11,Americas,Latin America,Brazil,Sendas Distribuidora Sa,Food & Drug Retailing,,BRASAIACNOR0,BMZ9R04,,,ASAI3,BVMF,B3 - Brazil Stock Exchange,BRL
+34,BR-12,Americas,Latin America,Brazil,Auren Energia Sa,Electrical Utilities & IPPs,,BRAUREACNOR9,BMXHJ82,,,AURE3,BVMF,B3 - Brazil Stock Exchange,BRL
+35,BR-13,Americas,Latin America,Brazil,Azul Sa,Passenger Transportation Services,,BRAZULACNPR4,BD97PR4,,,AZUL4,BVMF,B3 - Brazil Stock Exchange,BRL
+36,BR-14,Americas,Latin America,Brazil,B3 Sa Brasil Bolsa Balcao,Capital Markets & Advisory,,BRB3SAACNOR6,BG36ZK1,,,B3SA3,BVMF,B3 - Brazil Stock Exchange,BRL
+37,BR-15,Americas,Latin America,Brazil,Banco Do Brasil Sa,Banking Services,S23285950,BRBBASACNOR3,2328595,,,BBAS3,BVMF,B3 - Brazil Stock Exchange,BRL
+38,BR-16,Americas,Latin America,Brazil,Banco Bradesco Sa,Banking Services,,BRBBDCACNOR1,B00FM86,,,BBDC3,BVMF,B3 - Brazil Stock Exchange,BRL
+39,BR-17,Americas,Latin America,Brazil,Banco Bradesco Sa,Banking Services,,BRBBDCACNPR8,B00FM53,,,BBDC4,BVMF,B3 - Brazil Stock Exchange,BRL
+40,BR-18,Americas,Latin America,Brazil,Bb Seguridade Holding Corp,Insurance,,BRBBSEACNOR5,B9N3SQ0,,,BBSE3,BVMF,B3 - Brazil Stock Exchange,BRL
+41,BR-19,Americas,Latin America,Brazil,Minerva Sa,Food & Tobacco,,BRBEEFACNOR6,B23GH52,,,BEEF3,BVMF,B3 - Brazil Stock Exchange,BRL
+42,BR-20,Americas,Latin America,Brazil,Blau Farmaceutica Sa,Pharmaceuticals,,BRBLAUACNOR8,BZ1KK03,,,BLAU3,BVMF,B3 - Brazil Stock Exchange,BRL
+43,BR-21,Americas,Latin America,Brazil,Banco Pan Sa,Banking Services,,BRBPANACNPR1,BPY3V40,,,BPAN4,BVMF,B3 - Brazil Stock Exchange,BRL
+44,BR-22,Americas,Latin America,Brazil,Bradespar Sa,Metals & Mining,,BRBRAPACNOR5,B01SCT5,,,BRAP3,BVMF,B3 - Brazil Stock Exchange,BRL
+45,BR-23,Americas,Latin America,Brazil,Bradespar Sa,Metals & Mining,,BRBRAPACNPR2,B01SCS4,,,BRAP4,BVMF,B3 - Brazil Stock Exchange,BRL
+46,BR-24,Americas,Latin America,Brazil,Brf Sa,Food & Tobacco,S20369955,BRBRFSACNOR8,2036995,,,BRFS3,BVMF,B3 - Brazil Stock Exchange,BRL
+47,BR-25,Americas,Latin America,Brazil,Banco Do Estado Do Rio Grande Do Sul Sa,Banking Services,,BRBRSRACNPB4,B23F8S9,,,BRSR6,BVMF,B3 - Brazil Stock Exchange,BRL
+48,BR-26,Americas,Latin America,Brazil,Camil Alimentos Sa,Food & Tobacco,,BRCAMLACNOR3,BZ4F3Q2,,,CAML3,BVMF,B3 - Brazil Stock Exchange,BRL
+49,BR-27,Americas,Latin America,Brazil,Companhia Brasileira De Aluminio,Metals & Mining,,BRCBAVACNOR5,BL73BJ4,,,CBAV3,BVMF,B3 - Brazil Stock Exchange,BRL
+50,BR-28,Americas,Latin America,Brazil,Ccr Sa,Transport Infrastructure,S28409704,BRCCROACNOR2,2840970,,,CCRO3,BVMF,B3 - Brazil Stock Exchange,BRL
+51,BR-29,Americas,Latin America,Brazil,Cielo Sa Instituicao De Pagamento,Professional & Commercial Services,,BRCIELACNOR3,B614LY3,,,CIEL3,BVMF,B3 - Brazil Stock Exchange,BRL
+52,BR-30,Americas,Latin America,Brazil,Energy Co Of Minas Gerais,Electrical Utilities & IPPs,,BRCMIGACNPR3,B1YBRG0,,,CMIG4,BVMF,B3 - Brazil Stock Exchange,BRL
+53,BR-31,Americas,Latin America,Brazil,Companhia Energetica Do Ceara,Electrical Utilities & IPPs,,BRCOCEACNPA3,B1YCJ34,,,COCE5,BVMF,B3 - Brazil Stock Exchange,BRL
+54,BR-32,Americas,Latin America,Brazil,Cogna Educacao Sa,Education Services,,BRCOGNACNOR2,BHNWPB7,,,COGN3,BVMF,B3 - Brazil Stock Exchange,BRL
+55,BR-33,Americas,Latin America,Brazil,Cpfl Energy Inc,Electrical Utilities & IPPs,,BRCPFEACNOR0,B031NN3,,,CPFE3,BVMF,B3 - Brazil Stock Exchange,BRL
+56,BR-34,Americas,Latin America,Brazil,Atacadao Sa,Food & Drug Retailing,,BRCRFBACNOR2,BF7LBH4,,,CRFB3,BVMF,B3 - Brazil Stock Exchange,BRL
+57,BR-35,Americas,Latin America,Brazil,Cosan Sa,Oil & Gas,,BRCSANACNOR6,B0P72G5,,,CSAN3,BVMF,B3 - Brazil Stock Exchange,BRL
+58,BR-36,Americas,Latin America,Brazil,Companhia De Saneamento De Minas Gerais Copasa Mg,Water Utilities,,BRCSMGACNOR5,B0YBZJ2,,,CSMG3,BVMF,B3 - Brazil Stock Exchange,BRL
+59,BR-37,Americas,Latin America,Brazil,National Steel Company,Metals & Mining,,BRCSNAACNOR6,B019KX8,,,CSNA3,BVMF,B3 - Brazil Stock Exchange,BRL
+60,BR-38,Americas,Latin America,Brazil,Cury Construtora E Incorporadora Sa,Residential Construction & Materials,,BRCURYACNOR3,BK93J35,,,CURY3,BVMF,B3 - Brazil Stock Exchange,BRL
+61,BR-39,Americas,Latin America,Brazil,Cyrela Brazil Realty Sa Empreendimentos E Participacoes,Real Estate Operations,S21898556,BRCYREACNOR7,2189855,,,CYRE3,BVMF,B3 - Brazil Stock Exchange,BRL
+62,BR-40,Americas,Latin America,Brazil,Direcional Engenharia Sa,Real Estate Operations,,BRDIRRACNOR0,B59VLC7,,,DIRR3,BVMF,B3 - Brazil Stock Exchange,BRL
+63,BR-41,Americas,Latin America,Brazil,Dexco Sa,Paper & Forest Products,,BRDXCOACNOR8,BN7F4X9,,,DXCO3,BVMF,B3 - Brazil Stock Exchange,BRL
+64,BR-42,Americas,Latin America,Brazil,Ecorodovias Infraestrutura E Logistica Sa,Transport Infrastructure,,BRECORACNOR8,B5720R0,,,ECOR3,BVMF,B3 - Brazil Stock Exchange,BRL
+65,BR-43,Americas,Latin America,Brazil,Engie Brasil Energia Sa,Electrical Utilities & IPPs,,BREGIEACNOR9,BD1WX84,,,EGIE3,BVMF,B3 - Brazil Stock Exchange,BRL
+66,BR-44,Americas,Latin America,Brazil,Brazilian Electric Power Company,Electrical Utilities & IPPs,S23111206,BRELETACNOR6,2311120,,,ELET3,BVMF,B3 - Brazil Stock Exchange,BRL
+67,BR-45,Americas,Latin America,Brazil,Brazilian Electric Power Company,Electrical Utilities & IPPs,S23084452,BRELETACNPB7,2308445,,,ELET6,BVMF,B3 - Brazil Stock Exchange,BRL
+68,BR-46,Americas,Latin America,Brazil,Embraer Sa,Aerospace & Defense,,BREMBRACNOR4,B16FPG6,,,EMBR3,BVMF,B3 - Brazil Stock Exchange,BRL
+69,BR-47,Americas,Latin America,Brazil,Enauta Participacoes Sa,Oil & Gas,,BRENATACNOR0,BJK28J3,,,ENAT3,BVMF,B3 - Brazil Stock Exchange,BRL
+70,BR-48,Americas,Latin America,Brazil,Eneva Sa,Electrical Utilities & IPPs,,BRENEVACNOR8,BFWHKM5,,,ENEV3,BVMF,B3 - Brazil Stock Exchange,BRL
+71,BR-49,Americas,Latin America,Brazil,Equatorial Energia Sa,Electrical Utilities & IPPs,,BREQTLACNOR0,B128R96,,,EQTL3,BVMF,B3 - Brazil Stock Exchange,BRL
+72,BR-50,Americas,Latin America,Brazil,Eztec Empreendimentos E Participacoes Sa,Real Estate Operations,,BREZTCACNOR0,B1YW5V4,,,EZTC3,BVMF,B3 - Brazil Stock Exchange,BRL
+73,BR-51,Americas,Latin America,Brazil,Companhia De Ferro Ligas Da Bahia Ferbasa,Metals & Mining,,BRFESAACNPR5,B07C6Z5,,,FESA4,BVMF,B3 - Brazil Stock Exchange,BRL
+74,BR-52,Americas,Latin America,Brazil,Fleury Sa,Healthcare Providers & Services,,BRFLRYACNOR5,B4X4D29,,,FLRY3,BVMF,B3 - Brazil Stock Exchange,BRL
+75,BR-53,Americas,Latin America,Brazil,Gerdau Sa,Metals & Mining,S26455170,BRGGBRACNPR8,2645517,,,GGBR4,BVMF,B3 - Brazil Stock Exchange,BRL
+76,BR-54,Americas,Latin America,Brazil,Gps Participacoes E Empreendimentos Sa,Professional & Commercial Services,,BRGGPSACNOR9,BLFG6N4,,,GGPS3,BVMF,B3 - Brazil Stock Exchange,BRL
+77,BR-55,Americas,Latin America,Brazil,Grupo Mateus Sa,Food & Drug Retailing,,BRGMATACNOR7,BN7JD67,,,GMAT3,BVMF,B3 - Brazil Stock Exchange,BRL
+78,BR-56,Americas,Latin America,Brazil,Metalurgica Gerdau Sa,Metals & Mining,S26488627,BRGOAUACNPR8,2648862,,,GOAU4,BVMF,B3 - Brazil Stock Exchange,BRL
+79,BR-57,Americas,Latin America,Brazil,Gol Intelligent Airlines Inc.,Passenger Transportation Services,,BRGOLLACNPR4,B01NTS8,,,GOLL4,BVMF,B3 - Brazil Stock Exchange,BRL
+80,BR-58,Americas,Latin America,Brazil,Grendene Sa,Textiles & Apparel,,BRGRNDACNOR3,B03L0B0,,,GRND3,BVMF,B3 - Brazil Stock Exchange,BRL
+81,BR-59,Americas,Latin America,Brazil,Hapvida Participacoes E Investimentos Sa,Healthcare Providers & Services,,BRHAPVACNOR4,BF4J7N9,,,HAPV3,BVMF,B3 - Brazil Stock Exchange,BRL
+82,BR-60,Americas,Latin America,Brazil,Hidrovias Do Brasil Sa,Freight & Logistics Services,,BRHBSAACNOR0,BJP5P29,,,HBSA3,BVMF,B3 - Brazil Stock Exchange,BRL
+83,BR-61,Americas,Latin America,Brazil,Hypera Sa,Pharmaceuticals,,BRHYPEACNOR0,B2QY968,,,HYPE3,BVMF,B3 - Brazil Stock Exchange,BRL
+84,BR-62,Americas,Latin America,Brazil,Intelbras Sa Industria De Telecomunicacao Eletronica Brasileira,Communications & Networking,,BRINTBACNOR9,BMZ2WR5,,,INTB3,BVMF,B3 - Brazil Stock Exchange,BRL
+85,BR-63,Americas,Latin America,Brazil,Irb Brasil Resseguros Sa,Insurance,,BRIRBRACNOR4,BYZ6D56,,,IRBR3,BVMF,B3 - Brazil Stock Exchange,BRL
+86,BR-64,Americas,Latin America,Brazil,Itausa Rights Sa,Banking Services,,BRITSAD20PR2,,,,ITSA3,BVMF,B3 - Brazil Stock Exchange,BRL
+87,BR-65,Americas,Latin America,Brazil,Itausa Sa,Banking Services,S24587719,BRITSAACNPR7,2458771,,,ITSA4,BVMF,B3 - Brazil Stock Exchange,BRL
+88,BR-66,Americas,Latin America,Brazil,Itau Unibanco Holding Sa,Banking Services,,BRITUBACNPR1,B037HR3,,,ITUB4,BVMF,B3 - Brazil Stock Exchange,BRL
+89,BR-67,Americas,Latin America,Brazil,Jalles Machado Sa,Food & Tobacco,,BRJALLACNOR0,BM9TT37,,,JALL3,BVMF,B3 - Brazil Stock Exchange,BRL
+90,BR-68,Americas,Latin America,Brazil,Jbs Sa,Food & Tobacco,,BRJBSSACNOR8,B1V74X7,,,JBSS3,BVMF,B3 - Brazil Stock Exchange,BRL
+91,BR-69,Americas,Latin America,Brazil,Jhsf Participacoes Sa,Real Estate Operations,,BRJHSFACNOR2,B1VN5C1,,,JHSF3,BVMF,B3 - Brazil Stock Exchange,BRL
+92,BR-70,Americas,Latin America,Brazil,Mahle Metal Leve Sa,Automobiles & Auto Parts,,BRLEVEACNOR2,B0HZY49,,,LEVE3,BVMF,B3 - Brazil Stock Exchange,BRL
+93,BR-71,Americas,Latin America,Brazil,Log Commercial Properties E Participacoes Sa,Real Estate Operations,,BRLOGGACNOR7,BGYQQL8,,,LOGG3,BVMF,B3 - Brazil Stock Exchange,BRL
+94,BR-72,Americas,Latin America,Brazil,Lojas Renner Sa,Specialty Retailers,,BRLRENACNOR1,B0CGYD6,,,LREN3,BVMF,B3 - Brazil Stock Exchange,BRL
+95,BR-73,Americas,Latin America,Brazil,Locaweb Servicos De Internet Sa,Software & IT Solutions / Digital Services,,BRLWSAACNOR8,BL3W4C9,,,LWSA3,BVMF,B3 - Brazil Stock Exchange,BRL
+96,BR-74,Americas,Latin America,Brazil,Hospital Mater Dei Sa,Healthcare Providers & Services,,BRMATDACNOR4,BNKDZ93,,,MATD3,BVMF,B3 - Brazil Stock Exchange,BRL
+97,BR-75,Americas,Latin America,Brazil,M Dias Branco Sa Industria E Comercio De Alimentos,Food & Tobacco,,BRMDIAACNOR7,B1FRH89,,,MDIA3,BVMF,B3 - Brazil Stock Exchange,BRL
+98,BR-76,Americas,Latin America,Brazil,Omega Energia Sa,Electrical Utilities & IPPs,,BRMEGAACNOR9,BLGSDH2,,,MEGA3,BVMF,B3 - Brazil Stock Exchange,BRL
+99,BR-77,Americas,Latin America,Brazil,Magazine Luiza Sa,Diversified Retail,,BRMGLUACNOR2,B4975P9,,,MGLU3,BVMF,B3 - Brazil Stock Exchange,BRL
+100,BR-78,Americas,Latin America,Brazil,Mills Locacao Servicos E Logistica Sa,Professional & Commercial Services,,BRMILSACNOR2,B5LGRJ9,,,MILS3,BVMF,B3 - Brazil Stock Exchange,BRL
+101,BR-79,Americas,Latin America,Brazil,Movida Participacoes Sa,Passenger Transportation Services,,BRMOVIACNOR0,BD448C6,,,MOVI3,BVMF,B3 - Brazil Stock Exchange,BRL
+102,BR-80,Americas,Latin America,Brazil,Marfrig Global Foods Sa,Food & Tobacco,,BRMRFGACNOR0,B1YWHR4,,,MRFG3,BVMF,B3 - Brazil Stock Exchange,BRL
+103,BR-81,Americas,Latin America,Brazil,Mrv Engenharia E Participacoes Sa,Real Estate Operations,,BRMRVEACNOR2,B235JN1,,,MRVE3,BVMF,B3 - Brazil Stock Exchange,BRL
+104,BR-82,Americas,Latin America,Brazil,Multiplan Empreendimentos Imobiliarios Sa,Real Estate Operations,,BRMULTACNOR5,B23DZG0,,,MULT3,BVMF,B3 - Brazil Stock Exchange,BRL
+105,BR-83,Americas,Latin America,Brazil,Iochpe Maxion Sa,Automobiles & Auto Parts,,BRMYPKACNOR7,B06YX28,,,MYPK3,BVMF,B3 - Brazil Stock Exchange,BRL
+106,BR-84,Americas,Latin America,Brazil,Natura & Co Holding Sa,Consumer & Household Products,,BRNTCOACNOR5,BJRFY31,,,NTCO3,BVMF,B3 - Brazil Stock Exchange,BRL
+107,BR-85,Americas,Latin America,Brazil,Odontoprev Sa,Healthcare Providers & Services,,BRODPVACNOR4,B1H6R62,,,ODPV3,BVMF,B3 - Brazil Stock Exchange,BRL
+108,BR-86,Americas,Latin America,Brazil,Oncoclinicas Do Brasil Servicos Medicos Sa,Healthcare Providers & Services,,BRONCOACNOR6,BMW5LZ8,,,ONCO3,BVMF,B3 - Brazil Stock Exchange,BRL
+109,BR-87,Americas,Latin America,Brazil,Orizon Valorizacao De Residuos Sa,Professional & Commercial Services,,BRORVRACNOR0,BKPSYD9,,,ORVR3,BVMF,B3 - Brazil Stock Exchange,BRL
+110,BR-88,Americas,Latin America,Brazil,Companhia Brasileira De Distribuicao Sa,Food & Drug Retailing,S26677930,BRPCARACNOR3,2667793,,,PCAR3,BVMF,B3 - Brazil Stock Exchange,BRL
+111,BR-89,Americas,Latin America,Brazil,Brazilian Petroleum Corporation - Petrobras,Oil & Gas,S26823658,BRPETRACNOR9,2682365,,,PETR3,BVMF,B3 - Brazil Stock Exchange,BRL
+112,BR-90,Americas,Latin America,Brazil,Brazilian Petroleum Corporation - Petrobras,Oil & Gas,S26845321,BRPETRACNPR6,2684532,,,PETR4,BVMF,B3 - Brazil Stock Exchange,BRL
+113,BR-91,Americas,Latin America,Brazil,Pet Center Comercio E Participacoes Sa,Specialty Retailers,,BRPETZACNOR2,BN6KT07,,,PETZ3,BVMF,B3 - Brazil Stock Exchange,BRL
+114,BR-92,Americas,Latin America,Brazil,Marcopolo Sa,"Machinery, Equipment & Components",S25991316,BRPOMOACNPR7,2599131,,,POMO4,BVMF,B3 - Brazil Stock Exchange,BRL
+115,BR-93,Americas,Latin America,Brazil,Wilson Sons Holdings Brasil Sa,Transport Infrastructure,,BRPORTACNOR8,BP4D2S1,,,PORT3,BVMF,B3 - Brazil Stock Exchange,BRL
+116,BR-94,Americas,Latin America,Brazil,Prio Sa,Oil & Gas,,BRPRIOACNOR1,BYY0144,,,PRIO3,BVMF,B3 - Brazil Stock Exchange,BRL
+117,BR-95,Americas,Latin America,Brazil,Raia Drogasil Sa,Food & Drug Retailing,,BRRADLACNOR0,B7FQV64,,,RADL3,BVMF,B3 - Brazil Stock Exchange,BRL
+118,BR-96,Americas,Latin America,Brazil,Rumo Sa,Freight & Logistics Services,,BRRAILACNOR9,BYXZ2W5,,,RAIL3,BVMF,B3 - Brazil Stock Exchange,BRL
+119,BR-97,Americas,Latin America,Brazil,Randon Sa Implementos E Participacoes,"Machinery, Equipment & Components",,BRRAPTACNPR4,B010V49,,,RAPT4,BVMF,B3 - Brazil Stock Exchange,BRL
+120,BR-98,Americas,Latin America,Brazil,Rede D'Or Sao Luiz Sa,Healthcare Providers & Services,,BRRDORACNOR8,BNDQ8P6,,,RDOR3,BVMF,B3 - Brazil Stock Exchange,BRL
+121,BR-99,Americas,Latin America,Brazil,Petroreconcavo Sa,Oil & Gas,,BRRECVACNOR3,BNC08V5,,,RECV3,BVMF,B3 - Brazil Stock Exchange,BRL
+122,BR-100,Americas,Latin America,Brazil,Localiza Rent A Car Sa,Passenger Transportation Services,,BRRENTACNOR4,B08K3S0,,,RENT3,BVMF,B3 - Brazil Stock Exchange,BRL
+123,BR-101,Americas,Latin America,Brazil,3R Petroleum Oleo E Gas Sa,Oil & Gas,,BRRRRPACNOR5,BLF7QT3,,,RRRP3,BVMF,B3 - Brazil Stock Exchange,BRL
+124,BR-102,Americas,Latin America,Brazil,Companhia De Saneamento Do Parana Sanepar,Water Utilities,S27620855,BRSAPRACNPR6,2762085,,,SAPR4,BVMF,B3 - Brazil Stock Exchange,BRL
+125,BR-103,Americas,Latin America,Brazil,Grupo Sbf Sa,Specialty Retailers,,BRSBFGACNOR1,BNDRCL3,,,SBFG3,BVMF,B3 - Brazil Stock Exchange,BRL
+126,BR-104,Americas,Latin America,Brazil,Basic Sanitation Company Of The State Of Sao Paulo - Sabesp,Water Utilities,,BRSBSPACNOR5,B1YCHL8,,,SBSP3,BVMF,B3 - Brazil Stock Exchange,BRL
+127,BR-105,Americas,Latin America,Brazil,Simpar Sa,Freight & Logistics Services,,BRSIMHACNOR0,BMC4304,,,SIMH3,BVMF,B3 - Brazil Stock Exchange,BRL
+128,BR-106,Americas,Latin America,Brazil,Slc Agricola Sa,Food & Tobacco,,BRSLCEACNOR2,B1Y4WK8,,,SLCE3,BVMF,B3 - Brazil Stock Exchange,BRL
+129,BR-107,Americas,Latin America,Brazil,Smartfit Escola De Ginastica E Danca Sa,Hotels & Entertainment Services,,BRSMFTACNOR1,BF4XNJ9,,,SMFT3,BVMF,B3 - Brazil Stock Exchange,BRL
+130,BR-108,Americas,Latin America,Brazil,Sao Martinho Sa,Food & Tobacco,,BRSMTOACNOR3,B1P3R43,,,SMTO3,BVMF,B3 - Brazil Stock Exchange,BRL
+131,BR-109,Americas,Latin America,Brazil,Grupo De Moda Soma Sa,Specialty Retailers,,BRSOMAACNOR3,BLD4B35,,,SOMA3,BVMF,B3 - Brazil Stock Exchange,BRL
+132,BR-110,Americas,Latin America,Brazil,Santos Brasil Participacoes Sa,Transport Infrastructure,,BRSTBPACNOR3,2835545,,,STBP3,BVMF,B3 - Brazil Stock Exchange,BRL
+133,BR-111,Americas,Latin America,Brazil,Suzano Inc.,Paper & Forest Products,,BRSUZBACNOR0,B02GKC7,,,SUZB3,BVMF,B3 - Brazil Stock Exchange,BRL
+134,BR-112,Americas,Latin America,Brazil,Taurus Armas Sa,Aerospace & Defense,,BRTASAACNPR4,BKRRD04,,,TASA4,BVMF,B3 - Brazil Stock Exchange,BRL
+135,BR-113,Americas,Latin America,Brazil,Tim Sa,Telecommunications Services,,BRTIMSACNOR5,BN71RB6,,,TIMS3,BVMF,B3 - Brazil Stock Exchange,BRL
+136,BR-114,Americas,Latin America,Brazil,Totvs Sa,Software & IT Solutions / Digital Services,,BRTOTSACNOR8,B10LQP6,,,TOTS3,BVMF,B3 - Brazil Stock Exchange,BRL
+137,BR-115,Americas,Latin America,Brazil,Tres Tentos Agroindustrial Sa,Food & Tobacco,,BRTTENACNOR0,BL6P9D1,,,TTEN3,BVMF,B3 - Brazil Stock Exchange,BRL
+138,BR-116,Americas,Latin America,Brazil,Tupy Sa,Automobiles & Auto Parts,S29067865,BRTUPYACNOR1,2906786,,,TUPY3,BVMF,B3 - Brazil Stock Exchange,BRL
+139,BR-117,Americas,Latin America,Brazil,Ultrapar Holdings Inc.,Oil & Gas,,BRUGPAACNOR8,B0FHTN1,,,UGPA3,BVMF,B3 - Brazil Stock Exchange,BRL
+140,BR-118,Americas,Latin America,Brazil,Unipar Carbocloro Sa,Chemicals,S29058799,BRUNIPACNPB8,2905879,,,UNIP6,BVMF,B3 - Brazil Stock Exchange,BRL
+141,BR-119,Americas,Latin America,Brazil,Usinas Siderurgicas De Minas Gerais Sa Usiminas,Metals & Mining,S23860091,BRUSIMACNPA6,2386009,,,USIM5,BVMF,B3 - Brazil Stock Exchange,BRL
+142,BR-120,Americas,Latin America,Brazil,Vale Sa,Metals & Mining,S21962865,BRVALEACNOR0,2196286,,,VALE3,BVMF,B3 - Brazil Stock Exchange,BRL
+143,BR-121,Americas,Latin America,Brazil,Vamos Locacao De Caminhoes Maquinas E Equipamentos Sa,"Machinery, Equipment & Components",,BRVAMOACNOR7,BJLSQZ2,,,VAMO3,BVMF,B3 - Brazil Stock Exchange,BRL
+144,BR-122,Americas,Latin America,Brazil,Vibra Energia Sa,Oil & Gas,,BRVBBRACNOR1,BPBLV81,,,VBBR3,BVMF,B3 - Brazil Stock Exchange,BRL
+145,BR-123,Americas,Latin America,Brazil,Via Sa,Diversified Retail,,BRVIIAACNOR7,BKSF0G2,,,VIIA3,BVMF,B3 - Brazil Stock Exchange,BRL
+146,BR-124,Americas,Latin America,Brazil,Vivara Participacoes Sa,Textiles & Apparel,,BRVIVAACNOR0,BKTPCJ8,,,VIVA3,BVMF,B3 - Brazil Stock Exchange,BRL
+147,BR-125,Americas,Latin America,Brazil,Telefonica Brasil Sa,Telecommunications Services,,BRVIVTACNOR0,B6XFBX3,,,VIVT3,BVMF,B3 - Brazil Stock Exchange,BRL
+148,BR-126,Americas,Latin America,Brazil,Vulcabras Sa,Textiles & Apparel,,BRVULCACNOR2,B1XFXM1,,,VULC3,BVMF,B3 - Brazil Stock Exchange,BRL
+149,BR-127,Americas,Latin America,Brazil,Cm Hospitalar Sa,Pharmaceuticals,,BRVVEOACNOR0,BMYLYL1,,,VVEO3,BVMF,B3 - Brazil Stock Exchange,BRL
+150,BR-128,Americas,Latin America,Brazil,Weg Sa,"Machinery, Equipment & Components",S29454220,BRWEGEACNOR0,2945422,,,WEGE3,BVMF,B3 - Brazil Stock Exchange,BRL
+151,BR-129,Americas,Latin America,Brazil,Yduqs Participacoes Sa,Education Services,,BRYDUQACNOR3,BJGV3C2,,,YDUQ3,BVMF,B3 - Brazil Stock Exchange,BRL
+152,CL-1,Americas,Latin America,Chile,Aguas Andinas Sa,Water Utilities,S23112386,CL0000000035,2311238,,,AGUAS-A,XSGO,Santiago Stock Exchange,CLP
+153,CL-2,Americas,Latin America,Chile,"Andina Bottling Company, Inc.",Beverages,S23114549,CLP3697S1034,2311454,,,ANDINA-B,XSGO,Santiago Stock Exchange,CLP
+154,CL-3,Americas,Latin America,Chile,Banco De Credito E Inversiones,Banking Services,S20693552,CLP321331116,2069355,,,BCI,XSGO,Santiago Stock Exchange,CLP
+155,CL-4,Americas,Latin America,Chile,Banco Santander-Chile,Banking Services,S20002572,CLP1506A1070,2000257,,,BSANTANDER,XSGO,Santiago Stock Exchange,CLP
+156,CL-5,Americas,Latin America,Chile,Cap Sa,Metals & Mining,S21743125,CLP256251073,2174312,,,CAP,XSGO,Santiago Stock Exchange,CLP
+157,CL-6,Americas,Latin America,Chile,"United Breweries Company, Inc",Beverages,S21961891,CLP249051044,2196189,,,CCU,XSGO,Santiago Stock Exchange,CLP
+158,CL-7,Americas,Latin America,Chile,Cencosud Sa,Food & Drug Retailing,,CL0000000100,B00R3L2,,,CENCOSUD,XSGO,Santiago Stock Exchange,CLP
+159,CL-8,Americas,Latin America,Chile,Bank Of Chile,Banking Services,S21008453,CLP0939W1081,2100845,,,CHILE,XSGO,Santiago Stock Exchange,CLP
+160,CL-9,Americas,Latin America,Chile,Empresas Cmpc Sa,Paper & Forest Products,S21960158,CL0000001314,2196015,,,CMPC,XSGO,Santiago Stock Exchange,CLP
+161,CL-10,Americas,Latin America,Chile,Colbun Sa,Electrical Utilities & IPPs,S23092554,CLP3615W1037,2309255,,,COLBUN,XSGO,Santiago Stock Exchange,CLP
+162,CL-11,Americas,Latin America,Chile,Concha Y Toro Winery Inc.,Beverages,S29322203,CLP9796J1008,2932220,,,CONCHATORO,XSGO,Santiago Stock Exchange,CLP
+163,CL-12,Americas,Latin America,Chile,Empresas Copec Sa,Oil & Gas,S21960265,CLP7847L1080,2196026,,,COPEC,XSGO,Santiago Stock Exchange,CLP
+164,CL-13,Americas,Latin America,Chile,Engie Energia Chile Sa,Electrical Utilities & IPPs,,CL0001583070,BWXTK30,,,ECL,XSGO,Santiago Stock Exchange,CLP
+165,CL-14,Americas,Latin America,Chile,Enel Americas Sa,Electrical Utilities & IPPs,S22994537,CLP371861061,2299453,,,ENELAM,XSGO,Santiago Stock Exchange,CLP
+166,CL-15,Americas,Latin America,Chile,Enel Chile Sa,Electrical Utilities & IPPs,,CL0002266774,BYMLZD6,,,ENELCHILE,XSGO,Santiago Stock Exchange,CLP
+167,CL-16,Americas,Latin America,Chile,Empresa Nacional De Telecomunicaciones Sa,Telecommunications Services,S22976286,CLP371151059,2297628,,,ENTEL,XSGO,Santiago Stock Exchange,CLP
+168,CL-17,Americas,Latin America,Chile,Falabella Sa,Diversified Retail,S27716729,CLP3880F1085,2771672,,,FALABELLA,XSGO,Santiago Stock Exchange,CLP
+169,CL-18,Americas,Latin America,Chile,Inversiones Aguas Metropolitanas Sa,Water Utilities,,CL0000001256,B0LD0L8,,,IAM,XSGO,Santiago Stock Exchange,CLP
+170,CL-19,Americas,Latin America,Chile,Banco Itau Chile,Banking Services,,CL0002841873,BN100C1,,,ITAUCL,XSGO,Santiago Stock Exchange,CLP
+171,CL-20,Americas,Latin America,Chile,Plaza Sa,Real Estate Operations,,CL0002456714,BYVW0G8,,,MALLPLAZA,XSGO,Santiago Stock Exchange,CLP
+172,CL-21,Americas,Latin America,Chile,Sociedad De Inversiones Oro Blanco Sa,Chemicals,S24582322,CLP8716G1059,2458232,,,ORO BLANCO,XSGO,Santiago Stock Exchange,CLP
+173,CL-22,Americas,Latin America,Chile,Parque Arauco Sa,Real Estate Operations,S26843490,CLP763281068,2684349,,,PARAUCO,XSGO,Santiago Stock Exchange,CLP
+174,CL-23,Americas,Latin America,Chile,Grupo Security Sa,Banking Services,S27843242,CLP6808Q1068,2784324,,,SECURITY,XSGO,Santiago Stock Exchange,CLP
+175,CL-24,Americas,Latin America,Chile,Smu Sa,Food & Drug Retailing,,CL0002132620,BSPC6B9,,,SMU,XSGO,Santiago Stock Exchange,CLP
+176,CL-25,Americas,Latin America,Chile,Sociedad Quimica Y Minera De Chile Sa,Chemicals,S27183011,CLP8716X1082,2718301,,,SQM-B,XSGO,Santiago Stock Exchange,CLP
+177,CL-26,Americas,Latin America,Chile,Compania Sud Americana De Vapores Sa,Freight & Logistics Services,S21963384,CLP3064M1019,2196338,,,VAPORES,XSGO,Santiago Stock Exchange,CLP
+178,PE-1,Americas,Latin America,Peru,Credicorp Ltd,Banking Services,G2519Y108,BMG2519Y1084,2232878,,,BAP,XNYS,New York Stock Exchange,USD
+179,PE-2,Americas,Latin America,Peru,Buenaventura Adr Representing,Metals & Mining,204448104,US2044481040,2210476,,,BVN,XNYS,New York Stock Exchange,USD
+180,PE-3,Americas,Latin America,Peru,Intercorp Financial Services Inc,Banking Services,,PAL2400671A3,BK8WRM8,,,IFS,XNYS,New York Stock Exchange,USD
+181,PE-4,Americas,Latin America,Peru,Southern Copper Corp,Metals & Mining,84265V105,US84265V1052,2823777,,,SCCO,XNYS,New York Stock Exchange,USD
+182,UR-1,Americas,Latin America,Uruguay,"Mercadolibre, Inc.",Software & IT Solutions / Digital Services,58733RAE2,US58733R1023,,,1099590,MELI,XNAS,Nasdaq Stock Market,USD
+183,CA-1,Americas,North America,Canada,Advantage Energy Ltd.,Aerospace & Defense,,,,,,AAV,XTSE,Toronto Stock Exchange,CAD
+184,CA-2,Americas,North America,Canada,Barrick Gold Corporation,Metals & Mining,,CA0679011084,,,,ABX,XTSE,Toronto Stock Exchange,CAD
+185,CA-3,Americas,North America,Canada,Air Canada Voting and Variable Voting Shares,Telecommunications Services,,CA0089118776,,,,AC,XTSE,Toronto Stock Exchange,CAD
+186,CA-4,Americas,North America,Canada,ATCO Ltd. Class I Non-voting Shares,Construction & Engineering,,,,,,ACO.X,XTSE,Toronto Stock Exchange,CAD
+187,CA-5,Americas,North America,Canada,Agnico Eagle Mines Limited,Metals & Mining,,CA0084741085,,,,AEM,XTSE,Toronto Stock Exchange,CAD
+188,CA-6,Americas,North America,Canada,Alamos Gold Inc.,Metals & Mining,,,,,,AGI,XTSE,Toronto Stock Exchange,CAD
+189,CA-7,Americas,North America,Canada,Altus Group Limited,Electrical Utilities & IPPs,,,,,,AIF,XTSE,Toronto Stock Exchange,CAD
+190,CA-8,Americas,North America,Canada,AltaGas Ltd.,Pharmaceuticals,,CA0213611001,,,,ALA,XTSE,Toronto Stock Exchange,CAD
+191,CA-9,Americas,North America,Canada,Africa Oil Corp.,Oil & Gas,,,,,,AOI,XTSE,Toronto Stock Exchange,CAD
+192,CA-10,Americas,North America,Canada,Allied Properties Real Estate Investment Trust,Oil & Gas,,,,,,AP.UN,XTSE,Toronto Stock Exchange,CAD
+193,CA-11,Americas,North America,Canada,Algonquin Power & Utilities Corp.,Renewable Energy,,CA0158571053,,,,AQN,XTSE,Toronto Stock Exchange,CAD
+194,CA-12,Americas,North America,Canada,ARC Resources Ltd.,Electrical Utilities & IPPs,,CA00208D4084,,,,ARX,XTSE,Toronto Stock Exchange,CAD
+195,CA-13,Americas,North America,Canada,Algoma Steel Group Inc.,Banking Services,,,,,,ASTL,XTSE,Toronto Stock Exchange,CAD
+196,CA-14,Americas,North America,Canada,Alimentation Couche-Tard Inc.,Capital Markets & Advisory,,CA01626P1484,,,,ATD,XTSE,Toronto Stock Exchange,CAD
+197,CA-15,Americas,North America,Canada,Athabasca Oil Corporation,Banking Services,,,,,,ATH,XTSE,Toronto Stock Exchange,CAD
+198,CA-16,Americas,North America,Canada,ATS Corporation,Oil & Gas,,,,,,ATS,XTSE,Toronto Stock Exchange,CAD
+199,CA-17,Americas,North America,Canada,Aritzia Inc. Subordinate Voting Shares,Metals & Mining,,,,,,ATZ,XTSE,Toronto Stock Exchange,CAD
+200,CA-18,Americas,North America,Canada,Brookfield Asset Management Ltd. Class A Limited Voting Shares,Consumer & Household Products,,CA1130041058,,,,BAM,XTSE,Toronto Stock Exchange,CAD
+201,CA-19,Americas,North America,Canada,BlackBerry Limited,Software & IT Solutions / Digital Services,,,,,,BB,XTSE,Toronto Stock Exchange,CAD
+202,CA-20,Americas,North America,Canada,Bombardier Inc. Class B Subordinate Voting Shares,Aerospace & Defense,,,,,,BBD.B,XTSE,Toronto Stock Exchange,CAD
+203,CA-21,Americas,North America,Canada,Brookfield Business Partners L.P.,Media & Publishing,,,,,,BBU.UN,XTSE,Toronto Stock Exchange,CAD
+204,CA-22,Americas,North America,Canada,BCE Inc.,Containers & Packaging,,CA05534B7604,,,,BCE,XTSE,Toronto Stock Exchange,CAD
+205,CA-23,Americas,North America,Canada,Badger Infrastructure Solutions Ltd.,Uranium,,,,,,BDGI,XTSE,Toronto Stock Exchange,CAD
+206,CA-24,Americas,North America,Canada,Boardwalk Real Estate Investment Trust,Paper & Forest Products,,,,,,BEI.UN,XTSE,Toronto Stock Exchange,CAD
+207,CA-25,Americas,North America,Canada,Brookfield Renewable Partners L.P.,Metals & Mining,,,,,,BEP.UN,XTSE,Toronto Stock Exchange,CAD
+208,CA-26,Americas,North America,Canada,Electrical Utilities & IPPs,Electrical Utilities & IPPs,,CA11284V1058,,,,BEPC,XTSE,Toronto Stock Exchange,CAD
+209,CA-27,Americas,North America,Canada,Bausch Health Companies Inc.,Real Estate Operations,,,,,,BHC,XTSE,Toronto Stock Exchange,CAD
+210,CA-28,Americas,North America,Canada,Brookfield Infrastructure Partners L.P.,Capital Markets & Advisory,,,,,,BIP.UN,XTSE,Toronto Stock Exchange,CAD
+211,CA-29,Americas,North America,Canada,Birchcliff Energy Ltd.,Freight & Logistics Services,,,,,,BIR,XTSE,Toronto Stock Exchange,CAD
+212,CA-30,Americas,North America,Canada,Ballard Power Systems Inc.,Electronic Components & Systems,,,,,,BLDP,XTSE,Toronto Stock Exchange,CAD
+213,CA-31,Americas,North America,Canada,Boralex Inc. Class A Shares,Banking Services,,,,,,BLX,XTSE,Toronto Stock Exchange,CAD
+214,CA-32,Americas,North America,Canada,Bank of Montreal,Oil & Gas,,CA0636711016,,,,BMO,XTSE,Toronto Stock Exchange,CAD
+215,CA-33,Americas,North America,Canada,Brookfield Corporation Class A Limited Voting Shares,Freight & Logistics Services,,CA11271J1075,,,,BN,XTSE,Toronto Stock Exchange,CAD
+216,CA-34,Americas,North America,Canada,Bank of Nova Scotia (The),Freight & Logistics Services,,CA0641491075,,,,BNS,XTSE,Toronto Stock Exchange,CAD
+217,CA-35,Americas,North America,Canada,Baytex Energy Corp.,Oil & Gas,,,,,,BTE,XTSE,Toronto Stock Exchange,CAD
+218,CA-36,Americas,North America,Canada,B2Gold Corp.,Electrical Utilities & IPPs,,,,,,BTO,XTSE,Toronto Stock Exchange,CAD
+219,CA-37,Americas,North America,Canada,Boyd Group Services Inc.,Hotels & Entertainment Services,,,,,,BYD,XTSE,Toronto Stock Exchange,CAD
+220,CA-38,Americas,North America,Canada,CAE Inc.,Aerospace & Defense,,CA1247651088,,,,CAE,XTSE,Toronto Stock Exchange,CAD
+221,CA-39,Americas,North America,Canada,Canadian Apartment Properties Real Estate Investment Trust,Metals & Mining,,CA1349211054,,,,CAR.UN,XTSE,Toronto Stock Exchange,CAD
+222,CA-40,Americas,North America,Canada,Cogeco Communications Inc. Subordinate Voting Shares,Telecommunications Services,,,,,,CCA,XTSE,Toronto Stock Exchange,CAD
+223,CA-41,Americas,North America,Canada,CCL Industries Inc. Unlimited Class B Non-Voting Shares,Software & IT Solutions / Digital Services,,CA1249003098,,,,CCL.B,XTSE,Toronto Stock Exchange,CAD
+224,CA-42,Americas,North America,Canada,Cameco Corporation,Diversified Retail,,CA13321L1085,,,,CCO,XTSE,Toronto Stock Exchange,CAD
+225,CA-43,Americas,North America,Canada,Canfor Corporation,Integrated Utilities,,,,,,CFP,XTSE,Toronto Stock Exchange,CAD
+226,CA-44,Americas,North America,Canada,Centerra Gold Inc.,Oil & Gas,,,,,,CG,XTSE,Toronto Stock Exchange,CAD
+227,CA-45,Americas,North America,Canada,Choice Properties Real Estate Investment Trust,Banking Services,,,,,,CHP.UN,XTSE,Toronto Stock Exchange,CAD
+228,CA-46,Americas,North America,Canada,Colliers International Group Inc. Subordinate Voting Shares,Insurance,,,,,,CIGI,XTSE,Toronto Stock Exchange,CAD
+229,CA-47,Americas,North America,Canada,CI Financial Corp.,"Machinery, Equipment & Components",,,,,,CIX,XTSE,Toronto Stock Exchange,CAD
+230,CA-48,Americas,North America,Canada,Cargojet Inc. Common and Variable Voting Shares,Uranium,,,,,,CJT,XTSE,Toronto Stock Exchange,CAD
+231,CA-49,Americas,North America,Canada,Celestica Inc. Subordinate Voting Shares,Software & IT Solutions / Digital Services,,,,,,CLS,XTSE,Toronto Stock Exchange,CAD
+232,CA-50,Americas,North America,Canada,Canadian Imperial Bank Of Commerce,Diversified Retail,,CA1360691010,,,,CM,XTSE,Toronto Stock Exchange,CAD
+233,CA-51,Americas,North America,Canada,Canadian Natural Resources Limited,Leisure Products,,CA1363851017,,,,CNQ,XTSE,Toronto Stock Exchange,CAD
+234,CA-52,Americas,North America,Canada,Canadian National Railway Company,Metals & Mining,,CA1363751027,,,,CNR,XTSE,Toronto Stock Exchange,CAD
+235,CA-53,Americas,North America,Canada,Canadian Pacific Kansas City Limited,Software & IT Solutions / Digital Services,,CA13646K1084,,,,CP,XTSE,Toronto Stock Exchange,CAD
+236,CA-54,Americas,North America,Canada,Crescent Point Energy Corp.,Metals & Mining,,,,,,CPG,XTSE,Toronto Stock Exchange,CAD
+237,CA-55,Americas,North America,Canada,Capital Power Corporation,Banking Services,,,,,,CPX,XTSE,Toronto Stock Exchange,CAD
+238,CA-56,Americas,North America,Canada,Crombie Real Estate Investment Trust,Uranium,,,,,,CRR.UN,XTSE,Toronto Stock Exchange,CAD
+239,CA-57,Americas,North America,Canada,CT Real Estate Investment Trust,Passenger Transportation Services,,,,,,CRT.UN,XTSE,Toronto Stock Exchange,CAD
+240,CA-58,Americas,North America,Canada,Capstone Copper Corp.,Metals & Mining,,,,,,CS,XTSE,Toronto Stock Exchange,CAD
+241,CA-59,Americas,North America,Canada,Chartwell Retirement Residences,Electrical Utilities & IPPs,,,,,,CSH.UN,XTSE,Toronto Stock Exchange,CAD
+242,CA-60,Americas,North America,Canada,Constellation Software Inc.,Food & Drug Retailing,,CA21037X1006,,,,CSU,XTSE,Toronto Stock Exchange,CAD
+243,CA-61,Americas,North America,Canada,Canadian Tire Corporation Limited Class A Non-Voting Shares,Energy Equipment & Services,,CA1366812024,,,,CTC.A,XTSE,Toronto Stock Exchange,CAD
+244,CA-62,Americas,North America,Canada,Canadian Utilities Limited Class A Non-Voting Shares,Software & IT Solutions / Digital Services,,CA1367178326,,,,CU,XTSE,Toronto Stock Exchange,CAD
+245,CA-63,Americas,North America,Canada,Cenovus Energy Inc.,Banking Services,,CA15135U1093,,,,CVE,XTSE,Toronto Stock Exchange,CAD
+246,CA-64,Americas,North America,Canada,Canadian Western Bank,Metals & Mining,,,,,,CWB,XTSE,Toronto Stock Exchange,CAD
+247,CA-65,Americas,North America,Canada,C21 Investments Inc Swap Rec,Food & Drug Retailing,,,CXXIFTRS,,,CXXIF,OTCM,OTC Markets,USD
+248,CA-66,Americas,North America,Canada,Definity Financial Corporation,Oil & Gas,,,,,,DFY,XTSE,Toronto Stock Exchange,CAD
+249,CA-67,Americas,North America,Canada,Dream Industrial Real Estate Investment Trust,Metals & Mining,,,,,,DIR.UN,XTSE,Toronto Stock Exchange,CAD
+250,CA-68,Americas,North America,Canada,Denison Mines Corp.,Real Estate Operations,,,,,,DML,XTSE,Toronto Stock Exchange,CAD
+251,CA-69,Americas,North America,Canada,Dye & Durham Limited,Insurance,,,,,,DND,XTSE,Toronto Stock Exchange,CAD
+252,CA-70,Americas,North America,Canada,Dollarama Inc.,Metals & Mining,,CA25675T1075,,,,DOL,XTSE,Toronto Stock Exchange,CAD
+253,CA-71,Americas,North America,Canada,BRP Inc. Subordinate Voting Shares,Metals & Mining,,CA05577W2004,,,,DOO,XTSE,Toronto Stock Exchange,CAD
+254,CA-72,Americas,North America,Canada,Dundee Precious Metals Inc.,Metals & Mining,,,,,,DPM,XTSE,Toronto Stock Exchange,CAD
+255,CA-73,Americas,North America,Canada,Descartes Systems Group Inc. (The),Metals & Mining,,CA2499061083,,,,DSG,XTSE,Toronto Stock Exchange,CAD
+256,CA-74,Americas,North America,Canada,Endeavour Silver Corp.,Oil & Gas,,,,,,EDR,XTSE,Toronto Stock Exchange,CAD
+257,CA-75,Americas,North America,Canada,Element Fleet Management Corp.,Real Estate Operations,,CA2861812014,,,,EFN,XTSE,Toronto Stock Exchange,CAD
+258,CA-76,Americas,North America,Canada,Energy Fuels Inc.,Electrical Utilities & IPPs,,,,,,EFR,XTSE,Toronto Stock Exchange,CAD
+259,CA-77,Americas,North America,Canada,Exchange Income Corporation,"Machinery, Equipment & Components",,,,,,EIF,XTSE,Toronto Stock Exchange,CAD
+260,CA-78,Americas,North America,Canada,Eldorado Gold Corporation,Metals & Mining,,,,,,ELD,XTSE,Toronto Stock Exchange,CAD
+261,CA-79,Americas,North America,Canada,Emera Incorporated,Oil & Gas,,CA2908761018,,,,EMA,XTSE,Toronto Stock Exchange,CAD
+262,CA-80,Americas,North America,Canada,Empire Company Limited Non-Voting Class A Shares,Professional & Commercial Services,,CA2918434077,,,,EMP.A,XTSE,Toronto Stock Exchange,CAD
+263,CA-81,Americas,North America,Canada,Enbridge Inc.,Software & IT Solutions / Digital Services,,CA29250N1050,,,,ENB,XTSE,Toronto Stock Exchange,CAD
+264,CA-82,Americas,North America,Canada,Enghouse Systems Limited,Textiles & Apparel,,,,,,ENGH,XTSE,Toronto Stock Exchange,CAD
+265,CA-83,Americas,North America,Canada,EQB Inc.,Textiles & Apparel,,,,,,EQB,XTSE,Toronto Stock Exchange,CAD
+266,CA-84,Americas,North America,Canada,Equinox Gold Corp.,Metals & Mining,,,,,,EQX,XTSE,Toronto Stock Exchange,CAD
+267,CA-85,Americas,North America,Canada,Enerplus Corporation,Banking Services,,,,,,ERF,XTSE,Toronto Stock Exchange,CAD
+268,CA-86,Americas,North America,Canada,Ero Copper Corp.,Insurance,,,,,,ERO,XTSE,Toronto Stock Exchange,CAD
+269,CA-87,Americas,North America,Canada,First Capital Real Estate Investment Trust,Electrical Utilities & IPPs,,,,,,FCR.UN,XTSE,Toronto Stock Exchange,CAD
+270,CA-88,Americas,North America,Canada,Fairfax Financial Holdings Limited Subordinate Voting Shares,Metals & Mining,,CA3039011026,,,,FFH,XTSE,Toronto Stock Exchange,CAD
+271,CA-89,Americas,North America,Canada,Filo Corp Com,Banking Services,,,,,,FIL,XTSE,Toronto Stock Exchange,CAD
+272,CA-90,Americas,North America,Canada,First Quantum Minerals Ltd.,Metals & Mining,,CA3359341052,,,,FM,XTSE,Toronto Stock Exchange,CAD
+273,CA-91,Americas,North America,Canada,Franco-Nevada Corporation,Oil & Gas,,CA3518581051,,,,FNV,XTSE,Toronto Stock Exchange,CAD
+274,CA-92,Americas,North America,Canada,First Majestic Silver Corp.,Insurance,,,,,,FR,XTSE,Toronto Stock Exchange,CAD
+275,CA-93,Americas,North America,Canada,Freehold Royalties Ltd.,Insurance,,,,,,FRU,XTSE,Toronto Stock Exchange,CAD
+276,CA-94,Americas,North America,Canada,FirstService Corporation,Paper & Forest Products,,CA33767E2024,,,,FSV,XTSE,Toronto Stock Exchange,CAD
+277,CA-95,Americas,North America,Canada,Fortis Inc.,Capital Markets & Advisory,,CA3495531079,,,,FTS,XTSE,Toronto Stock Exchange,CAD
+278,CA-96,Americas,North America,Canada,Finning International Inc.,"Machinery, Equipment & Components",,,,,,FTT,XTSE,Toronto Stock Exchange,CAD
+279,CA-97,Americas,North America,Canada,Fortuna Silver Mines Inc.,Metals & Mining,,,,,,FVI,XTSE,Toronto Stock Exchange,CAD
+280,CA-98,Americas,North America,Canada,Gibson Energy Inc.,Oil & Gas,,,,,,GEI,XTSE,Toronto Stock Exchange,CAD
+281,CA-99,Americas,North America,Canada,GFL Environmental Inc. subordinate voting shares,Electrical Utilities & IPPs,,CA36168Q1046,,,,GFL,XTSE,Toronto Stock Exchange,CAD
+282,CA-100,Americas,North America,Canada,CGI Inc. Class A Subordinate  Voting Shares,Oil & Gas,,CA12532H1047,,,,GIB.A,XTSE,Toronto Stock Exchange,CAD
+283,CA-101,Americas,North America,Canada,Gildan Activewear Inc.,Metals & Mining,,CA3759161035,,,,GIL,XTSE,Toronto Stock Exchange,CAD
+284,CA-102,Americas,North America,Canada,Canada Goose Holdings Inc. Subordinate Voting Shares,Food & Tobacco,,,,,,GOOS,XTSE,Toronto Stock Exchange,CAD
+285,CA-103,Americas,North America,Canada,Granite Real Estate Investment Trust,Metals & Mining,,,,,,GRT.UN,XTSE,Toronto Stock Exchange,CAD
+286,CA-104,Americas,North America,Canada,Grown Rogue International,Pharmaceuticals,,,GRUSFNOM,,,GRUSF,OTCM,OTC Markets,USD
+287,CA-105,Americas,North America,Canada,goeasy Ltd.,Energy Equipment & Services,,,,,,GSY,XTSE,Toronto Stock Exchange,CAD
+288,CA-106,Americas,North America,Canada,Great-West Lifeco Inc.,Insurance,,CA39138C1068,,,,GWO,XTSE,Toronto Stock Exchange,CAD
+289,CA-107,Americas,North America,Canada,Hydro One Limited,Metals & Mining,,CA4488112083,,,,H,XTSE,Toronto Stock Exchange,CAD
+290,CA-108,Americas,North America,Canada,Hudbay Minerals Inc.,Software & IT Solutions / Digital Services,,,,,,HBM,XTSE,Toronto Stock Exchange,CAD
+291,CA-109,Americas,North America,Canada,Home Capital Group Inc.,Food & Drug Retailing,,,,,,HCG,XTSE,Toronto Stock Exchange,CAD
+292,CA-110,Americas,North America,Canada,H&R Real Estate Investment Trust,Metals & Mining,,,,,,HR.UN,XTSE,Toronto Stock Exchange,CAD
+293,CA-111,Americas,North America,Canada,Headwater Exploration Inc.,Banking Services,,,,,,HWX,XTSE,Toronto Stock Exchange,CAD
+294,CA-112,Americas,North America,Canada,iA Financial Corporation Inc.,Metals & Mining,,CA45075E1043,,,,IAG,XTSE,Toronto Stock Exchange,CAD
+295,CA-113,Americas,North America,Canada,Intact Financial Corporation,Automobiles & Auto Parts,,CA45823T1066,,,,IFC,XTSE,Toronto Stock Exchange,CAD
+296,CA-114,Americas,North America,Canada,Interfor Corporation,Software & IT Solutions / Digital Services,,,,,,IFP,XTSE,Toronto Stock Exchange,CAD
+297,CA-115,Americas,North America,Canada,IGM Financial Inc.,Metals & Mining,,CA4495861060,,,,IGM,XTSE,Toronto Stock Exchange,CAD
+298,CA-116,Americas,North America,Canada,InterRent Real Estate Investment Trust,Metals & Mining,,,,,,IIP.UN,XTSE,Toronto Stock Exchange,CAD
+299,CA-117,Americas,North America,Canada,IAMGOLD Corporation,Metals & Mining,,,,,,IMG,XTSE,Toronto Stock Exchange,CAD
+300,CA-118,Americas,North America,Canada,Imperial Oil Limited,Oil & Gas,,CA4530384086,,,,IMO,XTSE,Toronto Stock Exchange,CAD
+301,CA-119,Americas,North America,Canada,Innergex Renewable Energy Inc.,Insurance,,,,,,INE,XTSE,Toronto Stock Exchange,CAD
+302,CA-120,Americas,North America,Canada,International Petroleum Corporation,Food & Tobacco,,,,,,IPCO,XTSE,Toronto Stock Exchange,CAD
+303,CA-121,Americas,North America,Canada,Ivanhoe Mines Ltd.,Automobiles & Auto Parts,,CA46579R1047,,,,IVN,XTSE,Toronto Stock Exchange,CAD
+304,CA-122,Americas,North America,Canada,Jamieson Wellness Inc.,Food & Drug Retailing,,,,,,JWEL,XTSE,Toronto Stock Exchange,CAD
+305,CA-123,Americas,North America,Canada,Kinross Gold Corporation,Freight & Logistics Services,,CA4969024047,,,,K,XTSE,Toronto Stock Exchange,CAD
+306,CA-124,Americas,North America,Canada,Keyera Corp.,Hotels & Entertainment Services,,CA4932711001,,,,KEY,XTSE,Toronto Stock Exchange,CAD
+307,CA-125,Americas,North America,Canada,Killam Apartment Real Estate Investment Trust,Chemicals,,,,,,KMP.UN,XTSE,Toronto Stock Exchange,CAD
+308,CA-126,Americas,North America,Canada,K92 Mining Inc.,Banking Services,,,,,,KNT,XTSE,Toronto Stock Exchange,CAD
+309,CA-127,Americas,North America,Canada,Kinaxis Inc.,Metals & Mining,,,,,,KXS,XTSE,Toronto Stock Exchange,CAD
+310,CA-128,Americas,North America,Canada,Loblaw Companies Limited,Electrical Utilities & IPPs,,CA5394811015,,,,L,XTSE,Toronto Stock Exchange,CAD
+311,CA-129,Americas,North America,Canada,Lithium Americas Corp.,Chemicals,,,,,,LAC,XTSE,Toronto Stock Exchange,CAD
+312,CA-130,Americas,North America,Canada,Laurentian Bank of Canada,Oil & Gas,,,,,,LB,XTSE,Toronto Stock Exchange,CAD
+313,CA-131,Americas,North America,Canada,Labrador Iron Ore Royalty Corporation,Professional & Commercial Services,,,,,,LIF,XTSE,Toronto Stock Exchange,CAD
+314,CA-132,Americas,North America,Canada,Linamar Corporation,Food & Drug Retailing,,,,,,LNR,XTSE,Toronto Stock Exchange,CAD
+315,CA-133,Americas,North America,Canada,Lightspeed Commerce Inc. Subordinate Voting Shares,Software & IT Solutions / Digital Services,,,,,,LSPD,XTSE,Toronto Stock Exchange,CAD
+316,CA-134,Americas,North America,Canada,Lundin Gold Inc.,Uranium,,,,,,LUG,XTSE,Toronto Stock Exchange,CAD
+317,CA-135,Americas,North America,Canada,Lululemon Athletica Inc.,Textiles & Apparel,550021109,US5500211090,B23FN39,,1397187,LULU,XNAS,Nasdaq Stock Market,USD
+318,CA-136,Americas,North America,Canada,Lundin Mining Corporation,Metals & Mining,,CA5503721063,,,,LUN,XTSE,Toronto Stock Exchange,CAD
+319,CA-137,Americas,North America,Canada,MAG Silver Corp.,Capital Markets & Advisory,,,,,,MAG,XTSE,Toronto Stock Exchange,CAD
+320,CA-138,Americas,North America,Canada,MEG Energy Corp.,Metals & Mining,,,,,,MEG,XTSE,Toronto Stock Exchange,CAD
+321,CA-139,Americas,North America,Canada,Manulife Financial Corporation,Metals & Mining,,CA56501R1064,,,,MFC,XTSE,Toronto Stock Exchange,CAD
+322,CA-140,Americas,North America,Canada,Maple Leaf Foods Inc.,Software & IT Solutions / Digital Services,,,,,,MFI,XTSE,Toronto Stock Exchange,CAD
+323,CA-141,Americas,North America,Canada,Magna International Inc.,Metals & Mining,,CA5592224011,,,,MG,XTSE,Toronto Stock Exchange,CAD
+324,CA-142,Americas,North America,Canada,Metro Inc.,Food & Tobacco,,CA59162N1096,,,,MRU,XTSE,Toronto Stock Exchange,CAD
+325,CA-143,Americas,North America,Canada,Mullen Group Ltd.,Energy Equipment & Services,,,,,,MTL,XTSE,Toronto Stock Exchange,CAD
+326,CA-144,Americas,North America,Canada,MTY Food Group Inc.,Specialty Retailers,,,,,,MTY,XTSE,Toronto Stock Exchange,CAD
+327,CA-145,Americas,North America,Canada,Methanex Corporation,Oil & Gas,,,,,,MX,XTSE,Toronto Stock Exchange,CAD
+328,CA-146,Americas,North America,Canada,National Bank of Canada,Oil & Gas,,CA6330671034,,,,NA,XTSE,Toronto Stock Exchange,CAD
+329,CA-147,Americas,North America,Canada,NovaGold Resources Inc.,Consumer & Household Products,,,,,,NG,XTSE,Toronto Stock Exchange,CAD
+330,CA-148,Americas,North America,Canada,Northland Power Inc.,Electrical Utilities & IPPs,,CA6665111002,,,,NPI,XTSE,Toronto Stock Exchange,CAD
+331,CA-149,Americas,North America,Canada,Nutrien Ltd.,Oil & Gas,,CA67077M1086,,,,NTR,XTSE,Toronto Stock Exchange,CAD
+332,CA-150,Americas,North America,Canada,NuVista Energy Ltd.,Insurance,,,,,,NVA,XTSE,Toronto Stock Exchange,CAD
+333,CA-151,Americas,North America,Canada,Nuvei Corporation Subordinate Voting Shares,Energy Equipment & Services,,CA67079A1021,,,,NVEI,XTSE,Toronto Stock Exchange,CAD
+334,CA-152,Americas,North America,Canada,North West Company Inc. (The),Beverages,,,,,,NWC,XTSE,Toronto Stock Exchange,CAD
+335,CA-153,Americas,North America,Canada,NorthWest Healthcare Properties Real Estate Investment Trust,Energy Equipment & Services,,,,,,NWH.UN,XTSE,Toronto Stock Exchange,CAD
+336,CA-154,Americas,North America,Canada,NexGen Energy Ltd.,Oil & Gas,,,,,,NXE,XTSE,Toronto Stock Exchange,CAD
+337,CA-155,Americas,North America,Canada,OceanaGold Corporation,Oil & Gas,,,,,,OGC,XTSE,Toronto Stock Exchange,CAD
+338,CA-156,Americas,North America,Canada,ONEX Corporation Subordinate Voting Shares,Telecommunications Services,,CA68272K1030,,,,ONEX,XTSE,Toronto Stock Exchange,CAD
+339,CA-157,Americas,North America,Canada,Osisko Gold Royalties Ltd,Hotels & Entertainment Services,,,,,,OR,XTSE,Toronto Stock Exchange,CAD
+340,CA-158,Americas,North America,Canada,Osisko Mining Inc.,Professional & Commercial Services,,,,,,OSK,XTSE,Toronto Stock Exchange,CAD
+341,CA-159,Americas,North America,Canada,Open Text Corporation,Residential Construction & Materials,,CA6837151068,,,,OTEX,XTSE,Toronto Stock Exchange,CAD
+342,CA-160,Americas,North America,Canada,Pan American Silver Corp.,Telecommunications Services,,CA6979001089,,,,PAAS,XTSE,Toronto Stock Exchange,CAD
+343,CA-161,Americas,North America,Canada,Premium Brands Holdings Corporation,Hotels & Entertainment Services,,,,,,PBH,XTSE,Toronto Stock Exchange,CAD
+344,CA-162,Americas,North America,Canada,Precision Drilling Corporation,Electrical Utilities & IPPs,,,,,,PD,XTSE,Toronto Stock Exchange,CAD
+345,CA-163,Americas,North America,Canada,Pet Valu Holdings Ltd.,Metals & Mining,,,,,,PET,XTSE,Toronto Stock Exchange,CAD
+346,CA-164,Americas,North America,Canada,Peyto Exploration & Development Corp.,Banking Services,,,,,,PEY,XTSE,Toronto Stock Exchange,CAD
+347,CA-165,Americas,North America,Canada,Parkland Corporation,Food & Tobacco,,CA70137W1086,,,,PKI,XTSE,Toronto Stock Exchange,CAD
+348,CA-166,Americas,North America,Canada,Park Lawn Corporation,Oil & Gas,,,,,,PLC,XTSE,Toronto Stock Exchange,CAD
+349,CA-167,Americas,North America,Canada,Primaris Real Estate Investment Trust,Metals & Mining,,,,,,PMZ.UN,XTSE,Toronto Stock Exchange,CAD
+350,CA-168,Americas,North America,Canada,Paramount Resources Ltd. Class A Common Shares,Energy Equipment & Services,,,,,,POU,XTSE,Toronto Stock Exchange,CAD
+351,CA-169,Americas,North America,Canada,Power Corporation of Canada Subordinate Voting Shares,Software & IT Solutions / Digital Services,,CA7392391016,,,,POW,XTSE,Toronto Stock Exchange,CAD
+352,CA-170,Americas,North America,Canada,Pembina Pipeline Corporation,Healthcare Providers & Services,,CA7063271034,,,,PPL,XTSE,Toronto Stock Exchange,CAD
+353,CA-171,Americas,North America,Canada,Primo Water Corporation,Capital Markets & Advisory,,,,,,PRMW,XTSE,Toronto Stock Exchange,CAD
+354,CA-172,Americas,North America,Canada,Pason Systems Inc.,Metals & Mining,,,,,,PSI,XTSE,Toronto Stock Exchange,CAD
+355,CA-173,Americas,North America,Canada,PrairieSky Royalty Ltd.,Paper & Forest Products,,,,,,PSK,XTSE,Toronto Stock Exchange,CAD
+356,CA-174,Americas,North America,Canada,Parex Resources Inc.,Insurance,,,,,,PXT,XTSE,Toronto Stock Exchange,CAD
+357,CA-175,Americas,North America,Canada,Quebecor Inc. Class B Subordinate Voting Shares,Construction & Engineering,,CA7481932084,,,,QBR.B,XTSE,Toronto Stock Exchange,CAD
+358,CA-176,Americas,North America,Canada,Restaurant Brands International Inc.,Natural Gas Utilities,,CA76131D1033,,,,QSR,XTSE,Toronto Stock Exchange,CAD
+359,CA-177,Americas,North America,Canada,Professional & Commercial Services,Professional & Commercial Services,,CA74935Q1072,,,,RBA,XTSE,Toronto Stock Exchange,CAD
+360,CA-178,Americas,North America,Canada,Richelieu Hardware Ltd.,Metals & Mining,,,,,,RCH,XTSE,Toronto Stock Exchange,CAD
+361,CA-179,Americas,North America,Canada,Rogers Communications Inc. Class B Non-voting Shares,Metals & Mining,,CA7751092007,,,,RCI.B,XTSE,Toronto Stock Exchange,CAD
+362,CA-180,Americas,North America,Canada,RioCan Real Estate Investment Trust,Metals & Mining,,CA7669101031,,,,REI.UN,XTSE,Toronto Stock Exchange,CAD
+363,CA-181,Americas,North America,Canada,TransAlta Renewables Inc.,Construction & Engineering,,,,,,RNW,XTSE,Toronto Stock Exchange,CAD
+364,CA-182,Americas,North America,Canada,Russel Metals Inc.,Oil & Gas,,,,,,RUS,XTSE,Toronto Stock Exchange,CAD
+365,CA-183,Americas,North America,Canada,Royal Bank of Canada,Real Estate Operations,,CA7800871021,,,,RY,XTSE,Toronto Stock Exchange,CAD
+366,CA-184,Americas,North America,Canada,Saputo Inc.,Telecommunications Services,,CA8029121057,,,,SAP,XTSE,Toronto Stock Exchange,CAD
+367,CA-185,Americas,North America,Canada,Spartan Delta Corp.,Electrical Utilities & IPPs,,,,,,SDE,XTSE,Toronto Stock Exchange,CAD
+368,CA-186,Americas,North America,Canada,Seabridge Gold Inc.,Containers & Packaging,,,,,,SEA,XTSE,Toronto Stock Exchange,CAD
+369,CA-187,Americas,North America,Canada,Secure Energy Services Inc.,Real Estate Operations,,,,,,SES,XTSE,Toronto Stock Exchange,CAD
+370,CA-188,Americas,North America,Canada,Shopify,Software & IT Solutions / Digital Services,82509L107,CA82509L1076,,,1594805,SHOP,XNAS,Nasdaq Stock Market,USD
+371,CA-189,Americas,North America,Canada,Sienna Senior Living Inc.,Metals & Mining,,,,,,SIA,XTSE,Toronto Stock Exchange,CAD
+372,CA-190,Americas,North America,Canada,Sprott Inc.,Freight & Logistics Services,,,,,,SII,XTSE,Toronto Stock Exchange,CAD
+373,CA-191,Americas,North America,Canada,SilverCrest Metals Inc.,"Machinery, Equipment & Components",,,,,,SIL,XTSE,Toronto Stock Exchange,CAD
+374,CA-192,Americas,North America,Canada,Stella-Jones Inc.,Software & IT Solutions / Digital Services,,,,,,SJ,XTSE,Toronto Stock Exchange,CAD
+375,CA-193,Americas,North America,Canada,Sun Life Financial Inc.,Pharmaceuticals,,CA8667961053,,,,SLF,XTSE,Toronto Stock Exchange,CAD
+376,CA-194,Americas,North America,Canada,SNC-Lavalin Group Inc.,Oil & Gas,,,,,,SNC,XTSE,Toronto Stock Exchange,CAD
+377,CA-195,Americas,North America,Canada,Superior Plus Corp.,Leisure Products,,,,,,SPB,XTSE,Toronto Stock Exchange,CAD
+378,CA-196,Americas,North America,Canada,SmartCentres Real Estate Investment Trust,Oil & Gas,,,,,,SRU.UN,XTSE,Toronto Stock Exchange,CAD
+379,CA-197,Americas,North America,Canada,Sandstorm Gold Ltd.,Professional & Commercial Services,,,,,,SSL,XTSE,Toronto Stock Exchange,CAD
+380,CA-198,Americas,North America,Canada,SSR Mining Inc.,Energy Equipment & Services,,,,,,SSRM,XTSE,Toronto Stock Exchange,CAD
+381,CA-199,Americas,North America,Canada,Stelco Holdings Inc.,Insurance,,,,,,STLC,XTSE,Toronto Stock Exchange,CAD
+382,CA-200,Americas,North America,Canada,Stantec Inc.,Oil & Gas,,,,,,STN,XTSE,Toronto Stock Exchange,CAD
+383,CA-201,Americas,North America,Canada,Suncor Energy Inc.,Metals & Mining,,CA8672241079,,,,SU,XTSE,Toronto Stock Exchange,CAD
+384,CA-202,Americas,North America,Canada,StorageVault Canada Inc.,Oil & Gas,,,,,,SVI,XTSE,Toronto Stock Exchange,CAD
+385,CA-203,Americas,North America,Canada,TELUS Corporation,Professional & Commercial Services,,CA87971M1032,,,,T,XTSE,Toronto Stock Exchange,CAD
+386,CA-204,Americas,North America,Canada,TransAlta Corporation,Oil & Gas,,,,,,TA,XTSE,Toronto Stock Exchange,CAD
+387,CA-205,Americas,North America,Canada,Transcontinental Inc. Class A Subordinate Voting Shares,Metals & Mining,,,,,,TCL.A,XTSE,Toronto Stock Exchange,CAD
+388,CA-206,Americas,North America,Canada,Tricon Residential Inc.,Paper & Forest Products,,,,,,TCN,XTSE,Toronto Stock Exchange,CAD
+389,CA-207,Americas,North America,Canada,Toronto-Dominion Bank (The),Food & Drug Retailing,,CA8911605092,,,,TD,XTSE,Toronto Stock Exchange,CAD
+390,CA-208,Americas,North America,Canada,Teck Resources Limited Class B Subordinate Voting Shares,Containers & Packaging,,CA8787422044,,,,TECK.B,XTSE,Toronto Stock Exchange,CAD
+391,CA-209,Americas,North America,Canada,TFI International Inc.,Metals & Mining,,CA87241L1094,,,,TFII,XTSE,Toronto Stock Exchange,CAD
+392,CA-210,Americas,North America,Canada,Toromont Industries Ltd.,Construction & Engineering,,CA8911021050,,,,TIH,XTSE,Toronto Stock Exchange,CAD
+393,CA-211,Americas,North America,Canada,TELUS International (Cda) Inc. Subordinate Voting Shares,Transport Infrastructure,,,,,,TIXT,XTSE,Toronto Stock Exchange,CAD
+394,CA-212,Americas,North America,Canada,Tilray Brands Inc.,Capital Markets & Advisory,,,,,,TLRY,XTSE,Toronto Stock Exchange,CAD
+395,CA-213,Americas,North America,Canada,Tourmaline Oil Corp.,Specialty Retailers,,CA89156V1067,,,,TOU,XTSE,Toronto Stock Exchange,CAD
+396,CA-214,Americas,North America,Canada,Spin Master Corp. Subordinate Voting Shares,Leisure Products,,,,,,TOY,XTSE,Toronto Stock Exchange,CAD
+397,CA-215,Americas,North America,Canada,Topaz Energy Corp.,Oil & Gas,,,,,,TPZ,XTSE,Toronto Stock Exchange,CAD
+398,CA-216,Americas,North America,Canada,Thomson Reuters Corporation,Professional & Commercial Services,,CA8849038085,,,,TRI,XTSE,Toronto Stock Exchange,CAD
+399,CA-217,Americas,North America,Canada,TC Energy Corporation,Energy Equipment & Services,,CA87807B1076,,,,TRP,XTSE,Toronto Stock Exchange,CAD
+400,CA-218,Americas,North America,Canada,Terrascend Corp,Food & Drug Retailing,,,9E+112,,,TSNDF,OTCM,OTC Markets,USD
+401,CA-219,Americas,North America,Canada,Trisura Group Ltd.,Insurance,,,,,,TSU,XTSE,Toronto Stock Exchange,CAD
+402,CA-220,Americas,North America,Canada,Tamarack Valley Energy Ltd.,Oil & Gas,,,,,,TVE,XTSE,Toronto Stock Exchange,CAD
+403,CA-221,Americas,North America,Canada,Torex Gold Resources Inc.,Metals & Mining,,,,,,TXG,XTSE,Toronto Stock Exchange,CAD
+404,CA-222,Americas,North America,Canada,Vermilion Energy Inc.,Oil & Gas,,,,,,VET,XTSE,Toronto Stock Exchange,CAD
+405,CA-223,Americas,North America,Canada,Vapen Mj Ventures,Healthcare Providers & Services,,,VEXTFNOM,,,VEXTF,OTCM,OTC Markets,USD
+406,CA-224,Americas,North America,Canada,Waste Connections Inc.,Professional & Commercial Services,,,,,,WCN,XTSE,Toronto Stock Exchange,CAD
+407,CA-225,Americas,North America,Canada,Whitecap Resources Inc.,Oil & Gas,,,,,,WCP,XTSE,Toronto Stock Exchange,CAD
+408,CA-226,Americas,North America,Canada,Wesdome Gold Mines Ltd.,Metals & Mining,,,,,,WDO,XTSE,Toronto Stock Exchange,CAD
+409,CA-227,Americas,North America,Canada,West Fraser Timber Co. Ltd.,Paper & Forest Products,,CA9528451052,,,,WFG,XTSE,Toronto Stock Exchange,CAD
+410,CA-228,Americas,North America,Canada,George Weston Limited,Food & Drug Retailing,,CA9611485090,,,,WN,XTSE,Toronto Stock Exchange,CAD
+411,CA-229,Americas,North America,Canada,Winpak Ltd.,Containers & Packaging,,,,,,WPK,XTSE,Toronto Stock Exchange,CAD
+412,CA-230,Americas,North America,Canada,Wheaton Precious Metals Corp.,Metals & Mining,,CA9628791027,,,,WPM,XTSE,Toronto Stock Exchange,CAD
+413,CA-231,Americas,North America,Canada,WSP Global Inc.,Construction & Engineering,,CA92938W2022,,,,WSP,XTSE,Toronto Stock Exchange,CAD
+414,CA-232,Americas,North America,Canada,Westshore Terminals Investment Corporation,Transport Infrastructure,,,,,,WTE,XTSE,Toronto Stock Exchange,CAD
+415,CA-233,Americas,North America,Canada,TMX Group Limited,Capital Markets & Advisory,,CA87262K1057,,,,X,XTSE,Toronto Stock Exchange,CAD
+416,US-1,Americas,North America,United States,"Agilent Technologies, Inc.",Medical Devices & Supplies,00846U101,US00846U1016,2520153,,1090872,A,XNYS,New York Stock Exchange,USD
+417,US-2,Americas,North America,United States,Apple Inc.,Consumer Electronics,37833100,US0378331005,2046251,,320193,AAPL,XNAS,Nasdaq Stock Market,USD
+418,US-3,Americas,North America,United States,Abbvie Inc.,Medical Devices & Supplies,00287Y109,US00287Y1091,B92SR70,,1551152,ABBV,XNYS,New York Stock Exchange,USD
+419,US-4,Americas,North America,United States,"Airbnb, Inc.",Professional & Commercial Services,9066101,US0090661010,BMGYYH4,,155972,ABNB,XNAS,Nasdaq Stock Market,USD
+420,US-5,Americas,North America,United States,Abbott Laboratories,Pharmaceuticals,2824100,US0028241000,2002305,,1800,ABT,XNYS,New York Stock Exchange,USD
+421,US-6,Americas,North America,United States,Arch Capital Group Ltd.,Insurance,G0450A105,BMG0450A1053,2740542,,947484,ACGL,XNAS,Nasdaq Stock Market,USD
+422,US-7,Americas,North America,United States,Adobe Inc.,Software & IT Solutions / Digital Services,00724F101,US00724F1012,2008154,,796343,ADBE,XNAS,Nasdaq Stock Market,USD
+423,US-8,Americas,North America,United States,"Analog Devices, Inc.",Semiconductors & Chip Technologies,32654105,US0326541051,2032067,,6281,ADI,XNAS,Nasdaq Stock Market,USD
+424,US-9,Americas,North America,United States,Archer-Daniels-Midland Company.,Food & Tobacco,39483102,US0394831020,2047317,,7084,ADM,XNYS,New York Stock Exchange,USD
+425,US-10,Americas,North America,United States,"Automatic Data Processing, Inc.",Software & IT Solutions / Digital Services,53015103,US0530151036,2065308,,8670,ADP,XNAS,Nasdaq Stock Market,USD
+426,US-11,Americas,North America,United States,"Autodesk, Inc.",Software & IT Solutions / Digital Services,52769106,US0527691069,2065159,,769397,ADSK,XNAS,Nasdaq Stock Market,USD
+427,US-12,Americas,North America,United States,Ameren Corporation,Integrated Utilities,23608102,US0236081024,2050832,,1002910,AEE,XNYS,New York Stock Exchange,USD
+428,US-13,Americas,North America,United States,"American Electric Power Company, Inc.",Electrical Utilities & Ipps,25537101,US0255371017,2026242,,4904,AEP,XNAS,Nasdaq Stock Market,USD
+429,US-14,Americas,North America,United States,The Aes Corporation,Residential Construction & Materials,00130H105,US00130H1059,2002479,,874761,AES,XNYS,New York Stock Exchange,USD
+430,US-15,Americas,North America,United States,Aflac Incorporated,Capital Markets & Advisory,1055102,US0010551028,2026361,,4977,AFL,XNYS,New York Stock Exchange,USD
+431,US-16,Americas,North America,United States,"American International Group, Inc.",Insurance,26874784,US0268747849,2027342,,5272,AIG,XNYS,New York Stock Exchange,USD
+432,US-17,Americas,North America,United States,"Assurant, Inc.",Insurance,04621X108,US04621X1081,2331430,,1267238,AIZ,XNYS,New York Stock Exchange,USD
+433,US-18,Americas,North America,United States,Arthur J. Gallagher & Co.,Insurance,363576109,US3635761097,2359506,,354190,AJG,XNYS,New York Stock Exchange,USD
+434,US-19,Americas,North America,United States,"Akamai Technologies, Inc.",Professional & Commercial Services,00971T101,US00971T1016,2507457,,1086222,AKAM,XNAS,Nasdaq Stock Market,USD
+435,US-20,Americas,North America,United States,Albemarle Corporation,Chemicals,12653101,US0126531013,2046853,,915913,ALB,XNYS,New York Stock Exchange,USD
+436,US-21,Americas,North America,United States,"Align Technology, Inc.",Medical Devices & Supplies,16255101,US0162551016,2679204,,1097149,ALGN,XNAS,Nasdaq Stock Market,USD
+437,US-22,Americas,North America,United States,The Allstate Corporation,Consumer Goods Conglomerates,20002101,US0200021014,2019952,,899051,ALL,XNYS,New York Stock Exchange,USD
+438,US-23,Americas,North America,United States,"Applied Materials, Inc.",Semiconductors & Chip Technologies,38222105,US0382221051,2046552,,6951,AMAT,XNAS,Nasdaq Stock Market,USD
+439,US-24,Americas,North America,United States,Amcor Plc,Consumer Electronics,G0250X107,JE00BJ1F3079,BJ1F307,,1748790,AMCR,XNYS,New York Stock Exchange,USD
+440,US-25,Americas,North America,United States,"Advanced Micro Devices, Inc.",Semiconductors & Chip Technologies,7903107,US0079031078,2007849,,2488,AMD,XNAS,Nasdaq Stock Market,USD
+441,US-26,Americas,North America,United States,"Ametek, Inc.",Medical Devices & Supplies,31100100,US0311001004,2089212,,1037868,AME,XNYS,New York Stock Exchange,USD
+442,US-27,Americas,North America,United States,Amgen Inc.,Pharmaceuticals,31162100,US0311621009,2023607,,318154,AMGN,XNAS,Nasdaq Stock Market,USD
+443,US-28,Americas,North America,United States,"Ameriprise Financial, Inc.",Capital Markets & Advisory,03076C106,US03076C1062,B0J7D57,,820027,AMP,XNYS,New York Stock Exchange,USD
+444,US-29,Americas,North America,United States,American Tower Corporation,Real Estate Investment Trusts (REITs),03027X100,US03027X1000,B7FBFL2,,1053507,AMT,XNYS,New York Stock Exchange,USD
+445,US-30,Americas,North America,United States,"Amazon.Com, Inc.",Specialty Retailers,23135106,US0231351067,2000019,,1018724,AMZN,XNAS,Nasdaq Stock Market,USD
+446,US-31,Americas,North America,United States,"Arista Networks, Inc.",Communications & Networking,40413106,US0404131064,BN33VM5,,1596532,ANET,XNYS,New York Stock Exchange,USD
+448,US-33,Americas,North America,United States,A. O. Smith Corporation,Consumer & Household Products,831865209,US8318652091,2816023,,91142,AOS,XNYS,New York Stock Exchange,USD
+449,US-34,Americas,North America,United States,Apa Corporation,Oil & Gas,03743Q108,US03743Q1085,BNNF1C1,,1841666,APA,XNAS,Nasdaq Stock Market,USD
+450,US-35,Americas,North America,United States,"Air Products And Chemicals, Inc.",Chemicals,9158106,US0091581068,2011602,,2969,APD,XNYS,New York Stock Exchange,USD
+451,US-36,Americas,North America,United States,Amphenol Corporation,Automobiles & Auto Parts,32095101,US0320951017,2145084,,820313,APH,XNYS,New York Stock Exchange,USD
+452,US-37,Americas,North America,United States,Applovin Corporation,Software & IT Solutions / Digital Services,03831W108,US03831W1080,BMV3LG4,,1751008,APP,XNAS,Nasdaq Stock Market,USD
+453,US-38,Americas,North America,United States,"Alexandria Real Estate Equities, Inc.",Real Estate Investment Trusts (REITs),15271109,US0152711091,2009210,,1035443,ARE,XNYS,New York Stock Exchange,USD
+454,US-39,Americas,North America,United States,Atmos Energy Corporation,Integrated Utilities,49560105,US0495601058,2315359,,731802,ATO,XNYS,New York Stock Exchange,USD
+455,US-40,Americas,North America,United States,"Activision Blizzard, Inc.",Software & IT Solutions / Digital Services,00507V109,US00507V1098,2575818,,718877,ATVI,XNAS,Nasdaq Stock Market,USD
+456,US-41,Americas,North America,United States,"Avalonbay Communities, Inc.",Real Estate Investment Trusts (REITs),53484101,US0534841012,2131179,,915912,AVB,XNYS,New York Stock Exchange,USD
+457,US-42,Americas,North America,United States,Broadcom Inc.,Renewable Energy,11135F101,US11135F1012,BDZ78H9,,1730168,AVGO,XNAS,Nasdaq Stock Market,USD
+458,US-43,Americas,North America,United States,Avery Dennison Corporation,Consumer & Household Products,53611109,US0536111091,2066408,,8818,AVY,XNYS,New York Stock Exchange,USD
+459,US-44,Americas,North America,United States,"American Water Works Company, Inc.",Electrical Utilities & Ipps,30420103,US0304201033,B2R3PV1,,1410636,AWK,XNYS,New York Stock Exchange,USD
+460,US-45,Americas,North America,United States,"Axon Enterprise, Inc.","Machinery, Equipment & Components",05464C101,US05464C1018,BDT5S35,,1069183,AXON,XNAS,Nasdaq Stock Market,USD
+461,US-46,Americas,North America,United States,American Express Company,Banking Services,25816109,US0258161092,2026082,,4962,AXP,XNYS,New York Stock Exchange,USD
+462,US-47,Americas,North America,United States,"Autozone, Inc.",Specialty Retailers,53332102,US0533321024,2065955,,866787,AZO,XNYS,New York Stock Exchange,USD
+463,US-48,Americas,North America,United States,The Boeing Company,Consumer Goods Conglomerates,97023105,US0970231058,2108601,,12927,BA,XNYS,New York Stock Exchange,USD
+464,US-49,Americas,North America,United States,Bank Of America Corporation,Capital Markets & Advisory,60505104,US0605051046,2295677,,70858,BAC,XNYS,New York Stock Exchange,USD
+465,US-50,Americas,North America,United States,Ball Corporation,"Machinery, Equipment & Components",58498106,US0584981064,2073022,,9389,BALL,XNYS,New York Stock Exchange,USD
+466,US-51,Americas,North America,United States,Baxter International Inc.,Medical Devices & Supplies,71813109,US0718131099,2085102,,10456,BAX,XNYS,New York Stock Exchange,USD
+467,US-52,Americas,North America,United States,"Best Buy Co., Inc.",Food & Drug Retailing,86516101,US0865161014,2094670,,764478,BBY,XNYS,New York Stock Exchange,USD
+468,US-53,Americas,North America,United States,"Becton, Dickinson And Company",Medical Devices & Supplies,75887109,US0758871091,2087807,,10795,BDX,XNYS,New York Stock Exchange,USD
+469,US-54,Americas,North America,United States,"Franklin Resources, Inc.",Capital Markets & Advisory,354613101,US3546131018,2350684,,38777,BEN,XNYS,New York Stock Exchange,USD
+470,US-55,Americas,North America,United States,Bright Horizons Family Solutions Inc.,Chemicals,109194100,US1091941005,B7MJWP2,,1437578,BF.B,XNYS,New York Stock Exchange,USD
+471,US-56,Americas,North America,United States,Bunge Limited,Beverages,G16962105,BMG169621056,2788713,,1144519,BG,XNYS,New York Stock Exchange,USD
+472,US-57,Americas,North America,United States,Biogen Inc.,Pharmaceuticals,09062X103,US09062X1037,2455965,,875045,BIIB,XNAS,Nasdaq Stock Market,USD
+473,US-58,Americas,North America,United States,The Bank Of New York Mellon Corporation,Banking Services,64058100,US0640581007,B1Z77F6,,1390777,BK,XNYS,New York Stock Exchange,USD
+474,US-59,Americas,North America,United States,Booking Holdings Inc.,Hotels & Entertainment Services,09857L108,US09857L1089,BDRXDB4,,1075531,BKNG,XNAS,Nasdaq Stock Market,USD
+475,US-60,Americas,North America,United States,Baker Hughes Company,"Machinery, Equipment & Components",05722G100,US05722G1004,BDHLTQ5,,1701605,BKR,XNAS,Nasdaq Stock Market,USD
+476,US-61,Americas,North America,United States,"Builders Firstsource, Inc.",Software & IT Solutions / Digital Services,12008R107,US12008R1077,B0BV2M7,,1316835,BLDR,XNYS,New York Stock Exchange,USD
+477,US-62,Americas,North America,United States,"Blackrock, Inc.",Capital Markets & Advisory,09247X101,US09247X1019,2494504,,1364742,BLK,XNYS,New York Stock Exchange,USD
+478,US-63,Americas,North America,United States,Bristol-Myers Squibb Company,Pharmaceuticals,110122108,US1101221083,2126335,,14272,BMY,XNYS,New York Stock Exchange,USD
+479,US-64,Americas,North America,United States,"Broadridge Financial Solutions, Inc.",Professional & Commercial Services,11133T103,US11133T1034,B1VP7R6,,1383312,BR,XNYS,New York Stock Exchange,USD
+480,US-65,Americas,North America,United States,"Berkshire Hathaway Inc.,",Insurance,84670702,US0846707026,2073390,,1067983,BRK.B,XNYS,New York Stock Exchange,USD
+481,US-66,Americas,North America,United States,"Brown & Brown, Inc.",Insurance,115236101,US1152361010,2692687,,79282,BRO,XNYS,New York Stock Exchange,USD
+482,US-67,Americas,North America,United States,Boston Scientific Corporation,Medical Devices & Supplies,101137107,US1011371077,2113434,,885725,BSX,XNYS,New York Stock Exchange,USD
+483,US-68,Americas,North America,United States,Borgwarner Inc.,Aerospace & Defense,99724106,US0997241064,2111955,,908255,BWA,XNYS,New York Stock Exchange,USD
+484,US-69,Americas,North America,United States,"Boston Properties, Inc.",Real Estate Investment Trusts (REITs),101121101,US1011211018,2019479,,1037540,BXP,XNYS,New York Stock Exchange,USD
+485,US-70,Americas,North America,United States,Citigroup Inc.,Banking Services,172967424,US1729674242,2297907,,831001,C,XNYS,New York Stock Exchange,USD
+486,US-71,Americas,North America,United States,"Conagra Brands, Inc.",Food & Tobacco,205887102,US2058871029,2215460,,23217,CAG,XNYS,New York Stock Exchange,USD
+487,US-72,Americas,North America,United States,"Cardinal Health, Inc.",Pharmaceuticals,14149Y108,US14149Y1082,2175672,,721371,CAH,XNYS,New York Stock Exchange,USD
+488,US-73,Americas,North America,United States,Carrier Global Corporation,"Machinery, Equipment & Components",14448C104,US14448C1045,BK4N0D7,,1783180,CARR,XNYS,New York Stock Exchange,USD
+489,US-74,Americas,North America,United States,Caterpillar Inc.,Energy Equipment & Services,149123101,US1491231015,2180201,,18230,CAT,XNYS,New York Stock Exchange,USD
+490,US-75,Americas,North America,United States,"Cboe Global Markets, Inc.",Capital Markets & Advisory,12503M108,US12503M1080,B5834C5,,1374310,CBOE,BATS,CBOE BZX Exchange,USD
+491,US-76,Americas,North America,United States,"Cbre Group, Inc.",Real Estate Investment Trusts (REITs),12504L109,US12504L1098,B6WVMH3,,1138118,CBRE,XNYS,New York Stock Exchange,USD
+492,US-77,Americas,North America,United States,Crown Castle Inc.,Real Estate Investment Trusts (REITs),22822V101,US22822V1017,BTGQCX1,,1051470,CCI,XNYS,New York Stock Exchange,USD
+493,US-78,Americas,North America,United States,Carnival Corp,Hotels & Entertainment Services,143658300,PA1436583006,2523044,,815097,CCL,XNYS,New York Stock Exchange,USD
+494,US-79,Americas,North America,United States,"Cadence Design Systems, Inc.",Software & IT Solutions / Digital Services,127387108,US1273871087,2302232,,813672,CDNS,XNAS,Nasdaq Stock Market,USD
+495,US-80,Americas,North America,United States,Cdw Corporation,Media & Publishing,12514G108,US12514G1085,BBM5MD6,,1402057,CDW,XNAS,Nasdaq Stock Market,USD
+496,US-81,Americas,North America,United States,Constellation Energy Corporation.,Integrated Utilities,21037T109,US21037T1097,BMH4FS1,,1868275,CEG,XNAS,Nasdaq Stock Market,USD
+497,US-82,Americas,North America,United States,"Cf Industries Holdings, Inc.",Chemicals,125269100,US1252691001,B0G4K50,,1324404,CF,XNYS,New York Stock Exchange,USD
+498,US-83,Americas,North America,United States,"Citizens Financial Group, Inc.",Banking Services,174610105,US1746101054,BQRX1X3,,759944,CFG,XNYS,New York Stock Exchange,USD
+499,US-84,Americas,North America,United States,"Church & Dwight Co., Inc.",Chemicals,171340102,US1713401024,2195841,,313927,CHD,XNYS,New York Stock Exchange,USD
+500,US-85,Americas,North America,United States,"C.H. Robinson Worldwide, Inc.",Freight & Logistics Services,12541W209,US12541W2098,2116228,,1043277,CHRW,XNAS,Nasdaq Stock Market,USD
+501,US-86,Americas,North America,United States,"Charter Communications, Inc.",Telecommunications Services,16119P108,US16119P1084,BZ6VT82,,1091667,CHTR,XNAS,Nasdaq Stock Market,USD
+502,US-87,Americas,North America,United States,The Cigna Group,Healthcare Providers & Services,125523100,US1255231003,BHJ0775,,1739940,CI,XNYS,New York Stock Exchange,USD
+503,US-88,Americas,North America,United States,Cincinnati Financial Corporation,Insurance,172062101,US1720621010,2196888,,20286,CINF,XNAS,Nasdaq Stock Market,USD
+504,US-89,Americas,North America,United States,Colgate-Palmolive Company,Consumer & Household Products,194162103,US1941621039,2209106,,21665,CL,XNYS,New York Stock Exchange,USD
+505,US-90,Americas,North America,United States,The Clorox Company,Metals & Mining,189054109,US1890541097,2204026,,21076,CLX,XNYS,New York Stock Exchange,USD
+506,US-91,Americas,North America,United States,Comcast Corporation,Media & Publishing,20030N101,US20030N1019,2044545,,1166691,CMCSA,XNAS,Nasdaq Stock Market,USD
+507,US-92,Americas,North America,United States,Cme Group Inc.,Capital Markets & Advisory,12572Q105,US12572Q1058,2965839,,1156375,CME,XNAS,Nasdaq Stock Market,USD
+508,US-93,Americas,North America,United States,"Chipotle Mexican Grill, Inc.",Hotels & Entertainment Services,169656105,US1696561059,B0X7DZ3,,1058090,CMG,XNYS,New York Stock Exchange,USD
+509,US-94,Americas,North America,United States,Cummins Inc.,"Machinery, Equipment & Components",231021106,US2310211063,2240202,,26172,CMI,XNYS,New York Stock Exchange,USD
+510,US-95,Americas,North America,United States,Cms Energy Corporation,Electrical Utilities & Ipps,125896100,US1258961002,2219224,,811156,CMS,XNYS,New York Stock Exchange,USD
+511,US-96,Americas,North America,United States,Centene Corporation,Healthcare Providers & Services,15135B101,US15135B1017,2807061,,1071739,CNC,XNYS,New York Stock Exchange,USD
+512,US-97,Americas,North America,United States,"Centerpoint Energy, Inc.",Electrical Utilities & Ipps,15189T107,US15189T1079,2440637,,1130310,CNP,XNYS,New York Stock Exchange,USD
+513,US-98,Americas,North America,United States,Capital One Financial Corporation,Banking Services,14040H105,US14040H1059,2654461,,927628,COF,XNYS,New York Stock Exchange,USD
+514,US-99,Americas,North America,United States,"Coinbase Global, Inc.",Banking Services,19260Q107,US19260Q1076,BMC9P69,,1679788,COIN,XNAS,Nasdaq Stock Market,USD
+515,US-100,Americas,North America,United States,"The Cooper Companies, Inc.",Leisure Products,216648402,US2166484020,2222631,,711404,COO,XNAS,Nasdaq Stock Market,USD
+516,US-101,Americas,North America,United States,Conocophillips,Oil & Gas,20825C104,US20825C1045,2685717,,1163165,COP,XNYS,New York Stock Exchange,USD
+517,US-102,Americas,North America,United States,"Cencora, Inc.",Medical Devices & Supplies,3.073E+108,US03073E1055,2795393,,1140859,COR,XNYS,New York Stock Exchange,USD
+518,US-103,Americas,North America,United States,Costco Wholesale Corporation,Diversified Retail,22160K105,US22160K1051,2701271,,909832,COST,XNAS,Nasdaq Stock Market,USD
+519,US-104,Americas,North America,United States,Corpay,Professional & Commercial Services,339041105,US2199481068,BMX5GK7,BBG000GPXKX9,1175454,CPAY,XNYS,New York Stock Exchange,USD
+520,US-105,Americas,North America,United States,Campbell Soup Company,Food & Tobacco,134429109,US1344291091,2162845,,16732,CPB,XNAS,Nasdaq Stock Market,USD
+521,US-106,Americas,North America,United States,"Copart, Inc.",Specialty Retailers,217204106,US2172041061,2208073,,900075,CPRT,XNAS,Nasdaq Stock Market,USD
+522,US-107,Americas,North America,United States,Camden Property Trust,Real Estate Investment Trusts (REITs),133131102,US1331311027,2166320,,906345,CPT,XNYS,New York Stock Exchange,USD
+523,US-108,Americas,North America,United States,"Charles River Laboratories International, Inc.",Pharmaceuticals,159864107,US1598641074,2604336,,1100682,CRL,XNYS,New York Stock Exchange,USD
+524,US-109,Americas,North America,United States,"Salesforce, Inc.",Software & IT Solutions / Digital Services,79466L302,US79466L3024,2310525,,1108524,CRM,XNYS,New York Stock Exchange,USD
+525,US-110,Americas,North America,United States,"Crowdstrike Holdings, Inc.",Software & IT Solutions / Digital Services,22788C105,US22788C1053,BJJP138,,1535527,CRWD,XNAS,Nasdaq Stock Market,USD
+526,US-111,Americas,North America,United States,"Cisco Systems, Inc.",Communications & Networking,17275R102,US17275R1023,2198163,,858877,CSCO,XNAS,Nasdaq Stock Market,USD
+527,US-112,Americas,North America,United States,"Costar Group, Inc.",Software & IT Solutions / Digital Services,22160N109,US22160N1090,2262864,,1057352,CSGP,XNAS,Nasdaq Stock Market,USD
+528,US-113,Americas,North America,United States,Csx Corporation,Freight & Logistics Services,126408103,US1264081035,2160753,,277948,CSX,XNAS,Nasdaq Stock Market,USD
+529,US-114,Americas,North America,United States,Cintas Corporation,Software & IT Solutions / Digital Services,172908105,US1729081059,2197137,,723254,CTAS,XNAS,Nasdaq Stock Market,USD
+530,US-115,Americas,North America,United States,"Catalent, Inc.",Pharmaceuticals,148806102,US1488061029,BP96PQ4,,1596783,CTLT,XNYS,New York Stock Exchange,USD
+531,US-116,Americas,North America,United States,Coterra Energy Inc.,Oil & Gas,127097103,US1270971039,2162340,,858470,CTRA,XNYS,New York Stock Exchange,USD
+532,US-117,Americas,North America,United States,Cognizant Technology Solutions Corporation,Software & IT Solutions / Digital Services,192446102,US1924461023,2257019,,1058290,CTSH,XNAS,Nasdaq Stock Market,USD
+533,US-118,Americas,North America,United States,"Corteva, Inc.",Metals & Mining,22052L104,US22052L1044,BK73B42,,1755672,CTVA,XNYS,New York Stock Exchange,USD
+534,US-119,Americas,North America,United States,Cvs Health Corporation,Healthcare Providers & Services,126650100,US1266501006,2577609,,64803,CVS,XNYS,New York Stock Exchange,USD
+535,US-120,Americas,North America,United States,Chevron Corporation,Oil & Gas,166764100,US1667641005,2838555,,93410,CVX,XNYS,New York Stock Exchange,USD
+536,US-121,Americas,North America,United States,"Caesars Entertainment, Inc.",Hotels & Entertainment Services,12769G100,US12769G1004,BMWWGB0,,1590895,CZR,XNAS,Nasdaq Stock Market,USD
+537,US-122,Americas,North America,United States,"Dominion Energy, Inc.",Electrical Utilities & Ipps,25746U109,US25746U1097,2542049,,715957,D,XNYS,New York Stock Exchange,USD
+538,US-123,Americas,North America,United States,"Delta Air Lines, Inc.",Passenger Transportation Services,247361702,US2473617023,B1W9D46,,27904,DAL,XNYS,New York Stock Exchange,USD
+539,US-124,Americas,North America,United States,"Doordash, Inc.",Professional & Commercial Services,25809K105,US25809K1051,BN13P03,,1792789,DASH,XNAS,Nasdaq Stock Market,USD
+540,US-125,Americas,North America,United States,Dayforce,Software & IT Solutions / Digital Services,15677J108,US15677J1088,BFX1V56,BBG005D7PF34,1725057,DAY,XNYS,New York Stock Exchange,USD
+541,US-126,Americas,North America,United States,"Dupont De Nemours, Inc.",Chemicals,26614N102,US26614N1028,BK0VN47,,1666700,DD,XNYS,New York Stock Exchange,USD
+542,US-127,Americas,North America,United States,"Datadog, Inc.",Software & IT Solutions / Digital Services,23804L103,US23804L1035,BKT9Y49,,156155,DDOG,XNAS,Nasdaq Stock Market,USD
+543,US-128,Americas,North America,United States,Deere & Company,"Machinery, Equipment & Components",244199105,US2441991054,2261203,,315189,DE,XNYS,New York Stock Exchange,USD
+544,US-129,Americas,North America,United States,Deckers Outdoor Corporation,Residential Construction & Materials,243537107,US2435371073,2267278,,910521,DECK,XNYS,New York Stock Exchange,USD
+545,US-130,Americas,North America,United States,Dell Technologies Inc Class C,Consumer Electronics,24703L202,US24703L2025,,,"1571996	",DELL,XNYS,New York Stock Exchange,USD
+546,US-131,Americas,North America,United States,Dollar General Corporation,Diversified Retail,256677105,US2566771059,B5B1S13,,29534,DG,XNYS,New York Stock Exchange,USD
+547,US-132,Americas,North America,United States,Quest Diagnostics Incorporated,Healthcare Providers & Services,74834L100,US74834L1008,2702791,,1022079,DGX,XNYS,New York Stock Exchange,USD
+548,US-133,Americas,North America,United States,"D.R. Horton, Inc.",Residential Construction & Materials,23331A109,US23331A1097,2250687,,882184,DHI,XNYS,New York Stock Exchange,USD
+549,US-134,Americas,North America,United States,Danaher Corporation,"Machinery, Equipment & Components",235851102,US2358511028,2250870,,313616,DHR,XNYS,New York Stock Exchange,USD
+550,US-135,Americas,North America,United States,The Walt Disney Company,Insurance,254687106,US2546871060,2270726,,1744489,DIS,XNYS,New York Stock Exchange,USD
+551,US-136,Americas,North America,United States,"Digital Realty Trust, Inc.",Real Estate Investment Trusts (REITs),253868103,US2538681030,B03GQS4,,1297996,DLR,XNYS,New York Stock Exchange,USD
+552,US-137,Americas,North America,United States,"Dollar Tree, Inc.",Diversified Retail,256746108,US2567461080,2272476,,935703,DLTR,XNAS,Nasdaq Stock Market,USD
+553,US-138,Americas,North America,United States,Healthpeak Properties,Real Estate Investment Trusts (REITs),42250P103,US42250P1030,BJBLRK3,BBG000BKYDP9,765880,DOC,XNYS,New York Stock Exchange,USD
+554,US-139,Americas,North America,United States,Dover Corporation,"Machinery, Equipment & Components",260003108,US2600031080,2278407,,29905,DOV,XNYS,New York Stock Exchange,USD
+555,US-140,Americas,North America,United States,Dow Inc.,Chemicals,260557103,US2605571031,BHXCF84,,1751788,DOW,XNYS,New York Stock Exchange,USD
+556,US-141,Americas,North America,United States,"Domino'S Pizza, Inc.",Hotels & Entertainment Services,25754A201,US25754A2015,B01SD70,,1286681,DPZ,XNAS,Nasdaq Stock Market,USD
+557,US-142,Americas,North America,United States,"Darden Restaurants, Inc.",Hotels & Entertainment Services,237194105,US2371941053,2289874,,940944,DRI,XNYS,New York Stock Exchange,USD
+558,US-143,Americas,North America,United States,Dte Energy Company,Electrical Utilities & Ipps,233331107,US2333311072,2280220,,936340,DTE,XNYS,New York Stock Exchange,USD
+559,US-144,Americas,North America,United States,Duke Energy Corporation,Electrical Utilities & Ipps,26441C204,US26441C2044,B7VD3F2,,1326160,DUK,XNYS,New York Stock Exchange,USD
+560,US-145,Americas,North America,United States,Davita Inc.,Biotechnology & Life Sciences,23918K108,US23918K1088,2898087,,927066,DVA,XNYS,New York Stock Exchange,USD
+561,US-146,Americas,North America,United States,Devon Energy Corporation,Oil & Gas,25179M103,US25179M1036,2480677,,1090012,DVN,XNYS,New York Stock Exchange,USD
+562,US-147,Americas,North America,United States,"Dexcom, Inc.",Consumer Goods Conglomerates,252131107,US2521311074,B0796X4,,1093557,DXCM,XNAS,Nasdaq Stock Market,USD
+563,US-148,Americas,North America,United States,Electronic Arts Inc.,Software & IT Solutions / Digital Services,285512109,US2855121099,2310194,,712515,EA,XNAS,Nasdaq Stock Market,USD
+564,US-149,Americas,North America,United States,Ebay Inc.,Diversified Retail,278642103,US2786421030,2293819,,1065088,EBAY,XNAS,Nasdaq Stock Market,USD
+565,US-150,Americas,North America,United States,Ecolab Inc.,Consumer & Household Products,278865100,US2788651006,2304227,,31462,ECL,XNYS,New York Stock Exchange,USD
+566,US-151,Americas,North America,United States,"Consolidated Edison, Inc.",Electrical Utilities & Ipps,209115104,US2091151041,2216850,,1047862,ED,XNYS,New York Stock Exchange,USD
+567,US-152,Americas,North America,United States,Equifax Inc.,Professional & Commercial Services,294429105,US2944291051,2319146,,33185,EFX,XNYS,New York Stock Exchange,USD
+568,US-153,Americas,North America,United States,"Everest Group, Ltd.",Banking Services,G3223R108,BMG3223R1088,2556868,,1095073,EG,XNYS,New York Stock Exchange,USD
+569,US-154,Americas,North America,United States,Edison International,Electrical Utilities & Ipps,281020107,US2810201077,2829515,,827052,EIX,XNYS,New York Stock Exchange,USD
+570,US-155,Americas,North America,United States,The Estee Lauder Companies Inc.,Chemicals,518439104,US5184391044,2320524,,1001250,EL,XNYS,New York Stock Exchange,USD
+571,US-156,Americas,North America,United States,"Elevance Health, Inc.",Healthcare Providers & Services,36752103,US0367521038,BSPHGL4,,1156039,ELV,XNYS,New York Stock Exchange,USD
+572,US-157,Americas,North America,United States,Eastman Chemical Company,Pharmaceuticals,277432100,US2774321002,2298386,,915389,EMN,XNYS,New York Stock Exchange,USD
+573,US-158,Americas,North America,United States,Emerson Electric Co.,Consumer Goods Conglomerates,291011104,US2910111044,2313405,,32604,EMR,XNYS,New York Stock Exchange,USD
+574,US-159,Americas,North America,United States,"Enphase Energy, Inc.",Renewable Energy,29355A107,US29355A1079,B65SQW4,,1463101,ENPH,XNAS,Nasdaq Stock Market,USD
+575,US-160,Americas,North America,United States,"Eog Resources, Inc.",Oil & Gas,26875P101,US26875P1012,2318024,,821189,EOG,XNYS,New York Stock Exchange,USD
+576,US-161,Americas,North America,United States,"Epam Systems, Inc.",Software & IT Solutions / Digital Services,29414B104,US29414B1044,B44Z3T8,,1352010,EPAM,XNYS,New York Stock Exchange,USD
+577,US-162,Americas,North America,United States,"Equinix, Inc.",Real Estate Investment Trusts (REITs),29444U700,US29444U7000,BVLZX12,,1101239,EQIX,XNAS,Nasdaq Stock Market,USD
+578,US-163,Americas,North America,United States,Equity Residential,Real Estate Investment Trusts (REITs),29476L107,US29476L1070,2319157,,906107,EQR,XNYS,New York Stock Exchange,USD
+579,US-164,Americas,North America,United States,Eqt Corporation,Oil & Gas,26884L109,US26884L1098,2319414,,33213,EQT,XNYS,New York Stock Exchange,USD
+580,US-165,Americas,North America,United States,Erie Indemnity Class A,Insurance,29530P102,US29530P1021,,,922621,ERIE,XNAS,Nasdaq Stock Market,USD
+581,US-166,Americas,North America,United States,Eversource Energy,Electrical Utilities & Ipps,30040W108,US30040W1080,BVVN4Q8,,72741,ES,XNYS,New York Stock Exchange,USD
+582,US-167,Americas,North America,United States,"Essex Property Trust, Inc.",Real Estate Investment Trusts (REITs),297178105,US2971781057,2316619,,920522,ESS,XNYS,New York Stock Exchange,USD
+583,US-168,Americas,North America,United States,Entergy Corporation,Electrical Utilities & Ipps,29364G103,US29364G1031,2317087,,65984,ETR,XNYS,New York Stock Exchange,USD
+584,US-169,Americas,North America,United States,"Evergy, Inc.",Electrical Utilities & Ipps,30034W106,US30034W1062,BFMXGR0,,1711269,EVRG,XNAS,Nasdaq Stock Market,USD
+585,US-170,Americas,North America,United States,Edwards Lifesciences Corporation,Medical Devices & Supplies,2.8176E+112,US28176E1082,2567116,,1099800,EW,XNYS,New York Stock Exchange,USD
+586,US-171,Americas,North America,United States,Exelon Corporation,Electrical Utilities & Ipps,30161N101,US30161N1019,2670519,,1109357,EXC,XNAS,Nasdaq Stock Market,USD
+587,US-172,Americas,North America,United States,Expand Energy,Oil & Gas,895126,US1651677353,BMZ5LZ5,BBG00Z6DX554,895126,EXE,XNAS,Nasdaq Stock Market,USD
+588,US-173,Americas,North America,United States,"Expeditors International Of Washington, Inc",Energy Equipment & Services,302130109,US3021301094,2325507,,746515,EXPD,XNYS,New York Stock Exchange,USD
+589,US-174,Americas,North America,United States,"Expedia Group, Inc.",Professional & Commercial Services,30212P303,US30212P3038,B748CK2,,1324424,EXPE,XNAS,Nasdaq Stock Market,USD
+590,US-175,Americas,North America,United States,Extra Space Storage Inc.,Real Estate Investment Trusts (REITs),30225T102,US30225T1025,B02HWR9,,1289490,EXR,XNYS,New York Stock Exchange,USD
+591,US-176,Americas,North America,United States,Ford Motor Company,Automobiles & Auto Parts,345370860,US3453708600,2615468,,37996,F,XNYS,New York Stock Exchange,USD
+592,US-177,Americas,North America,United States,"Diamondback Energy, Inc.",Oil & Gas,25278X109,US25278X1090,B7Y8YR3,,1539838,FANG,XNAS,Nasdaq Stock Market,USD
+593,US-178,Americas,North America,United States,Fastenal Company,Food & Tobacco,311900104,US3119001044,2332262,,815556,FAST,XNAS,Nasdaq Stock Market,USD
+594,US-179,Americas,North America,United States,Freeport-Mcmoran Inc.,Metals & Mining,35671D857,US35671D8570,2352118,,831259,FCX,XNYS,New York Stock Exchange,USD
+595,US-180,Americas,North America,United States,Factset Research Systems Inc.,Professional & Commercial Services,303075105,US3030751057,2329770,,1013237,FDS,XNYS,New York Stock Exchange,USD
+596,US-181,Americas,North America,United States,Fedex Corporation,Freight & Logistics Services,31428X106,US31428X1063,2142784,,1048911,FDX,XNYS,New York Stock Exchange,USD
+597,US-182,Americas,North America,United States,Firstenergy Corp.,Electrical Utilities & Ipps,337932107,US3379321074,2100920,,1031296,FE,XNYS,New York Stock Exchange,USD
+598,US-183,Americas,North America,United States,"F5, Inc.",Software & IT Solutions / Digital Services,315616102,US3156161024,2427599,,1048695,FFIV,XNAS,Nasdaq Stock Market,USD
+599,US-184,Americas,North America,United States,"Fiserv, Inc.",Media & Publishing,337738108,US3377381088,2342034,,798354,FI,XNYS,New York Stock Exchange,USD
+600,US-185,Americas,North America,United States,Fair Isaac Corporation,Software & IT Solutions / Digital Services,303250104,US3032501047,2330299,,814547,FICO,XNYS,New York Stock Exchange,USD
+601,US-186,Americas,North America,United States,"Fidelity National Information Services, Inc.",Biotechnology & Life Sciences,31620M106,US31620M1062,2769796,,1136893,FIS,XNYS,New York Stock Exchange,USD
+602,US-187,Americas,North America,United States,Fifth Third Bancorp,Banking Services,316773100,US3167731005,2336747,,35527,FITB,XNAS,Nasdaq Stock Market,USD
+603,US-188,Americas,North America,United States,Fox Corporation,Media & Publishing,35137L204,US35137L2043,BJJMGY5,,1754301,FOX,XNAS,Nasdaq Stock Market,USD
+604,US-189,Americas,North America,United States,Fox Corporation,Media & Publishing,35137L105,US35137L1052,BJJMGL2,,1754301,FOXA,XNAS,Nasdaq Stock Market,USD
+605,US-190,Americas,North America,United States,Federal Realty Investment Trust,Real Estate Investment Trusts (REITs),313745101,US3137451015,BN7P9B2,,34903,FRT,XNYS,New York Stock Exchange,USD
+606,US-191,Americas,North America,United States,"First Solar, Inc.",Semiconductors & Chip Technologies,336433107,US3364331070,B1HMF22,,1274494,FSLR,XNAS,Nasdaq Stock Market,USD
+607,US-192,Americas,North America,United States,"Fortinet, Inc.",Hotels & Entertainment Services,3.4959E+113,US34959E1091,B5B2106,,1262039,FTNT,XNAS,Nasdaq Stock Market,USD
+608,US-193,Americas,North America,United States,Fortive Corporation,Electronic Components & Systems,34959J108,US34959J1088,BYT3MK1,,1659166,FTV,XNYS,New York Stock Exchange,USD
+609,US-194,Americas,North America,United States,General Dynamics Corporation,Aerospace & Defense,369550108,US3695501086,2365161,,40533,GD,XNYS,New York Stock Exchange,USD
+610,US-195,Americas,North America,United States,Godaddy Inc.,Software & IT Solutions / Digital Services,380237107,US3802371076,BWFRFC6,,1609711,GDDY,XNYS,New York Stock Exchange,USD
+611,US-196,Americas,North America,United States,General Electric Company,"Machinery, Equipment & Components",369604301,US3696043013,BL59CR9,,40545,GE,XNYS,New York Stock Exchange,USD
+612,US-197,Americas,North America,United States,Ge Healthcare Technologies Inc.,Medical Devices & Supplies,36266G107,US36266G1076,BL6JPG8,,1932393,GEHC,XNAS,Nasdaq Stock Market,USD
+613,US-198,Americas,North America,United States,Gen Digital Inc.,Fintech Services / Digital Financial Platforms,668771108,US6687711084,BJN4XN5,,849399,GEN,XNAS,Nasdaq Stock Market,USD
+614,US-199,Americas,North America,United States,GE Vernova,Electrical Utilities & IPPs,36828A101,US36828A1016,,,1996810,GEV,XNYS,New York Stock Exchange,USD
+615,US-200,Americas,North America,United States,Globalfoundries Inc.,Semiconductors & Chip Technologies,G39387108,KYG393871085,BMW7F63,,17948,GFS,XNAS,Nasdaq Stock Market,USD
+616,US-201,Americas,North America,United States,"Gilead Sciences, Inc.",Biotechnology & Life Sciences,375558103,US3755581036,2369174,,882095,GILD,XNAS,Nasdaq Stock Market,USD
+617,US-202,Americas,North America,United States,"General Mills, Inc.",Food & Tobacco,370334104,US3703341046,2367026,,40704,GIS,XNYS,New York Stock Exchange,USD
+618,US-203,Americas,North America,United States,Globe Life Inc.,Insurance,3.7959E+106,US37959E1029,BK6YKG1,,320335,GL,XNYS,New York Stock Exchange,USD
+619,US-204,Americas,North America,United States,Corning Incorporated,Containers & Packaging,219350105,US2193501051,2224701,,24741,GLW,XNYS,New York Stock Exchange,USD
+620,US-205,Americas,North America,United States,General Motors Company,Automobiles & Auto Parts,37045V100,US37045V1008,B665KZ5,,1467858,GM,XNYS,New York Stock Exchange,USD
+621,US-206,Americas,North America,United States,Generac Holdings Inc.,"Machinery, Equipment & Components",368736104,US3687361044,B6197Q2,,1474735,GNRC,XNYS,New York Stock Exchange,USD
+622,US-207,Americas,North America,United States,Alphabet Inc.,Software & IT Solutions / Digital Services,02079K107,US02079K1079,BYY88Y7,,1652044,GOOG,XNAS,Nasdaq Stock Market,USD
+623,US-208,Americas,North America,United States,Alphabet Inc.,Software & IT Solutions / Digital Services,02079K305,US02079K3059,BYVY8G0,,1652044,GOOGL,XNAS,Nasdaq Stock Market,USD
+624,US-209,Americas,North America,United States,Genuine Parts Company,Medical Devices & Supplies,372460105,US3724601055,2367480,,40987,GPC,XNYS,New York Stock Exchange,USD
+625,US-210,Americas,North America,United States,Global Payments Inc.,Software & IT Solutions / Digital Services,37940X102,US37940X1028,2712013,,1123360,GPN,XNYS,New York Stock Exchange,USD
+626,US-211,Americas,North America,United States,"The Goldman Sachs Group, Inc.",Capital Markets & Advisory,38141G104,US38141G1040,2407966,,886982,GS,XNYS,New York Stock Exchange,USD
+627,US-212,Americas,North America,United States,"W.W. Grainger, Inc.",Automobiles & Auto Parts,384802104,US3848021040,2380863,,277135,GWW,XNYS,New York Stock Exchange,USD
+628,US-213,Americas,North America,United States,Halliburton Company,Energy Equipment & Services,406216101,US4062161017,2405302,,45012,HAL,XNYS,New York Stock Exchange,USD
+629,US-214,Americas,North America,United States,"Hasbro, Inc.",Containers & Packaging,418056107,US4180561072,2414580,,46080,HAS,XNAS,Nasdaq Stock Market,USD
+630,US-215,Americas,North America,United States,Huntington Bancshares Incorporated,Banking Services,446150104,US4461501045,2445966,,49196,HBAN,XNAS,Nasdaq Stock Market,USD
+631,US-216,Americas,North America,United States,"Hca Healthcare, Inc.",Healthcare Providers & Services,40412C101,US40412C1018,B4MGBG6,,860730,HCA,XNYS,New York Stock Exchange,USD
+632,US-217,Americas,North America,United States,"The Home Depot, Inc.",Specialty Retailers,437076102,US4370761029,2434209,,354950,HD,XNYS,New York Stock Exchange,USD
+634,US-219,Americas,North America,United States,"The Hartford Financial Services Group, Inc.",Insurance,416515104,US4165151048,2476193,,874766,HIG,XNYS,New York Stock Exchange,USD
+635,US-220,Americas,North America,United States,"Huntington Ingalls Industries, Inc.","Machinery, Equipment & Components",446413106,US4464131063,B40SSC9,,1501585,HII,XNYS,New York Stock Exchange,USD
+636,US-221,Americas,North America,United States,Hilton Worldwide Holdings Inc.,Hotels & Entertainment Services,43300A203,US43300A2033,BYVMW06,,1585689,HLT,XNYS,New York Stock Exchange,USD
+637,US-222,Americas,North America,United States,"Hologic, Inc.",Medical Devices & Supplies,436440101,US4364401012,2433530,,859737,HOLX,XNAS,Nasdaq Stock Market,USD
+638,US-223,Americas,North America,United States,Honeywell International Inc.,Aerospace & Defense,438516106,US4385161066,2020459,,773840,HON,XNAS,Nasdaq Stock Market,USD
+639,US-224,Americas,North America,United States,Hewlett Packard Enterprise Company,"Machinery, Equipment & Components",42824C109,US42824C1099,BYVYWS0,,1645590,HPE,XNYS,New York Stock Exchange,USD
+640,US-225,Americas,North America,United States,Hp Inc.,Consumer Electronics,40434L105,US40434L1052,BYX4D52,,47217,HPQ,XNYS,New York Stock Exchange,USD
+641,US-226,Americas,North America,United States,Hormel Foods Corporation,Food & Tobacco,440452100,US4404521001,2437264,,48465,HRL,XNYS,New York Stock Exchange,USD
+642,US-227,Americas,North America,United States,"Henry Schein, Inc.",Leisure Products,806407102,US8064071025,2416962,,1000228,HSIC,XNAS,Nasdaq Stock Market,USD
+643,US-228,Americas,North America,United States,"Host Hotels & Resorts, Inc.",Real Estate Investment Trusts (REITs),44107P104,US44107P1049,2567503,,1070750,HST,XNAS,Nasdaq Stock Market,USD
+644,US-229,Americas,North America,United States,The Hershey Company,Food & Tobacco,427866108,US4278661081,2422806,,47111,HSY,XNYS,New York Stock Exchange,USD
+645,US-230,Americas,North America,United States,Hubbell Incorporated,Aerospace & Defense,443510607,US4435106079,BDFG6S3,,48898,HUBB,XNYS,New York Stock Exchange,USD
+646,US-231,Americas,North America,United States,Humana Inc.,Healthcare Providers & Services,444859102,US4448591028,2445063,,49071,HUM,XNYS,New York Stock Exchange,USD
+647,US-232,Americas,North America,United States,Howmet Aerospace Inc.,Electronic Components & Systems,443201108,US4432011082,BKLJ8V2,,4281,HWM,XNYS,New York Stock Exchange,USD
+648,US-233,Americas,North America,United States,International Business Machines Corporation,Software & IT Solutions / Digital Services,459200101,US4592001014,2005973,,51143,IBM,XNYS,New York Stock Exchange,USD
+649,US-234,Americas,North America,United States,"Intercontinental Exchange, Inc.",Capital Markets & Advisory,45866F104,US45866F1049,BFSSDS9,,1571949,ICE,XNYS,New York Stock Exchange,USD
+650,US-235,Americas,North America,United States,"Idexx Laboratories, Inc.",Pharmaceuticals,45168D104,US45168D1046,2459202,,874716,IDXX,XNAS,Nasdaq Stock Market,USD
+651,US-236,Americas,North America,United States,Idex Corporation,"Machinery, Equipment & Components",45167R104,US45167R1041,2456612,,832101,IEX,XNYS,New York Stock Exchange,USD
+652,US-237,Americas,North America,United States,International Flavors & Fragrances Inc.,Chemicals,459506101,US4595061015,2464165,,51253,IFF,XNYS,New York Stock Exchange,USD
+653,US-238,Americas,North America,United States,Incyte Corporation,Software & IT Solutions / Digital Services,45337C102,US45337C1027,2471950,,879169,INCY,XNAS,Nasdaq Stock Market,USD
+654,US-239,Americas,North America,United States,Intel Corporation,Semiconductors & Chip Technologies,458140100,US4581401001,2463247,,50863,INTC,XNAS,Nasdaq Stock Market,USD
+655,US-240,Americas,North America,United States,Intuit Inc.,Software & IT Solutions / Digital Services,461202103,US4612021034,2459020,,896878,INTU,XNAS,Nasdaq Stock Market,USD
+656,US-241,Americas,North America,United States,Invitation Homes Inc.,Real Estate Investment Trusts (REITs),46187W107,US46187W1071,BD81GW9,,1687229,INVH,XNYS,New York Stock Exchange,USD
+657,US-242,Americas,North America,United States,International Paper Company,Containers & Packaging,460146103,US4601461035,2465254,,51434,IP,XNYS,New York Stock Exchange,USD
+659,US-244,Americas,North America,United States,Iqvia Holdings Inc,Media & Publishing,46266C105,US46266C1053,BDR73G1,,1478242,IQV,XNYS,New York Stock Exchange,USD
+660,US-245,Americas,North America,United States,Ingersoll Rand Inc.,Consumer Goods Conglomerates,45687V106,US45687V1061,BL5GZ82,,1699150,IR,XNYS,New York Stock Exchange,USD
+661,US-246,Americas,North America,United States,Iron Mountain Incorporated,Real Estate Investment Trusts (REITs),46284V101,US46284V1017,BVFTF03,,1020569,IRM,XNYS,New York Stock Exchange,USD
+662,US-247,Americas,North America,United States,"Intuitive Surgical, Inc.",Medical Devices & Supplies,46120E602,US46120E6023,2871301,,1035267,ISRG,XNAS,Nasdaq Stock Market,USD
+663,US-248,Americas,North America,United States,"Gartner, Inc.",Software & IT Solutions / Digital Services,366651107,US3666511072,2372763,,749251,IT,XNYS,New York Stock Exchange,USD
+664,US-249,Americas,North America,United States,Illinois Tool Works Inc.,Electronic Components & Systems,452308109,US4523081093,2457552,,49826,ITW,XNYS,New York Stock Exchange,USD
+665,US-250,Americas,North America,United States,Invesco Ltd.,Insurance,G491BT108,BMG491BT1088,B28XP76,,914208,IVZ,XNYS,New York Stock Exchange,USD
+666,US-251,Americas,North America,United States,Jacobs Solutions Inc.,Software & IT Solutions / Digital Services,46982L108,US46982L1089,BNGC0D3,,52988,J,XNYS,New York Stock Exchange,USD
+667,US-252,Americas,North America,United States,"J. B. Hunt Transport Services, Inc.",Freight & Logistics Services,445658107,US4456581077,2445416,,728535,JBHT,XNAS,Nasdaq Stock Market,USD
+668,US-253,Americas,North America,United States,Jabil Inc.,Semiconductors & Chip Technologies,466313103,US4663131039,2471789,,898293,JBL,XNYS,New York Stock Exchange,USD
+669,US-254,Americas,North America,United States,Johnson Controls International Plc,"Machinery, Equipment & Components",G51502105,IE00BY7QL619,BY7QL61,,833444,JCI,XNYS,New York Stock Exchange,USD
+670,US-255,Americas,North America,United States,"Jack Henry & Associates, Inc.",Software & IT Solutions / Digital Services,426281101,US4262811015,2469193,,779152,JKHY,XNAS,Nasdaq Stock Market,USD
+671,US-256,Americas,North America,United States,Johnson & Johnson,Pharmaceuticals,478160104,US4781601046,2475833,,200406,JNJ,XNYS,New York Stock Exchange,USD
+673,US-258,Americas,North America,United States,Jpmorgan Chase & Co.,Banking Services,46625H100,US46625H1005,2190385,,19617,JPM,XNYS,New York Stock Exchange,USD
+675,US-260,Americas,North America,United States,Keurig Dr Pepper Inc.,Beverages,49271V100,US49271V1008,BD3W133,,1418135,KDP,XNAS,Nasdaq Stock Market,USD
+676,US-261,Americas,North America,United States,Keycorp,Banking Services,493267108,US4932671088,2490911,,91576,KEY,XNYS,New York Stock Exchange,USD
+677,US-262,Americas,North America,United States,"Keysight Technologies, Inc.",Semiconductors & Chip Technologies,49338L103,US49338L1035,BQZJ0Q9,,1601046,KEYS,XNYS,New York Stock Exchange,USD
+678,US-263,Americas,North America,United States,The Kraft Heinz Company,Food & Tobacco,500754106,US5007541064,BYRY499,,1637459,KHC,XNAS,Nasdaq Stock Market,USD
+679,US-264,Americas,North America,United States,Kimco Realty Corporation.,Real Estate Investment Trusts (REITs),49446R109,US49446R1095,2491594,,879101,KIM,XNYS,New York Stock Exchange,USD
+680,US-265,Americas,North America,United States,Kkr & Co. Inc.,Capital Markets & Advisory,48251W104,US48251W1045,BG1FRR1,,1404912,KKR,XNYS,New York Stock Exchange,USD
+681,US-266,Americas,North America,United States,Kla Corporation,"Machinery, Equipment & Components",482480100,US4824801009,2480138,,319201,KLAC,XNAS,Nasdaq Stock Market,USD
+682,US-267,Americas,North America,United States,Kimberly-Clark Corporation,Chemicals,494368103,US4943681035,2491839,,55785,KMB,XNAS,Nasdaq Stock Market,USD
+683,US-268,Americas,North America,United States,"Kinder Morgan, Inc.",Energy Equipment & Services,49456B101,US49456B1017,B3NQ4P8,,1506307,KMI,XNYS,New York Stock Exchange,USD
+684,US-269,Americas,North America,United States,"Carmax, Inc.",Specialty Retailers,143130102,US1431301027,2983563,,1170010,KMX,XNYS,New York Stock Exchange,USD
+685,US-270,Americas,North America,United States,The Coca-Cola Company,Beverages,191216100,US1912161007,2206657,,21344,KO,XNYS,New York Stock Exchange,USD
+686,US-271,Americas,North America,United States,The Kroger Co.,Software & IT Solutions / Digital Services,501044101,US5010441013,2497406,,56873,KR,XNYS,New York Stock Exchange,USD
+687,US-272,Americas,North America,United States,Kenvue Inc,Consumer & Household Products,49177J102,US49177J1025,BQ84ZQ6,,1944048,KVUE,XNYS,New York Stock Exchange,USD
+688,US-273,Americas,North America,United States,Loews Corporation,Insurance,540424108,US5404241086,2523022,,60086,L,XNYS,New York Stock Exchange,USD
+689,US-274,Americas,North America,United States,"Leidos Holdings, Inc.",Software & IT Solutions / Digital Services,525327102,US5253271028,BDV82B8,,1336920,LDOS,XNYS,New York Stock Exchange,USD
+690,US-275,Americas,North America,United States,Lennar Corporation,Residential Construction & Materials,526057104,US5260571048,2511920,,920760,LEN,XNYS,New York Stock Exchange,USD
+691,US-276,Americas,North America,United States,Laboratory Corporation Of America Holdings,Healthcare Providers & Services,50540R409,US50540R4092,2586122,,920148,LH,XNYS,New York Stock Exchange,USD
+692,US-277,Americas,North America,United States,"L3Harris Technologies, Inc.",Aerospace & Defense,502431109,US5024311095,BK9DTN5,,202058,LHX,XNYS,New York Stock Exchange,USD
+693,US-278,Americas,North America,United States,Lennox International Inc.,Aerospace & Defense,526107107,US5261071071,2442053,,1069202,LII,XNYS,New York Stock Exchange,USD
+694,US-279,Americas,North America,United States,Lkq Corporation,Automobiles & Auto Parts,501889208,US5018892084,2971029,,1065696,LKQ,XNAS,Nasdaq Stock Market,USD
+695,US-280,Americas,North America,United States,Eli Lilly And Company,Pharmaceuticals,532457108,US5324571083,2516152,,59478,LLY,XNYS,New York Stock Exchange,USD
+696,US-281,Americas,North America,United States,Lockheed Martin Corporation,Communications & Networking,539830109,US5398301094,2522096,,936468,LMT,XNYS,New York Stock Exchange,USD
+697,US-282,Americas,North America,United States,Alliant Energy Corporation,Integrated Utilities,18802108,US0188021085,2973821,,352541,LNT,XNAS,Nasdaq Stock Market,USD
+698,US-283,Americas,North America,United States,"Lowe'S Companies, Inc.",Diversified Retail,548661107,US5486611073,2536763,,60667,LOW,XNYS,New York Stock Exchange,USD
+699,US-284,Americas,North America,United States,Lam Research Corporation,"Machinery, Equipment & Components",512807108,US5128071082,2502247,,707549,LRCX,XNAS,Nasdaq Stock Market,USD
+700,US-285,Americas,North America,United States,Southwest Airlines Co.,Passenger Transportation Services,844741108,US8447411088,2831543,,92380,LUV,XNYS,New York Stock Exchange,USD
+701,US-286,Americas,North America,United States,Las Vegas Sands Corp.,Hotels & Entertainment Services,517834107,US5178341070,B02T2J7,,1300514,LVS,XNYS,New York Stock Exchange,USD
+702,US-287,Americas,North America,United States,"Lamb Weston Holdings, Inc.",Food & Tobacco,513272104,US5132721045,BDQZFJ3,,1679273,LW,XNYS,New York Stock Exchange,USD
+703,US-288,Americas,North America,United States,"Live Nation Entertainment, Inc.",Hotels & Entertainment Services,538034109,US5380341090,B0T7YX2,,1335258,LYV,XNYS,New York Stock Exchange,USD
+704,US-289,Americas,North America,United States,Mastercard Incorporated.,Professional & Commercial Services,57636Q104,US57636Q1040,B121557,,1141391,MA,XNYS,New York Stock Exchange,USD
+705,US-290,Americas,North America,United States,"Mid-America Apartment Communities, Inc.",Real Estate Investment Trusts (REITs),59522J103,US59522J1034,2589132,,912595,MAA,XNYS,New York Stock Exchange,USD
+706,US-291,Americas,North America,United States,"Marriott International, Inc.",Hotels & Entertainment Services,571903202,US5719032022,2210614,,1048286,MAR,XNAS,Nasdaq Stock Market,USD
+707,US-292,Americas,North America,United States,Masco Corporation,Aerospace & Defense,574599106,US5745991068,2570200,,62996,MAS,XNYS,New York Stock Exchange,USD
+708,US-293,Americas,North America,United States,Mcdonald'S Corporation,Hotels & Entertainment Services,580135101,US5801351017,2550707,,63908,MCD,XNYS,New York Stock Exchange,USD
+709,US-294,Americas,North America,United States,Microchip Technology Incorporated,Semiconductors & Chip Technologies,595017104,US5950171042,2592174,,827054,MCHP,XNAS,Nasdaq Stock Market,USD
+710,US-295,Americas,North America,United States,Mckesson Corporation,Food & Drug Retailing,58155Q103,US58155Q1031,2378534,,927653,MCK,XNYS,New York Stock Exchange,USD
+711,US-296,Americas,North America,United States,Moody'S Corporation,Professional & Commercial Services,615369105,US6153691059,2252058,,1059556,MCO,XNYS,New York Stock Exchange,USD
+712,US-297,Americas,North America,United States,"Mondelez International, Inc.",Food & Tobacco,609207105,US6092071058,B8CKK03,,1103982,MDLZ,XNAS,Nasdaq Stock Market,USD
+713,US-298,Americas,North America,United States,"Metlife, Inc.",Insurance,59156R108,US59156R1086,2573209,,1099219,MET,XNYS,New York Stock Exchange,USD
+714,US-299,Americas,North America,United States,"Meta Platforms, Inc.",Software & IT Solutions / Digital Services,30303M102,US30303M1027,B7TL820,,1099219,META,XNAS,Nasdaq Stock Market,USD
+715,US-300,Americas,North America,United States,Mgm Resorts International,Hotels & Entertainment Services,552953101,US5529531015,2547419,,789570,MGM,XNYS,New York Stock Exchange,USD
+716,US-301,Americas,North America,United States,"Mohawk Industries, Inc.",Textiles & Apparel,608190104,US6081901042,2598699,,851968,MHK,XNYS,New York Stock Exchange,USD
+717,US-302,Americas,North America,United States,"Mccormick & Company, Incorporated",Food & Tobacco,579780206,US5797802064,2550161,,63754,MKC,XNYS,New York Stock Exchange,USD
+718,US-303,Americas,North America,United States,Marketaxess Holdings Inc.,Capital Markets & Advisory,57060D108,US57060D1081,B03Q9D0,,1278021,MKTX,XNAS,Nasdaq Stock Market,USD
+719,US-304,Americas,North America,United States,"Martin Marietta Materials, Inc.",Construction Materials,573284106,US5732841060,2572079,,916076,MLM,XNYS,New York Stock Exchange,USD
+720,US-305,Americas,North America,United States,"Marsh & Mclennan Companies, Inc.",Insurance,571748102,US5717481023,2567741,,62709,MMC,XNYS,New York Stock Exchange,USD
+721,US-306,Americas,North America,United States,3M Company,Medical Devices & Supplies,88579Y101,US88579Y1010,2595708,,66740,MMM,XNYS,New York Stock Exchange,USD
+722,US-307,Americas,North America,United States,Monster Beverage Corporation,Food & Tobacco,61174X109,US61174X1090,BZ07BW4,,865752,MNST,XNAS,Nasdaq Stock Market,USD
+723,US-308,Americas,North America,United States,"Altria Group, Inc.",Food & Tobacco,02209S103,US02209S1033,2692632,,764180,MO,XNYS,New York Stock Exchange,USD
+724,US-309,Americas,North America,United States,"Molina Healthcare, Inc.",Healthcare Providers & Services,60855R100,US60855R1005,2212706,,1179929,MOH,XNYS,New York Stock Exchange,USD
+725,US-310,Americas,North America,United States,The Mosaic Company,Oil & Gas,61945C103,US61945C1036,B3NPHP6,,1285785,MOS,XNYS,New York Stock Exchange,USD
+726,US-311,Americas,North America,United States,Marathon Petroleum Corporation,Oil & Gas,56585A102,US56585A1025,B3K3L40,,1510295,MPC,XNYS,New York Stock Exchange,USD
+727,US-312,Americas,North America,United States,"Monolithic Power Systems, Inc.",Semiconductors & Chip Technologies,609839105,US6098391054,B01Z7J1,,1280452,MPWR,XNAS,Nasdaq Stock Market,USD
+728,US-313,Americas,North America,United States,"Merck & Co., Inc.",Pharmaceuticals,58933Y105,US58933Y1055,2778844,,310158,MRK,XNYS,New York Stock Exchange,USD
+729,US-314,Americas,North America,United States,"Moderna, Inc.",Biotechnology & Life Sciences,60770K107,US60770K1079,BGSXTS3,,1682852,MRNA,XNAS,Nasdaq Stock Market,USD
+730,US-315,Americas,North America,United States,"Marvell Technology, Inc",Semiconductors & Chip Technologies,573874104,US5738741041,BNKJSM5,,1835632,MRVL,XNAS,Nasdaq Stock Market,USD
+731,US-316,Americas,North America,United States,Morgan Stanley,Capital Markets & Advisory,617446448,US6174464486,2262314,,895421,MS,XNYS,New York Stock Exchange,USD
+732,US-317,Americas,North America,United States,Msci Inc.,Software & IT Solutions / Digital Services,55354G100,US55354G1004,B2972D2,,1408198,MSCI,XNYS,New York Stock Exchange,USD
+733,US-318,Americas,North America,United States,Microsoft Corporation,Software & IT Solutions / Digital Services,594918104,US5949181045,2588173,,789019,MSFT,XNAS,Nasdaq Stock Market,USD
+734,US-319,Americas,North America,United States,"Motorola Solutions, Inc.",Semiconductors & Chip Technologies,620076307,US6200763075,B5BKPQ4,,68505,MSI,XNYS,New York Stock Exchange,USD
+735,US-320,Americas,North America,United States,MicroStrategy,Software & IT Solutions / Digital Services,594972408,US5949724083,BN92WX4,BBG000CKLT59,1050446,MSTR,XNAS,Nasdaq Stock Market,USD
+736,US-321,Americas,North America,United States,M&T Bank Corporation,Capital Markets & Advisory,55261F104,US55261F1049,2340168,,36270,MTB,XNYS,New York Stock Exchange,USD
+737,US-322,Americas,North America,United States,"Match Group, Inc.",Software & IT Solutions / Digital Services,57667L107,US57667L1070,BK80XH9,,891103,MTCH,XNAS,Nasdaq Stock Market,USD
+738,US-323,Americas,North America,United States,Mettler-Toledo International Inc.,Healthcare Providers & Services,5.93E+08,US5926881054,2126249,,1037646,MTD,XNYS,New York Stock Exchange,USD
+739,US-324,Americas,North America,United States,"Micron Technology, Inc.",Semiconductors & Chip Technologies,595112103,US5951121038,2588184,,723125,MU,XNAS,Nasdaq Stock Market,USD
+740,US-325,Americas,North America,United States,Norwegian Cruise Line Holdings Ltd.,Hotels & Entertainment Services,G66721104,BMG667211046,B9CGTC3,,1513761,NCLH,XNYS,New York Stock Exchange,USD
+741,US-326,Americas,North America,United States,"Nasdaq, Inc.",Capital Markets & Advisory,631103108,US6311031081,2965107,,1120193,NDAQ,XNAS,Nasdaq Stock Market,USD
+742,US-327,Americas,North America,United States,Nordson Corporation,Consumer Electronics,655663102,US6556631025,2641838,,72331,NDSN,XNAS,Nasdaq Stock Market,USD
+743,US-328,Americas,North America,United States,"Nextera Energy, Inc.",Electrical Utilities & Ipps,65339F101,US65339F1012,2328915,,753308,NEE,XNYS,New York Stock Exchange,USD
+744,US-329,Americas,North America,United States,Newmont Corporation,Oil & Gas,651639106,US6516391066,2636607,,1164727,NEM,XNYS,New York Stock Exchange,USD
+745,US-330,Americas,North America,United States,"Netflix, Inc.",Media & Publishing,64110L106,US64110L1061,2857817,,1065280,NFLX,XNAS,Nasdaq Stock Market,USD
+746,US-331,Americas,North America,United States,Nisource Inc.,Electrical Utilities & Ipps,65473P105,US65473P1057,2645409,,1111711,NI,XNYS,New York Stock Exchange,USD
+747,US-332,Americas,North America,United States,"Nike, Inc.",Medical Devices & Supplies,654106103,US6541061031,2640147,,320187,NKE,XNYS,New York Stock Exchange,USD
+748,US-333,Americas,North America,United States,Northrop Grumman Corporation,Electronic Components & Systems,666807102,US6668071029,2648806,,1133421,NOC,XNYS,New York Stock Exchange,USD
+749,US-334,Americas,North America,United States,"Servicenow, Inc.",Software & IT Solutions / Digital Services,81762P102,US81762P1021,B80NXX8,,1373715,NOW,XNYS,New York Stock Exchange,USD
+750,US-335,Americas,North America,United States,"Nrg Energy, Inc.",Electrical Utilities & Ipps,629377508,US6293775085,2212922,,1013871,NRG,XNYS,New York Stock Exchange,USD
+751,US-336,Americas,North America,United States,Norfolk Southern Corporation,Freight & Logistics Services,655844108,US6558441084,2641894,,702165,NSC,XNYS,New York Stock Exchange,USD
+752,US-337,Americas,North America,United States,"Netapp, Inc.",Consumer Electronics,64110D104,US64110D1046,2630643,,1002047,NTAP,XNAS,Nasdaq Stock Market,USD
+753,US-338,Americas,North America,United States,Northern Trust Corporation,Capital Markets & Advisory,665859104,US6658591044,2648668,,73124,NTRS,XNAS,Nasdaq Stock Market,USD
+754,US-339,Americas,North America,United States,Nucor Corporation,Metals & Mining,670346105,US6703461052,2651086,,73309,NUE,XNYS,New York Stock Exchange,USD
+755,US-340,Americas,North America,United States,Nvidia Corporation,Semiconductors & Chip Technologies,67066G104,US67066G1040,2379504,,1045810,NVDA,XNAS,Nasdaq Stock Market,USD
+756,US-341,Americas,North America,United States,"Nvr, Inc.",Residential Construction & Materials,62944T105,US62944T1051,2637785,,906163,NVR,XNYS,New York Stock Exchange,USD
+757,US-342,Americas,North America,United States,News Corporation,Media & Publishing,65249B208,US65249B2088,BBGVT51,,1564708,NWS,XNAS,Nasdaq Stock Market,USD
+758,US-343,Americas,North America,United States,News Corporation,Telecommunications Services,65249B109,US65249B1098,BBGVT40,,1564708,NWSA,XNAS,Nasdaq Stock Market,USD
+759,US-344,Americas,North America,United States,Realty Income Corporation,Real Estate Investment Trusts (REITs),756109104,US7561091049,2724193,,726728,O,XNYS,New York Stock Exchange,USD
+760,US-345,Americas,North America,United States,"Old Dominion Freight Line, Inc.",Hotels & Entertainment Services,679580100,US6795801009,2656423,,878927,ODFL,XNAS,Nasdaq Stock Market,USD
+761,US-346,Americas,North America,United States,"Oneok, Inc.",Natural Gas Utilities,682680103,US6826801036,2130109,,1039684,OKE,XNYS,New York Stock Exchange,USD
+762,US-347,Americas,North America,United States,Omnicom Group Inc.,Software & IT Solutions / Digital Services,681919106,US6819191064,2279303,,29989,OMC,XNYS,New York Stock Exchange,USD
+763,US-348,Americas,North America,United States,On Semiconductor Corporation,Semiconductors & Chip Technologies,682189105,US6821891057,2583576,,1097864,ON,XNAS,Nasdaq Stock Market,USD
+764,US-349,Americas,North America,United States,Oracle Corporation,Software & IT Solutions / Digital Services,68389X105,US68389X1054,2661568,,1341439,ORCL,XNYS,New York Stock Exchange,USD
+765,US-350,Americas,North America,United States,"O'Reilly Automotive, Inc.",Specialty Retailers,67103H107,US67103H1077,B65LWX6,,898173,ORLY,XNAS,Nasdaq Stock Market,USD
+766,US-351,Americas,North America,United States,Otis Worldwide Corporation,"Machinery, Equipment & Components",68902V107,US68902V1070,BK531S8,,1781335,OTIS,XNYS,New York Stock Exchange,USD
+767,US-352,Americas,North America,United States,Occidental Petroleum Corporation,Oil & Gas,674599105,US6745991058,2655408,,797468,OXY,XNYS,New York Stock Exchange,USD
+768,US-353,Americas,North America,United States,"Palo Alto Networks, Inc.","Machinery, Equipment & Components",697435105,US6974351057,B87ZMX0,,1327567,PANW,XNAS,Nasdaq Stock Market,USD
+770,US-355,Americas,North America,United States,"Paycom Software, Inc.",Software & IT Solutions / Digital Services,70432V102,US70432V1026,BL95MY0,,1590955,PAYC,XNYS,New York Stock Exchange,USD
+771,US-356,Americas,North America,United States,"Paychex, Inc.",Office Equipment,704326107,US7043261079,2674458,,723531,PAYX,XNAS,Nasdaq Stock Market,USD
+772,US-357,Americas,North America,United States,Paccar Inc,Automobiles & Auto Parts,693718108,US6937181088,2665861,,75362,PCAR,XNAS,Nasdaq Stock Market,USD
+773,US-358,Americas,North America,United States,Pg&E Corporation,Integrated Utilities,69331C108,US69331C1080,2689560,,1004980,PCG,XNYS,New York Stock Exchange,USD
+774,US-359,Americas,North America,United States,Public Service Enterprise Group Incorporated,Electrical Utilities & Ipps,744573106,US7445731067,2707677,,788784,PEG,XNYS,New York Stock Exchange,USD
+775,US-360,Americas,North America,United States,"Pepsico, Inc.",Beverages,713448108,US7134481081,2681511,,77476,PEP,XNAS,Nasdaq Stock Market,USD
+776,US-361,Americas,North America,United States,Pfizer Inc.,Biotechnology & Life Sciences,717081103,US7170811035,2684703,,78003,PFE,XNYS,New York Stock Exchange,USD
+777,US-362,Americas,North America,United States,"Principal Financial Group, Inc.",Healthcare Providers & Services,74251V102,US74251V1026,2803014,,1126328,PFG,XNAS,Nasdaq Stock Market,USD
+778,US-363,Americas,North America,United States,The Procter & Gamble Company,Consumer & Household Products,742718109,US7427181091,2704407,,80424,PG,XNYS,New York Stock Exchange,USD
+779,US-364,Americas,North America,United States,The Progressive Corporation,Insurance,743315103,US7433151039,2705024,,80661,PGR,XNYS,New York Stock Exchange,USD
+780,US-365,Americas,North America,United States,Parker-Hannifin Corporation,Automobiles & Auto Parts,701094104,US7010941042,2671501,,76334,PH,XNYS,New York Stock Exchange,USD
+781,US-366,Americas,North America,United States,"Pultegroup, Inc.",Construction & Engineering,745867101,US7458671010,2708841,,822416,PHM,XNYS,New York Stock Exchange,USD
+782,US-367,Americas,North America,United States,Packaging Corporation Of America,Containers & Packaging,695156109,US6951561090,2504566,,75677,PKG,XNYS,New York Stock Exchange,USD
+783,US-368,Americas,North America,United States,"Prologis, Inc.",Real Estate Investment Trusts (REITs),74340W103,US74340W1036,B44WZD7,,1045609,PLD,XNYS,New York Stock Exchange,USD
+784,US-369,Americas,North America,United States,Palantir Technologies Inc.,Software & IT Solutions / Digital Services,69608A108,US69608A1088,BN78DQ4,,1321655,PLTR,XNAS,Nasdaq Stock Market,USD
+785,US-370,Americas,North America,United States,Philip Morris International Inc.,Consumer & Household Products,718172109,US7181721090,B2PKRQ3,,1413329,PM,XNYS,New York Stock Exchange,USD
+786,US-371,Americas,North America,United States,"The Pnc Financial Services Group, Inc.",Banking Services,693475105,US6934751057,2692665,,713676,PNC,XNYS,New York Stock Exchange,USD
+787,US-372,Americas,North America,United States,Pinnacle West Capital Corporation,Integrated Utilities,723484101,US7234841010,2048804,,764622,PNW,XNYS,New York Stock Exchange,USD
+788,US-373,Americas,North America,United States,Insulet Corporation,Medical Devices & Supplies,45784P101,US45784P1012,B1XGNW4,,1145197,PODD,XNAS,Nasdaq Stock Market,USD
+789,US-374,Americas,North America,United States,Pool Corporation,Medical Devices & Supplies,73278L105,US73278L1052,2781585,,945841,POOL,XNAS,Nasdaq Stock Market,USD
+790,US-375,Americas,North America,United States,"Ppg Industries, Inc.",Food & Tobacco,693506107,US6935061076,2698470,,79879,PPG,XNYS,New York Stock Exchange,USD
+791,US-376,Americas,North America,United States,Ppl Corporation,Electrical Utilities & Ipps,69351T106,US69351T1060,2680905,,922224,PPL,XNYS,New York Stock Exchange,USD
+792,US-377,Americas,North America,United States,"Prudential Financial, Inc.",Insurance,744320102,US7443201022,2819118,,1137774,PRU,XNYS,New York Stock Exchange,USD
+793,US-378,Americas,North America,United States,Public Storage Operating Company,Real Estate Investment Trusts (REITs),74460D109,US74460D1090,2852533,,1393311,PSA,XNYS,New York Stock Exchange,USD
+794,US-379,Americas,North America,United States,Phillips 66,Oil & Gas,718546104,US7185461040,B78C4Y8,,1534701,PSX,XNYS,New York Stock Exchange,USD
+795,US-380,Americas,North America,United States,Ptc Inc.,Software & IT Solutions / Digital Services,69370C100,US69370C1009,B95N910,,857005,PTC,XNAS,Nasdaq Stock Market,USD
+796,US-381,Americas,North America,United States,"Quanta Services, Inc.","Machinery, Equipment & Components",7.4762E+106,US74762E1029,2150204,,1050915,PWR,XNYS,New York Stock Exchange,USD
+797,US-382,Americas,North America,United States,"Paypal Holdings, Inc.",Software & IT Solutions / Digital Services,70450Y103,US70450Y1038,BYW36M8,,1633917,PYPL,XNAS,Nasdaq Stock Market,USD
+798,US-383,Americas,North America,United States,Qualcomm Incorporated,Semiconductors & Chip Technologies,747525103,US7475251036,2714923,,804328,QCOM,XNAS,Nasdaq Stock Market,USD
+799,US-384,Americas,North America,United States,Royal Caribbean Cruises Ltd.,Passenger Transportation Services,V7780T103,LR0008862868,2754907,,884887,RCL,XNYS,New York Stock Exchange,USD
+800,US-385,Americas,North America,United States,Regency Centers Corporation,Real Estate Investment Trusts (REITs),758849103,US7588491032,2726177,,910606,REG,XNAS,Nasdaq Stock Market,USD
+801,US-386,Americas,North America,United States,"Regeneron Pharmaceuticals, Inc.",Biotechnology & Life Sciences,75886F107,US75886F1075,2730190,,872589,REGN,XNAS,Nasdaq Stock Market,USD
+802,US-387,Americas,North America,United States,Regions Financial Corporation,Banking Services,7591EP100,US7591EP1005,B01R311,,1281761,RF,XNYS,New York Stock Exchange,USD
+803,US-388,Americas,North America,United States,"Raymond James Financial, Inc.",Capital Markets & Advisory,754730109,US7547301090,2718992,,720005,RJF,XNYS,New York Stock Exchange,USD
+804,US-389,Americas,North America,United States,Ralph Lauren Corporation,Textiles & Apparel,751212101,US7512121010,B4V9661,,1037038,RL,XNYS,New York Stock Exchange,USD
+805,US-390,Americas,North America,United States,Resmed Inc.,Medical Devices & Supplies,761152107,US7611521078,2732903,,943819,RMD,XNYS,New York Stock Exchange,USD
+806,US-391,Americas,North America,United States,"Rockwell Automation, Inc.",Medical Devices & Supplies,773903109,US7739031091,2754060,,1024478,ROK,XNYS,New York Stock Exchange,USD
+807,US-392,Americas,North America,United States,"Rollins, Inc.",Professional & Commercial Services,775711104,US7757111049,2747305,,84839,ROL,XNYS,New York Stock Exchange,USD
+808,US-393,Americas,North America,United States,"Roper Technologies, Inc.",Software & IT Solutions / Digital Services,776696106,US7766961061,2749602,,882835,ROP,XNAS,Nasdaq Stock Market,USD
+809,US-394,Americas,North America,United States,"Ross Stores, Inc.",Diversified Retail,778296103,US7782961038,2746711,,745732,ROST,XNAS,Nasdaq Stock Market,USD
+810,US-395,Americas,North America,United States,"Republic Services, Inc.",Professional & Commercial Services,760759100,US7607591002,2262530,,1060391,RSG,XNYS,New York Stock Exchange,USD
+811,US-396,Americas,North America,United States,Rtx Corporation,Aerospace & Defense,7.5513E+105,US75513E1010,BM5M5Y3,,101829,RTX,XNYS,New York Stock Exchange,USD
+812,US-397,Americas,North America,United States,"Revvity, Inc.",Medical Devices & Supplies,714046109,US7140461093,2305844,,31791,RVTY,XNYS,New York Stock Exchange,USD
+813,US-398,Americas,North America,United States,Sba Communications Corporation,Real Estate Investment Trusts (REITs),78410G104,US78410G1040,BZ6TS23,,1034054,SBAC,XNAS,Nasdaq Stock Market,USD
+814,US-399,Americas,North America,United States,Starbucks Corporation,Hotels & Entertainment Services,855244109,US8552441094,2842255,,829224,SBUX,XNAS,Nasdaq Stock Market,USD
+815,US-400,Americas,North America,United States,The Charles Schwab Corporation,Capital Markets & Advisory,808513105,US8085131055,2779397,,316709,SCHW,XNYS,New York Stock Exchange,USD
+816,US-401,Americas,North America,United States,The Sherwin-Williams Company,Software & IT Solutions / Digital Services,824348106,US8243481061,2804211,,89800,SHW,XNYS,New York Stock Exchange,USD
+817,US-402,Americas,North America,United States,The J. M. Smucker Company,Food & Tobacco,832696405,US8326964058,2951452,,91419,SJM,XNYS,New York Stock Exchange,USD
+818,US-403,Americas,North America,United States,Schlumberger N.V.,Construction Materials,806857108,AN8068571086,2779201,,87347,SLB,XNYS,New York Stock Exchange,USD
+819,US-404,Americas,North America,United States,Super Micro Computer Inc,Consumer Electronics,86800U302,US86800U1043,,,1375365,SMCI,XNAS,Nasdaq Stock Market,USD
+820,US-405,Americas,North America,United States,Snap-On Incorporated,"Machinery, Equipment & Components",833034101,US8330341012,2818740,,91440,SNA,XNYS,New York Stock Exchange,USD
+821,US-406,Americas,North America,United States,"Synopsys, Inc.",Software & IT Solutions / Digital Services,871607107,US8716071076,2867719,,883241,SNPS,XNAS,Nasdaq Stock Market,USD
+822,US-407,Americas,North America,United States,The Southern Company,Energy Equipment & Services,842587107,US8425871071,2829601,,92122,SO,XNYS,New York Stock Exchange,USD
+823,US-408,Americas,North America,United States,Solventum,Medical Devices & Supplies,83444M101,US83444M1018,,BBG018YZH6T3,1964738,SOLV,XNYS,New York Stock Exchange,USD
+824,US-409,Americas,North America,United States,"Simon Property Group, Inc.",Real Estate Investment Trusts (REITs),828806109,US8288061091,2812452,,1063761,SPG,XNYS,New York Stock Exchange,USD
+825,US-410,Americas,North America,United States,S&P Global Inc.,Professional & Commercial Services,78409V104,US78409V1044,BYV2325,,64040,SPGI,XNYS,New York Stock Exchange,USD
+826,US-411,Americas,North America,United States,Sempra,Water Utilities,816851109,US8168511090,2138158,,1032208,SRE,XNYS,New York Stock Exchange,USD
+827,US-412,Americas,North America,United States,"Steel Dynamics, Inc.",Aerospace & Defense,858119100,US8581191009,2849472,,1022671,STLD,XNAS,Nasdaq Stock Market,USD
+828,US-413,Americas,North America,United States,State Street Corporation,Banking Services,857477103,US8574771031,2842040,,93751,STT,XNYS,New York Stock Exchange,USD
+829,US-414,Americas,North America,United States,"Constellation Brands, Inc.",Beverages,21036P108,US21036P1084,2170473,,16918,STZ,XNYS,New York Stock Exchange,USD
+830,US-415,Americas,North America,United States,"Stanley Black & Decker, Inc.",Residential Construction & Materials,854502101,US8545021011,B3Q2FJ4,,93556,SWK,XNYS,New York Stock Exchange,USD
+831,US-416,Americas,North America,United States,"Skyworks Solutions, Inc.",Semiconductors & Chip Technologies,83088M102,US83088M1027,2961053,,4127,SWKS,XNAS,Nasdaq Stock Market,USD
+832,US-417,Americas,North America,United States,Synchrony Financial,Capital Markets & Advisory,87165B103,US87165B1035,BP96PS6,,1601712,SYF,XNYS,New York Stock Exchange,USD
+833,US-418,Americas,North America,United States,Stryker Corporation,Medical Devices & Supplies,863667101,US8636671013,2853688,,310764,SYK,XNYS,New York Stock Exchange,USD
+834,US-419,Americas,North America,United States,Sysco Corporation,Consumer & Household Products,871829107,US8718291078,2868165,,96021,SYY,XNYS,New York Stock Exchange,USD
+835,US-420,Americas,North America,United States,At&T Inc.,Telecommunications Services,00206R102,US00206R1023,2831811,,732717,T,XNYS,New York Stock Exchange,USD
+836,US-421,Americas,North America,United States,Molson Coors Beverage Company,Beverages,60871R209,US60871R2094,B067BM3,,24545,TAP,XNYS,New York Stock Exchange,USD
+837,US-422,Americas,North America,United States,Transdigm Group Incorporated,Aerospace & Defense,893641100,US8936411003,B11FJK3,,1260221,TDG,XNYS,New York Stock Exchange,USD
+838,US-423,Americas,North America,United States,Teledyne Technologies Incorporated,"Machinery, Equipment & Components",879360105,US8793601050,2503477,,1094285,TDY,XNYS,New York Stock Exchange,USD
+839,US-424,Americas,North America,United States,Atlassian Corporation,Leisure Products,49468101,US0494681010,BQ1PC76,,165372,TEAM,XNAS,Nasdaq Stock Market,USD
+840,US-425,Americas,North America,United States,Bio-Techne Corporation,Consumer & Household Products,09073M104,US09073M1045,BSHZ3Q0,,842023,TECH,XNAS,Nasdaq Stock Market,USD
+841,US-426,Americas,North America,United States,"Teradyne, Inc.",Medical Devices & Supplies,880770102,US8807701029,2884183,,97210,TER,XNAS,Nasdaq Stock Market,USD
+842,US-427,Americas,North America,United States,Truist Financial Corporation,Banking Services,89832Q109,US89832Q1094,BKP7287,,92230,TFC,XNYS,New York Stock Exchange,USD
+843,US-428,Americas,North America,United States,Target Corporation,Food & Drug Retailing,8.7612E+110,US87612E1064,2259101,,27419,TGT,XNYS,New York Stock Exchange,USD
+844,US-429,Americas,North America,United States,"The Tjx Companies, Inc.",Specialty Retailers,872540109,US8725401090,2989301,,109198,TJX,XNYS,New York Stock Exchange,USD
+845,US-430,Americas,North America,United States,TKO Group Holdings,Media & Publishing,87256C101,US87256C1018,BQBBFD1,BBG01G9JKWV5,1973266,TKO,XNYS,New York Stock Exchange,USD
+846,US-431,Americas,North America,United States,Thermo Fisher Scientific Inc.,Software & IT Solutions / Digital Services,883556102,US8835561023,2886907,,97745,TMO,XNYS,New York Stock Exchange,USD
+847,US-432,Americas,North America,United States,"T-Mobile Us, Inc.",Telecommunications Services,872590104,US8725901040,B94Q9V0,,1283699,TMUS,XNAS,Nasdaq Stock Market,USD
+848,US-433,Americas,North America,United States,Texas Pacific Land Corporation,Professional & Commercial Services,88262P102,US88262P1021,BM99VY2,,1811074,TPL,XNYS,New York Stock Exchange,USD
+849,US-434,Americas,North America,United States,"Tapestry, Inc.",Metals & Mining,876030107,US8760301072,BF09HX3,,1116132,TPR,XNYS,New York Stock Exchange,USD
+850,US-435,Americas,North America,United States,Targa Resources Corp.,Electrical Utilities & Ipps,87612G101,US87612G1013,B55PZY3,,1389170,TRGP,XNYS,New York Stock Exchange,USD
+851,US-436,Americas,North America,United States,Trimble Inc.,Medical Devices & Supplies,896239100,US8962391004,2903958,,864749,TRMB,XNAS,Nasdaq Stock Market,USD
+852,US-437,Americas,North America,United States,"T. Rowe Price Group, Inc.",Capital Markets & Advisory,74144T108,US74144T1088,2702337,,1113169,TROW,XNAS,Nasdaq Stock Market,USD
+853,US-438,Americas,North America,United States,"The Travelers Companies, Inc.",Insurance,8.9417E+113,US89417E1091,2769503,,86312,TRV,XNYS,New York Stock Exchange,USD
+854,US-439,Americas,North America,United States,Tractor Supply Company,Specialty Retailers,892356106,US8923561067,2900335,,916365,TSCO,XNAS,Nasdaq Stock Market,USD
+855,US-440,Americas,North America,United States,"Tesla, Inc.",Automobiles & Auto Parts,88160R101,US88160R1014,B616C79,,1318605,TSLA,XNAS,Nasdaq Stock Market,USD
+856,US-441,Americas,North America,United States,"Tyson Foods, Inc.",Food & Tobacco,902494103,US9024941034,2909730,,100493,TSN,XNYS,New York Stock Exchange,USD
+857,US-442,Americas,North America,United States,"The Trade Desk, Inc.",Construction & Engineering,88339J105,US88339J1051,BD8FDD1,,1671933,TTD,XNAS,Nasdaq Stock Market,USD
+858,US-443,Americas,North America,United States,"Take-Two Interactive Software, Inc.",Software & IT Solutions / Digital Services,874054109,US8740541094,2122117,,946581,TTWO,XNAS,Nasdaq Stock Market,USD
+859,US-444,Americas,North America,United States,Texas Instruments Incorporated,Electronic Components & Systems,882508104,US8825081040,2885409,,97476,TXN,XNAS,Nasdaq Stock Market,USD
+860,US-445,Americas,North America,United States,Textron Inc.,Aerospace & Defense,883203101,US8832031012,2885937,,217346,TXT,XNYS,New York Stock Exchange,USD
+861,US-446,Americas,North America,United States,"Tyler Technologies, Inc.",Software & IT Solutions / Digital Services,902252105,US9022521051,2909644,,860731,TYL,XNYS,New York Stock Exchange,USD
+862,US-447,Americas,North America,United States,"United Airlines Holdings, Inc.",Freight & Logistics Services,910047109,US9100471096,B4QG225,,100517,UAL,XNAS,Nasdaq Stock Market,USD
+863,US-448,Americas,North America,United States,"Uber Technologies, Inc.",Professional & Commercial Services,90353T100,US90353T1007,BK6N347,,1543151,UBER,XNYS,New York Stock Exchange,USD
+864,US-449,Americas,North America,United States,"Udr, Inc.",Real Estate Investment Trusts (REITs),902653104,US9026531049,2727910,,74208,UDR,XNYS,New York Stock Exchange,USD
+865,US-450,Americas,North America,United States,"Universal Health Services, Inc.",Healthcare Providers & Services,913903100,US9139031002,2923785,,352915,UHS,XNYS,New York Stock Exchange,USD
+866,US-451,Americas,North America,United States,"Ulta Beauty, Inc.",Software & IT Solutions / Digital Services,90384S303,US90384S3031,B28TS42,,1403568,ULTA,XNAS,Nasdaq Stock Market,USD
+867,US-452,Americas,North America,United States,Unitedhealth Group Incorporated,Insurance,91324P102,US91324P1021,2917766,,731766,UNH,XNYS,New York Stock Exchange,USD
+868,US-453,Americas,North America,United States,Union Pacific Corporation,Freight & Logistics Services,907818108,US9078181081,2914734,,100885,UNP,XNYS,New York Stock Exchange,USD
+869,US-454,Americas,North America,United States,"United Parcel Service, Inc.",Freight & Logistics Services,911312106,US9113121068,2517382,,1090727,UPS,XNYS,New York Stock Exchange,USD
+870,US-455,Americas,North America,United States,"United Rentals, Inc.",Software & IT Solutions / Digital Services,911363109,US9113631090,2134781,,1067701,URI,XNYS,New York Stock Exchange,USD
+871,US-456,Americas,North America,United States,U.S. Bancorp,Banking Services,902973304,US9029733048,2736035,,36104,USB,XNYS,New York Stock Exchange,USD
+872,US-457,Americas,North America,United States,Visa Inc.,Professional & Commercial Services,92826C839,US92826C8394,B2PZN04,,1403161,V,XNYS,New York Stock Exchange,USD
+873,US-458,Americas,North America,United States,V.F. Corporation,Containers & Packaging,918204108,US9182041080,2928683,,103379,VFC,XNYS,New York Stock Exchange,USD
+874,US-459,Americas,North America,United States,Vici Properties Inc.,Real Estate Investment Trusts (REITs),925652109,US9256521090,BYWH073,,1705696,VICI,XNYS,New York Stock Exchange,USD
+875,US-460,Americas,North America,United States,Valero Energy Corporation,Textiles & Apparel,91913Y100,US91913Y1001,2041364,,1035002,VLO,XNYS,New York Stock Exchange,USD
+876,US-461,Americas,North America,United States,Vulcan Materials Company,Oil & Gas,929160109,US9291601097,2931205,,1396009,VMC,XNYS,New York Stock Exchange,USD
+877,US-462,Americas,North America,United States,"Verisk Analytics, Inc.",Software & IT Solutions / Digital Services,92345Y106,US92345Y1064,B4P9W92,,1442145,VRSK,XNAS,Nasdaq Stock Market,USD
+878,US-463,Americas,North America,United States,"Verisign, Inc.",Software & IT Solutions / Digital Services,9.23E+106,US92343E1029,2142922,,1014473,VRSN,XNAS,Nasdaq Stock Market,USD
+879,US-464,Americas,North America,United States,Vertex Pharmaceuticals Incorporated,Pharmaceuticals,92532F100,US92532F1003,2931034,,875320,VRTX,XNAS,Nasdaq Stock Market,USD
+880,US-465,Americas,North America,United States,Vistra Corp.,Natural Gas Utilities,92840M102,US92840M1027,BZ8VJQ8,,1692819,VST,XNYS,New York Stock Exchange,USD
+881,US-466,Americas,North America,United States,"Ventas, Inc.",Real Estate Investment Trusts (REITs),92276F100,US92276F1003,2927925,,740260,VTR,XNYS,New York Stock Exchange,USD
+882,US-467,Americas,North America,United States,Viatris Inc.,Pharmaceuticals,92556V106,US92556V1061,BMWS3X9,,1792044,VTRS,XNAS,Nasdaq Stock Market,USD
+883,US-468,Americas,North America,United States,Verizon Communications Inc.,Media & Publishing,92343V104,US92343V1044,2090571,,732712,VZ,XNYS,New York Stock Exchange,USD
+884,US-469,Americas,North America,United States,Westinghouse Air Brake Technologies Corporation,Aerospace & Defense,929740108,US9297401088,2955733,,943452,WAB,XNYS,New York Stock Exchange,USD
+885,US-470,Americas,North America,United States,Waters Corporation,Semiconductors & Chip Technologies,9.42E+08,US9418481035,2937689,,1000697,WAT,XNYS,New York Stock Exchange,USD
+887,US-472,Americas,North America,United States,"Warner Bros. Discovery, Inc.",Software & IT Solutions / Digital Services,934423104,US9344231041,BM8JYX3,,1437107,WBD,XNAS,Nasdaq Stock Market,USD
+888,US-473,Americas,North America,United States,"Workday, Inc.",Software & IT Solutions / Digital Services,98138H101,US98138H1014,B8K6ZD1,,1327811,WDAY,XNAS,Nasdaq Stock Market,USD
+889,US-474,Americas,North America,United States,Western Digital Corporation,Communications & Networking,958102105,US9581021055,2954699,,106040,WDC,XNAS,Nasdaq Stock Market,USD
+890,US-475,Americas,North America,United States,"Wec Energy Group, Inc.",Electrical Utilities & Ipps,92939U106,US92939U1060,BYY8XK8,,783325,WEC,XNYS,New York Stock Exchange,USD
+891,US-476,Americas,North America,United States,Welltower Inc.,Real Estate Investment Trusts (REITs),95040Q104,US95040Q1040,BYVYHH4,,766704,WELL,XNYS,New York Stock Exchange,USD
+892,US-477,Americas,North America,United States,Wells Fargo & Company,Banking Services,949746101,US9497461015,2649100,,72971,WFC,XNYS,New York Stock Exchange,USD
+893,US-478,Americas,North America,United States,"Waste Management, Inc.",Professional & Commercial Services,94106L109,US94106L1098,2937667,,823768,WM,XNYS,New York Stock Exchange,USD
+894,US-479,Americas,North America,United States,"The Williams Companies, Inc.",Media & Publishing,969457100,US9694571004,2967181,,107263,WMB,XNYS,New York Stock Exchange,USD
+895,US-480,Americas,North America,United States,Walmart Inc.,Food & Drug Retailing,931142103,US9311421039,2936921,,104169,WMT,XNYS,New York Stock Exchange,USD
+896,US-481,Americas,North America,United States,W. R. Berkley Corporation,Insurance,84423102,US0844231029,2093644,,11544,WRB,XNYS,New York Stock Exchange,USD
+897,US-482,Americas,North America,United States,"Williams-Sonoma, Inc.",Specialty Retailers,969904101,US9699041011,2967589,,719955,WSM,XNYS,New York Stock Exchange,USD
+898,US-483,Americas,North America,United States,"West Pharmaceutical Services, Inc.",Consumer & Household Products,955306105,US9553061055,2950482,,105770,WST,XNYS,New York Stock Exchange,USD
+899,US-484,Americas,North America,United States,Weyerhaeuser Company,Professional & Commercial Services,962166104,US9621661043,2958936,,106535,WY,XNYS,New York Stock Exchange,USD
+900,US-485,Americas,North America,United States,"Wynn Resorts, Limited",Consumer & Household Products,983134107,US9831341071,2963811,,1174922,WYNN,XNAS,Nasdaq Stock Market,USD
+901,US-486,Americas,North America,United States,Xcel Energy Inc.,Integrated Utilities,98389B100,US98389B1008,2614807,,72903,XEL,XNAS,Nasdaq Stock Market,USD
+902,US-487,Americas,North America,United States,Exxon Mobil Corporation,Energy Equipment & Services,30231G102,US30231G1022,2326618,,34088,XOM,XNYS,New York Stock Exchange,USD
+903,US-488,Americas,North America,United States,Xylem Inc.,"Machinery, Equipment & Components",98419M100,US98419M1009,B3P2CN8,,1524472,XYL,XNYS,New York Stock Exchange,USD
+904,US-489,Americas,North America,United States,"Yum! Brands, Inc.",Hotels & Entertainment Services,988498101,US9884981013,2098876,,1041061,YUM,XNYS,New York Stock Exchange,USD
+905,US-490,Americas,North America,United States,"Zimmer Biomet Holdings, Inc.",Medical Devices & Supplies,98956P102,US98956P1021,2783815,,1136869,ZBH,XNYS,New York Stock Exchange,USD
+906,US-491,Americas,North America,United States,Zebra Technologies Corporation,"Machinery, Equipment & Components",989207105,US9892071054,2989356,,877212,ZBRA,XNAS,Nasdaq Stock Market,USD
+907,US-492,Americas,North America,United States,"Zscaler, Inc.",Software & IT Solutions / Digital Services,98980G102,US98980G1022,BZ00V34,,1713683,ZS,XNAS,Nasdaq Stock Market,USD
+908,US-493,Americas,North America,United States,Zoetis Inc.,Medical Devices & Supplies,98978V103,US98978V1035,B95WG16,,1555280,ZTS,XNYS,New York Stock Exchange,USD
+909,MX-1,Americas,South America,Mexico,Arca Continental Sab De Cv,Beverages,,MX01AC100006,,,,AC*,XMEX,Mexican Stock Exchange,MXN
+910,MX-2,Americas,South America,Mexico,Alfa Sab De Cv,Consumer Goods Conglomerates,,MXP000511016,,,,ALFAA,XMEX,Mexican Stock Exchange,MXN
+911,MX-3,Americas,South America,Mexico,America Mobile,Telecommunications Services,,MX01AM050019,,,,AMXB,XMEX,Mexican Stock Exchange,MXN
+912,MX-4,Americas,South America,Mexico,Southeast Airport Group,Transport Infrastructure,,MXP001661018,,,,ASURB,XMEX,Mexican Stock Exchange,MXN
+913,MX-5,Americas,South America,Mexico,Banco Del Bajio Sa Institucion De Banca Multiple,Banking Services,,MX41BB000000,,,,BBAJIOO,XMEX,Mexican Stock Exchange,MXN
+914,MX-6,Americas,South America,Mexico,Grupo Bimbo Sab De Cv,Food & Tobacco,,MXP495211262,,,,BIMBOA,XMEX,Mexican Stock Exchange,MXN
+915,MX-7,Americas,South America,Mexico,Cemex Publicly Traded Stock Corporation With Variable Capital,Construction Materials,,MXP225611567,,,,CEMEXCPO,XMEX,Mexican Stock Exchange,MXN
+916,MX-8,Americas,South America,Mexico,Fibra Uno Administracion Sa De Cv,Real Estate Investment Trusts (REITs),,MXCFFU000001,,,,FUNO11,XMEX,Mexican Stock Exchange,MXN
+917,MX-9,Americas,South America,Mexico,"Pacific Airport Group, S.A.B. De Cv",Transport Infrastructure,,MX01GA000004,,,,GAPB,XMEX,Mexican Stock Exchange,MXN
+918,MX-10,Americas,South America,Mexico,Grupo Carso Sab De Cv,Consumer Goods Conglomerates,,MXP461181085,,,,GCARSOA1,XMEX,Mexican Stock Exchange,MXN
+919,MX-11,Americas,South America,Mexico,Grupo Financiero Inbursa Sab De Cv,Banking Services,,MXP370641013,,,,GFINBURO,XMEX,Mexican Stock Exchange,MXN
+920,MX-12,Americas,South America,Mexico,Grupo Financiero Banorte Sab De Cv,Banking Services,,MXP370711014,,,,GFNORTEO,XMEX,Mexican Stock Exchange,MXN
+921,MX-13,Americas,South America,Mexico,Grupo Mexico Sab De Cv,Metals & Mining,,MXP370841019,,,,GMEXICOB,XMEX,Mexican Stock Exchange,MXN
+922,MX-14,Americas,South America,Mexico,Gruma Sab De Cv,Food & Tobacco,,MXP4948K1056,,,,GRUMAB,XMEX,Mexican Stock Exchange,MXN
+923,MX-15,Americas,South America,Mexico,Kimberly-Clark De Mexico Sab De Cv,Consumer & Household Products,,MXP606941179,,,,KIMBERA,XMEX,Mexican Stock Exchange,MXN
+924,MX-16,Americas,South America,Mexico,Coca-Cola Femsa Sab De Cv,Beverages,,MX01KO000002,,,,KOFUBL,XMEX,Mexican Stock Exchange,MXN
+925,MX-17,Americas,South America,Mexico,Orbia Advance Corporation Sab De Cv,Chemicals,,MX01OR010004,,,,ORBIA*,XMEX,Mexican Stock Exchange,MXN
+926,MX-18,Americas,South America,Mexico,Industrias Penoles Sab De Cv,Metals & Mining,,MXP554091415,,,,PE&OLES*,XMEX,Mexican Stock Exchange,MXN
+927,MX-19,Americas,South America,Mexico,Promotora Y Operadora De Infraestructura Sab De Cv,Transport Infrastructure,,MX01PI000005,,,,PINFRA*,XMEX,Mexican Stock Exchange,MXN
+928,MX-20,Americas,South America,Mexico,Operadora De Sites Mexicanos Sa De Cv,Telecommunications Services,,MX01SI0C0002,,,,SITES1A.1,XMEX,Mexican Stock Exchange,MXN
+929,MX-21,Americas,South America,Mexico,Grupo Televisa Sab,Media & Publishing,,MXP4987V1378,,,,TLEVISACPO,XMEX,Mexican Stock Exchange,MXN
+930,MX-22,Americas,South America,Mexico,Walmart Inc.,Food & Drug Retailing,,MX01WA000038,,,,WMT*,XMEX,Mexican Stock Exchange,MXN

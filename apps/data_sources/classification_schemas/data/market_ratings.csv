@@ -1,0 +1,59 @@
+Country,S&P Rating,Moody Rating,Fitch Rating,Market Status,Region
+Mexico,BBB,Baa2,BBB-,Emerging,AMER
+Argentina,CCC,Ca,CC,Emerging,AMER
+Brazil,BB,Ba2,BB,Emerging,AMER
+Chile,A,A2,A-,Emerging,AMER
+Colombia,BB+,Baa2,BB+,Emerging,AMER
+Costa Rica,BB-,B1,BB-,Emerging,AMER
+Peru,BBB-,Baa1,BBB,Emerging,AMER
+Canada,AAA,Aaa,AA+,Developed,AMER
+United States,AA+,Aa1,AA+,Developed,AMER
+China,A+,A1,A+,Emerging,APAC
+Hong Kong Sar,AA+,Aa3,AA-,Developed,APAC
+Japan,A+,A1,A,Developed,APAC
+South Korea,AA,Aa2,AA-,Developed,APAC
+Taiwan,AA+,Aa3,AA,Developed,APAC
+Australia,AAA,Aaa,AAA,Developed,APAC
+New Zealand,AA+,Aaa,AA+,Developed,APAC
+India,BBB-,Baa3,BBB-,Emerging,APAC
+Pakistan,CCC+,Caa3,CCC,Frontier,APAC
+Sri Lanka,SD,Ca,RD,Frontier,APAC
+Russia Federation,NR,NR,RD,Emerging,EMEA
+Euro Area,AA,Aaa,AAA,Developed,EMEA
+Hungary,BBB-,Baa2,BBB,Emerging,EMEA
+Poland,A-,A2,A-,Emerging,EMEA
+Austria,AA+,Aa1,AA+,Developed,EMEA
+Bulgaria,BBB,Baa1,BBB,Emerging,EMEA
+Czechia,AA-,Aa3,AA-,Developed,EMEA
+Slovakia,A+,A2,A-,Emerging,EMEA
+Slovenia,AA-,A3,A,Emerging,EMEA
+Romania,BBB-,Baa3,BBB-,Emerging,EMEA
+Israel,A+,A2,A+,Developed,EMEA
+Saudi Arabia,A,A1,A+,Emerging,EMEA
+Egypt,B-,Caa1,B-,Emerging,EMEA
+Denmark,AAA,Aaa,AAA,Developed,EMEA
+Estonia,A+,A1,A+,Developed,EMEA
+Finland,AA+,Aa1,AA+,Developed,EMEA
+Iceland,A+,A2,A,Developed,EMEA
+Latvia,A,A3,A-,Developed,EMEA
+Lithuania,A,A2,A,Developed,EMEA
+Norway,AAA,Aaa,AAA,Developed,EMEA
+Sweden,AAA,Aaa,AAA,Developed,EMEA
+Croatia,BBB+,Baa2,BBB+,Emerging,EMEA
+Cyprus,BBB+,Baa2,BBB+,Emerging,EMEA
+Greece,BBB-,Ba1,BBB-,Emerging,EMEA
+Italy,BBB,Baa3,BBB,Developed,EMEA
+Malta,A-,A2,A+,Developed,EMEA
+Portugal,A-,A3,A-,Developed,EMEA
+Spain,A,Baa1,A-,Developed,EMEA
+Turkey,B+,B1,B+,Emerging,EMEA
+South Africa,BB-,Ba2,BB-,Emerging,EMEA
+Nigeria,B-,Caa1,B-,Frontier,EMEA
+Belgium,AA,Aa3,AA-,Developed,EMEA
+France,AA-,Aa2,AA-,Developed,EMEA
+Germany,AAA,Aaa,AAA,Developed,EMEA
+Ireland,AA,Aa3,AA,Developed,EMEA
+Luxembourg,AAA,Aaa,AAA,Developed,EMEA
+Netherlands,AAA,Aaa,AAA,Developed,EMEA
+Switzerland,AAA,Aaa,AAA,Developed,EMEA
+United Kingdom,AA,Aa3,AA-,Developed,EMEA

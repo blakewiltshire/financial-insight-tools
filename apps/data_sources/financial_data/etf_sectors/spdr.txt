@@ -1,0 +1,372 @@
+Symbol	Select Sector SPDR Fund
+
+
+
+SPY	S&P 500
+XLC	Communication Services
+XLY	Consumer Discretionary
+XLP	Consumer Staples
+XLE	Energy
+XLF	Financials
+XLV	Health Care
+XLI	Industrials
+XLB	Materials
+XLRE	Real Estate
+XLK	Technology
+XLU	Utilities
+
+
+SPY ETF Stock Price History.csvXLB ETF Stock Price History.csvXLC ETF Stock Price History.csvXLE ETF Stock Price History.csvXLF ETF Stock Price History.csvXLI ETF Stock Price History.csvXLK ETF Stock Price History.csvXLP ETF Stock Price History.csvXLRE ETF Stock Price History.csvXLU ETF Stock Price History.csvXLV ETF Stock Price History.csvXLY ETF Stock Price History.csv
+
+
+
+Ok, so this realtes to correlation and is and should remain the default file (assets/index) as provide a more generic view. We need to do similar for files that reside in /assets/spdr and then /assets/countries. What we need to do is correlate between the name of the downloaded file and the Fund type, as investing.com does not show the fund name.
+
+
+The following is the def we use for assets/index. We either expand to include spdr, countries and user or we create separate instances. We need to be mindful of the correlation_df as is used to create the condition for the Person calculation. 
+
+
+# data_processing.py
+
+############################################################################################
+
+def load_and_clean_indices():
+    """
+    Load and clean the index data from the /assets/index directory.
+    """
+    index_files = [
+        "SP500_index.csv", "Nasdaq_100.csv", "Russell_2000.csv", "FTSE_100.csv",
+        "DXY_index.csv", "GSCI_index.csv", "US_10YR_Treasury_Bond.csv"
+    ]
+
+    index_data_frames = []
+
+    # Load and clean each index file
+    for file in index_files:
+        index_name = file.split('_')[0]  # Extract the index name (e.g., SP500, Nasdaq)
+        index_df = pd.read_csv(f'assets/index/{file}')  # Load the index CSV file
+        cleaned_index_data = clean_index_data(index_df, index_name)  # Clean the data
+        index_data_frames.append(cleaned_index_data)  # Add cleaned data to list
+
+    # Combine all cleaned index data into a single DataFrame
+    correlation_df = pd.concat(index_data_frames, axis=0, ignore_index=True)
+    return correlation_df
+
+
+############################################################################################
+
+
+These are the contents of each directory. Bear in mind that index doesn't have the names separately defined, as investing.com provide in the filename. Others don't... We should also bear in mind that our def file works with our configuration, so lets try not to break anything ;)
+
+
+assets/index
+
+DXY_index.csvFTSE_100.csvGSCI_index.csvNasdaq_100.csvrussell_2000.csvSP500_index.csvUS_10YR_Treasury_Bond.csv
+
+
+assets/spdr
+
+SPY	S&P 500
+XLC	Communication Services
+XLY	Consumer Discretionary
+XLP	Consumer Staples
+XLE	Energy
+XLF	Financials
+XLV	Health Care
+XLI	Industrials
+XLB	Materials
+XLRE	Real Estate
+XLK	Technology
+XLU	Utilities
+
+
+SPY ETF Stock Price History.csvXLB ETF Stock Price History.csvXLC ETF Stock Price History.csvXLE ETF Stock Price History.csvXLF ETF Stock Price History.csvXLI ETF Stock Price History.csvXLK ETF Stock Price History.csvXLP ETF Stock Price History.csvXLRE ETF Stock Price History.csvXLU ETF Stock Price History.csvXLV ETF Stock Price History.csvXLY ETF Stock Price History.csv
+
+
+/assets/countries
+
+iShares MSCI USA ETF: Ticker: EUSA
+iShares MSCI UK ETF: Ticker: EWU
+iShares MSCI Japan ETF: Ticker: EWJ
+iShares MSCI Canada ETF: Ticker: EWC
+iShares MSCI Germany ETF: Ticker: EWG
+iShares MSCI France ETF: Ticker: EWQ
+iShares MSCI Australia ETF: Ticker: EWA
+iShares MSCI Italy ETF: Ticker: EWI
+iShares MSCI Spain ETF: Ticker: EWP
+iShares MSCI Switzerland ETF: Ticker: EWL
+iShares MSCI Hong Kong ETF: Ticker: EWH
+iShares MSCI South Korea ETF: Ticker: EWY
+
+
+
+EUSA ETF Stock Price History.csvEWA ETF Stock Price History.csvEWC ETF Stock Price History.csvEWG ETF Stock Price History.csvEWH ETF Stock Price History.csvEWI ETF Stock Price History.csvEWJ ETF Stock Price History.csvEWL ETF Stock Price History.csvEWP ETF Stock Price History.csvEWQ ETF Stock Price History.csvEWU ETF Stock Price History.csvEWY ETF Stock Price History.csv
+
+
+
+assets/user
+
+[Empty]
+
+
+Ok, so for the Pearson’s or Spearman’s calculations, these are applied in statistic.py. One thing to consider is the correlation_df. We need to consider whether we need to create multiple instances to not break existing, and then we have the user. 
+
+
+def pearsons_or_spearmans_correlation(correlation_df, asset_df, asset_column, method='pearson'):
+    """
+    Calculate the Pearson’s or Spearman’s correlation between the selected asset and the market indices.
+    """
+
+    try:
+        # The asset_column is now directly referring to the column name (e.g., "Tesla") in correlation_df
+        # The column is already named after DATA_TITLE, e.g., "Tesla"
+        asset_column_name = asset_column  # The column is already named after DATA_TITLE, e.g., "Tesla"
+
+        # Check if the asset column exists in correlation_df
+        if asset_column_name not in correlation_df.columns:
+            raise ValueError(f"Column '{asset_column_name}' not found in correlation_df. Ensure that the asset column exists.")
+
+        # Loop over each market index column in correlation_df (those with '_return' in their name)
+        for index_column in [col for col in correlation_df.columns if '_return' in col]:  # Find all return columns
+            # Filter out rows where either the asset or the market index column has NaN or zero values
+            valid_data = correlation_df[(correlation_df[asset_column_name].notna()) & (correlation_df[index_column].notna())]
+            valid_data = valid_data[(valid_data[asset_column_name] != 0) & (valid_data[index_column] != 0)]
+
+            # If there are not enough valid data points for correlation, skip the calculation
+            if len(valid_data) < 2:
+                st.write(f"Not enough valid data to compute correlation between {asset_column} and {index_column}")
+                continue
+
+            # Perform Pearson or Spearman correlation on the valid data
+            if method == 'pearson':
+                correlation, p_value = pearsonr(valid_data[asset_column_name], valid_data[index_column])
+            elif method == 'spearman':
+                correlation, p_value = spearmanr(valid_data[asset_column_name], valid_data[index_column])
+            else:
+                raise ValueError("Invalid method. Choose either 'pearson' or 'spearman'.")
+
+            # Display results for each index
+            st.write(f"**Correlation between {asset_column} and {index_column}**: {correlation:.2f}")
+            st.write(f"P-value: {p_value:.4f}")
+
+            # Explanation based on correlation strength
+            if correlation == 1:
+                explanation = f"Perfect positive correlation: As the market index increases, {asset_column} increases proportionally."
+            elif correlation == -1:
+                explanation = f"Perfect negative correlation: As the market index increases, {asset_column} decreases proportionally."
+            elif correlation == 0:
+                explanation = f"No correlation: {asset_column} and the market index move independently."
+            elif 0 < correlation < 0.3:
+                explanation = f"Weak positive correlation: {asset_column} and the market index have a slight tendency to move in the same direction."
+            elif 0.3 < correlation < 0.7:
+                explanation = f"Moderate positive correlation: {asset_column} and the market index generally move in the same direction."
+            elif 0.7 < correlation < 1:
+                explanation = f"Strong positive correlation: {asset_column} and the market index have a strong tendency to move together."
+            elif -0.3 < correlation < 0:
+                explanation = f"Weak negative correlation: {asset_column} and the market index tend to move in opposite directions, but weakly."
+            elif -0.7 < correlation < -0.3:
+                explanation = f"Moderate negative correlation: {asset_column} and the market index generally move in opposite directions."
+            elif -1 < correlation < -0.7:
+                explanation = f"Strong negative correlation: {asset_column} and the market index have a strong tendency to move in opposite directions."
+
+            # Provide the explanation
+            st.write(explanation)
+
+        return correlation, p_value
+
+    except Exception as error:
+        st.write(f"Error performing correlation: {error}")
+        return None, None
+
+Our display is handled by our main.py file. It follows this logic, so loops through and creates the sidebar and features. It all works, so this is expanding.
+
+
+
+
+
+# Now process the selected options
+        for selected_option in all_selected_options:
+            if selected_option == "Pearson’s/Spearman’s Correlation with Market Indices":
+                st.subheader(f"Performing correlation for {DATA_TITLE} against Market Indices")
+                if timeline != 'Interday':
+                    st.warning("Pearson’s/Spearman’s Correlation can only be applied to the 'Interday' timeline.")
+                else:
+                    if 'Volatility' in filtered_df.columns:
+                        correlation_df = load_and_clean_indices()  # Load the cleaned index data
+                        correlation_df = pd.merge(correlation_df, filtered_df[['date', 'Volatility']], on='date', how='inner')
+
+                        correlation_df.rename(columns={'Volatility': f'{DATA_TITLE}'}, inplace=True)
+
+                        pearsons_or_spearmans_correlation_indices(correlation_df, filtered_df, DATA_TITLE)  # Perform the correlation
+                    else:
+                        st.error("The 'Volatility' column is missing in the filtered data.")
+
+
+Ok, so lets back up a bit, we could call from statstics.py and def pearsons_or_spearmans_correlation_user,
+
+However, when the user clicks on we then get into showing a file_uploader and other components needed. We do need to make sure that the uploads are cleaned etc.. Although not complete, the following is a good start. 
+
+
+# main.py
+
+from extensions.statistics_v1 import (
+    calculate_asset_metrics,
+    calculate_volatility,
+    overview_metrics,
+    calculate_probability_of_dpt,
+    calculate_and_format_atr,
+    apply_weekday_filter,
+    apply_month_filter,
+    apply_season_filter,
+    apply_quarter_filter,
+    apply_week_filter,
+    frequency_distribution,
+    pearsons_or_spearmans_correlation_indices,
+    pearsons_or_spearmans_correlation_spdr,
+    pearsons_or_spearmans_correlation_countries,
+    pearsons_or_spearmans_correlation_user,
+    options_statistics_map
+)
+
+
+
+"Correlation & Causation Analysis": [
+                "Volume vs ATR Correlation",
+                "Pearson’s/Spearman’s Correlation with Market Indices",
+                "Pearson’s/Spearman’s Correlation with SPDR Sectors",
+                "Pearson’s/Spearman’s Correlation with Countries"
+		"Pearson’s/Spearman’s Correlation with User Uploads"
+            ],
+        }
+    ),
+
+and add the def to statistics.py and update our 
+
+def pearsons_or_spearmans_correlation_user(correlation_df_countries, asset_df, asset_column, method='pearson'):
+
+
+
+and as well as data_processing.py
+
+def load_and_clean_user_correlations():
+
+
+
+
+
+Pearson’s/Spearman’s Correlation with Market Indices
+Pearson’s/Spearman’s Correlation with SPDR Sectors
+Pearson’s/Spearman’s Correlation with Countries
+Pearson’s/Spearman’s Correlation with User Uploads
+
+
+ok, so not sure how Column 'user_uploaded_asset' is defined?
+
+
+Error performing correlation: Column 'user_uploaded_asset' not found in correlation_df_user.
+
+
+data_processing.df
+
+def load_and_clean_user_correlations(uploaded_files):
+    """
+    Process and clean user-uploaded files to prepare for correlation.
+    This function ensures that the data is cleaned and formatted consistently for correlation analysis.
+
+    Parameters:
+    uploaded_files (list of uploaded files): User-uploaded CSV files.
+
+    Returns:
+    pd.DataFrame: The cleaned DataFrame ready for correlation.
+    """
+    user_data_frames = []
+
+    # Loop through the uploaded files and clean them
+    for uploaded_file in uploaded_files:
+        # Read the file as a DataFrame
+        user_df = pd.read_csv(uploaded_file)
+
+        # Clean the uploaded file using the generic cleaning function
+        # You could use the `name_column` as the column to rename dynamically
+        name_value = uploaded_file.name.split(".")[0]  # Name of the file (without extension)
+
+        # Clean the data using the dynamic name_value for correlation
+        cleaned_user_data = clean_generic_data(user_df, 'user_asset', name_value)
+
+        # Append the cleaned data to the list of data frames
+        user_data_frames.append(cleaned_user_data)
+
+    # Combine the data frames into a single DataFrame
+    correlation_df_user = pd.concat(user_data_frames, axis=0, ignore_index=True)
+
+    return correlation_df_user
+
+
+statistics.py
+
+def pearsons_or_spearmans_correlation_user(correlation_df_user, asset_df, asset_column, method='pearson'):
+    """
+    Calculate the Pearson’s or Spearman’s correlation between the selected user-uploaded assets.
+
+    Parameters:
+    correlation_df_user (pd.DataFrame): The cleaned DataFrame for the user-uploaded data.
+    asset_df (pd.DataFrame): The data for asset to be correlated.
+    asset_column (str): The name of the column containing the asset data.
+    method (str): The correlation method to use ('pearson' or 'spearman').
+
+    Returns:
+    None: Displays correlation results directly.
+    """
+    try:
+        asset_column_name = asset_column  # The column name referring to the uploaded asset
+
+        if asset_column_name not in correlation_df_user.columns:
+            raise ValueError(f"Column '{asset_column_name}' not found in correlation_df_user.")
+
+        # Loop over each column in the user-uploaded data (they could be correlated with each other)
+        for index_column in [col for col in correlation_df_user.columns if '_return' in col]:  # Correlate only return columns
+            # Filter out rows where either the asset or the index column has NaN or zero values
+            valid_data = correlation_df_user[(correlation_df_user[asset_column_name].notna()) & (correlation_df_user[index_column].notna())]
+            valid_data = valid_data[(valid_data[asset_column_name] != 0) & (valid_data[index_column] != 0)]
+
+            # If there are not enough valid data points for correlation, skip the calculation
+            if len(valid_data) < 2:
+                st.write(f"Not enough valid data to compute correlation between {asset_column_name} and {index_column}")
+                continue
+
+            # Perform Pearson or Spearman correlation on the valid data
+            if method == 'pearson':
+                correlation, p_value = pearsonr(valid_data[asset_column_name], valid_data[index_column])
+            elif method == 'spearman':
+                correlation, p_value = spearmanr(valid_data[asset_column_name], valid_data[index_column])
+            else:
+                raise ValueError("Invalid method. Choose either 'pearson' or 'spearman'.")
+
+            # Display the correlation results
+            st.write(f"**Correlation between {asset_column_name} and {index_column}**: {correlation:.2f}")
+            st.write(f"P-value: {p_value:.4f}")
+
+            explanation = get_correlation_explanation(correlation, asset_column_name, index_column)
+            st.write(explanation)
+
+    except Exception as error:
+        st.write(f"Error performing correlation: {error}")
+        return None, None
+
+
+main.py
+
+# Handle User Uploads Correlation (this triggers the file uploader and cleaning)
+            elif selected_option == "Pearson’s/Spearman’s Correlation with User Uploads":
+                st.subheader(f"Performing correlation for {DATA_TITLE} with User Uploads")
+
+                # File uploader logic (only show if this option is selected)
+                uploaded_files = st.file_uploader("Upload your CSV files for correlation", type="csv", accept_multiple_files=True)
+
+                if uploaded_files:
+                    # Clean and prepare the user-uploaded data for correlation
+                    correlation_df_user = load_and_clean_user_correlations(uploaded_files)  # Process uploaded files
+                    # Perform correlation using the processed user-uploaded data
+                    pearsons_or_spearmans_correlation_user(correlation_df_user, correlation_df_user, "user_uploaded_asset")
+                else:
+                    st.warning("Please upload at least one file to perform correlation.")

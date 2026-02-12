@@ -1,0 +1,11 @@
+Trade ID,Asset,Country,Trade Date (Entry),Trade Date (Exit),Entry Price,Exit Price,Position Size,Direction,Fees,P&L (Realised),Currency,Strategy Tag,Sector,Capital Deployed,Leverage Used,Notes
+1,Asset_A,USA,2023-01-10,2023-09-10,100.0,102.0,100,Long,10.0,200.0,USD,Breakout,Tech,10000,1.0,Steady uptrend
+2,Asset_B,UK,2023-02-01,2023-07-15,85.0,83.72,200,Long,15.0,-256.0,GBP,Mean Reversion,Finance,17000,1.0,Unexpected dip
+3,Asset_C,Germany,2023-03-05,2023-11-01,140.0,137.2,150,Short,12.0,420.0,EUR,Pullback,Consumer,21000,1.2,Missed reversal
+4,Asset_D,Japan,2023-01-15,2023-10-20,98.5,97.02,300,Long,18.0,-444.0,JPY,Breakout,Industrial,29500,1.0,Strong breakout
+5,Asset_E,France,2023-04-01,2023-10-01,123.0,120.54,100,Short,9.0,246.0,EUR,Reversal,Tech,12300,1.0,Hit target
+6,Asset_F,USA,2023-06-01,2023-12-01,75.0,73.88,120,Long,10.0,-134.4,USD,Breakout,Consumer,9000,1.0,Low-vol winner
+7,Asset_G,Canada,2023-03-20,2023-09-15,64.0,65.28,200,Long,12.0,256.0,CAD,Pullback,Energy,12800,1.1,Macro surprise
+8,Asset_H,Italy,2023-05-10,2023-10-25,110.0,108.35,180,Long,14.0,-297.0,EUR,Breakout,Finance,19800,1.0,Nice ride
+9,Asset_I,UK,2023-07-01,2023-12-15,132.0,129.36,150,Short,11.0,396.0,GBP,Trend Fade,Industrial,19800,1.0,Clean exit
+10,Asset_J,USA,2023-02-15,2023-08-15,95.0,93.58,100,Long,7.0,-142.0,USD,Reversal,Tech,9500,1.0,Short hold

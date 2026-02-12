@@ -1,0 +1,96 @@
+# -------------------------------------------------------------------------------------------------
+# 🔀 Routing Wrapper — Indicator Input Dispatcher
+# -------------------------------------------------------------------------------------------------
+# pylint: disable=import-error, wrong-import-position, wrong-import-order
+# pylint: disable=invalid-name, non-ascii-file-name
+
+# -------------------------------------------------------------------------------------------------
+# 📘 Docstring
+# -------------------------------------------------------------------------------------------------
+"""
+📍 Local Routing Logic — Thematic Module Extension
+---------------------------------------------------
+
+Defines any country-specific or theme-specific routing overrides for indicators
+requiring different dataframes than the universal default.
+
+✅ Role in the System:
+- Allows precise control where local data structures differ from global templates
+- Ensures correct dataframe selection for signal evaluation during alignment scoring
+- Pure string-matching logic based on full indicator names
+
+🧠 AI Notes:
+- Always performs exact string-based matching.
+- No transformations occur; routing selects the correct cleaned dataframe slice.
+- Use only where local extensions or composite datasets are implemented.
+
+⚙️ Governance Structure:
+1️⃣ Universal routing remains active as the global fallback.
+2️⃣ This file extends or overrides routing for localised data structures.
+3️⃣ All keys must match indicator names defined in `indicator_map_XXX.py`.
+
+🧭 Governance Note:
+- Local routing files are optional.
+- They exist **only** when country-specific composite indicators or dataset disaggregation require adjustments.
+"""
+
+# -------------------------------------------------------------------------------------------------
+# 🧱 Standard Library
+# -------------------------------------------------------------------------------------------------
+import os
+import sys
+
+# -------------------------------------------------------------------------------------------------
+# Third-party Libraries
+# -------------------------------------------------------------------------------------------------
+import pandas as pd
+
+# -------------------------------------------------------------------------------------------------
+# 🛠️ Path Setup
+# -------------------------------------------------------------------------------------------------
+LOCAL_PATH = os.path.abspath(os.path.dirname(__file__))
+UNIVERSAL_PATH = os.path.abspath(os.path.join(LOCAL_PATH, "..", "universal_routing"))
+if UNIVERSAL_PATH not in sys.path:
+    sys.path.append(UNIVERSAL_PATH)
+
+# -------------------------------------------------------------------------------------------------
+# 📦 Universal Routing Import
+# -------------------------------------------------------------------------------------------------
+from universal_routing_200 import get_indicator_input as get_indicator_input_universal
+
+# -------------------------------------------------------------------------------------------------
+# 🔀 Local Routing Logic — Pure String-Match Based Routing
+# -------------------------------------------------------------------------------------------------
+
+# Direct mapping of indicator names to correct dataframe
+SECONDARY_DATA_INDICATORS = {
+    "Business Sector Employment Breakdown – Momentum",
+    "Business Sector Employment Breakdown – Stress",
+    "Business Sector Employment Breakdown – Summary",
+    "Employment Type Balance",
+    "Part-Time Employment Stress",
+    "Employment Quality Shift",
+    "Wage Growth Trend"
+}
+
+EXTENDED_DATA_INDICATORS = {
+    "Initial Jobless Claims",
+    "Continued Jobless Claims"
+}
+
+# -------------------------------------------------------------------------------------------------
+# Dispatcher Function
+# -------------------------------------------------------------------------------------------------
+def get_indicator_input(indicator_name: str, df_dict: dict) -> pd.DataFrame | None:
+    """
+    Direct string-matched routing for local labour market indicators.
+    Fully consistent across signal maps and insight maps.
+    """
+    if indicator_name in SECONDARY_DATA_INDICATORS:
+        return df_dict.get("df_secondary_slice")
+
+    if indicator_name in EXTENDED_DATA_INDICATORS:
+        return df_dict.get("df_extended_slice")
+
+    # Fallback for any universal indicators (e.g. Employment Trends, Unemployment Context etc)
+    return get_indicator_input_universal(indicator_name, df_dict)

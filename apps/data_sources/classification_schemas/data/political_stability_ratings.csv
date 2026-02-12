@@ -1,0 +1,58 @@
+Country,GNI per Capita,Political Stability,Market Infrastructure,Economic Growth Rate,Region
+Argentina,Upper-Middle,Low,Developing,Low,AMER
+Australia,High,High,Advanced,Moderate,APAC
+Austria,High,High,Advanced,Low,EMEA
+Belgium,High,High,Advanced,Moderate,EMEA
+Brazil,Upper-Middle,Moderate,Developing,Moderate,AMER
+Bulgaria,Upper-Middle,Moderate,Developing,Moderate,EMEA
+Canada,High,High,Advanced,Moderate,AMER
+Chile,Upper-Middle,High,Advanced,Moderate,AMER
+China,Upper-Middle,Moderate,Advanced,High,APAC
+Colombia,Upper-Middle,Moderate,Developing,Moderate,AMER
+Costa Rica,Upper-Middle,Moderate,Developing,Moderate,AMER
+Croatia,Upper-Middle,Moderate,Developing,Moderate,EMEA
+Cyprus,Upper-Middle,Moderate,Developing,Moderate,EMEA
+Czechia,High,Moderate,Developing,Low,EMEA
+Denmark,High,Very High,Advanced,Moderate,EMEA
+Egypt,Low,Low,Developing,Moderate,EMEA
+Estonia,High,High,Developing,Moderate,EMEA
+Euro Area,High,High,Advanced,Moderate,EMEA
+Finland,High,High,Advanced,Moderate,EMEA
+France,High,High,Advanced,Moderate,EMEA
+Germany,High,Moderate,Developing,Low,EMEA
+Greece,Upper-Middle,Moderate,Developing,Moderate,EMEA
+Hong Kong Sar,High,High,Advanced,Moderate,APAC
+Hungary,High,Moderate,Advanced,Moderate,EMEA
+Iceland,High,High,Advanced,High,EMEA
+India,Upper-Middle,Moderate,Developing,High,APAC
+Ireland,High,Moderate,Advanced,Moderate,EMEA
+Israel,High,Moderate,Advanced,Low,EMEA
+Italy,High,High,Developing,Moderate,EMEA
+Japan,High,High,Advanced,Low,APAC
+Latvia,High,High,Developing,Moderate,EMEA
+Lithuania,High,High,Advanced,Moderate,EMEA
+Luxembourg,Upper-Middle,Moderate,Developing,Moderate,EMEA
+Malta,High,High,Advanced,Moderate,EMEA
+Mexico,Upper-Middle,Moderate,Developing,Moderate,AMER
+Netherlands,Lower-Middle,Low,Developing,Moderate,EMEA
+New Zealand,High,High,Advanced,Moderate,APAC
+Nigeria,High,Very High,Advanced,Moderate,EMEA
+Norway,High,Moderate,Developing,Low,EMEA
+Pakistan,Low,Low,Developing,Moderate,APAC
+Peru,Upper-Middle,Moderate,Developing,Moderate,AMER
+Poland,High,Moderate,Advanced,High,EMEA
+Portugal,Upper-Middle,Moderate,Developing,High,EMEA
+Romania,High,Moderate,Developing,Moderate,EMEA
+Saudi Arabia,High,High,Developing,Moderate,EMEA
+Slovakia,Upper-Middle,High,Developing,Moderate,EMEA
+Slovenia,High,Moderate,Advanced,Low,EMEA
+South Africa,High,Moderate,Advanced,Moderate,EMEA
+South Korea,High,High,Advanced,Moderate,APAC
+Spain,High,Very High,Advanced,Moderate,EMEA
+Sri Lanka,Low,Low,Developing,Low,APAC
+Sweden,High,High,Developing,Moderate,EMEA
+Switzerland,Upper-Middle,Low,Advanced,Moderate,EMEA
+Taiwan,High,High,Advanced,Moderate,APAC
+Turkey,Upper-Middle,Low,Developing,Moderate,EMEA
+United Kingdom,High,High,Advanced,Moderate,EMEA
+United States,High,High,Advanced,Moderate,AMER

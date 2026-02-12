@@ -1,0 +1,11 @@
+Asset,Symbol,Entry Date,Entry Price,Current Price,Position Size,Direction,Sector,Country,Strategy Tag,Notes,Leverage Used
+Company_1,TICK1,2024-01-10,150.0,162.0,100.0,Long,Technology,USA,Pullback,Core position,1.0
+Company_2,TICK2,2024-02-15,40000.0,38500.0,0.5,Long,Crypto,Global,Trend,Short-term trade,1.5
+Company_3,TICK3,2024-01-28,240.0,195.0,80.0,Short,Auto,USA,Mean Reversion,Speculative,2.0
+Company_4,TICK4,2024-03-12,125.0,132.0,60.0,Long,E-commerce,USA,Trend,Partial position,1.2
+Company_5,TICK5,2024-01-20,27.5,26.1,300.0,Short,Energy,UK,Event Risk,Hedge,3.0
+Company_6,TICK6,2024-02-05,55.0,61.0,200.0,Long,Manufacturing,Canada,Breakout,None,2.5
+Company_7,TICK7,2024-01-18,92.0,88.0,150.0,Short,Utilities,Australia,Rotation,Re-entry,1.3
+Company_8,TICK8,2024-02-09,30.0,29.5,500.0,Long,Healthcare,Germany,Defensive,Watchlist,2.0
+Company_9,TICK9,2024-01-25,12.0,14.0,1000.0,Long,Financials,India,Value,None,1.8
+Company_10,TICK10,2024-03-01,18.5,17.2,400.0,Short,Materials,Brazil,Macro Bet,None,1.1

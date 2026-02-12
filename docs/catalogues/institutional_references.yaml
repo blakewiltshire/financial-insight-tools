@@ -1,0 +1,614 @@
+# institutional_references.yaml
+# Catalogue of external platforms, regulators, classifications, and reference sources
+# used by the Financial Insight Tools (FIT) Institutional Reference Directory.
+
+# -------------------------------------------------------------------
+# Market Data & Financial Information
+# -------------------------------------------------------------------
+
+- id: bloomberg
+  group_key: market_data
+  group_label: "📈 Market Data and Financial Information"
+  sort_order: 10
+  name: "Bloomberg"
+  url: "https://www.bloomberg.com/"
+  is_core: true
+  tags: ["terminal", "market_data", "analytics"]
+  description: >
+    Institutional-grade terminal offering real-time pricing, macroeconomic feeds,
+    and analytics for professional use.
+
+- id: reuters
+  group_key: market_data
+  group_label: "📈 Market Data and Financial Information"
+  sort_order: 20
+  name: "Reuters"
+  url: "https://www.reuters.com/"
+  is_core: true
+  tags: ["news", "market_data", "regulation"]
+  description: >
+    Global news agency with broad financial coverage, regulatory reporting,
+    and market-moving headlines.
+
+- id: yahoo_finance
+  group_key: market_data
+  group_label: "📈 Market Data and Financial Information"
+  sort_order: 30
+  name: "Yahoo Finance"
+  url: "https://finance.yahoo.com/"
+  is_core: false
+  tags: ["public", "equities", "etf"]
+  description: >
+    Publicly accessible equity, ETF, and macro data; useful for initial research
+    and informal comparisons.
+
+- id: morningstar
+  group_key: market_data
+  group_label: "📈 Market Data and Financial Information"
+  sort_order: 40
+  name: "Morningstar"
+  url: "https://www.morningstar.com/"
+  is_core: false
+  tags: ["funds", "analytics", "ratings"]
+  description: >
+    Specialised in mutual fund, ETF, and portfolio analytics, including
+    performance data and qualitative ratings.
+
+# -------------------------------------------------------------------
+# Regulatory Bodies and Classifications
+# -------------------------------------------------------------------
+
+- id: sec
+  group_key: regulators
+  group_label: "⚖️ Regulatory Bodies and Classifications"
+  sort_order: 10
+  name: "U.S. Securities and Exchange Commission (SEC)"
+  url: "https://www.sec.gov/"
+  is_core: true
+  tags: ["us", "regulator", "disclosure"]
+  description: >
+    U.S. financial markets regulator; key source for company filings
+    (e.g., 10-K, 10-Q), enforcement actions, and compliance guidance.
+
+- id: finra
+  group_key: regulators
+  group_label: "⚖️ Regulatory Bodies and Classifications"
+  sort_order: 20
+  name: "FINRA"
+  url: "https://www.finra.org/"
+  is_core: true
+  tags: ["us", "self_regulatory", "broker_dealers"]
+  description: >
+    U.S. self-regulatory organisation overseeing broker-dealers and trading
+    integrity in securities markets.
+
+- id: fca
+  group_key: regulators
+  group_label: "⚖️ Regulatory Bodies and Classifications"
+  sort_order: 30
+  name: "Financial Conduct Authority (FCA, UK)"
+  url: "https://www.fca.org.uk/"
+  is_core: true
+  tags: ["uk", "regulator", "conduct"]
+  description: >
+    UK financial conduct authority; regulates firms and markets with
+    emphasis on consumer protection and market integrity.
+
+- id: esma
+  group_key: regulators
+  group_label: "⚖️ Regulatory Bodies and Classifications"
+  sort_order: 40
+  name: "European Securities and Markets Authority (ESMA)"
+  url: "https://www.esma.europa.eu/"
+  is_core: true
+  tags: ["eu", "regulator", "securities"]
+  description: >
+    EU-level authority providing policy, supervisory convergence, and data
+    access for European securities markets.
+
+- id: asic
+  group_key: regulators
+  group_label: "⚖️ Regulatory Bodies and Classifications"
+  sort_order: 50
+  name: "Australian Securities and Investments Commission (ASIC)"
+  url: "https://asic.gov.au/"
+  is_core: false
+  tags: ["australia", "regulator", "markets"]
+  description: >
+    Australian regulator for companies, markets, and financial services.
+
+- id: sfc_hk
+  group_key: regulators
+  group_label: "⚖️ Regulatory Bodies and Classifications"
+  sort_order: 60
+  name: "Securities and Futures Commission (SFC, Hong Kong)"
+  url: "https://www.sfc.hk/"
+  is_core: false
+  tags: ["hong_kong", "regulator", "securities"]
+  description: >
+    Oversees Hong Kong’s securities and futures markets, including licensing,
+    supervision, and enforcement.
+
+- id: mas_sg
+  group_key: regulators
+  group_label: "⚖️ Regulatory Bodies and Classifications"
+  sort_order: 70
+  name: "Monetary Authority of Singapore (MAS)"
+  url: "https://www.mas.gov.sg/"
+  is_core: false
+  tags: ["singapore", "central_bank", "regulator"]
+  description: >
+    Singapore’s central bank and integrated financial regulator.
+
+- id: fdic
+  group_key: regulators
+  group_label: "⚖️ Regulatory Bodies and Classifications"
+  sort_order: 80
+  name: "Federal Deposit Insurance Corporation (FDIC)"
+  url: "https://www.fdic.gov/"
+  is_core: false
+  tags: ["us", "banking", "deposit_insurance"]
+  description: >
+    U.S. agency regulating and insuring bank deposits; central to bank
+    resolution and systemic risk response.
+
+- id: fhfa
+  group_key: regulators
+  group_label: "⚖️ Regulatory Bodies and Classifications"
+  sort_order: 90
+  name: "Federal Housing Finance Agency (FHFA)"
+  url: "https://www.fhfa.gov/regulatory"
+  is_core: false
+  tags: ["us", "housing", "gse"]
+  description: >
+    Oversees Fannie Mae, Freddie Mac, and the Federal Home Loan Bank System.
+
+- id: cftc
+  group_key: regulators
+  group_label: "⚖️ Regulatory Bodies and Classifications"
+  sort_order: 100
+  name: "Commodity Futures Trading Commission (CFTC)"
+  url: "https://www.cftc.gov/"
+  is_core: false
+  tags: ["us", "derivatives", "regulator"]
+  description: >
+    U.S. regulator for derivatives markets including futures, options,
+    and certain swaps.
+
+# -------------------------------------------------------------------
+# Market Status & Credit Evaluation Authorities
+# -------------------------------------------------------------------
+
+- id: msci_market_classification
+  group_key: market_status
+  group_label: "🏛️ Market Status & Credit Evaluation Authorities"
+  sort_order: 10
+  name: "MSCI Market Classification"
+  url: "https://www.msci.com/market-classification"
+  is_core: true
+  tags: ["msci", "classification", "equity_markets"]
+  description: >
+    Defines country status (Frontier, Emerging, Developed) used in global
+    indexing and investment eligibility.
+
+- id: ftse_country_classification
+  group_key: market_status
+  group_label: "🏛️ Market Status & Credit Evaluation Authorities"
+  sort_order: 20
+  name: "FTSE Country Classification"
+  url: "https://www.ftserussell.com/data/country-classification"
+  is_core: true
+  tags: ["ftse", "classification", "equity_markets"]
+  description: >
+    Establishes global equity benchmarks and market maturity designations
+    across countries.
+
+- id: sp_global_ratings
+  group_key: market_status
+  group_label: "🏛️ Market Status & Credit Evaluation Authorities"
+  sort_order: 30
+  name: "S&P Global Ratings"
+  url: "https://www.spglobal.com/ratings/en/"
+  is_core: false
+  tags: ["credit_ratings", "sovereign", "corporate"]
+  description: >
+    Provides sovereign and corporate credit ratings across regions and sectors.
+
+- id: moodys
+  group_key: market_status
+  group_label: "🏛️ Market Status & Credit Evaluation Authorities"
+  sort_order: 40
+  name: "Moody’s Investors Service"
+  url: "https://www.moodys.com/"
+  is_core: false
+  tags: ["credit_ratings", "research"]
+  description: >
+    Offers credit ratings and macroeconomic research used in country and
+    issuer risk assessments.
+
+- id: fitch_ratings
+  group_key: market_status
+  group_label: "🏛️ Market Status & Credit Evaluation Authorities"
+  sort_order: 50
+  name: "Fitch Ratings"
+  url: "https://www.fitchratings.com/"
+  is_core: false
+  tags: ["credit_ratings", "sovereign", "corporate"]
+  description: >
+    Evaluates sovereign risk and institutional creditworthiness across markets.
+
+- id: oecd_country_risk
+  group_key: market_status
+  group_label: "🏛️ Market Status & Credit Evaluation Authorities"
+  sort_order: 60
+  name: "OECD Country Risk Classification"
+  url: "https://www.oecd.org/trade/topics/export-credits/documents/oecd-country-risk-classification.htm"
+  is_core: false
+  tags: ["oecd", "sovereign_risk", "export_credits"]
+  description: >
+    Sovereign risk indicators used in export credit and trade finance contexts.
+
+- id: world_bank_income_classification
+  group_key: market_status
+  group_label: "🏛️ Market Status & Credit Evaluation Authorities"
+  sort_order: 70
+  name: "World Bank Income Classification"
+  url: "https://datahelpdesk.worldbank.org/knowledgebase/articles/906519"
+  is_core: false
+  tags: ["world_bank", "income_levels", "development"]
+  description: >
+    Country-level economic status categories (LIC, LMIC, UMIC, HIC) used
+    for development and income-based analysis.
+
+# -------------------------------------------------------------------
+# Educational Platforms and Financial Tools
+# -------------------------------------------------------------------
+
+- id: investopedia
+  group_key: education
+  group_label: "📚 Educational Platforms and Financial Tools"
+  sort_order: 10
+  name: "Investopedia"
+  url: "https://www.investopedia.com/"
+  is_core: false
+  tags: ["education", "glossary", "retail"]
+  description: >
+    Broad financial dictionary and explainer content across investing,
+    economics, and personal finance.
+
+- id: khan_academy
+  group_key: education
+  group_label: "📚 Educational Platforms and Financial Tools"
+  sort_order: 20
+  name: "Khan Academy"
+  url: "https://www.khanacademy.org/"
+  is_core: false
+  tags: ["education", "courses", "maths", "economics"]
+  description: >
+    Free online courses including introductory economics, finance,
+    mathematics, and statistics modules.
+
+# -------------------------------------------------------------------
+# Industry Reports and Research Portals
+# -------------------------------------------------------------------
+
+- id: world_bank
+  group_key: research
+  group_label: "🌎 Industry Reports and Research Portals"
+  sort_order: 10
+  name: "World Bank"
+  url: "https://www.worldbank.org/"
+  is_core: true
+  tags: ["development", "macro", "data"]
+  description: >
+    Global development data, macroeconomic indicators, and structural
+    reform publications.
+
+- id: imf
+  group_key: research
+  group_label: "🌎 Industry Reports and Research Portals"
+  sort_order: 20
+  name: "International Monetary Fund (IMF)"
+  url: "https://www.imf.org/"
+  is_core: true
+  tags: ["imf", "macro", "forecasts"]
+  description: >
+    Country-level economic forecasts, monetary policy reviews, and
+    financial stability reports.
+
+# -------------------------------------------------------------------
+# Government and Statistical Agencies
+# -------------------------------------------------------------------
+
+- id: bea
+  group_key: statistics
+  group_label: "📊 Government and Statistical Agencies"
+  sort_order: 10
+  name: "Bureau of Economic Analysis (BEA, US)"
+  url: "https://www.bea.gov/"
+  is_core: true
+  tags: ["us", "gdp", "national_accounts"]
+  description: >
+    U.S. statistics on GDP, national income, and balance of payments.
+
+- id: ons_uk
+  group_key: statistics
+  group_label: "📊 Government and Statistical Agencies"
+  sort_order: 20
+  name: "Office for National Statistics (ONS, UK)"
+  url: "https://www.ons.gov.uk/"
+  is_core: true
+  tags: ["uk", "statistics", "labour", "inflation"]
+  description: >
+    Official UK economic, demographic, and labour market data provider.
+
+# -------------------------------------------------------------------
+# International Organisations
+# -------------------------------------------------------------------
+
+- id: oecd
+  group_key: international
+  group_label: "🌐 International Organisations"
+  sort_order: 10
+  name: "Organisation for Economic Co-operation and Development (OECD)"
+  url: "https://www.oecd.org/"
+  is_core: true
+  tags: ["oecd", "policy", "indicators"]
+  description: >
+    Cross-country policy analysis, economic indicators, and governance benchmarks
+    across member and partner economies.
+
+- id: unsd
+  group_key: international
+  group_label: "🌐 International Organisations"
+  sort_order: 20
+  name: "United Nations Statistics Division (UNSD)"
+  url: "https://unstats.un.org/"
+  is_core: false
+  tags: ["un", "statistics", "sdg"]
+  description: >
+    Global statistical standards, population data, and Sustainable Development
+    Goals (SDG) tracking.
+
+# -------------------------------------------------------------------
+# Standards, Identifiers & Classification Systems
+# -------------------------------------------------------------------
+
+# Financial identifiers
+- id: isin
+  group_key: identifiers
+  group_label: "🆔 Standards, Identifiers & Classification Systems"
+  sort_order: 10
+  name: "ISIN — International Securities Identification Number"
+  url: "https://www.iso.org"
+  is_core: true
+  tags: ["identifier", "securities", "iso_6166"]
+  description: >
+    International standard (ISO 6166) for security identification across
+    asset classes.
+
+- id: mics
+  group_key: identifiers
+  group_label: "🆔 Standards, Identifiers & Classification Systems"
+  sort_order: 20
+  name: "MICs — Market Identifier Codes"
+  url: "https://www.iso20022.org/market-identifier-codes"
+  is_core: true
+  tags: ["identifier", "exchanges", "venues"]
+  description: >
+    Codes used to identify trading venues and exchanges globally.
+
+- id: figi
+  group_key: identifiers
+  group_label: "🆔 Standards, Identifiers & Classification Systems"
+  sort_order: 30
+  name: "FIGI — Financial Instrument Global Identifier"
+  url: "https://www.openfigi.com/about/figi"
+  is_core: false
+  tags: ["identifier", "figi", "bloomberg"]
+  description: >
+    Open identifier for financial instruments, originated by Bloomberg
+    and governed under the FIGI standard.
+
+- id: cusip
+  group_key: identifiers
+  group_label: "🆔 Standards, Identifiers & Classification Systems"
+  sort_order: 40
+  name: "CUSIP"
+  url: "https://www.cusip.com/index.html"
+  is_core: false
+  tags: ["identifier", "north_america", "fixed_income"]
+  description: >
+    U.S. and Canadian security identification system, commonly used
+    in fixed income instruments.
+
+- id: sedol
+  group_key: identifiers
+  group_label: "🆔 Standards, Identifiers & Classification Systems"
+  sort_order: 50
+  name: "SEDOL"
+  url: "https://www.londonstockexchange.com"
+  is_core: false
+  tags: ["identifier", "uk", "equities"]
+  description: >
+    Stock Exchange Daily Official List identifier for UK securities.
+
+- id: wkn
+  group_key: identifiers
+  group_label: "🆔 Standards, Identifiers & Classification Systems"
+  sort_order: 60
+  name: "WKN — Wertpapierkennnummer"
+  url: "https://www.deutsche-boerse.com/"
+  is_core: false
+  tags: ["identifier", "germany", "securities"]
+  description: >
+    Germany’s national security identifier used across asset classes.
+
+- id: valor
+  group_key: identifiers
+  group_label: "🆔 Standards, Identifiers & Classification Systems"
+  sort_order: 70
+  name: "Valor Number"
+  url: "https://www.finma.ch"
+  is_core: false
+  tags: ["identifier", "switzerland", "securities"]
+  description: >
+    Swiss market security code issued or governed under FINMA oversight.
+
+- id: cik
+  group_key: identifiers
+  group_label: "🆔 Standards, Identifiers & Classification Systems"
+  sort_order: 80
+  name: "CIK — Central Index Key (US SEC)"
+  url: "https://www.sec.gov/search-filings/cik-lookup"
+  is_core: false
+  tags: ["identifier", "issuer", "sec"]
+  description: >
+    SEC identifier used to track issuers and filers in EDGAR submissions.
+
+- id: lei
+  group_key: identifiers
+  group_label: "🆔 Standards, Identifiers & Classification Systems"
+  sort_order: 90
+  name: "LEI — Legal Entity Identifier"
+  url: "https://www.lei-lookup.com"
+  is_core: true
+  tags: ["identifier", "entities", "systemic_risk"]
+  description: >
+    Global identifier for legal entities used in regulatory reporting and
+    systemic risk monitoring.
+
+- id: giin
+  group_key: identifiers
+  group_label: "🆔 Standards, Identifiers & Classification Systems"
+  sort_order: 100
+  name: "GIIN — Global Intermediary Identification Number"
+  url: "https://www.irs.gov"
+  is_core: false
+  tags: ["identifier", "fatca", "intermediaries"]
+  description: >
+    Identifier issued by the U.S. IRS for entities participating in FATCA
+    regimes.
+
+# Classification systems & benchmarks
+
+- id: naics_sic
+  group_key: classifications
+  group_label: "🆔 Standards, Identifiers & Classification Systems"
+  sort_order: 110
+  name: "NAICS & SIC Codes"
+  url: "https://www.naics.com/"
+  is_core: true
+  tags: ["classification", "industry", "north_america"]
+  description: >
+    North American Industry Classification System and legacy SIC codes used
+    to classify company activities.
+
+- id: isic
+  group_key: classifications
+  group_label: "🆔 Standards, Identifiers & Classification Systems"
+  sort_order: 120
+  name: "ISIC — International Standard Industrial Classification"
+  url: "https://unstats.un.org/unsd/classifications/Econ"
+  is_core: false
+  tags: ["classification", "industry", "un"]
+  description: >
+    UN classification of economic activities used for consistent
+    industry breakdowns.
+
+- id: nace
+  group_key: classifications
+  group_label: "🆔 Standards, Identifiers & Classification Systems"
+  sort_order: 130
+  name: "NACE (Eurostat)"
+  url: "https://ec.europa.eu/eurostat/web/nace"
+  is_core: false
+  tags: ["classification", "industry", "eu"]
+  description: >
+    EU statistical classification of economic activities.
+
+- id: gics
+  group_key: classifications
+  group_label: "🆔 Standards, Identifiers & Classification Systems"
+  sort_order: 140
+  name: "GICS — Global Industry Classification Standard"
+  url: "https://www.spglobal.com/spdji/en/landing/topic/gics/"
+  is_core: true
+  tags: ["classification", "equities", "sp_global"]
+  description: >
+    Sector and industry classification system widely used for
+    equity index construction and sector-based investing.
+
+- id: icb
+  group_key: classifications
+  group_label: "🆔 Standards, Identifiers & Classification Systems"
+  sort_order: 150
+  name: "ICB — Industry Classification Benchmark"
+  url: "https://classification.codes/classifications/industry/icb/"
+  is_core: false
+  tags: ["classification", "equities", "ftse"]
+  description: >
+    FTSE Russell’s industry classification system used in
+    global index families.
+
+# Market capitalisation classification frameworks
+
+- id: sp_size_classifications
+  group_key: market_caps
+  group_label: "🆔 Standards, Identifiers & Classification Systems"
+  sort_order: 160
+  name: "S&P Dow Jones Indices — Size Classifications"
+  url: "https://www.spglobal.com/spdji/en/documents/methodologies/methodology-sp-us-bmi.pdf"
+  is_core: false
+  tags: ["market_cap", "sp_indices", "us_equities"]
+  description: >
+    Methodology defining large-, mid-, and small-cap tiers across U.S. equities,
+    used in the S&P 500, S&P MidCap 400, and S&P SmallCap 600 indices.
+
+- id: russell_index_methodology
+  group_key: market_caps
+  group_label: "🆔 Standards, Identifiers & Classification Systems"
+  sort_order: 170
+  name: "Russell Index Methodology"
+  url: "https://www.ftserussell.com/index-series/index-tools/russell-us-indexes"
+  is_core: false
+  tags: ["market_cap", "russell", "us_equities"]
+  description: >
+    Methodology for Russell U.S. index family, including Russell 1000 and
+    Russell 2000 size-based indices.
+
+- id: ftse_geis
+  group_key: market_caps
+  group_label: "🆔 Standards, Identifiers & Classification Systems"
+  sort_order: 180
+  name: "FTSE Global Equity Index Series (GEIS)"
+  url: "https://www.ftserussell.com/products/indices/geis"
+  is_core: false
+  tags: ["market_cap", "ftse", "global_equities"]
+  description: >
+    Global equity index series classifying companies into large-, mid-, small-,
+    and micro-cap segments.
+
+- id: msci_gimi
+  group_key: market_caps
+  group_label: "🆔 Standards, Identifiers & Classification Systems"
+  sort_order: 190
+  name: "MSCI Global Investable Market Indexes (GIMI)"
+  url: "https://www.msci.com/our-solutions/indexes/market-capitalization-indexes"
+  is_core: false
+  tags: ["market_cap", "msci", "global_equities"]
+  description: >
+    Framework defining large-, mid-, and small-cap segments supporting MSCI ACWI,
+    MSCI World, and related indices.
+
+- id: morningstar_style_box
+  group_key: market_caps
+  group_label: "🆔 Standards, Identifiers & Classification Systems"
+  sort_order: 200
+  name: "Morningstar Style Box Methodology"
+  url: "https://www.morningstar.com/lp/style-box"
+  is_core: false
+  tags: ["style", "market_cap", "value_growth"]
+  description: >
+    Methodology combining market capitalisation and value/growth characteristics
+    to classify equities into style categories.

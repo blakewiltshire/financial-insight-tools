@@ -1,0 +1,77 @@
+{
+    "snapshot_metadata": {
+        "base_asset": "Tesla",
+        "theme": {
+            "code": "market_scanner",
+            "title": "Market & Volatility Scanner"
+        },
+        "snapshot_timestamp": "2025-06-29T23:03:03.292313",
+        "asset_type": "Equities - Magnificent Seven"
+    },
+    "context_parameters": {
+        "selected_profit_target_pct": 1,
+        "direction": "Up",
+        "timeline": "Interday",
+        "filter_type": "Range",
+        "filter_description": "Date Range: 2015-01-02 00:00:00 to 2025-05-22 00:00:00"
+    },
+    "macro_signals": [
+        {
+            "section": "descriptive_statistics",
+            "indicator": "Measures of Dispersion",
+            "value": {
+                "Standard Variance %": 0.13,
+                "Range %": 43.75,
+                "Standard Deviation %": 3.66,
+                "Standard Deviation Bands": {
+                    "1": {
+                        "Upper Band": "3.85%",
+                        "Lower Band": "-3.47%",
+                        "Actual Count": "2016",
+                        "Actual Count %": "77.18%",
+                        "Normal Count": "1781",
+                        "Normal %": "68.20%"
+                    },
+                    "2": {
+                        "Upper Band": "7.51%",
+                        "Lower Band": "-7.14%",
+                        "Actual Count": "2474",
+                        "Actual Count %": "94.72%",
+                        "Normal Count": "2492",
+                        "Normal %": "95.40%"
+                    },
+                    "3": {
+                        "Upper Band": "11.17%",
+                        "Lower Band": "-10.80%",
+                        "Actual Count": "2572",
+                        "Actual Count %": "98.47%",
+                        "Normal Count": "2607",
+                        "Normal %": "99.80%"
+                    }
+                }
+            },
+            "overview": "Captures the spread and volatility of returns using standard deviation, variance, and range.",
+            "why_it_matters": "Reveals the variability and potential risk associated with price movements.",
+            "temporal_categorisation": "Short to Medium-Term",
+            "investment_action_importance": "\ud83c\udf1f\ud83c\udf1f \u2013 Central to risk estimation, stop placement, and portfolio stress testing."
+        },
+        {
+            "section": "descriptive_statistics",
+            "indicator": "Basic Statistics",
+            "value": {
+                "Minimum (%)": -21.06,
+                "Maximum (%)": 22.69,
+                "Sum": 4.8927,
+                "Count": 2612
+            },
+            "overview": "Includes extreme values, return totals, and observation counts for general context.",
+            "why_it_matters": "Provides foundational framing for all calculations, and helps validate sample robustness.",
+            "temporal_categorisation": "Meta to Long-Term",
+            "investment_action_importance": "\u2b50 \u2013 Informational context; critical when comparing multiple datasets."
+        }
+    ],
+    "metadata": {
+        "data_source": "Preloaded Asset Types (Default)",
+        "snapshot_notes": "Generated from Market & Volatility Scanner statistical analysis."
+    }
+}

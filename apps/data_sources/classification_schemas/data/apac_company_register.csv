@@ -1,0 +1,953 @@
+﻿Index,Unique Identifier,Regions,Sub-Regions,Country,Company Name,Industry Tag,CUSIP,ISIN,SEDOL,FIGI,CIK,Ticker,MIC Code,Exchange,Market Currency
+1,CN-1,Asia Pacific,East Asia,China,Tcl Technology Group Corp A,Electronic Components & Systems,,CNE000001GL8,BD5CP28,,,100,XHKG,Hong Kong Stock Exchange,HKD
+2,CN-2,Asia Pacific,East Asia,China,Yuexiu Property Company Ltd,Real Estate Operations,,HK0000745908,BNR5PB4,,,123,XHKG,Hong Kong Stock Exchange,HKD
+3,CN-3,Asia Pacific,East Asia,China,Kunlun Energy Ltd,Natural Gas Utilities,S63400782,BMG5320C1082,6340078,,,135,XHKG,Hong Kong Stock Exchange,HKD
+4,CN-4,Asia Pacific,East Asia,China,China Ruyi Holdings Ltd,Media & Publishing,,BMG4404N1149,BMDMJ87,,,136,XHKG,Hong Kong Stock Exchange,HKD
+5,CN-5,Asia Pacific,East Asia,China,China Merchants Port Holdings Ltd,Transport Infrastructure,S64161391,HK0144000764,6416139,,,144,XHKG,Hong Kong Stock Exchange,HKD
+6,CN-6,Asia Pacific,East Asia,China,Kingboard Holdings Ltd,Electronic Components & Systems,S64913189,KYG525621408,6491318,,,148,XHKG,Hong Kong Stock Exchange,HKD
+7,CN-7,Asia Pacific,East Asia,China,Want Want China Holdings Ltd,Food & Tobacco,,KYG9431R1039,B2Q14Z3,,,151,XHKG,Hong Kong Stock Exchange,HKD
+8,CN-8,Asia Pacific,East Asia,China,Shenzhen International Holdings Lt,Transport Infrastructure,,BMG8086V1467,BJVBTY1,,,152,XHKG,Hong Kong Stock Exchange,HKD
+9,CN-9,Asia Pacific,East Asia,China,Tsingtao Brewery Ltd H,Beverages,S69058089,CNE1000004K1,6905808,,,168,XHKG,Hong Kong Stock Exchange,HKD
+10,CN-10,Asia Pacific,East Asia,China,Geely Automobile Holdings Ltd,Automobiles & Auto Parts,S65318271,KYG3777B1032,6531827,,,175,XHKG,Hong Kong Stock Exchange,HKD
+11,CN-11,Asia Pacific,East Asia,China,Jiangsu Expressway Ltd H,Transport Infrastructure,S60055043,CNE1000003J5,6005504,,,177,XHKG,Hong Kong Stock Exchange,HKD
+12,CN-12,Asia Pacific,East Asia,China,Dongyue Group Ltd,Chemicals,,KYG2816P1072,B29MXW3,,,189,XHKG,Hong Kong Stock Exchange,HKD
+13,CN-13,Asia Pacific,East Asia,China,Uni-President Ltd,Beverages,,KYG9222R1065,B29MKF5,,,220,XHKG,Hong Kong Stock Exchange,HKD
+14,CN-14,Asia Pacific,East Asia,China,Alibaba Health Information Tech Lt,Diversified Retail,,BMG0171K1018,BRXVS60,,,241,XHKG,Hong Kong Stock Exchange,HKD
+15,CN-15,Asia Pacific,East Asia,China,China Everbright Environment Group,Integrated Utilities,S66309402,HK0257001336,6630940,,,257,XHKG,Hong Kong Stock Exchange,HKD
+16,CN-16,Asia Pacific,East Asia,China,Citic Ltd,Banking Services,S61961520,HK0267001375,6196152,,,267,XHKG,Hong Kong Stock Exchange,HKD
+17,CN-17,Asia Pacific,East Asia,China,Kingdee Int L Software Group Ltd,Software & IT Solutions / Digital Services,S63275879,KYG525681477,6327587,,,268,XHKG,Hong Kong Stock Exchange,HKD
+18,CN-18,Asia Pacific,East Asia,China,Guangdong Investment Ltd,Water Utilities,S69131688,HK0270001396,6913168,,,270,XHKG,Hong Kong Stock Exchange,HKD
+19,CN-19,Asia Pacific,East Asia,China,Byd Electronic (International) Ltd,Electronic Components & Systems,,HK0285041858,B29SHS5,,,285,XHKG,Hong Kong Stock Exchange,HKD
+20,CN-20,Asia Pacific,East Asia,China,China Resources Beer Holdings Ltd,Beverages,S69724599,HK0291001490,6972459,,,291,XHKG,Hong Kong Stock Exchange,HKD
+21,CN-21,Asia Pacific,East Asia,China,Orient Overseas (International) Lt,Freight & Logistics Services,S66591165,BMG677491539,6659116,,,316,XHKG,Hong Kong Stock Exchange,HKD
+22,CN-22,Asia Pacific,East Asia,China,Tingyi (Cayman Islands) Holdings C,Food & Tobacco,S69035566,KYG8878S1030,6903556,,,322,XHKG,Hong Kong Stock Exchange,HKD
+23,CN-23,Asia Pacific,East Asia,China,Chinasoft International Ltd,Software & IT Solutions / Digital Services,,KYG2110A1114,BC9S4J5,,,354,XHKG,Hong Kong Stock Exchange,HKD
+24,CN-24,Asia Pacific,East Asia,China,Jiangxi Copper Ltd H,Metals & Mining,S60003050,CNE1000003K3,6000305,,,358,XHKG,Hong Kong Stock Exchange,HKD
+25,CN-25,Asia Pacific,East Asia,China,Beijing Enterprises Water Group Lt,Water Utilities,,BMG0957L1090,B01YCG0,,,371,XHKG,Hong Kong Stock Exchange,HKD
+26,CN-26,Asia Pacific,East Asia,China,China Gas Holdings Ltd,Natural Gas Utilities,S64607948,BMG2109G1033,6460794,,,384,XHKG,Hong Kong Stock Exchange,HKD
+27,CN-27,Asia Pacific,East Asia,China,China Petroleum And Chemical Corp,Oil & Gas,S62918198,CNE1000002Q2,6291819,,,386,XHKG,Hong Kong Stock Exchange,HKD
+28,CN-28,Asia Pacific,East Asia,China,China Railway Group Ltd H,Construction & Engineering,,CNE1000007Z2,B297KM7,,,390,XHKG,Hong Kong Stock Exchange,HKD
+29,CN-29,Asia Pacific,East Asia,China,Beijing Enterprises Holdings Ltd,Natural Gas Utilities,S60816907,HK0392044647,6081690,,,392,XHKG,Hong Kong Stock Exchange,HKD
+30,CN-30,Asia Pacific,East Asia,China,Minth Group Ltd,Automobiles & Auto Parts,,KYG6145U1094,B0RJCG9,,,425,XHKG,Hong Kong Stock Exchange,HKD
+31,CN-31,Asia Pacific,East Asia,China,Dongfeng Motor Group Ltd H,Automobiles & Auto Parts,,CNE100000312,B0PH5N3,,,489,XHKG,Hong Kong Stock Exchange,HKD
+32,CN-32,Asia Pacific,East Asia,China,China Communications Services Corp,Construction & Engineering,,CNE1000002G3,B1HVJ16,,,552,XHKG,Hong Kong Stock Exchange,HKD
+33,CN-33,Asia Pacific,East Asia,China,China Traditional Chi Medicine Co,Pharmaceuticals,S69717791,HK0000056256,6971779,,,570,XHKG,Hong Kong Stock Exchange,HKD
+34,CN-34,Asia Pacific,East Asia,China,Zhejiang Expressway Ltd H,Transport Infrastructure,S69907632,CNE1000004S4,6990763,,,576,XHKG,Hong Kong Stock Exchange,HKD
+35,CN-35,Asia Pacific,East Asia,China,China Conch Venture Holdings Ltd,Professional & Commercial Services,,KYG2116J1085,BH7HM06,,,586,XHKG,Hong Kong Stock Exchange,HKD
+36,CN-36,Asia Pacific,East Asia,China,Sany Heavy Equipment International,Metals & Mining,,KYG781631059,B56HH42,,,631,XHKG,Hong Kong Stock Exchange,HKD
+37,CN-37,Asia Pacific,East Asia,China,Fosun International Ltd,Capital Markets & Advisory,,HK0656038673,B1Z7FX0,,,656,XHKG,Hong Kong Stock Exchange,HKD
+38,CN-38,Asia Pacific,East Asia,China,China Overseas Land Investment Ltd,Real Estate Operations,S61921508,HK0688002218,6192150,,,688,XHKG,Hong Kong Stock Exchange,HKD
+39,CN-39,Asia Pacific,East Asia,China,Beijing Capital International Airp,Transport Infrastructure,S62084223,CNE100000221,6208422,,,694,XHKG,Hong Kong Stock Exchange,HKD
+40,CN-40,Asia Pacific,East Asia,China,Travelsky Technology Ltd H,Software & IT Solutions / Digital Services,S63219547,CNE1000004J3,6321954,,,696,XHKG,Hong Kong Stock Exchange,HKD
+41,CN-41,Asia Pacific,East Asia,China,Tencent Holdings Ltd,Software & IT Solutions / Digital Services,,KYG875721634,BMMV2K8,,,700,XHKG,Hong Kong Stock Exchange,HKD
+42,CN-42,Asia Pacific,East Asia,China,Air China Ltd H,Passenger Transportation Services,,CNE1000001S0,B04KNF1,,,753,XHKG,Hong Kong Stock Exchange,HKD
+43,CN-43,Asia Pacific,East Asia,China,Zte Corp,Communications & Networking,,CNE1000004Y2,B04KP88,,,763,XHKG,Hong Kong Stock Exchange,HKD
+44,CN-44,Asia Pacific,East Asia,China,China Literature Ltd,Media & Publishing,,KYG2121R1039,BYP71J9,,,772,XHKG,Hong Kong Stock Exchange,HKD
+45,CN-45,Asia Pacific,East Asia,China,Tongcheng Travel Holdings Ltd,Hotels & Entertainment Services,,KYG8918W1069,BGM5R25,,,780,XHKG,Hong Kong Stock Exchange,HKD
+46,CN-46,Asia Pacific,East Asia,China,China Tower Corp Ltd H,Construction & Engineering,,CNE100003688,BFZ2PK0,,,788,XHKG,Hong Kong Stock Exchange,HKD
+47,CN-47,Asia Pacific,East Asia,China,China Jinmao Holdings Group Ltd,Real Estate Operations,,HK0817039453,B23TGR6,,,817,XHKG,Hong Kong Stock Exchange,HKD
+48,CN-48,Asia Pacific,East Asia,China,China Resources Power Ltd,Electrical Utilities & IPPs,,HK0836012952,6711566,,,836,XSHE,Shenzhen Stock Exchange,CNY
+49,CN-49,Asia Pacific,East Asia,China,Microport Scientific Corp,Medical Devices & Supplies,,KYG608371046,B676TW7,,,853,XHKG,Hong Kong Stock Exchange,HKD
+50,CN-50,Asia Pacific,East Asia,China,Petrochina Ltd H,Oil & Gas,S62265764,CNE1000003W8,6226576,,,857,XHKG,Hong Kong Stock Exchange,HKD
+51,CN-51,Asia Pacific,East Asia,China,China Medical System Holdings Ltd,Pharmaceuticals,,KYG211081248,B6WY993,,,867,XHKG,Hong Kong Stock Exchange,HKD
+52,CN-52,Asia Pacific,East Asia,China,Zhongsheng Group Holdings Ltd,Specialty Retailers,,KYG9894K1085,B633D97,,,881,XSHE,Shenzhen Stock Exchange,CNY
+53,CN-53,Asia Pacific,East Asia,China,Huaneng Power International Inc H,Electrical Utilities & IPPs,S60996717,CNE1000006Z4,6099671,,,902,XHKG,Hong Kong Stock Exchange,CNY
+54,CN-54,Asia Pacific,East Asia,China,Anhui Conch Cement Ltd H,Construction Materials,S60803962,CNE1000001W2,6080396,,,914,XHKG,Hong Kong Stock Exchange,HKD
+55,CN-55,Asia Pacific,East Asia,China,China Longyuan Power Group Corp Lt,Electrical Utilities & IPPs,,CNE100000HD4,B4Q2TX3,,,916,XHKG,Hong Kong Stock Exchange,HKD
+56,CN-56,Asia Pacific,East Asia,China,China Construction Bank Corp H,Banking Services,,CNE1000002H1,B0LMTQ3,,,939,XHKG,Hong Kong Stock Exchange,HKD
+57,CN-57,Asia Pacific,East Asia,China,Longfor Group Holdings Ltd,Real Estate Operations,,KYG5635P1090,B56KLY9,,,960,XHKG,Hong Kong Stock Exchange,HKD
+58,CN-58,Asia Pacific,East Asia,China,China Taiping Insurance Hldgs Ltd,Insurance,S62640487,HK0000055878,6264048,,,966,XSHE,Shenzhen Stock Exchange,CNY
+59,CN-59,Asia Pacific,East Asia,China,Xinyi Solar Holdings Ltd,Renewable Energy,,KYG9829N1025,BGQYNN1,,,968,XSHE,Shenzhen Stock Exchange,CNY
+60,CN-60,Asia Pacific,East Asia,China,Lenovo Group Ltd,Consumer Electronics,S62180898,HK0992009065,6218089,,,992,XHKG,Hong Kong Stock Exchange,HKD
+61,CN-61,Asia Pacific,East Asia,China,China Citic Bank Corp Ltd H,Banking Services,,CNE1000001Q4,B1W0JF2,,,998,XHKG,Hong Kong Stock Exchange,HKD
+62,CN-62,Asia Pacific,East Asia,China,Kuaishou Technology,Software & IT Solutions / Digital Services,,KYG532631028,BLC90T0,,,1024,XHKG,Hong Kong Stock Exchange,HKD
+63,CN-63,Asia Pacific,East Asia,China,Hengan International Group Ltd,Consumer & Household Products,S61362331,KYG4402L1510,6136233,,,1044,XHKG,Hong Kong Stock Exchange,HKD
+64,CN-64,Asia Pacific,East Asia,China,China Southern Airlines Ltd H,Passenger Transportation Services,S60136934,CNE1000002T6,6013693,,,1055,XHKG,Hong Kong Stock Exchange,HKD
+65,CN-65,Asia Pacific,East Asia,China,Shandong Weigao Gp Medical Polymer,Medical Devices & Supplies,S67423400,CNE100000171,6742340,,,1066,XHKG,Hong Kong Stock Exchange,HKD
+66,CN-66,Asia Pacific,East Asia,China,China Shenhua Energy Ltd H,Coal,,CNE1000002R0,B09N7M0,,,1088,XHKG,Hong Kong Stock Exchange,HKD
+67,CN-67,Asia Pacific,East Asia,China,Cspc Pharmaceutical Group Ltd,Pharmaceuticals,S61919973,HK1093012172,6191997,,,1093,XSHE,Shenzhen Stock Exchange,CNY
+68,CN-68,Asia Pacific,East Asia,China,Sinopharm Group Ltd H,Pharmaceuticals,,CNE100000FN7,B3ZVDV0,,,1099,XHKG,Hong Kong Stock Exchange,HKD
+69,CN-69,Asia Pacific,East Asia,China,China Resources Land Ltd,Real Estate Operations,S61937660,KYG2108Y1052,6193766,,,1109,XHKG,Hong Kong Stock Exchange,HKD
+70,CN-70,Asia Pacific,East Asia,China,Cosco Shipping Energy Transportati,Energy Equipment & Services,S67820456,CNE1000002S8,6782045,,,1138,XHKG,Hong Kong Stock Exchange,HKD
+71,CN-71,Asia Pacific,East Asia,China,Yankuang Energy Group Company Ltd,Coal,S61098935,CNE1000004Q8,6109893,,,1171,XHKG,Hong Kong Stock Exchange,HKD
+72,CN-72,Asia Pacific,East Asia,China,Sino Biopharmaceutical Ltd,Pharmaceuticals,,KYG8167W1380,B00XSF9,,,1177,XHKG,Hong Kong Stock Exchange,HKD
+73,CN-73,Asia Pacific,East Asia,China,China Resources Gas Group Ltd,Natural Gas Utilities,S65355174,BMG2113B1081,6535517,,,1193,XHKG,Hong Kong Stock Exchange,HKD
+74,CN-74,Asia Pacific,East Asia,China,Cosco Shipping Ports Ltd,Transport Infrastructure,S63542518,BMG2442N1048,6354251,,,1199,XHKG,Hong Kong Stock Exchange,HKD
+75,CN-75,Asia Pacific,East Asia,China,China Resources Mixc Lifestyle Ser,Real Estate Operations,,KYG2122G1064,BMXWXT6,,,1209,XHKG,Hong Kong Stock Exchange,HKD
+76,CN-76,Asia Pacific,East Asia,China,Byd Ltd H,Automobiles & Auto Parts,S65366510,CNE100000296,6536651,,,1211,XHKG,Hong Kong Stock Exchange,HKD
+77,CN-77,Asia Pacific,East Asia,China,China Meidong Auto Holdings Ltd,Specialty Retailers,,KYG211921021,BH0VXF7,,,1268,XHKG,Hong Kong Stock Exchange,HKD
+78,CN-78,Asia Pacific,East Asia,China,Agricultural Bank Of China Ltd H,Banking Services,,CNE100000Q43,B60LZR6,,,1288,XHKG,Hong Kong Stock Exchange,HKD
+79,CN-79,Asia Pacific,East Asia,China,China Resources Cement Holdings Lt,Construction Materials,,KYG2113L1068,B41XC98,,,1313,XHKG,Hong Kong Stock Exchange,HKD
+80,CN-80,Asia Pacific,East Asia,China,New China Life Insurance Company L,Insurance,,CNE100001922,B5730Z1,,,1336,XHKG,Hong Kong Stock Exchange,HKD
+81,CN-81,Asia Pacific,East Asia,China,The Peoples Insurance Co (Group),Insurance,,CNE100001MK7,B8RZJZ1,,,1339,XHKG,Hong Kong Stock Exchange,HKD
+82,CN-82,Asia Pacific,East Asia,China,Hua Hong Semiconductor Ltd,Semiconductors & Chip Technologies,,HK0000218211,BRB3857,,,1347,XHKG,Hong Kong Stock Exchange,HKD
+83,CN-83,Asia Pacific,East Asia,China,China Cinda Asset Management Ltd H,Capital Markets & Advisory,,CNE100001QS1,BGY6SV2,,,1359,XHKG,Hong Kong Stock Exchange,HKD
+84,CN-84,Asia Pacific,East Asia,China,Xtep International Ltd,Textiles & Apparel,,KYG982771092,B2RJYH8,,,1368,XHKG,Hong Kong Stock Exchange,HKD
+85,CN-85,Asia Pacific,East Asia,China,China Hongqiao Group Ltd,Metals & Mining,,KYG211501005,B44ZV94,,,1378,XHKG,Hong Kong Stock Exchange,HKD
+86,CN-86,Asia Pacific,East Asia,China,Sh Fudan Microelectronics Gp Co Lt,Semiconductors & Chip Technologies,S62807433,CNE100000510,6280743,,,1385,XHKG,Hong Kong Stock Exchange,HKD
+87,CN-87,Asia Pacific,East Asia,China,Industrial And Commercial Bank Of,Banking Services,,CNE1000003G1,B1G1QD8,,,1398,XHKG,Hong Kong Stock Exchange,HKD
+88,CN-88,Asia Pacific,East Asia,China,3Sbio Inc,Pharmaceuticals,,KYG8875G1029,BY9D3L9,,,1530,XHKG,Hong Kong Stock Exchange,HKD
+89,CN-89,Asia Pacific,East Asia,China,Genscript Biotech Corp,Biotechnology & Life Sciences,,KYG3825B1059,BD9Q2J2,,,1548,XHKG,Hong Kong Stock Exchange,HKD
+90,CN-90,Asia Pacific,East Asia,China,Yihai International Holding Ltd,Food & Tobacco,,KYG984191075,BD9GZX7,,,1579,XHKG,Hong Kong Stock Exchange,HKD
+91,CN-91,Asia Pacific,East Asia,China,Yadea Group Holdings Ltd,Automobiles & Auto Parts,,KYG9830F1063,BZ04KX9,,,1585,XHKG,Hong Kong Stock Exchange,HKD
+92,CN-92,Asia Pacific,East Asia,China,Postal Savings Bank Of China Ltd H,Banking Services,,CNE1000029W3,BD8GL18,,,1658,XHKG,Hong Kong Stock Exchange,HKD
+93,CN-93,Asia Pacific,East Asia,China,Crrc Corp Ltd H,"Machinery, Equipment & Components",,CNE100000BG0,B2R2ZC9,,,1766,XHKG,Hong Kong Stock Exchange,HKD
+94,CN-94,Asia Pacific,East Asia,China,Ganfeng Lithium Ltd H,Chemicals,,CNE1000031W9,BZ9NS11,,,1772,XHKG,Hong Kong Stock Exchange,HKD
+95,CN-95,Asia Pacific,East Asia,China,Gf Securities Ltd H,Capital Markets & Advisory,,CNE100001TQ9,BW4NKK8,,,1776,XHKG,Hong Kong Stock Exchange,HKD
+96,CN-96,Asia Pacific,East Asia,China,Shandong Gold Mining Ltd H,Metals & Mining,,CNE1000036N7,BFD2096,,,1787,XHKG,Hong Kong Stock Exchange,HKD
+97,CN-97,Asia Pacific,East Asia,China,East Buy Holding Ltd,Miscellaneous Educational Service Providers,,KYG5313A1013,BDFZ4G4,,,1797,XHKG,Hong Kong Stock Exchange,HKD
+98,CN-98,Asia Pacific,East Asia,China,Innovent Biologics Inc,Pharmaceuticals,,KYG4818G1010,BGR6KX5,,,1801,XHKG,Hong Kong Stock Exchange,HKD
+99,CN-99,Asia Pacific,East Asia,China,Xiaomi Corp,Consumer Electronics,,KYG9830T1067,BG0ZMJ9,,,1810,XHKG,Hong Kong Stock Exchange,HKD
+100,CN-100,Asia Pacific,East Asia,China,Cgn Power Ltd H,Electrical Utilities & IPPs,,CNE100001T80,BSBMM04,,,1816,XHKG,Hong Kong Stock Exchange,HKD
+101,CN-101,Asia Pacific,East Asia,China,Zhaojin Mining Industry Ltd H,Metals & Mining,,CNE1000004R6,B1H5082,,,1818,XHKG,Hong Kong Stock Exchange,HKD
+102,CN-102,Asia Pacific,East Asia,China,Ping An Healthcare And Technology,Healthcare Providers & Services,,KYG711391022,BDRYVB3,,,1833,XHKG,Hong Kong Stock Exchange,HKD
+103,CN-103,Asia Pacific,East Asia,China,China Tourism Group Duty Free Clas,Transport Infrastructure,,CNE100004YZ4,BLB6P53,,,1880,XHKG,Hong Kong Stock Exchange,HKD
+104,CN-104,Asia Pacific,East Asia,China,Haitian International Ltd,"Machinery, Equipment & Components",,KYG4232C1087,B1L2RC2,,,1882,XHKG,Hong Kong Stock Exchange,HKD
+105,CN-105,Asia Pacific,East Asia,China,Kingboard Laminates Holdings Ltd,Electronic Components & Systems,,KYG5257K1076,B1HHFV6,,,1888,XHKG,Hong Kong Stock Exchange,HKD
+106,CN-106,Asia Pacific,East Asia,China,China Coal Energy Ltd H,Coal,,CNE100000528,B1JNK84,,,1898,XHKG,Hong Kong Stock Exchange,HKD
+107,CN-107,Asia Pacific,East Asia,China,C D International Investment Group,Real Estate Operations,,KYG3165D1097,BZBY9R5,,,1908,XHKG,Hong Kong Stock Exchange,HKD
+108,CN-108,Asia Pacific,East Asia,China,Cosco Shipping Holdings Ltd H,Freight & Logistics Services,,CNE1000002J7,B0B8Z18,,,1919,XHKG,Hong Kong Stock Exchange,HKD
+109,CN-109,Asia Pacific,East Asia,China,Chow Tai Fook Jewellery Group Ltd,Textiles & Apparel,,KYG211461085,B4R39F7,,,1929,XHKG,Hong Kong Stock Exchange,HKD
+110,CN-110,Asia Pacific,East Asia,China,China Minsheng Banking Corp Ltd H,Banking Services,,CNE100000HF9,B57JY24,,,1988,XHKG,Hong Kong Stock Exchange,HKD
+111,CN-111,Asia Pacific,East Asia,China,Hualan Biological Engineering Inc,Pharmaceuticals,,CNE000001JN8,BD5CL19,,,2007,XHKG,Hong Kong Stock Exchange,HKD
+112,CN-112,Asia Pacific,East Asia,China,Country Garden Holdings Ltd,Real Estate Operations,,KYG245241032,B1VKYN6,,,2007,XHKG,Hong Kong Stock Exchange,HKD
+113,CN-113,Asia Pacific,East Asia,China,Li Auto Class A Inc,Automobiles & Auto Parts,,KYG5479M1050,BMW5M00,,,2015,XHKG,Hong Kong Stock Exchange,HKD
+114,CN-114,Asia Pacific,East Asia,China,Aac Technologies Holdings Inc,Electronic Components & Systems,,KYG2953R1149,B85LKS1,,,2018,XHKG,Hong Kong Stock Exchange,HKD
+115,CN-115,Asia Pacific,East Asia,China,Anta Sports Products Ltd,Textiles & Apparel,,KYG040111059,B1YVKN8,,,2020,XHKG,Hong Kong Stock Exchange,HKD
+116,CN-116,Asia Pacific,East Asia,China,Hengdian Group Dmegc Magnetics Ltd,Semiconductors & Chip Technologies,,CNE000001N70,BD5C8D0,,,2056,XSHE,Shenzhen Stock Exchange,CNY
+117,CN-117,Asia Pacific,East Asia,China,Gotion High-Tech Ltd A,"Machinery, Equipment & Components",,CNE000001NY7,BD5CJ71,,,2074,XSHE,Shenzhen Stock Exchange,CNY
+118,CN-118,Asia Pacific,East Asia,China,China Lesso Group Holdings Ltd,Residential Construction & Materials,,KYG2157Q1029,BCDBKF8,,,2128,XSHE,Shenzhen Stock Exchange,CNY
+119,CN-119,Asia Pacific,East Asia,China,Shanghai Fosun Pharmaceutical (Gro,Pharmaceuticals,,CNE100001M79,B8XBQ96,,,2196,XSHE,Shenzhen Stock Exchange,CNY
+120,CN-120,Asia Pacific,East Asia,China,China Vanke Ltd H,Real Estate Operations,,CNE100001SR9,BN320P8,,,2202,XSHE,Shenzhen Stock Exchange,CNY
+121,CN-121,Asia Pacific,East Asia,China,Guangzhou Automobile Group Ltd H,Automobiles & Auto Parts,,CNE100000Q35,B433995,,,2238,XSHE,Shenzhen Stock Exchange,CNY
+122,CN-122,Asia Pacific,East Asia,China,Goertek Inc A,Electronic Components & Systems,,CNE100000BP1,BD5CNT1,,,2241,XSHE,Shenzhen Stock Exchange,CNY
+123,CN-123,Asia Pacific,East Asia,China,Wuxi Biologics Cayman Inc,Pharmaceuticals,,KYG970081173,BL6B9P1,,,2269,XHKG,Hong Kong Stock Exchange,HKD
+124,CN-124,Asia Pacific,East Asia,China,Shenzhou International Group Ltd,Textiles & Apparel,,KYG8087W1015,B0MP1B0,,,2313,XSHE,Shenzhen Stock Exchange,CNY
+125,CN-125,Asia Pacific,East Asia,China,Ping An Insurance (Group) Co Of Ch,Insurance,,CNE1000003X6,B01FLR7,,,2318,XHKG,Hong Kong Stock Exchange,HKD
+126,CN-126,Asia Pacific,East Asia,China,China Mengniu Dairy Ltd,Food & Tobacco,,KYG210961051,B01B1L9,,,2319,XSHE,Shenzhen Stock Exchange,CNY
+127,CN-127,Asia Pacific,East Asia,China,Picc Property And Casualty Ltd H,Insurance,S67062505,CNE100000593,6706250,,,2328,XHKG,Hong Kong Stock Exchange,HKD
+128,CN-128,Asia Pacific,East Asia,China,Li Ning Ltd,Textiles & Apparel,,KYG5496K1242,B01JCK9,,,2331,XSHE,Shenzhen Stock Exchange,CNY
+129,CN-129,Asia Pacific,East Asia,China,Great Wall Motor Company Ltd H,Automobiles & Auto Parts,S67182550,CNE100000338,6718255,,,2333,XSHE,Shenzhen Stock Exchange,CNY
+130,CN-130,Asia Pacific,East Asia,China,Weichai Power Ltd H,Automobiles & Auto Parts,S67439562,CNE1000004L9,6743956,,,2338,XSHE,Shenzhen Stock Exchange,CNY
+131,CN-131,Asia Pacific,East Asia,China,Gem Ltd A,Professional & Commercial Services,,CNE100000KT4,BD5CFW8,,,2340,XSHE,Shenzhen Stock Exchange,CNY
+132,CN-132,Asia Pacific,East Asia,China,Avichina Industry & Technology Ltd,Aerospace & Defense,S67078998,CNE1000001Y8,6707899,,,2357,XSHE,Shenzhen Stock Exchange,CNY
+133,CN-133,Asia Pacific,East Asia,China,Wuxi Apptec Ltd H,Biotechnology & Life Sciences,,CNE100003F19,BGHH0L6,,,2359,XHKG,Hong Kong Stock Exchange,HKD
+134,CN-134,Asia Pacific,East Asia,China,China Power International Developm,Electrical Utilities & IPPs,,HK2380027329,B02ZKQ8,,,2380,XSHE,Shenzhen Stock Exchange,CNY
+135,CN-135,Asia Pacific,East Asia,China,Sunny Optical Technology Ltd,Electronic Components & Systems,,KYG8586D1097,B1YBT08,,,2382,XSHE,Shenzhen Stock Exchange,CNY
+136,CN-136,Asia Pacific,East Asia,China,Wus Printed Circuit (Kunshan) Ltd,Semiconductors & Chip Technologies,,CNE100000SP5,BD5C7Z5,,,2463,XSHE,Shenzhen Stock Exchange,CNY
+137,CN-137,Asia Pacific,East Asia,China,Rongsheng Petro Chemical Ltd A,Chemicals,,CNE100000W60,BD5CL20,,,2493,XSHE,Shenzhen Stock Exchange,CNY
+138,CN-138,Asia Pacific,East Asia,China,Sichuan Yahua Industrial Group Ltd,Chemicals,,CNE100000WF8,BD5LSZ9,,,2497,XSHE,Shenzhen Stock Exchange,CNY
+139,CN-139,Asia Pacific,East Asia,China,Chongqing Fuling Zhacai Group Ltd,Food & Tobacco,,CNE100000WX1,BFCCQ99,,,2507,XSHE,Shenzhen Stock Exchange,CNY
+140,CN-140,Asia Pacific,East Asia,China,Boc Aviation Ltd,Banking Services,,SG9999015267,BYZJV17,,,2588,XSHE,Shenzhen Stock Exchange,CNY
+141,CN-141,Asia Pacific,East Asia,China,Byd Ltd A,Automobiles & Auto Parts,,CNE100001526,BD5CQ69,,,2594,XSHE,Shenzhen Stock Exchange,CNY
+142,CN-142,Asia Pacific,East Asia,China,Aluminum Corporation Of China Ltd,Metals & Mining,S64253958,CNE1000001T8,6425395,,,2600,XSHE,Shenzhen Stock Exchange,CNY
+143,CN-143,Asia Pacific,East Asia,China,China Pacific Insurance (Group) Lt,Insurance,,CNE1000009Q7,B2Q5H56,,,2601,XHKG,Hong Kong Stock Exchange,HKD
+144,CN-144,Asia Pacific,East Asia,China,Lb Group Ltd A,Chemicals,,CNE1000015M3,BD5LS71,,,2601,XSHE,Shenzhen Stock Exchange,CNY
+145,CN-145,Asia Pacific,East Asia,China,Shanghai Pharmaceuticals Holding L,Pharmaceuticals,,CNE1000012B3,B4Q4CJ6,,,2607,XSHE,Shenzhen Stock Exchange,CNY
+146,CN-146,Asia Pacific,East Asia,China,Jd Logistics Inc,Freight & Logistics Services,,KYG5074S1012,BNMBPD9,,,2618,XSHE,Shenzhen Stock Exchange,CNY
+147,CN-147,Asia Pacific,East Asia,China,China Life Insurance Ltd H,Insurance,,CNE1000002L3,6718976,,,2628,XHKG,Hong Kong Stock Exchange,HKD
+148,CN-148,Asia Pacific,East Asia,China,China Overseas Property Holdings L,Real Estate Operations,,KYG2118M1096,BYYMZN7,,,2669,XSHE,Shenzhen Stock Exchange,CNY
+149,CN-149,Asia Pacific,East Asia,China,Enn Energy Holdings Ltd,Natural Gas Utilities,S63339378,KYG3066L1014,6333937,,,2688,XSHE,Shenzhen Stock Exchange,CNY
+150,CN-150,Asia Pacific,East Asia,China,Nine Dragons Paper Holdings Ltd,Containers & Packaging,,BMG653181005,B0WC2B8,,,2689,XSHE,Shenzhen Stock Exchange,CNY
+151,CN-151,Asia Pacific,East Asia,China,Greentown Service Group Ltd,Real Estate Operations,,KYG410121084,BD20C13,,,2869,XSHE,Shenzhen Stock Exchange,CNY
+152,CN-152,Asia Pacific,East Asia,China,China Oilfield Services Ltd H,Energy Equipment & Services,S65609950,CNE1000002P4,6560995,,,2883,XSHE,Shenzhen Stock Exchange,CNY
+153,CN-153,Asia Pacific,East Asia,China,Zijin Mining Group Ltd H,Metals & Mining,S67252999,CNE100000502,6725299,,,2899,XHKG,Hong Kong Stock Exchange,HKD
+154,CN-154,Asia Pacific,East Asia,China,Avary Holding (Shenzhen) Ltd A,Semiconductors & Chip Technologies,,CNE100003GF5,BKDQ800,,,2938,XSHE,Shenzhen Stock Exchange,CNY
+155,CN-155,Asia Pacific,East Asia,China,China State Construction Internati,Construction & Engineering,,KYG216771363,B0BM5T8,,,3311,XSHE,Shenzhen Stock Exchange,CNY
+156,CN-156,Asia Pacific,East Asia,China,China Resources Pharmaceutical Gro,Pharmaceuticals,,HK0000311099,BYNGG26,,,3320,XSHE,Shenzhen Stock Exchange,CNY
+157,CN-157,Asia Pacific,East Asia,China,China National Building Material L,Construction Materials,,CNE1000002N9,B0Y91C1,,,3323,XSHE,Shenzhen Stock Exchange,CNY
+158,CN-158,Asia Pacific,East Asia,China,Bank Of Communications Ltd H,Banking Services,,CNE100000205,B0B8Z29,,,3328,XHKG,Hong Kong Stock Exchange,HKD
+159,CN-159,Asia Pacific,East Asia,China,Vinda International Ltd,Consumer & Household Products,,KYG9361V1086,B1Z7648,,,3331,XSHE,Shenzhen Stock Exchange,CNY
+160,CN-160,Asia Pacific,East Asia,China,China Evergrande Group,Real Estate Operations,,KYG2119W1069,BD3DS68,,,3333,XSHE,Shenzhen Stock Exchange,CNY
+161,CN-161,Asia Pacific,East Asia,China,Hangzhou Tigermed Consulting Ltd H,Biotechnology & Life Sciences,,CNE1000040M1,BMZC7F8,,,3347,XSHE,Shenzhen Stock Exchange,CNY
+162,CN-162,Asia Pacific,East Asia,China,Far East Horizon Ltd,Banking Services,,HK0000077468,B63DLB5,,,3360,XSHE,Shenzhen Stock Exchange,CNY
+163,CN-163,Asia Pacific,East Asia,China,Fuyao Glass Industry Group Ltd H,Automobiles & Auto Parts,,CNE100001TR7,BWGCFG4,,,3606,XSHE,Shenzhen Stock Exchange,CNY
+164,CN-164,Asia Pacific,East Asia,China,Meituan,Software & IT Solutions / Digital Services,,KYG596691041,BGJW376,,,3690,XHKG,Hong Kong Stock Exchange,HKD
+165,CN-165,Asia Pacific,East Asia,China,Hansoh Pharmaceutical Group Ltd,Pharmaceuticals,,KYG549581067,BJYKB72,,,3692,XSHE,Shenzhen Stock Exchange,CNY
+166,CN-166,Asia Pacific,East Asia,China,Pharmaron Beijing Ltd H,Biotechnology & Life Sciences,,CNE100003PG4,BK72QD3,,,3759,XSHE,Shenzhen Stock Exchange,CNY
+167,CN-167,Asia Pacific,East Asia,China,Dali Foods Group Ltd,Food & Tobacco,,KYG2743Y1061,BYQ9796,,,3799,XSHE,Shenzhen Stock Exchange,CNY
+168,CN-168,Asia Pacific,East Asia,China,Gcl Technology Holdings Ltd,Renewable Energy,,KYG3774X1088,B28XTR4,,,3800,XSHE,Shenzhen Stock Exchange,CNY
+169,CN-169,Asia Pacific,East Asia,China,Kingsoft Corp Ltd,Software & IT Solutions / Digital Services,,KYG5264Y1089,B27WRM3,,,3888,XSHE,Shenzhen Stock Exchange,CNY
+170,CN-170,Asia Pacific,East Asia,China,Zhuzhou Crrc Times Electric Ltd H,"Machinery, Equipment & Components",,CNE1000004X4,B1L3XL6,,,3898,XSHE,Shenzhen Stock Exchange,CNY
+171,CN-171,Asia Pacific,East Asia,China,Greentown China Ltd,Real Estate Operations,,KYG4100M1050,B17N9P6,,,3900,XSHE,Shenzhen Stock Exchange,CNY
+172,CN-172,Asia Pacific,East Asia,China,China International Capital Corp L,Capital Markets & Advisory,,CNE100002359,BZ169C6,,,3908,XHKG,Hong Kong Stock Exchange,HKD
+173,CN-173,Asia Pacific,East Asia,China,China Merchants Bank Ltd H,Banking Services,,CNE1000002M1,B1DYPZ5,,,3968,XHKG,Hong Kong Stock Exchange,HKD
+174,CN-174,Asia Pacific,East Asia,China,Bank Of China Ltd H,Banking Services,,CNE1000001Z5,B154564,,,3988,XSHE,Shenzhen Stock Exchange,CNY
+175,CN-175,Asia Pacific,East Asia,China,Cmoc Group Ltd H,Metals & Mining,,CNE100000114,B1VRCG6,,,3993,XSHE,Shenzhen Stock Exchange,CNY
+176,CN-176,Asia Pacific,East Asia,China,Bosideng International Ltd,Textiles & Apparel,,KYG126521064,B24FZ32,,,3998,XSHE,Shenzhen Stock Exchange,CNY
+177,CN-177,Asia Pacific,East Asia,China,Citic Securities Company Ltd H,Capital Markets & Advisory,,CNE1000016V2,B6SPB49,,,6030,XSHE,Shenzhen Stock Exchange,CNY
+178,CN-178,Asia Pacific,East Asia,China,Zhongan Online P & C Insurance Cor,Insurance,,CNE100002QY7,BYZQ099,,,6060,XSHE,Shenzhen Stock Exchange,CNY
+179,CN-179,Asia Pacific,East Asia,China,Csc Financial Ltd H,Capital Markets & Advisory,,CNE100002B89,BDFF8H3,,,6066,XHKG,Hong Kong Stock Exchange,HKD
+180,CN-180,Asia Pacific,East Asia,China,Hygeia Healthcare Holdings Ltd,Healthcare Providers & Services,,KYG4712E1035,BMX09H0,,,6078,XSHE,Shenzhen Stock Exchange,CNY
+181,CN-181,Asia Pacific,East Asia,China,Country Garden Services Holdings L,Real Estate Operations,,KYG2453A1085,BDQZP48,,,6098,XSHE,Shenzhen Stock Exchange,CNY
+182,CN-182,Asia Pacific,East Asia,China,Topsports International Holdings L,Specialty Retailers,,KYG8924B1041,BJRFW26,,,6110,XSHE,Shenzhen Stock Exchange,CNY
+183,CN-183,Asia Pacific,East Asia,China,Beigene Ltd,Biotechnology & Life Sciences,,KYG1146Y1017,BGDY260,,,6160,XSHE,Shenzhen Stock Exchange,CNY
+184,CN-184,Asia Pacific,East Asia,China,China Feihe Ltd,Food & Tobacco,,KYG2121Q1055,BK0SBL1,,,6186,XSHE,Shenzhen Stock Exchange,CNY
+185,CN-185,Asia Pacific,East Asia,China,Jd Health International Inc,Diversified Retail,,KYG5074A1004,BMW8R04,,,6618,XHKG,Hong Kong Stock Exchange,HKD
+186,CN-186,Asia Pacific,East Asia,China,Haier Smart Home Class H Ltd H,Consumer & Household Products,,CNE1000048K8,BLD4QD0,,,6690,XHKG,Hong Kong Stock Exchange,HKD
+187,CN-187,Asia Pacific,East Asia,China,China Everbright Bank Ltd H,Banking Services,,CNE100001QW3,B5NRRJ0,,,6818,XHKG,Hong Kong Stock Exchange,HKD
+188,CN-188,Asia Pacific,East Asia,China,Haitong Securities Company Ltd H,Capital Markets & Advisory,,CNE1000019K9,B71SXC4,,,6837,XSHE,Shenzhen Stock Exchange,CNY
+189,CN-189,Asia Pacific,East Asia,China,Haidilao International Holding Ltd,Hotels & Entertainment Services,,KYG4290A1013,BGN9715,,,6862,XSHE,Shenzhen Stock Exchange,CNY
+190,CN-190,Asia Pacific,East Asia,China,Flat Glass Group Ltd H,Renewable Energy,,CNE100002375,BYQ9774,,,6865,XSHE,Shenzhen Stock Exchange,CNY
+191,CN-191,Asia Pacific,East Asia,China,China Galaxy Securities Ltd H,Capital Markets & Advisory,,CNE100001NT6,B92NYF2,,,6881,XSHE,Shenzhen Stock Exchange,CNY
+192,CN-192,Asia Pacific,East Asia,China,Huatai Securities Ltd H,Capital Markets & Advisory,,CNE100001YQ9,BWVFT00,,,6886,XSHE,Shenzhen Stock Exchange,CNY
+193,CN-193,Asia Pacific,East Asia,China,Smoore International Holdings Ltd,Food & Tobacco,,KYG8245V1023,BKWGSQ7,,,6969,XSHE,Shenzhen Stock Exchange,CNY
+194,CN-194,Asia Pacific,East Asia,China,Jd.Com Class A Inc,Diversified Retail,,KYG8208B1014,BKPQZT6,,,9618,XHKG,Hong Kong Stock Exchange,HKD
+195,CN-195,Asia Pacific,East Asia,China,Bilibili Inc,Software & IT Solutions / Digital Services,,KYG1098A1013,BLF8533,,,9626,XSHE,Shenzhen Stock Exchange,CNY
+196,CN-196,Asia Pacific,East Asia,China,Nongfu Spring Ltd H,Beverages,,CNE100004272,BMGWW30,,,9633,XHKG,Hong Kong Stock Exchange,HKD
+197,CN-197,Asia Pacific,East Asia,China,Zai Lab Ltd,Pharmaceuticals,,KYG9887T1168,BP8L269,,,9688,XSHE,Shenzhen Stock Exchange,CNY
+198,CN-198,Asia Pacific,East Asia,China,Gds Holdings Ltd Class A,Software & IT Solutions / Digital Services,,KYG3902L1095,BMG40P4,,,9698,XSHE,Shenzhen Stock Exchange,CNY
+199,CN-199,Asia Pacific,East Asia,China,Xpeng Class A Inc,Automobiles & Auto Parts,,KYG982AW1003,BP6FB33,,,9868,XSHE,Shenzhen Stock Exchange,CNY
+200,CN-200,Asia Pacific,East Asia,China,Baidu Class A Inc,Software & IT Solutions / Digital Services,,KYG070341048,B0J2D41,,,9888,XHKG,Hong Kong Stock Exchange,HKD
+201,CN-201,Asia Pacific,East Asia,China,New Oriental Education & Technolog,Miscellaneous Educational Service Providers,,KYG6470A1168,BN4MKV3,,,9901,XSHE,Shenzhen Stock Exchange,CNY
+202,CN-202,Asia Pacific,East Asia,China,Jiumaojiu International Holdings L,Hotels & Entertainment Services,,KYG5141L1059,BLBFH65,,,9922,XSHE,Shenzhen Stock Exchange,CNY
+203,CN-203,Asia Pacific,East Asia,China,Akeso Inc,Biotechnology & Life Sciences,,KYG0146B1032,BLFJ7Y1,,,9926,XSHE,Shenzhen Stock Exchange,CNY
+204,CN-204,Asia Pacific,East Asia,China,Trip.Com Group Ltd,Hotels & Entertainment Services,,KYG9066F1019,BNYK8H9,,,9961,XSHE,Shenzhen Stock Exchange,CNY
+205,CN-205,Asia Pacific,East Asia,China,Yum China Holdings Inc,Hotels & Entertainment Services,98850P109,US98850P1093,BN2BD13,,,9987,XHKG,Hong Kong Stock Exchange,HKD
+206,CN-206,Asia Pacific,East Asia,China,Alibaba Group Holding Ltd,Software & IT Solutions / Digital Services,,KYG017191142,BK6YZP5,,,9988,XHKG,Hong Kong Stock Exchange,HKD
+207,CN-207,Asia Pacific,East Asia,China,Pop Mart International Group Ltd,Specialty Retailers,,KYG7170M1033,BN6PP37,,,9992,XSHE,Shenzhen Stock Exchange,CNY
+208,CN-208,Asia Pacific,East Asia,China,Netease Inc,Software & IT Solutions / Digital Services,,KYG6427A1022,BM93SF4,,,9999,XHKG,Hong Kong Stock Exchange,HKD
+209,CN-209,Asia Pacific,East Asia,China,Anhui Gujing Distillery Ltd B,Beverages,S60266913,CNE000000K82,6026691,,,200596,XSHE,Shenzhen Stock Exchange,CNY
+210,CN-210,Asia Pacific,East Asia,China,Lepu Medical Technology Beijing Lt,Medical Devices & Supplies,,CNE100000H44,BD5CM16,,,300003,XSHE,Shenzhen Stock Exchange,CNY
+211,CN-211,Asia Pacific,East Asia,China,Eve Energy Ltd A,"Machinery, Equipment & Components",,CNE100000GS4,BD5C7G6,,,300014,XSHE,Shenzhen Stock Exchange,CNY
+212,CN-212,Asia Pacific,East Asia,China,Aier Eye Hospital Group Ltd A,Healthcare Providers & Services,,CNE100000GR6,BD5CLQ4,,,300015,XSHE,Shenzhen Stock Exchange,CNY
+213,CN-213,Asia Pacific,East Asia,China,Hithink Royalflush Information Net,Fintech Services / Digital Financial Platforms,,CNE100000JG3,BD5CN46,,,300033,XSHE,Shenzhen Stock Exchange,CNY
+214,CN-214,Asia Pacific,East Asia,China,Shenzhen Capchem Technology Ltd A,Chemicals,,CNE100000K15,BD5LRQ3,,,300037,XSHE,Shenzhen Stock Exchange,CNY
+215,CN-215,Asia Pacific,East Asia,China,East Money Information Ltd A,Capital Markets & Advisory,,CNE100000MD4,BD5CPC8,,,300059,XSHE,Shenzhen Stock Exchange,CNY
+216,CN-216,Asia Pacific,East Asia,China,Beijing Easpring Material Technolo,"Machinery, Equipment & Components",,CNE100000NN1,BD760M3,,,300073,XSHE,Shenzhen Stock Exchange,CNY
+217,CN-217,Asia Pacific,East Asia,China,Risen Energy Ltd A,Renewable Energy,,CNE100000T73,BD5LW24,,,300118,XSHE,Shenzhen Stock Exchange,CNY
+218,CN-218,Asia Pacific,East Asia,China,Chongqing Zhifei Biological Produc,Pharmaceuticals,,CNE100000V20,BD5CJY8,,,300122,XSHE,Shenzhen Stock Exchange,CNY
+219,CN-219,Asia Pacific,East Asia,China,Shenzhen Inovance Technology Ltd A,"Machinery, Equipment & Components",,CNE100000V46,BD5CMN8,,,300124,XSHE,Shenzhen Stock Exchange,CNY
+220,CN-220,Asia Pacific,East Asia,China,Walvax Biotechnology Ltd A,Pharmaceuticals,,CNE100000WN2,BD5CG36,,,300142,XSHE,Shenzhen Stock Exchange,CNY
+221,CN-221,Asia Pacific,East Asia,China,Songcheng Performance Development,Media & Publishing,,CNE100000XG4,BD5CMV6,,,300144,XSHE,Shenzhen Stock Exchange,CNY
+222,CN-222,Asia Pacific,East Asia,China,By-Health Ltd A,Food & Tobacco,,CNE100000Y84,BD5CKV2,,,300146,XSHE,Shenzhen Stock Exchange,CNY
+223,CN-223,Asia Pacific,East Asia,China,Sunwoda Electronic Ltd A,"Machinery, Equipment & Components",,CNE100001260,BD5CCV6,,,300207,XSHE,Shenzhen Stock Exchange,CNY
+224,CN-224,Asia Pacific,East Asia,China,Beijing E-Hualu Information Techno,Software & IT Solutions / Digital Services,,CNE1000012M0,BD5CD79,,,300212,XSHE,Shenzhen Stock Exchange,CNY
+225,CN-225,Asia Pacific,East Asia,China,Ingenic Semiconductor Ltd A,Semiconductors & Chip Technologies,,CNE100001377,BD760S9,,,300223,XSHE,Shenzhen Stock Exchange,CNY
+226,CN-226,Asia Pacific,East Asia,China,Beijing Enlight Media Ltd A,Media & Publishing,,CNE100001617,BD5CN79,,,300251,XSHE,Shenzhen Stock Exchange,CNY
+227,CN-227,Asia Pacific,East Asia,China,Sungrow Power Supply Ltd A,Renewable Energy,,CNE1000018M7,BD5CGB4,,,300274,XSHE,Shenzhen Stock Exchange,CNY
+228,CN-228,Asia Pacific,East Asia,China,Zhongji Innolight Ltd A,Communications & Networking,,CNE100001CY9,BFFJRM7,,,300308,XSHE,Shenzhen Stock Exchange,CNY
+229,CN-229,Asia Pacific,East Asia,China,Zhejiang Jingsheng Mechanical & El,Semiconductors & Chip Technologies,,CNE100001DJ8,BD5M1Y2,,,300316,XSHE,Shenzhen Stock Exchange,CNY
+230,CN-230,Asia Pacific,East Asia,China,Hangzhou Tigermed Consulting Ltd A,Biotechnology & Life Sciences,,CNE100001KV8,BD5CCK5,,,300347,XSHE,Shenzhen Stock Exchange,CNY
+231,CN-231,Asia Pacific,East Asia,China,Zhejiang Wolwo Bio-Pharmaceutical,Pharmaceuticals,,CNE100001R58,BFY8GY0,,,300357,XSHE,Shenzhen Stock Exchange,CNY
+232,CN-232,Asia Pacific,East Asia,China,Porton Pharma Solutions Ltd A,Pharmaceuticals,,CNE100001S57,BD5LZ92,,,300363,XSHE,Shenzhen Stock Exchange,CNY
+233,CN-233,Asia Pacific,East Asia,China,Yangzhou Yangjie Electronic Techno,Semiconductors & Chip Technologies,,CNE100001R90,BD5LTF6,,,300373,XSHE,Shenzhen Stock Exchange,CNY
+234,CN-234,Asia Pacific,East Asia,China,Canmax Technologies Ltd A,Chemicals,,CNE100001XM0,BMQBTG9,,,300390,XSHE,Shenzhen Stock Exchange,CNY
+235,CN-235,Asia Pacific,East Asia,China,Hubei Feilihua Quartz Glass Ltd A,Chemicals,,CNE100001XR9,BMTCW04,,,300395,XSHE,Shenzhen Stock Exchange,CNY
+236,CN-236,Asia Pacific,East Asia,China,Chaozhou Three-Circle (Group) Ltd,Electronic Components & Systems,,CNE100001Y42,BD5CLT7,,,300408,XSHE,Shenzhen Stock Exchange,CNY
+237,CN-237,Asia Pacific,East Asia,China,Mango Excellent Media Ltd A,Media & Publishing,,CNE100001Y83,BD5CDT1,,,300413,XSHE,Shenzhen Stock Exchange,CNY
+238,CN-238,Asia Pacific,East Asia,China,Kunlun Tech Ltd A,Software & IT Solutions / Digital Services,,CNE100001YF2,BD5CN13,,,300418,XSHE,Shenzhen Stock Exchange,CNY
+239,CN-239,Asia Pacific,East Asia,China,Lens Technology Ltd A,Electronic Components & Systems,,CNE100001YW7,BD5CP17,,,300433,XSHE,Shenzhen Stock Exchange,CNY
+240,CN-240,Asia Pacific,East Asia,China,Guangzhou Great Power Energy &Tech,"Machinery, Equipment & Components",,CNE100001Z17,BD76131,,,300438,XSHE,Shenzhen Stock Exchange,CNY
+241,CN-241,Asia Pacific,East Asia,China,Sangfor Technologies Inc A,Software & IT Solutions / Digital Services,,CNE1000033T1,BHQPS70,,,300454,XSHE,Shenzhen Stock Exchange,CNY
+242,CN-242,Asia Pacific,East Asia,China,Xian Sunresin New Materials Ltd A,Chemicals,,CNE100002136,BHQPSB4,,,300487,XSHE,Shenzhen Stock Exchange,CNY
+243,CN-243,Asia Pacific,East Asia,China,Thunder Software Technology Ltd A,Software & IT Solutions / Digital Services,,CNE1000021D0,BD5CG03,,,300496,XSHE,Shenzhen Stock Exchange,CNY
+244,CN-244,Asia Pacific,East Asia,China,Wens Foodstuff Group Ltd,Food & Tobacco,,CNE100002508,BD5CPT5,,,300498,XSHE,Shenzhen Stock Exchange,CNY
+245,CN-245,Asia Pacific,East Asia,China,Jafron Biomedical Co Ltd A,Medical Devices & Supplies,,CNE100002995,BFY8H03,,,300529,XSHE,Shenzhen Stock Exchange,CNY
+246,CN-246,Asia Pacific,East Asia,China,Betta Pharmaceuticals Ltd A,Pharmaceuticals,,CNE100002DD9,BD6QWL7,,,300558,XSHE,Shenzhen Stock Exchange,CNY
+247,CN-247,Asia Pacific,East Asia,China,Shenzhen Senior Technology Materia,"Machinery, Equipment & Components",,CNE100002DP3,BHQPSF8,,,300568,XSHE,Shenzhen Stock Exchange,CNY
+248,CN-248,Asia Pacific,East Asia,China,Autek China Inc A,Medical Devices & Supplies,,CNE100002MR0,BHQPSJ2,,,300595,XSHE,Shenzhen Stock Exchange,CNY
+249,CN-249,Asia Pacific,East Asia,China,Shenzhen Kangtai Biological Produc,Pharmaceuticals,,CNE100002Q33,BFY8HT2,,,300601,XSHE,Shenzhen Stock Exchange,CNY
+250,CN-250,Asia Pacific,East Asia,China,Hangzhou Chang Chuan Technology Lt,Semiconductors & Chip Technologies,,CNE100002Q09,BMTCW71,,,300604,XSHE,Shenzhen Stock Exchange,CNY
+251,CN-251,Asia Pacific,East Asia,China,Yealink Network Technology Ltd A,Communications & Networking,,CNE100002PC5,BFCCR07,,,300628,XSHE,Shenzhen Stock Exchange,CNY
+252,CN-252,Asia Pacific,East Asia,China,Sg Micro Corp A,Semiconductors & Chip Technologies,,CNE100002NT4,BHQPSR0,,,300661,XSHE,Shenzhen Stock Exchange,CNY
+253,CN-253,Asia Pacific,East Asia,China,Bgi Genomics Ltd A,Biotechnology & Life Sciences,,CNE100003449,BFY8H58,,,300676,XSHE,Shenzhen Stock Exchange,CNY
+254,CN-254,Asia Pacific,East Asia,China,Weihai Guangwei Composites Ltd A,Chemicals,,CNE1000034T9,BFY8H81,,,300699,XSHE,Shenzhen Stock Exchange,CNY
+255,CN-255,Asia Pacific,East Asia,China,Shenzhen S.C New Energy Technology,Semiconductors & Chip Technologies,,CNE100003G91,BKDQ8D3,,,300724,XSHE,Shenzhen Stock Exchange,CNY
+256,CN-256,Asia Pacific,East Asia,China,Contemporary Amperex Technology Lt,"Machinery, Equipment & Components",,CNE100003662,BHQPSY7,,,300750,XSHE,Shenzhen Stock Exchange,CNY
+257,CN-257,Asia Pacific,East Asia,China,Suzhou Maxwell Technologies Ltd A,"Machinery, Equipment & Components",,CNE100003FS0,BL61W96,,,300751,XSHE,Shenzhen Stock Exchange,CNY
+258,CN-258,Asia Pacific,East Asia,China,Pharmaron Beijing Ltd A,Biotechnology & Life Sciences,,CNE100003JW4,BK4XYC4,,,300759,XSHE,Shenzhen Stock Exchange,CNY
+259,CN-259,Asia Pacific,East Asia,China,Shenzhen Mindray Bio-Medical Elect,Medical Devices & Supplies,,CNE100003G67,BHQK864,,,300760,XSHE,Shenzhen Stock Exchange,CNY
+260,CN-260,Asia Pacific,East Asia,China,Ginlong Technologies Ltd A,"Machinery, Equipment & Components",,CNE100003JZ7,BMQBTQ9,,,300763,XSHE,Shenzhen Stock Exchange,CNY
+261,CN-261,Asia Pacific,East Asia,China,Shenzhen Dynanonic Ltd A,Chemicals,,CNE100003K95,BK71726,,,300769,XSHE,Shenzhen Stock Exchange,CNY
+262,CN-262,Asia Pacific,East Asia,China,Maxscend Microelectronics Ltd A,Semiconductors & Chip Technologies,,CNE100003QK4,BK4XS11,,,300782,XSHE,Shenzhen Stock Exchange,CNY
+263,CN-263,Asia Pacific,East Asia,China,Shenzhen New Industries Biomedical,Medical Devices & Supplies,,CNE100003T39,BMXTX20,,,300832,XSHE,Shenzhen Stock Exchange,CNY
+264,CN-264,Asia Pacific,East Asia,China,Imeik Technology Development Ltd A,Medical Devices & Supplies,,CNE100004868,BNR4MY3,,,300896,XSHE,Shenzhen Stock Exchange,CNY
+265,CN-265,Asia Pacific,East Asia,China,Cngr Advanced Material Ltd A,"Machinery, Equipment & Components",,CNE1000049X9,BP91MT1,,,300919,XSHE,Shenzhen Stock Exchange,CNY
+266,CN-266,Asia Pacific,East Asia,China,Yunnan Botanee Bio-Technology Grou,Consumer & Household Products,,CNE100004G74,BP91N43,,,300957,XSHE,Shenzhen Stock Exchange,CNY
+267,CN-267,Asia Pacific,East Asia,China,Yihai Kerry Arawana Holdings Ltd A,Food & Tobacco,,CNE1000048D3,BMQBTV4,,,300999,XSHE,Shenzhen Stock Exchange,CNY
+268,CN-268,Asia Pacific,East Asia,China,Isoftstone Information Technology,Software & IT Solutions / Digital Services,,CNE1000058S0,BLC7SL2,,,301236,XSHE,Shenzhen Stock Exchange,CNY
+269,HK-1,Asia Pacific,East Asia,Hong  Kong Sar,Ck Hutchison Holdings Ltd,Holding Companies,,KYG217651051,BW9P816,,,1,XHKG,Hong Kong Stock Exchange,HKD
+270,HK-2,Asia Pacific,East Asia,Hong  Kong Sar,Clp Holdings Ltd,Electrical Utilities & IPPs,S60970175,HK0002007356,6097017,,,2,XHKG,Hong Kong Stock Exchange,HKD
+271,HK-3,Asia Pacific,East Asia,Hong  Kong Sar,Hong Kong And China Gas Ltd,Natural Gas Utilities,S64365570,HK0003000038,6436557,,,3,XHKG,Hong Kong Stock Exchange,HKD
+272,HK-4,Asia Pacific,East Asia,Hong  Kong Sar,Power Assets Holdings Ltd,Electrical Utilities & IPPs,S64353279,HK0006000050,6435327,,,6,XHKG,Hong Kong Stock Exchange,HKD
+273,HK-5,Asia Pacific,East Asia,Hong  Kong Sar,Hang Seng Bank Ltd,Banking Services,S64083744,HK0011000095,6408374,,,11,XHKG,Hong Kong Stock Exchange,HKD
+274,HK-6,Asia Pacific,East Asia,Hong  Kong Sar,Henderson Land Development Ltd,Real Estate Operations,S64205388,HK0012000102,6420538,,,12,XHKG,Hong Kong Stock Exchange,HKD
+275,HK-7,Asia Pacific,East Asia,Hong  Kong Sar,Sun Hung Kai Properties Ltd,Real Estate Operations,S68599273,HK0016000132,6859927,,,16,XHKG,Hong Kong Stock Exchange,HKD
+276,HK-8,Asia Pacific,East Asia,Hong  Kong Sar,New World Development Company Ltd,Real Estate Operations,,HK0000608585,BM94GQ4,,,17,XHKG,Hong Kong Stock Exchange,HKD
+277,HK-9,Asia Pacific,East Asia,Hong  Kong Sar,Swire Pacific Ltd A,Beverages,S68677483,HK0019000162,6867748,,,19,XHKG,Hong Kong Stock Exchange,HKD
+278,HK-10,Asia Pacific,East Asia,Hong  Kong Sar,Galaxy Entertainment Group Ltd,Hotels & Entertainment Services,S64658743,HK0027032686,6465874,,,27,XHKG,Hong Kong Stock Exchange,HKD
+279,HK-11,Asia Pacific,East Asia,Hong  Kong Sar,Mtr Corporation Corp Ltd,Passenger Transportation Services,S62900543,HK0066009694,6290054,,,66,XHKG,Hong Kong Stock Exchange,HKD
+280,HK-12,Asia Pacific,East Asia,Hong  Kong Sar,Sino Land Ltd,Real Estate Operations,829344100,HK0083000502,6810429,,,83,XHKG,Hong Kong Stock Exchange,HKD
+281,HK-13,Asia Pacific,East Asia,Hong  Kong Sar,Hang Lung Properties Ltd,Real Estate Operations,S60305067,HK0101000591,6030506,,,101,XHKG,Hong Kong Stock Exchange,HKD
+282,HK-14,Asia Pacific,East Asia,Hong  Kong Sar,Wh Group Ltd,Food & Tobacco,,KYG960071028,BLLHKZ1,,,288,XHKG,Hong Kong Stock Exchange,HKD
+283,HK-15,Asia Pacific,East Asia,Hong  Kong Sar,Hong Kong Exchanges And Clearing L,Capital Markets & Advisory,S62673595,HK0388045442,6267359,,,388,XHKG,Hong Kong Stock Exchange,HKD
+284,HK-16,Asia Pacific,East Asia,Hong  Kong Sar,Techtronic Industries Ltd,"Machinery, Equipment & Components",,HK0669013440,B0190C7,,,669,XHKG,Hong Kong Stock Exchange,HKD
+285,HK-17,Asia Pacific,East Asia,Hong  Kong Sar,Xinyi Glass Holdings Ltd,Residential Construction & Materials,,KYG9828G1082,B05NXN7,,,868,XHKG,Hong Kong Stock Exchange,HKD
+286,HK-18,Asia Pacific,East Asia,Hong  Kong Sar,Cheung Kong Infrastructure Holding,Integrated Utilities,,BMG2178K1009,BYVS6J1,,,1038,XHKG,Hong Kong Stock Exchange,HKD
+287,HK-19,Asia Pacific,East Asia,Hong  Kong Sar,Ck Asset Holdings Ltd,Real Estate Operations,,KYG2177B1014,BYZQ077,,,1113,XHKG,Hong Kong Stock Exchange,HKD
+288,HK-20,Asia Pacific,East Asia,Hong  Kong Sar,Aia Group Ltd,Insurance,,HK0000069689,B4TX8S1,,,1299,XHKG,Hong Kong Stock Exchange,HKD
+289,HK-21,Asia Pacific,East Asia,Hong  Kong Sar,Sitc International Holdings Ltd,Freight & Logistics Services,,KYG8187G1055,B61X7R5,,,1308,XHKG,Hong Kong Stock Exchange,HKD
+290,HK-22,Asia Pacific,East Asia,Hong  Kong Sar,Esr Cayman Ltd,Capital Markets & Advisory,,KYG319891092,BHNCRK0,,,1821,XHKG,Hong Kong Stock Exchange,HKD
+291,HK-23,Asia Pacific,East Asia,Hong  Kong Sar,Budweiser Brewing Company Apac Ltd,Beverages,,KYG1674K1013,BKDXJH5,,,1876,XHKG,Hong Kong Stock Exchange,HKD
+292,HK-24,Asia Pacific,East Asia,Hong  Kong Sar,Sands China Ltd,Hotels & Entertainment Services,,KYG7800X1079,B5B23W2,,,1928,XHKG,Hong Kong Stock Exchange,HKD
+293,HK-25,Asia Pacific,East Asia,Hong  Kong Sar,Swire Properties Ltd,Real Estate Operations,,HK0000063609,B67C2G0,,,1972,XHKG,Hong Kong Stock Exchange,HKD
+294,HK-26,Asia Pacific,East Asia,Hong  Kong Sar,Wharf Real Estate Investment Compa,Real Estate Operations,,KYG9593A1040,BF0GWS4,,,1997,XHKG,Hong Kong Stock Exchange,HKD
+295,HK-27,Asia Pacific,East Asia,Hong  Kong Sar,Boc Hong Kong Holdings Ltd,Banking Services,S65361123,HK2388011192,6536112,,,2388,XHKG,Hong Kong Stock Exchange,HKD
+296,HK-28,Asia Pacific,East Asia,Hong  Kong Sar,Futu Holdings Adr Ltd,Fintech Services / Digital Financial Platforms,36118L106,US36118L1061,BGK4T39,,,FUTU,XHKG,Hong Kong Stock Exchange,HKD
+297,KR-1,Asia Pacific,East Asia,South Korea,Yuhan Corp,Pharmaceuticals,S69883379,KR7000100008,6988337,,,100,XKRX,Korea Stock Exchange,KRW
+298,KR-2,Asia Pacific,East Asia,South Korea,Kia Corporation Corp,Automobiles & Auto Parts,S64909286,KR7000270009,6490928,,,270,XKRX,Korea Stock Exchange,KRW
+299,KR-3,Asia Pacific,East Asia,South Korea,Sk Hynix Inc,Semiconductors & Chip Technologies,S64502677,KR7000660001,6450267,,,660,XKRX,Korea Stock Exchange,KRW
+300,KR-4,Asia Pacific,East Asia,South Korea,Hyundai Engineering & Construction,Construction & Engineering,S64509888,KR7000720003,6450988,,,720,XKRX,Korea Stock Exchange,KRW
+301,KR-5,Asia Pacific,East Asia,South Korea,Samsung Fire & Marine Insurance Lt,Insurance,S61552501,KR7000810002,6155250,,,810,XKRX,Korea Stock Exchange,KRW
+302,KR-6,Asia Pacific,East Asia,South Korea,Cj Corp,Food & Tobacco,S61895165,KR7001040005,6189516,,,1040,XKRX,Korea Stock Exchange,KRW
+303,KR-7,Asia Pacific,East Asia,South Korea,Korean Air Lines Ltd,Passenger Transportation Services,S64967664,KR7003490000,6496766,,,3490,XKRX,Korea Stock Exchange,KRW
+304,KR-8,Asia Pacific,East Asia,South Korea,Lg Corp,Professional & Commercial Services,S65370306,KR7003550001,6537030,,,3550,XKRX,Korea Stock Exchange,KRW
+305,KR-9,Asia Pacific,East Asia,South Korea,Posco Future M Ltd,Construction Materials,S64194517,KR7003670007,6419451,,,3670,XKRX,Korea Stock Exchange,KRW
+306,KR-10,Asia Pacific,East Asia,South Korea,Hyundai Steel,Metals & Mining,S64618507,KR7004020004,6461850,,,4020,XKRX,Korea Stock Exchange,KRW
+307,KR-11,Asia Pacific,East Asia,South Korea,Cosmoam&T Ltd,Chemicals,S67667154,KR7005070008,6766715,,,5070,XKRX,Korea Stock Exchange,KRW
+308,KR-12,Asia Pacific,East Asia,South Korea,Hyundai Motor,Automobiles & Auto Parts,S64510555,KR7005380001,6451055,,,5380,XKRX,Korea Stock Exchange,KRW
+309,KR-13,Asia Pacific,East Asia,South Korea,Hyundai Motor S1 Pref,Automobiles & Auto Parts,S64510225,KR7005381009,6451022,,,5385,XKRX,Korea Stock Exchange,KRW
+310,KR-14,Asia Pacific,East Asia,South Korea,Hyundai Motor S2 Pref,Automobiles & Auto Parts,S61482725,KR7005382007,6148272,,,5387,XKRX,Korea Stock Exchange,KRW
+311,KR-15,Asia Pacific,East Asia,South Korea,Posco,Metals & Mining,S66932336,KR7005490008,6693233,,,5490,XKRX,Korea Stock Exchange,KRW
+312,KR-16,Asia Pacific,East Asia,South Korea,Db Insurance Ltd,Insurance,S61559373,KR7005830005,6155937,,,5830,XKRX,Korea Stock Exchange,KRW
+313,KR-17,Asia Pacific,East Asia,South Korea,Samsung Electronics Ltd,Consumer Electronics,S67717207,KR7005930003,6771720,,,5930,XKRX,Korea Stock Exchange,KRW
+314,KR-18,Asia Pacific,East Asia,South Korea,Samsung Electronics Non Voting Pre,Consumer Electronics,S67738120,KR7005931001,6773812,,,5935,XKRX,Korea Stock Exchange,KRW
+315,KR-19,Asia Pacific,East Asia,South Korea,Nh Investment & Securities Ltd,Capital Markets & Advisory,S65370850,KR7005940002,6537085,,,5940,XKRX,Korea Stock Exchange,KRW
+316,KR-20,Asia Pacific,East Asia,South Korea,Samsung Sdi Ltd,Diversified Retail,S67716456,KR7006400006,6771645,,,6400,XKRX,Korea Stock Exchange,KRW
+317,KR-21,Asia Pacific,East Asia,South Korea,Mirae Asset Securities,Capital Markets & Advisory,S62496583,KR7006800007,6249658,,,6800,XKRX,Korea Stock Exchange,KRW
+318,KR-22,Asia Pacific,East Asia,South Korea,Hotel Shilla Ltdinary Shares Korea,Transport Infrastructure,S64403322,KR7008770000,6440332,,,8770,XKRX,Korea Stock Exchange,KRW
+319,KR-23,Asia Pacific,East Asia,South Korea,Samsung Electro Mechanics Ltd,Semiconductors & Chip Technologies,S67716894,KR7009150004,6771689,,,9150,XKRX,Korea Stock Exchange,KRW
+320,KR-24,Asia Pacific,East Asia,South Korea,Hd Korea Shipbuilding & Offshore E,"Machinery, Equipment & Components",S64466204,KR7009540006,6446620,,,9540,XKRX,Korea Stock Exchange,KRW
+321,KR-25,Asia Pacific,East Asia,South Korea,Hanwha Solutions Corp,Renewable Energy,S64077688,KR7009830001,6407768,,,9830,XKRX,Korea Stock Exchange,KRW
+322,KR-26,Asia Pacific,East Asia,South Korea,Korea Zinc Inc,Metals & Mining,S64954282,KR7010130003,6495428,,,10130,XKRX,Korea Stock Exchange,KRW
+323,KR-27,Asia Pacific,East Asia,South Korea,Samsung Heavy Industries Ltd,"Machinery, Equipment & Components",S67722173,KR7010140002,6772217,,,10140,XKRX,Korea Stock Exchange,KRW
+324,KR-28,Asia Pacific,East Asia,South Korea,Hyundai Mipo Dockyard Ltd,"Machinery, Equipment & Components",S64510662,KR7010620003,6451066,,,10620,XKRX,Korea Stock Exchange,KRW
+325,KR-29,Asia Pacific,East Asia,South Korea,S-Oil Corp,Oil & Gas,S64060551,KR7010950004,6406055,,,10950,XKRX,Korea Stock Exchange,KRW
+326,KR-30,Asia Pacific,East Asia,South Korea,Lg Innotek Ltd,Electronic Components & Systems,,KR7011070000,B39Z8G8,,,11070,XKRX,Korea Stock Exchange,KRW
+327,KR-31,Asia Pacific,East Asia,South Korea,Lotte Chemical Corp,Chemicals,S64400203,KR7011170008,6440020,,,11170,XKRX,Korea Stock Exchange,KRW
+328,KR-32,Asia Pacific,East Asia,South Korea,Hmm Ltd,Freight & Logistics Services,S64058696,KR7011200003,6405869,,,11200,XKRX,Korea Stock Exchange,KRW
+329,KR-33,Asia Pacific,East Asia,South Korea,Kumho Petro Chemical Ltd,Automobiles & Auto Parts,S64993231,KR7011780004,6499323,,,11780,XKRX,Korea Stock Exchange,KRW
+330,KR-34,Asia Pacific,East Asia,South Korea,Skc Ltd,Chemicals,S60180858,KR7011790003,6018085,,,11790,XKRX,Korea Stock Exchange,KRW
+331,KR-35,Asia Pacific,East Asia,South Korea,Hyundai Mobis Ltd,Automobiles & Auto Parts,S64495443,KR7012330007,6449544,,,12330,XKRX,Korea Stock Exchange,KRW
+332,KR-36,Asia Pacific,East Asia,South Korea,Hanwha Aerospace Ltd,Aerospace & Defense,S67726711,KR7012450003,6772671,,,12450,XKRX,Korea Stock Exchange,KRW
+333,KR-37,Asia Pacific,East Asia,South Korea,Korea Electric Power Corp,Electrical Utilities & IPPs,S64957301,KR7015760002,6495730,,,15760,XKRX,Korea Stock Exchange,KRW
+334,KR-38,Asia Pacific,East Asia,South Korea,Samsung Securities Ltd,Capital Markets & Advisory,S64084486,KR7016360000,6408448,,,16360,XKRX,Korea Stock Exchange,KRW
+335,KR-39,Asia Pacific,East Asia,South Korea,Samsung Sds Ltd,Software & IT Solutions / Digital Services,,KR7018260000,BRS2KY0,,,18260,XKRX,Korea Stock Exchange,KRW
+336,KR-40,Asia Pacific,East Asia,South Korea,Hanon Systems,Automobiles & Auto Parts,,KR7018880005,B00LR01,,,18880,XKRX,Korea Stock Exchange,KRW
+337,KR-41,Asia Pacific,East Asia,South Korea,Iljin Materials,"Machinery, Equipment & Components",,KR7020150009,B45LHQ0,,,20150,XKRX,Korea Stock Exchange,KRW
+338,KR-42,Asia Pacific,East Asia,South Korea,Coway Ltd,Consumer & Household Products,S61734018,KR7021240007,6173401,,,21240,XKRX,Korea Stock Exchange,KRW
+339,KR-43,Asia Pacific,East Asia,South Korea,Lotte Shopping Ltd,Diversified Retail,,KR7023530009,B0WGPZ5,,,23530,XKRX,Korea Stock Exchange,KRW
+340,KR-44,Asia Pacific,East Asia,South Korea,Industrial Bank Of Korea,Banking Services,S64629728,KR7024110009,6462972,,,24110,XKRX,Korea Stock Exchange,KRW
+341,KR-45,Asia Pacific,East Asia,South Korea,Samsung Engineering Ltd,Construction & Engineering,S67652396,KR7028050003,6765239,,,28050,XKRX,Korea Stock Exchange,KRW
+342,KR-46,Asia Pacific,East Asia,South Korea,Samsung C&T Corp,Industrial Distributors,,KR7028260008,BSXN8K7,,,28260,XKRX,Korea Stock Exchange,KRW
+343,KR-47,Asia Pacific,East Asia,South Korea,Hlb Inc,Medical Devices & Supplies,S65174070,KR7028300002,6517407,,,28300,XKRX,Korea Stock Exchange,KRW
+344,KR-48,Asia Pacific,East Asia,South Korea,Pan Ocean Ltd,Freight & Logistics Services,,KR7028670008,B24FX49,,,28670,XKRX,Korea Stock Exchange,KRW
+345,KR-49,Asia Pacific,East Asia,South Korea,Kt Corp,Telecommunications Services,S65053167,KR7030200000,6505316,,,30200,XKRX,Korea Stock Exchange,KRW
+346,KR-50,Asia Pacific,East Asia,South Korea,Lg Uplus Corp,Telecommunications Services,S62909023,KR7032640005,6290902,,,32640,XKRX,Korea Stock Exchange,KRW
+347,KR-51,Asia Pacific,East Asia,South Korea,Samsung Life Ltd,Insurance,,KR7032830002,B12C0T9,,,32830,XKRX,Korea Stock Exchange,KRW
+348,KR-52,Asia Pacific,East Asia,South Korea,Kt&G Corp,Food & Tobacco,S61750766,KR7033780008,6175076,,,33780,XKRX,Korea Stock Exchange,KRW
+349,KR-53,Asia Pacific,East Asia,South Korea,Doosan Enerbility Ltd,"Machinery, Equipment & Components",S62946702,KR7034020008,6294670,,,34020,XKRX,Korea Stock Exchange,KRW
+350,KR-54,Asia Pacific,East Asia,South Korea,Lg Display Ltd,Electronic Components & Systems,,KR7034220004,B01VZN9,,,34220,XKRX,Korea Stock Exchange,KRW
+351,KR-55,Asia Pacific,East Asia,South Korea,Sk Inc,Oil & Gas,,KR7034730002,B39Z8L3,,,34730,XKRX,Korea Stock Exchange,KRW
+352,KR-56,Asia Pacific,East Asia,South Korea,Kangwon Land Inc,Hotels & Entertainment Services,S66834490,KR7035250000,6683449,,,35250,XKRX,Korea Stock Exchange,KRW
+353,KR-57,Asia Pacific,East Asia,South Korea,Naver Corp,Software & IT Solutions / Digital Services,S65603938,KR7035420009,6560393,,,35420,XKRX,Korea Stock Exchange,KRW
+354,KR-58,Asia Pacific,East Asia,South Korea,Kakao Corp,Software & IT Solutions / Digital Services,S61940375,KR7035720002,6194037,,,35720,XKRX,Korea Stock Exchange,KRW
+355,KR-59,Asia Pacific,East Asia,South Korea,Ncsoft Corp,Software & IT Solutions / Digital Services,S62641899,KR7036570000,6264189,,,36570,XKRX,Korea Stock Exchange,KRW
+356,KR-60,Asia Pacific,East Asia,South Korea,Posco International Corp,Industrial Distributors,S63442743,KR7047050000,6344274,,,47050,XKRX,Korea Stock Exchange,KRW
+357,KR-61,Asia Pacific,East Asia,South Korea,Korea Aerospace Industries Ltd,Aerospace & Defense,,KR7047810007,B3N3363,,,47810,XKRX,Korea Stock Exchange,KRW
+358,KR-62,Asia Pacific,East Asia,South Korea,Lg H & H Ltd,Professional & Commercial Services,S63444566,KR7051900009,6344456,,,51900,XKRX,Korea Stock Exchange,KRW
+359,KR-63,Asia Pacific,East Asia,South Korea,Lg Chem Ltd,Chemicals,S63469134,KR7051910008,6346913,,,51910,XKRX,Korea Stock Exchange,KRW
+360,KR-64,Asia Pacific,East Asia,South Korea,Lg Chem Preferred Stock Ltd,Chemicals,S63469241,KR7051911006,6346924,,,51915,XKRX,Korea Stock Exchange,KRW
+361,KR-65,Asia Pacific,East Asia,South Korea,Shinhan Financial Group Ltd,Banking Services,S63975023,KR7055550008,6397502,,,55550,XKRX,Korea Stock Exchange,KRW
+362,KR-66,Asia Pacific,East Asia,South Korea,Lg Electronics Inc,Consumer Electronics,S65207391,KR7066570003,6520739,,,66570,XKRX,Korea Stock Exchange,KRW
+363,KR-67,Asia Pacific,East Asia,South Korea,L&F Ltd,Chemicals,S65786089,KR7066970005,6578608,,,66970,XKRX,Korea Stock Exchange,KRW
+364,KR-68,Asia Pacific,East Asia,South Korea,Celltrion Inc,Biotechnology & Life Sciences,,KR7068270008,B0C5YV1,,,68270,XKRX,Korea Stock Exchange,KRW
+365,KR-69,Asia Pacific,East Asia,South Korea,Celltrion Pharm Inc,Pharmaceuticals,,KR7068760008,B0V3YP0,,,68760,XKRX,Korea Stock Exchange,KRW
+366,KR-70,Asia Pacific,East Asia,South Korea,Korea Investment Holdings Ltd,Capital Markets & Advisory,S66545864,KR7071050009,6654586,,,71050,XKRX,Korea Stock Exchange,KRW
+367,KR-71,Asia Pacific,East Asia,South Korea,Gs Holdings,Electrical Utilities & IPPs,,KR7078930005,B01RJV3,,,78930,XKRX,Korea Stock Exchange,KRW
+368,KR-72,Asia Pacific,East Asia,South Korea,Hyundai Glovis Ltd,Freight & Logistics Services,,KR7086280005,B0V3XR5,,,86280,XKRX,Korea Stock Exchange,KRW
+369,KR-73,Asia Pacific,East Asia,South Korea,Hana Financial Group Inc,Banking Services,,KR7086790003,B0RNRF5,,,86790,XKRX,Korea Stock Exchange,KRW
+370,KR-74,Asia Pacific,East Asia,South Korea,Amorepacific Corp,Consumer & Household Products,,KR7090430000,B15SK50,,,90430,XKRX,Korea Stock Exchange,KRW
+371,KR-75,Asia Pacific,East Asia,South Korea,Celltrion Healthcare Ltd,Pharmaceuticals,,KR7091990002,BYZ6DH8,,,91990,XKRX,Korea Stock Exchange,KRW
+372,KR-76,Asia Pacific,East Asia,South Korea,Sk Innovation Ltd,Oil & Gas,,KR7096770003,B232R05,,,96770,XKRX,Korea Stock Exchange,KRW
+373,KR-77,Asia Pacific,East Asia,South Korea,Sk Innovation Co Ltd,Oil & Gas,,KRA0967701D0,BPXZM99,,,96775,XKRX,Korea Stock Exchange,KRW
+374,KR-78,Asia Pacific,East Asia,South Korea,Cj Cheiljedang Corp,Food & Tobacco,,KR7097950000,B2492F5,,,97950,XKRX,Korea Stock Exchange,KRW
+375,KR-79,Asia Pacific,East Asia,South Korea,Kb Financial Group Inc,Banking Services,,KR7105560007,B3DF0Y6,,,105560,XKRX,Korea Stock Exchange,KRW
+376,KR-80,Asia Pacific,East Asia,South Korea,Hanmi Pharm Ltd,Pharmaceuticals,,KR7128940004,B613DJ9,,,128940,XKRX,Korea Stock Exchange,KRW
+377,KR-81,Asia Pacific,East Asia,South Korea,Meritz Financial Group Inc,Holding Companies,,KR7138040001,B4WRJD2,,,138040,XKRX,Korea Stock Exchange,KRW
+378,KR-82,Asia Pacific,East Asia,South Korea,E-Mart Inc,Food & Drug Retailing,,KR7139480008,B682TF7,,,139480,XKRX,Korea Stock Exchange,KRW
+379,KR-83,Asia Pacific,East Asia,South Korea,Hankook Tire & Technology Ltd,Automobiles & Auto Parts,,KR7161390000,B7T5KQ0,,,161390,XKRX,Korea Stock Exchange,KRW
+380,KR-84,Asia Pacific,East Asia,South Korea,Samsung Biologics Ltd,Pharmaceuticals,,KR7207940008,BYNJCV6,,,207940,XKRX,Korea Stock Exchange,KRW
+381,KR-85,Asia Pacific,East Asia,South Korea,Doosan Bobcat Inc,"Machinery, Equipment & Components",,KR7241560002,BYX9GP8,,,241560,XKRX,Korea Stock Exchange,KRW
+382,KR-86,Asia Pacific,East Asia,South Korea,Ecopro Bm Ltd,"Machinery, Equipment & Components",,KR7247540008,BJ321P7,,,247540,XKRX,Korea Stock Exchange,KRW
+383,KR-87,Asia Pacific,East Asia,South Korea,Netmarble Corp,Software & IT Solutions / Digital Services,,KR7251270005,BF2S426,,,251270,XKRX,Korea Stock Exchange,KRW
+384,KR-88,Asia Pacific,East Asia,South Korea,Krafton Inc,Software & IT Solutions / Digital Services,,KR7259960003,BMBP900,,,259960,XKRX,Korea Stock Exchange,KRW
+385,KR-89,Asia Pacific,East Asia,South Korea,Pearlabyss Corp,Software & IT Solutions / Digital Services,,KR7263750002,BYX56S9,,,263750,XKRX,Korea Stock Exchange,KRW
+386,KR-90,Asia Pacific,East Asia,South Korea,Hd Hyundai Ltd,Oil & Gas,,KR7267250009,BD4HFT1,,,267250,XKRX,Korea Stock Exchange,KRW
+387,KR-91,Asia Pacific,East Asia,South Korea,Orion Corp,Food & Tobacco,,KR7271560005,BDVLJ72,,,271560,XKRX,Korea Stock Exchange,KRW
+388,KR-92,Asia Pacific,East Asia,South Korea,Bgf Retail Ltd,Food & Drug Retailing,,KR7282330000,BD95QN1,,,282330,XKRX,Korea Stock Exchange,KRW
+389,KR-93,Asia Pacific,East Asia,South Korea,Kakao Games Corp,Software & IT Solutions / Digital Services,,KR7293490009,BMGYMB4,,,293490,XKRX,Korea Stock Exchange,KRW
+390,KR-94,Asia Pacific,East Asia,South Korea,Sk Bioscience Ltd,Pharmaceuticals,,KR7302440003,BMG75K3,,,302440,XKRX,Korea Stock Exchange,KRW
+391,KR-95,Asia Pacific,East Asia,South Korea,Woori Financial Group Inc,Banking Services,,KR7316140003,BGHWH98,,,316140,XKRX,Korea Stock Exchange,KRW
+392,KR-96,Asia Pacific,East Asia,South Korea,Kakaobank Corp,Banking Services,,KR7323410001,BNXKTM2,,,323410,XKRX,Korea Stock Exchange,KRW
+393,KR-97,Asia Pacific,East Asia,South Korea,Sk Biopharmaceuticals Ltd,Pharmaceuticals,,KR7326030004,BLF9YV7,,,326030,XKRX,Korea Stock Exchange,KRW
+394,KR-98,Asia Pacific,East Asia,South Korea,Hd Hyundai Heavy Industries Ltd,"Machinery, Equipment & Components",,KR7329180004,BMDHSH4,,,329180,XKRX,Korea Stock Exchange,KRW
+395,KR-99,Asia Pacific,East Asia,South Korea,Hybe Ltd,Media & Publishing,,KR7352820005,BNGCJ25,,,352820,XKRX,Korea Stock Exchange,KRW
+396,KR-100,Asia Pacific,East Asia,South Korea,Sk Ie Technology Ltd,"Machinery, Equipment & Components",,KR7361610009,BMDXML4,,,361610,XKRX,Korea Stock Exchange,KRW
+397,KR-101,Asia Pacific,East Asia,South Korea,Lg Energy Solution Ltd,"Machinery, Equipment & Components",,KR7373220003,BNSP8W5,,,373220,XKRX,Korea Stock Exchange,KRW
+398,KR-102,Asia Pacific,East Asia,South Korea,Kakaopay Corp,Fintech Services / Digital Financial Platforms,,KR7377300009,BP8ZCS3,,,377300,XKRX,Korea Stock Exchange,KRW
+399,KR-103,Asia Pacific,East Asia,South Korea,F&F Ltd,Textiles & Apparel,,KR7383220001,BP2NF51,,,383220,XKRX,Korea Stock Exchange,KRW
+400,KR-104,Asia Pacific,East Asia,South Korea,Sk Square Ltd,Capital Markets & Advisory,,KR7402340004,BMG3GS6,,,402340,XKRX,Korea Stock Exchange,KRW
+401,TW-1,Asia Pacific,East Asia,Taiwan,Taiwan Cement Corp,Construction Materials,,TW0001101004,,,,1101,XTAI,Taiwan Stock Exchange,TWD
+402,TW-2,Asia Pacific,East Asia,Taiwan,Asia Cement Corp,Construction Materials,,TW0001102002,,,,1102,XTAI,Taiwan Stock Exchange,TWD
+403,TW-3,Asia Pacific,East Asia,Taiwan,Uni-President Enterprises Corp,Food & Tobacco,,TW0001216000,,,,1216,XTAI,Taiwan Stock Exchange,TWD
+404,TW-4,Asia Pacific,East Asia,Taiwan,Formosa Plastics Corp,Chemicals,,TW0001301000,,,,1301,XTAI,Taiwan Stock Exchange,TWD
+405,TW-5,Asia Pacific,East Asia,Taiwan,Nan Ya Plastics Corp,Chemicals,,TW0001303006,,,,1303,XTAI,Taiwan Stock Exchange,TWD
+406,TW-6,Asia Pacific,East Asia,Taiwan,Formosa Chemicals & Fibre Corp,Chemicals,,TW0001326007,,,,1326,XTAI,Taiwan Stock Exchange,TWD
+407,TW-7,Asia Pacific,East Asia,Taiwan,Far Eastern New Century Corp,Consumer Goods Conglomerates,,TW0001402006,,,,1402,XTAI,Taiwan Stock Exchange,TWD
+408,TW-8,Asia Pacific,East Asia,Taiwan,Eclat Textile Ltd,Textiles & Apparel,,TW0001476000,,,,1476,XTAI,Taiwan Stock Exchange,TWD
+409,TW-9,Asia Pacific,East Asia,Taiwan,Airtac International Group,"Machinery, Equipment & Components",,KYG014081064,,,,1590,XTAI,Taiwan Stock Exchange,TWD
+410,TW-10,Asia Pacific,East Asia,Taiwan,Walsin Lihwa Corp,"Machinery, Equipment & Components",,TW0001605004,,,,1605,XTAI,Taiwan Stock Exchange,TWD
+411,TW-11,Asia Pacific,East Asia,Taiwan,China Steel Corp,Metals & Mining,,TW0002002003,,,,2002,XTAI,Taiwan Stock Exchange,TWD
+412,TW-12,Asia Pacific,East Asia,Taiwan,Cheng Shin Rubber Industry Ltd,Automobiles & Auto Parts,,TW0002105004,,,,2105,XTAI,Taiwan Stock Exchange,TWD
+413,TW-13,Asia Pacific,East Asia,Taiwan,Hotai Motor Ltd,Specialty Retailers,,TW0002207008,,,,2207,XTAI,Taiwan Stock Exchange,TWD
+414,TW-14,Asia Pacific,East Asia,Taiwan,Lite On Technology Corp,Consumer Electronics,,TW0002301009,,,,2301,XTAI,Taiwan Stock Exchange,TWD
+415,TW-15,Asia Pacific,East Asia,Taiwan,United Micro Electronics Corp,Semiconductors & Chip Technologies,,TW0002303005,,,,2303,XTAI,Taiwan Stock Exchange,TWD
+416,TW-16,Asia Pacific,East Asia,Taiwan,Delta Electronics Inc,"Machinery, Equipment & Components",,TW0002308004,,,,2308,XTAI,Taiwan Stock Exchange,TWD
+417,TW-17,Asia Pacific,East Asia,Taiwan,Hon Hai Precision Industry Ltd,Electronic Components & Systems,,TW0002317005,,,,2317,XTAI,Taiwan Stock Exchange,TWD
+418,TW-18,Asia Pacific,East Asia,Taiwan,Compal Electronics Inc,Consumer Electronics,,TW0002324001,,,,2324,XTAI,Taiwan Stock Exchange,TWD
+419,TW-19,Asia Pacific,East Asia,Taiwan,Yageo Corp,Electronic Components & Systems,,TW0002327004,,,,2327,XTAI,Taiwan Stock Exchange,TWD
+420,TW-20,Asia Pacific,East Asia,Taiwan,Winbond Electronics Corp,Semiconductors & Chip Technologies,,TW0002344009,,,,2344,XTAI,Taiwan Stock Exchange,TWD
+421,TW-21,Asia Pacific,East Asia,Taiwan,Accton Technology Corp,Communications & Networking,,TW0002345006,,,,2345,XTAI,Taiwan Stock Exchange,TWD
+422,TW-22,Asia Pacific,East Asia,Taiwan,Synnex Technology International Co,Consumer Electronics,,TW0002347002,,,,2347,XTAI,Taiwan Stock Exchange,TWD
+423,TW-23,Asia Pacific,East Asia,Taiwan,Acer,Consumer Electronics,,TW0002353000,,,,2353,XTAI,Taiwan Stock Exchange,TWD
+424,TW-24,Asia Pacific,East Asia,Taiwan,Inventec Corp,Consumer Electronics,,TW0002356003,,,,2356,XTAI,Taiwan Stock Exchange,TWD
+425,TW-25,Asia Pacific,East Asia,Taiwan,Asustek Computer Inc,Consumer Electronics,,TW0002357001,,,,2357,XTAI,Taiwan Stock Exchange,TWD
+426,TW-26,Asia Pacific,East Asia,Taiwan,Micro-Star International Ltd,Consumer Electronics,,TW0002377009,,,,2377,XTAI,Taiwan Stock Exchange,TWD
+427,TW-27,Asia Pacific,East Asia,Taiwan,Realtek Semiconductor Corp,Semiconductors & Chip Technologies,,TW0002379005,,,,2379,XTAI,Taiwan Stock Exchange,TWD
+428,TW-28,Asia Pacific,East Asia,Taiwan,Quanta Computer Inc,Consumer Electronics,,TW0002382009,,,,2382,XTAI,Taiwan Stock Exchange,TWD
+429,TW-29,Asia Pacific,East Asia,Taiwan,Advantech Ltd,Consumer Electronics,,TW0002395001,,,,2395,XTAI,Taiwan Stock Exchange,TWD
+430,TW-30,Asia Pacific,East Asia,Taiwan,Nanya Technology Corp,Semiconductors & Chip Technologies,,TW0002408002,,,,2408,XTAI,Taiwan Stock Exchange,TWD
+431,TW-31,Asia Pacific,East Asia,Taiwan,Auo Corp,Electronic Components & Systems,,TW0002409000,,,,2409,XTAI,Taiwan Stock Exchange,TWD
+432,TW-32,Asia Pacific,East Asia,Taiwan,Chunghwa Telecom Ltd,Telecommunications Services,,TW0002412004,,,,2412,XTAI,Taiwan Stock Exchange,TWD
+433,TW-33,Asia Pacific,East Asia,Taiwan,Mediatek Inc,Semiconductors & Chip Technologies,,TW0002454006,,,,2454,XTAI,Taiwan Stock Exchange,TWD
+434,TW-34,Asia Pacific,East Asia,Taiwan,Catcher Technology Ltd,Electronic Components & Systems,,TW0002474004,,,,2474,XTAI,Taiwan Stock Exchange,TWD
+435,TW-35,Asia Pacific,East Asia,Taiwan,Evergreen Marine Corp (Taiwan) Ltd,Freight & Logistics Services,,TW0002603008,,,,2603,XTAI,Taiwan Stock Exchange,TWD
+436,TW-36,Asia Pacific,East Asia,Taiwan,Yang Ming Marine Transport Corp,Freight & Logistics Services,,TW0002609005,,,,2609,XTAI,Taiwan Stock Exchange,TWD
+437,TW-37,Asia Pacific,East Asia,Taiwan,China Airlines Ltd,Passenger Transportation Services,,TW0002610003,,,,2610,XTAI,Taiwan Stock Exchange,TWD
+438,TW-38,Asia Pacific,East Asia,Taiwan,Wan Hai Lines Ltd,Freight & Logistics Services,,TW0002615002,,,,2615,XTAI,Taiwan Stock Exchange,TWD
+439,TW-39,Asia Pacific,East Asia,Taiwan,Eva Airways Corp,Passenger Transportation Services,,TW0002618006,,,,2618,XTAI,Taiwan Stock Exchange,TWD
+440,TW-40,Asia Pacific,East Asia,Taiwan,Taiwan High Speed Rail Corp,Passenger Transportation Services,,TW0002633005,,,,2633,XTAI,Taiwan Stock Exchange,TWD
+441,TW-41,Asia Pacific,East Asia,Taiwan,Chang Hwa Commercial Bank Ltd,Banking Services,,TW0002801008,,,,2801,XTAI,Taiwan Stock Exchange,TWD
+442,TW-42,Asia Pacific,East Asia,Taiwan,Taiwan Business Bank Ltd,Banking Services,,TW0002834009,,,,2834,XTAI,Taiwan Stock Exchange,TWD
+443,TW-43,Asia Pacific,East Asia,Taiwan,Hua Nan Financial Holdings Ltd,Banking Services,,TW0002880002,,,,2880,XTAI,Taiwan Stock Exchange,TWD
+444,TW-44,Asia Pacific,East Asia,Taiwan,Fubon Financial Holding Ltd,Insurance,,TW0002881000,,,,2881,XTAI,Taiwan Stock Exchange,TWD
+445,TW-45,Asia Pacific,East Asia,Taiwan,Cathay Financial Holding Ltd,Insurance,,TW0002882008,,,,2882,XTAI,Taiwan Stock Exchange,TWD
+446,TW-46,Asia Pacific,East Asia,Taiwan,China Development Financial Holdin,Insurance,,TW0002883006,,,,2883,XTAI,Taiwan Stock Exchange,TWD
+447,TW-47,Asia Pacific,East Asia,Taiwan,E.Sun Financial Holding Ltd,Banking Services,,TW0002884004,,,,2884,XTAI,Taiwan Stock Exchange,TWD
+448,TW-48,Asia Pacific,East Asia,Taiwan,Yuanta Financial Holding Ltd,Capital Markets & Advisory,,TW0002885001,,,,2885,XTAI,Taiwan Stock Exchange,TWD
+449,TW-49,Asia Pacific,East Asia,Taiwan,Mega Financial Holding Ltd,Banking Services,,TW0002886009,,,,2886,XTAI,Taiwan Stock Exchange,TWD
+450,TW-50,Asia Pacific,East Asia,Taiwan,Taishin Financial Holding Ltd,Banking Services,,TW0002887007,,,,2887,XTAI,Taiwan Stock Exchange,TWD
+451,TW-51,Asia Pacific,East Asia,Taiwan,Shin Kong Financial Holding Ltd,Insurance,,TW0002888005,,,,2888,XTAI,Taiwan Stock Exchange,TWD
+452,TW-52,Asia Pacific,East Asia,Taiwan,Sinopac Financial Holdings Ltd,Banking Services,,TW0002890001,,,,2890,XTAI,Taiwan Stock Exchange,TWD
+453,TW-53,Asia Pacific,East Asia,Taiwan,Ctbc Financial Holding Ltd,Banking Services,,TW0002891009,,,,2891,XTAI,Taiwan Stock Exchange,TWD
+454,TW-54,Asia Pacific,East Asia,Taiwan,First Financial Holding Ltd,Banking Services,,TW0002892007,,,,2892,XTAI,Taiwan Stock Exchange,TWD
+455,TW-55,Asia Pacific,East Asia,Taiwan,President Chain Store Corp,Food & Drug Retailing,,TW0002912003,,,,2912,XTAI,Taiwan Stock Exchange,TWD
+456,TW-56,Asia Pacific,East Asia,Taiwan,Largan Precision Ltd,Consumer Electronics,,TW0003008009,,,,3008,XTAI,Taiwan Stock Exchange,TWD
+457,TW-57,Asia Pacific,East Asia,Taiwan,Novatek Microelectronics Corp,Semiconductors & Chip Technologies,,TW0003034005,,,,3034,XTAI,Taiwan Stock Exchange,TWD
+458,TW-58,Asia Pacific,East Asia,Taiwan,Unimicron Technology Corp,Semiconductors & Chip Technologies,,TW0003037008,,,,3037,XTAI,Taiwan Stock Exchange,TWD
+459,TW-59,Asia Pacific,East Asia,Taiwan,Taiwan Mobile Ltd,Telecommunications Services,,TW0003045001,,,,3045,XTAI,Taiwan Stock Exchange,TWD
+460,TW-60,Asia Pacific,East Asia,Taiwan,Wistron Corp,Consumer Electronics,,TW0003231007,,,,3231,XTAI,Taiwan Stock Exchange,TWD
+461,TW-61,Asia Pacific,East Asia,Taiwan,Global Unichip Corp,Semiconductors & Chip Technologies,,TW0003443008,,,,3443,XTAI,Taiwan Stock Exchange,TWD
+462,TW-62,Asia Pacific,East Asia,Taiwan,Innolux Corp,Electronic Components & Systems,,TW0003481008,,,,3481,XTAI,Taiwan Stock Exchange,TWD
+463,TW-63,Asia Pacific,East Asia,Taiwan,Wpg Holdings Ltd,Semiconductors & Chip Technologies,,TW0003702007,,,,3702,XTAI,Taiwan Stock Exchange,TWD
+464,TW-64,Asia Pacific,East Asia,Taiwan,Ase Technology Holding Ltd,Semiconductors & Chip Technologies,,TW0003711008,,,,3711,XTAI,Taiwan Stock Exchange,TWD
+465,TW-65,Asia Pacific,East Asia,Taiwan,Far Eastone Telecommunications Ltd,Telecommunications Services,,TW0004904008,,,,4904,XTAI,Taiwan Stock Exchange,TWD
+466,TW-66,Asia Pacific,East Asia,Taiwan,Pegatron Corp,Consumer Electronics,,TW0004938006,,,,4938,XTAI,Taiwan Stock Exchange,TWD
+467,TW-67,Asia Pacific,East Asia,Taiwan,Zhen Ding Technology Holding Ltd,Semiconductors & Chip Technologies,,KYG989221000,,,,4958,XTAI,Taiwan Stock Exchange,TWD
+468,TW-68,Asia Pacific,East Asia,Taiwan,Chailease Holding Ltd,Banking Services,,KYG202881093,,,,5871,XTAI,Taiwan Stock Exchange,TWD
+469,TW-69,Asia Pacific,East Asia,Taiwan,Shanghai Commercial Ltd,Banking Services,,TW0005876007,,,,5876,XTAI,Taiwan Stock Exchange,TWD
+470,TW-70,Asia Pacific,East Asia,Taiwan,Taiwan Cooperative Financial Holdi,Banking Services,,TW0005880009,,,,5880,XTAI,Taiwan Stock Exchange,TWD
+471,TW-71,Asia Pacific,East Asia,Taiwan,Voltronic Power Technology Corp,"Machinery, Equipment & Components",,TW0006409006,,,,6409,XTAI,Taiwan Stock Exchange,TWD
+472,TW-72,Asia Pacific,East Asia,Taiwan,Silergy Corp,Semiconductors & Chip Technologies,,KYG8190F1028,,,,6415,XTAI,Taiwan Stock Exchange,TWD
+473,TW-73,Asia Pacific,East Asia,Taiwan,Formosa Petrochemical Corp,Oil & Gas,,TW0006505001,,,,6505,XTAI,Taiwan Stock Exchange,TWD
+474,TW-74,Asia Pacific,East Asia,Taiwan,Wiwynn Corporation Corp,Consumer Electronics,,TW0006669005,,,,6669,XTAI,Taiwan Stock Exchange,TWD
+475,TW-75,Asia Pacific,East Asia,Taiwan,Powerchip Semiconductor Manufactur,Semiconductors & Chip Technologies,,TW0006770001,,,,6770,XTAI,Taiwan Stock Exchange,TWD
+476,TW-76,Asia Pacific,East Asia,Taiwan,Nan Ya Printed Circuit Board Corp,Semiconductors & Chip Technologies,,TW0008046004,,,,8046,XTAI,Taiwan Stock Exchange,TWD
+477,TW-77,Asia Pacific,East Asia,Taiwan,Momo Com Inc,Diversified Retail,,TW0008454000,,,,8454,XTAI,Taiwan Stock Exchange,TWD
+478,TW-78,Asia Pacific,East Asia,Taiwan,Nien Made Enterprise Ltd,Consumer & Household Products,,TW0008464009,,,,8464,XTAI,Taiwan Stock Exchange,TWD
+479,TW-79,Asia Pacific,East Asia,Taiwan,Pou Chen Corp,Textiles & Apparel,,TW0009904003,,,,9904,XTAI,Taiwan Stock Exchange,TWD
+480,TW-80,Asia Pacific,East Asia,Taiwan,Feng Tay Enterprises Ltd,Textiles & Apparel,,TW0009910000,,,,9910,XTAI,Taiwan Stock Exchange,TWD
+481,TW-81,Asia Pacific,East Asia,Taiwan,Giant Manufacturing Ltd,Leisure Products,,TW0009921007,,,,9921,XTAI,Taiwan Stock Exchange,TWD
+482,TW-82,Asia Pacific,East Asia,Taiwan,Ruentex Development Ltd,Real Estate Operations,,TW0009945006,,,,9945,XTAI,Taiwan Stock Exchange,TWD
+483,TW-83,Asia Pacific,East Asia,Taiwan,Taiwan Semiconductor Manufacturing,Semiconductors & Chip Technologies,,TW0002330008,,,,TSM,XNYS,New York Stock Exchange,USD
+484,AU-1,Asia Pacific,Oceania,Australia,"Life360, Inc.",Software & IT Solutions / Digital Services,,,,,,360,XASX,Australian Securities Exchange,AUD
+485,AU-2,Asia Pacific,Oceania,Australia,The A2 Milk Company Limited,Food & Tobacco,,,,,,A2M,XASX,Australian Securities Exchange,AUD
+486,AU-3,Asia Pacific,Oceania,Australia,Adbri Limited,Construction Materials,,,,,,ABC,XASX,Australian Securities Exchange,AUD
+487,AU-4,Asia Pacific,Oceania,Australia,Australian Foundation Investment Company Limited,Capital Markets & Advisory,,,,,,AFI,XASX,Australian Securities Exchange,AUD
+488,AU-5,Asia Pacific,Oceania,Australia,Agl Energy Limited,Integrated Utilities,,,,,,AGL,XASX,Australian Securities Exchange,AUD
+489,AU-6,Asia Pacific,Oceania,Australia,Auckland International Airport Limited,Transport Infrastructure,,,,,,AIA,XASX,Australian Securities Exchange,AUD
+490,AU-7,Asia Pacific,Oceania,Australia,Air New Zealand Limited,Passenger Transportation Services,,,,,,AIZ,XASX,Australian Securities Exchange,AUD
+491,AU-8,Asia Pacific,Oceania,Australia,Allkem Limited,Metals & Mining,,,,,,AKE,XASX,Australian Securities Exchange,AUD
+492,AU-9,Asia Pacific,Oceania,Australia,Ampol Limited,Oil & Gas,,AU0000088338,,,,ALD,XASX,Australian Securities Exchange,AUD
+493,AU-10,Asia Pacific,Oceania,Australia,Aristocrat Leisure Limited,Hotels & Entertainment Services,,AU000000ALL7,,,,ALL,XASX,Australian Securities Exchange,AUD
+494,AU-11,Asia Pacific,Oceania,Australia,Als Limited,Professional & Commercial Services,,,,,,ALQ,XASX,Australian Securities Exchange,AUD
+495,AU-12,Asia Pacific,Oceania,Australia,Altium Limited,Software & IT Solutions / Digital Services,,,,,,ALU,XASX,Australian Securities Exchange,AUD
+496,AU-13,Asia Pacific,Oceania,Australia,Atlas Arteria Group,Transport Infrastructure,,,,,,ALX,XASX,Australian Securities Exchange,AUD
+497,AU-14,Asia Pacific,Oceania,Australia,Amcor Plc,Containers & Packaging,,,,,,AMC,XASX,Australian Securities Exchange,AUD
+498,AU-15,Asia Pacific,Oceania,Australia,Amp Limited,Capital Markets & Advisory,,,,,,AMP,XASX,Australian Securities Exchange,AUD
+499,AU-16,Asia Pacific,Oceania,Australia,Ansell Limited,Medical Devices & Supplies,,,,,,ANN,XASX,Australian Securities Exchange,AUD
+500,AU-17,Asia Pacific,Oceania,Australia,Anz Group Holdings Limited,Banking Services,,AU000000ANZ3,,,,ANZ,XASX,Australian Securities Exchange,AUD
+501,AU-18,Asia Pacific,Oceania,Australia,Eagers Automotive Limited,Specialty Retailers,,,,,,APE,XASX,Australian Securities Exchange,AUD
+502,AU-19,Asia Pacific,Oceania,Australia,Apm Human Services International Limited,Professional & Commercial Services,,,,,,APM,XASX,Australian Securities Exchange,AUD
+503,AU-20,Asia Pacific,Oceania,Australia,Arb Corporation Limited,Automobiles & Auto Parts,,,,,,ARB,XASX,Australian Securities Exchange,AUD
+504,AU-21,Asia Pacific,Oceania,Australia,Argo Investments Limited,Capital Markets & Advisory,,,,,,ARG,XASX,Australian Securities Exchange,AUD
+505,AU-22,Asia Pacific,Oceania,Australia,Abacus Sk Pty Limited,Real Estate Investment Trusts (REITs),,,,,,ASK,XASX,Australian Securities Exchange,AUD
+506,AU-23,Asia Pacific,Oceania,Australia,Asx Limited,Capital Markets & Advisory,,AU000000ASX7,,,,ASX,XASX,Australian Securities Exchange,AUD
+507,AU-24,Asia Pacific,Oceania,Australia,Aub Group Limited,Insurance,,,,,,AUB,XASX,Australian Securities Exchange,AUD
+508,AU-25,Asia Pacific,Oceania,Australia,Avz Minerals Limited,Metals & Mining,,,,,,AVZ,XASX,Australian Securities Exchange,AUD
+509,AU-26,Asia Pacific,Oceania,Australia,Alumina Limited,Metals & Mining,,,,,,AWC,XASX,Australian Securities Exchange,AUD
+510,AU-27,Asia Pacific,Oceania,Australia,Aurizon Holdings Limited,Freight & Logistics Services,,AU000000AZJ1,,,,AZJ,XASX,Australian Securities Exchange,AUD
+511,AU-28,Asia Pacific,Oceania,Australia,Bapcor Limited,Automobiles & Auto Parts,,,,,,BAP,XASX,Australian Securities Exchange,AUD
+512,AU-29,Asia Pacific,Oceania,Australia,Bendigo And Adelaide Bank Limited,Banking Services,,,,,,BEN,XASX,Australian Securities Exchange,AUD
+513,AU-30,Asia Pacific,Oceania,Australia,Bsp Financial Group Limited,Banking Services,,,,,,BFL,XASX,Australian Securities Exchange,AUD
+514,AU-31,Asia Pacific,Oceania,Australia,Bellevue Gold Limited,Metals & Mining,,,,,,BGL,XASX,Australian Securities Exchange,AUD
+515,AU-32,Asia Pacific,Oceania,Australia,Bhp Group Limited,Metals & Mining,,AU000000BHP4,,,,BHP,XASX,Australian Securities Exchange,AUD
+516,AU-33,Asia Pacific,Oceania,Australia,Brickworks Ltd,Construction Materials,,,,,,BKW,XASX,Australian Securities Exchange,AUD
+517,AU-34,Asia Pacific,Oceania,Australia,Boral Limited,Construction Materials,,,,,,BLD,XASX,Australian Securities Exchange,AUD
+518,AU-35,Asia Pacific,Oceania,Australia,Bank Of Queensland Limited,Banking Services,,,,,,BOQ,XASX,Australian Securities Exchange,AUD
+519,AU-36,Asia Pacific,Oceania,Australia,Beach Energy Limited,Oil & Gas,,,,,,BPT,XASX,Australian Securities Exchange,AUD
+520,AU-37,Asia Pacific,Oceania,Australia,Breville Group Limited,Consumer & Household Products,,,,,,BRG,XASX,Australian Securities Exchange,AUD
+521,AU-38,Asia Pacific,Oceania,Australia,Bluescope Steel Limited,Metals & Mining,,AU000000BSL0,,,,BSL,XASX,Australian Securities Exchange,AUD
+522,AU-39,Asia Pacific,Oceania,Australia,Bwp Trust,Real Estate Investment Trusts (REITs),,,,,,BWP,XASX,Australian Securities Exchange,AUD
+523,AU-40,Asia Pacific,Oceania,Australia,Brambles Limited,Containers & Packaging,,AU000000BXB1,,,,BXB,XASX,Australian Securities Exchange,AUD
+524,AU-41,Asia Pacific,Oceania,Australia,Carsales.Com Limited,Software & IT Solutions / Digital Services,,,,,,CAR,XASX,Australian Securities Exchange,AUD
+525,AU-42,Asia Pacific,Oceania,Australia,Commonwealth Bank Of Australia,Banking Services,,AU000000CBA7,,,,CBA,XASX,Australian Securities Exchange,AUD
+526,AU-43,Asia Pacific,Oceania,Australia,Contact Energy Limited,Electrical Utilities & IPPs,,,,,,CEN,XASX,Australian Securities Exchange,AUD
+527,AU-44,Asia Pacific,Oceania,Australia,Challenger Limited,Insurance,,,,,,CGF,XASX,Australian Securities Exchange,AUD
+528,AU-45,Asia Pacific,Oceania,Australia,Chalice Mining Limited,Metals & Mining,,,,,,CHN,XASX,Australian Securities Exchange,AUD
+529,AU-46,Asia Pacific,Oceania,Australia,Champion Iron Limited,Metals & Mining,,,,,,CIA,XASX,Australian Securities Exchange,AUD
+530,AU-47,Asia Pacific,Oceania,Australia,Charter Hall Long Wale Reit,Real Estate Investment Trusts (REITs),,,,,,CLW,XASX,Australian Securities Exchange,AUD
+531,AU-48,Asia Pacific,Oceania,Australia,Capricorn Metals Ltd,Metals & Mining,,,,,,CMM,XASX,Australian Securities Exchange,AUD
+532,AU-49,Asia Pacific,Oceania,Australia,Chorus Limited,Telecommunications Services,,,,,,CNU,XASX,Australian Securities Exchange,AUD
+533,AU-50,Asia Pacific,Oceania,Australia,Cochlear Limited,Medical Devices & Supplies,,AU000000COH5,,,,COH,XASX,Australian Securities Exchange,AUD
+534,AU-51,Asia Pacific,Oceania,Australia,Coles Group Limited,Food & Drug Retailing,,AU0000030678,,,,COL,XASX,Australian Securities Exchange,AUD
+535,AU-52,Asia Pacific,Oceania,Australia,Computershare Limited,Software & IT Solutions / Digital Services,,AU000000CPU5,,,,CPU,XASX,Australian Securities Exchange,AUD
+536,AU-53,Asia Pacific,Oceania,Australia,Coronado Global Resources Inc.,Metals & Mining,,,,,,CRN,XASX,Australian Securities Exchange,AUD
+537,AU-54,Asia Pacific,Oceania,Australia,Csl Limited,Pharmaceuticals,,AU000000CSL8,,,,CSL,XASX,Australian Securities Exchange,AUD
+538,AU-55,Asia Pacific,Oceania,Australia,Csr Limited,Construction Materials,,,,,,CSR,XASX,Australian Securities Exchange,AUD
+539,AU-56,Asia Pacific,Oceania,Australia,Corporate Travel Management Limited,Hotels & Entertainment Services,,,,,,CTD,XASX,Australian Securities Exchange,AUD
+540,AU-57,Asia Pacific,Oceania,Australia,Cleanaway Waste Management Limited,Professional & Commercial Services,,,,,,CWY,XASX,Australian Securities Exchange,AUD
+541,AU-58,Asia Pacific,Oceania,Australia,De Grey Mining Ltd,Metals & Mining,,,,,,DEG,XASX,Australian Securities Exchange,AUD
+542,AU-59,Asia Pacific,Oceania,Australia,Domain Holdings Australia Limited,Media & Publishing,,,,,,DHG,XASX,Australian Securities Exchange,AUD
+543,AU-60,Asia Pacific,Oceania,Australia,Domino'S Pizza Enterprises Limited,Hotels & Entertainment Services,,,,,,DMP,XASX,Australian Securities Exchange,AUD
+544,AU-61,Asia Pacific,Oceania,Australia,Downer Edi Limited,Construction & Engineering,,,,,,DOW,XASX,Australian Securities Exchange,AUD
+545,AU-62,Asia Pacific,Oceania,Australia,Deterra Royalties Limited,Metals & Mining,,,,,,DRR,XASX,Australian Securities Exchange,AUD
+546,AU-63,Asia Pacific,Oceania,Australia,Ebos Group Limited,Pharmaceuticals,,,,,,EBO,XASX,Australian Securities Exchange,AUD
+547,AU-64,Asia Pacific,Oceania,Australia,Endeavour Group Limited,Food & Drug Retailing,,AU0000154833,,,,EDV,XASX,Australian Securities Exchange,AUD
+548,AU-65,Asia Pacific,Oceania,Australia,Evolution Mining Limited,Metals & Mining,,,,,,EVN,XASX,Australian Securities Exchange,AUD
+549,AU-66,Asia Pacific,Oceania,Australia,Evt Limited,Hotels & Entertainment Services,,,,,,EVT,XASX,Australian Securities Exchange,AUD
+550,AU-67,Asia Pacific,Oceania,Australia,Fletcher Building Limited,Residential Construction & Materials,,,,,,FBU,XASX,Australian Securities Exchange,AUD
+551,AU-68,Asia Pacific,Oceania,Australia,Flight Centre Travel Group Limited,Hotels & Entertainment Services,,,,,,FLT,XASX,Australian Securities Exchange,AUD
+552,AU-69,Asia Pacific,Oceania,Australia,Fortescue Metals Group Ltd,Metals & Mining,,AU000000FMG4,,,,FMG,XASX,Australian Securities Exchange,AUD
+553,AU-70,Asia Pacific,Oceania,Australia,Fisher & Paykel Healthcare Corporation Limited,Medical Devices & Supplies,,,,,,FPH,XASX,Australian Securities Exchange,AUD
+554,AU-71,Asia Pacific,Oceania,Australia,Genesis Minerals Limited,Metals & Mining,,,,,,GMD,XASX,Australian Securities Exchange,AUD
+555,AU-72,Asia Pacific,Oceania,Australia,Graincorp Limited,Food & Tobacco,,,,,,GNC,XASX,Australian Securities Exchange,AUD
+556,AU-73,Asia Pacific,Oceania,Australia,Genesis Energy Limited,Electrical Utilities & IPPs,,,,,,GNE,XASX,Australian Securities Exchange,AUD
+557,AU-74,Asia Pacific,Oceania,Australia,Gold Road Resources Limited,Metals & Mining,,,,,,GOR,XASX,Australian Securities Exchange,AUD
+558,AU-75,Asia Pacific,Oceania,Australia,Gqg Partners Inc.,Capital Markets & Advisory,,,,,,GQG,XASX,Australian Securities Exchange,AUD
+559,AU-76,Asia Pacific,Oceania,Australia,G.U.D. Holdings Limited,Automobiles & Auto Parts,,,,,,GUD,XASX,Australian Securities Exchange,AUD
+560,AU-77,Asia Pacific,Oceania,Australia,Hmc Capital Limited,Real Estate Operations,,,,,,HMC,XASX,Australian Securities Exchange,AUD
+561,AU-78,Asia Pacific,Oceania,Australia,Hub24 Limited,Capital Markets & Advisory,,,,,,HUB,XASX,Australian Securities Exchange,AUD
+562,AU-79,Asia Pacific,Oceania,Australia,Harvey Norman Holdings Ltd,Diversified Retail,,,,,,HVN,XASX,Australian Securities Exchange,AUD
+563,AU-80,Asia Pacific,Oceania,Australia,Insurance Australia Group Limited,Insurance,,AU000000IAG3,,,,IAG,XASX,Australian Securities Exchange,AUD
+564,AU-81,Asia Pacific,Oceania,Australia,Idp Education Limited,Professional & Business Education,,AU000000IEL5,,,,IEL,XASX,Australian Securities Exchange,AUD
+565,AU-82,Asia Pacific,Oceania,Australia,Insignia Financial Ltd,Capital Markets & Advisory,,,,,,IFL,XASX,Australian Securities Exchange,AUD
+566,AU-83,Asia Pacific,Oceania,Australia,Infratil Limited,Electrical Utilities & IPPs,,,,,,IFT,XASX,Australian Securities Exchange,AUD
+567,AU-84,Asia Pacific,Oceania,Australia,Igo Limited,Metals & Mining,,AU000000IGO4,,,,IGO,XASX,Australian Securities Exchange,AUD
+568,AU-85,Asia Pacific,Oceania,Australia,Iluka Resources Limited,Metals & Mining,,,,,,ILU,XASX,Australian Securities Exchange,AUD
+569,AU-86,Asia Pacific,Oceania,Australia,Iph Limited,Professional & Commercial Services,,,,,,IPH,XASX,Australian Securities Exchange,AUD
+570,AU-87,Asia Pacific,Oceania,Australia,Incitec Pivot Limited,Chemicals,,,,,,IPL,XASX,Australian Securities Exchange,AUD
+571,AU-88,Asia Pacific,Oceania,Australia,Invocare Limited,Consumer & Household Products,,,,,,IVC,XASX,Australian Securities Exchange,AUD
+572,AU-89,Asia Pacific,Oceania,Australia,Jb Hi-Fi Limited,Specialty Retailers,,,,,,JBH,XASX,Australian Securities Exchange,AUD
+573,AU-90,Asia Pacific,Oceania,Australia,James Hardie Industries Public Limited Company,Construction Materials,,AU000000JHX1,,,,JHX,XASX,Australian Securities Exchange,AUD
+574,AU-91,Asia Pacific,Oceania,Australia,Johns Lyng Group Limited,Construction & Engineering,,,,,,JLG,XASX,Australian Securities Exchange,AUD
+575,AU-92,Asia Pacific,Oceania,Australia,Kelsian Group Limited,Hotels & Entertainment Services,,,,,,KLS,XASX,Australian Securities Exchange,AUD
+576,AU-93,Asia Pacific,Oceania,Australia,Lifestyle Communities Ltd,Real Estate Operations,,,,,,LIC,XASX,Australian Securities Exchange,AUD
+577,AU-94,Asia Pacific,Oceania,Australia,Lovisa Holdings Limited,Specialty Retailers,,,,,,LOV,XASX,Australian Securities Exchange,AUD
+578,AU-95,Asia Pacific,Oceania,Australia,L1 Long Short Fund Limited,Capital Markets & Advisory,,,,,,LSF,XASX,Australian Securities Exchange,AUD
+579,AU-96,Asia Pacific,Oceania,Australia,Liontown Resources Limited,Metals & Mining,,,,,,LTR,XASX,Australian Securities Exchange,AUD
+580,AU-97,Asia Pacific,Oceania,Australia,Lynas Rare Earths Limited,Metals & Mining,,,,,,LYC,XASX,Australian Securities Exchange,AUD
+581,AU-98,Asia Pacific,Oceania,Australia,Mader Group Limited,Professional & Commercial Services,,,,,,MAD,XASX,Australian Securities Exchange,AUD
+582,AU-99,Asia Pacific,Oceania,Australia,Macquarie Technology Group Limited,Telecommunications Services,,,,,,MAQ,XASX,Australian Securities Exchange,AUD
+583,AU-100,Asia Pacific,Oceania,Australia,Mercury Nz Limited,Electrical Utilities & IPPs,,,,,,MCY,XASX,Australian Securities Exchange,AUD
+584,AU-101,Asia Pacific,Oceania,Australia,Meridian Energy Limited,Electrical Utilities & IPPs,,,,,,MEZ,XASX,Australian Securities Exchange,AUD
+585,AU-102,Asia Pacific,Oceania,Australia,Mff Capital Investments Limited,Capital Markets & Advisory,,,,,,MFF,XASX,Australian Securities Exchange,AUD
+586,AU-103,Asia Pacific,Oceania,Australia,Magellan Financial Group Ltd,Capital Markets & Advisory,,,,,,MFG,XASX,Australian Securities Exchange,AUD
+587,AU-104,Asia Pacific,Oceania,Australia,Mineral Resources Limited,Metals & Mining,,AU000000MIN4,,,,MIN,XASX,Australian Securities Exchange,AUD
+588,AU-105,Asia Pacific,Oceania,Australia,Megaport Limited,Software & IT Solutions / Digital Services,,,,,,MP1,XASX,Australian Securities Exchange,AUD
+589,AU-106,Asia Pacific,Oceania,Australia,Medibank Private Limited,Insurance,,AU000000MPL3,,,,MPL,XASX,Australian Securities Exchange,AUD
+590,AU-107,Asia Pacific,Oceania,Australia,Macquarie Group Limited.,Capital Markets & Advisory,,AU000000MQG1,,,,MQG,XASX,Australian Securities Exchange,AUD
+591,AU-108,Asia Pacific,Oceania,Australia,Metcash Limited,Food & Drug Retailing,,,,,,MTS,XASX,Australian Securities Exchange,AUD
+592,AU-109,Asia Pacific,Oceania,Australia,National Australia Bank Limited,Banking Services,,AU000000NAB4,,,,NAB,XASX,Australian Securities Exchange,AUD
+593,AU-110,Asia Pacific,Oceania,Australia,Newcrest Mining Limited,Metals & Mining,,AU000000NCM7,,,,NCM,XASX,Australian Securities Exchange,AUD
+594,AU-111,Asia Pacific,Oceania,Australia,Nine Entertainment Co. Holdings Limited,Media & Publishing,,,,,,NEC,XASX,Australian Securities Exchange,AUD
+595,AU-112,Asia Pacific,Oceania,Australia,Neuren Pharmaceuticals Limited,Biotechnology & Life Sciences,,,,,,NEU,XASX,Australian Securities Exchange,AUD
+596,AU-113,Asia Pacific,Oceania,Australia,New Hope Corporation Limited,Coal,,,,,,NHC,XASX,Australian Securities Exchange,AUD
+597,AU-114,Asia Pacific,Oceania,Australia,Nib Holdings Ltd,Insurance,,,,,,NHF,XASX,Australian Securities Exchange,AUD
+598,AU-115,Asia Pacific,Oceania,Australia,Nickel Industries Limited,Metals & Mining,,,,,,NIC,XASX,Australian Securities Exchange,AUD
+599,AU-116,Asia Pacific,Oceania,Australia,National Storage Reit,Real Estate Investment Trusts (REITs),,,,,,NSR,XASX,Australian Securities Exchange,AUD
+600,AU-117,Asia Pacific,Oceania,Australia,Northern Star Resources Ltd,Metals & Mining,,AU000000NST8,,,,NST,XASX,Australian Securities Exchange,AUD
+601,AU-118,Asia Pacific,Oceania,Australia,Nufarm Limited,Chemicals,,,,,,NUF,XASX,Australian Securities Exchange,AUD
+602,AU-119,Asia Pacific,Oceania,Australia,Netwealth Group Limited,Capital Markets & Advisory,,,,,,NWL,XASX,Australian Securities Exchange,AUD
+603,AU-120,Asia Pacific,Oceania,Australia,Nextdc Limited,Software & IT Solutions / Digital Services,,,,,,NXT,XASX,Australian Securities Exchange,AUD
+604,AU-121,Asia Pacific,Oceania,Australia,Orora Limited,Containers & Packaging,,,,,,ORA,XASX,Australian Securities Exchange,AUD
+605,AU-122,Asia Pacific,Oceania,Australia,Origin Energy Limited,Electrical Utilities & IPPs,,AU000000ORG5,,,,ORG,XASX,Australian Securities Exchange,AUD
+606,AU-123,Asia Pacific,Oceania,Australia,Orica Limited,Chemicals,,AU000000ORI1,,,,ORI,XASX,Australian Securities Exchange,AUD
+607,AU-124,Asia Pacific,Oceania,Australia,Paladin Energy Ltd,Uranium,,,,,,PDN,XASX,Australian Securities Exchange,AUD
+608,AU-125,Asia Pacific,Oceania,Australia,Pilbara Minerals Limited,Metals & Mining,,AU000000PLS0,,,,PLS,XASX,Australian Securities Exchange,AUD
+609,AU-126,Asia Pacific,Oceania,Australia,Pro Medicus Limited,Medical Devices & Supplies,,,,,,PME,XASX,Australian Securities Exchange,AUD
+610,AU-127,Asia Pacific,Oceania,Australia,Premier Investments Limited,Specialty Retailers,,,,,,PMV,XASX,Australian Securities Exchange,AUD
+611,AU-128,Asia Pacific,Oceania,Australia,Pinnacle Investment Management Group Limited,Capital Markets & Advisory,,,,,,PNI,XASX,Australian Securities Exchange,AUD
+612,AU-129,Asia Pacific,Oceania,Australia,Perpetual Limited,Capital Markets & Advisory,,,,,,PPT,XASX,Australian Securities Exchange,AUD
+613,AU-130,Asia Pacific,Oceania,Australia,Perseus Mining Limited,Metals & Mining,,,,,,PRU,XASX,Australian Securities Exchange,AUD
+614,AU-131,Asia Pacific,Oceania,Australia,Psc Insurance Group Limited,Insurance,,,,,,PSI,XASX,Australian Securities Exchange,AUD
+615,AU-132,Asia Pacific,Oceania,Australia,Pexa Group Ltd,Software & IT Solutions / Digital Services,,,,,,PXA,XASX,Australian Securities Exchange,AUD
+616,AU-133,Asia Pacific,Oceania,Australia,Qantas Airways Limited,Passenger Transportation Services,,AU000000QAN2,,,,QAN,XASX,Australian Securities Exchange,AUD
+617,AU-134,Asia Pacific,Oceania,Australia,Qbe Insurance Group Limited,Insurance,,AU000000QBE9,,,,QBE,XASX,Australian Securities Exchange,AUD
+618,AU-135,Asia Pacific,Oceania,Australia,Qube Holdings Limited,Transport Infrastructure,,,,,,QUB,XASX,Australian Securities Exchange,AUD
+619,AU-136,Asia Pacific,Oceania,Australia,Rea Group Ltd,Software & IT Solutions / Digital Services,,AU000000REA9,,,,REA,XASX,Australian Securities Exchange,AUD
+620,AU-137,Asia Pacific,Oceania,Australia,Reece Limited,Residential Construction & Materials,,AU000000REH4,,,,REH,XASX,Australian Securities Exchange,AUD
+621,AU-138,Asia Pacific,Oceania,Australia,Ramsay Health Care Limited,Healthcare Providers & Services,,AU000000RHC8,,,,RHC,XASX,Australian Securities Exchange,AUD
+622,AU-139,Asia Pacific,Oceania,Australia,Rio Tinto Limited,Metals & Mining,,AU000000RIO1,,,,RIO,XASX,Australian Securities Exchange,AUD
+623,AU-140,Asia Pacific,Oceania,Australia,Resmed Inc.,Medical Devices & Supplies,,,,,,RMD,XASX,Australian Securities Exchange,AUD
+624,AU-141,Asia Pacific,Oceania,Australia,Reliance Worldwide Corporation Limited,Residential Construction & Materials,,,,,,RWC,XASX,Australian Securities Exchange,AUD
+625,AU-142,Asia Pacific,Oceania,Australia,South32 Limited,Metals & Mining,,AU000000S320,,,,S32,XASX,Australian Securities Exchange,AUD
+626,AU-143,Asia Pacific,Oceania,Australia,Scentre Group,Real Estate Operations,,AU000000SCG8,,,,SCG,XASX,Australian Securities Exchange,AUD
+627,AU-144,Asia Pacific,Oceania,Australia,Steadfast Group Ltd,Insurance,,,,,,SDF,XASX,Australian Securities Exchange,AUD
+628,AU-145,Asia Pacific,Oceania,Australia,Seek Limited,Professional & Commercial Services,,AU000000SEK6,,,,SEK,XASX,Australian Securities Exchange,AUD
+629,AU-146,Asia Pacific,Oceania,Australia,Sandfire Resources Limited,Metals & Mining,,,,,,SFR,XASX,Australian Securities Exchange,AUD
+630,AU-147,Asia Pacific,Oceania,Australia,Sims Limited,Metals & Mining,,,,,,SGM,XASX,Australian Securities Exchange,AUD
+631,AU-148,Asia Pacific,Oceania,Australia,Sonic Healthcare Limited,Healthcare Providers & Services,,AU000000SHL7,,,,SHL,XASX,Australian Securities Exchange,AUD
+632,AU-149,Asia Pacific,Oceania,Australia,Skycity Entertainment Group Limited,Hotels & Entertainment Services,,,,,,SKC,XASX,Australian Securities Exchange,AUD
+633,AU-150,Asia Pacific,Oceania,Australia,Stanmore Resources Limited,Coal,,,,,,SMR,XASX,Australian Securities Exchange,AUD
+634,AU-151,Asia Pacific,Oceania,Australia,Summerset Group Holdings Limited,Healthcare Providers & Services,,,,,,SNZ,XASX,Australian Securities Exchange,AUD
+635,AU-152,Asia Pacific,Oceania,Australia,Washington H. Soul Pattinson And Company Limited,Coal,,AU000000SOL3,,,,SOL,XASX,Australian Securities Exchange,AUD
+636,AU-153,Asia Pacific,Oceania,Australia,Spark New Zealand Limited,Telecommunications Services,,,,,,SPK,XASX,Australian Securities Exchange,AUD
+637,AU-154,Asia Pacific,Oceania,Australia,"Block, Inc.",Professional & Commercial Services,,,,,,SQ2,XASX,Australian Securities Exchange,AUD
+638,AU-155,Asia Pacific,Oceania,Australia,Santos Limited,Oil & Gas,,AU000000STO6,,,,STO,XASX,Australian Securities Exchange,AUD
+639,AU-156,Asia Pacific,Oceania,Australia,Super Retail Group Limited,Specialty Retailers,,,,,,SUL,XASX,Australian Securities Exchange,AUD
+640,AU-157,Asia Pacific,Oceania,Australia,Suncorp Group Limited,Insurance,,AU000000SUN6,,,,SUN,XASX,Australian Securities Exchange,AUD
+641,AU-158,Asia Pacific,Oceania,Australia,Seven Group Holdings Limited,"Machinery, Equipment & Components",,,,,,SVW,XASX,Australian Securities Exchange,AUD
+642,AU-159,Asia Pacific,Oceania,Australia,Tabcorp Holdings Limited,Hotels & Entertainment Services,,,,,,TAH,XASX,Australian Securities Exchange,AUD
+643,AU-160,Asia Pacific,Oceania,Australia,Transurban Group,Transport Infrastructure,,AU000000TCL6,,,,TCL,XASX,Australian Securities Exchange,AUD
+644,AU-161,Asia Pacific,Oceania,Australia,The Lottery Corporation Limited,Hotels & Entertainment Services,,AU0000219529,,,,TLC,XASX,Australian Securities Exchange,AUD
+645,AU-162,Asia Pacific,Oceania,Australia,Telstra Group Limited,Telecommunications Services,,AU000000TLS2,,,,TLS,XASX,Australian Securities Exchange,AUD
+646,AU-163,Asia Pacific,Oceania,Australia,Telix Pharmaceuticals Limited,Biotechnology & Life Sciences,,,,,,TLX,XASX,Australian Securities Exchange,AUD
+647,AU-164,Asia Pacific,Oceania,Australia,Technology One Limited,Software & IT Solutions / Digital Services,,,,,,TNE,XASX,Australian Securities Exchange,AUD
+648,AU-165,Asia Pacific,Oceania,Australia,Tpg Telecom Limited,Telecommunications Services,,,,,,TPG,XASX,Australian Securities Exchange,AUD
+649,AU-166,Asia Pacific,Oceania,Australia,Treasury Wine Estates Limited,Beverages,,AU000000TWE9,,,,TWE,XASX,Australian Securities Exchange,AUD
+650,AU-167,Asia Pacific,Oceania,Australia,Vicinity Centres Re Ltd,Real Estate Investment Trusts (REITs),,AU000000VCX7,,,,VCX,XASX,Australian Securities Exchange,AUD
+651,AU-168,Asia Pacific,Oceania,Australia,Viva Energy Group Limited,Oil & Gas,,,,,,VEA,XASX,Australian Securities Exchange,AUD
+652,AU-169,Asia Pacific,Oceania,Australia,Ventia Services Group Limited,Professional & Commercial Services,,,,,,VNT,XASX,Australian Securities Exchange,AUD
+653,AU-170,Asia Pacific,Oceania,Australia,Virgin Money Uk Plc,Banking Services,,,,,,VUK,XASX,Australian Securities Exchange,AUD
+654,AU-171,Asia Pacific,Oceania,Australia,Wam Capital Limited,Capital Markets & Advisory,,,,,,WAM,XASX,Australian Securities Exchange,AUD
+655,AU-172,Asia Pacific,Oceania,Australia,Westpac Banking Corporation,Banking Services,,AU000000WBC1,,,,WBC,XASX,Australian Securities Exchange,AUD
+656,AU-173,Asia Pacific,Oceania,Australia,Woodside Energy Group Ltd,Oil & Gas,,AU0000224040,,,,WDS,XASX,Australian Securities Exchange,AUD
+657,AU-174,Asia Pacific,Oceania,Australia,Webjet Limited,Hotels & Entertainment Services,,,,,,WEB,XASX,Australian Securities Exchange,AUD
+658,AU-175,Asia Pacific,Oceania,Australia,Wesfarmers Limited,Diversified Retail,,AU000000WES1,,,,WES,XASX,Australian Securities Exchange,AUD
+659,AU-176,Asia Pacific,Oceania,Australia,Whitehaven Coal Limited,Coal,,,,,,WHC,XASX,Australian Securities Exchange,AUD
+660,AU-177,Asia Pacific,Oceania,Australia,Wam Leaders Limited,Capital Markets & Advisory,,,,,,WLE,XASX,Australian Securities Exchange,AUD
+661,AU-178,Asia Pacific,Oceania,Australia,Worley Limited,Energy Equipment & Services,,,,,,WOR,XASX,Australian Securities Exchange,AUD
+662,AU-179,Asia Pacific,Oceania,Australia,Woolworths Group Limited,Food & Drug Retailing,,AU000000WOW2,,,,WOW,XASX,Australian Securities Exchange,AUD
+663,AU-180,Asia Pacific,Oceania,Australia,Viva Energy Reit Limited,Real Estate Investment Trusts (REITs),,,,,,WPR,XASX,Australian Securities Exchange,AUD
+664,AU-181,Asia Pacific,Oceania,Australia,Wisetech Global Limited,Software & IT Solutions / Digital Services,,AU000000WTC3,,,,WTC,XASX,Australian Securities Exchange,AUD
+665,AU-182,Asia Pacific,Oceania,Australia,Xero Limited,Software & IT Solutions / Digital Services,,NZXROE0001S2,,,,XRO,XASX,Australian Securities Exchange,AUD
+666,AU-183,Asia Pacific,Oceania,Australia,Yancoal Australia Ltd,Coal,,,,,,YAL,XASX,Australian Securities Exchange,AUD
+667,AU-184,Asia Pacific,Oceania,Australia,Zimplats Holdings Limited,Metals & Mining,,,,,,ZIM,XASX,Australian Securities Exchange,AUD
+668,NZ-1,Asia Pacific,Oceania,New Zealand,Auckland International Airport Limited,Transport Infrastructure,,NZAIAE0002S6,BKX3XG2,,,AIA,XNZE,New Zealand Exchange Ltd,NZD
+669,NZ-2,Asia Pacific,Oceania,New Zealand,Air New Zealand Limited,Passenger Transportation Services,S64264849,NZAIRE0001S2,6426484,,,AIR,XNZE,New Zealand Exchange Ltd,NZD
+670,NZ-3,Asia Pacific,Oceania,New Zealand,Anz Group Holdings Limited,Banking Services,,,,,,ANZ,XNZE,New Zealand Exchange Ltd,NZD
+671,NZ-4,Asia Pacific,Oceania,New Zealand,Argosy Property Limited,Real Estate Investment Trusts (REITs),,,,,,ARG,XNZE,New Zealand Exchange Ltd,NZD
+672,NZ-5,Asia Pacific,Oceania,New Zealand,Arvida Group Limited,Healthcare Providers & Services,,,,,,ARV,XNZE,New Zealand Exchange Ltd,NZD
+673,NZ-6,Asia Pacific,Oceania,New Zealand,The A2 Milk Company Limited,Food & Tobacco,S62872502,NZATME0002S8,6287250,,,ATM,XNZE,New Zealand Exchange Ltd,NZD
+674,NZ-7,Asia Pacific,Oceania,New Zealand,Contact Energy Limited,Electrical Utilities & IPPs,S61525291,NZCENE0001S6,6152529,,,CEN,XNZE,New Zealand Exchange Ltd,NZD
+675,NZ-8,Asia Pacific,Oceania,New Zealand,Chorus Limited,Telecommunications Services,,,,,,CNU,XNZE,New Zealand Exchange Ltd,NZD
+676,NZ-9,Asia Pacific,Oceania,New Zealand,Ebos Group Limited,Pharmaceuticals,S61600383,NZEBOE0001S6,6160038,,,EBO,XNZE,New Zealand Exchange Ltd,NZD
+677,NZ-10,Asia Pacific,Oceania,New Zealand,Fletcher Building Limited,Residential Construction & Materials,S63416069,NZFBUE0001S0,6341606,,,FBU,XNZE,New Zealand Exchange Ltd,NZD
+678,NZ-11,Asia Pacific,Oceania,New Zealand,Fisher & Paykel Healthcare Corporation Limited,Medical Devices & Supplies,S63402507,NZFAPE0001S2,6340250,,,FPH,XNZE,New Zealand Exchange Ltd,NZD
+679,NZ-12,Asia Pacific,Oceania,New Zealand,Freightways Limited,Freight & Logistics Services,,,,,,FRW,XNZE,New Zealand Exchange Ltd,NZD
+680,NZ-13,Asia Pacific,Oceania,New Zealand,Genesis Energy Limited,Electrical Utilities & IPPs,,NZGNEE0001S7,BL10N28,,,GNE,XNZE,New Zealand Exchange Ltd,NZD
+681,NZ-14,Asia Pacific,Oceania,New Zealand,Heartland Group Holdings Limited,Banking Services,,,,,,HGH,XNZE,New Zealand Exchange Ltd,NZD
+682,NZ-15,Asia Pacific,Oceania,New Zealand,Infratil Limited,Electrical Utilities & IPPs,S64592868,NZIFTE0003S3,6459286,,,IFT,XNZE,New Zealand Exchange Ltd,NZD
+683,NZ-16,Asia Pacific,Oceania,New Zealand,Investore Property Limited,Real Estate Investment Trusts (REITs),,,,,,IPL,XNZE,New Zealand Exchange Ltd,NZD
+684,NZ-17,Asia Pacific,Oceania,New Zealand,Kmd Brands Limited,Specialty Retailers,,,,,,KMD,XNZE,New Zealand Exchange Ltd,NZD
+685,NZ-18,Asia Pacific,Oceania,New Zealand,Kiwi Property Group Limited,Real Estate Operations,,NZKPGE0001S9,BTDY2M7,,,KPG,XNZE,New Zealand Exchange Ltd,NZD
+686,NZ-19,Asia Pacific,Oceania,New Zealand,Mercury Nz Limited,Electrical Utilities & IPPs,,NZMRPE0001S2,B8W6K56,,,MCY,XNZE,New Zealand Exchange Ltd,NZD
+687,NZ-20,Asia Pacific,Oceania,New Zealand,Meridian Energy Limited,Electrical Utilities & IPPs,,NZMELE0002S7,BWFD052,,,MEL,XNZE,New Zealand Exchange Ltd,NZD
+688,NZ-21,Asia Pacific,Oceania,New Zealand,Mainfreight Limited,Freight & Logistics Services,,,,,,MFT,XNZE,New Zealand Exchange Ltd,NZD
+689,NZ-22,Asia Pacific,Oceania,New Zealand,Manawa Energy Limited,Electrical Utilities & IPPs,,,,,,MNW,XNZE,New Zealand Exchange Ltd,NZD
+690,NZ-23,Asia Pacific,Oceania,New Zealand,Nzx Limited,Capital Markets & Advisory,,,,,,NZX,XNZE,New Zealand Exchange Ltd,NZD
+691,NZ-24,Asia Pacific,Oceania,New Zealand,Oceania Healthcare Limited,Healthcare Providers & Services,,NZOCAE0002S0,BD6DH46,,,OCA,XNZE,New Zealand Exchange Ltd,NZD
+692,NZ-25,Asia Pacific,Oceania,New Zealand,Precinct Properties New Zealand Limited,Real Estate Operations,,,,,,PCT,XNZE,New Zealand Exchange Ltd,NZD
+693,NZ-26,Asia Pacific,Oceania,New Zealand,Pacific Edge Limited,Biotechnology & Life Sciences,,,,,,PEB,XNZE,New Zealand Exchange Ltd,NZD
+694,NZ-27,Asia Pacific,Oceania,New Zealand,Property For Industry Limited,Real Estate Operations,,,,,,PFI,XNZE,New Zealand Exchange Ltd,NZD
+695,NZ-28,Asia Pacific,Oceania,New Zealand,Port Of Tauranga Limited,Transport Infrastructure,,,,,,POT,XNZE,New Zealand Exchange Ltd,NZD
+696,NZ-29,Asia Pacific,Oceania,New Zealand,Restaurant Brands New Zealand Limited,Hotels & Entertainment Services,,,,,,RBD,XNZE,New Zealand Exchange Ltd,NZD
+697,NZ-30,Asia Pacific,Oceania,New Zealand,Ryman Healthcare Limited,Healthcare Providers & Services,S61615258,NZRYME0001S4,6161525,,,RYM,XNZE,New Zealand Exchange Ltd,NZD
+698,NZ-31,Asia Pacific,Oceania,New Zealand,Sanford Limited,Food & Tobacco,,,,,,SAN,XNZE,New Zealand Exchange Ltd,NZD
+699,NZ-32,Asia Pacific,Oceania,New Zealand,Scales Corporation Limited,Food & Tobacco,,,,,,SCL,XNZE,New Zealand Exchange Ltd,NZD
+700,NZ-33,Asia Pacific,Oceania,New Zealand,Skycity Entertainment Group Limited,Hotels & Entertainment Services,,,,,,SKC,XNZE,New Zealand Exchange Ltd,NZD
+701,NZ-34,Asia Pacific,Oceania,New Zealand,Skellerup Holdings Limited,"Machinery, Equipment & Components",,,,,,SKL,XNZE,New Zealand Exchange Ltd,NZD
+702,NZ-35,Asia Pacific,Oceania,New Zealand,Serko Limited,Software & IT Solutions / Digital Services,,,,,,SKO,XNZE,New Zealand Exchange Ltd,NZD
+703,NZ-36,Asia Pacific,Oceania,New Zealand,Sky Network Television Limited,Media & Publishing,,,,,,SKT,XNZE,New Zealand Exchange Ltd,NZD
+704,NZ-37,Asia Pacific,Oceania,New Zealand,Synlait Milk Limited,Food & Tobacco,,,,,,SML,XNZE,New Zealand Exchange Ltd,NZD
+705,NZ-38,Asia Pacific,Oceania,New Zealand,Stride Property Ltd & Stride Investment Management Ltd,Real Estate Operations,,,,,,SPG,XNZE,New Zealand Exchange Ltd,NZD
+706,NZ-39,Asia Pacific,Oceania,New Zealand,Spark New Zealand Limited,Telecommunications Services,S68814367,NZTELE0001S4,6881436,,,SPK,XNZE,New Zealand Exchange Ltd,NZD
+707,NZ-40,Asia Pacific,Oceania,New Zealand,Summerset Group Holdings Limited,Healthcare Providers & Services,,NZSUME0001S0,B6R3JL7,,,SUM,XNZE,New Zealand Exchange Ltd,NZD
+708,NZ-41,Asia Pacific,Oceania,New Zealand,Tourism Holdings Limited,Passenger Transportation Services,,,,,,THL,XNZE,New Zealand Exchange Ltd,NZD
+709,NZ-42,Asia Pacific,Oceania,New Zealand,Vector Limited,Integrated Utilities,,,,,,VCT,XNZE,New Zealand Exchange Ltd,NZD
+710,NZ-43,Asia Pacific,Oceania,New Zealand,Vista Group International Limited,Software & IT Solutions / Digital Services,,,,,,VGL,XNZE,New Zealand Exchange Ltd,NZD
+711,NZ-44,Asia Pacific,Oceania,New Zealand,Vital Healthcare Property Trust,Real Estate Investment Trusts (REITs),,,,,,VHP,XNZE,New Zealand Exchange Ltd,NZD
+712,NZ-45,Asia Pacific,Oceania,New Zealand,Vulcan Steel Limited,Metals & Mining,,,,,,VSL,XNZE,New Zealand Exchange Ltd,NZD
+713,NZ-46,Asia Pacific,Oceania,New Zealand,Westpac Banking Corporation,Banking Services,,,,,,WBC,XNZE,New Zealand Exchange Ltd,NZD
+714,NZ-47,Asia Pacific,Oceania,New Zealand,The Warehouse Group Limited,Diversified Retail,S69396257,NZWHSE0001S6,6939625,,,WHS,XNZE,New Zealand Exchange Ltd,NZD
+715,IN-1,Asia Pacific,South Asia,India,Abb India Ltd,"Machinery, Equipment & Components",,INE117A01022,,,,ABB,XNSE,National Stock Exchange of India,INR
+716,IN-2,Asia Pacific,South Asia,India,Acc Ltd,Construction Materials,,INE012A01025,,,,ACC,XNSE,National Stock Exchange of India,INR
+717,IN-3,Asia Pacific,South Asia,India,Adani Enterprises Ltd,Industrial Distributors,,INE423A01024,,,,ADANIENT,XNSE,National Stock Exchange of India,INR
+718,IN-4,Asia Pacific,South Asia,India,Adani Green Energy Ltd,Electrical Utilities & IPPs,,INE364U01010,,,,ADANIGREEN,XNSE,National Stock Exchange of India,INR
+719,IN-5,Asia Pacific,South Asia,India,Adani Ports And Special Economic Z,Transport Infrastructure,,INE742F01042,,,,ADANIPORTS,XNSE,National Stock Exchange of India,INR
+720,IN-6,Asia Pacific,South Asia,India,Adani Power Ltd,Electrical Utilities & IPPs,,INE814H01011,,,,ADANIPOWER,XNSE,National Stock Exchange of India,INR
+721,IN-7,Asia Pacific,South Asia,India,Ambuja Cements Ltd,Construction Materials,,INE079A01024,,,,AMBUJACEM,XNSE,National Stock Exchange of India,INR
+722,IN-8,Asia Pacific,South Asia,India,Apollo Hospitals Enterprise Ltd,Healthcare Providers & Services,,INE437A01024,,,,APOLLOHOSP,XNSE,National Stock Exchange of India,INR
+723,IN-9,Asia Pacific,South Asia,India,Asian Paints Ltd,Chemicals,,INE021A01026,,,,ASIANPAINT,XNSE,National Stock Exchange of India,INR
+724,IN-10,Asia Pacific,South Asia,India,Au Small Finance Bank Ltd,Banking Services,,INE949L01017,,,,AUBANK,XNSE,National Stock Exchange of India,INR
+725,IN-11,Asia Pacific,South Asia,India,Aurobindo Pharma Ltd,Pharmaceuticals,,INE406A01037,,,,AUROPHARMA,XNSE,National Stock Exchange of India,INR
+726,IN-12,Asia Pacific,South Asia,India,Axis Bank Ltd,Banking Services,,INE238A01034,,,,AXISBANK,XNSE,National Stock Exchange of India,INR
+727,IN-13,Asia Pacific,South Asia,India,Bajaj Auto Ltd,Automobiles & Auto Parts,,INE917I01010,,,,BAJAJ-AUTO,XNSE,National Stock Exchange of India,INR
+728,IN-14,Asia Pacific,South Asia,India,Bajaj Finserv Ltd,Insurance,,INE918I01026,,,,BAJAJFINSV,XNSE,National Stock Exchange of India,INR
+729,IN-15,Asia Pacific,South Asia,India,Bajaj Holdings And Investment Ltd,Capital Markets & Advisory,,INE118A01012,,,,BAJAJHLDNG,XNSE,National Stock Exchange of India,INR
+730,IN-16,Asia Pacific,South Asia,India,Bajaj Finance Ltd,Banking Services,,INE296A01024,,,,BAJFINANCE,XNSE,National Stock Exchange of India,INR
+731,IN-17,Asia Pacific,South Asia,India,Balkrishna Industries Ltd,Automobiles & Auto Parts,,INE787D01026,,,,BALKRISIND,XNSE,National Stock Exchange of India,INR
+732,IN-18,Asia Pacific,South Asia,India,Bandhan Bank Ltd,Banking Services,,INE545U01014,,,,BANDHANBNK,XNSE,National Stock Exchange of India,INR
+733,IN-19,Asia Pacific,South Asia,India,Bank Of Baroda Ltd,Banking Services,,INE028A01039,,,,BANKBARODA,XNSE,National Stock Exchange of India,INR
+734,IN-20,Asia Pacific,South Asia,India,Bharat Electronics Ltd,Aerospace & Defense,,INE263A01024,,,,BEL,XNSE,National Stock Exchange of India,INR
+735,IN-21,Asia Pacific,South Asia,India,Berger Paints India Ltd,Chemicals,,INE463A01038,,,,BERGEPAINT,XNSE,National Stock Exchange of India,INR
+736,IN-22,Asia Pacific,South Asia,India,Bharat Forge Ltd,Metals & Mining,,INE465A01025,,,,BHARATFORG,XNSE,National Stock Exchange of India,INR
+737,IN-23,Asia Pacific,South Asia,India,Bharti Airtel Ltd,Telecommunications Services,,INE397D01024,,,,BHARTIARTL,XNSE,National Stock Exchange of India,INR
+738,IN-24,Asia Pacific,South Asia,India,Bharat Petroleum Ltd,Oil & Gas,,INE029A01011,,,,BPCL,XNSE,National Stock Exchange of India,INR
+739,IN-25,Asia Pacific,South Asia,India,Britannia Industries Ltd,Food & Tobacco,,INE216A01030,,,,BRITANNIA,XNSE,National Stock Exchange of India,INR
+740,IN-26,Asia Pacific,South Asia,India,Cg Power And Industrial Solutions,"Machinery, Equipment & Components",,INE067A01029,,,,CGPOWER,XNSE,National Stock Exchange of India,INR
+741,IN-27,Asia Pacific,South Asia,India,Cholamandalam Investment And Finan,Banking Services,,INE121A01024,,,,CHOLAFIN,XNSE,National Stock Exchange of India,INR
+742,IN-28,Asia Pacific,South Asia,India,Cipla Ltd,Pharmaceuticals,,INE059A01026,,,,CIPLA,XNSE,National Stock Exchange of India,INR
+743,IN-29,Asia Pacific,South Asia,India,Coal India Ltd,Coal,,INE522F01014,,,,COALINDIA,XNSE,National Stock Exchange of India,INR
+744,IN-30,Asia Pacific,South Asia,India,Colgate Palmolive India Ltd,Consumer & Household Products,,INE259A01022,,,,COLPAL,XNSE,National Stock Exchange of India,INR
+745,IN-31,Asia Pacific,South Asia,India,Container Corporation Of India Ltd,Freight & Logistics Services,,INE111A01025,,,,CONCOR,XNSE,National Stock Exchange of India,INR
+746,IN-32,Asia Pacific,South Asia,India,Larsen And Toubro Ltd,Food & Tobacco,,INE018A01030,,,,DAAWAT,XNSE,National Stock Exchange of India,INR
+747,IN-33,Asia Pacific,South Asia,India,Dabur India Ltd,Consumer & Household Products,,INE016A01026,,,,DABUR,XNSE,National Stock Exchange of India,INR
+748,IN-34,Asia Pacific,South Asia,India,Divis Laboratories Ltd,Pharmaceuticals,,INE361B01024,,,,DIVISLAB,XNSE,National Stock Exchange of India,INR
+749,IN-35,Asia Pacific,South Asia,India,Dlf Ltd,Real Estate Operations,,INE271C01023,,,,DLF,XNSE,National Stock Exchange of India,INR
+750,IN-36,Asia Pacific,South Asia,India,Avenue Supermarts Ltd,Food & Drug Retailing,,INE192R01011,,,,DMART,XNSE,National Stock Exchange of India,INR
+751,IN-37,Asia Pacific,South Asia,India,Dr Reddys Laboratories Ltd,Pharmaceuticals,,INE089A01023,,,,DRREDDY,XNSE,National Stock Exchange of India,INR
+752,IN-38,Asia Pacific,South Asia,India,Eicher Motors Ltd,Automobiles & Auto Parts,,INE066A01021,,,,EICHERMOT,XNSE,National Stock Exchange of India,INR
+753,IN-39,Asia Pacific,South Asia,India,Gail India Ltd,Natural Gas Utilities,,INE129A01019,,,,GAIL,XNSE,National Stock Exchange of India,INR
+754,IN-40,Asia Pacific,South Asia,India,Godrej Consumer Products Ltd,Consumer & Household Products,,INE102D01028,,,,GODREJCP,XNSE,National Stock Exchange of India,INR
+755,IN-41,Asia Pacific,South Asia,India,Godrej Properties Ltd,Real Estate Operations,,INE484J01027,,,,GODREJPROP,XNSE,National Stock Exchange of India,INR
+756,IN-42,Asia Pacific,South Asia,India,Grasim Industries Ltd,Construction Materials,,INE047A01021,,,,GRASIM,XNSE,National Stock Exchange of India,INR
+757,IN-43,Asia Pacific,South Asia,India,Hindustan Aeronautics Ltd,Aerospace & Defense,,INE066F01012,,,,HAL,XNSE,National Stock Exchange of India,INR
+758,IN-44,Asia Pacific,South Asia,India,Havells India Ltd,"Machinery, Equipment & Components",,INE176B01034,,,,HAVELLS,XNSE,National Stock Exchange of India,INR
+759,IN-45,Asia Pacific,South Asia,India,Hcl Technologies Ltd,Software & IT Solutions / Digital Services,,INE860A01027,,,,HCLTECH,XNSE,National Stock Exchange of India,INR
+760,IN-46,Asia Pacific,South Asia,India,Hdfc Bank Ltd,Banking Services,,INE040A01034,,,,HDFCBANK,XNSE,National Stock Exchange of India,INR
+761,IN-47,Asia Pacific,South Asia,India,Hdfc Life Insurance Company Ltd,Insurance,,INE795G01014,,,,HDFCLIFE,XNSE,National Stock Exchange of India,INR
+762,IN-48,Asia Pacific,South Asia,India,Hero Motocorp Ltd,Automobiles & Auto Parts,,INE158A01026,,,,HEROMOTOCO,XNSE,National Stock Exchange of India,INR
+763,IN-49,Asia Pacific,South Asia,India,Hindalco Industries Ltd,Metals & Mining,,INE038A01020,,,,HINDALCO,XNSE,National Stock Exchange of India,INR
+764,IN-50,Asia Pacific,South Asia,India,Hindustan Petroleum Corp Ltd,Oil & Gas,,INE094A01015,,,,HINDPETRO,XNSE,National Stock Exchange of India,INR
+765,IN-51,Asia Pacific,South Asia,India,Hindustan Unilever Ltd,Consumer & Household Products,,INE030A01027,,,,HINDUNILVR,XNSE,National Stock Exchange of India,INR
+766,IN-52,Asia Pacific,South Asia,India,Icici Bank Ltd,Banking Services,,INE090A01021,,,,ICICIBANK,XNSE,National Stock Exchange of India,INR
+767,IN-53,Asia Pacific,South Asia,India,Icici Lombard General Insurance Co,Insurance,,INE765G01017,,,,ICICIGI,XNSE,National Stock Exchange of India,INR
+768,IN-54,Asia Pacific,South Asia,India,Icici Prudential Life Insurance Co,Insurance,,INE726G01019,,,,ICICIPRULI,XNSE,National Stock Exchange of India,INR
+769,IN-55,Asia Pacific,South Asia,India,Indraprastha Gas Ltd,Natural Gas Utilities,,INE203G01027,,,,IGL,XNSE,National Stock Exchange of India,INR
+770,IN-56,Asia Pacific,South Asia,India,Indian Hotels Ltd,Hotels & Entertainment Services,,INE053A01029,,,,INDHOTEL,XNSE,National Stock Exchange of India,INR
+771,IN-57,Asia Pacific,South Asia,India,Interglobe Aviation Ltd,Passenger Transportation Services,,INE646L01027,,,,INDIGO,XNSE,National Stock Exchange of India,INR
+772,IN-58,Asia Pacific,South Asia,India,Indusind Bank Ltd.,Banking Services,,INE095A01012,,,,INDUSINDBK,XNSE,National Stock Exchange of India,INR
+773,IN-59,Asia Pacific,South Asia,India,Infosys Ltd,Software & IT Solutions / Digital Services,,INE009A01021,,,,INFY,XNSE,National Stock Exchange of India,INR
+774,IN-60,Asia Pacific,South Asia,India,Indian Oil Corp Ltd,Oil & Gas,,INE242A01010,,,,IOC,XNSE,National Stock Exchange of India,INR
+775,IN-61,Asia Pacific,South Asia,India,Indian Railway Catering And Touris,Passenger Transportation Services,,INE335Y01020,,,,IRCTC,XNSE,National Stock Exchange of India,INR
+776,IN-62,Asia Pacific,South Asia,India,Itc Ltd,Food & Tobacco,,INE154A01025,,,,ITC,XNSE,National Stock Exchange of India,INR
+777,IN-63,Asia Pacific,South Asia,India,Jindal Steel And Power Ltd,Metals & Mining,,INE749A01030,,,,JINDALSTEL,XNSE,National Stock Exchange of India,INR
+778,IN-64,Asia Pacific,South Asia,India,Jsw Steel Ltd,Metals & Mining,,INE019A01038,,,,JSWSTEEL,XNSE,National Stock Exchange of India,INR
+779,IN-65,Asia Pacific,South Asia,India,Jubilant Foodworks Ltd,Hotels & Entertainment Services,,INE797F01020,,,,JUBLFOOD,XNSE,National Stock Exchange of India,INR
+780,IN-66,Asia Pacific,South Asia,India,Kotak Mahindra Bank Ltd,Banking Services,,INE237A01028,,,,KOTAKBANK,XNSE,National Stock Exchange of India,INR
+781,IN-67,Asia Pacific,South Asia,India,Larsen & Toubro Ltd.,Construction & Engineering,,INE018A01030,,,,LT,XNSE,National Stock Exchange of India,INR
+782,IN-68,Asia Pacific,South Asia,India,Ltimindtree Ltd,Software & IT Solutions / Digital Services,,INE214T01019,,,,LTIM,XNSE,National Stock Exchange of India,INR
+783,IN-69,Asia Pacific,South Asia,India,Lupin Ltd,Pharmaceuticals,,INE326A01037,,,,LUPIN,XNSE,National Stock Exchange of India,INR
+784,IN-70,Asia Pacific,South Asia,India,Mahindra And Mahindra Ltd,Automobiles & Auto Parts,,INE101A01026,,,,M&M,XNSE,National Stock Exchange of India,INR
+785,IN-71,Asia Pacific,South Asia,India,Marico Ltd,Consumer & Household Products,,INE196A01026,,,,MARICO,XNSE,National Stock Exchange of India,INR
+786,IN-72,Asia Pacific,South Asia,India,Maruti Suzuki India Ltd,Automobiles & Auto Parts,,INE585B01010,,,,MARUTI,XNSE,National Stock Exchange of India,INR
+787,IN-73,Asia Pacific,South Asia,India,Max Healthcare Institute Ltd,Healthcare Providers & Services,,INE027H01010,,,,MAXHEALTH,XNSE,National Stock Exchange of India,INR
+788,IN-74,Asia Pacific,South Asia,India,United Spirits Ltd,Holding Companies,,INE854D01024,,,,MCDHOLDING,XNSE,National Stock Exchange of India,INR
+789,IN-75,Asia Pacific,South Asia,India,Samvardhana Motherson Internationa,Automobiles & Auto Parts,,INE775A01035,,,,MOTHERSON,XNSE,National Stock Exchange of India,INR
+790,IN-76,Asia Pacific,South Asia,India,Mphasis Ltd,Software & IT Solutions / Digital Services,,INE356A01018,,,,MPHASIS,XNSE,National Stock Exchange of India,INR
+791,IN-77,Asia Pacific,South Asia,India,Mrf Ltd,Automobiles & Auto Parts,,INE883A01011,,,,MRF,XNSE,National Stock Exchange of India,INR
+792,IN-78,Asia Pacific,South Asia,India,Muthoot Finance Ltd,Banking Services,,INE414G01012,,,,MUTHOOTFIN,XNSE,National Stock Exchange of India,INR
+793,IN-79,Asia Pacific,South Asia,India,Info Edge India Ltd,Software & IT Solutions / Digital Services,,INE663F01024,,,,NAUKRI,XNSE,National Stock Exchange of India,INR
+794,IN-80,Asia Pacific,South Asia,India,Nestle India Ltd,Food & Tobacco,,INE239A01016,,,,NESTLEIND,XNSE,National Stock Exchange of India,INR
+795,IN-81,Asia Pacific,South Asia,India,Ntpc Ltd,Electrical Utilities & IPPs,,INE733E01010,,,,NTPC,XNSE,National Stock Exchange of India,INR
+796,IN-82,Asia Pacific,South Asia,India,Oil And Natural Gas Ltd,Oil & Gas,,INE213A01029,,,,ONGC,XNSE,National Stock Exchange of India,INR
+797,IN-83,Asia Pacific,South Asia,India,Page Industries Ltd,Textiles & Apparel,,INE761H01022,,,,PAGEIND,XNSE,National Stock Exchange of India,INR
+798,IN-84,Asia Pacific,South Asia,India,Petronet Lng Ltd,Oil & Gas,,INE347G01014,,,,PETRONET,XNSE,National Stock Exchange of India,INR
+799,IN-85,Asia Pacific,South Asia,India,Pidilite Industries Ltd,Chemicals,,INE318A01026,,,,PIDILITIND,XNSE,National Stock Exchange of India,INR
+800,IN-86,Asia Pacific,South Asia,India,P.I. Industries Ltd,Chemicals,,INE603J01030,,,,PIIND,XNSE,National Stock Exchange of India,INR
+801,IN-87,Asia Pacific,South Asia,India,Power Grid Corporation Of India Lt,Electrical Utilities & IPPs,,INE752E01010,,,,POWERGRID,XNSE,National Stock Exchange of India,INR
+802,IN-88,Asia Pacific,South Asia,India,Reliance Industries Ltd,Oil & Gas,,INE002A01018,,,,RELIANCE,XNSE,National Stock Exchange of India,INR
+803,IN-89,Asia Pacific,South Asia,India,Sbi Cards & Payment Services Ltd,Banking Services,,INE018E01016,,,,SBICARD,XNSE,National Stock Exchange of India,INR
+804,IN-90,Asia Pacific,South Asia,India,Sbi Life Insurance Company Ltd,Insurance,,INE123W01016,,,,SBILIFE,XNSE,National Stock Exchange of India,INR
+805,IN-91,Asia Pacific,South Asia,India,State Bank Of India,Banking Services,,INE062A01020,,,,SBIN,XNSE,National Stock Exchange of India,INR
+806,IN-92,Asia Pacific,South Asia,India,Shree Cement Ltd,Construction Materials,,INE070A01015,,,,SHREECEM,XNSE,National Stock Exchange of India,INR
+807,IN-93,Asia Pacific,South Asia,India,Shriram Finance Ltd,Banking Services,,INE721A01013,,,,SHRIRAMFIN,XNSE,National Stock Exchange of India,INR
+808,IN-94,Asia Pacific,South Asia,India,Siemens Ltd,"Machinery, Equipment & Components",,INE003A01024,,,,SIEMENS,XNSE,National Stock Exchange of India,INR
+809,IN-95,Asia Pacific,South Asia,India,Sona Blw Precision Forgings Ltd,Automobiles & Auto Parts,,INE073K01018,,,,SONACOMS,XNSE,National Stock Exchange of India,INR
+810,IN-96,Asia Pacific,South Asia,India,Srf Ltd,Chemicals,,INE647A01010,,,,SRF,XNSE,National Stock Exchange of India,INR
+811,IN-97,Asia Pacific,South Asia,India,Sun Pharmaceutical Industries Ltd,Pharmaceuticals,,INE044A01036,,,,SUNPHARMA,XNSE,National Stock Exchange of India,INR
+812,IN-98,Asia Pacific,South Asia,India,Tata Consumer Products Ltd,Food & Tobacco,,INE192A01025,,,,TATACONSUM,XNSE,National Stock Exchange of India,INR
+813,IN-99,Asia Pacific,South Asia,India,Tata Elxsi Ltd,Software & IT Solutions / Digital Services,,INE670A01012,,,,TATAELXSI,XNSE,National Stock Exchange of India,INR
+814,IN-100,Asia Pacific,South Asia,India,Tata Motors Ltd,Automobiles & Auto Parts,,INE155A01022,,,,TATAMOTORS,XNSE,National Stock Exchange of India,INR
+815,IN-101,Asia Pacific,South Asia,India,Tata Power Ltd,Electrical Utilities & IPPs,,INE245A01021,,,,TATAPOWER,XNSE,National Stock Exchange of India,INR
+816,IN-102,Asia Pacific,South Asia,India,Tata Steel Ltd,Metals & Mining,,INE081A01020,,,,TATASTEEL,XNSE,National Stock Exchange of India,INR
+817,IN-103,Asia Pacific,South Asia,India,Tata Consultancy Services Ltd,Software & IT Solutions / Digital Services,,INE467B01029,,,,TCS,XNSE,National Stock Exchange of India,INR
+818,IN-104,Asia Pacific,South Asia,India,Tech Mahindra Ltd,Software & IT Solutions / Digital Services,,INE669C01036,,,,TECHM,XNSE,National Stock Exchange of India,INR
+819,IN-105,Asia Pacific,South Asia,India,Tube Investments Of India Ltd,Automobiles & Auto Parts,,INE974X01010,,,,TIINDIA,XNSE,National Stock Exchange of India,INR
+820,IN-106,Asia Pacific,South Asia,India,Titan Company Ltd,Textiles & Apparel,,INE280A01028,,,,TITAN,XNSE,National Stock Exchange of India,INR
+821,IN-107,Asia Pacific,South Asia,India,Torrent Pharmaceuticals Ltd,Pharmaceuticals,,INE685A01028,,,,TORNTPHARM,XNSE,National Stock Exchange of India,INR
+822,IN-108,Asia Pacific,South Asia,India,Trent Ltd,Diversified Retail,,INE849A01020,,,,TRENT,XNSE,National Stock Exchange of India,INR
+823,IN-109,Asia Pacific,South Asia,India,Tvs Motor Company Ltd,Automobiles & Auto Parts,,INE494B01023,,,,TVSMOTOR,XNSE,National Stock Exchange of India,INR
+824,IN-110,Asia Pacific,South Asia,India,Ultratech Cement Ltd,Construction Materials,,INE481G01011,,,,ULTRACEMCO,XNSE,National Stock Exchange of India,INR
+825,IN-111,Asia Pacific,South Asia,India,Upl Ltd,Chemicals,,INE628A01036,,,,UPL,XNSE,National Stock Exchange of India,INR
+826,IN-112,Asia Pacific,South Asia,India,Varun Beverages Ltd,Beverages,,INE200M01021,,,,VBL,XNSE,National Stock Exchange of India,INR
+827,IN-113,Asia Pacific,South Asia,India,Vedanta Ltd,Metals & Mining,,INE205A01025,,,,VEDL,XNSE,National Stock Exchange of India,INR
+828,IN-114,Asia Pacific,South Asia,India,Wipro Ltd,Software & IT Solutions / Digital Services,,INE075A01022,,,,WIPRO,XNSE,National Stock Exchange of India,INR
+829,IN-115,Asia Pacific,South Asia,India,Yes Bank Ltd,Banking Services,,INE528G01035,,,,YESBANK,XNSE,National Stock Exchange of India,INR
+830,IN-116,Asia Pacific,South Asia,India,Zomato Ltd,Software & IT Solutions / Digital Services,,INE758T01015,,,,ZOMATO,XNSE,National Stock Exchange of India,INR
+831,ID-1,Asia Pacific,Southeast Asia,Indonesia,First Pacific Co Ltd,Food & Tobacco,,,,BBG000BDW3Q8,,142,XHKG,Hong Kong Stock Exchange,HKD
+832,ID-2,Asia Pacific,Southeast Asia,Indonesia,Adaro Energy Indonesia Tbk Pt,Coal,,,,BBG000FRJN57,,ADRO,XIDX,Indonesia Stock Exchange,IDR
+833,ID-3,Asia Pacific,Southeast Asia,Indonesia,Sumber Alfaria Trijaya Tbk Pt,Food & Drug Retailing,,,,BBG000BK6336,,AMRT,XIDX,Indonesia Stock Exchange,IDR
+834,ID-4,Asia Pacific,Southeast Asia,Indonesia,Aneka Tambang Tbk,Metals & Mining,,,,BBG000BGW9S6,,ANTM,XIDX,Indonesia Stock Exchange,IDR
+835,ID-5,Asia Pacific,Southeast Asia,Indonesia,Bank Jago Tbk Pt,Banking Services,,,,BBG00BNNZWD6,,ARTO,XIDX,Indonesia Stock Exchange,IDR
+836,ID-6,Asia Pacific,Southeast Asia,Indonesia,Astra International Tbk Pt,Consumer Goods Conglomerates,,,,BBG000BDMXJ1,,ASII,XIDX,Indonesia Stock Exchange,IDR
+837,ID-7,Asia Pacific,Southeast Asia,Indonesia,Avia Avian Tbk Pt,Chemicals,,,,BBG012YQNZQ8,,AVIA,XIDX,Indonesia Stock Exchange,IDR
+838,ID-8,Asia Pacific,Southeast Asia,Indonesia,Bank Aladin Syariah Tbk Pt,Banking Services,,,,BBG00Z19TVR2,,BANK,XIDX,Indonesia Stock Exchange,IDR
+839,ID-9,Asia Pacific,Southeast Asia,Indonesia,Bank Central Asia Tbk Pt,Banking Services,,,,BBG000CC3P00,,BBCA,XIDX,Indonesia Stock Exchange,IDR
+840,ID-10,Asia Pacific,Southeast Asia,Indonesia,Bank Negara Indonesia Persero Tbk Pt,Banking Services,,,,BBG000HNGYH0,,BBNI,XIDX,Indonesia Stock Exchange,IDR
+841,ID-11,Asia Pacific,Southeast Asia,Indonesia,Bank Rakyat Indonesia Persero Tbk Pt,Banking Services,,,,BBG000MJGQ35,,BBRI,XIDX,Indonesia Stock Exchange,IDR
+842,ID-12,Asia Pacific,Southeast Asia,Indonesia,Bfi Finance Indonesia Tbk Pt,Banking Services,,,,BBG000BFYBX5,,BFIN,XIDX,Indonesia Stock Exchange,IDR
+843,ID-13,Asia Pacific,Southeast Asia,Indonesia,Bank Mandiri Persero Tbk Pt,Banking Services,,,,BBG000CGNY64,,BMRI,XIDX,Indonesia Stock Exchange,IDR
+844,ID-14,Asia Pacific,Southeast Asia,Indonesia,Bumi Resources Minerals Tbk Pt,Metals & Mining,,,,BBG0018R2541,,BRMS,XIDX,Indonesia Stock Exchange,IDR
+845,ID-15,Asia Pacific,Southeast Asia,Indonesia,Barito Pacific Tbk Pt,Chemicals,,,,BBG000BK9L42,,BRPT,XIDX,Indonesia Stock Exchange,IDR
+846,ID-16,Asia Pacific,Southeast Asia,Indonesia,Bumi Serpong Damai Tbk Pt,Real Estate Operations,,,,BBG000BYFK01,,BSDE,XIDX,Indonesia Stock Exchange,IDR
+847,ID-17,Asia Pacific,Southeast Asia,Indonesia,Bukalapak.Com Pt Tbk,Software & IT Solutions / Digital Services,,,,BBG011QRJJ97,,BUKA,XIDX,Indonesia Stock Exchange,IDR
+848,ID-18,Asia Pacific,Southeast Asia,Indonesia,Bumi Resources Tbk Pt,Coal,,,,BBG000BFY979,,BUMI,XIDX,Indonesia Stock Exchange,IDR
+849,ID-19,Asia Pacific,Southeast Asia,Indonesia,Charoen Pokphand Indonesia Tbk Pt,Food & Tobacco,,,,BBG000BF2H49,,CPIN,XIDX,Indonesia Stock Exchange,IDR
+850,ID-20,Asia Pacific,Southeast Asia,Indonesia,Ciputra Development Tbk Pt,Real Estate Operations,,,,BBG000C3F164,,CTRA,XIDX,Indonesia Stock Exchange,IDR
+851,ID-21,Asia Pacific,Southeast Asia,Indonesia,Elang Mahkota Teknologi Tbk Pt,Media & Publishing,,,,BBG000Q467L7,,EMTK,XIDX,Indonesia Stock Exchange,IDR
+852,ID-22,Asia Pacific,Southeast Asia,Indonesia,Xl Axiata Tbk Pt,Telecommunications Services,,,,BBG000PRZBZ1,,EXCL,XIDX,Indonesia Stock Exchange,IDR
+853,ID-23,Asia Pacific,Southeast Asia,Indonesia,Smartfren Telecom Tbk Pt,Telecommunications Services,,,,BBG000GQKC32,,FREN,XIDX,Indonesia Stock Exchange,IDR
+854,ID-24,Asia Pacific,Southeast Asia,Indonesia,Gudang Garam Tbk Pt,Food & Tobacco,,,,BBG000BDRDN5,,GGRM,XIDX,Indonesia Stock Exchange,IDR
+855,ID-25,Asia Pacific,Southeast Asia,Indonesia,Goto Gojek Tokopedia Tbk Pt,Software & IT Solutions / Digital Services,,,,BBG016C7S899,,GOTO,XIDX,Indonesia Stock Exchange,IDR
+856,ID-26,Asia Pacific,Southeast Asia,Indonesia,Indofood Cbp Sukses Makmur Tbk Pt,Food & Tobacco,,,,BBG0015J3KR3,,ICBP,XIDX,Indonesia Stock Exchange,IDR
+857,ID-27,Asia Pacific,Southeast Asia,Indonesia,Vale Indonesia Tbk Pt,Metals & Mining,,,,BBG000BG0YH8,,INCO,XIDX,Indonesia Stock Exchange,IDR
+858,ID-28,Asia Pacific,Southeast Asia,Indonesia,Indofood Sukses Makmur Tbk Pt,Food & Tobacco,,,,BBG000BN4PR7,,INDF,XIDX,Indonesia Stock Exchange,IDR
+859,ID-29,Asia Pacific,Southeast Asia,Indonesia,Indah Kiat Pulp & Paper Tbk Pt,Paper & Forest Products,,,,BBG000BDRCS2,,INKP,XIDX,Indonesia Stock Exchange,IDR
+860,ID-30,Asia Pacific,Southeast Asia,Indonesia,Indocement Tunggal Prakarsa Tbk Pt,Construction Materials,,,,BBG000BDRBK2,,INTP,XIDX,Indonesia Stock Exchange,IDR
+861,ID-31,Asia Pacific,Southeast Asia,Indonesia,Indosat Tbk Pt,Telecommunications Services,,,,BBG000DL53H8,,ISAT,XIDX,Indonesia Stock Exchange,IDR
+862,ID-32,Asia Pacific,Southeast Asia,Indonesia,Indo Tambangraya Megah Tbk Pt,Coal,,,,BBG000PCWV65,,ITMG,XIDX,Indonesia Stock Exchange,IDR
+863,ID-33,Asia Pacific,Southeast Asia,Indonesia,Japfa Comfeed Indonesia Tbk Pt,Food & Tobacco,,,,BBG000BFRT73,,JPFA,XIDX,Indonesia Stock Exchange,IDR
+864,ID-34,Asia Pacific,Southeast Asia,Indonesia,Jasa Marga Persero Tbk Pt,Transport Infrastructure,,,,BBG000FRYC09,,JSMR,XIDX,Indonesia Stock Exchange,IDR
+865,ID-35,Asia Pacific,Southeast Asia,Indonesia,Kalbe Farma Tbk Pt,Pharmaceuticals,,,,BBG000BFRVS5,,KLBF,XIDX,Indonesia Stock Exchange,IDR
+866,ID-36,Asia Pacific,Southeast Asia,Indonesia,Mitra Adiperkasa Tbk Pt,Diversified Retail,,,,BBG000MKPK08,,MAPI,XIDX,Indonesia Stock Exchange,IDR
+867,ID-37,Asia Pacific,Southeast Asia,Indonesia,Merdeka Battery Materials Tbk Pt,Metals & Mining,,,,BBG01G291HM8,,MBMA,XIDX,Indonesia Stock Exchange,IDR
+868,ID-38,Asia Pacific,Southeast Asia,Indonesia,Merdeka Copper Gold Tbk Pt,Metals & Mining,,,,BBG008NVSB85,,MDKA,XIDX,Indonesia Stock Exchange,IDR
+869,ID-39,Asia Pacific,Southeast Asia,Indonesia,Mitra Keluarga Karyasehat Tbk Pt,Healthcare Providers & Services,,,,BBG00875ZS03,,MIKA,XIDX,Indonesia Stock Exchange,IDR
+870,ID-40,Asia Pacific,Southeast Asia,Indonesia,Perusahaan Gas Negara Tbk Pt,Natural Gas Utilities,,,,BBG000F3KKQ1,,PGAS,XIDX,Indonesia Stock Exchange,IDR
+871,ID-41,Asia Pacific,Southeast Asia,Indonesia,Bukit Asam Tbk Pt,Coal,,,,BBG000CLKXY7,,PTBA,XIDX,Indonesia Stock Exchange,IDR
+872,ID-42,Asia Pacific,Southeast Asia,Indonesia,Pakuwon Jati Tbk Pt,Real Estate Operations,,,,BBG000BFS1Q2,,PWON,XIDX,Indonesia Stock Exchange,IDR
+873,ID-43,Asia Pacific,Southeast Asia,Indonesia,Semen Indonesia Persero Tbk Pt,Construction Materials,,,,BBG000BFSZY8,,SMGR,XIDX,Indonesia Stock Exchange,IDR
+874,ID-44,Asia Pacific,Southeast Asia,Indonesia,Summarecon Agung Tbk Pt,Real Estate Operations,,,,BBG000BG4Y39,,SMRA,XIDX,Indonesia Stock Exchange,IDR
+875,ID-45,Asia Pacific,Southeast Asia,Indonesia,Tower Bersama Infrastructure Tbk Pt,Telecommunications Services,,,,BBG001832143,,TBIG,XIDX,Indonesia Stock Exchange,IDR
+876,ID-46,Asia Pacific,Southeast Asia,Indonesia,Transcoal Pacific Tbk Pt,Freight & Logistics Services,,,,BBG00KRL93B1,,TCPI,XIDX,Indonesia Stock Exchange,IDR
+877,ID-47,Asia Pacific,Southeast Asia,Indonesia,Pabrik Kertas Tjiwi Kimia Tbk Pt,Paper & Forest Products,,,,BBG000BFS0W7,,TKIM,XIDX,Indonesia Stock Exchange,IDR
+878,ID-48,Asia Pacific,Southeast Asia,Indonesia,Telkom Indonesia Persero Tbk Pt,Telecommunications Services,,,,BBG000FS2KR5,,TLK,XNYS,New York Stock Exchange,USD
+879,ID-49,Asia Pacific,Southeast Asia,Indonesia,Sarana Menara Nusantara Tbk Pt,Telecommunications Services,,,,BBG000J65T60,,TOWR,XIDX,Indonesia Stock Exchange,IDR
+880,ID-50,Asia Pacific,Southeast Asia,Indonesia,Chandra Asri Petrochemical Tbk Pt,Chemicals,,,,BBG000GY6RP4,,TPIA,XIDX,Indonesia Stock Exchange,IDR
+881,ID-51,Asia Pacific,Southeast Asia,Indonesia,United Tractors Tbk Pt,Coal,,,,BBG000BDJWQ9,,UNTR,XIDX,Indonesia Stock Exchange,IDR
+882,ID-52,Asia Pacific,Southeast Asia,Indonesia,Unilever Indonesia Tbk Pt,Consumer & Household Products,,,,BBG000BFGJG7,,UNVR,XIDX,Indonesia Stock Exchange,IDR
+883,PH-1,Asia Pacific,Southeast Asia,Philippines,Ayala Corp,Real Estate Operations,,PHY0486V1154,B09JBT3,,,AC,XPHS,Philippine Stock Exchange,PHP
+884,PH-2,Asia Pacific,Southeast Asia,Philippines,Acen Corporation Corp,Electrical Utilities & IPPs,,PHY1001H1024,BMBZPW4,,,ACEN,XPHS,Philippine Stock Exchange,PHP
+885,PH-3,Asia Pacific,Southeast Asia,Philippines,Aboitiz Equity Ventures Php1 Inc,Electrical Utilities & IPPs,S60684115,PHY0001Z1040,6068411,,,AEV,XPHS,Philippine Stock Exchange,PHP
+886,PH-4,Asia Pacific,Southeast Asia,Philippines,Alliance Global Group Inc,Consumer Goods Conglomerates,S61471058,PHY003341054,6147105,,,AGI,XPHS,Philippine Stock Exchange,PHP
+887,PH-5,Asia Pacific,Southeast Asia,Philippines,Ayala Land Inc,Real Estate Operations,S60551124,PHY0488F1004,6055112,,,ALI,XPHS,Philippine Stock Exchange,PHP
+888,PH-6,Asia Pacific,Southeast Asia,Philippines,Aboitiz Power,Electrical Utilities & IPPs,,,,,,AP,XPHS,Philippine Stock Exchange,PHP
+889,PH-7,Asia Pacific,Southeast Asia,Philippines,Bdo Unibank Inc,Banking Services,,PHY077751022,B5VJH76,,,BDO,XPHS,Philippine Stock Exchange,PHP
+890,PH-8,Asia Pacific,Southeast Asia,Philippines,Bank Of The Philippine Islands,Banking Services,S60749686,PHY0967S1694,6074968,,,BPI,XPHS,Philippine Stock Exchange,PHP
+891,PH-9,Asia Pacific,Southeast Asia,Philippines,Converge Information & Communicati,Telecommunications Services,,PHY1757W1054,BMH5517,,,CNVRG,XPHS,Philippine Stock Exchange,PHP
+892,PH-10,Asia Pacific,Southeast Asia,Philippines,Dmci Holdings Inc,Consumer Goods Conglomerates,S62724836,PHY2088F1004,6272483,,,DMC,XPHS,Philippine Stock Exchange,PHP
+893,PH-11,Asia Pacific,Southeast Asia,Philippines,Emperador,Beverages,,,,,,EMI,XPHS,Philippine Stock Exchange,PHP
+894,PH-12,Asia Pacific,Southeast Asia,Philippines,Globe Telecom,Telecommunications Services,,,,,,GLO,XPHS,Philippine Stock Exchange,PHP
+895,PH-13,Asia Pacific,Southeast Asia,Philippines,Gt Capital Holdings Inc,Automobiles & Auto Parts,,PHY290451046,B77H110,,,GTCAP,XPHS,Philippine Stock Exchange,PHP
+896,PH-14,Asia Pacific,Southeast Asia,Philippines,International Container Terminal S,Transport Infrastructure,S64558190,PHY411571011,6455819,,,ICT,XPHS,Philippine Stock Exchange,PHP
+897,PH-15,Asia Pacific,Southeast Asia,Philippines,Jollibee Foods Corp,Hotels & Entertainment Services,S64744949,PHY4466S1007,6474494,,,JFC,XPHS,Philippine Stock Exchange,PHP
+898,PH-16,Asia Pacific,Southeast Asia,Philippines,Jg Summit Holdings Inc,Consumer Goods Conglomerates,S64664576,PHY444251177,6466457,,,JGS,XPHS,Philippine Stock Exchange,PHP
+899,PH-17,Asia Pacific,Southeast Asia,Philippines,Lt Group Inc,Banking Services,,PHY5342M1000,B92RW83,,,LTG,XPHS,Philippine Stock Exchange,PHP
+900,PH-18,Asia Pacific,Southeast Asia,Philippines,Metropolitan Bank And Trust Co,Banking Services,S65144420,PHY6028G1361,6514442,,,MBT,XPHS,Philippine Stock Exchange,PHP
+901,PH-19,Asia Pacific,Southeast Asia,Philippines,Manila Electric,Electrical Utilities & IPPs,,PHY5764J1483,B247XZ6,,,MER,XPHS,Philippine Stock Exchange,PHP
+902,PH-20,Asia Pacific,Southeast Asia,Philippines,Monde Nissin,Food & Tobacco,,,,,,MONDE,XPHS,Philippine Stock Exchange,PHP
+903,PH-21,Asia Pacific,Southeast Asia,Philippines,Metro Pacific Inv Corp,Water Utilities,,PHY603051020,B1L8838,,,MPI,XPHS,Philippine Stock Exchange,PHP
+904,PH-22,Asia Pacific,Southeast Asia,Philippines,Pure Gold Price Club Inc,Food & Drug Retailing,,PHY716171079,B725S29,,,PGOLD,XPHS,Philippine Stock Exchange,PHP
+905,PH-23,Asia Pacific,Southeast Asia,Philippines,Semirara Mining And Power,Coal,,PHY7628G1124,BQ13Z04,,,SCC,XPHS,Philippine Stock Exchange,PHP
+906,PH-24,Asia Pacific,Southeast Asia,Philippines,Sm Investments Corp,Food & Drug Retailing,,PHY806761029,B068DB9,,,SM,XPHS,Philippine Stock Exchange,PHP
+907,PH-25,Asia Pacific,Southeast Asia,Philippines,San Miguel,Consumer Goods Conglomerates,,,,,,SMC,XPHS,Philippine Stock Exchange,PHP
+908,PH-26,Asia Pacific,Southeast Asia,Philippines,Sm Prime Holdings Inc,Real Estate Operations,S68188432,PHY8076N1120,6818843,,,SMPH,XPHS,Philippine Stock Exchange,PHP
+909,PH-27,Asia Pacific,Southeast Asia,Philippines,Pldt Inc,Telecommunications Services,,PHY7072Q1032,BDGN274,,,TEL,XPHS,Philippine Stock Exchange,PHP
+910,PH-28,Asia Pacific,Southeast Asia,Philippines,Union Bank,Banking Services,,,,,,UBP,XPHS,Philippine Stock Exchange,PHP
+911,PH-29,Asia Pacific,Southeast Asia,Philippines,Universal Robina Corp,Food & Tobacco,S69195196,PHY9297P1004,6919519,,,URC,XPHS,Philippine Stock Exchange,PHP
+912,PH-30,Asia Pacific,Southeast Asia,Philippines,Wilcon Depot Inc,Specialty Retailers,,PHY9584X1055,BYXYHM7,,,WLCON,XPHS,Philippine Stock Exchange,PHP
+913,SG-1,Asia Pacific,Southeast Asia,Singapore,Grab Holdings Ltd Class A,Software & IT Solutions / Digital Services,,KYG4124C1096,BP6NH40,,,GRAB,XNAS,Nasdaq Stock Market,USD
+914,SG-2,Asia Pacific,Southeast Asia,Singapore,Sea Ads Representing Ltd Class A,Software & IT Solutions / Digital Services,81141R100,US81141R1005,BYWD7L4,,,SE,XNYS,New York Stock Exchange,USD
+915,VN-1,Asia Pacific,Southeast Asia,Vietnam,Bao Viet Holdings,Insurance,,,,BBG000N1D2L9,,BVH,XSTC,Hochiminh Stock Exchange,VND
+916,VN-2,Asia Pacific,Southeast Asia,Vietnam,Petrovietnam Ca Mau Fertilizer Jsc,Chemicals,,,,BBG008D1PSN1,,DCM,XSTC,Hochiminh Stock Exchange,VND
+917,VN-3,Asia Pacific,Southeast Asia,Vietnam,Duc Giang Chemicals Jsc,Chemicals,,,,BBG003QTZ0W7,,DGC,XSTC,Hochiminh Stock Exchange,VND
+918,VN-4,Asia Pacific,Southeast Asia,Vietnam,Development Investment Construction Jsc,Real Estate Operations,,,,BBG000TW9M63,,DIG,XSTC,Hochiminh Stock Exchange,VND
+919,VN-5,Asia Pacific,Southeast Asia,Vietnam,Petrovietnam Fertilizer & Chemicals Jsc,Chemicals,,,,BBG000TSXTH8,,DPM,XSTC,Hochiminh Stock Exchange,VND
+920,VN-6,Asia Pacific,Southeast Asia,Vietnam,Dat Xanh Group Jsc,Real Estate Operations,,,,BBG000Q1XB43,,DXG,XSTC,Hochiminh Stock Exchange,VND
+921,VN-7,Asia Pacific,Southeast Asia,Vietnam,Vietnam Export Import Commercial Jsb,Banking Services,,,,BBG000DB3KG5,,EIB,XSTC,Hochiminh Stock Exchange,VND
+922,VN-8,Asia Pacific,Southeast Asia,Vietnam,Gelex Group Jsc,"Machinery, Equipment & Components",,,,BBG00B8G4S87,,GEX,XSTC,Hochiminh Stock Exchange,VND
+923,VN-9,Asia Pacific,Southeast Asia,Vietnam,Hagl Jsc,Food & Tobacco,,,,BBG000GCXWG1,,HAG,XSTC,Hochiminh Stock Exchange,VND
+924,VN-10,Asia Pacific,Southeast Asia,Vietnam,Ha Do Group Jsc,Real Estate Operations,,,,BBG000Q6YTV2,,HDG,XSTC,Hochiminh Stock Exchange,VND
+925,VN-11,Asia Pacific,Southeast Asia,Vietnam,Hoang Anh Gia Lai International Agricul,Food & Tobacco,,,,BBG009L960N5,,HNG,XSTC,Hochiminh Stock Exchange,VND
+926,VN-12,Asia Pacific,Southeast Asia,Vietnam,Hoa Phat Group Jsc,Metals & Mining,,,,BBG000TX8GM7,,HPG,XSTC,Hochiminh Stock Exchange,VND
+927,VN-13,Asia Pacific,Southeast Asia,Vietnam,Hoa Sen Group,Metals & Mining,,,,BBG000KFK1K6,,HSG,XSTC,Hochiminh Stock Exchange,VND
+928,VN-14,Asia Pacific,Southeast Asia,Vietnam,Kinh Bac City Development Share Holding,Real Estate Operations,,,,BBG000V13PL0,,KBC,XSTC,Hochiminh Stock Exchange,VND
+929,VN-15,Asia Pacific,Southeast Asia,Vietnam,Kido Group Corp,Food & Tobacco,,,,BBG000LNDM11,,KDC,XSTC,Hochiminh Stock Exchange,VND
+930,VN-16,Asia Pacific,Southeast Asia,Vietnam,Khang Dien House Trading And Investment,Real Estate Operations,,,,BBG000Q7Z3F4,,KDH,XSTC,Hochiminh Stock Exchange,VND
+931,VN-17,Asia Pacific,Southeast Asia,Vietnam,Masan Group Corp,Food & Tobacco,,,,BBG000PSPMR5,,MSN,XSTC,Hochiminh Stock Exchange,VND
+932,VN-18,Asia Pacific,Southeast Asia,Vietnam,No Va Land Investment Group Corp,Real Estate Operations,,,,BBG003RR1FD5,,NVL,XSTC,Hochiminh Stock Exchange,VND
+933,VN-19,Asia Pacific,Southeast Asia,Vietnam,Phat Dat Real Estate Development Corp,Real Estate Operations,,,,BBG000BG7X29,,PDR,XSTC,Hochiminh Stock Exchange,VND
+934,VN-20,Asia Pacific,Southeast Asia,Vietnam,Petrovietnam Power Corp,Electrical Utilities & IPPs,,,,BBG002NF5FT6,,POW,XSTC,Hochiminh Stock Exchange,VND
+935,VN-21,Asia Pacific,Southeast Asia,Vietnam,Petrovietnam Drilling & Well Services J,Energy Equipment & Services,,,,BBG000QFV9X7,,PVD,XSTC,Hochiminh Stock Exchange,VND
+936,VN-22,Asia Pacific,Southeast Asia,Vietnam,Saigon Beer Alcohol Beverage Corp,Beverages,,,,BBG000V9NNW4,,SAB,XSTC,Hochiminh Stock Exchange,VND
+937,VN-23,Asia Pacific,Southeast Asia,Vietnam,Thanh Thanh Cong - Bien Hoa Jsc,Food & Tobacco,,,,BBG000DWVGH6,,SBT,XSTC,Hochiminh Stock Exchange,VND
+938,VN-24,Asia Pacific,Southeast Asia,Vietnam,Saigon - Hanoi Commercial Joint Stock B,Banking Services,,,,BBG000G88YK9,,SHB,XSTC,Hochiminh Stock Exchange,VND
+939,VN-25,Asia Pacific,Southeast Asia,Vietnam,Ssi Securities Corp,Capital Markets & Advisory,,,,BBG000BN4DR4,,SSI,XSTC,Hochiminh Stock Exchange,VND
+940,VN-26,Asia Pacific,Southeast Asia,Vietnam,Hoang Huy Investment Financial Services,Real Estate Operations,,,,BBG00DVPC837,,TCH,XSTC,Hochiminh Stock Exchange,VND
+941,VN-27,Asia Pacific,Southeast Asia,Vietnam,Bank For Foreign Trade Of Vietnam Jsc,Banking Services,,,,BBG000BM8HF6,,VCB,XSTC,Hochiminh Stock Exchange,VND
+942,VN-28,Asia Pacific,Southeast Asia,Vietnam,Vietnam Construction And Import-Export,Construction & Engineering,,,,BBG000BLCJC2,,VCG,XSTC,Hochiminh Stock Exchange,VND
+943,VN-29,Asia Pacific,Southeast Asia,Vietnam,Vietcap Securities Jsc,Capital Markets & Advisory,,,,BBG0073XTVS8,,VCI,XSTC,Hochiminh Stock Exchange,VND
+944,VN-30,Asia Pacific,Southeast Asia,Vietnam,Vinh Hoan Corp,Food & Tobacco,,,,BBG000V0W6M1,,VHC,XSTC,Hochiminh Stock Exchange,VND
+945,VN-31,Asia Pacific,Southeast Asia,Vietnam,Vinhomes Jsc,Real Estate Operations,,,,BBG00KMYS8P1,,VHM,XSTC,Hochiminh Stock Exchange,VND
+946,VN-32,Asia Pacific,Southeast Asia,Vietnam,Vingroup Jsc,Real Estate Operations,,,,BBG000TD3TC9,,VIC,XSTC,Hochiminh Stock Exchange,VND
+947,VN-33,Asia Pacific,Southeast Asia,Vietnam,Vix Securities Jsc,Capital Markets & Advisory,,,,BBG000Q3LMQ4,,VIX,XSTC,Hochiminh Stock Exchange,VND
+948,VN-34,Asia Pacific,Southeast Asia,Vietnam,Vietjet Aviation Jsc,Passenger Transportation Services,,,,BBG000QBJXH5,,VJC,XSTC,Hochiminh Stock Exchange,VND
+949,VN-35,Asia Pacific,Southeast Asia,Vietnam,Vndirect Securities Corp,Capital Markets & Advisory,,,,BBG000QK20H5,,VND,XSTC,Hochiminh Stock Exchange,VND
+950,VN-36,Asia Pacific,Southeast Asia,Vietnam,Vietnam Dairy Products Jsc,Food & Tobacco,,,,BBG000BF6N60,,VNM,XSTC,Hochiminh Stock Exchange,VND
+951,VN-37,Asia Pacific,Southeast Asia,Vietnam,Van Phu - Invest Investment Jsc,Real Estate Operations,,,,BBG00JC6HXT9,,VPI,XSTC,Hochiminh Stock Exchange,VND
+952,VN-38,Asia Pacific,Southeast Asia,Vietnam,Vincom Retail Jsc,Real Estate Operations,,,,BBG004MP70P6,,VRE,XSTC,Hochiminh Stock Exchange,VND
