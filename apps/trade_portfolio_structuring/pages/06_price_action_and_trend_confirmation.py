@@ -614,30 +614,47 @@ st.dataframe(timeframe_table)
 
 # **Detect Support & Resistance Levels & Align with Predisposition**
 def detect_support_resistance(df, predisposition):
-    df = df.copy().reset_index()  # Ensure numerical index for safe indexing
+    # Always return a tuple, even if input is missing
+    if df is None or df.empty:
+        return [], [], "ℹ️ No data available for support/resistance detection."
 
-    peaks, _ = scipy.signal.find_peaks(df['close'], distance=5)
-    troughs, _ = scipy.signal.find_peaks(-df['close'], distance=5)
+    df = df.copy().reset_index(drop=True)
+
+    # Guard: ensure expected column exists
+    if "close" not in df.columns:
+        return [], [], "⚠️ Missing `close` column — cannot detect support/resistance."
+
+    peaks, _ = scipy.signal.find_peaks(df["close"], distance=5)
+    troughs, _ = scipy.signal.find_peaks(-df["close"], distance=5)
 
     # Ensure valid index selection
-    peaks = [p for p in peaks if p in df.index]
-    troughs = [t for t in troughs if t in df.index]
+    peaks = [p for p in peaks if 0 <= p < len(df)]
+    troughs = [t for t in troughs if 0 <= t < len(df)]
 
-    resistance_levels = df.loc[peaks, 'close'].sort_values(
-    ascending=False).head(2).tolist() if peaks else []
-    support_levels = df.loc[troughs, 'close'].sort_values().head(2).tolist() if troughs else []
+    resistance_levels = (
+        df.loc[peaks, "close"].sort_values(ascending=False).head(2).tolist()
+        if peaks else []
+    )
+    support_levels = (
+        df.loc[troughs, "close"].sort_values().head(2).tolist()
+        if troughs else []
+    )
 
-    # Highlight levels based on predisposition
     if predisposition == "Bullish":
-        key_level_msg = f"✅ **Bullish Bias** - Watching Support at {
-        support_levels} for potential confirmation."
+        key_level_msg = (
+            f"✅ **Bullish Bias** - Watching Support at {support_levels} "
+            "for potential confirmation."
+        )
     elif predisposition == "Bearish":
-        key_level_msg = f"⚠️ **Bearish Bias** - Watching Resistance at {
-        resistance_levels} for potential confirmation."
+        key_level_msg = (
+            f"⚠️ **Bearish Bias** - Watching Resistance at {resistance_levels} "
+            "for potential confirmation."
+        )
     else:
         key_level_msg = "ℹ️ **Neutral Bias** - Monitoring price movement relative to key levels."
 
     return support_levels, resistance_levels, key_level_msg
+
 
 # **Tabs for Short, Medium, Full Data Views**
 tab1, tab2, tab3 = st.tabs(["📉 Short-Term (50 Days)",

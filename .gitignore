@@ -21,8 +21,6 @@ venv/
 # ----------------------------
 # Streamlit secrets anywhere in the repo
 **/.streamlit/secrets.toml
-**/.streamlit/*.toml
-
 
 # ----------------------------
 # Local data / exports (optional)
