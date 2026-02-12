@@ -224,7 +224,7 @@ if df_long is not None and df_short is not None:
                     xaxis_title="Date", yaxis_title="Correlation",
                     yaxis=dict(range=[-1, 1]), template="plotly_white"
                 )
-                st.plotly_chart(fig_corr, use_container_width=True, key=f"plot_corr_{key_suffix}")
+                st.plotly_chart(fig_corr, width='stretch', key=f"plot_corr_{key_suffix}")
 
             st.write(f"### Spread Ratio Over Time ({label})")
             fig_spread = go.Figure()
@@ -237,7 +237,7 @@ if df_long is not None and df_short is not None:
             fig_spread.update_layout(
                 xaxis_title="Date", yaxis_title="Spread Ratio", template="plotly_white"
             )
-            st.plotly_chart(fig_spread, use_container_width=True, key=f"plot_spread_{key_suffix}")
+            st.plotly_chart(fig_spread, width='stretch', key=f"plot_spread_{key_suffix}")
 
     with view_tabs[4]:
         content = load_markdown_file(HELP_APP_MD)
@@ -301,7 +301,7 @@ with st.sidebar.expander("ℹ️ About & Support"):
             f.read(),
             file_name="crafting-financial-frameworks.pdf",
             mime="application/pdf",
-            use_container_width=True,
+            width='stretch',
         )
 
     with open(os.path.join(PROJECT_PATH, "docs", "fit-unified-index-and-glossary.pdf"), "rb") as f:
@@ -310,7 +310,7 @@ with st.sidebar.expander("ℹ️ About & Support"):
             f.read(),
             file_name="fit-unified-index-and-glossary.pdf",
             mime="application/pdf",
-            use_container_width=True,
+            width='stretch',
         )
 
 

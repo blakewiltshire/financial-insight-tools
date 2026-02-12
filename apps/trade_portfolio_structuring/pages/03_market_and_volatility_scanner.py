@@ -61,7 +61,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import json
-from datetime import datetime, timedelta
+from datetime import datetime, UTC
 
 # -------------------------------------------------------------------------------------------------
 # Core Utilities — load shared pathing tools, markdown loaders, sidebar links etc.
@@ -485,7 +485,7 @@ if data_source in ["Preloaded Asset Types (Default)", "Preloaded Asset Types (Us
                     st.markdown(f"Snapshot metrics for **{asset_category.strip()}**")
                     st.data_editor(
                         group_df,
-                        use_container_width=True,
+                        width='stretch',
                         column_config={
                             "1M % Chg": st.column_config.NumberColumn(format="%.2f %%"),
                             "YTD % Chg": st.column_config.NumberColumn(format="%.2f %%"),
@@ -1336,7 +1336,7 @@ asset_snapshot_insight = {
             "code": "market_scanner",
             "title": "Market & Volatility Scanner"
         },
-        "snapshot_timestamp": datetime.utcnow().isoformat(),
+        "snapshot_timestamp": datetime.now(UTC).isoformat(),
         "asset_type": asset_type_display
     },
     "analysis_summary": {
@@ -1466,7 +1466,7 @@ with st.sidebar.expander("ℹ️ About & Support"):
             f.read(),
             file_name="crafting-financial-frameworks.pdf",
             mime="application/pdf",
-            use_container_width=True,
+            width='stretch',
         )
 
     with open(os.path.join(ROOT_PATH, "docs", "fit-unified-index-and-glossary.pdf"), "rb") as f:
@@ -1475,7 +1475,7 @@ with st.sidebar.expander("ℹ️ About & Support"):
             f.read(),
             file_name="fit-unified-index-and-glossary.pdf",
             mime="application/pdf",
-            use_container_width=True,
+            width='stretch',
         )
 
 # -------------------------------------------------------------------------------------------------

@@ -345,7 +345,7 @@ def render_ai_prompt_response_panel():
                 data=system_header,
                 file_name="system_persona_bootstrap.txt",
                 mime="text/plain",
-                use_container_width=True
+                width='stretch'
             )
         with col_dl2:
             st.download_button(
@@ -353,7 +353,7 @@ def render_ai_prompt_response_panel():
                 data=export_text,
                 file_name="ai_export_envelope.json",
                 mime="application/json",
-                use_container_width=True
+                width='stretch'
             )
 
         # API path intentionally disabled in this phase

@@ -250,7 +250,7 @@ if df is not None:
                 fig = go.Figure()
                 fig.add_trace(go.Scatter(x=slice_data["date"], y=slice_data["Spread Ratio"], mode='lines', name="Spread Ratio"))
                 fig.update_layout(title=f"{timeframe} Spread Ratio Chart", xaxis_title="Date", yaxis_title="Spread Ratio")
-                st.plotly_chart(fig, use_container_width=True, key=f"spread_{timeframe}")
+                st.plotly_chart(fig, width='stretch', key=f"spread_{timeframe}")
 
     # Help Tab
     with view_tabs[3]:
@@ -301,7 +301,7 @@ if df is not None:
                 fig.add_trace(markers[0])
                 fig.add_trace(markers[1])
             fig.update_layout(xaxis_title="Date", yaxis_title="Spread Ratio")
-            st.plotly_chart(fig, use_container_width=True, key=f"main_chart_{key_suffix}")
+            st.plotly_chart(fig, width='stretch', key=f"main_chart_{key_suffix}")
             supports, resistances = detect_ratio_support_resistance(data_slice)
             st.info(f"📌 Detected Support Levels: {supports} | Resistance Levels: {resistances}")
             st.caption("High/Low markers use purple (high) and orange (low) for neutrality.")
@@ -358,7 +358,7 @@ with st.sidebar.expander("ℹ️ About & Support"):
             f.read(),
             file_name="crafting-financial-frameworks.pdf",
             mime="application/pdf",
-            use_container_width=True,
+            width='stretch',
         )
 
     with open(os.path.join(PROJECT_PATH, "docs", "fit-unified-index-and-glossary.pdf"), "rb") as f:
@@ -367,7 +367,7 @@ with st.sidebar.expander("ℹ️ About & Support"):
             f.read(),
             file_name="fit-unified-index-and-glossary.pdf",
             mime="application/pdf",
-            use_container_width=True,
+            width='stretch',
         )
 
 st.divider()

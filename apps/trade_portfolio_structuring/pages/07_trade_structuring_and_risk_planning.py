@@ -225,7 +225,7 @@ if journal_df is not None:
     with st.expander("📋 Trade Journal Editor"):
         edited_journal_df = st.data_editor(
             journal_df,
-            use_container_width=True,
+            width='stretch',
             num_rows="dynamic",
         )
 
@@ -513,7 +513,7 @@ with st.sidebar.expander("ℹ️ About & Support"):
             f.read(),
             file_name="crafting-financial-frameworks.pdf",
             mime="application/pdf",
-            use_container_width=True,
+            width='stretch',
         )
 
     with open(os.path.join(ROOT_PATH, "docs", "fit-unified-index-and-glossary.pdf"), "rb") as f:
@@ -522,7 +522,7 @@ with st.sidebar.expander("ℹ️ About & Support"):
             f.read(),
             file_name="fit-unified-index-and-glossary.pdf",
             mime="application/pdf",
-            use_container_width=True,
+            width='stretch',
         )
 
 # -------------------------------------------------------------------------------------------------

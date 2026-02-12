@@ -5,7 +5,7 @@
 import os
 import sys
 import json
-from datetime import datetime
+from datetime import datetime, UTC
 import streamlit as st
 
 # -------------------------------------------------------------------------------------------------
@@ -84,7 +84,7 @@ def render_ai_export_panel(snapshot_results: dict, base_asset: str, asset_type_d
                 "title": "Market & Volatility Scanner"
             },
             "snapshot_timestamp": snapshot_results.get("snapshot_metadata", {}).get("snapshot_timestamp")
-                or datetime.utcnow().isoformat(),
+                or datetime.now(UTC).isoformat(),
             "asset_type": asset_type_display
         },
         "context_parameters": context_parameters,

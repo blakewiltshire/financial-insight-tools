@@ -160,7 +160,7 @@ with st.sidebar.expander("ℹ️ About & Support"):
             f.read(),
             file_name="crafting-financial-frameworks.pdf",
             mime="application/pdf",
-            use_container_width=True,
+            width='stretch',
         )
 
     with open(os.path.join(ROOT_PATH, "docs", "fit-unified-index-and-glossary.pdf"), "rb") as f:
@@ -169,7 +169,7 @@ with st.sidebar.expander("ℹ️ About & Support"):
             f.read(),
             file_name="fit-unified-index-and-glossary.pdf",
             mime="application/pdf",
-            use_container_width=True,
+            width='stretch',
         )
 
 # -------------------------------------------------------------------------------------------------
@@ -449,7 +449,7 @@ for category, records in category_data.items():
     st.markdown(f"### 📊 {category}")
     st.data_editor(
         df,
-        use_container_width=True,
+        width='stretch',
         column_config={
             "1M % Chg": st.column_config.NumberColumn(format="%.2f %%"),
             "YTD % Chg": st.column_config.NumberColumn(format="%.2f %%"),

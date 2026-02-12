@@ -79,7 +79,7 @@ def display_observation_log() -> None:
     """)
 
 
-    edited_df = st.data_editor(df, use_container_width=True, height=450, key="th_editor")
+    edited_df = st.data_editor(df, width='stretch', height=450, key="th_editor")
 
     if st.button("💾 Save Updates"):
         edited_df.to_csv(file_path, index=False)

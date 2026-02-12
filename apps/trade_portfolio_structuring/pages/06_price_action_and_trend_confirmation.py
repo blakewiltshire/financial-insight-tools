@@ -673,7 +673,7 @@ for tab, timeframe, data_slice, tab_key in [
             st.subheader("📉 Naked Chart (Price Only)")
             st.plotly_chart(
             plot_naked_chart(
-            data_slice), use_container_width=True,
+            data_slice), width='stretch',
             key=f"naked_chart_{tab_key}")
 
         #  **Performance Charts**
@@ -684,46 +684,46 @@ for tab, timeframe, data_slice, tab_key in [
                 period = indicator_params.get("Winning vs. Losing", 14)
                 st.plotly_chart(
                 plot_winning_vs_losing_periods(
-                data_slice, period), use_container_width=True,
+                data_slice, period), width='stretch',
                 key=f"win_loss_{tab_key}_{period}")
 
             if "Rolling Returns" in performance_indicators:
                 period = indicator_params.get("Rolling Returns", 14)
                 st.plotly_chart(
                 plot_rolling_returns(
-                data_slice, period), use_container_width=True,
+                data_slice, period), width='stretch',
                 key=f"rolling_returns_{tab_key}_{period}")
 
             if "Volatility-Adjusted Returns" in performance_indicators:
                 period = indicator_params.get("Volatility-Adjusted Returns", 14)
                 st.plotly_chart(
                 plot_volatility_adjusted_returns(
-                data_slice, period), use_container_width=True,
+                data_slice, period), width='stretch',
                 key=f"var_{tab_key}_{period}")
 
         #  **Trend & Momentum Chart**
         trend_indicators = selected_indicators.get("Trend & Momentum", [])
         if trend_indicators:
             st.subheader("📊 Trend & Momentum Analysis")
-            st.plotly_chart(create_price_action_chart(data_slice, trend_indicators, indicator_params), use_container_width=True, key=f"trend_chart_{tab_key}")
+            st.plotly_chart(create_price_action_chart(data_slice, trend_indicators, indicator_params), width='stretch', key=f"trend_chart_{tab_key}")
 
             if "Volume-Based Confirmation" in trend_indicators:
                 period = indicator_params.get("Volume-Based Confirmation", 14)
                 st.subheader("📊 Volume-Based Confirmation")
-                st.plotly_chart(plot_volume_based_confirmation(data_slice, period), use_container_width=True, key=f"volume_conf_{tab_key}_{period}")
+                st.plotly_chart(plot_volume_based_confirmation(data_slice, period), width='stretch', key=f"volume_conf_{tab_key}_{period}")
 
         #  **Breakout & Mean Reversion Chart**
         breakout_indicators = selected_indicators.get("Breakout & Mean Reversion", [])
         if breakout_indicators:
             st.subheader("📊 Breakout & Mean Reversion")
-            st.plotly_chart(plot_breakout_mean_reversion_chart(data_slice, breakout_indicators, indicator_params), use_container_width=True, key=f"breakout_chart_{tab_key}")
+            st.plotly_chart(plot_breakout_mean_reversion_chart(data_slice, breakout_indicators, indicator_params), width='stretch', key=f"breakout_chart_{tab_key}")
 
         if "Volume vs. Price Range Compression" in breakout_indicators:
             period = indicator_params.get("Volume vs. Price Range Compression", 20)
             st.subheader("📊 Volume vs. Price Compression")
             st.plotly_chart(
                 plot_volume_price_range_compression(data_slice, breakout_indicators, period),
-                use_container_width=True,
+                width='stretch',
                 key=f"vprc_{tab_key}_{period}"
             )
 
@@ -827,7 +827,7 @@ with st.sidebar.expander("ℹ️ About & Support"):
             f.read(),
             file_name="crafting-financial-frameworks.pdf",
             mime="application/pdf",
-            use_container_width=True,
+            width='stretch',
         )
 
     with open(os.path.join(ROOT_PATH, "docs", "fit-unified-index-and-glossary.pdf"), "rb") as f:
@@ -836,7 +836,7 @@ with st.sidebar.expander("ℹ️ About & Support"):
             f.read(),
             file_name="fit-unified-index-and-glossary.pdf",
             mime="application/pdf",
-            use_container_width=True,
+            width='stretch',
         )
 
 # -------------------------------------------------------------------------------------------------

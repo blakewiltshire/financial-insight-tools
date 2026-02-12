@@ -192,7 +192,7 @@ with st.container():
         theme="material",
         height=420,
         fit_columns_on_grid_load=True,
-        use_container_width=True
+        width='stretch'
     )
 
 # -------------------------------------------------------------------------------------------------
@@ -229,7 +229,7 @@ with st.expander("📦 View and Download CSV Manifest"):
 
     if snapshot_records:
         df_snapshot = pd.DataFrame(snapshot_records)
-        st.dataframe(df_snapshot, use_container_width=True, height=300)
+        st.dataframe(df_snapshot, width='stretch', height=300)
 
         csv_bytes = df_snapshot.to_csv(index=False).encode("utf-8")
         st.download_button(
@@ -237,7 +237,7 @@ with st.expander("📦 View and Download CSV Manifest"):
             data=csv_bytes,
             file_name="user_asset_manifest.csv",
             mime="text/csv",
-            use_container_width=True
+            width='stretch'
         )
     else:
         st.info("No user-uploaded `.csv` files found in any user asset folders.")
@@ -258,7 +258,7 @@ with st.sidebar.expander("ℹ️ About & Support"):
             f.read(),
             file_name="crafting-financial-frameworks.pdf",
             mime="application/pdf",
-            use_container_width=True,
+            width='stretch',
         )
 
     with open(os.path.join(ROOT_PATH, "docs", "fit-unified-index-and-glossary.pdf"), "rb") as f:
@@ -267,7 +267,7 @@ with st.sidebar.expander("ℹ️ About & Support"):
             f.read(),
             file_name="fit-unified-index-and-glossary.pdf",
             mime="application/pdf",
-            use_container_width=True,
+            width='stretch',
         )
 
 st.markdown("---")

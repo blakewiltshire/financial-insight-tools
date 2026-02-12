@@ -235,7 +235,7 @@ def render_atr_analysis(df_slice, label, window=14):
             legend={"x": 0.01, "y": 0.99}
 
         )
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, width='stretch')
 
 # -------------------------------------------------------------------------------------------------
 # Main View Tabs
@@ -274,7 +274,7 @@ with st.sidebar.expander("ℹ️ About & Support"):
             f.read(),
             file_name="crafting-financial-frameworks.pdf",
             mime="application/pdf",
-            use_container_width=True,
+            width='stretch',
         )
 
     with open(os.path.join(PROJECT_PATH, "docs", "fit-unified-index-and-glossary.pdf"), "rb") as f:
@@ -283,7 +283,7 @@ with st.sidebar.expander("ℹ️ About & Support"):
             f.read(),
             file_name="fit-unified-index-and-glossary.pdf",
             mime="application/pdf",
-            use_container_width=True,
+            width='stretch',
         )
 st.markdown("---")
 st.caption("© 2026 Blake Media Ltd. | Financial Insight Tools by Blake Wiltshire — "

@@ -630,7 +630,7 @@ for tab, timeframe, data_slice in [
         )
 
         price_chart = create_plotly_chart(data_slice, indicators_to_plot, indicator_params)
-        st.plotly_chart(price_chart, use_container_width=True)
+        st.plotly_chart(price_chart, width='stretch')
 
         # **Detect Support & Resistance Levels**
         support, resistance, key_msg = detect_support_resistance(data_slice, predisposition)
@@ -735,7 +735,7 @@ with st.sidebar.expander("ℹ️ About & Support"):
             f.read(),
             file_name="crafting-financial-frameworks.pdf",
             mime="application/pdf",
-            use_container_width=True,
+            width='stretch',
         )
 
     with open(os.path.join(ROOT_PATH, "docs", "fit-unified-index-and-glossary.pdf"), "rb") as f:
@@ -744,7 +744,7 @@ with st.sidebar.expander("ℹ️ About & Support"):
             f.read(),
             file_name="fit-unified-index-and-glossary.pdf",
             mime="application/pdf",
-            use_container_width=True,
+            width='stretch',
         )
 
 # -------------------------------------------------------------------------------------------------

@@ -242,7 +242,7 @@ if df_trades is not None:
         """, unsafe_allow_html=True)
 
         with st.expander("📋 Preview Uploaded Trade Log"):
-            st.dataframe(df_trades, use_container_width=True)
+            st.dataframe(df_trades, width='stretch')
 
         # Portfolio metrics
         st.markdown(" ")
@@ -637,7 +637,7 @@ if (
 
         # Display Table
         st.markdown("### 📊 Sizing Strategy Comparison")
-        st.dataframe(pd.DataFrame(strategy_summary), use_container_width=False)
+        st.dataframe(pd.DataFrame(strategy_summary), width='content')
 
 
         # Explanation
@@ -710,8 +710,8 @@ Compares two risk-adjusted return metrics. Quadrants reflect strategic balance.
     fig_equity.update_layout(template="plotly_white", yaxis_title="Cumulative P&L")
     fig_drawdown.update_layout(template="plotly_white", yaxis_title="Drawdown", showlegend=False)
 
-    st.plotly_chart(fig_equity, use_container_width=True)
-    st.plotly_chart(fig_drawdown, use_container_width=True)
+    st.plotly_chart(fig_equity, width='stretch')
+    st.plotly_chart(fig_drawdown, width='stretch')
 
     # --- Chart 2: P&L Distribution Histogram ---
     fig_pnl_hist = px.histogram(
@@ -726,7 +726,7 @@ Compares two risk-adjusted return metrics. Quadrants reflect strategic balance.
     )
     fig_pnl_hist.update_layout(xaxis_title="Realised P&L",
     yaxis_title="Number of Trades", bargap=0.05)
-    st.plotly_chart(fig_pnl_hist, use_container_width=True)
+    st.plotly_chart(fig_pnl_hist, width='stretch')
 
     # --- Chart 3: Rolling P&L Timeline ---
     fig_rolling = px.bar(
@@ -738,7 +738,7 @@ Compares two risk-adjusted return metrics. Quadrants reflect strategic balance.
         template="plotly_white"
     )
     fig_rolling.update_layout(xaxis_title="Exit Date", yaxis_title="P&L ($)")
-    st.plotly_chart(fig_rolling, use_container_width=True)
+    st.plotly_chart(fig_rolling, width='stretch')
 
     # --- Chart 4: Duration vs Return Scatter ---
     if "Trade Date (Entry)" in df_viz.columns:
@@ -755,7 +755,7 @@ Compares two risk-adjusted return metrics. Quadrants reflect strategic balance.
             hover_data=["Asset", "Strategy Tag", "Country"]
         )
         fig_scatter.update_layout(xaxis_title="Duration (Days)", yaxis_title="P&L ($)")
-        st.plotly_chart(fig_scatter, use_container_width=True)
+        st.plotly_chart(fig_scatter, width='stretch')
 
     # --- Chart 5: Sharpe vs Sortino Quadrant ---
     # Placeholder: We assume you have metrics from Section 3
@@ -773,7 +773,7 @@ Compares two risk-adjusted return metrics. Quadrants reflect strategic balance.
         fig_quadrant.add_shape(type="line", x0=-2, x1=6, y0=1, y1=1,
                                line={"color": 'gray', "dash": 'dash'})
         fig_quadrant.update_layout(xaxis_range=[-2, 6], yaxis_range=[-2, 6])
-        st.plotly_chart(fig_quadrant, use_container_width=True)
+        st.plotly_chart(fig_quadrant, width='stretch')
     except Exception:
         st.info("⚠️ Unable to generate Sharpe vs Sortino plot — required metrics not found.")
 
@@ -853,12 +853,12 @@ if "🛠️ Trade Log Validator" in selected_sections and df_trades is not None:
         errors='coerce')
         gap_summary["Gap"] = gap_summary["Trade Date (Entry)"].diff().dt.days
 
-        st.line_chart(gap_summary["Gap"], use_container_width=True)
+        st.line_chart(gap_summary["Gap"], width='stretch')
         st.caption("Review periods between trades to spot bursts or inactivity.")
 
         st.markdown("#### Sector/Strategy Consistency")
         summary = df_trades.groupby(["Sector", "Strategy Tag"]).size().reset_index(name="Count")
-        st.dataframe(pd.DataFrame(summary), use_container_width=False)
+        st.dataframe(pd.DataFrame(summary), width='content')
 
 st.divider()
 
@@ -909,7 +909,7 @@ with st.sidebar.expander("ℹ️ About & Support"):
             f.read(),
             file_name="crafting-financial-frameworks.pdf",
             mime="application/pdf",
-            use_container_width=True,
+            width='stretch',
         )
 
     with open(os.path.join(ROOT_PATH, "docs", "fit-unified-index-and-glossary.pdf"), "rb") as f:
@@ -918,7 +918,7 @@ with st.sidebar.expander("ℹ️ About & Support"):
             f.read(),
             file_name="fit-unified-index-and-glossary.pdf",
             mime="application/pdf",
-            use_container_width=True,
+            width='stretch',
         )
 
 # -------------------------------------------------------------------------------------------------

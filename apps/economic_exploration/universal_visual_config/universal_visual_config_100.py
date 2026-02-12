@@ -82,7 +82,7 @@ def display_chart_with_fallback(
 
     unique_key = custom_key if custom_key else f"{label}_{uuid.uuid4().hex}"
 
-    st.plotly_chart(fig, use_container_width=True, key=unique_key)
+    st.plotly_chart(fig, width='stretch', key=unique_key)
 
 # -------------------------------------------------------------------------------------------------
 # Renders a line chart across all real or nominal economic data

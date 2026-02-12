@@ -4,7 +4,7 @@
 
 import os
 import sys
-from datetime import datetime
+from datetime import datetime, UTC
 
 # -------------------------------------------------------------------------------------------------
 # Path Setup
@@ -83,7 +83,7 @@ def build_macro_insight_snapshot_market_volatility(
                 "code": "market_scanner",
                 "title": "Market & Volatility Scanner"
             },
-            "snapshot_timestamp": datetime.utcnow().isoformat(),
+            "snapshot_timestamp": datetime.now(UTC).isoformat(),
             "asset_type": asset_type_display
         },
         "context_parameters": context_parameters,

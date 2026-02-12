@@ -230,7 +230,7 @@ with st.sidebar.expander("ℹ️ About & Support"):
             f.read(),
             file_name="crafting-financial-frameworks.pdf",
             mime="application/pdf",
-            use_container_width=True,
+            width='stretch',
         )
 
     with open(os.path.join(PROJECT_PATH, "docs", "fit-unified-index-and-glossary.pdf"), "rb") as f:
@@ -239,7 +239,7 @@ with st.sidebar.expander("ℹ️ About & Support"):
             f.read(),
             file_name="fit-unified-index-and-glossary.pdf",
             mime="application/pdf",
-            use_container_width=True,
+            width='stretch',
         )
 
 st.divider()
@@ -260,7 +260,7 @@ with col2:
 az_cols = st.columns(13)
 for i, L in enumerate(string.ascii_uppercase):
     with az_cols[i // 2]:
-        if st.button(L, key=f"az_{L}", use_container_width=True):
+        if st.button(L, key=f"az_{L}", width='stretch'):
             initial = L
 
 st.markdown("---")

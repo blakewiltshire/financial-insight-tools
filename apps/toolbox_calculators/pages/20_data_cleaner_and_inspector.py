@@ -247,13 +247,13 @@ if uploaded_file:
             return ["background-color: yellow" if val else "" for val in outliers]
 
         styled_df = cleaned_df.style.apply(highlight_outliers, subset=highlight_columns)
-        st.dataframe(styled_df, use_container_width=True)
+        st.dataframe(styled_df, width='stretch')
 
     if st.checkbox("🧹 Show Auto Cleaned Data"):
         st.dataframe(cleaned_df.head())
 
     st.write("### ✏️ Edit Data Manually (Optional):")
-    edited_df = st.data_editor(cleaned_df, use_container_width=True, num_rows="dynamic")
+    edited_df = st.data_editor(cleaned_df, width='stretch', num_rows="dynamic")
 
     base_name = os.path.splitext(uploaded_file.name)[0]
     cleaned_filename = f"{base_name}_cleaned.csv"
@@ -285,7 +285,7 @@ with st.sidebar.expander("ℹ️ About & Support"):
             f.read(),
             file_name="crafting-financial-frameworks.pdf",
             mime="application/pdf",
-            use_container_width=True,
+            width='stretch',
         )
 
     with open(os.path.join(PROJECT_PATH, "docs", "fit-unified-index-and-glossary.pdf"), "rb") as f:
@@ -294,7 +294,7 @@ with st.sidebar.expander("ℹ️ About & Support"):
             f.read(),
             file_name="fit-unified-index-and-glossary.pdf",
             mime="application/pdf",
-            use_container_width=True,
+            width='stretch',
         )
 
 # -------------------------------------------------------------------------------------------------

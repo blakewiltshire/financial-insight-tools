@@ -208,7 +208,7 @@ def display_observation_log(module_type: str, country: str, theme_code: str) -> 
 
     edited_df = st.data_editor(
         df,
-        use_container_width=True,
+        width='stretch',
         height=500,
         num_rows="dynamic",
         key="observation_editor"

@@ -213,17 +213,17 @@ if filtered_df is not None and len(filtered_df.columns) > 2:
         asset_x = col_x.selectbox("Select Asset X", asset_columns)
         asset_y = col_y.selectbox("Select Asset Y", asset_columns, index=1 if len(asset_columns) > 1 else 0)
         scatter = plot_pairwise_scatter(filtered_df, asset_x, asset_y)
-        st.plotly_chart(scatter, use_container_width=True, key="scatter")
+        st.plotly_chart(scatter, width='stretch', key="scatter")
 
     with tab2:
         window = st.slider("Rolling Window", min_value=10, max_value=100, value=30, step=5)
         rolling_chart = plot_rolling_correlation(filtered_df.set_index('date')[asset_x],
                                                   filtered_df.set_index('date')[asset_y], window)
-        st.altair_chart(rolling_chart, use_container_width=True)
+        st.altair_chart(rolling_chart, width='stretch')
 
     with tab3:
         heatmap = generate_correlation_heatmap(corr_matrix)
-        st.altair_chart(heatmap, use_container_width=True)
+        st.altair_chart(heatmap, width='stretch')
 
     with tab4:
         st.subheader("ℹ️ How to read these summaries and charts")
@@ -291,7 +291,7 @@ with st.sidebar.expander("ℹ️ About & Support"):
             f.read(),
             file_name="crafting-financial-frameworks.pdf",
             mime="application/pdf",
-            use_container_width=True,
+            width='stretch',
         )
 
     with open(os.path.join(PROJECT_PATH, "docs", "fit-unified-index-and-glossary.pdf"), "rb") as f:
@@ -300,7 +300,7 @@ with st.sidebar.expander("ℹ️ About & Support"):
             f.read(),
             file_name="fit-unified-index-and-glossary.pdf",
             mime="application/pdf",
-            use_container_width=True,
+            width='stretch',
         )
 
 st.divider()

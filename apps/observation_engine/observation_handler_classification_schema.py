@@ -86,7 +86,7 @@ def display_observation_log() -> None:
     df = pd.read_csv(file_path).sort_values("timestamp", ascending=False).reset_index(drop=True)
 
     st.markdown("✏️ Edit or delete entries inline, then click **Save Updates** to apply changes.")
-    edited_df = st.data_editor(df, use_container_width=True, height=450, key="classification_observation_editor")
+    edited_df = st.data_editor(df, width='stretch', height=450, key="classification_observation_editor")
 
     if st.button("💾 Save Updates"):
         edited_df.to_csv(file_path, index=False)

@@ -289,7 +289,7 @@ if df_portfolio is not None:
         st.sidebar.markdown(f"**Sample:** {'Yes' if use_sample else 'No'}")
 
         with st.expander("📋 Preview Uploaded Portfolio"):
-            st.dataframe(df, use_container_width=True)
+            st.dataframe(df, width='stretch')
 
         # Display Metrics
         st.markdown(" ")
@@ -416,7 +416,7 @@ if "📈 Exposure Breakdown" in selected_sections and df_filtered is not None:
 
             # Display table
             st.markdown(f"### 📊 {dimension} Exposure")
-            st.dataframe(exp_pivot.reset_index(), use_container_width=False)
+            st.dataframe(exp_pivot.reset_index(), width='content')
 
             # Prepare chart data (exclude Total)
             chart_data = exp_pivot.drop(index="Total", errors="ignore").reset_index()
@@ -435,7 +435,7 @@ if "📈 Exposure Breakdown" in selected_sections and df_filtered is not None:
             )
             fig.update_traces(textinfo='label+percent', textfont_size=13)
             fig.update_layout(margin={"t": 40, "b": 10, "l": 10, "r": 10})
-            st.plotly_chart(fig, use_container_width=False)
+            st.plotly_chart(fig, width='content')
 
             st.caption("Breakdown includes both long and short positions. Allocation shown \
             as share of total leverage-adjusted exposure.")
@@ -502,7 +502,7 @@ if "⚠️ Risk Diagnostics" in selected_sections and df_filtered is not None:
         st.dataframe(flagged[[
             "Asset", "Symbol", "Leverage-Adjusted Value", "Leverage Used", "Return %",
             "Sector", "Country", "Strategy Tag"
-        ]], use_container_width=True)
+        ]], width='stretch')
     else:
         st.info("No positions currently exceed risk thresholds.")
 
@@ -539,7 +539,7 @@ if "⚠️ Risk Diagnostics" in selected_sections and df_filtered is not None:
     st.markdown("### 🧮 Risk Tier Distribution")
     risk_tier_counts = df_risk["Risk Tier"].value_counts().reset_index()
     risk_tier_counts.columns = ["Risk Tier", "Count"]
-    st.dataframe(risk_tier_counts, use_container_width=False)
+    st.dataframe(risk_tier_counts, width='content')
 
     # --- Risk Tier Pie Chart ---
     fig_tier = px.pie(
@@ -551,7 +551,7 @@ if "⚠️ Risk Diagnostics" in selected_sections and df_filtered is not None:
         hole=0.4
     )
     fig_tier.update_layout(margin={"t": 40, "b": 10, "l": 10, "r": 10}, height=400, width=450)
-    st.plotly_chart(fig_tier, use_container_width=False)
+    st.plotly_chart(fig_tier, width='content')
 
     # --- Sector Breakdown by Risk Tier ---
     st.markdown("### 📊 Sector Exposure by Risk Tier")
@@ -566,7 +566,7 @@ if "⚠️ Risk Diagnostics" in selected_sections and df_filtered is not None:
         color_discrete_sequence=px.colors.sequential.Tealgrn
     )
     fig_sector.update_layout(margin={"t": 30, "b": 30}, height=450)
-    st.plotly_chart(fig_sector, use_container_width=True)
+    st.plotly_chart(fig_sector, width='stretch')
 
     st.caption("Diagnostics are based on leverage-adjusted position size and "
     "portfolio concentration. Tier classification is structural — not advisory.")
@@ -599,19 +599,19 @@ if "🛠️ Live Validator" in selected_sections and validation is not None:
             dupes = df_valid[df_valid.duplicated(subset=["Symbol", "Entry Date"], keep=False)]
             if not dupes.empty:
                 st.markdown("### 🔁 Duplicate Trades Detected")
-                st.dataframe(dupes, use_container_width=True)
+                st.dataframe(dupes, width='stretch')
 
             # No price movement check
             no_move = df_valid[df_valid["Current Price"] == df_valid["Entry Price"]]
             if not no_move.empty:
                 st.markdown("### ⚠️ No Price Movement")
-                st.dataframe(no_move, use_container_width=True)
+                st.dataframe(no_move, width='stretch')
 
             # Invalid or fallback leverage check
             fallback_leverage = df_valid[df_valid["Leverage Used"] == global_leverage]
             if not fallback_leverage.empty:
                 st.markdown(f"### ⚠️ Default Leverage Applied ({global_leverage}x)")
-                st.dataframe(fallback_leverage, use_container_width=True)
+                st.dataframe(fallback_leverage, width='stretch')
         else:
             st.info("ℹ️ No valid records available for deep validation review.")
 
@@ -667,7 +667,7 @@ with st.sidebar.expander("ℹ️ About & Support"):
             f.read(),
             file_name="crafting-financial-frameworks.pdf",
             mime="application/pdf",
-            use_container_width=True,
+            width='stretch',
         )
 
     with open(os.path.join(ROOT_PATH, "docs", "fit-unified-index-and-glossary.pdf"), "rb") as f:
@@ -676,7 +676,7 @@ with st.sidebar.expander("ℹ️ About & Support"):
             f.read(),
             file_name="fit-unified-index-and-glossary.pdf",
             mime="application/pdf",
-            use_container_width=True,
+            width='stretch',
         )
 
 # -------------------------------------------------------------------------------------------------

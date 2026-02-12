@@ -336,7 +336,7 @@ def render_all_charts_local(selected_use_case, tab_mapping, df_map):
                             "Range": "{:,.0f}",
                             "YoY % Change": lambda x: f"{x:,.2f}%" if isinstance(x, (int, float)) else x
                         }),
-                        use_container_width=True
+                        width='stretch'
                     )
 
             # --- Full-Time vs Part-Time Employment ---

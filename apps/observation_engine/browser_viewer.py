@@ -55,7 +55,7 @@ def _render_observations(filter_module: Optional[str], filter_context: Optional[
         return
 
     df = df.sort_values("timestamp", ascending=False).reset_index(drop=True)
-    st.dataframe(df[["timestamp", "observation_text", "tags", "module_type", "context"]], use_container_width=True)
+    st.dataframe(df[["timestamp", "observation_text", "tags", "module_type", "context"]], width='stretch')
 
 
 # -------------------------------------------------------------------------------------------------

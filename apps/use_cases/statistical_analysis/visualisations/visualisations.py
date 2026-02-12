@@ -199,7 +199,7 @@ def line(processed_df, timeline):
         alt.Y(f'{column}:Q', title='Close Price')  # Dynamically use 'close' column
     )
 
-    st.altair_chart(line_chart, theme="streamlit", use_container_width=True)
+    st.altair_chart(line_chart, theme="streamlit", width='stretch')
 
 # --- Candlestick Chart - Returns ---
 def candlestick(processed_df, timeline, use_filtered_data=False):
@@ -271,7 +271,7 @@ def candlestick(processed_df, timeline, use_filtered_data=False):
 
     candlestick_chart = rule + candlestick_bar
 
-    st.altair_chart(candlestick_chart, theme=None, use_container_width=True)
+    st.altair_chart(candlestick_chart, theme=None, width='stretch')
 
 # --- Area Chart - Returns ---
 def area(processed_df, timeline):
@@ -310,7 +310,7 @@ def area(processed_df, timeline):
         alt.Y(f'{column}:Q', title='Close Price')  # Dynamically use 'close' column
     )
 
-    st.altair_chart(area_chart, theme="streamlit", use_container_width=True)
+    st.altair_chart(area_chart, theme="streamlit", width='stretch')
 
 # --- Bar Chart - Returns ---
 def range_returns(processed_df, timeline, filtered_df=None):
@@ -345,7 +345,7 @@ def range_returns(processed_df, timeline, filtered_df=None):
         template="plotly_dark"
     )
 
-    st.plotly_chart(chart, theme="streamlit", use_container_width=True)
+    st.plotly_chart(chart, theme="streamlit", width='stretch')
 
 # --- Bar Chart - Temporal Patterns ---
 def temporal_returns(filtered_df, timeline, selected_pattern):
@@ -447,7 +447,7 @@ def temporal_returns(filtered_df, timeline, selected_pattern):
         template="plotly_dark"
     )
 
-    st.plotly_chart(chart, theme="streamlit", use_container_width=True)
+    st.plotly_chart(chart, theme="streamlit", width='stretch')
 
 # --- Bar Chart - User Upload Returns ---
 def user_returns(correlation_user_returns_df, asset_column):
@@ -486,7 +486,7 @@ def user_returns(correlation_user_returns_df, asset_column):
             labels={"Market": "User Uploads Index", "Average Return (%)": "Average Return (%)"}
         )
 
-        st.plotly_chart(chart, theme="streamlit", use_container_width=True)
+        st.plotly_chart(chart, theme="streamlit", width='stretch')
 
     # pylint: disable=W0718
     except Exception as error:  # Catching broad exception for error handling
@@ -528,7 +528,7 @@ def returns_visualisation(correlation_returns_df, asset_column, clean_asset_name
         )
 
         # Show the plot
-        st.plotly_chart(chart, theme="streamlit", use_container_width=True)
+        st.plotly_chart(chart, theme="streamlit", width='stretch')
 
     # pylint: disable=W0718
     except Exception:  # Catch duplicate column creation errors
@@ -574,7 +574,7 @@ def cumulative_returns(processed_df, timeline, filtered_df=None):
         template="plotly_dark"
     )
 
-    st.plotly_chart(chart, theme="streamlit", use_container_width=True)
+    st.plotly_chart(chart, theme="streamlit", width='stretch')
 
 # ---  Line - Rolling Returns ---
 def rolling_returns(processed_df, timeline, filtered_df=None):
@@ -614,7 +614,7 @@ def rolling_returns(processed_df, timeline, filtered_df=None):
         template="plotly_dark"
     )
 
-    st.plotly_chart(chart, theme="streamlit", use_container_width=True)
+    st.plotly_chart(chart, theme="streamlit", width='stretch')
 
 # --- Scatterplot - Risk Return ---
 def risk_return_scatter_plot(processed_df, timeline, filtered_df):
@@ -659,7 +659,7 @@ def risk_return_scatter_plot(processed_df, timeline, filtered_df):
         height=400
     )
 
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width='stretch')
 
 # -------------------------------------------------------------------------------------------------
 # Visualisations Function Mapping

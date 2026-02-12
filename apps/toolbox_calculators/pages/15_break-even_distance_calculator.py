@@ -190,7 +190,7 @@ with col2:
             margin={"l": 40, "r": 40, "t": 80, "b": 60},
             showlegend=False
         )
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, width='stretch')
 
         st.caption(
             "📉 This chart shows net profit or loss per share as the exit price changes. "
@@ -255,7 +255,7 @@ with col2:
             margin={"l": 40, "r": 40, "t": 80, "b": 60},
             showlegend=False
         )
-        st.plotly_chart(fig2, use_container_width=True)
+        st.plotly_chart(fig2, width='stretch')
 
         st.caption(
             "📉 This chart shows net profit or loss for the entire position as the exit value "
@@ -279,7 +279,7 @@ with st.sidebar.expander("ℹ️ About & Support"):
             f.read(),
             file_name="crafting-financial-frameworks.pdf",
             mime="application/pdf",
-            use_container_width=True,
+            width='stretch',
         )
 
     with open(os.path.join(PROJECT_PATH, "docs", "fit-unified-index-and-glossary.pdf"), "rb") as f:
@@ -288,7 +288,7 @@ with st.sidebar.expander("ℹ️ About & Support"):
             f.read(),
             file_name="fit-unified-index-and-glossary.pdf",
             mime="application/pdf",
-            use_container_width=True,
+            width='stretch',
         )
 
 # -------------------------------------------------------------------------------------------------

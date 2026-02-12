@@ -225,7 +225,7 @@ def render_forum_view(df):
             return any(bloc in str(cell).split(", ") for bloc in selected_blocs)
         df_filtered = df_filtered[df_filtered[bloc_category].apply(has_match)]
 
-    st.dataframe(df_filtered, use_container_width=True)
+    st.dataframe(df_filtered, width='stretch')
 
 
 # -------------------------------------------------------------------------------------------------
@@ -302,7 +302,7 @@ def render_political_view(df):
     if growth:
         df_filtered = df_filtered[df_filtered["Economic Growth Rate"].isin(growth)]
 
-    st.dataframe(df_filtered, use_container_width=True)
+    st.dataframe(df_filtered, width='stretch')
 
 # -------------------------------------------------------------------------------------------------
 # --- MARKET RATINGS VIEW ---
@@ -366,7 +366,7 @@ def render_market_view(df):
         ).any(axis=1)
         df_filtered = df_filtered[mask]
 
-    st.dataframe(df_filtered, use_container_width=True)
+    st.dataframe(df_filtered, width='stretch')
 
 # -------------------------------------------------------------------------------------------------
 # --- GLOBAL COMPANY REGISTER VIEW ---
@@ -424,7 +424,7 @@ def render_company_base_view(df):
                 "Ticker", "Company Name", "Industry Tag", "Exchange",
                 "Country", "Market Currency"
             ]],
-            use_container_width=True
+            width='stretch'
         )
 
     # --------------------------------
@@ -451,7 +451,7 @@ def render_company_base_view(df):
                 "Ticker", "Company Name", "Country", "Exchange", "MIC Code",
                 "CUSIP", "ISIN", "SEDOL", "FIGI", "CIK"
             ]],
-            use_container_width=True
+            width='stretch'
         )
 
 
@@ -521,7 +521,7 @@ def render_company_identifiers_view(df):
             "CUSIP": st.column_config.TextColumn("🔐 CUSIP"),
             "CIK": st.column_config.TextColumn("📁 CIK")
         },
-        use_container_width=True,
+        width='stretch',
         disabled=True
     )
 
@@ -593,7 +593,7 @@ def render_company_largecap_view(df):
         st.dataframe(df_filtered[[
             "Ticker", "Company Name", "S&P 500", "DJIA", "Nasdaq 100",
             "Regions", "Country", "Company Description", "Year Incorporated", "Headquarters"
-        ]], use_container_width=True)
+        ]], width='stretch')
 
     # ------------------------
     # SOCIAL & LINKS TAB
@@ -622,7 +622,7 @@ def render_company_largecap_view(df):
                 "Wiki": st.column_config.LinkColumn("Wikipedia"),
                 "X": st.column_config.LinkColumn("X/Twitter")
             },
-            use_container_width=True,
+            width='stretch',
             disabled=True
         )
 
@@ -667,7 +667,7 @@ def render_company_largecap_view(df):
             "NAICS Industry Code", "NAICS Industry",
             "NAICS National Industry Code", "NAICS National Industry",
             "DJIA", "Nasdaq 100", "Regions", "Country"
-        ]], use_container_width=True)
+        ]], width='stretch')
 
 
 # -------------------------------------------------------------------------------------------------
@@ -759,7 +759,7 @@ with st.sidebar.expander("ℹ️ About & Support"):
             f.read(),
             file_name="crafting-financial-frameworks.pdf",
             mime="application/pdf",
-            use_container_width=True,
+            width='stretch',
         )
 
     with open(os.path.join(PROJECT_PATH, "docs", "fit-unified-index-and-glossary.pdf"), "rb") as f:
@@ -768,7 +768,7 @@ with st.sidebar.expander("ℹ️ About & Support"):
             f.read(),
             file_name="fit-unified-index-and-glossary.pdf",
             mime="application/pdf",
-            use_container_width=True,
+            width='stretch',
         )
 
 

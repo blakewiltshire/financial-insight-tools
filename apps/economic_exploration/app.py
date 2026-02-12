@@ -138,7 +138,7 @@ st.sidebar.markdown("### 🧭 Getting Started")
 st.sidebar.caption("*Modular, structured dashboards for navigating macro themes by country.*")
 
 # if os.path.isfile(IMAGE_PATH):
-#     st.sidebar.image(IMAGE_PATH, use_container_width=True)
+#     st.sidebar.image(IMAGE_PATH, width='stretch')
 # else:
 #     st.warning("Placeholder image not found. Check /images/toolbox_app2.png.")
 
@@ -169,7 +169,7 @@ with st.sidebar.expander("ℹ️ About & Support"):
             f.read(),
             file_name="crafting-financial-frameworks.pdf",
             mime="application/pdf",
-            use_container_width=True,
+            width='stretch',
         )
 
     with open(os.path.join(ROOT_PATH, "docs", "fit-unified-index-and-glossary.pdf"), "rb") as f:
@@ -178,7 +178,7 @@ with st.sidebar.expander("ℹ️ About & Support"):
             f.read(),
             file_name="fit-unified-index-and-glossary.pdf",
             mime="application/pdf",
-            use_container_width=True,
+            width='stretch',
         )
 
 # -------------------------------------------------------------------------------------------------

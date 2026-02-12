@@ -123,7 +123,7 @@ def display_trade_dashboard() -> None:
 
         dashboard_df = st.data_editor(
             dashboard_df,
-            use_container_width=True,
+            width='stretch',
             num_rows="dynamic",
             column_order=DASHBOARD_COLUMNS,
             key="trade_dashboard_editor"
