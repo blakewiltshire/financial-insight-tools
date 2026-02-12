@@ -6,6 +6,21 @@ FIT provides consistent structure across distribution analysis, trade modelling,
 
 ---
 
+---
+
+## Companion References (PDF)
+
+FIT includes companion documents under `docs/`:
+
+- *Crafting Financial Frameworks — Modular, AI-Ready Systems for Structured Decision Support*  
+- *Financial Insight Tools — Unified Index & Glossary Reference*
+
+These documents provide architectural framing and consolidated reference material.  
+Note: GitHub’s in-browser PDF preview may not render complex code-block formatting reliably; download for the best viewing experience.
+
+---
+
+
 ## Python Version
 
 Python 3.11–3.12 (tested on 3.12.x)
