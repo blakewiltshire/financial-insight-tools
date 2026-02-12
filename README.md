@@ -6,8 +6,6 @@ FIT provides consistent structure across distribution analysis, trade modelling,
 
 ---
 
----
-
 ## Companion References (PDF)
 
 FIT includes companion documents under `docs/`:
@@ -19,7 +17,6 @@ These documents provide architectural framing and consolidated reference materia
 Note: GitHub’s in-browser PDF preview may not render complex code-block formatting reliably; download for the best viewing experience.
 
 ---
-
 
 ## Python Version
 
