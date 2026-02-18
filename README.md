@@ -20,7 +20,7 @@ Note: GitHub’s in-browser PDF preview may not render complex code-block format
 
 ## Python Version
 
-Python (tested on 3.12.x)
+Tested on 3.12.x
 
 ---
 
