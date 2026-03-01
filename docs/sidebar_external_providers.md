@@ -29,8 +29,3 @@ These platforms also allow manual CSV downloads compatible with the Insight Tool
 - If needed, use the **Historical Data Currency Converter** module before building your snapshot.
 - Remove any non-numeric columns (e.g., dividend flags, adjusted closes).
 - Use consistent formatting for headers and dates (e.g., YYYY-MM-DD).
-
----
-
-### 🔄 API Integration Roadmap
-We're currently working with data vendors to provide direct API-based integration. If you're a vendor, or have a preferred API provider, [reach out here](mailto:support@blakemedia.tools).
