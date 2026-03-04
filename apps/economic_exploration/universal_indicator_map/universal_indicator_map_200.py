@@ -77,14 +77,14 @@ during insight generation.
 import pandas as pd
 
 # -------------------------------------------------------------------------------------------------
-# Employment (Ex Agriculture) Indicator Logic
+# Employment Indicator Logic
 # -------------------------------------------------------------------------------------------------
 def employment_momentum(df, period=3):
     """Detects hiring momentum vs long-term trend."""
-    if df is None or "Employment ex Agriculture" not in df.columns:
+    if df is None or "Number of People in Employment" not in df.columns:
         return "Insufficient Data"
-    series = df["Employment ex Agriculture"].pct_change().dropna()
-    if series.empty or len(series) < period + 12:
+    series = df["Number of People in Employment"].pct_change().dropna()
+    if len(series) < max(period, 12) + 1:
         return "Insufficient Data"
     recent = series.tail(period)
     long_term = series.rolling(12).mean().dropna()
@@ -101,9 +101,9 @@ def employment_momentum(df, period=3):
 
 def employment_volatility(df, period=6):
     """Measures employment growth volatility."""
-    if df is None or "Employment ex Agriculture" not in df.columns:
+    if df is None or "Number of People in Employment" not in df.columns:
         return "Insufficient Data"
-    series = df["Employment ex Agriculture"].pct_change().dropna().tail(period)
+    series = df["Number of People in Employment"].pct_change().dropna().tail(period)
     if series.empty or len(series) < period:
         return "Insufficient Data"
     std_dev = series.std()
@@ -116,9 +116,9 @@ def employment_volatility(df, period=6):
 
 def employment_inflection(df, period=None):
     """Detects directional inflection in employment."""
-    if df is None or "Employment ex Agriculture" not in df.columns:
+    if df is None or "Number of People in Employment" not in df.columns:
         return "Insufficient Data"
-    series = df["Employment ex Agriculture"].pct_change().dropna()
+    series = df["Number of People in Employment"].pct_change().dropna()
     if len(series) < 3:
         return "Insufficient Data"
     last = series.iloc[-1]
@@ -170,16 +170,25 @@ def unemployment_reversion(df, period=None):
 
 
 def unemployment_volatility(df, period=6):
-    """Detects volatility in unemployment readings."""
+    """Detects volatility in unemployment changes (percentage-point moves)."""
     if df is None or "Unemployment Rate" not in df.columns:
         return "Insufficient Data"
-    series = df["Unemployment Rate"].dropna().tail(period)
-    if len(series) < period:
+
+    s = df["Unemployment Rate"].dropna()
+    if len(s) < period + 1:
         return "Insufficient Data"
-    std_dev = series.std()
-    if std_dev > 0.4:
+
+    # volatility of point changes
+    changes = s.diff().dropna().tail(period)
+    if len(changes) < period:
+        return "Insufficient Data"
+
+    std_dev = changes.std()
+
+    # thresholds in percentage points (pp)
+    if std_dev > 0.15:
         return "Unemployment Volatility Elevated"
-    if std_dev < 0.2:
+    if std_dev < 0.05:
         return "Stable Unemployment Readings"
     return "Moderate Volatility"
 
@@ -208,16 +217,24 @@ def participation_trend(df, period=6):
 
 
 def participation_variability(df, period=12):
-    """Flags volatility in participation behaviour."""
+    """Flags variability in participation changes (percentage-point moves)."""
     if df is None or "Labour Participation Rate" not in df.columns:
         return "Insufficient Data"
-    series = df["Labour Participation Rate"].dropna().tail(period)
-    if len(series) < period:
+
+    s = df["Labour Participation Rate"].dropna()
+    if len(s) < period + 1:
         return "Insufficient Data"
-    std_dev = series.std()
-    if std_dev > 0.4:
+
+    changes = s.diff().dropna().tail(period)
+    if len(changes) < period:
+        return "Insufficient Data"
+
+    std_dev = changes.std()
+
+    # thresholds in percentage points (pp)
+    if std_dev > 0.10:
         return "Structural Shifts Detected"
-    if std_dev < 0.1:
+    if std_dev < 0.03:
         return "Stable Participation Rate"
     return "Mild Variability"
 

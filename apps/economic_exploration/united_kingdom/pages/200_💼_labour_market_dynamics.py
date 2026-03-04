@@ -9,25 +9,18 @@
 # Docstring
 # -------------------------------------------------------------------------------------------------
 """
-💱 Currency & Exchange Rate Movements — Thematic Indicator Module
+💼 Labour Market Dynamics — Thematic Indicator Module
 --------------------------------------------------------
 
-This module provides a structured decision-support interface for analysing {short_description}.
-
-This module provides a structured decision-support interface for analysing foreign exchange dynamics,
-currency valuation trends, and exchange rate-based macro signals.
+This module provides a structured decision-support interface for exploring a country's
+labour market performance, employment trends, and workforce resilience.
 
 It focuses on:
 
-- Bilateral and trade-weighted exchange rates
-- Nominal vs real effective exchange rate (NEER/REER) trends
-- Optional volatility measures, capital flow sensitivity, or policy transmission effects
-
-The purpose is not to forecast outcomes, but to surface structural insights and
-comparative dynamics across:
-- Thematic signal positioning and inflection points
-- Systemic trends, volatility patterns, or sectoral breakdowns
-- Policy relevance, structural adaptation, or strategic framing
+- Headline labour indicators such as employment levels, unemployment rates, and
+participation ratios
+- Wage growth, productivity trends, and hours worked (where available)
+- Optional composite indicators tracking labour market tightness and economic slack
 
 Outputs are standardised and modular, enabling integration with:
 - Universal and country-specific use cases
@@ -115,20 +108,20 @@ from economic_cleaning_shared import clean_economic_data
 from ux.timeframe_selector import render_timeframe_selector
 from ux.timeframe_slicer import slice_data_by_timeframe
 
-from indicator_map.indicator_map_1000 import get_indicator_maps
+from indicator_map.indicator_map_200 import get_indicator_maps
 
-from use_cases.use_case_1000 import get_use_cases, render_use_case_selector
+from use_cases.use_case_200 import get_use_cases, render_use_case_selector
 
-from insights.insight_1000 import generate_econ_insights
+from insights.insight_200 import generate_econ_insights
 
-from routing.routing_1000 import get_indicator_input
+from routing.routing_200 import get_indicator_input
 
-from scoring_weights_labels.scoring_weights_labels_1000_currency_exchange_movements import (
+from scoring_weights_labels.scoring_weights_labels_200_labour_market_dynamics import (
     get_alignment_score_label,
     get_indicator_weight,
 )
 
-from visual_config.visual_config_1000 import (
+from visual_config.visual_config_200 import (
     render_all_charts_local
 )
 
@@ -184,16 +177,16 @@ from ai_export_ui_panel_economic_exploration import render_ai_export_ui_panel
 
 # --- 🌍 COUNTRY-SPECIFIC SETTINGS ---
 
-COUNTRY_NAME = "default_template"      # Display name (used for titles, flags)
-COUNTRY_CODE = "000"  # Pulls CSV from /datasource/000/ — switch to e.g. 'us' after data is sourced
+COUNTRY_NAME = "United Kingdom"      # Display name (used for titles, flags)
+COUNTRY_CODE = "uk"  # Pulls CSV from /datasource/000/ — switch to e.g. 'us' after data is sourced
 
 # 📊 THEME CONFIGURATION (align with thematic_groupings.py)
 
-THEME = "currency_exchange_movements"  # Theme slug (used in file lookup, visuals, AI bundles)
-THEME_ID = "1000"                # Theme ID
-STRUCTURAL_FOLDER = "1000_currency_template"   # Primary dataset folder name under /data_sources/
-COMPOSITE_FOLDER = ""                 # Optional (leave blank if unused)
-DEFAULT_USE_CASE = "Signal A"   # Default focus in use case selector (must match use_case key)
+THEME = "labour_market_dynamics"  # Theme slug (used in file lookup, visuals, AI bundles)
+THEME_ID = "200"                # Theme ID
+STRUCTURAL_FOLDER = "200_employment"   # Primary dataset folder name under /data_sources/
+COMPOSITE_FOLDER = "200_employment_composite" # Optional (leave blank if unused)
+DEFAULT_USE_CASE = "Employment Trends"   # Default use case selector (must match use_case key)
 
 # -------------------------------------------------------------------------------------------------
 # 🧾 DATASET_REGISTRY — REQUIRED INPUTS FOR LOADING AND STRUCTURING DATA
@@ -224,15 +217,35 @@ DEFAULT_USE_CASE = "Signal A"   # Default focus in use case selector (must match
 
 DATASET_REGISTRY = {
     "df_primary": {
-        "label": "📄 Default Template",
+        "label": "📄 Employment",
         "file": f"{COUNTRY_CODE}_m_{THEME_ID}_structural.csv",
         "folder": STRUCTURAL_FOLDER,
         "frequency": "monthly",
         "cleaner": clean_economic_data,
         "show_in_underlying_data": True,
         "plot": True,
-        "create_slice": True
-    }
+        "create_slice": True,
+    },
+    "df_secondary": {
+        "label": "📄 Employment Composite",
+        "file": f"{COUNTRY_CODE}_q_{THEME_ID}_composite.csv",
+        "folder": COMPOSITE_FOLDER,
+        "cleaner": clean_economic_data,
+        "frequency": "quarterly",
+        "show_in_underlying_data": True,
+        "plot": True,
+        "create_slice": True,
+    },
+    "df_extended": {
+        "label": "📄 Jobless Claims",
+        "file": f"{COUNTRY_CODE}_m1_{THEME_ID}_composite.csv",
+        "folder": COMPOSITE_FOLDER,
+        "frequency": "monthly",
+        "cleaner": clean_economic_data,
+        "show_in_underlying_data": True,
+        "plot": True,
+        "create_slice": True,
+    },
     # ➕ Add more datasets here if extending this module with additional signal layers
 }
 
@@ -264,11 +277,11 @@ BRAND_LOGO_PATH = os.path.join(ROOT_PATH, "brand", "blake_logo.png")
 # FLAG       = emoji flag shown beside country name (must match country key in emoji.py)
 # -------------------------------------------------------------------------------------------------
 THEME_CODE = f"{THEME_ID}_{THEME}"
-THEME_DATA = THEMATIC_GROUPS.get(THEME, {})       # Metadata for this thematic group
-PAGE_ICON = PAGE_ICONS.get(THEME, '❓')            # UI tab/page icon fallback = ❓
-FLAG = FLAGS.get(COUNTRY_NAME, '🏳️')               # Default fallback = white flag
+THEME_DATA = THEMATIC_GROUPS.get(THEME_CODE, {}) # Required by AI export and DSS apps
+PAGE_ICON = PAGE_ICONS.get(THEME, '❓')           # Emoji icon for Streamlit UI (see page_icon.py)
+FLAG = FLAGS.get(COUNTRY_NAME, '🏳️')              # Country flag (see emoji.py)
 
-# ✅ Sidebar logo
+# --- Branding ---
 st.logo(BRAND_LOGO_PATH)  # pylint: disable=no-member
 
 # -------------------------------------------------------------------------------------------------
@@ -282,7 +295,7 @@ st.set_page_config(
 )
 
 st.title(f"{FLAG} {COUNTRY_NAME} - {PAGE_ICON} {THEME.replace('_', ' ').title()}")
-st.caption("*Exchange rate dynamics, capital flows, and relative competitiveness across currency pairs.*")
+st.caption("*Employment, wages, and participation trends shaping labour markets.*")
 
 # -------------------------------------------------------------------------------------------------
 # 📌 App Info Panel (Displays about_{THEME}.md contents)
@@ -294,7 +307,6 @@ with st.expander("📌 What is this app about?"):
         st.markdown(content, unsafe_allow_html=True)
     else:
         st.error(f"❌ App info file not found: docs/about_{THEME}.md")
-
 
 # -------------------------------------------------------------------------------------------------
 # 🔁 LOAD REGISTERED DATASETS INTO MEMORY
@@ -320,23 +332,23 @@ for varname, cfg in DATASET_REGISTRY.items():
             cfg["folder"], cfg["file"]
         )
 
-        # --- Load raw CSV ---
+        # Load raw CSV
         df_raw = pd.read_csv(file_path)
 
-        # --- Apply cleaning function ---
+        # Clean using shared cleaner
         df_cleaned = cfg["cleaner"](df_raw)
 
-        # --- Optional: Restrict to defined columns ---
+        # Optional column filtering
         columns = cfg.get("columns")
         if columns:
             required_cols = ["date"] + [col for col in columns if col != "date"]
             df_cleaned = df_cleaned[[col for col in required_cols if col in df_cleaned.columns]]
 
-        # --- Final validation: Ensure non-empty and date-indexed ---
+        # Final validation
         if df_cleaned is not None and not df_cleaned.empty:
             df_cleaned.set_index("date", inplace=True)
             loaded_datasets[varname] = {"df": df_cleaned, "label": cfg["label"]}
-            globals()[varname] = df_cleaned  # Makes variable globally available
+            globals()[varname] = df_cleaned  # Inject directly for downstream logic
         else:
             st.warning(
                 f"⚠️ Dataset loaded but contains no usable data: **{cfg['label']}**"
@@ -344,11 +356,12 @@ for varname, cfg in DATASET_REGISTRY.items():
 
     except FileNotFoundError:
         st.warning(
-            f"⚠️ File not found: **{cfg['label']}** — expected: `{cfg['file']}` in folder `{cfg['folder']}`"
+            f"⚠️ File not found for dataset: **{cfg['label']}** — expected: `{cfg['file']}`"
         )
     except pd.errors.ParserError:
         st.warning(
-            f"⚠️ Parsing error while loading **{cfg['label']}** — check file structure or delimiters"
+            f"⚠️ Parsing error while loading: **{cfg['label']}** — "
+            "check file structure or delimiter"
         )
     except Exception as e:  # pylint: disable=broad-except
         st.warning(
@@ -361,7 +374,6 @@ for varname, cfg in DATASET_REGISTRY.items():
 st.sidebar.title("📂 Navigation Menu")
 st.sidebar.page_link("app.py", label="🔙 Back to Country Overview")
 st.sidebar.divider()
-
 
 # --- Timeframe Selection ---
 selected_timeframe, selected_label = render_timeframe_selector()
@@ -416,8 +428,8 @@ for df_var, config in DATASET_REGISTRY.items():
 df_dict = {
     "df_primary_slice": df_primary_slice,
     "df_full": df_primary,
-    # "df_secondary_slice": df_secondary_slice,
-    # "df_extended_slice": df_extended_slice
+    "df_secondary_slice": df_secondary_slice,
+    "df_extended_slice": df_extended_slice
 }
 
 # --- Alignment Score (Platinum-Grade Unified Version) ---
@@ -558,10 +570,6 @@ ai_bundle = create_theme_ai_bundle(
 # ⚠️ No user changes are required unless expanding the visual dataset scope.
 # -------------------------------------------------------------------------------------------------
 
-# st.write("🔍 Columns in df_primary_slice:", df_primary_slice.columns.tolist())
-# st.write("📅 df_primary_slice timeframe:", df_primary_slice["date"].min(), "to", df_primary_slice["date"].max())
-
-
 # -------------------------------------------------------------------------------------------------
 # 🗂️ Timeframe Tab Definition Based on Observations (Frequency-Agnostic)
 # -------------------------------------------------------------------------------------------------
@@ -611,7 +619,8 @@ def define_timeframe_tabs_and_mapping(base_df: pd.DataFrame) -> tuple[dict, dict
 tabs_dict, tab_mapping = define_timeframe_tabs_and_mapping(df_primary)
 
 # Context message
-st.caption(f"📌 Each 'Observation' corresponds to one data entry, based on the dataset's own frequency. (Quarterly, Monthly, Weekly)")
+st.caption(f"📌 Each 'Observation' corresponds to one data entry, based on the dataset's \
+own frequency. (Quarterly, Monthly, Weekly)")
 
 # -------------------------------------------------------------------------------------------------
 # 📁 Dataset Map for Chart Dispatcher
@@ -624,8 +633,8 @@ st.caption(f"📌 Each 'Observation' corresponds to one data entry, based on the
 # -------------------------------------------------------------------------------------------------
 df_map = {
     "df_primary": df_primary,
-    # "df_secondary": df_secondary,
-    # "df_extended": df_extended
+    "df_secondary": df_secondary,
+    "df_extended": df_extended
 }
 
 # --- Chart Dispatcher ---
@@ -693,7 +702,6 @@ render_macro_interaction_tools_panel(
 
 st.sidebar.divider()
 
-
 # -------------------------------------------------------------------------------------------------
 # 📂 View Underlying Data (Generic, Reusable)
 # -------------------------------------------------------------------------------------------------
@@ -737,5 +745,5 @@ with st.sidebar.expander("ℹ️ About & Support"):
 # Footer
 # -------------------------------------------------------------------------------------------------
 st.divider()
-st.caption("© 2025 Blake Media Ltd. | Financial Insight Tools by Blake Wiltshire — \
+st.caption("© 2026 Blake Media Ltd. | Financial Insight Tools by Blake Wiltshire — \
 No trading, investment, or policy advice provided.")

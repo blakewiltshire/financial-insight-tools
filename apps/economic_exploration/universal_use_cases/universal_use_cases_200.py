@@ -63,8 +63,8 @@ USE_CASES = {
             "Volatility in Hiring Activity",
             "Cyclical Turning Points"
         ],
-        "Categories": ["Employment (Excluding Agriculture)"],
-        "Description": "Tracks hiring trends via total employment excluding agricultural and \
+        "Categories": ["Employment"],
+        "Description": "Tracks hiring trends via total employment and \
         informal sectors, highlighting acceleration, volatility, and inflection points \
         relevant to economic momentum."
     },

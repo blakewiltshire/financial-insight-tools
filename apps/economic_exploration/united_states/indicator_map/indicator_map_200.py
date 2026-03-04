@@ -70,6 +70,8 @@ datasets exist.
 system-stable.
 """
 
+import pandas as pd
+
 # -------------------------------------------------------------------------------------------------
 # 📦 Imports — Universal Indicator Maps
 # -------------------------------------------------------------------------------------------------
@@ -80,37 +82,104 @@ from universal_indicator_map_200 import (
 )
 
 # -------------------------------------------------------------------------------------------------
+# ✅ Sector Universe (strict) — prevents non-sector series being ranked as sectors
+# -------------------------------------------------------------------------------------------------
+SECTOR_UNIVERSE_200 = [
+    # "Total Nonfarm",
+    # "Total Private",
+    # "Goods-Producing",
+    "Mining and Logging",
+    "Construction",
+    "Manufacturing",
+    # "Private Service-Providing",
+    "Trade Transportation and Utilities",
+    "Information",
+    "Financial Activities",
+    "Professional and Business Services",
+    "Education and Health Services",
+    "Leisure and Hospitality",
+    "Other Services",
+    "Government",
+    "Federal",
+    "State Government",
+    "Local Government",
+]
+
+def _get_sector_df(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Return a dataframe restricted to known sector columns present in df.
+    """
+    if df is None or df.empty:
+        return df
+    cols = [c for c in SECTOR_UNIVERSE_200 if c in df.columns]
+    if not cols:
+        return pd.DataFrame(index=df.index)
+    return df[cols]
+
+# -------------------------------------------------------------------------------------------------
 # 📊 Business Sector Employment Breakdown
 # -------------------------------------------------------------------------------------------------
 
 def sector_employment_momentum(df, period=None):
     if df is None or df.empty:
         return "Insufficient Data"
+
     try:
-        recent = df.drop(columns=["date"], errors="ignore").dropna().tail(period or 3)
-        momentum_scores = recent.diff().mean().sort_values(ascending=False)
-        top_sector = momentum_scores.index[0]
+        sector_df = _get_sector_df(df)
+        if sector_df.empty:
+            return "Insufficient Data"
+
+        recent = sector_df.tail(period or 3)
+        changes = recent.diff().mean(skipna=True)
+        changes = changes.dropna()
+
+        if changes.empty:
+            return "Insufficient Data"
+
+        top_sector = changes.idxmax()
         return f"Sector Momentum: {top_sector}"
+
     except Exception:
         return "Insufficient Data"
+
 
 def sector_employment_stress(df, period=None):
     if df is None or df.empty:
         return "Insufficient Data"
+
     try:
-        recent = df.drop(columns=["date"], errors="ignore").dropna().tail(period or 3)
-        change_scores = recent.diff().mean().sort_values()
-        bottom_sector = change_scores.index[0]
+        sector_df = _get_sector_df(df)
+        if sector_df.empty:
+            return "Insufficient Data"
+
+        recent = sector_df.tail(period or 3)
+        changes = recent.diff().mean(skipna=True)
+        changes = changes.dropna()
+
+        if changes.empty:
+            return "Insufficient Data"
+
+        bottom_sector = changes.idxmin()
         return f"Sector Stress: {bottom_sector}"
+
     except Exception:
         return "Insufficient Data"
+
 
 def sector_employment_summary(df, period=None):
     if df is None or df.empty:
         return "Insufficient Data"
     try:
-        recent = df.drop(columns=["date"], errors="ignore").dropna().tail(period or 3)
+        sector_df = _get_sector_df(df).dropna()
+        if sector_df.empty:
+            return "Insufficient Data"
+
+        recent = sector_df.tail(period or 3)
         mean_change = recent.diff().mean().mean()
+
+        if pd.isna(mean_change):
+            return "Insufficient Data"
+
         if mean_change >= 0.5:
             return "Broad Expansion"
         if mean_change <= -0.5:

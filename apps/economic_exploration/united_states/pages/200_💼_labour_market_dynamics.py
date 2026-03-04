@@ -220,7 +220,7 @@ DATASET_REGISTRY = {
         "label": "📄 Employment",
         "file": f"{COUNTRY_CODE}_m_{THEME_ID}_structural.csv",
         "folder": STRUCTURAL_FOLDER,
-        "frequency": "quarterly",
+        "frequency": "monthly",
         "cleaner": clean_economic_data,
         "show_in_underlying_data": True,
         "plot": True,
@@ -476,7 +476,7 @@ def compute_econ_alignment(
             ])
             continue
 
-        signal = func(df_input, period=4)
+        signal = func(df_input)
         weight = get_indicator_weight(name)
 
         # --- New platinum parsing block ---
@@ -652,7 +652,7 @@ of time series data.")
 # --- Summary Table ---
 # -------------------------------------------------------------------------------------------------
 st.divider()
-st.subheader("🧾 Macro Signal Summary")
+st.subheader("Macro Signal Summary")
 gb = GridOptionsBuilder.from_dataframe(summary_df)
 gb.configure_default_column(wrapText=True, autoHeight=True)
 gb.configure_grid_options(domLayout='autoHeight')

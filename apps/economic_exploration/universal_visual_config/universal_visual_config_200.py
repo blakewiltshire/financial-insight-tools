@@ -156,3 +156,64 @@ def plot_labour_with_extremes(df: pd.DataFrame, column: str, title: str, yaxis_t
         height=460
     )
     return fig
+
+def plot_labour_volatility(df: pd.DataFrame, column: str, title: str, yaxis_title: str, window: int = 6) -> go.Figure:
+    """
+    Rolling volatility of the first difference of a labour series.
+    Useful for 'Volatility Context' tabs.
+    """
+    df = df.copy()
+    if "date" not in df.columns or column not in df.columns:
+        return go.Figure()
+
+    s = df[column].astype(float)
+    vol = s.diff().rolling(window).std()
+
+    fig = go.Figure()
+    fig.add_trace(go.Scatter(
+        x=df["date"],
+        y=vol,
+        mode="lines+markers",
+        name=f"{column} Volatility",
+        line={"color": "#1f77b4"}
+    ))
+
+    fig.update_layout(
+        title=f"{title} (Rolling Volatility, {window})",
+        xaxis_title="Date",
+        yaxis_title=yaxis_title,
+        template="plotly_white",
+        height=460
+    )
+    return fig
+
+
+def plot_labour_momentum(df: pd.DataFrame, column: str, title: str, yaxis_title: str, window: int = 6) -> go.Figure:
+    """
+    Momentum proxy: change over a rolling window (diff(window)).
+    Useful for 'Inflection Points' tabs (shows direction shifts more clearly).
+    """
+    df = df.copy()
+    if "date" not in df.columns or column not in df.columns:
+        return go.Figure()
+
+    s = df[column].astype(float)
+    mom = s.diff(window)
+
+    fig = go.Figure()
+    fig.add_trace(go.Scatter(
+        x=df["date"],
+        y=mom,
+        mode="lines+markers",
+        name=f"{column} Momentum",
+        line={"color": "darkblue"}
+    ))
+
+    fig.update_layout(
+        title=f"{title} (Momentum, {window})",
+        xaxis_title="Date",
+        yaxis_title=yaxis_title,
+        template="plotly_white",
+        height=460
+    )
+    return fig

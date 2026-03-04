@@ -63,11 +63,11 @@ insights = {
     "Job Creation Momentum": {
         "Strong Momentum": {
             "bias": "Growth Supportive",
-            "text": "Recent job creation significantly exceeds historical trends—indicating business expansion and labour demand."
+            "text": "Recent job creation significantly exceeds historical trends—consistent with stronger labour demand."
         },
         "Weak or Reversing": {
             "bias": "Contraction Warning",
-            "text": "Employment growth is fading or negative—suggests weakening business activity or macro headwinds."
+            "text": "Employment growth is fading or negative—consistent with softer labour demand or rising macro friction."
         },
         "Neutral Hiring Trend": {
             "bias": "Neutral",
@@ -91,11 +91,11 @@ insights = {
     "Cyclical Turning Points": {
         "Turning Positive": {
             "bias": "Growth Supportive",
-            "text": "Employment has reversed from decline to growth—early sign of cyclical rebound."
+            "text": "Employment growth has shifted from decline to expansion—potential early change in direction."
         },
         "Turning Negative": {
             "bias": "Contraction Warning",
-            "text": "Momentum has shifted from growth to contraction—potential signal of macro softening."
+            "text": "Employment momentum has shifted from growth to contraction—potential loss of labour market momentum."
         },
         "No Recent Inflection": {
             "bias": "Neutral",
@@ -125,7 +125,7 @@ insights = {
         },
         "Near Cycle High": {
             "bias": "Contraction Warning",
-            "text": "Unemployment is near recent highs—may reflect systemic slack or policy drag."
+            "text": "Unemployment is near recent highs—consistent with elevated labour slack."
         },
         "Mid-Range Level": {
             "bias": "Neutral",
@@ -151,7 +151,7 @@ insights = {
     "Participation Stability": {
         "Participation Increasing": {
             "bias": "Growth Supportive",
-            "text": "More individuals are entering or staying in the workforce—supports output potential and macro resilience."
+            "text": "More individuals are entering or remaining in the workforce—consistent with stronger labour engagement and output capacity."
         },
         "Participation Declining": {
             "bias": "Contraction Warning",

@@ -458,7 +458,7 @@ def compute_econ_alignment(
             ])
             continue
 
-        signal = func(df_input, period=4)
+        signal = func(df_input)
         weight = get_indicator_weight(name)
 
         # --- New platinum parsing block ---

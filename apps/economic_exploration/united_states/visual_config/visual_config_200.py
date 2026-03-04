@@ -68,32 +68,32 @@ if UNIVERSAL_PATH not in sys.path:
 
 # -------------------------------------------------------------------------------------------------
 # Universal Chart Imports (Theme 200)
-# -------------------------------------------------------------------------------------------------
+# ----------------------------------- --------------------------------------------------------------
 from universal_visual_config_200 import (
     display_chart_with_fallback,
     plot_labour_line_chart,
-    plot_labour_with_extremes
+    plot_labour_with_extremes,
+    plot_labour_volatility,
+    plot_labour_momentum
 )
 
 # -------------------------------------------------------------------------------------------------
 # 📊 Sector Columns and Icons Mapping
 # -------------------------------------------------------------------------------------------------
 SECTOR_COLUMNS = [
-    "Total Nonfarm", "Total Private", "Goods-Producing", "Mining and Logging",
-    "Construction", "Manufacturing", "Private Service-Providing",
-    "Trade, Transportation, and Utilities", "Information", "Financial Activities",
+    "Mining and Logging",
+    "Construction", "Manufacturing",
+    "Trade Transportation and Utilities", "Information", "Financial Activities",
     "Professional and Business Services", "Education and Health Services",
-    "Leisure and Hospitality", "Other Services", "Government", "Federal",
-    "State Government", "Local Government"
+    "Leisure and Hospitality", "Other Services", "Government"
 ]
 
 SECTOR_ICONS = {
-    "Total Nonfarm": "📊", "Total Private": "🏢", "Goods-Producing": "🏭", "Mining and Logging": "⛏️",
-    "Construction": "🚧", "Manufacturing": "⚙️", "Private Service-Providing": "🛍️",
-    "Trade, Transportation, and Utilities": "🚚", "Information": "💻", "Financial Activities": "💰",
+    "Mining and Logging": "⛏️",
+    "Construction": "🚧", "Manufacturing": "⚙️",
+    "Trade Transportation and Utilities": "🚚", "Information": "💻", "Financial Activities": "💰",
     "Professional and Business Services": "📈", "Education and Health Services": "🏥",
-    "Leisure and Hospitality": "🎯", "Other Services": "🔧", "Government": "🏛️", "Federal": "🇺🇸",
-    "State Government": "🏙️", "Local Government": "🏘️"
+    "Leisure and Hospitality": "🎯", "Other Services": "🔧", "Government": "🏛️"
 }
 
 # -------------------------------------------------------------------------------------------------
@@ -145,7 +145,7 @@ def plot_ft_pt_ratio(df):
     fig = go.Figure()
     fig.add_trace(go.Scatter(x=df["date"], y=df["FT/PT Ratio"], mode="lines+markers"))
     fig.update_layout(
-        title="⚖️ Full-Time / Part-Time Ratio",
+        title="Full-Time / Part-Time Ratio",
         xaxis_title="Date",
         yaxis_title="Ratio",
         template="plotly_white",
@@ -198,13 +198,155 @@ def plot_jobless_claims(df):
     ))
 
     fig.update_layout(
-        title="📉 Jobless Claims Overview",
+        title="Jobless Claims Overview",
         xaxis_title="Date",
         yaxis_title="Number of Claims",
         template="plotly_white",
         height=460
     )
     return fig
+
+# -------------------------------------------------------------------------------------------------
+# Universal Labour Tabs
+# -------------------------------------------------------------------------------------------------
+def render_universal_labour_tabs(selected_use_case: str, df: pd.DataFrame, tab_key: str) -> bool:
+    """
+    Universal UI (consistent across all countries) for:
+    - Employment Trends
+    - Unemployment Context
+    - Labour Force Engagement
+
+    Returns True if it handled the use case, else False.
+    """
+    # --- Employment Trends ---
+    if selected_use_case == "Employment Trends":
+        subtab1, subtab2, subtab3 = st.tabs([
+            "📈 Hiring Momentum",
+            "📉 Volatility Context",
+            "🔁 Inflection Points"
+        ])
+
+        with subtab1:
+            display_chart_with_fallback(
+                plot_labour_line_chart(
+                    df,
+                    "Number of People in Employment",
+                    "Employment Trends",
+                    "Employment Level"
+                ),
+                label=f"{tab_key}_HiringMomentum"
+            )
+
+        with subtab2:
+            display_chart_with_fallback(
+                plot_labour_volatility(
+                    df,
+                    "Number of People in Employment",
+                    "Hiring Volatility",
+                    "Employment Level"
+                ),
+                label=f"{tab_key}_HiringVolatility"
+            )
+
+        with subtab3:
+            display_chart_with_fallback(
+                plot_labour_momentum(
+                    df,
+                    "Number of People in Employment",
+                    "Turning Points in Employment",
+                    "Employment Level"
+                ),
+                label=f"{tab_key}_EmploymentInflection"
+            )
+        return True
+
+    # --- Unemployment Context ---
+    if selected_use_case == "Unemployment Context":
+        subtab1, subtab2, subtab3 = st.tabs([
+            "📈 Unemployment Direction",
+            "📈 Extremes & Reversion",
+            "🌪️ Volatility"
+        ])
+
+        with subtab1:
+            display_chart_with_fallback(
+                plot_labour_line_chart(
+                    df,
+                    "Unemployment Rate",
+                    "Unemployment Direction",
+                    "Unemployment Rate (%)"
+                ),
+                label=f"{tab_key}_UnemploymentDirection"
+            )
+
+        with subtab2:
+            display_chart_with_fallback(
+                plot_labour_with_extremes(
+                    df,
+                    "Unemployment Rate",
+                    "Reversion from Extremes",
+                    "Unemployment Rate (%)"
+                ),
+                label=f"{tab_key}_UnemploymentReversion"
+            )
+
+        with subtab3:
+            display_chart_with_fallback(
+                plot_labour_volatility(
+                    df,
+                    "Unemployment Rate",
+                    "Volatility in Unemployment",
+                    "Unemployment Rate (%)"
+                ),
+                label=f"{tab_key}_UnemploymentVolatility"
+            )
+        return True
+
+    # --- Labour Force Engagement ---
+    if selected_use_case == "Labour Force Engagement":
+        subtab1, subtab2, subtab3 = st.tabs([
+            "📈 Participation Direction",
+            "🔄 Structural Variability",
+            "📉 Historical Extremes"
+        ])
+
+        with subtab1:
+            display_chart_with_fallback(
+                plot_labour_line_chart(
+                    df,
+                    "Labour Participation Rate",
+                    "Participation Trend",
+                    "Participation Rate (%)"
+                ),
+                label=f"{tab_key}_ParticipationTrend"
+            )
+
+        with subtab2:
+            display_chart_with_fallback(
+                plot_labour_volatility(
+                    df,
+                    "Labour Participation Rate",
+                    "Variability in Participation",
+                    "Volatility (percentage points)",
+                    window=6
+                ),
+                label=f"{tab_key}_ParticipationVariability"
+            )
+
+        with subtab3:
+            display_chart_with_fallback(
+                plot_labour_with_extremes(
+                    df,
+                    "Labour Participation Rate",
+                    "Reversion from Historical Extremes",
+                    "Participation Rate (%)"
+                ),
+                label=f"{tab_key}_ParticipationExtremes"
+            )
+        return True
+
+    return False
+
 
 # -------------------------------------------------------------------------------------------------
 # 🚦 Chart Dispatcher — Universal Charts First, Local Extensions After
@@ -218,21 +360,10 @@ def render_all_charts_local(selected_use_case, tab_mapping, df_map):
         with tab:
             df = data_slice.reset_index()
 
-            # --- Universal ---
-            if selected_use_case == "Employment Trends":
-                display_chart_with_fallback(
-                    plot_labour_line_chart(df, "Employment ex Agriculture", "Employment Level", "Employment (000s)"),
-                    label=f"{tab}_EmploymentTrends")
-
-            elif selected_use_case == "Unemployment Context":
-                display_chart_with_fallback(
-                    plot_labour_line_chart(df, "Unemployment Rate", "Unemployment", "%"),
-                    label=f"{tab}_Unemployment")
-
-            elif selected_use_case == "Labour Force Engagement":
-                display_chart_with_fallback(
-                    plot_labour_line_chart(df, "Labour Participation Rate", "Participation", "%"),
-                    label=f"{tab}_Participation")
+            # --- Universal (consistent across countries) ---
+            handled = render_universal_labour_tabs(selected_use_case, df, tab)
+            if handled:
+                continue
 
             # --- Local Extensions (Business Sector Employment Breakdown) ---
             elif selected_use_case == "Business Sector Employment Breakdown":

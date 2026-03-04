@@ -786,10 +786,10 @@ apps/economic_exploration/economic_series_map.py
 "United States": {
     "200_💼_labour_market_dynamics": {
         "employment_template": {
-            "Employment ex Agriculture": {
+            "Number of People in Employment": {
                 "Use Case": "Employment Trends",
-                "name": "Employment ex Agriculture",
-                "ui_display_name": "Total Employment Employment ex Agriculture (Thousands)",
+                "name": "Number of People in Employment",
+                "ui_display_name": "Total Employment Number of People in Employment (Thousands)",
                 "indicator_id": "201_total_employment",
                 "source_indicator": "PAYEMS",
                 "theme": "200_labour_market_dynamics",
@@ -888,7 +888,7 @@ Each dataset must meet the following:
 `/apps/data_sources/economic_data/<country_code>/`
 
 #### 📄 Example Structure:
-| Date       | Participation Rate |Employment ex Agriculture | Unemployment Rate | ... |
+| Date       | Participation Rate |Number of People in Employment | Unemployment Rate | ... |
 |------------|--------------------|--------------------------|-------------------|-----|
 | 1948-01-01 | 58.6               | 44679                    | 3.4               |     |
 
@@ -1106,7 +1106,7 @@ with theme_tabs[3]:
     - USCONS: `Construction`
     - MANEMP: `Manufacturing`
     - CES0800000001: `Private Service-Providing`
-    - USTPU: `Trade, Transportation, and Utilities`
+    - USTPU: `Trade Transportation and Utilities`
     - USINFO: `Information`
     - USFIRE: `Financial Activities`
     - USPBS: `Professional and Business Services`

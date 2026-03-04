@@ -109,19 +109,19 @@ def render_all_charts_local(selected_use_case, tab_mapping, df_map):
                 ])
                 with subtab1:
                     display_chart_with_fallback(
-                        plot_labour_line_chart(df, "Employment ex Agriculture",
+                        plot_labour_line_chart(df, "Number of People in Employment",
                         "Employment Trends", "Employment Level"),
                         label=f"{tab}_Hiring Momentum"
                     )
                 with subtab2:
                     display_chart_with_fallback(
-                        plot_labour_line_chart(df, "Employment ex Agriculture",
+                        plot_labour_line_chart(df, "Number of People in Employment",
                         "Hiring Volatility", "Employment Level"),
                         label=f"{tab}_Hiring Volatility"
                     )
                 with subtab3:
                     display_chart_with_fallback(
-                        plot_labour_line_chart(df, "Employment ex Agriculture",
+                        plot_labour_line_chart(df, "Number of People in Employment",
                         "Turning Points in Employment", "Employment Level"),
                         label=f"{tab}_Employment Inflection"
                     )

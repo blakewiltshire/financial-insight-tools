@@ -91,6 +91,7 @@ LOCAL_INSIGHTS = {
             "text": "Insufficient data to detect sector momentum."
         }
     },
+
     "Business Sector Employment Breakdown – Stress": {
         "Sector Stress": {
             "bias": "Contraction Warning",
@@ -101,10 +102,19 @@ LOCAL_INSIGHTS = {
             "text": "Insufficient data to detect sector stress."
         }
     },
+
     "Business Sector Employment Breakdown – Summary": {
-        "Sector Summary": {
+        "Broad Expansion": {
+            "bias": "Growth Supportive",
+            "text": "Hiring breadth appears positive across sectors — labour demand is expanding across industries."
+        },
+        "Broad Contraction": {
+            "bias": "Contraction Warning",
+            "text": "Sector hiring breadth is weakening — employment pressure appears to be spreading across industries."
+        },
+        "Mixed Sector Activity": {
             "bias": "Neutral",
-            "text": "Average sector hiring change stands at {value}k jobs/month."
+            "text": "Sector signals are mixed — expansion and contraction coexist across industries."
         },
         "Insufficient Data": {
             "bias": "Neutral",
