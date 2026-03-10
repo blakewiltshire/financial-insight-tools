@@ -20,7 +20,7 @@ Note: GitHub’s in-browser PDF preview may not render complex code-block format
 
 ## Python Version
 
-Tested on 3.12.x
+Python (tested on 3.12.x)
 
 ---
 
@@ -315,7 +315,7 @@ Each guide functions as a self-contained analytical unit while aligning to a bro
 Financial Insight Tools operationalises elements of this framework in an applied research environment. The application can be used independently; the guides provide deeper architectural framing for those exploring the underlying structural model.
 
 Further context:  
-www.blakewiltshire.com
+https://blakewiltshire.com
 
 ---
 
