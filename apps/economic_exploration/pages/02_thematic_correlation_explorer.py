@@ -272,7 +272,7 @@ summary_df = pd.DataFrame(summary_data)
 # -------------------------------------------------------------------------------------------------
 # Main Correlation Analysis Tabs (Canonical)
 # -------------------------------------------------------------------------------------------------
-tabs = st.tabs(["Overview Summary", "📉 Short-Term (50 Days)", "📊 Medium-Term (200 Days)", "🕰 Full History", "ℹ️ Help"])
+tabs = st.tabs(["Overview Summary", "📉 Short-Term (50 Periods)", "📊 Medium-Term (200 Periods)", "🕰 Full History", "ℹ️ Help"])
 
 # Overview Tab
 with tabs[0]:
