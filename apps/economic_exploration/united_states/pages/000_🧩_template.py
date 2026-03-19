@@ -518,7 +518,7 @@ else:
     label, explanation = get_alignment_score_label(ratio, selected_use_case)
 
 # --- Macro Conditions Summary ---
-st.subheader("📊 Macro Conditions Summary")
+st.subheader("Macro Conditions Summary")
 st.caption(f"Timeframe evaluated: **{selected_label}**")
 
 st.markdown(
@@ -637,7 +637,7 @@ of time series data.")
 # --- Summary Table ---
 # -------------------------------------------------------------------------------------------------
 st.divider()
-st.subheader("🧾 Macro Signal Summary")
+st.subheader("Macro Signal Summary")
 gb = GridOptionsBuilder.from_dataframe(summary_df)
 gb.configure_default_column(wrapText=True, autoHeight=True)
 gb.configure_grid_options(domLayout='autoHeight')

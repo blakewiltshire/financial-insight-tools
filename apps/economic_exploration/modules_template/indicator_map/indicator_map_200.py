@@ -70,19 +70,10 @@ datasets exist.
 system-stable.
 """
 
-# -------------------------------------------------------------------------------------------------
-# 📦 Imports and Path Setup
-# -------------------------------------------------------------------------------------------------
-import os
-import sys
-
-LOCAL_PATH = os.path.abspath(os.path.dirname(__file__))
-UNIVERSAL_PATH = os.path.abspath(os.path.join(LOCAL_PATH, "..", "universal_indicator_map"))
-if UNIVERSAL_PATH not in sys.path:
-    sys.path.append(UNIVERSAL_PATH)
+import pandas as pd
 
 # -------------------------------------------------------------------------------------------------
-# 🔁 Universal Template Signal Import
+# 📦 Imports — Universal Indicator Maps
 # -------------------------------------------------------------------------------------------------
 from universal_indicator_map_200 import (
     options_employment_signals_map,
@@ -91,24 +82,257 @@ from universal_indicator_map_200 import (
 )
 
 # -------------------------------------------------------------------------------------------------
-# 🧠 Local Indicator Definition and Mappings (Optional)
+# ✅ Sector Universe (strict) — prevents non-sector series being ranked as sectors
+# -------------------------------------------------------------------------------------------------
+SECTOR_UNIVERSE_200 = [
+    # "Total Nonfarm",
+    # "Total Private",
+    # "Goods-Producing",
+    "Mining and Logging",
+    "Construction",
+    "Manufacturing",
+    # "Private Service-Providing",
+    "Trade Transportation and Utilities",
+    "Information",
+    "Financial Activities",
+    "Professional and Business Services",
+    "Education and Health Services",
+    "Leisure and Hospitality",
+    "Other Services",
+    "Government",
+    "Federal",
+    "State Government",
+    "Local Government",
+]
+
+def _get_sector_df(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Return a dataframe restricted to known sector columns present in df.
+    """
+    if df is None or df.empty:
+        return df
+    cols = [c for c in SECTOR_UNIVERSE_200 if c in df.columns]
+    if not cols:
+        return pd.DataFrame(index=df.index)
+    return df[cols]
+
+# -------------------------------------------------------------------------------------------------
+# 📊 Business Sector Employment Breakdown
 # -------------------------------------------------------------------------------------------------
 
+def sector_employment_momentum(df, period=None):
+    if df is None or df.empty:
+        return "Insufficient Data"
+
+    try:
+        sector_df = _get_sector_df(df)
+        if sector_df.empty:
+            return "Insufficient Data"
+
+        recent = sector_df.tail(period or 3)
+        changes = recent.diff().mean(skipna=True)
+        changes = changes.dropna()
+
+        if changes.empty:
+            return "Insufficient Data"
+
+        top_sector = changes.idxmax()
+        return f"Sector Momentum: {top_sector}"
+
+    except Exception:
+        return "Insufficient Data"
+
+
+def sector_employment_stress(df, period=None):
+    if df is None or df.empty:
+        return "Insufficient Data"
+
+    try:
+        sector_df = _get_sector_df(df)
+        if sector_df.empty:
+            return "Insufficient Data"
+
+        recent = sector_df.tail(period or 3)
+        changes = recent.diff().mean(skipna=True)
+        changes = changes.dropna()
+
+        if changes.empty:
+            return "Insufficient Data"
+
+        bottom_sector = changes.idxmin()
+        return f"Sector Stress: {bottom_sector}"
+
+    except Exception:
+        return "Insufficient Data"
+
+
+def sector_employment_summary(df, period=None):
+    if df is None or df.empty:
+        return "Insufficient Data"
+    try:
+        sector_df = _get_sector_df(df).dropna()
+        if sector_df.empty:
+            return "Insufficient Data"
+
+        recent = sector_df.tail(period or 3)
+        mean_change = recent.diff().mean().mean()
+
+        if pd.isna(mean_change):
+            return "Insufficient Data"
+
+        if mean_change >= 0.5:
+            return "Broad Expansion"
+        if mean_change <= -0.5:
+            return "Broad Contraction"
+        return "Mixed Sector Activity"
+    except Exception:
+        return "Insufficient Data"
+
+BUSINESS_SECTOR_EMPLOYMENT_SIGNALS = {
+    "Business Sector Employment Breakdown – Momentum": sector_employment_momentum,
+    "Business Sector Employment Breakdown – Stress": sector_employment_stress,
+    "Business Sector Employment Breakdown – Summary": sector_employment_summary,
+}
 
 # -------------------------------------------------------------------------------------------------
-# Merge: Universal + Local Indicator Maps
+# 📊 Full-Time vs Part-Time Employment Dynamics
 # -------------------------------------------------------------------------------------------------
+
+def employment_type_balance_signal(df, period=None):
+    full_col = "Full-Time Employment"
+    part_col = "Part-Time Employment"
+    if df is None or full_col not in df.columns or part_col not in df.columns:
+        return "Insufficient Data"
+    try:
+        full_recent = df[full_col].dropna().tail(period or 3).diff().mean()
+        part_recent = df[part_col].dropna().tail(period or 3).diff().mean()
+        if abs(full_recent) < 0.1 and abs(part_recent) < 0.1:
+            return "Minimal Shift"
+        if full_recent > part_recent:
+            return "Full-Time Leading"
+        if part_recent > full_recent:
+            return "Part-Time Leading"
+        return "Indeterminate"
+    except Exception:
+        return "Insufficient Data"
+
+def part_time_stress_signal(df, period=None, threshold=0.5):
+    col = "Part-Time Employment"
+    if df is None or col not in df.columns:
+        return "Insufficient Data"
+    try:
+        recent = df[col].dropna().pct_change().iloc[-1] * 100
+        if recent > threshold:
+            return "Part-Time Surge"
+        return "Stable"
+    except Exception:
+        return "Insufficient Data"
+
+def employment_quality_shift_signal(df, period=None):
+    full_col = "Full-Time Employment"
+    part_col = "Part-Time Employment"
+    if df is None or full_col not in df.columns or part_col not in df.columns:
+        return "Insufficient Data"
+    try:
+        recent_full = df[full_col].dropna().tail(period or 3).diff().mean()
+        recent_part = df[part_col].dropna().tail(period or 3).diff().mean()
+        if recent_full < 0 and recent_part > 0:
+            return "Part-Time Replacing Full-Time"
+        if recent_full > 0 and recent_part > 0:
+            return "Both Expanding"
+        if recent_full < 0 and recent_part < 0:
+            return "Both Contracting"
+        return "Stable or Mixed"
+    except Exception:
+        return "Insufficient Data"
+
+FULL_PART_TIME_EMPLOYMENT_SIGNALS = {
+    "Employment Type Balance": employment_type_balance_signal,
+    "Part-Time Employment Stress": part_time_stress_signal,
+    "Employment Quality Shift": employment_quality_shift_signal,
+}
+
+# -------------------------------------------------------------------------------------------------
+# 📊 Wage Dynamics (Average Hourly Earnings)
+# -------------------------------------------------------------------------------------------------
+
+def earnings_trend_signal(df, period=None):
+    col = "Average Hourly Earnings (Total Private)"
+    if df is None or col not in df.columns or df[col].dropna().shape[0] < 2:
+        return "Insufficient Data"
+    try:
+        recent = df[col].dropna().pct_change().tail(period or 3) * 100
+        avg_growth = recent.mean()
+        if avg_growth > 0.3:
+            return "Wage Acceleration"
+        elif avg_growth < 0.1:
+            return "Wage Deceleration"
+        else:
+            return "Stagnant Wages"
+    except Exception:
+        return "Insufficient Data"
+
+AVERAGE_HOURLY_EARNINGS_SIGNALS = {
+    "Wage Growth Trend": earnings_trend_signal,
+}
+
+# -------------------------------------------------------------------------------------------------
+# 📊 Jobless Claims (High-Frequency Employment Stress)
+# -------------------------------------------------------------------------------------------------
+
+def initial_claims_signal(df, period=None, threshold=2.0):
+    col = "Initial Jobless Claims"
+    if df is None or col not in df.columns:
+        return "Insufficient Data"
+    try:
+        recent = df[col].dropna().pct_change().iloc[-1] * 100
+        if recent > threshold:
+            return "Initial Claims Surge"
+        return "Stable"
+    except Exception:
+        return "Insufficient Data"
+
+def continued_claims_trend(df, period=None):
+    col = "Continued Jobless Claims"
+    if df is None or col not in df.columns:
+        return "Insufficient Data"
+    try:
+        growth = df[col].dropna().pct_change().tail(period or 4).mean() * 100
+        if growth > 0.5:
+            return "Continued Claims Rising"
+        if growth < -0.5:
+            return "Improving Conditions"
+        return "Flat Trend"
+    except Exception:
+        return "Insufficient Data"
+
+INITIAL_JOBLESS_CLAIMS_SIGNALS = {
+    "Initial Jobless Claims": initial_claims_signal
+}
+
+CONTINUED_JOBLESS_CLAIMS_SIGNALS = {
+    "Continued Jobless Claims": continued_claims_trend
+}
+
+# -------------------------------------------------------------------------------------------------
+# 🔗 Merge Complete Indicator Maps
+# -------------------------------------------------------------------------------------------------
+
 ALL_INDICATOR_MAPS = {
-    # Universal Indicators
+    # --- Universal Shared Use Cases ---
     "Employment Trends": options_employment_signals_map,
     "Unemployment Context": options_unemployment_signals_map,
     "Labour Force Engagement": options_participation_signals_map,
-    # Local to Coutry (If applicable)
+
+    # --- Local Use Cases ---
+    "Business Sector Employment Breakdown": BUSINESS_SECTOR_EMPLOYMENT_SIGNALS,
+    "Full-Time vs Part-Time Employment": FULL_PART_TIME_EMPLOYMENT_SIGNALS,
+    "Average Hourly Earnings": AVERAGE_HOURLY_EARNINGS_SIGNALS,
+    "Jobless Claims": {
+        **INITIAL_JOBLESS_CLAIMS_SIGNALS,
+        **CONTINUED_JOBLESS_CLAIMS_SIGNALS
+    }
 }
 
-
 def get_indicator_maps():
-    """
-    Returns the complete indicator mapping aligned to signal-level use cases.
-    """
     return ALL_INDICATOR_MAPS

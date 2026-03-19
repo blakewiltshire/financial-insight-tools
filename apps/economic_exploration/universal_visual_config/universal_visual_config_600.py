@@ -42,10 +42,11 @@ Usage:
 # -------------------------------------------------------------------------------------------------
 # 📦 Imports
 # -------------------------------------------------------------------------------------------------
-import pandas as pd
-import streamlit as st
-import plotly.graph_objects as go
 import uuid
+import pandas as pd
+import plotly.graph_objects as go
+import streamlit as st
+
 
 # -------------------------------------------------------------------------------------------------
 # 🧩 Chart Display Wrapper with Fallback
@@ -68,95 +69,225 @@ def display_chart_with_fallback(
         return
 
     unique_key = custom_key if custom_key else f"{label}_{uuid.uuid4().hex}"
-    st.plotly_chart(fig, width='stretch', key=unique_key)
+    st.plotly_chart(fig, width="stretch", key=unique_key)
 
     if allow_partial and partial_warning:
         st.info(f"ℹ️ {label} displayed with partial data.")
 
+
 # -------------------------------------------------------------------------------------------------
-# 📊 Generic Plot — Signal A: Basic Time Series
+# Housing Construction Pipeline — Multi-Series Chart
 # -------------------------------------------------------------------------------------------------
-def plot_signal_a_chart(df: pd.DataFrame) -> go.Figure:
+def plot_housing_pipeline_chart(df: pd.DataFrame) -> go.Figure:
     """
-    Renders a simple time series line chart for 'Signal A'.
+    Renders the Housing Construction Pipeline chart with:
+    - Housing Units Authorized
+    - Housing Units Started
+    - Housing Units Completed
+    - Linear trend line for Housing Units Authorized
     """
-    if "date" not in df.columns or "Signal A" not in df.columns:
+
+    required_cols = [
+        "date",
+        "Housing Units Authorized",
+        "Housing Units Started",
+        "Housing Units Completed"
+    ]
+
+    if not all(col in df.columns for col in required_cols):
         return go.Figure()
 
     fig = go.Figure()
+
+    # --- Authorized ---
     fig.add_trace(go.Scatter(
-        x=df["date"], y=df["Signal A"],
-        mode="lines+markers", name="Signal A"
+        x=df["date"],
+        y=df["Housing Units Authorized"],
+        mode="lines",
+        name="Housing Units Authorized"
     ))
 
+    # --- Starts ---
+    fig.add_trace(go.Scatter(
+        x=df["date"],
+        y=df["Housing Units Started"],
+        mode="lines",
+        name="Housing Units Started"
+    ))
+
+    # --- Completions ---
+    fig.add_trace(go.Scatter(
+        x=df["date"],
+        y=df["Housing Units Completed"],
+        mode="lines",
+        name="Housing Units Completed"
+    ))
+
+    # --- Authorized Trend Line ---
+    try:
+        import numpy as np
+
+        y = df["Housing Units Authorized"].values
+        x = np.arange(len(y))
+
+        coeffs = np.polyfit(x, y, 1)
+        trend = coeffs[0] * x + coeffs[1]
+
+        fig.add_trace(go.Scatter(
+            x=df["date"],
+            y=trend,
+            mode="lines",
+            name="Authorized Trend",
+            line=dict(color="grey", dash="dash", width=1)
+        ))
+    except Exception:
+        pass
+
     fig.update_layout(
-        title="🔹 Signal A — Time Series Chart",
+        title="Housing Construction Pipeline",
         xaxis_title="Date",
-        yaxis_title="Value",
-        height=400,
-        template="plotly_white"
+        yaxis_title="Units (SAAR)",
+        height=420,
+        template="plotly_white",
+        legend=dict(
+            orientation="h",
+            yanchor="bottom",
+            y=1.02,
+            xanchor="right",
+            x=1
+        )
     )
+
     return fig
 
+
 # -------------------------------------------------------------------------------------------------
-# 📊 Generic Plot — Signal B: Rolling Average
+# Mortgage Financing Conditions — Single-Series Chart
 # -------------------------------------------------------------------------------------------------
-def plot_signal_b_chart(df: pd.DataFrame, window: int = 3) -> go.Figure:
+def plot_mortgage_financing_chart(df: pd.DataFrame) -> go.Figure:
     """
-    Renders 'Signal B' with an optional rolling average overlay.
+    Renders the Mortgage Financing Conditions chart with:
+    - 30-Year Mortgage Rate
+    - Linear trend line
     """
-    if "date" not in df.columns or "Signal B" not in df.columns:
+
+    required_cols = ["date", "30-Year Mortgage Rate"]
+
+    if not all(col in df.columns for col in required_cols):
         return go.Figure()
 
-    df = df.copy()
-    df["Rolling Avg"] = df["Signal B"].rolling(window).mean()
-
     fig = go.Figure()
+
     fig.add_trace(go.Scatter(
-        x=df["date"], y=df["Signal B"],
-        mode="lines", name="Signal B"
+        x=df["date"],
+        y=df["30-Year Mortgage Rate"],
+        mode="lines",
+        name="30-Year Mortgage Rate"
     ))
-    fig.add_trace(go.Scatter(
-        x=df["date"], y=df["Rolling Avg"],
-        mode="lines", name=f"{window}-Period Avg",
-        line={"dash": "dot"}
-    ))
+
+    try:
+        import numpy as np
+
+        y = df["30-Year Mortgage Rate"].values
+        x = np.arange(len(y))
+
+        coeffs = np.polyfit(x, y, 1)
+        trend = coeffs[0] * x + coeffs[1]
+
+        fig.add_trace(go.Scatter(
+            x=df["date"],
+            y=trend,
+            mode="lines",
+            name="Mortgage Rate Trend",
+            line=dict(color="grey", dash="dash", width=1)
+        ))
+    except Exception:
+        pass
 
     fig.update_layout(
-        title="🔹 Signal B — With Rolling Average",
+        title="Mortgage Financing Conditions",
         xaxis_title="Date",
-        yaxis_title="Value",
-        height=400,
-        template="plotly_white"
+        yaxis_title="Rate (%)",
+        height=420,
+        template="plotly_white",
+        legend=dict(
+            orientation="h",
+            yanchor="bottom",
+            y=1.02,
+            xanchor="right",
+            x=1
+        )
     )
+
     return fig
 
+
 # -------------------------------------------------------------------------------------------------
-# 📊 Generic Plot — Signal C: Band Highlight
+# Yield Curve Structure — Single-Series Chart
 # -------------------------------------------------------------------------------------------------
-def plot_signal_c_chart(df: pd.DataFrame) -> go.Figure:
+def plot_yield_curve_structure_chart(df: pd.DataFrame) -> go.Figure:
     """
-    Plots 'Signal C' with highlighted bands (e.g., thresholds or confidence zone).
+    Renders the Yield Curve Structure chart with:
+    - Yield Curve Spread
+    - Zero reference line
+    - Linear trend line
     """
-    if "date" not in df.columns or "Signal C" not in df.columns:
+
+    required_cols = ["date", "Yield Curve Spread"]
+
+    if not all(col in df.columns for col in required_cols):
         return go.Figure()
 
     fig = go.Figure()
+
     fig.add_trace(go.Scatter(
-        x=df["date"], y=df["Signal C"],
-        mode="lines", name="Signal C"
+        x=df["date"],
+        y=df["Yield Curve Spread"],
+        mode="lines",
+        name="Yield Curve Spread"
     ))
 
-    # Example band (e.g., neutral zone between -1 and 1)
-    fig.add_shape(type="rect", xref="paper", yref="y",
-                  x0=0, x1=1, y0=-1, y1=1,
-                  fillcolor="LightGray", opacity=0.3, line_width=0)
+    # --- Zero Line ---
+    fig.add_hline(
+        y=0,
+        line_dash="dot",
+        line_color="grey",
+        line_width=1
+    )
+
+    # --- Trend Line ---
+    try:
+        import numpy as np
+
+        y = df["Yield Curve Spread"].values
+        x = np.arange(len(y))
+
+        coeffs = np.polyfit(x, y, 1)
+        trend = coeffs[0] * x + coeffs[1]
+
+        fig.add_trace(go.Scatter(
+            x=df["date"],
+            y=trend,
+            mode="lines",
+            name="Curve Trend",
+            line=dict(color="grey", dash="dash", width=1)
+        ))
+    except Exception:
+        pass
 
     fig.update_layout(
-        title="🔹 Signal C — With Neutral Band",
+        title="Yield Curve Structure",
         xaxis_title="Date",
-        yaxis_title="Value",
-        height=400,
-        template="plotly_white"
+        yaxis_title="Spread (%)",
+        height=420,
+        template="plotly_white",
+        legend=dict(
+            orientation="h",
+            yanchor="bottom",
+            y=1.02,
+            xanchor="right",
+            x=1
+        )
     )
+
     return fig

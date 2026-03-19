@@ -60,46 +60,126 @@ and composite scoring weights applied across the entire decision-support system.
 """
 
 # -------------------------------------------------------------------------------------------------
-# --- Generic Scoring Label Dispatcher
+# --- Scoring Label Dispatcher
 # -------------------------------------------------------------------------------------------------
-
 def get_alignment_score_label(alignment_ratio: float, use_case: str):
     """
-    Return placeholder label and description based on a score ratio and use case.
-
-    Parameters:
-        alignment_ratio (float): Numeric score, e.g. 0.85
-        use_case (str): Label such as "Placeholder Use Case A"
-
-    Returns:
-        tuple[str, str]: Status label and explanation
+    Return a structured alignment label and description based on a score ratio and use case.
     """
-    if alignment_ratio >= 0.85:
-        return ("✅ Strong Alignment", f"The indicators for {use_case} show strong structural alignment.")
-    if alignment_ratio >= 0.33:
-        return ("⚠️ Mixed Signals", f"The indicators for {use_case} show partial alignment.")
-    if alignment_ratio >= -0.2:
-        return ("⚠️ Weak Alignment", f"The indicators for {use_case} show inconsistent signals.")
-    return ("🚨 Misaligned", f"The indicators for {use_case} suggest divergence or reversal.")
+
+    def label_from_thresholds(
+        ratio_val: float,
+        strong_msg: tuple[str, str],
+        mixed_msg: tuple[str, str],
+        soft_msg: tuple[str, str],
+        misaligned_msg: tuple[str, str]
+    ):
+        if ratio_val >= 0.85:
+            return ("✅ " + strong_msg[0], strong_msg[1])
+        if ratio_val >= 0.33:
+            return ("⚠️ " + mixed_msg[0], mixed_msg[1])
+        if ratio_val >= -0.2:
+            return ("⚠️ " + soft_msg[0], soft_msg[1])
+        return ("🚨 " + misaligned_msg[0], misaligned_msg[1])
+
+    if use_case == "Housing Construction Cycle":
+        return label_from_thresholds(
+            alignment_ratio,
+            (
+                "Pipeline Expanding",
+                "Housing pipeline signals are broadly aligned, suggesting forward approvals, "
+                "construction activity, and supply delivery are moving in a supportive direction."
+            ),
+            (
+                "Mixed Pipeline Signals",
+                "Housing pipeline indicators show partial alignment, with some stages holding "
+                "firmer than others."
+            ),
+            (
+                "Pipeline Softening",
+                "Housing pipeline signals are mixed, with forward approvals softening while "
+                "construction activity and supply delivery continue to reflect earlier momentum."
+            ),
+            (
+                "Pipeline Misalignment",
+                "Housing pipeline indicators are diverging, which may indicate pressure between "
+                "approvals, active construction, and delivered supply."
+            )
+        )
+
+    if use_case == "Mortgage Financing Conditions":
+        return label_from_thresholds(
+            alignment_ratio,
+            (
+                "Financing Conditions Easing",
+                "Mortgage financing signals are broadly aligned in a supportive direction, "
+                "suggesting borrowing conditions and affordability pressures are becoming less restrictive."
+            ),
+            (
+                "Mixed Financing Signals",
+                "Mortgage financing indicators show partial alignment, with borrowing cost, "
+                "affordability, and financing condition signals not moving uniformly."
+            ),
+            (
+                "Financing Pressures Building",
+                "Mortgage financing signals suggest some tightening pressure, with affordability "
+                "or borrowing cost conditions becoming less supportive."
+            ),
+            (
+                "Financing Conditions Tightening",
+                "Mortgage financing indicators are aligned in a restrictive direction, suggesting "
+                "tighter borrowing conditions across housing-sensitive credit activity."
+            )
+        )
+
+    if use_case == "Yield Curve Structure":
+        return label_from_thresholds(
+            alignment_ratio,
+            (
+                "Curve Structure Improving",
+                "Yield curve signals are broadly aligned in a supportive direction, suggesting "
+                "firmer macro expectations and a less compressed financial structure."
+            ),
+            (
+                "Mixed Curve Signals",
+                "Yield curve indicators show partial alignment, with slope, macro expectations, "
+                "and liquidity interpretation not fully reinforcing one another."
+            ),
+            (
+                "Curve Structure Softening",
+                "Yield curve signals suggest a softer structure, with some flattening or weaker "
+                "macro interpretation emerging relative to recent norms."
+            ),
+            (
+                "Curve Compression Warning",
+                "Yield curve indicators are aligned in a more restrictive direction, suggesting "
+                "a flatter or more compressed macro-financial structure."
+            )
+        )
+
+    return ("⚠️ No Scoring", "No use case-specific alignment logic was found.")
+
 
 # -------------------------------------------------------------------------------------------------
-# --- Placeholder Indicator Weights
+# --- Universal Indicator Weights (1–3 scale)
 # -------------------------------------------------------------------------------------------------
-
 indicator_weights = {
-    "Signal A": 1,
-    "Signal B": 1,
-    "Signal C": 1
+    "Forward Development Intent": 3,
+    "Construction Conversion Flow": 2,
+    "Supply Delivery Progress": 2,
+    "Mortgage Borrowing Cost": 3,
+    "Housing Affordability Pressure": 2,
+    "Financing Condition Shift": 3,
+    "Curve Slope Positioning": 3,
+    "Macro Expectation Shift": 2,
+    "Liquidity Regime Signal": 3,
 }
+
 
 def get_indicator_weight(indicator_name: str) -> int:
     """
-    Return relative weight for placeholder indicators.
+    Return the relative weight for a given indicator.
 
-    Parameters:
-        indicator_name (str)
-
-    Returns:
-        int
+    Defaults to 1 if indicator is not explicitly defined.
     """
     return indicator_weights.get(indicator_name, 1)

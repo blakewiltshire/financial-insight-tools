@@ -182,7 +182,7 @@ with col2:
     st.markdown("### 💸 Compounding Calculator")
     st.write("Visualise the impact of recurring investment growth.")
     if st.button("💸 Compounding Calculator"):
-        st.switch_page("pages/16_💸_compounding_calculator.py")
+        st.switch_page("pages/16_compounding_calculator.py")
 
 st.divider()
 

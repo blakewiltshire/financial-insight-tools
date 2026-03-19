@@ -26,4 +26,4 @@ This directory contains pre-built template modules for each {country} **thematic
 - Country-specific modules must be copied to `apps/economic_exploration/{country}/{module_type}/`.
 
 ---
-© 2025 Blake Media Ltd. All rights reserved.
+© 2026 Blake Media Ltd. All rights reserved.

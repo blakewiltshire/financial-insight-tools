@@ -57,20 +57,50 @@ framing for any theme not explicitly overridden at country level.
 # Use Cases
 # -------------------------------------------------------------------------------------------------
 USE_CASES = {
-    "Signal A": {
-        "Indicators": ["Signal A"],
-        "Categories": ["Template Category"],
-        "Description": "Standalone demonstration of Signal A logic and rendering."
+    "Housing Construction Cycle": {
+        "Indicators": [
+            "Forward Development Intent",
+            "Construction Conversion Flow",
+            "Supply Delivery Progress"
+        ],
+        "Categories": [
+            "Housing Units Authorized",
+            "Housing Units Started",
+            "Housing Units Completed"
+        ],
+        "Description": (
+            "Tracks the housing construction pipeline from approvals to active "
+            "construction and completed supply delivery."
+        )
     },
-    "Signal B": {
-        "Indicators": ["Signal B"],
-        "Categories": ["Template Category"],
-        "Description": "Standalone demonstration of Signal B logic and rendering."
+    "Mortgage Financing Conditions": {
+        "Indicators": [
+            "Mortgage Borrowing Cost",
+            "Housing Affordability Pressure",
+            "Financing Condition Shift"
+        ],
+        "Categories": [
+            "30-Year Mortgage Rate"
+        ],
+        "Description": (
+            "Tracks long-term mortgage borrowing costs as a structural signal for "
+            "housing affordability, credit-sensitive demand, and financing conditions."
+        )
     },
-    "Signal C": {
-        "Indicators": ["Signal C"],
-        "Categories": ["Template Category"],
-        "Description": "Standalone demonstration of Signal C logic and rendering."
+    "Yield Curve Structure": {
+        "Indicators": [
+            "Curve Slope Positioning",
+            "Macro Expectation Shift",
+            "Liquidity Regime Signal"
+        ],
+        "Categories": [
+            "Yield Curve Spread"
+        ],
+        "Description": (
+            "Tracks the spread between long- and short-term government yields to "
+            "observe macro expectations, liquidity conditions, and recession-sensitive "
+            "financial structure."
+        )
     }
 }
 

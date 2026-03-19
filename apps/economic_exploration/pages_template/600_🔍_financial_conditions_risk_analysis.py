@@ -224,7 +224,7 @@ DEFAULT_USE_CASE = "Signal A"   # Default focus in use case selector (must match
 
 DATASET_REGISTRY = {
     "df_primary": {
-        "label": "📄 Default Template",
+        "label": "📄 Housing Construction Pipeline",
         "file": f"{COUNTRY_CODE}_m_{THEME_ID}_structural.csv",
         "folder": STRUCTURAL_FOLDER,
         "frequency": "monthly",
@@ -232,8 +232,27 @@ DATASET_REGISTRY = {
         "show_in_underlying_data": True,
         "plot": True,
         "create_slice": True
+    },
+    "df_secondary": {
+        "label": "📄 Mortgage Financing Conditions",
+        "file": f"{COUNTRY_CODE}_w_{THEME_ID}_structural.csv",
+        "folder": STRUCTURAL_FOLDER,
+        "frequency": "weekly",
+        "cleaner": clean_economic_data,
+        "show_in_underlying_data": True,
+        "plot": True,
+        "create_slice": True
+    },
+    "df_extended": {
+        "label": "📄 Yield Curve Structure",
+        "file": f"{COUNTRY_CODE}_d_{THEME_ID}_structural.csv",
+        "folder": STRUCTURAL_FOLDER,
+        "frequency": "daily",
+        "cleaner": clean_economic_data,
+        "show_in_underlying_data": True,
+        "plot": True,
+        "create_slice": True
     }
-    # ➕ Add more datasets here if extending this module with additional signal layers
 }
 
 # --- End of User Configuration ---
@@ -416,8 +435,8 @@ for df_var, config in DATASET_REGISTRY.items():
 df_dict = {
     "df_primary_slice": df_primary_slice,
     "df_full": df_primary,
-    # "df_secondary_slice": df_secondary_slice,
-    # "df_extended_slice": df_extended_slice
+    "df_secondary_slice": df_secondary_slice,
+    "df_extended_slice": df_extended_slice
 }
 
 # --- Alignment Score (Platinum-Grade Unified Version) ---
@@ -524,7 +543,7 @@ else:
     label, explanation = get_alignment_score_label(ratio, selected_use_case)
 
 # --- Macro Conditions Summary ---
-st.subheader("📊 Macro Conditions Summary")
+st.subheader("Macro Conditions Summary")
 st.caption(f"Timeframe evaluated: **{selected_label}**")
 
 st.markdown(
@@ -624,8 +643,8 @@ st.caption(f"📌 Each 'Observation' corresponds to one data entry, based on the
 # -------------------------------------------------------------------------------------------------
 df_map = {
     "df_primary": df_primary,
-    # "df_secondary": df_secondary,
-    # "df_extended": df_extended
+    "df_secondary": df_secondary,
+    "df_extended": df_extended
 }
 
 # --- Chart Dispatcher ---
@@ -643,7 +662,7 @@ of time series data.")
 # --- Summary Table ---
 # -------------------------------------------------------------------------------------------------
 st.divider()
-st.subheader("🧾 Macro Signal Summary")
+st.subheader("Macro Signal Summary")
 gb = GridOptionsBuilder.from_dataframe(summary_df)
 gb.configure_default_column(wrapText=True, autoHeight=True)
 gb.configure_grid_options(domLayout='autoHeight')

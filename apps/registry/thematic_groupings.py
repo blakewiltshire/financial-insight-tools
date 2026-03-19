@@ -242,8 +242,8 @@ THEMATIC_GROUPS = {
         "memberships": {
             "201_total_employment": {
                 "Use Case": "Employment Template",
-                "title": "Employment ex Agriculture)",
-                "overview": "Measures total non-agricultural employment including private and government jobs. Tracks macro-level hiring trends and is a core signal of business cycle strength.",
+                "title": "Number of People in Employment",
+                "overview": "Measures total employment. Tracks macro-level hiring trends and is a core signal of business cycle strength.",
                 "why_it_matters": "A key employment indicator used in policy and market discussions. Tracks the pace of hiring and sectoral growth or contraction.",
                 "temporal_categorisation": "Coincident indicator",
                 "investment_action_importance": "🌟🌟🌟 - Central to assessing the health of the real economy and business cycle alignment.",
@@ -652,7 +652,7 @@ THEMATIC_GROUPS = {
         },
         "data_points": [
             "Policy Rate Signals: Fed Funds Rate and similar benchmarks to assess tightening or easing.",
-            "Yield Curves: Shape and slope of government bond curves to assess growth and risk outlook.",
+            "Yield Curve Structure: Shape and slope of government bond curves signalling macro expectations, financial conditions, and recession risk.",
             "Monetary Aggregates: M1/M2 to understand liquidity and credit availability.",
             "Velocity Metrics: Insights into how fast money circulates and supports demand."
         ],
@@ -783,12 +783,16 @@ THEMATIC_GROUPS = {
         },
         "template": {
             "financial_conditions_template": "Financial Conditions Template – For stress indicators, credit growth, and broad financial market conditions.",
-            "credit_cycle_default_template": "Credit Cycle & Default Risk Template – For credit tightening, default trends, and high-yield spread monitoring."
+            "credit_cycle_default_template": "Credit Cycle & Default Risk Template – For credit tightening, default trends, and high-yield spread monitoring.",
+            "housing_cycle_template": "Housing Construction Cycle Template – For financing conditions, permits, starts, and completions tracking across housing demand, credit sensitivity, and construction supply flow stages."
         },
         "data_points": [
             "Liquidity Flows: Assess levels of available capital in financial markets.",
             "Credit Expansion Trends: Understand the pace and breadth of lending and borrowing.",
-            "Banking Sector Health: Evaluate stress metrics and resilience levels across the financial system."
+            "Banking Sector Health: Evaluate stress metrics and resilience levels across the financial system.",
+            "Housing Construction Pipeline: Observe authorization, build activity, and completion flow as credit-sensitive signals shaping supply, industry activity, and broader economic interpretation.",
+            "Mortgage Financing Conditions: Monitor long-term mortgage borrowing costs influencing housing affordability and construction demand.",
+            "Yield Curve Structure: Observe long- versus short-term interest rate dynamics signalling liquidity conditions and macroeconomic expectations."
         ],
         "navigating_the_theme": "Credit growth, financial conditions indices, banking stress markers, and liquidity flow measures provide system-level signals monitoring leverage expansion, funding constraints, and structural market stress evolution across macroeconomic cycles.",
         "conclusion_and_further_exploration": "Financial conditions and credit indicators serve as composite signals reflecting systemic liquidity regimes, leverage sensitivity, credit tightening phases, and evolving systemic stress states across policy cycles.",
@@ -904,9 +908,94 @@ THEMATIC_GROUPS = {
                 "year_over_year": "Highlights major cyclical shifts.",
                 "recommended_time_periods": ["3M", "6M", "12M"],
                 "path": "pages/608_leveraged_loan_index.py"
-             },
-         }
-     },
+            },
+            "609_housing_units_authorized": {
+                "Use Case": "Housing Construction Cycle",
+                "title": "Housing Units Authorized",
+                "template": "housing_cycle_template",
+                "overview": "Measures the number of housing units authorized for future construction, capturing the earliest stage of the residential building pipeline.",
+                "why_it_matters": "Housing authorizations act as a forward-looking signal for construction activity, financing demand, supply pipeline formation, and broader credit-sensitive economic momentum.",
+                "temporal_categorisation": "Leading indicator",
+                "investment_action_importance": "🌟🌟🌟 - Helps frame early housing-cycle momentum, construction sensitivity, and downstream industry or market implications tied to financial conditions.",
+                "personal_impact_importance": "🌟🌟 - Signals potential changes in future housing supply, build activity, and the broader affordability and employment backdrop.",
+                "current_vs_previous": "Compares the latest authorizations to prior periods to detect acceleration or slowing in pipeline formation.",
+                "points_percentage_changes": "Tracks absolute and percentage changes to assess the strength and direction of future construction intent.",
+                "min_max_12months": "Highlights the highest and lowest authorization levels over the past year to place current readings in cycle context.",
+                "averages": "Uses average levels to identify whether authorization activity is running above or below recent housing-cycle norms.",
+                "year_over_year": "Compares current authorizations with the same period last year to surface broader directional shifts in the housing pipeline.",
+                "recommended_time_periods": ["MM", "3M", "6M", "12M"],
+                "path": "{country}/pages/600_🔍_financial_conditions_risk_analysis.py"
+            },
+            "610_housing_units_started": {
+                "Use Case": "Housing Construction Cycle",
+                "title": "Housing Units Started",
+                "template": "housing_cycle_template",
+                "overview": "Measures the number of housing units on which construction has begun, reflecting active build execution within the residential pipeline.",
+                "why_it_matters": "Housing starts provide a live read on construction activity, financing follow-through, developer confidence, and the conversion of approvals into real-economy building momentum.",
+                "temporal_categorisation": "Coincident indicator",
+                "investment_action_importance": "🌟🌟🌟 - Useful for tracking active cycle conditions across construction-linked industries, materials demand, and market sensitivity to shifting financial conditions.",
+                "personal_impact_importance": "🌟🌟 - Connects to employment conditions, local building activity, and the pace at which future housing supply is being advanced.",
+                "current_vs_previous": "Compares current starts with previous readings to show whether active construction is expanding or cooling.",
+                "points_percentage_changes": "Measures absolute and percentage changes to assess the pace of execution within the housing pipeline.",
+                "min_max_12months": "Shows the range of start activity over the past year to help place current construction intensity in context.",
+                "averages": "Calculates average start levels to reveal whether current activity is above or below recent construction norms.",
+                "year_over_year": "Compares starts with the same period last year to surface broader changes in construction momentum.",
+                "recommended_time_periods": ["MM", "3M", "6M", "12M"],
+                "path": "{country}/pages/600_🔍_financial_conditions_risk_analysis.py"
+            },
+            "611_housing_units_completed": {
+                "Use Case": "Housing Construction Cycle",
+                "title": "Housing Units Completed",
+                "template": "housing_cycle_template",
+                "overview": "Measures the number of housing units completed and ready to enter available supply, reflecting the delivery stage of the construction cycle.",
+                "why_it_matters": "Housing completions help reveal when pipeline activity is converting into delivered supply, with implications for housing availability, construction follow-through, and broader system interpretation.",
+                "temporal_categorisation": "Lagging indicator",
+                "investment_action_importance": "🌟🌟 - Helps confirm whether earlier construction momentum is translating into delivered supply and downstream sector effects.",
+                "personal_impact_importance": "🌟🌟🌟 - Most closely tied to housing availability, local supply conditions, and the pace at which pipeline activity reaches households and communities.",
+                "current_vs_previous": "Compares current completions with prior readings to show whether supply delivery is accelerating or normalizing.",
+                "points_percentage_changes": "Tracks absolute and percentage changes to assess how quickly completed supply is entering the market.",
+                "min_max_12months": "Highlights the highest and lowest completion levels over the past year for supply-cycle context.",
+                "averages": "Uses average completion levels to show whether delivered supply is running above or below recent norms.",
+                "year_over_year": "Compares completions with the same period last year to confirm broader shifts in delivered housing supply.",
+                "recommended_time_periods": ["MM", "3M", "6M", "12M"],
+                "path": "{country}/pages/600_🔍_financial_conditions_risk_analysis.py"
+            },
+            "612_30_year_mortgage_rate": {
+                "Use Case": "Housing Construction Cycle",
+                "title": "30-Year Mortgage Rate",
+                "template": "housing_cycle_template",
+                "overview": "Represents the average interest rate charged on standard 30-year fixed-rate mortgages, reflecting prevailing long-term borrowing costs in residential housing finance.",
+                "why_it_matters": "Mortgage rates influence housing affordability, borrowing demand, refinancing activity, and the willingness of households and developers to enter the housing market.",
+                "temporal_categorisation": "Leading indicator",
+                "investment_action_importance": "🌟🌟🌟 - Provides insight into financing conditions that shape housing demand, credit sensitivity, and broader construction-cycle momentum.",
+                "personal_impact_importance": "🌟🌟🌟 - Directly affects mortgage affordability, household borrowing capacity, and the cost of home ownership or refinancing decisions.",
+                "current_vs_previous": "Compares the latest mortgage rate with prior readings to highlight whether borrowing costs are rising, stabilising, or easing.",
+                "points_percentage_changes": "Tracks both point movements and percentage changes to show shifts in financing conditions affecting housing demand.",
+                "min_max_12months": "Identifies the highest and lowest mortgage rate levels observed over the past year to contextualise current financing conditions.",
+                "averages": "Uses average rate levels to reveal whether current mortgage costs sit above or below recent borrowing cost norms.",
+                "year_over_year": "Compares current mortgage rates with the same period last year to surface broader shifts in long-term housing financing conditions.",
+                "recommended_time_periods": ["MM", "3M", "6M", "12M"],
+                "path": "{country}/pages/600_🔍_financial_conditions_risk_analysis.py"
+            },
+            "613_yield_curve_spread": {
+                "Use Case": "Housing Construction Cycle",
+                "title": "Yield Curve Spread",
+                "template": "housing_cycle_template",
+                "overview": "Measures the difference between long-term and short-term government bond yields, commonly represented by the spread between 10-year and 2-year Treasury rates.",
+                "why_it_matters": "Yield curve structure reflects expectations around economic growth, inflation, and monetary policy direction, often signalling shifts in financial conditions and macroeconomic momentum.",
+                "temporal_categorisation": "Leading indicator",
+                "investment_action_importance": "🌟🌟🌟 - Widely observed as a macro signal reflecting liquidity conditions, economic expectations, and potential turning points across financial cycles.",
+                "personal_impact_importance": "🌟 - Indirectly influences borrowing costs, credit availability, and broader economic conditions affecting employment and financial stability.",
+                "current_vs_previous": "Compares the current spread with previous readings to reveal whether the curve is steepening, flattening, or inverting.",
+                "points_percentage_changes": "Tracks changes in the spread to detect shifts in macro expectations and financial market positioning.",
+                "min_max_12months": "Highlights the highest and lowest spread levels observed over the past year to place the current curve structure in context.",
+                "averages": "Uses average spread levels to show whether the current curve structure is above or below recent macro cycle norms.",
+                "year_over_year": "Compares the current spread with the same period last year to surface structural shifts in the yield curve environment.",
+                "recommended_time_periods": ["MM", "3M", "6M", "12M"],
+                "path": "{country}/pages/600_🔍_financial_conditions_risk_analysis.py"
+            }
+        }
+    },
 
      "700_global_trade_economic_relations": {
         "theme_title": "Global Trade and Economic Relations",
@@ -922,7 +1011,7 @@ THEMATIC_GROUPS = {
          "data_points": [
             "Historical Trends: Analyze how trade flows have evolved in response to currency changes, geopolitical developments, or trade policies.",
             "Comparative Analysis: Compare trade dynamics across countries or regions to assess global competitiveness.",
-            "Policy Impact Assessment: Evaluate the effects of tariffs, trade agreements, or sanctions on export/import flows."
+            "Policy Impact Assessment: Evaluate the effects of tariffs, trade agreements, or sanctions on export/import flows.",
          ],
          "navigating_the_theme": "Trade flow data including imports, exports, trade balances, and trade-to-GDP ratios provide system-level signals on competitiveness shifts, demand composition, currency alignment sensitivity, and structural exposure to global markets.",
          "conclusion_and_further_exploration": "Trade indicators serve as composite signals reflecting external sector stability, capital allocation dependencies, and cyclical positioning of cross-border flows within global economic regimes.",

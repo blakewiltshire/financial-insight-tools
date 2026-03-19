@@ -77,53 +77,246 @@ import pandas as pd
 
 
 # -------------------------------------------------------------------------------------------------
-# Template Signal Functions
+# Housing Construction Cycle Indicator Logic
 # -------------------------------------------------------------------------------------------------
-
-def signal_strength_template(df: pd.DataFrame, period=None):  # pylint: disable=unused-argument
+def forward_development_intent_signal(df, period=12):
     """
-    Returns a fixed string representing a placeholder signal.
-    Simulates strong alignment or positive interpretation.
+    Evaluates housing authorizations relative to the recent average.
+
+    Returns:
+        str: Forward development intent signal.
     """
-    return "Template Signal A"
+    if df is None or "Housing Units Authorized" not in df.columns:
+        return "Insufficient Data"
+
+    series = df["Housing Units Authorized"].dropna()
+    if len(series) < period:
+        return "Insufficient Data"
+
+    latest = series.iloc[-1]
+    avg_recent = series.tail(period).mean()
+
+    if latest > avg_recent * 1.02:
+        return "Approvals Expanding"
+    if latest < avg_recent * 0.98:
+        return "Approvals Softening"
+    return "Approvals Stabilising"
 
 
-def signal_variation_template(df: pd.DataFrame, period=None):  # pylint: disable=unused-argument
+def construction_conversion_flow_signal(df, period=12):
     """
-    Returns a fixed string representing a secondary placeholder signal.
-    Simulates variation or transitional logic.
+    Evaluates housing starts relative to the recent average.
+
+    Returns:
+        str: Construction conversion signal.
     """
-    return "Template Signal B"
+    if df is None or "Housing Units Started" not in df.columns:
+        return "Insufficient Data"
+
+    series = df["Housing Units Started"].dropna()
+    if len(series) < period:
+        return "Insufficient Data"
+
+    latest = series.iloc[-1]
+    avg_recent = series.tail(period).mean()
+
+    if latest > avg_recent * 1.02:
+        return "Starts Accelerating"
+    if latest < avg_recent * 0.98:
+        return "Starts Slowing"
+    return "Starts Stabilising"
 
 
-def signal_generic_template(df: pd.DataFrame, period=None):  # pylint: disable=unused-argument
+def supply_delivery_progress_signal(df, period=12):
     """
-    Returns a fixed string for an alternate placeholder case.
-    Simulates a fallback or generic interpretation.
+    Evaluates housing completions relative to the recent average.
+
+    Returns:
+        str: Supply delivery signal.
     """
-    return "Template Signal C"
+    if df is None or "Housing Units Completed" not in df.columns:
+        return "Insufficient Data"
+
+    series = df["Housing Units Completed"].dropna()
+    if len(series) < period:
+        return "Insufficient Data"
+
+    latest = series.iloc[-1]
+    avg_recent = series.tail(period).mean()
+
+    if latest > avg_recent * 1.02:
+        return "Completions Rising"
+    if latest < avg_recent * 0.98:
+        return "Completions Falling"
+    return "Completions Stable"
 
 
-# -------------------------------------------------------------------------------------------------
-# Indicator Mapping
-# -------------------------------------------------------------------------------------------------
-
-options_template_signal_map = {
-    "Signal A": signal_strength_template,
-    "Signal B": signal_variation_template,
-    "Signal C": signal_generic_template
+options_housing_cycle_map = {
+    "Forward Development Intent": forward_development_intent_signal,
+    "Construction Conversion Flow": construction_conversion_flow_signal,
+    "Supply Delivery Progress": supply_delivery_progress_signal
 }
 
 
 # -------------------------------------------------------------------------------------------------
-# Accessor Function
+# Mortgage Financing Conditions Indicator Logic
 # -------------------------------------------------------------------------------------------------
-
-def get_indicator_signal_map():
+def mortgage_borrowing_cost_signal(df, period=12):
     """
-    Returns the dictionary mapping placeholder indicator names to signal functions.
+    Evaluates 30-year mortgage rates relative to the recent average.
 
     Returns:
-        dict[str, function]: Mapping of indicator label to function logic.
+        str: Mortgage borrowing cost signal.
     """
-    return options_template_signal_map
+    if df is None or "30-Year Mortgage Rate" not in df.columns:
+        return "Insufficient Data"
+
+    series = df["30-Year Mortgage Rate"].dropna()
+    if len(series) < period:
+        return "Insufficient Data"
+
+    latest = series.iloc[-1]
+    avg_recent = series.tail(period).mean()
+
+    if latest > avg_recent * 1.02:
+        return "Borrowing Costs Rising"
+    if latest < avg_recent * 0.98:
+        return "Borrowing Costs Easing"
+    return "Borrowing Costs Stable"
+
+
+def housing_affordability_pressure_signal(df, period=12):
+    """
+    Evaluates mortgage rate pressure as a proxy for affordability conditions.
+
+    Returns:
+        str: Housing affordability pressure signal.
+    """
+    if df is None or "30-Year Mortgage Rate" not in df.columns:
+        return "Insufficient Data"
+
+    series = df["30-Year Mortgage Rate"].dropna()
+    if len(series) < period:
+        return "Insufficient Data"
+
+    latest = series.iloc[-1]
+    avg_recent = series.tail(period).mean()
+
+    if latest > avg_recent * 1.02:
+        return "Affordability Pressure Rising"
+    if latest < avg_recent * 0.98:
+        return "Affordability Pressure Easing"
+    return "Affordability Pressure Stable"
+
+
+def financing_condition_shift_signal(df, period=12):
+    """
+    Evaluates whether mortgage financing conditions are tightening or easing.
+
+    Returns:
+        str: Financing condition shift signal.
+    """
+    if df is None or "30-Year Mortgage Rate" not in df.columns:
+        return "Insufficient Data"
+
+    series = df["30-Year Mortgage Rate"].dropna()
+    if len(series) < period:
+        return "Insufficient Data"
+
+    latest = series.iloc[-1]
+    avg_recent = series.tail(period).mean()
+
+    if latest > avg_recent * 1.02:
+        return "Financing Tightening"
+    if latest < avg_recent * 0.98:
+        return "Financing Easing"
+    return "Financing Stable"
+
+
+options_mortgage_financing_map = {
+    "Mortgage Borrowing Cost": mortgage_borrowing_cost_signal,
+    "Housing Affordability Pressure": housing_affordability_pressure_signal,
+    "Financing Condition Shift": financing_condition_shift_signal
+}
+
+
+# -------------------------------------------------------------------------------------------------
+# Yield Curve Structure Indicator Logic
+# -------------------------------------------------------------------------------------------------
+def curve_slope_positioning_signal(df, period=12):
+    """
+    Evaluates the latest yield curve spread relative to the recent average.
+
+    Returns:
+        str: Curve slope positioning signal.
+    """
+    if df is None or "Yield Curve Spread" not in df.columns:
+        return "Insufficient Data"
+
+    series = df["Yield Curve Spread"].dropna()
+    if len(series) < period:
+        return "Insufficient Data"
+
+    latest = series.iloc[-1]
+    avg_recent = series.tail(period).mean()
+
+    if latest > avg_recent * 1.02:
+        return "Curve Steepening"
+    if latest < avg_recent * 0.98:
+        return "Curve Flattening"
+    return "Curve Stable"
+
+
+def macro_expectation_shift_signal(df, period=12):
+    """
+    Evaluates the yield curve spread as a signal of changing macro expectations.
+
+    Returns:
+        str: Macro expectation shift signal.
+    """
+    if df is None or "Yield Curve Spread" not in df.columns:
+        return "Insufficient Data"
+
+    series = df["Yield Curve Spread"].dropna()
+    if len(series) < period:
+        return "Insufficient Data"
+
+    latest = series.iloc[-1]
+    avg_recent = series.tail(period).mean()
+
+    if latest > avg_recent * 1.02:
+        return "Macro Expectations Improving"
+    if latest < avg_recent * 0.98:
+        return "Macro Expectations Weakening"
+    return "Macro Expectations Stable"
+
+
+def liquidity_regime_signal(df, period=12):
+    """
+    Evaluates the yield curve spread as a broad liquidity regime signal.
+
+    Returns:
+        str: Liquidity regime signal.
+    """
+    if df is None or "Yield Curve Spread" not in df.columns:
+        return "Insufficient Data"
+
+    series = df["Yield Curve Spread"].dropna()
+    if len(series) < period:
+        return "Insufficient Data"
+
+    latest = series.iloc[-1]
+    avg_recent = series.tail(period).mean()
+
+    if latest > avg_recent * 1.02:
+        return "Liquidity Conditions Easing"
+    if latest < avg_recent * 0.98:
+        return "Liquidity Conditions Tightening"
+    return "Liquidity Conditions Stable"
+
+
+options_yield_curve_structure_map = {
+    "Curve Slope Positioning": curve_slope_positioning_signal,
+    "Macro Expectation Shift": macro_expectation_shift_signal,
+    "Liquidity Regime Signal": liquidity_regime_signal
+}

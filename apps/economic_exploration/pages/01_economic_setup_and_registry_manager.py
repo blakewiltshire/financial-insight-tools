@@ -1161,6 +1161,32 @@ with theme_tabs[3]:
     the **Economic Exploration** suite.
     The result: a multi-dimensional framework that supports signal interpretation and downstream
     module alignment.
+
+    ### 🧩 Registry Metadata (Advanced)
+
+    When extending the framework with new indicators, templates, or use cases, you may also update:
+
+    `apps/registry/thematic_groupings.py`
+
+    This file defines the **semantic registry layer** of the Economic Exploration system.
+    It provides descriptive metadata used for:
+
+    • theme documentation and registry browsing
+    • indicator context and interpretive descriptions
+    • AI-facing metadata bundles
+    • structural alignment across the thematic framework
+
+    Updating this file is **not required for the application to run**.
+
+    However, it is recommended when:
+
+    • formalising a new indicator within an existing theme
+    • introducing a new template structure
+    • adding a supported use case within the registry
+    • providing richer contextual metadata for AI interpretation
+
+    If an indicator is being used only for **local experimentation**, updating
+    `economic_series_map.py` alone is typically sufficient.
     """)
 
     with st.expander("🛠️ What Was Done — From Registry to Runtime"):

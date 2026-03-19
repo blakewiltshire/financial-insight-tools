@@ -536,7 +536,7 @@ else:
     label, explanation = get_alignment_score_label(ratio, selected_use_case)
 
 # --- Macro Conditions Summary ---
-st.subheader("📊 Macro Conditions Summary")
+st.subheader("Macro Conditions Summary")
 st.caption(f"Timeframe evaluated: **{selected_label}**")
 
 st.markdown(

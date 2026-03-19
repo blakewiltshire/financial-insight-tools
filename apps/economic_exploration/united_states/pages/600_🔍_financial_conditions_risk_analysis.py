@@ -9,16 +9,19 @@
 # Docstring
 # -------------------------------------------------------------------------------------------------
 """
-🏥 Healthcare Economics — Thematic Indicator Module
----------------------------------------------------
+🔍 Financial Conditions Risk Analysis — Thematic Indicator Module
+--------------------------------------------------------
 
-This module provides a structured decision-support interface for examining healthcare-related
-economic indicators, system capacity metrics, and health investment patterns.
+This module provides a structured decision-support interface for analysing {short_description}.
+
+This module provides a structured decision-support interface for assessing financial system
+conditions, credit market dynamics, and indicators of systemic or market-based risk.
 
 It focuses on:
-- Public and private healthcare expenditure trends
-- Access and capacity indicators (beds, professionals, facilities)
-- Optional health outcomes, insurance coverage, and pharmaceutical sector data
+
+- Financial condition indices and credit spreads
+- Volatility, risk appetite, and market stress indicators
+- Optional shadow banking, liquidity, or cross-market fragility metrics
 
 The purpose is not to forecast outcomes, but to surface structural insights and
 comparative dynamics across:
@@ -112,20 +115,20 @@ from economic_cleaning_shared import clean_economic_data
 from ux.timeframe_selector import render_timeframe_selector
 from ux.timeframe_slicer import slice_data_by_timeframe
 
-from indicator_map.indicator_map_1700 import get_indicator_maps
+from indicator_map.indicator_map_600 import get_indicator_maps
 
-from use_cases.use_case_1700 import get_use_cases, render_use_case_selector
+from use_cases.use_case_600 import get_use_cases, render_use_case_selector
 
-from insights.insight_1700 import generate_econ_insights
+from insights.insight_600 import generate_econ_insights
 
-from routing.routing_1700 import get_indicator_input
+from routing.routing_600 import get_indicator_input
 
-from scoring_weights_labels.scoring_weights_labels_1700_healthcare_economics import (
+from scoring_weights_labels.scoring_weights_labels_600_financial_conditions_risk_analysis import (
     get_alignment_score_label,
     get_indicator_weight,
 )
 
-from visual_config.visual_config_1700 import (
+from visual_config.visual_config_600 import (
     render_all_charts_local
 )
 
@@ -181,16 +184,16 @@ from ai_export_ui_panel_economic_exploration import render_ai_export_ui_panel
 
 # --- 🌍 COUNTRY-SPECIFIC SETTINGS ---
 
-COUNTRY_NAME = "default_template"      # Display name (used for titles, flags)
-COUNTRY_CODE = "000"  # Pulls CSV from /datasource/000/ — switch to e.g. 'us' after data is sourced
+COUNTRY_NAME = "United States"      # Display name (used for titles, flags)
+COUNTRY_CODE = "us"  # Pulls CSV from /datasource/000/ — switch to e.g. 'us' after data is sourced
 
 # 📊 THEME CONFIGURATION (align with thematic_groupings.py)
 
-THEME = "healthcare_economics"  # Theme slug (used in file lookup, visuals, AI bundles)
-THEME_ID = "1700"                # Theme ID
-STRUCTURAL_FOLDER = "1700_healthcare_template"   # Primary dataset folder name under /data_sources/
-COMPOSITE_FOLDER = ""                 # Optional
-DEFAULT_USE_CASE = "Signal A"   # Default focus in use case selector (must match use_case key)
+THEME = "financial_conditions_risk_analysis"  # Theme (used in file lookup, visuals, AI bundles)
+THEME_ID = "600"                # Theme ID
+STRUCTURAL_FOLDER = "600_housing"   # Primary dataset folder name under /data_sources/
+COMPOSITE_FOLDER = "" # Optional second template folder
+DEFAULT_USE_CASE = "Housing Construction Cycle"   # Default focus in use case selector (must match use_case key)
 
 # -------------------------------------------------------------------------------------------------
 # 🧾 DATASET_REGISTRY — REQUIRED INPUTS FOR LOADING AND STRUCTURING DATA
@@ -221,7 +224,7 @@ DEFAULT_USE_CASE = "Signal A"   # Default focus in use case selector (must match
 
 DATASET_REGISTRY = {
     "df_primary": {
-        "label": "📄 Default Template",
+        "label": "📄 Housing Construction Pipeline",
         "file": f"{COUNTRY_CODE}_m_{THEME_ID}_structural.csv",
         "folder": STRUCTURAL_FOLDER,
         "frequency": "monthly",
@@ -229,8 +232,27 @@ DATASET_REGISTRY = {
         "show_in_underlying_data": True,
         "plot": True,
         "create_slice": True
+    },
+    "df_secondary": {
+        "label": "📄 Mortgage Financing Conditions",
+        "file": f"{COUNTRY_CODE}_w_{THEME_ID}_structural.csv",
+        "folder": STRUCTURAL_FOLDER,
+        "frequency": "weekly",
+        "cleaner": clean_economic_data,
+        "show_in_underlying_data": True,
+        "plot": True,
+        "create_slice": True
+    },
+    "df_extended": {
+        "label": "📄 Yield Curve Structure",
+        "file": f"{COUNTRY_CODE}_d_{THEME_ID}_structural.csv",
+        "folder": STRUCTURAL_FOLDER,
+        "frequency": "daily",
+        "cleaner": clean_economic_data,
+        "show_in_underlying_data": True,
+        "plot": True,
+        "create_slice": True
     }
-    # ➕ Add more datasets here if extending this module with additional signal layers
 }
 
 # --- End of User Configuration ---
@@ -279,7 +301,7 @@ st.set_page_config(
 )
 
 st.title(f"{FLAG} {COUNTRY_NAME} - {PAGE_ICON} {THEME.replace('_', ' ').title()}")
-st.caption("*Healthcare spending dynamics, access models, and demographic-driven health trends.*")
+st.caption("*Credit spreads, market risk premia, and systemic stress indicators across financial sectors.*")
 
 # -------------------------------------------------------------------------------------------------
 # 📌 App Info Panel (Displays about_{THEME}.md contents)
@@ -413,8 +435,8 @@ for df_var, config in DATASET_REGISTRY.items():
 df_dict = {
     "df_primary_slice": df_primary_slice,
     "df_full": df_primary,
-    # "df_secondary_slice": df_secondary_slice,
-    # "df_extended_slice": df_extended_slice
+    "df_secondary_slice": df_secondary_slice,
+    "df_extended_slice": df_extended_slice
 }
 
 # --- Alignment Score (Platinum-Grade Unified Version) ---
@@ -621,8 +643,8 @@ st.caption(f"📌 Each 'Observation' corresponds to one data entry, based on the
 # -------------------------------------------------------------------------------------------------
 df_map = {
     "df_primary": df_primary,
-    # "df_secondary": df_secondary,
-    # "df_extended": df_extended
+    "df_secondary": df_secondary,
+    "df_extended": df_extended
 }
 
 # --- Chart Dispatcher ---

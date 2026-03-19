@@ -179,14 +179,14 @@ with col1:
     st.markdown("### 🗺️ Correlation Heatmaps & Themes")
     st.write("Visualise multi-asset correlation matrices by theme.")
     if st.button("🌐 View Heatmaps & Macro Themes"):
-        st.switch_page("pages/12_correlation_heatmaps_and_themes.py")
+        st.switch_page("pages/13_correlation_heatmaps_and_themes.py")
     st.divider()
 
 with col2:
     st.markdown("### ⚖️ Spread & Ratio Insights")
     st.write("Analyse relative pricing across instruments and themes.")
     if st.button("🧮 Launch Spread & Ratio Analysis"):
-        st.switch_page("pages/13_spread_ratio_insights.py")
+        st.switch_page("pages/12_spread_ratio_insights.py")
     st.divider()
 
 # -------------------------------------------------------------------------------------------------
