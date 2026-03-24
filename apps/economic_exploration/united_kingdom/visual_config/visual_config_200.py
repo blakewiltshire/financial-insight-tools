@@ -1,51 +1,51 @@
 # -------------------------------------------------------------------------------------------------
-# 📈 Generic Template — Visual Config (Local Extension)
+# Generic Template — Visual Config (Local Extension)
 # -------------------------------------------------------------------------------------------------
 # pylint: disable=import-error, wrong-import-position, wrong-import-order
 # pylint: disable=invalid-name, non-ascii-file-name, unused-argument, unused-import
 
 # -------------------------------------------------------------------------------------------------
-# 📘 Docstring
+# Docstring
 # -------------------------------------------------------------------------------------------------
 """
-📈 Local Visual Configuration — Economic Exploration Suite
+Local Visual Configuration — Economic Exploration Suite
 -----------------------------------------------------------------
 
 Defines the country- or theme-specific visual rendering extensions for
 Economic Exploration modules (Themes 100–2100+). This module extends the
 universal charting engine, enabling more granular visualisation layers.
 
-✅ Role in the System:
+Role in the System:
 - Adds localised chart overlays, sector breakdowns, and country-specific displays.
 - Controls tab and subtab layouts per Use Case.
 - Dynamically routes visual rendering based on the selected Use Case.
 
-🧠 System Design Notes:
+System Design Notes:
 - Visual rendering is fully independent of indicator signal evaluation.
 - **Use Case selection controls visual rendering**, with charts configured here.
 - Chart data slices are passed via `df_map`, based on timeframe windows handled locally.
 - Visual keys, tab names, subtab structures, and display logic are fully controlled here.
 - This local module **does not reference indicator_map_XXX.py or insights** directly.
 
-⚙️ Architecture Summary:
+Architecture Summary:
 - Each Use Case receives its own visualisation block inside `render_all_charts_local()`.
 - Subtabs are always required (even for single-chart cases) to ensure consistent UI structure.
 - Chart keys are managed via `display_chart_with_fallback()` to prevent Streamlit key conflicts.
 - Local visuals may call universal chart functions (e.g., from `universal_visual_config_XXX.py`) for consistency.
 
 Usage:
-- Invoked automatically from the main theme module (`100_📈_economic_growth_stability.py`, `200_💼_labour_market_dynamics.py`, etc.)
+- Invoked automatically from the main theme module (`100_economic_growth_stability.py`, `200_💼_labour_market_dynamics.py`, etc.)
 - Required only when country- or theme-specific visuals are implemented.
 - If no local visual config exists, universal visuals render by default.
 
-🧠 AI Implementation Notes:
+AI Implementation Notes:
 - Visual tab structure is critical for AI narrative consistency and export accuracy.
 - Subtab names, chart labels, and layout stability directly influence AI macro narrative parsing.
 
 """
 
 # -------------------------------------------------------------------------------------------------
-# 🧱 Standard Library
+# Standard Library
 # -------------------------------------------------------------------------------------------------
 import os
 import sys
@@ -53,7 +53,7 @@ import streamlit as st
 import pandas as pd
 
 # -------------------------------------------------------------------------------------------------
-# 🛠 Path Setup
+# Path Setup
 # -------------------------------------------------------------------------------------------------
 LOCAL_PATH = os.path.abspath(os.path.dirname(__file__))
 UNIVERSAL_PATH = os.path.abspath(os.path.join(LOCAL_PATH, "..", "universal_visual_config"))
@@ -72,7 +72,7 @@ from universal_visual_config_200 import (
 )
 
 # -------------------------------------------------------------------------------------------------
-# 📌 Visual Section Titles Mapping
+# Visual Section Titles Mapping
 # -------------------------------------------------------------------------------------------------
 def get_visual_section_titles():
     """
@@ -80,13 +80,13 @@ def get_visual_section_titles():
     Includes universal and local mappings (if applicable).
     """
     return {
-        "Employment Trends": "📈 Employment Growth and Hiring Activity",
-        "Unemployment Context": "📉 Unemployment Rates and Volatility",
-        "Labour Force Engagement": "🧠 Participation and Labour Supply Trends"
+        "Employment Trends": "Employment Growth and Hiring Activity",
+        "Unemployment Context": "Unemployment Rates and Volatility",
+        "Labour Force Engagement": "Participation and Labour Supply Trends"
     }
 
 # -------------------------------------------------------------------------------------------------
-# 🧭 Local Chart Configs (If applicable)
+# Local Chart Configs (If applicable)
 # -------------------------------------------------------------------------------------------------
 
 
@@ -105,9 +105,9 @@ def render_universal_labour_tabs(selected_use_case: str, df: pd.DataFrame, tab_k
     # --- Employment Trends ---
     if selected_use_case == "Employment Trends":
         subtab1, subtab2, subtab3 = st.tabs([
-            "📈 Hiring Momentum",
-            "📉 Volatility Context",
-            "🔁 Inflection Points"
+            "Hiring Momentum",
+            "Volatility Context",
+            "Inflection Points"
         ])
 
         with subtab1:
@@ -147,9 +147,9 @@ def render_universal_labour_tabs(selected_use_case: str, df: pd.DataFrame, tab_k
     # --- Unemployment Context ---
     if selected_use_case == "Unemployment Context":
         subtab1, subtab2, subtab3 = st.tabs([
-            "📈 Unemployment Direction",
-            "📈 Extremes & Reversion",
-            "🌪️ Volatility"
+            "Unemployment Direction",
+            "Extremes & Reversion",
+            "Volatility"
         ])
 
         with subtab1:
@@ -189,9 +189,9 @@ def render_universal_labour_tabs(selected_use_case: str, df: pd.DataFrame, tab_k
     # --- Labour Force Engagement ---
     if selected_use_case == "Labour Force Engagement":
         subtab1, subtab2, subtab3 = st.tabs([
-            "📈 Participation Direction",
-            "🔄 Structural Variability",
-            "📉 Historical Extremes"
+            "Participation Direction",
+            "Structural Variability",
+            "Historical Extremes"
         ])
 
         with subtab1:

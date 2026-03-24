@@ -7,7 +7,7 @@
 # Docstring
 # -------------------------------------------------------------------------------------------------
 """
-🌍 Economic Exploration — Insight Launcher
+Economic Exploration — Insight Launcher
 
 Modular geographic interface to explore country-specific economic dashboards
 within the Financial Insight Tools system.
@@ -122,19 +122,18 @@ st.logo(BRAND_LOGO_PATH) # pylint: disable=no-member
 # -------------------------------------------------------------------------------------------------
 # Sidebar Navigation
 # -------------------------------------------------------------------------------------------------
-st.sidebar.title("🛠 Configuration & Setup")
+st.sidebar.title("Configuration & Setup")
 st.sidebar.page_link("pages/01_economic_setup_and_registry_manager.py", label="Setup & Registry Manager")
-st.sidebar.caption("📦 Add countries and themes using structured configuration and validation tools.")
+st.sidebar.caption("Add countries and themes using structured configuration and validation tools.")
 
-st.sidebar.title("🔍 Exploratory Extensions")
+st.sidebar.title("Exploratory Extensions")
 st.sidebar.page_link("pages/02_thematic_correlation_explorer.py", label="Thematic Correlation Explorer")
-st.sidebar.caption("📊 Explore cross-indicator relationships across countries and thematic groupings.")
+st.sidebar.caption("Explore cross-indicator relationships across countries and thematic groupings.")
 
 st.sidebar.divider()
 
 
 # --- Getting Started ---
-st.sidebar.markdown("### 🧭 Getting Started")
 st.sidebar.caption("*Modular, structured dashboards for navigating macro themes by country.*")
 
 # if os.path.isfile(IMAGE_PATH):
@@ -143,7 +142,7 @@ st.sidebar.caption("*Modular, structured dashboards for navigating macro themes 
 #     st.warning("Placeholder image not found. Check /images/toolbox_app2.png.")
 
 st.sidebar.info("""
-**🌍 Economic Exploration Dashboard**
+**Economic Exploration Dashboard**
 
 Use this launcher to explore macroeconomic themes by region and country.
 
@@ -241,7 +240,7 @@ def run_country_app(country_name):
 # -------------------------------------------------------------------------------------------------
 
 # --- Load About Markdown (auto-skips if not replaced) ---
-with st.expander("📖 About This App"):
+with st.expander("ℹ️ About This App"):
     content = load_markdown_file(ABOUT_APP_MD)
     if content:
         st.markdown(content, unsafe_allow_html=True)
@@ -249,7 +248,7 @@ with st.expander("📖 About This App"):
         st.error("File not found: docs/about_economic_exploration.md")
 
 # --- Choose Region, Sub-Region, and Country ---
-st.header("🌍 Geographic Exploration")
+st.header("Geographic Exploration")
 with st.expander("View Map Guide"):
     st.write("Use the map as a visual guide to help with your selection.")
     m = generate_map()
@@ -268,6 +267,6 @@ if selected_region:
 # -------------------------------------------------------------------------------------------------
 # Footer
 # -------------------------------------------------------------------------------------------------
-st.divider()
+st.space()
 st.caption("© 2026 Blake Media Ltd. | Financial Insight Tools by Blake Wiltshire \
 — No trading, investment, or policy advice provided.")

@@ -1,5 +1,5 @@
 # -------------------------------------------------------------------------------------------------
-# 🔀 Correlation Heatmaps & Themes (Platinum Canonical Build with Full Fixes)
+# Correlation Heatmaps & Themes (Platinum Canonical Build with Full Fixes)
 # -------------------------------------------------------------------------------------------------
 
 # pylint: disable=import-error, wrong-import-position, wrong-import-order
@@ -73,16 +73,16 @@ from observation_handler_correlation_heatmaps import (
 # Streamlit Setup
 # -------------------------------------------------------------------------------------------------
 st.set_page_config(page_title="Correlation Heatmaps & Themes", layout="wide")
-st.title("🔀 Correlation Heatmaps & Themes")
+st.title("Correlation Heatmaps & Themes")
 st.caption("*Explore asset class interrelationships, cross-market correlations, and thematic co-movement structures.*")
 
-with st.expander("📌 What is this app about?"):
+with st.expander("ℹ️ About This App"):
     content = load_markdown_file(ABOUT_APP_MD)
     if content:
         st.markdown(content, unsafe_allow_html=True)
 
 st.sidebar.title("📂 Navigation Menu")
-st.sidebar.page_link('app.py', label='🔗 Intermarket & Correlation')
+st.sidebar.page_link('app.py', label='Intermarket & Correlation')
 for path, label in build_sidebar_links():
     st.sidebar.page_link(path, label=label)
 st.sidebar.divider()
@@ -91,7 +91,7 @@ st.logo(BRAND_LOGO_PATH)
 # -------------------------------------------------------------------------------------------------
 # Data Ingestion and Source Selection
 # -------------------------------------------------------------------------------------------------
-st.sidebar.title("🔎 Select Correlation Data Group")
+st.sidebar.title("Select Correlation Data Group")
 data_source = st.sidebar.selectbox("Choose data source", [
     "Preloaded Asset Types (Default)",
     "Preloaded Asset Types (User)",
@@ -154,7 +154,7 @@ elif data_source == 'Upload my own files':
 # -------------------------------------------------------------------------------------------------
 # Date Range Filtering
 # -------------------------------------------------------------------------------------------------
-st.sidebar.title("📅 Select Date Range")
+st.sidebar.title("Select Date Range")
 if correlation_df is not None:
     correlation_df['date'] = pd.to_datetime(correlation_df['date'])
     min_date, max_date = correlation_df['date'].min().date(), correlation_df['date'].max().date()
@@ -170,7 +170,7 @@ else:
 # -------------------------------------------------------------------------------------------------
 if filtered_df is not None and len(filtered_df.columns) > 2:
 
-    st.subheader("📑 Correlation Summary Insights")
+    st.subheader("Correlation Summary Insights")
     corr_matrix = filtered_df.drop(columns=["date"]).corr()
 
     avg_corr = round(((corr_matrix.values.sum() - len(corr_matrix)) / (len(corr_matrix)**2 - len(corr_matrix))), 3)
@@ -204,7 +204,7 @@ if filtered_df is not None and len(filtered_df.columns) > 2:
         st.write("**Top Inverse Correlations:**")
         st.table(bottom_pairs[['Asset X', 'Asset Y', 'Correlation']])
 
-    tab1, tab2, tab3, tab4 = st.tabs(["📉 Pairwise Scatter", "📈 Rolling Correlation", "🔲 Full Heatmap", "ℹ️ Help: How to"])
+    tab1, tab2, tab3, tab4 = st.tabs(["Pairwise Scatter", "Rolling Correlation", "Full Heatmap", "ℹ️ Help: How to"])
 
     with tab1:
         asset_columns = list(filtered_df.columns)
@@ -246,7 +246,7 @@ theme_title = "Correlation Heatmaps & Themes"
 selected_use_case = "Correlation Heatmap Snapshot"
 
 # -------------------------------------------------------------------------------------------------
-# 🔍 Sidebar Activation Toggles
+# Sidebar Activation Toggles
 # -------------------------------------------------------------------------------------------------
 show_observation, show_log = render_macro_sidebar_tools(
     theme_readable=theme_title,
@@ -255,10 +255,10 @@ show_observation, show_log = render_macro_sidebar_tools(
 )
 
 # -------------------------------------------------------------------------------------------------
-# 🧠 Macro Interaction Tools
+# Macro Interaction Tools
 # -------------------------------------------------------------------------------------------------
 if show_observation or show_log:
-    st.markdown("## 🧠 Macro Interaction Tools")
+    st.markdown("## Macro Interaction Tools")
 
 # Derive final asset list for observation logging
 if filtered_df is not None:

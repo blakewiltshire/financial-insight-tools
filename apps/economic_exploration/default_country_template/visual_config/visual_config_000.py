@@ -1,36 +1,47 @@
 # -------------------------------------------------------------------------------------------------
-# 📈 Generic Template — Visual Config (Local Extension)
+#  Generic Template — Visual Config (Local Extension)
 # -------------------------------------------------------------------------------------------------
 # pylint: disable=import-error, wrong-import-position, wrong-import-order
 # pylint: disable=invalid-name, non-ascii-file-name, unused-argument, unused-import
 
 # -------------------------------------------------------------------------------------------------
-# 📘 Docstring
+# Docstring
 # -------------------------------------------------------------------------------------------------
 """
-📈 Local Visual Config — Thematic Extension Module
---------------------------------------------------
+Local Visual Configuration — Economic Exploration Suite
+-----------------------------------------------------------------
 
-This module defines local chart logic for a specific thematic grouping.
-It extends the universal visual configuration, enabling optional subtab
-layouts, custom overlays, and fallback handling per insight use case.
+Defines the country- or theme-specific visual rendering extensions for
+Economic Exploration modules (Themes 100–2100+). This module extends the
+universal charting engine, enabling more granular visualisation layers.
 
-🧭 Purpose:
-- Support country-specific or theme-specific visual extensions
-- Maintain consistent layout via **subtabs**, even if only one chart
-- Ensure compatibility with fallback handling and AI summarisation
+Role in the System:
+- Adds localised chart overlays, sector breakdowns, and country-specific displays.
+- Controls tab and subtab layouts per Use Case.
+- Dynamically routes visual rendering based on the selected Use Case.
 
-✅ Required Structure:
-- Each use case must define charts within subtabs to ensure layout stability.
-- Use `display_chart_with_fallback(...)` to prevent Streamlit key collisions.
+System Design Notes:
+- Visual rendering is fully independent of indicator signal evaluation.
+- **Use Case selection controls visual rendering**, with charts configured here.
+- Chart data slices are passed via `df_map`, based on timeframe windows handled locally.
+- Visual keys, tab names, subtab structures, and display logic are fully controlled here.
+- This local module **does not reference indicator_map_XXX.py or insights** directly.
 
-🧠 AI Notes:
-- Tab + subtab chart labels are required for unique Streamlit keys.
-- This module is called automatically if present for the active theme module.
+Architecture Summary:
+- Each Use Case receives its own visualisation block inside `render_all_charts_local()`.
+- Subtabs are always required (even for single-chart cases) to ensure consistent UI structure.
+- Chart keys are managed via `display_chart_with_fallback()` to prevent Streamlit key conflicts.
+- Local visuals may call universal chart functions (e.g., from `universal_visual_config_XXX.py`) for consistency.
 
 Usage:
-- Invoked via `render_all_charts_local(...)` in the main theme module.
-- Start from the universal chart dispatcher and add local extensions as needed.
+- Invoked automatically from the main theme module (`100_economic_growth_stability.py`, `200_💼_labour_market_dynamics.py`, etc.)
+- Required only when country- or theme-specific visuals are implemented.
+- If no local visual config exists, universal visuals render by default.
+
+AI Implementation Notes:
+- Visual tab structure is critical for AI narrative consistency and export accuracy.
+- Subtab names, chart labels, and layout stability directly influence AI macro narrative parsing.
+
 """
 
 # -------------------------------------------------------------------------------------------------
@@ -41,7 +52,7 @@ import sys
 import streamlit as st
 
 # -------------------------------------------------------------------------------------------------
-# 🛠 Path Setup
+# Path Setup
 # -------------------------------------------------------------------------------------------------
 LOCAL_PATH = os.path.abspath(os.path.dirname(__file__))
 UNIVERSAL_PATH = os.path.abspath(os.path.join(LOCAL_PATH, "..", "universal_visual_config"))
@@ -49,7 +60,7 @@ if UNIVERSAL_PATH not in sys.path:
     sys.path.append(UNIVERSAL_PATH)
 
 # -------------------------------------------------------------------------------------------------
-# 📥 Universal Chart Imports
+# Universal Chart Imports
 # -------------------------------------------------------------------------------------------------
 from universal_visual_config_000 import (
     display_chart_with_fallback,
@@ -59,7 +70,7 @@ from universal_visual_config_000 import (
 )
 
 # -------------------------------------------------------------------------------------------------
-# 📌 Section Header Mapping
+# Section Header Mapping
 # -------------------------------------------------------------------------------------------------
 def get_visual_section_titles():
     """
@@ -69,17 +80,17 @@ def get_visual_section_titles():
         dict: Mapping of use case name → section display title.
     """
     return {
-        "Signal A": "📊 Signal A — Time Series",
-        "Signal B": "📊 Signal B — Rolling Average",
-        "Signal C": "📊 Signal C — Band Highlight"
+        "Signal A": "Signal A — Time Series",
+        "Signal B": "Signal B — Rolling Average",
+        "Signal C": "Signal C — Band Highlight"
     }
 
 # -------------------------------------------------------------------------------------------------
-# 🧭 Local Chart Configs (If applicable)
+# Local Chart Configs (If applicable)
 # -------------------------------------------------------------------------------------------------
 
 # -------------------------------------------------------------------------------------------------
-# 🚦 Chart Dispatcher for Template Theme
+#  Chart Dispatcher for Template Theme
 # -------------------------------------------------------------------------------------------------
 def render_all_charts_local(selected_use_case, tab_mapping, df_map):
     """
@@ -99,7 +110,7 @@ def render_all_charts_local(selected_use_case, tab_mapping, df_map):
 
             # --- Signal A ---
             if selected_use_case == "Signal A":
-                subtab1, = st.tabs(["📈 Signal A Chart"])
+                subtab1, = st.tabs(["Signal A Chart"])
                 with subtab1:
                     display_chart_with_fallback(
                         plot_signal_a_chart(df),
@@ -108,7 +119,7 @@ def render_all_charts_local(selected_use_case, tab_mapping, df_map):
 
             # --- Signal B ---
             elif selected_use_case == "Signal B":
-                subtab1, = st.tabs(["📉 Signal B Chart"])
+                subtab1, = st.tabs(["Signal B Chart"])
                 with subtab1:
                     display_chart_with_fallback(
                         plot_signal_b_chart(df),
@@ -117,7 +128,7 @@ def render_all_charts_local(selected_use_case, tab_mapping, df_map):
 
             # --- Signal C ---
             elif selected_use_case == "Signal C":
-                subtab1, = st.tabs(["📊 Signal C Chart"])
+                subtab1, = st.tabs(["Signal C Chart"])
                 with subtab1:
                     display_chart_with_fallback(
                         plot_signal_c_chart(df),

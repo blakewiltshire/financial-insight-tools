@@ -80,9 +80,9 @@ def get_visual_section_titles():
         dict: Mapping of use case name → section display title.
     """
     return {
-        "Signal A": "📊 Signal A — Time Series",
-        "Signal B": "📊 Signal B — Rolling Average",
-        "Signal C": "📊 Signal C — Band Highlight"
+        "Signal A": "Signal A — Time Series",
+        "Signal B": "Signal B — Rolling Average",
+        "Signal C": "Signal C — Band Highlight"
     }
 
 # -------------------------------------------------------------------------------------------------
@@ -110,7 +110,7 @@ def render_all_charts_local(selected_use_case, tab_mapping, df_map):
 
             # --- Signal A ---
             if selected_use_case == "Signal A":
-                subtab1, = st.tabs(["📈 Signal A Chart"])
+                subtab1, = st.tabs(["Signal A Chart"])
                 with subtab1:
                     display_chart_with_fallback(
                         plot_signal_a_chart(df),
@@ -119,7 +119,7 @@ def render_all_charts_local(selected_use_case, tab_mapping, df_map):
 
             # --- Signal B ---
             elif selected_use_case == "Signal B":
-                subtab1, = st.tabs(["📉 Signal B Chart"])
+                subtab1, = st.tabs(["Signal B Chart"])
                 with subtab1:
                     display_chart_with_fallback(
                         plot_signal_b_chart(df),
@@ -128,7 +128,7 @@ def render_all_charts_local(selected_use_case, tab_mapping, df_map):
 
             # --- Signal C ---
             elif selected_use_case == "Signal C":
-                subtab1, = st.tabs(["📊 Signal C Chart"])
+                subtab1, = st.tabs(["Signal C Chart"])
                 with subtab1:
                     display_chart_with_fallback(
                         plot_signal_c_chart(df),

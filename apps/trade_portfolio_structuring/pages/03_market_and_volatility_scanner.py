@@ -10,7 +10,7 @@
 # Docstring
 # -------------------------------------------------------------------------------------------------
 """
-🔎 Market & Volatility Scanner
+Market & Volatility Scanner
 
 This Streamlit app provides dynamic asset-level and group-level analysis for
 volatility classification, return resampling, and correlation assessment across
@@ -100,7 +100,7 @@ USER_ASSET_SNAPSHOT_PATH = os.path.join(APPS_PATH, "data_sources", "financial_da
 sys.path.append(os.path.join(APPS_PATH, "observation_engine"))
 
 # -------------------------------------------------------------------------------------------------
-# 🧠 Observation Tools (User Observation Logging)
+# Observation Tools (User Observation Logging)
 # -------------------------------------------------------------------------------------------------
 from observation_handler_market_scanner import (
     observation_input_form,
@@ -111,7 +111,7 @@ from render_macro_interaction_tools_panel_trade_portfolio_structuring import ren
 from macro_insight_sidebar_panel_market_volatility import render_macro_sidebar_tools
 
 # -------------------------------------------------------------------------------------------------
-# AI Export Tools — 🔎 Market & Volatility Scanner
+# AI Export Tools — Market & Volatility Scanner
 # -------------------------------------------------------------------------------------------------
 from ai_export_ui_panel_market_volatility import render_ai_export_panel
 from ai_export_builder_market_volatility import build_macro_insight_snapshot_market_volatility
@@ -227,13 +227,13 @@ from data_sources.financial_data.filtering_options import filtering_options_map
 # Streamlit Page Setup
 # -------------------------------------------------------------------------------------------------
 st.set_page_config(page_title="Market & Volatility Scanner", layout="wide")
-st.title('🔎 Market & Volatility Scanner')
+st.title('Market & Volatility Scanner')
 st.caption("*Assess asset-specific volatility patterns, return probabilities, and time filters.*")
 
 # -------------------------------------------------------------------------------------------------
 # Load About Markdown (auto-skips if not replaced)
 # -------------------------------------------------------------------------------------------------
-with st.expander("📖 About This App"):
+with st.expander("ℹ️ About This App"):
     content = load_markdown_file(ABOUT_APP_MD)
     if content:
         st.markdown(content, unsafe_allow_html=True)
@@ -247,7 +247,7 @@ with st.expander("📖 About This App"):
 # Also links back to app dashboard (e.g., app.py)
 # -------------------------------------------------------------------------------------------------
 st.sidebar.title("📂 Navigation Menu")
-st.sidebar.page_link('app.py', label='📈 Trade and Portfolio Structuring')
+st.sidebar.page_link('app.py', label='Trade and Portfolio Structuring')
 for path, label in build_sidebar_links():
     st.sidebar.page_link(path, label=label)
 
@@ -261,7 +261,7 @@ st.logo(BRAND_LOGO_PATH) # pylint: disable=no-member
 # # -------------------------------------------------------------------------------------------------
 # # Asset Selection Logic (Preloaded + User Upload)
 # # -------------------------------------------------------------------------------------------------
-st.sidebar.title('🔎 Select Asset')
+st.sidebar.title('Select Asset')
 
 # --- Uploaded Asset Defaults ---
 UPLOADED_FILE = None
@@ -441,12 +441,12 @@ st.markdown(f"""
 # -------------------------------------------------------------------------------------------------
 if data_source in ["Preloaded Asset Types (Default)", "Preloaded Asset Types (User)"]:
     overview_tab0, overview_tab1, overview_tab2, overview_tab3, overview_tab4 = st.tabs(
-        ["🧾 Asset Group Summary", "🧾 Asset Snapshot", "📊 Key Metrics",
-         "📈 ATR & Returns", "🎯 DPT Probability"]
+        ["Asset Group Summary", "Asset Snapshot", "Key Metrics",
+         "ATR & Returns", "DPT Probability"]
     )
 else:
     overview_tab1, overview_tab2, overview_tab3, overview_tab4 = st.tabs(
-        ["🧾 Asset Snapshot", "📊 Key Metrics", "📈 ATR & Returns", "🎯 DPT Probability"]
+        ["Asset Snapshot", "Key Metrics", "ATR & Returns", "DPT Probability"]
     )
 
 # -------------------------------------------------------------------------------------------------
@@ -466,8 +466,8 @@ if data_source in ["Preloaded Asset Types (Default)", "Preloaded Asset Types (Us
                 snapshot_date = datetime.fromtimestamp(file_timestamp).strftime('%Y-%m-%d %H:%M:%S')
 
                 st.info(
-                    f"📦 This group summary was generated using the **Asset Snapshot Scanner**.\n\n"
-                    f"🗓️ Snapshot last updated: **{snapshot_date}**\n\n"
+                    f"This group summary was generated using the **Asset Snapshot Scanner**.\n\n"
+                    f"Snapshot last updated: **{snapshot_date}**\n\n"
                     f"⚠️ *Note*: This timestamp reflects when the summary file was saved — "
                     f"individual assets may still have older data unless all underlying files were updated.\n\n"
                     f"🔄 To ensure full accuracy, consider rerunning the scanner after modifying or adding asset files."
@@ -481,7 +481,7 @@ if data_source in ["Preloaded Asset Types (Default)", "Preloaded Asset Types (Us
 
                 if not group_df.empty:
                     group_df = group_df.drop(columns=["Category"], errors="ignore")
-                    st.subheader("🧾 Asset Group Summary")
+                    st.subheader("Asset Group Summary")
                     st.markdown(f"Snapshot metrics for **{asset_category.strip()}**")
                     st.data_editor(
                         group_df,
@@ -508,7 +508,7 @@ if data_source in ["Preloaded Asset Types (Default)", "Preloaded Asset Types (Us
 
 # --- Asset Snapshot ---
 with overview_tab1:
-    st.subheader("🧾 Asset Snapshot")
+    st.subheader("Asset Snapshot")
     st.markdown(f"""
     **Current Data Set**: {DATA_TITLE}<br>
     **Asset Type**: {asset_type_display}<br>
@@ -527,7 +527,7 @@ with overview_tab1:
 
 # --- Key Metrics ---
 with overview_tab2:
-    st.subheader("📊 Key Metrics")
+    st.subheader("Key Metrics")
     try:
         std_dev, mean_high_to_low_range = overview_metrics(processed_df, timeline)
 
@@ -543,7 +543,7 @@ with overview_tab2:
 
 # --- ATR & Returns ---
 with overview_tab3:
-    st.subheader("📈 ATR & Returns")
+    st.subheader("ATR & Returns")
     try:
         # ATR
         daily_atr_pct, weekly_atr_pct, monthly_atr_pct, \
@@ -576,7 +576,7 @@ with overview_tab3:
 
 # --- DPT Probability ---
 with overview_tab4:
-    st.subheader("🎯 Probability of Hitting DPT")
+    st.subheader("Probability of Hitting DPT")
 
     st.markdown(f"**Selected DPT**: {desired_profit_target:.1f}%")
     column_map = {
@@ -1321,13 +1321,13 @@ for header, (options_map, categories) in options_maps.items():
 st.divider()
 
 # -------------------------------------------------------------------------------------------------
-# 🧠 Define Theme Metadata (for Observation Logging)
+# Define Theme Metadata (for Observation Logging)
 # -------------------------------------------------------------------------------------------------
 theme_code = "market_scanner"
 theme_title = "Market & Volatility Scanner"
 
 # -------------------------------------------------------------------------------------------------
-# 🎯 Asset Snapshot Insight
+# Asset Snapshot Insight
 # -------------------------------------------------------------------------------------------------
 asset_snapshot_insight = {
     "snapshot_metadata": {
@@ -1409,7 +1409,7 @@ asset_snapshot_insight = {
 }
 
 # -------------------------------------------------------------------------------------------------
-# 🧠 Activate Observation + Journal Toggles
+# Activate Observation + Journal Toggles
 # -------------------------------------------------------------------------------------------------
 show_observation, show_ai_export, show_log = render_macro_sidebar_tools(
     theme_readable=theme_title,
@@ -1417,7 +1417,7 @@ show_observation, show_ai_export, show_log = render_macro_sidebar_tools(
 )
 
 # -------------------------------------------------------------------------------------------------
-# 🎯 Derive Assets In View
+# Derive Assets In View
 # -------------------------------------------------------------------------------------------------
 try:
     asset_list_for_observation = [DATA_TITLE] if DATA_TITLE else []
@@ -1425,10 +1425,10 @@ except NameError:
     asset_list_for_observation = []
 
 # -------------------------------------------------------------------------------------------------
-# 🧠 Observation Panel (Log + Input)
+# Observation Panel (Log + Input)
 # -------------------------------------------------------------------------------------------------
 if show_observation or show_log:
-    st.markdown("## 🧠 Macro Interaction Tools")
+    st.markdown("## Macro Interaction Tools")
 
 render_macro_interaction_tools_panel(
     show_observation=show_observation,

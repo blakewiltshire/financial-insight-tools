@@ -108,12 +108,11 @@ st.logo(BRAND_LOGO_PATH) # pylint: disable=no-member
 # -------------------------------------------------------------------------------------------------
 
 # --- Getting Started, Branding Image and Caption ---
-st.sidebar.markdown("### 🧭 Getting Started")
 st.sidebar.caption(
 "*Standalone tools for structuring, calibrating, and stress-testing financial decisions.*")
 
 st.sidebar.info("""
-**🛠 Toolbox & Calculators**
+**Toolbox & Calculators**
 
 Access precision utilities for position sizing, compounding, VaR, and trade evaluation.
 
@@ -154,81 +153,80 @@ with st.sidebar.expander("ℹ️ About & Support"):
 # -------------------------------------------------------------------------------------------------
 
 # --- Load About Markdown (auto-skips if not replaced) ---
-with st.expander("📖 About This App"):
+with st.expander("ℹ️ About This App"):
     markdown_content = load_markdown_file(ABOUT_APP_MD)
     if markdown_content:
         st.markdown(markdown_content, unsafe_allow_html=True)
     else:
         st.error("File not found: docs/about_toolbox_calculators.md")
-st.divider()
+st.space()
 
 # --- Modules ---
-
-st.header("🔢 Position Sizing & Return Optimisation")
-col1, col2 = st.columns(2)
+col1, col2 = st.columns(2, gap="small")
 
 with col1:
-    st.markdown("### 🧠 Kelly Criterion Calculator")
-    st.write("Estimate optimal bet sizing for expected value.")
-    if st.button("🧠 Kelly Criterion Calculator"):
-        st.switch_page("pages/14_kelly_criterion.py")
-
-    st.markdown("### 📏 Break-Even Distance Calculator")
-    st.write("Calculate the move needed to reach profitability.")
-    if st.button("📏 Break-Even Distance Calculator"):
-        st.switch_page("pages/15_break-even_distance_calculator.py")
-
+    with st.container(border=True):
+        st.markdown("### Kelly Criterion Calculator")
+        st.write("Estimate optimal bet sizing for expected value.")
+        if st.button("Kelly Criterion Calculator"):
+            st.switch_page("pages/14_kelly_criterion.py")
 with col2:
-    st.markdown("### 💸 Compounding Calculator")
-    st.write("Visualise the impact of recurring investment growth.")
-    if st.button("💸 Compounding Calculator"):
-        st.switch_page("pages/16_compounding_calculator.py")
+    with st.container(border=True):
+        st.markdown("### Compounding Calculator")
+        st.write("Visualise the impact of recurring investment growth.")
+        if st.button("Compounding Calculator"):
+            st.switch_page("pages/16_compounding_calculator.py")
 
-st.divider()
-
-st.header("⚖️ Risk & Volatility Tools")
-col1, col2 = st.columns(2)
+col1, col2 = st.columns(2, gap="small")
 
 with col1:
-    st.markdown("### ⚠️ Value at Risk (VaR) Calculator")
-    st.write("Quantify potential downside under normal conditions.")
-    if st.button("⚠️ Value at Risk (VaR) Calculator"):
-        st.switch_page("pages/17_var_calculator.py")
-
-    st.markdown("### 📉 Standard Deviation Calculator")
-    st.write("Evaluate variability for target or buffer setting.")
-    if st.button("📉 Standard Deviation Calculator"):
-        st.switch_page("pages/18_standard_deviation_calculator.py")
-
+    with st.container(border=True):
+        st.markdown("### Break-Even Distance Calculator")
+        st.write("Calculate the move needed to reach profitability.")
+        if st.button("Break-Even Distance Calculator"):
+            st.switch_page("pages/15_break-even_distance_calculator.py")
 with col2:
-    st.markdown("### 🛑 ATR-Based Stop Calculator")
-    st.write("Calculate volatility-based stop-loss buffers.")
-    if st.button("🛑 ATR-Based Stop Calculator"):
-        st.switch_page("pages/19_atr_based_stop_calculator.py")
+    with st.container(border=True):
+        st.markdown("### ATR-Based Stop Calculator")
+        st.write("Calculate volatility-based stop-loss buffers.")
+        if st.button("ATR-Based Stop Calculator"):
+            st.switch_page("pages/19_atr_based_stop_calculator.py")
 
-st.divider()
-
-st.header("🔧 System Utilities & Data Tools")
-col1, col2 = st.columns(2)
+col1, col2 = st.columns(2, gap="small")
 
 with col1:
-
-    st.markdown("### 🧼 Data Cleaner & Inspector")
-    st.write("Upload and review financial data for errors.")
-    if st.button("🧼 Data Cleaner & Inspector"):
-        st.switch_page("pages/20_data_cleaner_and_inspector.py")
-
+    with st.container(border=True):
+        st.markdown("### Value at Risk (VaR) Calculator")
+        st.write("Quantify potential downside under normal conditions.")
+        if st.button("Value at Risk (VaR) Calculator"):
+            st.switch_page("pages/17_var_calculator.py")
 with col2:
-    st.markdown("### 💱 Historical Data Currency Converter")
-    st.write("Convert OHLC pricing to a consistent currency.")
-    if st.button("💱 Launch Currency Converter"):
-        st.switch_page("pages/21_historical_data_currency_converter.py")
+    with st.container(border=True):
+        st.markdown("### Standard Deviation Calculator")
+        st.write("Evaluate variability for target or buffer setting.")
+        if st.button("Standard Deviation Calculator"):
+            st.switch_page("pages/18_standard_deviation_calculator.py")
+
+col1, col2 = st.columns(2, gap="small")
+
+with col1:
+    with st.container(border=True):
+        st.markdown("### Data Cleaner & Inspector")
+        st.write("Upload and review financial data for errors.")
+        if st.button("Data Cleaner & Inspector"):
+            st.switch_page("pages/20_data_cleaner_and_inspector.py")
+with col2:
+    with st.container(border=True):
+        st.markdown("### Historical Data Currency Converter")
+        st.write("Convert OHLC pricing to a consistent currency.")
+        if st.button("Launch Currency Converter"):
+            st.switch_page("pages/21_historical_data_currency_converter.py")
 
 
 # -------------------------------------------------------------------------------------------------
 # Footer
 # -------------------------------------------------------------------------------------------------
-st.divider()
+st.space()
 st.caption(
     "© 2026 Blake Media Ltd. | Financial Insight Tools by Blake Wiltshire — No trading, \
     investment, or policy advice provided."

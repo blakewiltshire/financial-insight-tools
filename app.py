@@ -80,12 +80,13 @@ ABOUT_SUPPORT_MD = os.path.join(ROOT_PATH, "docs", "about_and_support.md")
 # -------------------------------------------------------------------------------------------------
 # Streamlit Page Setup
 # -------------------------------------------------------------------------------------------------
-st.set_page_config(page_title=" Financial Insight Tools - Start Here", layout="wide")
+st.set_page_config(page_title=" Financial Insight Tools", layout="wide")
 st.title("Financial Insight Tools")
-st.caption("*This unified launcher provides structured access to all core modules within the \
-Financial Insight Tools system. It supports context-aware analysis across \
-macroeconomic signals, asset structuring, intermarket relationships, and modular trade \
-and portfolio workflows — grounded in disciplined, risk-aware decision flow.*")
+st.caption(
+    "*A structured launcher for the core Financial Insight Tools environments — "
+    "connecting macroeconomic exploration, market observation, trade and portfolio "
+    "workflows, and supporting reference surfaces within a disciplined decision-support framework.*"
+)
 
 # -------------------------------------------------------------------------------------------------
 # Sidebar Configuration
@@ -98,18 +99,16 @@ and portfolio workflows — grounded in disciplined, risk-aware decision flow.*"
 # --- Branding ---
 st.logo(BRAND_LOGO_PATH)  # pylint: disable=no-member
 
-
-
 if os.path.isfile(IMAGE_PATH):
     st.sidebar.image(IMAGE_PATH, width='stretch')
 
 # --- Quick Overview ---
-st.sidebar.markdown("### 🧭 Getting Started")
-st.sidebar.caption("*Structure | Analyse | Decide – Trading, Investing, and Macroeconomics*")
+st.sidebar.caption(
+    "*Structured access across macro, markets, trade workflow, and supporting tools.*"
+)
 
-# --- Introductory Note ---
 st.sidebar.info(
-    "Each module launches in a new window. Keep this launcher open for quick access to the full suite."
+    "Each module opens in a new window. Keep this launcher open for quick re-entry across the suite."
 )
 
 # --- About & Support ---
@@ -143,64 +142,62 @@ with st.sidebar.expander("ℹ️ About & Support"):
 # Main Content
 # -------------------------------------------------------------------------------------------------
 # --- Load About Markdown (auto-skips if not replaced) ---
-with st.expander("📖 About This Platform"):
+with st.expander("ℹ️ About This Platform"):
     markdown_content = load_markdown_file(ABOUT_APP_MD)
     if markdown_content:
         st.markdown(markdown_content, unsafe_allow_html=True)
     else:
         st.error("File not found: docs/about_platform.md")
-st.divider()
+
 
 # --- Modules ---
 MODULES = [
     {
         "title": "🌍 Economic Exploration",
-        "description": "Country-level macro dashboards, thematic navigation",
+        "description": "Country-level macro dashboards and thematic navigation.",
         "path": os.path.join(ROOT_PATH, "apps", "economic_exploration"),
         "filename": "app.py",
-        "button": "🌍 Launch Economic Exploration",
+        "button": "Open Economic Exploration",
         "column": 1,
     },
-
     {
         "title": "📈 Trade & Portfolio Structuring",
-        "description": "Full trade lifecycle from asset filtering to post-trade review",
+        "description": "Structured workflows across asset review, trade framing, and portfolio analysis.",
         "path": os.path.join(ROOT_PATH, "apps", "trade_portfolio_structuring"),
         "filename": "app.py",
-        "button": "📈 Launch Trading & Investing Suite",
+        "button": "Open Trade & Portfolio Structuring",
         "column": 2,
     },
     {
         "title": "🔗 Intermarket & Correlation",
-        "description": "Explore cross-asset, cross-theme, and macro–market relationships",
+        "description": "Explore cross-asset, macro, and thematic relationships across linked markets.",
         "path": os.path.join(ROOT_PATH, "apps", "intermarket_correlation"),
         "filename": "app.py",
-        "button": "🔗 Launch Intermarket and Correlation Dashboard",
+        "button": "Open Intermarket & Correlation",
         "column": 1,
     },
     {
         "title": "🛠 Toolbox & Calculators",
-        "description": "Standalone utilities (position sizing, spread ratios, pip value, etc.)",
+        "description": "Standalone utility functions for sizing, ratios, conversion, and supporting calculations.",
         "path": os.path.join(ROOT_PATH, "apps", "toolbox_calculators"),
         "filename": "app.py",
-        "button": "🛠 Open Toolbox & Calculators",
+        "button": "Open Toolbox & Calculators",
         "column": 1,
     },
-        {
+    {
         "title": "🧠 Observation & AI Export",
-        "description": "Capture observations, tag context, and export AI-ready insight bundles.",
+        "description": "Capture structured observations and export context-ready insight bundles.",
         "path": os.path.join(ROOT_PATH, "apps", "observation_ai_export"),
         "filename": "app.py",
-        "button": "🧠 Launch Observation & AI Export",
+        "button": "Open Observation & AI Export",
         "column": 2,
     },
-
     {
-        "title": "📚 Reference Data & Trusted Sources",
-        "description": "Centralised hub for reliable data sources and guides.",
+        "title": "📚 Reference Data & Sources",
+        "description": "Centralised access to source references, supporting materials, and trusted data surfaces.",
         "path": os.path.join(ROOT_PATH, "apps", "reference_data"),
         "filename": "app.py",
-        "button": "📚 View Reference Data & Sources",
+        "button": "Open Reference Data & Sources",
         "column": 2,
     },
 ]
@@ -211,7 +208,6 @@ render_module_dashboard(MODULES, ROOT_PATH)
 # -------------------------------------------------------------------------------------------------
 # Footer
 # -------------------------------------------------------------------------------------------------
-# st.markdown("---")
 st.caption(
     "© 2026 Blake Media Ltd. | Financial Insight Tools by Blake Wiltshire — No trading, \
     investment, or policy advice provided."

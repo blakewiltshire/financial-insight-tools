@@ -1,5 +1,5 @@
 # -------------------------------------------------------------------------------------------------
-# 🔀 Cross-Asset Correlation Module (Platinum Canonical Build with Full History)
+# Cross-Asset Correlation Module (Platinum Canonical Build with Full History)
 # -------------------------------------------------------------------------------------------------
 # pylint: disable=import-error, wrong-import-position, wrong-import-order
 # -------------------------------------------------------------------------------------------------
@@ -76,7 +76,7 @@ from apps.data_sources.financial_data.asset_map import get_asset_path
 from apps.data_sources.financial_data.user_asset_map import get_user_asset_path
 
 # -------------------------------------------------------------------------------------------------
-# 🔗 Macro Interaction Tools — Sidebar + Observation Panel Integration
+# Macro Interaction Tools — Sidebar + Observation Panel Integration
 # -------------------------------------------------------------------------------------------------
 from macro_insight_sidebar_panel_intermarket_correlation import render_macro_sidebar_tools
 from render_macro_interaction_tools_panel_intermarket_correlation import render_macro_interaction_tools_panel
@@ -89,17 +89,17 @@ from observation_handler_cross_asset_correlation import (
 # Streamlit Page Setup
 # -------------------------------------------------------------------------------------------------
 st.set_page_config(page_title="Cross-Asset Correlation", layout="wide")
-st.title("🔀 Cross-Asset Correlation")
+st.title("Cross-Asset Correlation")
 st.caption("*Examine relationships between asset classes to support hedging logic, intermarket "
 "strategy construction, or systemic signal validation.*")
 
-with st.expander("📌 What is this app about?"):
+with st.expander("ℹ️ About This App"):
     content = load_markdown_file(ABOUT_APP_MD)
     if content:
         st.markdown(content, unsafe_allow_html=True)
 
 st.sidebar.title("📂 Navigation Menu")
-st.sidebar.page_link('app.py', label='🔗 Intermarket & Correlation')
+st.sidebar.page_link('app.py', label='Intermarket & Correlation')
 for path, label in build_sidebar_links():
     st.sidebar.page_link(path, label=label)
 st.sidebar.divider()
@@ -110,7 +110,7 @@ st.logo(BRAND_LOGO_PATH)
 # -------------------------------------------------------------------------------------------------
 # Asset Ingestion Block (Canonical)
 # -------------------------------------------------------------------------------------------------
-st.sidebar.title("🔎 Select Cross-Asset Pair")
+st.sidebar.title("Select Cross-Asset Pair")
 data_source = st.sidebar.selectbox("Choose your data source", [
     "Preloaded Asset Types (Default)",
     "Preloaded Asset Types (User)",
@@ -173,10 +173,10 @@ if df_long is not None and df_short is not None:
 
     view_tabs = st.tabs([
         "Overview Summary",
-        "📉 Short-Term (50 Days)",
-        "📊 Medium-Term (200 Days)",
-        "🕰 Full History",
-        "ℹ️ Help: How to"
+        "Short-Term (50 Days)",
+        "Medium-Term (200 Days)",
+        "Full History",
+        "Help: How to"
     ])
 
     with view_tabs[0]:
@@ -259,7 +259,7 @@ theme_title = "Cross-Asset Correlation"
 selected_use_case = "Cross-Asset Correlation Snapshot"
 
 # -------------------------------------------------------------------------------------------------
-# 🔍 Sidebar Activation Toggles
+# Sidebar Activation Toggles
 # -------------------------------------------------------------------------------------------------
 show_observation, show_log = render_macro_sidebar_tools(
     theme_readable=theme_title,
@@ -268,10 +268,10 @@ show_observation, show_log = render_macro_sidebar_tools(
 )
 
 # -------------------------------------------------------------------------------------------------
-# 🧠 Macro Interaction Tools
+# Macro Interaction Tools
 # -------------------------------------------------------------------------------------------------
 if show_observation or show_log:
-    st.markdown("## 🧠 Macro Interaction Tools")
+    st.markdown("## Macro Interaction Tools")
 
 # Prepare selected indicators from user input
 selected_indicators = [long_asset, short_asset] if long_asset and short_asset else []

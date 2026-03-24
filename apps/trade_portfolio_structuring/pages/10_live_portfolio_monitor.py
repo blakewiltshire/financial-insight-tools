@@ -8,7 +8,7 @@
 # Docstring
 # -------------------------------------------------------------------------------------------------
 """
-🧭 Live Portfolio Monitor
+Live Portfolio Monitor
 
 This module is part of the Trade & Portfolio Structuring suite in the
 Financial Insight Tools system.
@@ -95,7 +95,7 @@ APPS_PATH, "observation_engine", "sample_inputs",
 sys.path.append(os.path.join(APPS_PATH, "observation_engine"))
 
 # -------------------------------------------------------------------------------------------------
-# 🧠 Observation Tools (User Observation Logging — Group A)
+# Observation Tools (User Observation Logging — Group A)
 # -------------------------------------------------------------------------------------------------
 from observation_handler_live_monitor import (
     observation_input_form,
@@ -106,7 +106,7 @@ from render_macro_interaction_tools_panel_live_monitor import render_macro_inter
 from macro_insight_sidebar_panel_trade_portfolio_structuring import render_macro_sidebar_tools
 
 # -------------------------------------------------------------------------------------------------
-# 🧭 Live Portfolio Monitor Template + Validator
+# Live Portfolio Monitor Template + Validator
 # -------------------------------------------------------------------------------------------------
 from portfolio_trade_modules.live_portfolio_template import get_live_portfolio_template
 from portfolio_trade_modules.live_trade_validator import validate_live_trade_log
@@ -123,7 +123,7 @@ from portfolio_trade_modules.live_trade_validator import validate_live_trade_log
 # Streamlit Page Setup
 # -------------------------------------------------------------------------------------------------
 st.set_page_config(page_title="Live Portfolio Monitor", layout="wide")
-st.title("🧭 Live Portfolio Monitor")
+st.title("Live Portfolio Monitor")
 st.caption(
     "*Monitor open trades, leverage use, and portfolio-level diagnostics.*"
 )
@@ -131,7 +131,7 @@ st.caption(
 # -------------------------------------------------------------------------------------------------
 # Info Panel
 # -------------------------------------------------------------------------------------------------
-with st.expander("📌 What is this app about?"):
+with st.expander("ℹ️ About This App"):
     content = load_markdown_file(ABOUT_APP_MD)
     if content:
         st.markdown(content, unsafe_allow_html=True)
@@ -145,7 +145,7 @@ with st.expander("📌 What is this app about?"):
 # Also links back to app dashboard (e.g., app.py)
 # -------------------------------------------------------------------------------------------------
 st.sidebar.title("📂 Navigation Menu")
-st.sidebar.page_link('app.py', label='📈 Trade and Portfolio Structuring')
+st.sidebar.page_link('app.py', label='Trade and Portfolio Structuring')
 for path, label in build_sidebar_links():
     st.sidebar.page_link(path, label=label)
 
@@ -159,13 +159,13 @@ st.logo(BRAND_LOGO_PATH) # pylint: disable=no-member
 # -------------------------------------------------------------------------------------------------
 # Sidebar — Upload and Template
 # -------------------------------------------------------------------------------------------------
-st.sidebar.markdown("### 📥 Live Portfolio Setup")
+st.sidebar.markdown("### Live Portfolio Setup")
 
 uploaded_file = st.sidebar.file_uploader("Upload your portfolio snapshot (.csv)", type="csv")
 
 df_template = get_live_portfolio_template()
 st.sidebar.download_button(
-    label="📥 Get Portfolio Template",
+    label="Get Portfolio Template",
     data=df_template.to_csv(index=False).encode("utf-8"),
     file_name="live_portfolio_template.csv",
     mime="text/csv",
@@ -177,14 +177,14 @@ st.sidebar.divider()
 # -------------------------------------------------------------------------------------------------
 # Sidebar Section Selection
 # -------------------------------------------------------------------------------------------------
-st.sidebar.markdown("### 📂 Select Portfolio Views")
+st.sidebar.markdown("### Select Portfolio Views")
 selected_sections = st.sidebar.multiselect(
     "Choose one or more views:",
     [
-        "📋 Position Table",
-        "📈 Exposure Breakdown",
-        "⚠️ Risk Diagnostics",
-        "🛠️ Live Validator"
+        "Position Table",
+        "Exposure Breakdown",
+        "Risk Diagnostics",
+        "Live Validator"
     ],
     default=[]
 )
@@ -193,7 +193,7 @@ st.sidebar.divider()
 # -------------------------------------------------------------------------------------------------
 # Section 1: Portfolio Summary (Always Active)
 # -------------------------------------------------------------------------------------------------
-st.subheader("📊 Portfolio Summary")
+st.subheader("Portfolio Summary")
 st.markdown("_Overview of current live positions, exposure, and unrealised returns._")
 
 # -------------------------------------------------------------------------------------------------
@@ -228,7 +228,7 @@ if df_portfolio is not None:
         df = df_clean.copy()
 
         # Capital Configuration
-        st.sidebar.markdown("### ⚙️ Capital Configuration")
+        st.sidebar.markdown("### Capital Configuration")
         capital = st.sidebar.number_input("Account Capital ($)", min_value=1000,
         value=100000, step=1000,
             help=("Used to calculate each position’s % of portfolio. "
@@ -246,9 +246,9 @@ if df_portfolio is not None:
         - If **Global Leverage** is set to `1.0`, then no fallback leverage is applied.
         - This structure ensures clarity across mixed product types: equity, crypto, CFDs, and FX.
 
-        ✅ Use `1.0` for capital-only exposure.
-        ⚠️ Use `>1.0` for leveraged positions.
-        🚫 Avoid `0` — it triggers fallback logic.
+        Use `1.0` for capital-only exposure.
+        Use `>1.0` for leveraged positions.
+        Avoid `0` — it triggers fallback logic.
             """)
 
         # Apply leverage fallback
@@ -270,7 +270,7 @@ if df_portfolio is not None:
 # -------------------------------------------------------------------------------------------------
         df_filtered = df.copy()
         if not df.empty and "Symbol" in df.columns:
-            st.sidebar.markdown("### 🔍 Filter Portfolio")
+            st.sidebar.markdown("### Filter Portfolio")
             asset_options = sorted(df["Symbol"].dropna().unique())
             selected_assets = st.sidebar.multiselect(
                 "Filter by Symbol",
@@ -281,14 +281,14 @@ if df_portfolio is not None:
             df_filtered = df[df["Symbol"].isin(selected_assets)].copy()
 
         # Sidebar Summary
-        st.sidebar.markdown("### 🧾 Portfolio Summary")
-        st.sidebar.success("✅ Portfolio loaded successfully.")
+        st.sidebar.markdown("### Portfolio Summary")
+        st.sidebar.success("Portfolio loaded successfully.")
         if use_sample:
-            st.sidebar.info("📂 Using sample portfolio snapshot.")
+            st.sidebar.info("Using sample portfolio snapshot.")
         st.sidebar.markdown(f"**Records:** {len(df)}")
         st.sidebar.markdown(f"**Sample:** {'Yes' if use_sample else 'No'}")
 
-        with st.expander("📋 Preview Uploaded Portfolio"):
+        with st.expander("Preview Uploaded Portfolio"):
             st.dataframe(df, width='stretch')
 
         # Display Metrics
@@ -316,10 +316,10 @@ with st.expander("ℹ️ Interpretation Guidance"):
         st.error("File not found: docs/help_live_portfolio_monitor.md")
 
 # -------------------------------------------------------------------------------------------------
-# Section: 📋 Position Table
+# Section: Position Table
 # -------------------------------------------------------------------------------------------------
-if "📋 Position Table" in selected_sections and df_filtered is not None:
-    st.subheader("📋 Live Position Table")
+if "Position Table" in selected_sections and df_filtered is not None:
+    st.subheader("Live Position Table")
     st.markdown("_Sortable table of open trades with dynamic return calculation._")
 
     ordered_cols = [
@@ -376,15 +376,15 @@ if "📋 Position Table" in selected_sections and df_filtered is not None:
             allow_unsafe_jscode=True
         )
     else:
-        st.warning("📋 No data available for position table.")
+        st.warning("No data available for position table.")
 
 st.divider()
 
 # -------------------------------------------------------------------------------------------------
 # Exposure Breakdown Section (Platinum Version)
 # -------------------------------------------------------------------------------------------------
-if "📈 Exposure Breakdown" in selected_sections and df_filtered is not None:
-    st.subheader("📈 Exposure Breakdown")
+if "Exposure Breakdown" in selected_sections and df_filtered is not None:
+    st.subheader("Exposure Breakdown")
     st.markdown("_Visualise portfolio concentration across sector, country, and \
     strategy dimensions._")
 
@@ -415,7 +415,7 @@ if "📈 Exposure Breakdown" in selected_sections and df_filtered is not None:
             exp_pivot = pd.concat([exp_pivot, totals_row])
 
             # Display table
-            st.markdown(f"### 📊 {dimension} Exposure")
+            st.markdown(f"### {dimension} Exposure")
             st.dataframe(exp_pivot.reset_index(), width='content')
 
             # Prepare chart data (exclude Total)
@@ -443,10 +443,10 @@ if "📈 Exposure Breakdown" in selected_sections and df_filtered is not None:
             st.warning(f"Column '{dimension}' not found in uploaded data.")
 
 # -------------------------------------------------------------------------------------------------
-# Section: ⚠️ Risk Diagnostics — Platinum Version with Tiering
+# Section: Risk Diagnostics — Platinum Version with Tiering
 # -------------------------------------------------------------------------------------------------
-if "⚠️ Risk Diagnostics" in selected_sections and df_filtered is not None:
-    st.subheader("⚠️ Risk Diagnostics")
+if "Risk Diagnostics" in selected_sections and df_filtered is not None:
+    st.subheader("Risk Diagnostics")
     st.markdown("_Identify high-risk exposures based on leverage, position size, \
     and concentration._")
 
@@ -464,7 +464,7 @@ if "⚠️ Risk Diagnostics" in selected_sections and df_filtered is not None:
     num_over_exposure = df_risk["Over Max Exposure"].sum()
     if num_over_exposure > 0:
         warnings_list.append(
-        f"🚨 {num_over_exposure} positions exceed {max_pct_per_position}% of account capital.")
+        f" {num_over_exposure} positions exceed {max_pct_per_position}% of account capital.")
 
     # --- Asset concentration ---
     asset_group = df_risk.groupby("Asset")["Leverage-Adjusted Value"].sum()
@@ -485,7 +485,7 @@ if "⚠️ Risk Diagnostics" in selected_sections and df_filtered is not None:
         ]
         if not high_sector_conc.empty:
             warnings_list.append(
-            f"📌 {len(high_sector_conc)} sectors exceed {max_pct_sector}% of capital exposure."
+            f" {len(high_sector_conc)} sectors exceed {max_pct_sector}% of capital exposure."
             )
 
     # --- Display summary ---
@@ -493,10 +493,10 @@ if "⚠️ Risk Diagnostics" in selected_sections and df_filtered is not None:
         for w in warnings_list:
             st.warning(w)
     else:
-        st.success("✅ No immediate risk flags detected based on configured thresholds.")
+        st.success(" No immediate risk flags detected based on configured thresholds.")
 
     # --- Flagged Table ---
-    st.markdown("### 📋 Positions Exceeding Risk Thresholds")
+    st.markdown("### Positions Exceeding Risk Thresholds")
     flagged = df_risk[df_risk["Over Max Exposure"]]
     if not flagged.empty:
         st.dataframe(flagged[[
@@ -536,7 +536,7 @@ if "⚠️ Risk Diagnostics" in selected_sections and df_filtered is not None:
     df_risk["Risk Tier"] = df_risk["Percent of Portfolio"].apply(classify_risk_tier)
 
     # --- Risk Tier Summary Table ---
-    st.markdown("### 🧮 Risk Tier Distribution")
+    st.markdown("### Risk Tier Distribution")
     risk_tier_counts = df_risk["Risk Tier"].value_counts().reset_index()
     risk_tier_counts.columns = ["Risk Tier", "Count"]
     st.dataframe(risk_tier_counts, width='content')
@@ -554,7 +554,7 @@ if "⚠️ Risk Diagnostics" in selected_sections and df_filtered is not None:
     st.plotly_chart(fig_tier, width='content')
 
     # --- Sector Breakdown by Risk Tier ---
-    st.markdown("### 📊 Sector Exposure by Risk Tier")
+    st.markdown("### Sector Exposure by Risk Tier")
     tier_sector = df_risk.groupby(["Sector", "Risk Tier"]).size().reset_index(name="Count")
     fig_sector = px.bar(
         tier_sector,
@@ -572,13 +572,13 @@ if "⚠️ Risk Diagnostics" in selected_sections and df_filtered is not None:
     "portfolio concentration. Tier classification is structural — not advisory.")
 
 # -------------------------------------------------------------------------------------------------
-# Section: 🛠️ Live Validator
+# Section: Live Validator
 # -------------------------------------------------------------------------------------------------
-if "🛠️ Live Validator" in selected_sections and validation is not None:
-    st.subheader("🛠️ Live Validator")
+if "Live Validator" in selected_sections and validation is not None:
+    st.subheader("Live Validator")
     st.markdown("_Structure and logic checks from initial upload validation._")
 
-    summary_tabs = st.tabs(["🔍 Summary", "📄 Detail"])
+    summary_tabs = st.tabs(["Summary", "Detail"])
 
     # --- Summary Tab ---
     with summary_tabs[0]:
@@ -587,7 +587,7 @@ if "🛠️ Live Validator" in selected_sections and validation is not None:
             for w in validation["warnings"]:
                 st.markdown(f"- {w}")
         else:
-            st.success("✅ No structural or logic warnings detected in uploaded portfolio.")
+            st.success("No structural or logic warnings detected in uploaded portfolio.")
 
         st.caption("Warnings include duplicated entries, inactive trades, or unusual values.")
 
@@ -598,7 +598,7 @@ if "🛠️ Live Validator" in selected_sections and validation is not None:
             # Duplicate symbol + entry date check
             dupes = df_valid[df_valid.duplicated(subset=["Symbol", "Entry Date"], keep=False)]
             if not dupes.empty:
-                st.markdown("### 🔁 Duplicate Trades Detected")
+                st.markdown("### Duplicate Trades Detected")
                 st.dataframe(dupes, width='stretch')
 
             # No price movement check
@@ -610,10 +610,10 @@ if "🛠️ Live Validator" in selected_sections and validation is not None:
             # Invalid or fallback leverage check
             fallback_leverage = df_valid[df_valid["Leverage Used"] == global_leverage]
             if not fallback_leverage.empty:
-                st.markdown(f"### ⚠️ Default Leverage Applied ({global_leverage}x)")
+                st.markdown(f"### Default Leverage Applied ({global_leverage}x)")
                 st.dataframe(fallback_leverage, width='stretch')
         else:
-            st.info("ℹ️ No valid records available for deep validation review.")
+            st.info("No valid records available for deep validation review.")
 
     st.caption("These diagnostics mirror checks applied during initial file ingestion and \
 are intended to improve transparency and ensure future sections operate correctly.")
@@ -621,14 +621,14 @@ are intended to improve transparency and ensure future sections operate correctl
 st.divider()
 
 # -------------------------------------------------------------------------------------------------
-# 🧠 Define Theme Metadata (for Observation Logging)
+# Define Theme Metadata (for Observation Logging)
 # -------------------------------------------------------------------------------------------------
 theme_code = "live_portfolio"
 theme_title = "Live Portfolio Monitor"
 selected_use_case = "Portfolio Health Snapshot"
 
 # -------------------------------------------------------------------------------------------------
-# 🧠 Activate Observation + Journal Toggles
+# Activate Observation + Journal Toggles
 # -------------------------------------------------------------------------------------------------
 show_observation, show_log = render_macro_sidebar_tools(
     theme_readable=theme_title,
@@ -636,11 +636,11 @@ show_observation, show_log = render_macro_sidebar_tools(
     selected_use_case=selected_use_case
 )
 
-# 🎯 No fixed assets selected in live dashboard — use empty list
+# No fixed assets selected in live dashboard — use empty list
 asset_list_for_observation = []
 
 if show_observation or show_log:
-    st.markdown("## 🧠 Macro Interaction Tools")
+    st.markdown("## Macro Interaction Tools")
     st.caption("*Capture general reflections on trading performance, decision patterns, "
     "or strategic lessons from this review window.*")
 

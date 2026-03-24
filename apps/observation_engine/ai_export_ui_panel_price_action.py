@@ -1,5 +1,5 @@
 # -------------------------------------------------------------------------------------------------
-# 🧠 AI Export UI Panel — Price Action (Platinum Canonical)
+# AI Export UI Panel — Price Action (Platinum Canonical)
 # -------------------------------------------------------------------------------------------------
 # pylint: disable=import-error, wrong-import-position, wrong-import-order
 
@@ -27,7 +27,7 @@ STORAGE_FOLDER = os.path.join(APP_PATH, "observation_engine", "storage", "ai_bun
 os.makedirs(STORAGE_FOLDER, exist_ok=True)
 
 # -------------------------------------------------------------------------------------------------
-# 🔍 Render AI Export Panel — Price Action Snapshot
+# Render AI Export Panel — Price Action Snapshot
 # -------------------------------------------------------------------------------------------------
 def render_ai_export_panel(
     asset: str,
@@ -43,7 +43,7 @@ def render_ai_export_panel(
     """
     Displays the export UI panel for Price Action snapshot. Delegates save to user via button.
     """
-    st.markdown("### 🔎 Macro Insight Snapshots")
+    st.markdown("### Macro Insight Snapshots")
 
     # Build snapshot — no saving here
     success, snapshot = build_macro_insight_snapshot_price_action(
@@ -63,12 +63,12 @@ def render_ai_export_panel(
         return
 
     # Preview snapshot inline
-    st.markdown("#### 📦 Export Bundle Preview")
+    st.markdown("#### Export Bundle Preview")
     st.caption("Snapshot of macro insight metadata and scoring structure")
     st.json(snapshot, expanded=False)
 
     # Save toggle
-    replace_existing = st.toggle("🔁 Replace existing entry if it already exists", value=True)
+    replace_existing = st.toggle("Replace existing entry if it already exists", value=True)
 
     # Save trigger
     if st.button("📌 Save Macro Insights"):
@@ -82,4 +82,4 @@ def render_ai_export_panel(
         with open(save_path, "w", encoding="utf-8") as f:
             json.dump(snapshot, f, indent=2)
 
-        st.success(f"📁 Snapshot saved to: `{save_path}`")
+        st.success(f"Snapshot saved to: `{save_path}`")

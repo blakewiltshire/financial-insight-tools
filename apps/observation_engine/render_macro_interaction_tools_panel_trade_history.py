@@ -23,9 +23,9 @@ def render_macro_interaction_tools_panel(
     """
 
     if show_observation:
-        with st.expander("📝 Add Historical Reflection", expanded=True):
+        with st.expander("Add Historical Reflection", expanded=True):
             observation_input_callback()
 
     if show_log:
-        with st.expander("📋 View/Edit/Delete Historical Reflections", expanded=True):
+        with st.expander("View/Edit/Delete Historical Reflections", expanded=True):
             observation_log_callback()

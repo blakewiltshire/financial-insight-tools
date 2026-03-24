@@ -1,5 +1,5 @@
 # -------------------------------------------------------------------------------------------------
-# 🧠 Render Macro Interaction Tools Panel — Intermarket Correlation Modules
+# Render Macro Interaction Tools Panel — Intermarket Correlation Modules
 # -------------------------------------------------------------------------------------------------
 # pylint: disable=missing-function-docstring, too-many-arguments
 # -------------------------------------------------------------------------------------------------
@@ -29,7 +29,7 @@ def render_macro_interaction_tools_panel(
     """
 
     if show_observation:
-        with st.expander("📝 Add New Observation", expanded=True):
+        with st.expander("Add New Observation", expanded=True):
             observation_input_callback(
                 theme_title=panel_title,
                 themes_selected=selected_themes,
@@ -37,5 +37,5 @@ def render_macro_interaction_tools_panel(
             )
 
     if show_log:
-        with st.expander("📋 View/Edit/Delete Observations", expanded=True):
+        with st.expander("View/Edit/Delete Observations", expanded=True):
             observation_log_callback()

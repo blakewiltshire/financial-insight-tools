@@ -13,13 +13,13 @@
 This module contains the full mapping of economic data series used across all countries and \
 thematic groupings within the economic intelligence framework.
 
-📚 Purpose:
+Purpose:
 - Centralizes configuration for each economic indicator by country and thematic group.
 - Facilitates dynamic loading of time series data and metadata in a consistent, structured manner.
 - Ensures modular and extensible handling of global economic indicators, allowing comparisons \
 and cross-country analysis.
 
-🌍 Countries Supported:
+Countries Supported:
 # Add as you onboard countries
 - United States
 - United Kingdom
@@ -35,7 +35,7 @@ and cross-country analysis.
 - Brazil
 
 
-🎯 Thematic Groups Included:
+Thematic Groups Included:
 🟩 Macroeconomic Fundamentals
 - Economic Growth and Stability: Composite and leading indicators like GDP and macro indices.
 - Labour Market Dynamics: Employment, participation, and wage data.
@@ -74,7 +74,7 @@ Integration Steps
 
 ECONOMIC_SERIES_MAP = {
     "Template": {
-        "000_🧩_template": {
+        "000_template": {
             "blank_template": {
                 "Signal A": {
                     "Use Case": "Signal A",
@@ -1137,7 +1137,7 @@ ECONOMIC_SERIES_MAP = {
                 "nasdaq100": {
                     "Use Case": "Equity Index",
                     "name": "nasdaq100",
-                    "ui_display_name": "Growth Oriented Index,",
+                    "ui_display_name": "Growth Oriented Index",
                     "indicator_id": "1102_growth_oriented_index",
                     "source_indicator": "NDX",
                     "theme": "1100_market_trends_financial_health",
@@ -1150,6 +1150,28 @@ ECONOMIC_SERIES_MAP = {
                     "country": "United States",
                     "source": "Investing.com",
                     "source_url": "https://www.investing.com/indices/nq-100-historical-data",
+                    "folder": "1100_equity_index",
+                    "filename": "us_m_1100_structural.csv",
+                    "release_schedule: final": "End of Month",
+                    "note": "Growth Oriented Index",
+                    "allow_correlation": True,
+                },
+                "Real Estate": {
+                    "Use Case": "Equity Index",
+                    "name": "Real Estate",
+                    "ui_display_name": "Growth Oriented Index",
+                    "indicator_id": "1102_growth_oriented_index",
+                    "source_indicator": "XLRE",
+                    "theme": "1100_market_trends_financial_health",
+                    "template": "equity_index_template",
+                    "unit_type": "Prices",
+                    "unit_multiplier": 1,
+                    "frequency": "Monthly",
+                    "seasonal_adjustment": "Not Appicable",
+                    "value_type": "Index",
+                    "country": "United States",
+                    "source": "Investing.com",
+                    "source_url": "https://www.investing.com/etfs/real-estate-select-sector-spdr-historical-data",
                     "folder": "1100_equity_index",
                     "filename": "us_m_1100_structural.csv",
                     "release_schedule: final": "End of Month",

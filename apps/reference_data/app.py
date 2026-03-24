@@ -7,7 +7,7 @@
 # Docstring
 # -------------------------------------------------------------------------------------------------
 """
-📚 Reference Data & Trusted Sources — Insight Launcher
+Reference Data & Trusted Sources — Insight Launcher
 
 Central hub for accessing institutional-grade sources, classification systems,
 and indicator metadata that support system-wide validation and contextual insight.
@@ -86,12 +86,11 @@ st.caption("*Central hub for reliable data sources, theme mapping, and classific
 st.logo(BRAND_LOGO_PATH)  # pylint: disable=no-member
 
 # --- Getting Started ---
-st.sidebar.markdown("### 🧭 Getting Started")
 st.sidebar.caption("*Institutional-grade reference support for validation, sourcing, \
 and system architecture.*")
 
 st.sidebar.info("""
-**📚 Reference Data & Trusted Sources**
+**Reference Data & Trusted Sources**
 
 This launcher provides structured access to validated links, classification viewers,
 and the internal thematic registry system used across the Financial Insight Tools suite.
@@ -130,53 +129,52 @@ with st.sidebar.expander("ℹ️ About & Support"):
 # Main Content
 # -------------------------------------------------------------------------------------------------
 
-with st.expander("📖 About This App"):
+with st.expander("ℹ️ About This App"):
     markdown_content = load_markdown_file(ABOUT_APP_MD)
     if markdown_content:
         st.markdown(markdown_content, unsafe_allow_html=True)
     else:
         st.error("File not found: docs/about_reference.md")
 
-st.divider()
-st.header("📂 Launch Reference Modules")
-col1, col2 = st.columns(2)
+st.space()
 
-# --- Module 1 ---
-with col1:
-    st.markdown("### 📚 Institutional Reference Directory")
-    st.write("Directory of market data platforms, regulators, and statistical portals.")
-    if st.button("📚 Launch Institutional Directory"):
-        st.switch_page("pages/22_institutional_reference_directory.py")
-
-# --- Module 2 ---
-with col2:
-    st.markdown("### 📚 Classification Schema Viewer")
-    st.write("Visualise economic/industry classification hierarchies.")
-    if st.button("📚 Launch Classification Viewer"):
-        st.switch_page("pages/23_classification_schema_viewer.py")
-
-st.divider()
-
-col1, col2 = st.columns(2)
+# --- Modules ---
+col1, col2 = st.columns(2, gap="small")
 
 with col1:
-
-    st.markdown("### 🧠 AI Persona Reference")
-    st.write("Centralised repository of role definitions and exploration frameworks.")
-    if st.button("🧠 AI Persona Reference"):
-        st.switch_page("pages/24_ai_persona_reference.py")
+    with st.container(border=True):
+        st.markdown("### Institutional Reference Directory")
+        st.write("Directory of market data platforms, regulators, and statistical portals.")
+        if st.button("Launch Institutional Directory"):
+            st.switch_page("pages/22_institutional_reference_directory.py")
 
 with col2:
-    st.markdown("### 🗂️ Index & Glossary Viewer")
-    st.write("Alphabetical cross-reference of key concepts, terms, and chapter references.")
-    if st.button("🗂️ Index & Glossary Viewer"):
-        st.switch_page("pages/25_index_glossary_viewer.py")
+    with st.container(border=True):
+        st.markdown("### Classification Schema Viewer")
+        st.write("Visualise economic/industry classification hierarchies.")
+        if st.button("Launch Classification Viewer"):
+            st.switch_page("pages/23_classification_schema_viewer.py")
 
-st.divider()
+col1, col2 = st.columns(2, gap="small")
+
+with col1:
+    with st.container(border=True):
+        st.markdown("### AI Persona Reference")
+        st.write("Centralised repository of role definitions and exploration frameworks.")
+        if st.button("AI Persona Reference"):
+            st.switch_page("pages/24_ai_persona_reference.py")
+
+with col2:
+    with st.container(border=True):
+        st.markdown("### Index & Glossary Viewer")
+        st.write("Alphabetical cross-reference of key concepts, terms, and chapter references.")
+        if st.button("Index & Glossary Viewer"):
+            st.switch_page("pages/25_index_glossary_viewer.py")
 
 # -------------------------------------------------------------------------------------------------
 # Footer
 # -------------------------------------------------------------------------------------------------
+st.space()
 st.caption(
     "© 2026 Blake Media Ltd. | Financial Insight Tools by Blake Wiltshire — No trading, \
 investment, or policy advice provided."

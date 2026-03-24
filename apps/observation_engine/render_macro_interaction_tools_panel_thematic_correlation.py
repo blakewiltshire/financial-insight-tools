@@ -1,5 +1,5 @@
 # -------------------------------------------------------------------------------------------------
-# 🧠 Macro Interaction Panel — Thematic Correlation Explorer (Platinum Canonical Build)
+# Macro Interaction Panel — Thematic Correlation Explorer (Platinum Canonical Build)
 # -------------------------------------------------------------------------------------------------
 # Handles rendering of Observation Input and Journal Log Viewer for correlation themes
 # -------------------------------------------------------------------------------------------------
@@ -33,7 +33,7 @@ def render_macro_interaction_tools_panel(
         observation_log_callback (func): Journal viewer renderer
     """
 
-    # 📝 Observation Input Form
+    # Observation Input Form
     if show_observation:
             observation_input_callback(
                 theme_title=theme_title,
@@ -42,5 +42,5 @@ def render_macro_interaction_tools_panel(
             )
 
     if show_log:
-        with st.expander("📋 View/Edit/Delete Observations", expanded=True):
+        with st.expander("View/Edit/Delete Observations", expanded=True):
             observation_log_callback()

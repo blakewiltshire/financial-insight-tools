@@ -1,5 +1,5 @@
 # -------------------------------------------------------------------------------------------------
-# 🔗 Build Export Bundle Panel
+# Build Export Bundle Panel
 # -------------------------------------------------------------------------------------------------
 
 import os
@@ -11,13 +11,13 @@ from pathlib import Path
 from insight_loader import load_all_observations, load_snapshot_json
 
 # -------------------------------------------------------------------------------------------------
-# 📁 Export Path (Canonical Location)
+# Export Path (Canonical Location)
 # -------------------------------------------------------------------------------------------------
 EXPORT_FOLDER = Path(__file__).parent / "storage" / "ai_bundles" / "exports"
 EXPORT_FOLDER.mkdir(parents=True, exist_ok=True)
 
 # -------------------------------------------------------------------------------------------------
-# 🔧 Bundle Builder — Assemble Current Snapshots & Observations
+# Bundle Builder — Assemble Current Snapshots & Observations
 # -------------------------------------------------------------------------------------------------
 
 def create_ai_export_bundle(bundle_name: str) -> dict:
@@ -26,7 +26,7 @@ def create_ai_export_bundle(bundle_name: str) -> dict:
 
     for snapshot_entry in snapshot_paths:
         try:
-            path = snapshot_entry["source_file"]  # ✅ Extract string path from dict
+            path = snapshot_entry["source_file"]  # Extract string path from dict
             snapshot_data = load_snapshot_json(path)
             snapshot_entries.append(snapshot_data)
         except Exception as e:
@@ -58,49 +58,49 @@ def create_ai_export_bundle(bundle_name: str) -> dict:
     return bundle
 
 # -------------------------------------------------------------------------------------------------
-# 💾 Save Bundle to File
+# Save Bundle to File
 # -------------------------------------------------------------------------------------------------
 def save_export_bundle(bundle: dict, filename: str) -> None:
     export_path = EXPORT_FOLDER / filename
     with open(export_path, "w", encoding="utf-8") as f:
         json.dump(bundle, f, indent=4)
-    st.success(f"✅ Export bundle saved to `{export_path.name}`")
+    st.success(f"Export bundle saved to `{export_path.name}`")
 
 # -------------------------------------------------------------------------------------------------
-# 🚀 UI — Build Export Bundle Panel
+# UI — Build Export Bundle Panel
 # -------------------------------------------------------------------------------------------------
 
 def render_build_export_bundle_panel():
     """
     Renders the full export panel UI for assembling and saving a bundle.
     """
-    st.title("🔗 Build Export Bundle")
+    st.header("Build Export Bundle")
     st.caption("Combine selected snapshots and observations into a structured bundle for AI or strategic export.")
 
     # ---------------------------
-    # 🧾 Bundle Overview
+    # Bundle Overview
     # ---------------------------
-    st.subheader("📦 Current Bundle Overview")
+    st.subheader("Current Bundle Overview")
 
     st.info(
-    "🛠️ **Want to make changes to your selections?**\n\n"
-    "Please return to the 📂 **Snapshot Browser** or 📋 **Observation Browser** to modify the selected items.\n\n"
+    "**Want to make changes to your selections?**\n\n"
+    "Please return to the **Snapshot Browser** or **Observation Browser** to modify the selected items.\n\n"
     "This screen is only for previewing and exporting your current bundle."
 )
 
     col1, col2 = st.columns(2)
     with col1:
-        st.markdown(f"**📊 Snapshots Selected:** `{len(st.session_state.get('bundle_snapshots', []))}`")
+        st.markdown(f"**Snapshots Selected:** `{len(st.session_state.get('bundle_snapshots', []))}`")
     with col2:
-        st.markdown(f"**📝 Observations Selected:** `{len(st.session_state.get('bundle_observations', []))}`")
+        st.markdown(f"**Observations Selected:** `{len(st.session_state.get('bundle_observations', []))}`")
 
     # ---------------------------
-    # 📂 Snapshot Previews (Formatted Titles)
+    # Snapshot Previews (Formatted Titles)
     # ---------------------------
     raw_snapshots = st.session_state.get("bundle_snapshots", [])
 
     if raw_snapshots:
-        with st.expander("📂 View Selected Snapshots", expanded=False):
+        with st.expander("View Selected Snapshots", expanded=False):
             for entry in raw_snapshots:
                 try:
                     # Load from path if string, otherwise assume dict
@@ -129,11 +129,11 @@ def render_build_export_bundle_panel():
             st.markdown("---")
 
     # ---------------------------
-    # 📋 Observation Previews (Formatted Titles)
+    # Observation Previews (Formatted Titles)
     # ---------------------------
     observation_paths = st.session_state.get("bundle_observations", [])
     if observation_paths:
-        with st.expander("📋 View Selected Observations", expanded=False):
+        with st.expander("View Selected Observations", expanded=False):
             obs_df = load_all_observations()
             selected_obs = obs_df[obs_df["source_file"].isin(observation_paths)]
 
@@ -151,11 +151,11 @@ def render_build_export_bundle_panel():
 
 
     # ---------------------------
-    # 💾 Bundle Builder UI
+    # Bundle Builder UI
     # ---------------------------
-    bundle_name = st.text_input("📁 Export Bundle Name", value="ai_export_bundle")
+    bundle_name = st.text_input("Export Bundle Name", value="ai_export_bundle")
 
-    if st.button("💾 Build & Save Bundle", type="primary"):
+    if st.button("Build & Save Bundle", type="primary"):
         if not bundle_name.strip():
             st.error("❌ Please provide a valid bundle name.")
             return
@@ -164,4 +164,4 @@ def render_build_export_bundle_panel():
         filename = f"{bundle_name.strip()}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
         save_export_bundle(bundle, filename)
 
-        st.success("🎉 Your AI export bundle is ready for use!")
+        st.success("Your AI export bundle is ready for use!")

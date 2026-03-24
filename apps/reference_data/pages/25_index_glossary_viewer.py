@@ -8,7 +8,7 @@
 # Docstring
 # -------------------------------------------------------------------------------------------------
 """
-🗂️ Index & Glossary Viewer
+Index & Glossary Viewer
 
 Alphabetical cross-reference of key concepts, terms, and chapter references across the
 Blake Wiltshire — *Navigating the World of Economics, Finance, and Markets* series.
@@ -179,11 +179,11 @@ def filter_terms(query: str, initial: str) -> List[str]:
 # Streamlit Page Setup
 # -------------------------------------------------------------------------------------------------
 st.set_page_config(page_title="Index & Glossary Viewer", layout="wide")
-st.title("🗂️ Index & Glossary Viewer")
+st.title("Index & Glossary Viewer")
 st.caption("*Alphabetical cross-reference of key concepts, terms, and chapter references.*")
 
 # Intro / About (optional markdown file; fall back to inline)
-with st.expander("📖 About This Module", expanded=True):
+with st.expander("ℹ️ About This App", expanded=True):
     about = load_markdown_file(ABOUT_APP_MD)
     if about:
         st.markdown(about, unsafe_allow_html=True)
@@ -195,7 +195,7 @@ with st.expander("📖 About This Module", expanded=True):
 
 # Sidebar: nav + brand (mirrors your pattern)
 st.sidebar.title("📂 Navigation Menu")
-st.sidebar.page_link('app.py', label='📚 Reference Data & Trusted Sources')
+st.sidebar.page_link('app.py', label='Reference Data & Trusted Sources')
 for path, label in build_sidebar_links():
     st.sidebar.page_link(path, label=label)
 st.sidebar.divider()
@@ -203,7 +203,7 @@ st.logo(BRAND_LOGO_PATH)  # pylint: disable=no-member
 
 st.sidebar.info(
     """
-**🗂️ Index & Glossary Viewer**
+**Index & Glossary Viewer**
 
 A consolidated reference for terms and structural concepts used across the
 Financial Insight Tools (FIT) ecosystem and the *Navigating the World of
@@ -249,7 +249,7 @@ st.divider()
 # -------------------------------------------------------------------------------------------------
 col1, col2 = st.columns([3, 2])
 with col1:
-    query = st.text_input("🔎 Search terms or definitions", placeholder="e.g., ‘inflation’, ‘order types’, ‘AI’")
+    query = st.text_input("Search terms or definitions", placeholder="e.g., ‘inflation’, ‘order types’, ‘AI’")
 
 with col2:
     letters = ["All"] + list(string.ascii_uppercase)

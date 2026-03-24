@@ -1,5 +1,5 @@
 # -------------------------------------------------------------------------------------------------
-# 🧠 AI Export Bundle Builder — Platinum Canonical Build (Filename Aligned, Production Locked)
+# AI Export Bundle Builder — Platinum Canonical Build (Filename Aligned, Production Locked)
 # -------------------------------------------------------------------------------------------------
 # pylint: disable=import-error, wrong-import-position, wrong-import-order
 
@@ -179,7 +179,7 @@ def save_ai_bundle_to_file(bundle: dict, replace_existing: bool = True) -> str:
     with open(file_path, "w", encoding="utf-8") as f:
         json.dump(bundle, f, indent=4)
 
-    return f"📁 Snapshot saved to: {filename}"
+    return f"Snapshot saved to: {filename}"
 
 
 # -------------------------------------------------------------------------------------------------

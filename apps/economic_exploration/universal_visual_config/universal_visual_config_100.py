@@ -144,7 +144,7 @@ def plot_gdp_growth_comparison(df: pd.DataFrame) -> go.Figure:
 
     fig.add_hline(y=0, line_dash="dot", line_color="gray")
     fig.update_layout(
-        title="🧭 Real GDP Growth – Comparative View",
+        title="Real GDP Growth – Comparative View",
         xaxis_title="Date",
         yaxis_title="% Change",
         height=480,
@@ -322,7 +322,7 @@ def plot_gdp_nominal_yoy_growth(df: pd.DataFrame) -> go.Figure:
     fig.add_hline(y=0, line_dash="dot", line_color="gray")
 
     fig.update_layout(
-        title="🧭 Nominal GDP – YoY Growth Rate",
+        title="Nominal GDP – YoY Growth Rate",
         xaxis_title="Date",
         yaxis_title="% Change",
         height=480,
@@ -371,7 +371,7 @@ def plot_gdp_domestic_components_lines(df: pd.DataFrame) -> go.Figure:
         return go.Figure()
 
     fig.update_layout(
-        title="🧭 Domestic GDP Components – Consumption, Investment, Government",
+        title="Domestic GDP Components – Consumption, Investment, Government",
         xaxis_title="Date",
         yaxis_title="Billions (Real, Local Currency)",
         yaxis_tickformat=",.0f",
@@ -413,7 +413,7 @@ def plot_gdp_external_sector_trade_lines(df: pd.DataFrame) -> go.Figure:
     ))
 
     fig.update_layout(
-        title="🌍 Real Exports vs Imports Over Time",
+        title="Real Exports vs Imports Over Time",
         xaxis_title="Date",
         yaxis_title="Billions (Real, Local Currency)",
         yaxis_tickformat=",.0f",
@@ -464,7 +464,7 @@ def plot_gdp_component_structure_area_share(df: pd.DataFrame) -> go.Figure:
         ))
 
     fig.update_layout(
-        title="📊 Relative GDP Component Share Over Time",
+        title="Relative GDP Component Share Over Time",
         xaxis_title="Date",
         yaxis_title="Share (%)",
         height=480,
@@ -518,7 +518,7 @@ def plot_gdp_component_growth_comparison(df: pd.DataFrame) -> go.Figure:
         return go.Figure()
 
     fig.update_layout(
-        title="📊 Comparative Growth of GDP Components (QoQ vs YoY)",
+        title="Comparative Growth of GDP Components (QoQ vs YoY)",
         xaxis_title="Date",
         yaxis_title="Growth Rate (%)",
         legend={

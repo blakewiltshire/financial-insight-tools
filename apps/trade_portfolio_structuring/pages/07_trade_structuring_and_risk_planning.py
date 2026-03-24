@@ -85,7 +85,7 @@ APPS_PATH, "observation_engine", "sample_inputs", "sample_trade_journal.csv"
 sys.path.append(os.path.join(APPS_PATH, "observation_engine"))
 
 # -------------------------------------------------------------------------------------------------
-# 🧠 Observation Tools (User Observation Logging — Group A)
+# Observation Tools (User Observation Logging — Group A)
 # -------------------------------------------------------------------------------------------------
 from observation_handler_trade_structuring import (
     observation_input_form,
@@ -141,7 +141,7 @@ from trade_structuring_modules.trade_dashboard import (
 # Streamlit Page Setup
 # -------------------------------------------------------------------------------------------------
 st.set_page_config(page_title="Trade Structuring & Risk Planning", layout="wide")
-st.title("🛠 Trade Structuring & Risk Planning")
+st.title("Trade Structuring & Risk Planning")
 st.caption(
     "*Design setups using stop loss, entry, reward ratio, and capital allocation.*"
 )
@@ -149,7 +149,7 @@ st.caption(
 # -------------------------------------------------------------------------------------------------
 # Load About Markdown (auto-skips if not replaced)
 # -------------------------------------------------------------------------------------------------
-with st.expander("📌 What is this app about?"):
+with st.expander("ℹ️ About This App"):
     content = load_markdown_file(ABOUT_APP_MD)
     if content:
         st.markdown(content, unsafe_allow_html=True)
@@ -167,7 +167,7 @@ with st.expander("📌 What is this app about?"):
 # Also links back to app dashboard (e.g., app.py)
 # -------------------------------------------------------------------------------------------------
 st.sidebar.title("📂 Navigation Menu")
-st.sidebar.page_link('app.py', label='📈 Trade and Portfolio Structuring')
+st.sidebar.page_link('app.py', label='Trade and Portfolio Structuring')
 for path, label in build_sidebar_links():
     st.sidebar.page_link(path, label=label)
 
@@ -186,8 +186,8 @@ SAMPLE_FILE = os.path.join(
 )
 
 
-st.sidebar.title("📂 Upload Trade Journal (Optional Reference)")
-with st.sidebar.expander("📂 Optional Journal Reference Upload", expanded=False):
+st.sidebar.title("Upload Trade Journal (Optional Reference)")
+with st.sidebar.expander("Optional Journal Reference Upload", expanded=False):
     st.markdown("""
     Upload a CSV file containing an external trade journal, idea tracker, or watchlist.
 
@@ -216,13 +216,13 @@ else:
 
 if journal_df is not None:
     caption_msg = (
-        "📋 Sample journal loaded — modify as needed to reflect strategic intent."
+        "Sample journal loaded — modify as needed to reflect strategic intent."
         if use_sample else
-        "📋 Review and edit your journal — row highlights guide you through focused assets."
+        "Review and edit your journal — row highlights guide you through focused assets."
     )
     st.caption(caption_msg)
 
-    with st.expander("📋 Trade Journal Editor"):
+    with st.expander("Trade Journal Editor"):
         edited_journal_df = st.data_editor(
             journal_df,
             width='stretch',
@@ -231,14 +231,14 @@ if journal_df is not None:
 
         csv_download = edited_journal_df.to_csv(index=False).encode("utf-8")
         st.download_button(
-            label="📥 Download Updated Journal (CSV)",
+            label="Download Updated Journal (CSV)",
             data=csv_download,
             file_name="updated_trade_journal.csv",
             mime="text/csv",
         )
 
 # --- Trade type selection ---
-st.sidebar.title("🔎 Select Trade Type")
+st.sidebar.title("Select Trade Type")
 
 trade_type = st.sidebar.selectbox("Select Trade Type", [
     "Shares (No Leverage)",
@@ -250,7 +250,7 @@ trade_type = st.sidebar.selectbox("Select Trade Type", [
 
 TRADE_TYPE_MESSAGES = {
     "Shares (No Leverage)": (
-        "⚖️ A straightforward long-only position. No leverage, no margin — "
+        "A straightforward long-only position. No leverage, no margin — "
         "direct equity exposure."
         "Ideal for sizing via capital allocation and managing clear stop-loss boundaries."
     ),
@@ -265,12 +265,12 @@ TRADE_TYPE_MESSAGES = {
         "should be framed in stake-per-point terms. Often used in retail trading environments."
     ),
     "Pairs Trading (Mean Reversion)": (
-        "🔁 Involves simultaneously long and short positions on correlated assets. "
+        "Involves simultaneously long and short positions on correlated assets. "
         "Strategy relies on price convergence. "
         "Key metrics: spread ratio, z-score, divergence, and correlation."
     ),
     "Multi-Leg Spread (Sector / Intermarket / Relative Strength)": (
-        "📊 Complex trade structure involving multiple legs. Typically constructed to "
+        "Complex trade structure involving multiple legs. Typically constructed to "
         "express sector rotation, "
         "intermarket relationships, or structural themes. Requires deeper diagnostics "
         "and spread analysis."
@@ -458,14 +458,14 @@ display_trade_dashboard()
 st.divider()
 
 # -------------------------------------------------------------------------------------------------
-# 🧠 Define Theme Metadata (for Observation Logging)
+# Define Theme Metadata (for Observation Logging)
 # -------------------------------------------------------------------------------------------------
 theme_code = "trade_structuring"
 theme_title = "Trade Structuring & Risk Planning"
 selected_use_case = "Trade Structuring & Risk Planning Snapshot"
 
 # -------------------------------------------------------------------------------------------------
-# 🧠 Activate Observation + Journal Toggles
+# Activate Observation + Journal Toggles
 # -------------------------------------------------------------------------------------------------
 show_observation, show_log = render_macro_sidebar_tools(
     theme_readable=theme_title,
@@ -483,7 +483,7 @@ except NameError:
 
 
 if show_observation or show_log:
-    st.markdown("## 🧠 Macro Interaction Tools")
+    st.markdown("## Macro Interaction Tools")
     st.caption("*Use this section to record reasoning behind planned trades — including macro"
      "setup, risk considerations, technical alignment, or personal conviction before execution.*")
 

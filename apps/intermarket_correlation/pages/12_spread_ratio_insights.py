@@ -9,7 +9,7 @@
 # Docstring
 # -------------------------------------------------------------------------------------------------
 """
-🔁 Spread & Ratio Insights Module
+Spread & Ratio Insights Module
 
 Part of the Financial Insight Tools DSS.
 
@@ -78,7 +78,7 @@ from apps.data_sources.financial_data.asset_map import get_asset_path
 from apps.data_sources.financial_data.user_asset_map import get_user_asset_path
 
 # -------------------------------------------------------------------------------------------------
-# 🔗 Macro Interaction Tools — Sidebar + Observation Panel Integration
+# Macro Interaction Tools — Sidebar + Observation Panel Integration
 # -------------------------------------------------------------------------------------------------
 from macro_insight_sidebar_panel_intermarket_correlation import render_macro_sidebar_tools
 from render_macro_interaction_tools_panel_intermarket_correlation import render_macro_interaction_tools_panel
@@ -91,16 +91,16 @@ from observation_handler_spread_ratio_insights import (
 # Streamlit Setup
 # -------------------------------------------------------------------------------------------------
 st.set_page_config(page_title="Spread & Ratio Insights", layout="wide")
-st.title("⚖️ Spread & Ratio Insights")
+st.title("Spread & Ratio Insights")
 st.caption("*Analyse pairwise asset relationships, spread dynamics, mean reversion signals, and historical ratio behaviour.*")
 
-with st.expander("📌 What is this app about?"):
+with st.expander("ℹ️ About This App"):
     content = load_markdown_file(ABOUT_APP_MD)
     if content:
         st.markdown(content, unsafe_allow_html=True)
 
 st.sidebar.title("📂 Navigation Menu")
-st.sidebar.page_link('app.py', label='🔗 Intermarket & Correlation')
+st.sidebar.page_link('app.py', label='Intermarket & Correlation')
 for path, label in build_sidebar_links():
     st.sidebar.page_link(path, label=label)
 st.sidebar.divider()
@@ -121,7 +121,7 @@ def compute_spread_ratio(long_df, short_df):
 # -------------------------------------------------------------------------------------------------
 # Sidebar Operations
 # -------------------------------------------------------------------------------------------------
-st.sidebar.title("🔎 Select Long and Short Assets")
+st.sidebar.title("Select Long and Short Assets")
 data_source = st.sidebar.selectbox("Choose your data source", [
     "Preloaded Asset Types (Default)",
     "Preloaded Asset Types (User)",
@@ -177,7 +177,7 @@ if df is not None:
     st.sidebar.title("Performance Analysis")
     periods_slider = st.sidebar.slider("Compare over past X periods", min_value=1, max_value=30, value=7)
 
-    view_tabs = st.tabs(["Views (Daily / Weekly / Monthly)", "📉 Short-Term (50 Days)", "📊 Medium-Term (200 Days)", "ℹ️ Help: How to"])
+    view_tabs = st.tabs(["Views (Daily / Weekly / Monthly)", "Short-Term (50 Days)", "Medium-Term (200 Days)", "Help: How to"])
 
     with view_tabs[0]:
         st.markdown(f"**Data range:** {df['date'].min().date()} to {df['date'].max().date()}")
@@ -303,7 +303,7 @@ if df is not None:
             fig.update_layout(xaxis_title="Date", yaxis_title="Spread Ratio")
             st.plotly_chart(fig, width='stretch', key=f"main_chart_{key_suffix}")
             supports, resistances = detect_ratio_support_resistance(data_slice)
-            st.info(f"📌 Detected Support Levels: {supports} | Resistance Levels: {resistances}")
+            st.info(f"Detected Support Levels: {supports} | Resistance Levels: {resistances}")
             st.caption("High/Low markers use purple (high) and orange (low) for neutrality.")
 
 st.divider()
@@ -316,7 +316,7 @@ theme_title = "Spread & Ratio Insights"
 selected_use_case = "Spread & Ratio Structure Snapshot"
 
 # -------------------------------------------------------------------------------------------------
-# 🔍 Sidebar Activation Toggles
+# Sidebar Activation Toggles
 # -------------------------------------------------------------------------------------------------
 show_observation, show_log = render_macro_sidebar_tools(
     theme_readable=theme_title,
@@ -325,10 +325,10 @@ show_observation, show_log = render_macro_sidebar_tools(
 )
 
 # -------------------------------------------------------------------------------------------------
-# 🧠 Macro Interaction Tools
+# Macro Interaction Tools
 # -------------------------------------------------------------------------------------------------
 if show_observation or show_log:
-    st.markdown("## 🧠 Macro Interaction Tools")
+    st.markdown("## Macro Interaction Tools")
 
 # Prepare selected indicators from user input
 selected_indicators = [long_asset, short_asset] if long_asset and short_asset else []

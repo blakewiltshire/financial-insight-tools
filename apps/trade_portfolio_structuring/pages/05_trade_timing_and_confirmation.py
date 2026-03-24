@@ -160,13 +160,13 @@ from data_sources.financial_data.filtering_options import filtering_options_map
 # Streamlit Page Setup
 # -------------------------------------------------------------------------------------------------
 st.set_page_config(page_title="Trade Timing & Confirmation", layout="wide")
-st.title('⏳ Trade Timing & Confirmation')
+st.title('Trade Timing & Confirmation')
 st.caption("*Evaluate breakout potential, trend strength, and institutional sentiment.*")
 
 # -------------------------------------------------------------------------------------------------
 # Load About Markdown (auto-skips if not replaced)
 # -------------------------------------------------------------------------------------------------
-with st.expander("📖 About This App"):
+with st.expander("ℹ️ About This App"):
     content = load_markdown_file(ABOUT_APP_MD)
     if content:
         st.markdown(content, unsafe_allow_html=True)
@@ -184,7 +184,7 @@ with st.expander("📖 About This App"):
 # Also links back to app dashboard (e.g., app.py)
 # -------------------------------------------------------------------------------------------------
 st.sidebar.title("📂 Navigation Menu")
-st.sidebar.page_link('app.py', label='📈 Trade and Portfolio Structuring')
+st.sidebar.page_link('app.py', label='Trade and Portfolio Structuring')
 for path, label in build_sidebar_links():
     st.sidebar.page_link(path, label=label)
 
@@ -198,7 +198,7 @@ st.logo(BRAND_LOGO_PATH) # pylint: disable=no-member
 # -------------------------------------------------------------------------------------------------
 # Asset Selection
 # -------------------------------------------------------------------------------------------------
-st.sidebar.title('🔎 Select Asset for Trade Timing')
+st.sidebar.title('Select Asset for Trade Timing')
 
 # --- Uploaded Asset Defaults ---
 UPLOADED_FILE = None
@@ -276,7 +276,7 @@ except KeyError as e:
 # Applies to 📈 Full Data (Filtered) Chart, Confirmation and Readiness Summary
 # Temporal & Event-Based Filters are not available
 # -------------------------------------------------------------------------------------------------
-st.sidebar.title("📅 Select Date Range")
+st.sidebar.title("Select Date Range")
 
 st.sidebar.caption(
     "⚠️ Only date range filtering is applied here. For seasonal or event-based exploration, "
@@ -327,7 +327,7 @@ default_periods = {
 # -------------------------------------------------------------------------------------------------
 # Sidebar Use Case Selection
 # -------------------------------------------------------------------------------------------------
-st.sidebar.title("📌 Select a Use Case")
+st.sidebar.title("Select a Use Case")
 
 selected_use_case = st.sidebar.selectbox(
     "Select a predefined Use Case",
@@ -349,13 +349,13 @@ use_case_name = resolve_canonical_use_case(selected_use_case, USE_CASES)
 # -------------------------------------------------------------------------------------------------
 
 # Sidebar: Indicator Selection
-st.sidebar.title("📊 Customise Trade Execution Readiness Parameters")
+st.sidebar.title("Customise Trade Execution Readiness Parameters")
 
 selected_indicators = {}
 indicator_params = {}
 
 for category, indicators in indicator_categories.items():
-    with st.sidebar.expander(f"📌 {category}"):
+    with st.sidebar.expander(f"{category}"):
 
         # Auto-select indicators if a Use Case is chosen
         default_selection = auto_selected_indicators.get(category, [])
@@ -573,14 +573,14 @@ def compute_execution_readiness(df, predisposition, selected_indicators):
 if filtered_df is not None:
     summary_df, timeframe_summary = compute_execution_readiness(filtered_df, predisposition, selected_indicators)
 
-    st.subheader("📊 Execution Readiness Summary")
+    st.subheader("Execution Readiness Summary")
     st.write(f"Evaluating **{DATA_TITLE}** for execution readiness.")
 
     timeframe_table = pd.DataFrame(
             [{"Timeframe": tf, "Execution Readiness": status} for tf, status in timeframe_summary.items()]
         )
 
-st.subheader("📈 Timeframe Execution Readiness")
+st.subheader("Timeframe Execution Readiness")
 st.dataframe(timeframe_table)
 
 # **Detect Support & Resistance Levels & Align with Predisposition**
@@ -609,16 +609,16 @@ def detect_support_resistance(df, predisposition):
 
 # **Tabs for Short, Medium, Full Data Views**
 tab1, tab2, tab3 = st.tabs([
-    "📉 Short-Term (50 Days)",
-    "📊 Medium-Term (200 Days)",
-    "📈 Full Data (Filtered)"
+    "Short-Term (50 Days)",
+    "Medium-Term (200 Days)",
+    "Full Data (Filtered)"
 ])
 
 # **Loop Through All Timeframes**
 for tab, timeframe, data_slice in [
-    (tab1, "📉 Short-Term (50 Days)", processed_df.tail(50)),
-    (tab2, "📊 Medium-Term (200 Days)", processed_df.tail(200)),
-    (tab3, "📈 Full Data (Filtered)", filtered_df)
+    (tab1, "Short-Term (50 Days)", processed_df.tail(50)),
+    (tab2, "Medium-Term (200 Days)", processed_df.tail(200)),
+    (tab3, "Full Data (Filtered)", filtered_df)
 ]:
     with tab:
         st.subheader(timeframe)
@@ -644,7 +644,7 @@ for tab, timeframe, data_slice in [
         tab1a, tab1b = st.tabs(["🔍 Key Technical Confirmation", "⚠️ Red Flags"])
 
         with tab1a:
-            st.subheader("🔍 Key Technical Confirmation")
+            st.subheader("Key Technical Confirmation")
             gb = GridOptionsBuilder.from_dataframe(summary_df)
             gb.configure_default_column(wrapText=True, autoHeight=True)
             gb.configure_grid_options(domLayout='autoHeight')
@@ -658,7 +658,7 @@ for tab, timeframe, data_slice in [
             )
 
         with tab1b:
-            st.subheader("⚠️ Red Flags")
+            st.subheader("Red Flags")
             red_flags = summary_df.loc[
                 summary_df["Confirmation"].str.contains("⚠️", na=False)
             ].copy()
@@ -681,13 +681,13 @@ for tab, timeframe, data_slice in [
 st.divider()
 
 # -------------------------------------------------------------------------------------------------
-# 🧠 Define Theme Metadata (for Observation Logging)
+# Define Theme Metadata (for Observation Logging)
 # -------------------------------------------------------------------------------------------------
 theme_code = "trade_timing"
 theme_title = "Trade Timing & Confirmation"
 
 # -------------------------------------------------------------------------------------------------
-# 🧠 Activate Observation + Journal Toggles
+# Activate Observation + Journal Toggles
 # -------------------------------------------------------------------------------------------------
 show_observation, show_ai_export, show_log = render_macro_sidebar_tools(
     theme_readable=theme_title,
@@ -704,10 +704,10 @@ except NameError:
     asset_list_for_observation = []
 
 # -------------------------------------------------------------------------------------------------
-# 🧠 Observation Panel (Log + Input)
+# Observation Panel (Log + Input)
 # -------------------------------------------------------------------------------------------------
 if show_observation or show_log:
-    st.markdown("## 🧠 Macro Interaction Tools")
+    st.markdown("## Macro Interaction Tools")
 
 render_macro_interaction_tools_panel(
     show_observation=show_observation,
@@ -720,7 +720,7 @@ render_macro_interaction_tools_panel(
 )
 
 # -------------------------------------------------------------------------------------------------
-# 🧠 AI Export Panel — Trade Timing (Platinum Canonical Call)
+# AI Export Panel — Trade Timing (Platinum Canonical Call)
 # -------------------------------------------------------------------------------------------------
 if show_ai_export:
     render_ai_export_panel(

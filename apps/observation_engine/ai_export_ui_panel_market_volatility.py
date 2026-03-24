@@ -35,7 +35,7 @@ def render_ai_export_panel(snapshot_results: dict, base_asset: str, asset_type_d
     Builds a clean export structure using only metadata registry and snapshot fields.
     """
 
-    st.markdown("### 🧠 AI Export — Market & Volatility Scanner Snapshot")
+    st.markdown("### AI Export — Market & Volatility Scanner Snapshot")
     st.caption("This export summarises key statistical insights using structured metadata. No AI scoring is applied.")
 
     # -------------------------------------------

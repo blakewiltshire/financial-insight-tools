@@ -35,11 +35,11 @@ def render_insight_browser(
 
 
 # -------------------------------------------------------------------------------------------------
-# 📋 User Observations Display
+# User Observations Display
 # -------------------------------------------------------------------------------------------------
 
 def _render_observations(filter_module: Optional[str], filter_context: Optional[str]) -> None:
-    st.subheader("📝 User Observations")
+    st.subheader("User Observations")
     df = load_all_observations()
     if df.empty:
         st.info("No user observations found.")
@@ -59,12 +59,12 @@ def _render_observations(filter_module: Optional[str], filter_context: Optional[
 
 
 # -------------------------------------------------------------------------------------------------
-# 📦 AI Snapshots Display
+# AI Snapshots Display
 # -------------------------------------------------------------------------------------------------
 
-# 📦 AI Snapshots Display
+# AI Snapshots Display
 def _render_ai_snapshots(filter_context: Optional[str]) -> None:
-    st.subheader("🧠 AI Snapshot Exports")
+    st.subheader("AI Snapshot Exports")
     bundles = load_all_snapshots()
     if not bundles:
         st.info("No AI export snapshots found.")
@@ -77,17 +77,17 @@ def _render_ai_snapshots(filter_context: Optional[str]) -> None:
         st.warning("No matching snapshots for this context.")
         return
 
-    # ✅ FIXED SORTING
+    # FIXED SORTING
     for bundle in sorted(bundles, key=lambda b: str(b.get("theme", "")) + str(b.get("use_case", ""))):
-        with st.expander(f"📦 {bundle.get('theme', '?')} — {bundle.get('use_case', '?')}"):
+        with st.expander(f"{bundle.get('theme', '?')} — {bundle.get('use_case', '?')}"):
             st.markdown(f"**Macro Score**: `{bundle.get('macro_score', '')}`  \n"
                         f"**Label**: `{bundle.get('score_label', '')}`  \n"
                         f"**Timeframe**: `{bundle.get('timeframe', '')}`  \n"
                         f"**Source**: `{bundle.get('source_file', '')}`")
 
             # Layout-safe alternative to nested expanders
-            st.markdown("**📖 Score Explanation**")
+            st.markdown("**Score Explanation**")
             st.markdown(bundle.get("score_explanation", "No explanation provided."))
 
-            st.markdown("**🧬 Full Snapshot (JSON)**")
+            st.markdown("**Full Snapshot (JSON)**")
             st.json(bundle.get("raw", {}), expanded=False)

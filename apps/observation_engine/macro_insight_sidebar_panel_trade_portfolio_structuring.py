@@ -31,14 +31,14 @@ def render_macro_sidebar_tools(
         Tuple of booleans: (show_observation, show_log)
     """
     st.sidebar.markdown("---")
-    st.sidebar.title("🧠 Macro Interaction Tools")
+    st.sidebar.title("Macro Interaction Tools")
 
     show_observation = st.sidebar.checkbox(
-        "📝 Add Observation",
+        "Add Observation",
         key=f"{theme_code}_obs_toggle"
     )
     show_log = st.sidebar.checkbox(
-        "📋 View Observation Log",
+        "View Observation Log",
         key=f"{theme_code}_log_toggle"
     )
 

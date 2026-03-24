@@ -8,14 +8,14 @@
 # Docstring
 # -------------------------------------------------------------------------------------------------
 """
-🧠 AI Persona Reference Guide
+AI Persona Reference Guide
 
 Centralised catalogue of role-based AI personas used in the Blake Wiltshire —
 Navigating the World of Economics, Finance, and Markets Series.
 
 Purpose
 - Provide a reference list of personas with descriptions, focus areas, and exploration contexts.
-- Support the 🔺 Triangular Navigation Program by giving users neutral, role-based scaffolds.
+- Support the Triangular Navigation Program by giving users neutral, role-based scaffolds.
 - Aligns with Appendix C (static snapshots) but continuously updated via this tool.
 
 Key Features
@@ -188,7 +188,7 @@ def load_personas_yaml(path: str) -> Dict[str, Any]:
 def build_registry() -> List[Dict[str, Any]]:
     """
     Produce a unified list of persona dicts with a superset schema:
-    - name, icon, short_description, definition, focus, related
+    - name, short_description, definition, focus, related
     - behaviour, avoid, starters, gpt, prompt_template_key, perspective_frame (optional)
     """
     data = load_personas_yaml(DATA_YAML)
@@ -200,7 +200,6 @@ def build_registry() -> List[Dict[str, Any]]:
     for name, payload in SAMPLE_PERSONAS.items():
         registry.append({
             "name": name,
-            "icon": payload.get("icon", ""),
             "short_description": payload.get("short_description", ""),
             "definition": payload.get("definition", ""),
             "focus": payload.get("focus", []),
@@ -222,7 +221,6 @@ REGISTRY: List[Dict[str, Any]] = build_registry()
 def render_persona(card: Dict[str, Any]) -> None:
     """Render a single persona card with neutral, non-leading presentation."""
     name = card.get("name", "Unnamed Persona")
-    icon = card.get("icon", "")
     short_desc = card.get("short_description", "")
     definition = card.get("definition", "")
     focus = card.get("focus", []) or []
@@ -232,7 +230,7 @@ def render_persona(card: Dict[str, Any]) -> None:
     starters = card.get("starters", []) or []
     gpt_meta = card.get("gpt", {}) or {}
 
-    st.markdown(f"#### {icon} **{name}**" if icon else f"#### **{name}**")
+    st.markdown(f"#### **{name}**")
     if short_desc:
         st.write(short_desc)
     if definition:
@@ -295,25 +293,25 @@ def filter_registry(query: str, initial: str) -> List[Dict[str, Any]]:
 # Streamlit Page Setup
 # -------------------------------------------------------------------------------------------------
 st.set_page_config(page_title="AI Persona Reference Guide", layout="wide")
-st.title("🧠 AI Persona Reference Guide")
+st.title("AI Persona Reference Guide")
 st.caption("*Role definitions and contextual exploration scaffolds.*")
 
 # Intro / About
-with st.expander("📖 About This Module", expanded=True):
+with st.expander("ℹ️ About This App", expanded=True):
     about = load_markdown_file(ABOUT_APP_MD)
     if about:
         st.markdown(about, unsafe_allow_html=True)
     else:
         st.markdown(
             "This module catalogues AI Personas — structured role-based framings used "
-            "across guides and the 🔺 Triangular Navigation Program. "
+            "across guides and the Triangular Navigation Program. "
             "They support neutral, non-advisory exploration by offering perspectives, "
             "not prescriptions."
         )
 
 # Sidebar (mirrors your pattern)
 st.sidebar.title("📂 Navigation Menu")
-st.sidebar.page_link('app.py', label='📚 Reference Data & Trusted Sources')
+st.sidebar.page_link('app.py', label='Reference Data & Trusted Sources')
 for path, label in build_sidebar_links():
     st.sidebar.page_link(path, label=label)
 st.sidebar.divider()
@@ -321,7 +319,7 @@ st.logo(BRAND_LOGO_PATH)  # pylint: disable=no-member
 
 st.sidebar.info(
     """
-**🧠 AI Persona Reference (FIT)**
+**AI Persona Reference (FIT)**
 
 This module provides neutral, role-based analytical framings used across the
 Financial Insight Tools and the *Navigating the World of Economics, Finance,
@@ -365,7 +363,7 @@ st.markdown("---")
 # -------------------------------------------------------------------------------------------------
 col1, col2 = st.columns([3, 2])
 with col1:
-    query = st.text_input("🔎 Search personas or definitions", placeholder="e.g., ‘Risk Analyst’, ‘FinTech’")
+    query = st.text_input("Search personas or definitions", placeholder="e.g., ‘Risk Analyst’, ‘FinTech’")
 with col2:
     letters = ["All"] + list(string.ascii_uppercase)
     initial = st.selectbox("Filter by letter", letters, index=0, key="persona_filter_letter_select")

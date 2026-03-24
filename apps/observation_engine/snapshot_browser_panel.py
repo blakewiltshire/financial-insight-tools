@@ -1,5 +1,5 @@
 # -------------------------------------------------------------------------------------------------
-# 🧠 Snapshot Browser Panel — Final Platinum-Grade Version
+# Snapshot Browser Panel — Final Platinum-Grade Version
 # -------------------------------------------------------------------------------------------------
 
 import os
@@ -29,10 +29,10 @@ def extract_metadata(bundle: Dict) -> Dict:
     use_case = bundle.get("use_case", "")
     theme_title = bundle.get("theme_title", "")
 
-    # 📊 Economic Exploration
+    # Economic Exploration
     if module_code.startswith("100") or "economic_exploration" in source:
         return {
-            "title": "📊 Economic Exploration",
+            "title": "Economic Exploration",
             "module": "Economic Exploration",
             "theme_title": theme_title or "Unknown",
             "use_case": use_case or "Unknown",
@@ -43,11 +43,11 @@ def extract_metadata(bundle: Dict) -> Dict:
             "source_file": source,
         }
 
-    # 📊 Market Volatility
+    # Market Volatility
     if "market_volatility" in source:
         stat_groups = extract_statistical_groupings(raw)
         return {
-            "title": "📊 Market Volatility",
+            "title": "Market Volatility",
             "module": "Market Volatility",
             "theme_title": "",  # suppress misleading grouping
             "use_case": "",     # not applicable
@@ -59,12 +59,12 @@ def extract_metadata(bundle: Dict) -> Dict:
             "source_file": source,
         }
 
-    # 📊 Price Action
+    # Price Action
     if "price_action" in source:
         if use_case == "Unknown" and "__unknown__" in filename:
             use_case = "Naked Charts (Unknown)"
         return {
-            "title": "📊 Price Action",
+            "title": "Price Action",
             "module": "Price Action",
             "theme_title": "",
             "use_case": use_case or "",
@@ -75,12 +75,12 @@ def extract_metadata(bundle: Dict) -> Dict:
             "source_file": source,
         }
 
-    # 📊 Trade Timing
+    # Trade Timing
     if "trade_timing" in source:
         if use_case == "Unknown" and "__unknown__" in filename:
             use_case = "Naked Charts (Unknown)"
         return {
-            "title": "📊 Trade Timing",
+            "title": "Trade Timing",
             "module": "Trade Timing",
             "theme_title": "",
             "use_case": use_case or "",
@@ -91,9 +91,9 @@ def extract_metadata(bundle: Dict) -> Dict:
             "source_file": source,
         }
 
-    # 🗂️ Unknown Module
+    # Unknown Module
     return {
-        "title": "📁 Unknown Module",
+        "title": "Unknown Module",
         "module": "Unknown",
         "theme_title": "",
         "use_case": "",
@@ -105,11 +105,11 @@ def extract_metadata(bundle: Dict) -> Dict:
     }
 
 def render_snapshot_browser_panel():
-    st.header("📂 Snapshot Browser")
+    st.header("Snapshot Browser")
     st.caption("Browse all AI-generated snapshot files from across modules.")
 
 
-    if st.button("🔄 Reload Snapshot List", key="reload_snapshot_list_browser"):
+    if st.button("Reload Snapshot List", key="reload_snapshot_list_browser"):
         st.rerun()
 
     bundles = load_all_snapshots()
@@ -125,7 +125,7 @@ def render_snapshot_browser_panel():
 
     df_filtered = render_snapshot_filters(df_meta)
 
-    st.markdown(f"**🔢 {len(df_filtered)} snapshots matched your filters**")
+    st.markdown(f"**{len(df_filtered)} snapshots matched your filters**")
     st.markdown("---")
 
     # Match only the unique filtered source files
@@ -155,9 +155,9 @@ def render_snapshot_browser_panel():
             if metadata.get("timeframe"):
                 st.markdown(f"**Timeframe Periods:** {metadata['timeframe']}")
             st.markdown(f"**Timestamp:** {metadata['timestamp']}")
-            st.markdown(f"**📄 Source:** `{metadata['source_file']}`")
+            st.markdown(f"**Source:** `{metadata['source_file']}`")
 
-            with st.expander("📦 Preview JSON"):
+            with st.expander("Preview JSON"):
                 st.json(bundle['raw'])
 
             col1, _ = st.columns([6, 1])
@@ -168,13 +168,13 @@ def render_snapshot_browser_panel():
                         st.session_state["bundle_snapshots"].append(bundle)
                         st.rerun()
                 else:
-                    st.markdown("✅ **Already Added to Bundle**")
+                    st.markdown("**Already Added to Bundle**")
 
     # -------------------------------------------------------------------------------------------------
-    # 📦 Current Bundle Contents
+    # Current Bundle Contents
     # -------------------------------------------------------------------------------------------------
     st.markdown("---")
-    st.subheader("📦 Current Bundle Contents")
+    st.subheader("Current Bundle Contents")
 
     if st.session_state["bundle_snapshots"]:
         snapshots_to_keep = []
@@ -209,7 +209,7 @@ def render_snapshot_browser_panel():
 
 
 # -------------------------------------------------------------------------------------------------
-# 📊 Snapshot Metadata Filter Extraction
+# Snapshot Metadata Filter Extraction
 # -------------------------------------------------------------------------------------------------
 def extract_filterable_metadata(meta_list: List[Dict]) -> pd.DataFrame:
     return pd.DataFrame([
@@ -228,14 +228,14 @@ def extract_filterable_metadata(meta_list: List[Dict]) -> pd.DataFrame:
     ])
 
 # -------------------------------------------------------------------------------------------------
-# 🔍 Snapshot Filter Panel (Module-aware)
+# Snapshot Filter Panel (Module-aware)
 # -------------------------------------------------------------------------------------------------
 def render_snapshot_filters(df: pd.DataFrame) -> pd.DataFrame:
-    st.subheader("🔍 Filter Snapshots")
+    st.subheader("Filter Snapshots")
     col1, col2, col3 = st.columns(3)
 
     with col1:
-        modules = st.multiselect("🧠 Module", sorted(df['module'].dropna().unique()))
+        modules = st.multiselect("Module", sorted(df['module'].dropna().unique()))
         if modules:
             df = df[df['module'].isin(modules)]
 
@@ -243,33 +243,33 @@ def render_snapshot_filters(df: pd.DataFrame) -> pd.DataFrame:
 
     with col2:
         if "Economic Exploration" in current_modules:
-            themes = st.multiselect("📘 Thematic Grouping", sorted(df['theme_title'].dropna().unique()))
+            themes = st.multiselect("Thematic Grouping", sorted(df['theme_title'].dropna().unique()))
             if themes:
                 df = df[df['theme_title'].isin(themes)]
 
     with col3:
         if any(m in current_modules for m in ["Market Volatility", "Price Action", "Trade Timing"]):
-            assets = st.multiselect("💼 Asset", sorted(df['asset'].dropna().unique()))
+            assets = st.multiselect("Asset", sorted(df['asset'].dropna().unique()))
             if assets:
                 df = df[df['asset'].isin(assets)]
 
     col4, col5 = st.columns(2)
     with col4:
         if "Economic Exploration" in current_modules:
-            countries = st.multiselect("🌍 Country", sorted(df['country'].dropna().unique()))
+            countries = st.multiselect("Country", sorted(df['country'].dropna().unique()))
             if countries:
                 df = df[df['country'].isin(countries)]
 
     with col5:
         if df['use_case'].dropna().nunique() > 0:
-            use_cases = st.multiselect("🧪 Use Case", sorted(df['use_case'].dropna().unique()))
+            use_cases = st.multiselect("Use Case", sorted(df['use_case'].dropna().unique()))
             if use_cases:
                 df = df[df['use_case'].isin(use_cases)]
 
     return df
 
 # -------------------------------------------------------------------------------------------------
-# 🔧 Shared Helpers
+# Shared Helpers
 # -------------------------------------------------------------------------------------------------
 def extract_filename_asset(source_file: str) -> str:
     try:

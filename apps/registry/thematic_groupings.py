@@ -2,7 +2,7 @@
 
 THEMATIC_GROUPS = {
     "000_template": {
-        "theme_title": "🧩 Thematic Grouping Template",
+        "theme_title": "Thematic Grouping Template",
         "theme_introduction": "This entry provides a structural reference for building "
         "new thematic groupings within the Economic Exploration system. It is not linked "
         "to live data but defines the metadata layout and schema used across all themes.",
@@ -36,7 +36,7 @@ THEMATIC_GROUPS = {
                 "averages": "N/A",
                 "year_over_year": "N/A",
                 "recommended_time_periods": [],
-                "path": "default_template/pages/000_🧩_template.py"
+                "path": "default_template/pages/000_template.py"
             },
             "002_signal_b": {
                 "Use Case": "Placeholder Use Case A",
@@ -52,7 +52,7 @@ THEMATIC_GROUPS = {
                 "averages": "N/A",
                 "year_over_year": "N/A",
                 "recommended_time_periods": [],
-                "path": "default_template/pages/000_🧩_template.py"
+                "path": "default_template/pages/000_template.py"
             },
             "003_signal_c": {
                 "Use Case": "Placeholder Use Case B",
@@ -68,7 +68,7 @@ THEMATIC_GROUPS = {
                 "averages": "N/A",
                 "year_over_year": "N/A",
                 "recommended_time_periods": [],
-                "path": "default_template/pages/000_🧩_template.py"
+                "path": "default_template/pages/000_template.py"
             },
         }
     },
@@ -108,7 +108,7 @@ THEMATIC_GROUPS = {
                 "averages": "Calculates running averages to help identify sustained growth or contraction trends.",
                 "year_over_year": "Compares GDP values with the same period last year to provide a broader historical perspective.",
                 "recommended_time_periods": ["MM", "3M", "6M", "12M"],
-                "path": "{country}/pages/100_📈_economic_growth_stability.py"
+                "path": "{country}/pages/100_economic_growth_stability.py"
             },
             "102_nominal_gdp": {
                 "Use Case": "GDP Signals",
@@ -125,7 +125,7 @@ THEMATIC_GROUPS = {
                 "averages": "Smooths out noise to display ongoing trendlines.",
                 "year_over_year": "Supports broader trend analysis.",
                 "recommended_time_periods": ["MM", "3M", "6M", "12M"],
-                "path": "{country}/pages/100_📈_economic_growth_stability.py"
+                "path": "{country}/pages/100_economic_growth_stability.py"
             },
             "103_gdp_components_breakdown": {
                 "Use Case": "GDP Signals",
@@ -142,7 +142,7 @@ THEMATIC_GROUPS = {
                 "averages": "Smooths volatility across components for trend awareness.",
                 "year_over_year": "Compares current GDP composition to the same period last year for structural insights.",
                 "recommended_time_periods": ["MM", "3M", "6M", "12M"],
-                "path": "{country}/pages/100_📈_economic_growth_stability.py"
+                "path": "{country}/pages/100_economic_growth_stability.py"
             },
             "104_conference_board_leading_index": {
                 "Use Case": "Macro Composite Signals",
@@ -159,7 +159,7 @@ THEMATIC_GROUPS = {
                 "averages": "Benchmarks expectations.",
                 "year_over_year": "Adds context for long-cycle patterns.",
                 "recommended_time_periods": ["MM", "3M", "6M"],
-                "path": "{country}/pages/100_📈_economic_growth_stability.py"
+                "path": "{country}/pages/100_economic_growth_stability.py"
             },
 
             "105_weekly_economic_index": {
@@ -177,7 +177,7 @@ THEMATIC_GROUPS = {
                 "averages": "Smooths volatile readings for pattern recognition.",
                 "year_over_year": "Useful for comparing current conditions to prior cycles.",
                 "recommended_time_periods": ["1W", "1M", "3M"],
-                "path": "{country}/pages/100_📈_economic_growth_stability.py"
+                "path": "{country}/pages/100_economic_growth_stability.py"
             },
 
             "106_economic_uncertainty_index": {
@@ -195,7 +195,7 @@ THEMATIC_GROUPS = {
                 "averages": "Distills average noise levels.",
                 "year_over_year": "Benchmarks systemic risk climate shifts.",
                 "recommended_time_periods": ["1M", "3M", "6M"],
-                "path": "{country}/pages/100_📈_economic_growth_stability.py"
+                "path": "{country}/pages/100_economic_growth_stability.py"
             },
 
             "107_chicago_fed_national_activity_index": {
@@ -213,7 +213,7 @@ THEMATIC_GROUPS = {
                 "averages": "Smooths aggregate deviations from trend.",
                 "year_over_year": "Assesses medium-term structural direction.",
                 "recommended_time_periods": ["MM", "3M", "6M"],
-                "path": "{country}/pages/100_📈_economic_growth_stability.py"
+                "path": "{country}/pages/100_economic_growth_stability.py"
             },
 
         }
@@ -254,7 +254,7 @@ THEMATIC_GROUPS = {
                 "averages": "Smooths monthly hiring noise for a trend-based view.",
                 "year_over_year": "Used for structural comparisons in labour expansion or contraction.",
                 "recommended_time_periods": ["MM", "3M", "6M", "12M"],
-                "path": "{country}/pages/200_💼_labour_market_dynamics.py"
+                "path": "{country}/pages/200_labour_market_dynamics.py"
             },
             "202_unemployment_rate": {
                 "Use Case": "Employment Template",
@@ -270,7 +270,7 @@ THEMATIC_GROUPS = {
                 "averages": "Smoothed values for economic cycle awareness.",
                 "year_over_year": "Shows broader structural changes in unemployment.",
                 "recommended_time_periods": ["MM", "3M", "6M", "12M"],
-                "path": "{country}/pages/200_💼_labour_market_dynamics.py"
+                "path": "{country}/pages/200_labour_market_dynamics.py"
             },
             "203_labour_participation_rate": {
                 "Use Case": "Employment Template",
@@ -286,7 +286,7 @@ THEMATIC_GROUPS = {
                 "averages": "Shows underlying trendlines in workforce engagement.",
                 "year_over_year": "Best for understanding structural change.",
                 "recommended_time_periods": ["3M", "6M", "12M"],
-                "path": "{country}/pages/200_💼_labour_market_dynamics.py"
+                "path": "{country}/pages/200_labour_market_dynamics.py"
             },
             "204_business_sector_employment": {
                 "Use Case": "Employment Composite",
@@ -302,7 +302,7 @@ THEMATIC_GROUPS = {
                 "averages": "Highlights sectoral momentum trends.",
                 "year_over_year": "Enables structural comparisons across business cycles.",
                 "recommended_time_periods": ["MM", "3M", "6M", "12M"],
-                "path": "{country}/pages/200_💼_labour_market_dynamics.py"
+                "path": "{country}/pages/200_labour_market_dynamics.py"
             },
             "205_full_part_time_employment": {
                 "Use Case": "Employment Composite",
@@ -318,7 +318,7 @@ THEMATIC_GROUPS = {
                 "averages": "Smooths volatility in part-time work trends.",
                 "year_over_year": "Detects structural erosion or restoration of job quality.",
                 "recommended_time_periods": ["MM", "3M", "6M", "12M"],
-                "path": "{country}/pages/200_💼_labour_market_dynamics.py"
+                "path": "{country}/pages/200_labour_market_dynamics.py"
             },
             "206_average_hourly_earnings": {
                 "Use Case": "Employment Composite",
@@ -334,7 +334,7 @@ THEMATIC_GROUPS = {
                 "averages": "Filters noise in wage progression.",
                 "year_over_year": "Key for macro-monetary calibration.",
                 "recommended_time_periods": ["MM", "3M", "6M", "12M"],
-                "path": "{country}/pages/200_💼_labour_market_dynamics.py"
+                "path": "{country}/pages/200_labour_market_dynamics.py"
             },
             "207_initial_jobless_claims": {
                 "Use Case": "Employment Composite",
@@ -350,7 +350,7 @@ THEMATIC_GROUPS = {
                 "averages": "Smooths volatility with short-term MA overlays.",
                 "year_over_year": "Benchmarks current conditions against prior stress periods.",
                 "recommended_time_periods": ["1W", "4W", "12W", "52W"],
-                "path": "{country}/pages/200_💼_labour_market_dynamics.py"
+                "path": "{country}/pages/200_labour_market_dynamics.py"
             },
             "208_continued_jobless_claims": {
                 "Use Case": "Employment Composite",
@@ -366,7 +366,7 @@ THEMATIC_GROUPS = {
                 "averages": "Useful for medium-term trend evaluation.",
                 "year_over_year": "Supports comparative recovery analysis.",
                 "recommended_time_periods": ["1W", "4W", "12W", "52W"],
-                "path": "{country}/pages/200_💼_labour_market_dynamics.py"
+                "path": "{country}/pages/200_labour_market_dynamics.py"
             },
         }
     },

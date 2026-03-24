@@ -1,5 +1,5 @@
 # -------------------------------------------------------------------------------------------------
-# 🧠 Macro Interaction Tools Panel — Platinum Canonical Build (Filename Aligned, Production Locked)
+#  Macro Interaction Tools Panel — Platinum Canonical Build (Filename Aligned, Production Locked)
 # -------------------------------------------------------------------------------------------------
 # pylint: disable=import-error, wrong-import-position, wrong-import-order
 
@@ -63,13 +63,13 @@ def render_macro_interaction_tools_panel(
     Central UI for interacting with user observations and AI bundles.
     """
     st.markdown("---")
-    st.subheader("🧠 Macro Interaction Tools")
+    st.subheader("Macro Interaction Tools")
 
     col1, col2 = st.columns([1, 1])
 
     # --- Observation Input Form ---
     if show_observation and observation_input_callback:
-        with col1.expander("📌 Add Observation", expanded=False):
+        with col1.expander("Add Observation", expanded=False):
             observation_input_callback(
                 module_type=module_type,
                 country=country,
@@ -83,7 +83,7 @@ def render_macro_interaction_tools_panel(
 
     # --- Journal Viewer ---
     if show_log and observation_log_callback:
-        with col2.expander("📘 Observation Journal", expanded=False):
+        with col2.expander("Observation Journal", expanded=False):
             observation_log_callback(
                 module_type=module_type,
                 country=country,
@@ -92,7 +92,7 @@ def render_macro_interaction_tools_panel(
 
     # --- AI Export Panel ---
     if show_ai_export:
-        st.markdown("### 🔎 Macro Insight Snapshots")
+        st.markdown("### Macro Insight Snapshots")
 
         if ai_bundle and ai_bundle.get("use_cases"):
             current = ai_bundle["use_cases"][0]
@@ -109,9 +109,9 @@ def render_macro_interaction_tools_panel(
                 "metadata": current.get("metadata", []),
             }, expanded=False)
 
-            replace_existing = st.toggle("🔁 Replace existing entry if it already exists", value=True)
+            replace_existing = st.toggle("Replace existing entry if it already exists", value=True)
 
-            if st.button("📌 Save Macro Insights"):
+            if st.button("Save Macro Insights"):
                 json_result = save_ai_bundle_to_file(
                     bundle=ai_bundle,
                     replace_existing=replace_existing
@@ -119,4 +119,4 @@ def render_macro_interaction_tools_panel(
                 st.success(json_result)
 
         else:
-            st.warning("⚠️ No AI bundle available for this theme + use case.")
+            st.warning("No AI bundle available for this theme + use case.")

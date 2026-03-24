@@ -8,7 +8,7 @@
 # Docstring
 # -------------------------------------------------------------------------------------------------
 """
-📚 Institutional Reference Directory
+Institutional Reference Directory
 
 Structured directory of verified sources, regulatory bodies, statistical authorities,
 and classification frameworks relevant to economic research, market analysis,
@@ -163,7 +163,7 @@ REFERENCE_DATA = load_reference_data(DATA_YAML)
 # Streamlit Page Setup
 # -------------------------------------------------------------------------------------------------
 st.set_page_config(page_title="Institutional Reference Directory", layout="wide")
-st.title("📚 Institutional Reference Directory")
+st.title("Institutional Reference Directory")
 st.caption(
     "*Central hub for accessing validated financial datasets, research links, and "
     "trusted sources supporting analysis and system workflows.*"
@@ -179,7 +179,7 @@ if not REFERENCE_DATA:
 # -------------------------------------------------------------------------------------------------
 # Info Panels
 # -------------------------------------------------------------------------------------------------
-with st.expander("📘 What is this app about?"):
+with st.expander("ℹ️ About This App"):
     content = load_markdown_file(ABOUT_APP_MD)
     if content:
         st.markdown(content, unsafe_allow_html=True)
@@ -190,7 +190,7 @@ with st.expander("📘 What is this app about?"):
 # Sidebar Navigation
 # -------------------------------------------------------------------------------------------------
 st.sidebar.title("📂 Navigation Menu")
-st.sidebar.page_link('app.py', label='📚 Reference Data & Trusted Sources')
+st.sidebar.page_link('app.py', label='Reference Data & Trusted Sources')
 for path, label in build_sidebar_links():
     st.sidebar.page_link(path, label=label)
 st.sidebar.divider()
@@ -202,7 +202,7 @@ st.logo(BRAND_LOGO_PATH)  # pylint: disable=no-member
 
 st.sidebar.info(
     """
-**📚 Reference Data & Trusted Sources**
+**Reference Data & Trusted Sources**
 
 This module provides curated access to global market data platforms, economic institutions,
 and financial classification systems.
@@ -242,38 +242,38 @@ with st.sidebar.expander("ℹ️ About & Support"):
 # Main Content
 # -------------------------------------------------------------------------------------------------
 
-st.divider()
+st.space()
 
 # --- Section: Market Data & Financial Information ---
-with st.expander("📈 Market Data and Financial Information"):
+with st.expander("Market Data and Financial Information"):
     render_reference_group(REFERENCE_DATA, "market_data")
 
 # --- Regulatory Bodies ---
-with st.expander("⚖️ Regulatory Bodies and Classifications"):
+with st.expander("Regulatory Bodies and Classifications"):
     render_reference_group(REFERENCE_DATA, "regulators")
 
 # --- Market Status & Credit Evaluation Authorities ---
-with st.expander("🏛️ Market Status & Credit Evaluation Authorities"):
+with st.expander("Market Status & Credit Evaluation Authorities"):
     render_reference_group(REFERENCE_DATA, "market_status")
 
 # --- Educational Platforms ---
-with st.expander("📚 Educational Platforms and Financial Tools"):
+with st.expander("Educational Platforms and Financial Tools"):
     render_reference_group(REFERENCE_DATA, "education")
 
 # --- Industry Reports and Research Portals ---
-with st.expander("🌎 Industry Reports and Research Portals"):
+with st.expander("Industry Reports and Research Portals"):
     render_reference_group(REFERENCE_DATA, "research")
 
 # --- Statistical Agencies ---
-with st.expander("📊 Government and Statistical Agencies"):
+with st.expander("Government and Statistical Agencies"):
     render_reference_group(REFERENCE_DATA, "statistics")
 
 # --- International Organizations ---
-with st.expander("🌐 International Organisations"):
+with st.expander("International Organisations"):
     render_reference_group(REFERENCE_DATA, "international")
 
 # --- Standards and Identifiers ---
-with st.expander("🆔 Standards, Identifiers & Classification Systems"):
+with st.expander("Standards, Identifiers & Classification Systems"):
     st.markdown("#### Financial Identifiers")
     render_reference_group(REFERENCE_DATA, "identifiers")
 
@@ -286,7 +286,7 @@ with st.expander("🆔 Standards, Identifiers & Classification Systems"):
 # -------------------------------------------------------------------------------------------------
 # Footer
 # -------------------------------------------------------------------------------------------------
-st.markdown("---")
+st.space()
 st.caption(
     "© 2026 Blake Media Ltd. | Financial Insight Tools by Blake Wiltshire — No trading, "
     "investment, or policy advice provided."

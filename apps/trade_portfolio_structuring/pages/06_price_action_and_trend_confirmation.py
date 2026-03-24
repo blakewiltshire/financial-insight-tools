@@ -79,7 +79,7 @@ BRAND_LOGO_PATH = os.path.join(ROOT_PATH, "brand", "blake_logo.png")
 sys.path.append(os.path.join(APPS_PATH, "observation_engine"))
 
 # -------------------------------------------------------------------------------------------------
-# 🧠 Observation Tools (User Observation Logging — Group A)
+# Observation Tools (User Observation Logging — Group A)
 # -------------------------------------------------------------------------------------------------
 from observation_handler_price_action import (
     observation_input_form,
@@ -179,14 +179,14 @@ keys = {
 # Streamlit Page Setup
 # -------------------------------------------------------------------------------------------------
 st.set_page_config(page_title="Price Action & Trend Confirmation", layout="wide")
-st.title("📊 Price Action & Trend Confirmation")
+st.title("Price Action & Trend Confirmation")
 st.caption("*Analyse candlestick patterns, breakout zones, and directional flow.*")
 
 # -------------------------------------------------------------------------------------------------
 # Load About Markdown (auto-skips if not replaced)
 # -------------------------------------------------------------------------------------------------
 
-with st.expander("📌 What is this app about?"):
+with st.expander("ℹ️ About This App"):
     content = load_markdown_file(ABOUT_APP_MD)
     if content:
         st.markdown(content, unsafe_allow_html=True)
@@ -204,7 +204,7 @@ with st.expander("📌 What is this app about?"):
 # Also links back to app dashboard (e.g., app.py)
 # -------------------------------------------------------------------------------------------------
 st.sidebar.title("📂 Navigation Menu")
-st.sidebar.page_link('app.py', label='📈 Trade and Portfolio Structuring')
+st.sidebar.page_link('app.py', label='Trade and Portfolio Structuring')
 for path, label in build_sidebar_links():
     st.sidebar.page_link(path, label=label)
 
@@ -218,7 +218,7 @@ st.logo(BRAND_LOGO_PATH) # pylint: disable=no-member
 # -------------------------------------------------------------------------------------------------
 # Asset Selection
 # -------------------------------------------------------------------------------------------------
-st.sidebar.title('🔎 Select Asset for Price Action')
+st.sidebar.title('Select Asset for Price Action')
 
 # --- Uploaded Asset Defaults ---
 UPLOADED_FILE = None
@@ -255,7 +255,7 @@ elif data_source == 'Preloaded Asset Types (User)':
         DATA_TITLE = asset_sample
         ASSET_TYPE = asset_category
         asset_path = get_user_asset_path(asset_category, asset_sample)
-        st.caption("📁 Using user-supplied asset from custom preloaded folder.")
+        st.caption("Using user-supplied asset from custom preloaded folder.")
 
 # --- Upload your own file ---
 elif data_source == 'Upload my own files':
@@ -293,10 +293,10 @@ except KeyError as e:
 
 # -------------------------------------------------------------------------------------------------
 # Filter Selection
-# Applies to 📈 Full Data (Filtered) Chart, Confirmation and Readiness Summary
+# Applies to Full Data (Filtered) Chart, Confirmation and Readiness Summary
 # Temporal & Event-Based Filters are not available
 # -------------------------------------------------------------------------------------------------
-st.sidebar.title("📅 Select Date Range")
+st.sidebar.title("Select Date Range")
 
 st.sidebar.caption(
     "⚠️ Only date range filtering is applied here. For seasonal or event-based exploration, "
@@ -344,7 +344,7 @@ default_periods = {
 # -------------------------------------------------------------------------------------------------
 # Sidebar Use Case Selection
 # -------------------------------------------------------------------------------------------------
-st.sidebar.title("📌 Select a Use Case")
+st.sidebar.title("Select a Use Case")
 
 selected_use_case = st.sidebar.selectbox(
     "Select a predefined Use Case",
@@ -360,7 +360,7 @@ auto_selected_indicators = apply_use_case_mapping(
     default_label="Naked Charts"
 )
 
-# ✅ Resolve for internal registry key (fixes JSON export linkage)
+# Resolve for internal registry key (fixes JSON export linkage)
 use_case_name = resolve_canonical_use_case(selected_use_case, USE_CASES)
 
 # -------------------------------------------------------------------------------------------------
@@ -390,13 +390,13 @@ indicator_timeframes = {
 timeframes = ["Daily", "Weekly", "Monthly"]
 
 # Sidebar: Price Action Selection
-st.sidebar.title("📊 Customise Price Action Parameters")
+st.sidebar.title("Customise Price Action Parameters")
 
 selected_indicators = {}
 indicator_params = {}
 
 for category, indicators in indicator_categories.items():
-    with st.sidebar.expander(f"📌 {category}"):
+    with st.sidebar.expander(f"{category}"):
 
         # Auto-select indicators if a Use Case is chosen
         default_selection = auto_selected_indicators.get(category, [])
@@ -586,11 +586,11 @@ def compute_execution_readiness(df, predisposition, selected_indicators):
             continue
 
         # Generate Execution Readiness Summary based on Alignment Ratio
-        if alignment_ratio >= 0.85:  # ✅ Strong Alignment
+        if alignment_ratio >= 0.85:  # Strong Alignment
             timeframe_summary[timeframe] = "✅ Indicators strongly align with detected trends."
-        elif alignment_ratio >= 0.33:  # ✅ If at least one-third of the max score confirms trend
+        elif alignment_ratio >= 0.33:  #  If at least one-third of the max score confirms trend
             timeframe_summary[timeframe] = "⚠️ Mixed signals detected."
-        elif alignment_ratio >= -0.20:  # ✅ If trend signals contradict but not entirely
+        elif alignment_ratio >= -0.20:  # If trend signals contradict but not entirely
             timeframe_summary[timeframe] = "⚠️ Some indicators contradict detected trends."
         else:  # If more than 20% are contradicting trend
             timeframe_summary[timeframe] = "🚨 No alignment detected—trends are conflicting."
@@ -603,7 +603,7 @@ if filtered_df is not None:
     summary_df, timeframe_summary = compute_execution_readiness(filtered_df, predisposition,
      selected_indicators)
 
-    st.subheader("📊 Execution Readiness Summary")
+    st.subheader("Execution Readiness Summary")
     st.write(f"Evaluating **{DATA_TITLE}** for execution readiness.")
 
     timeframe_table = pd.DataFrame(
@@ -611,7 +611,7 @@ if filtered_df is not None:
             status in timeframe_summary.items()]
         )
 
-st.subheader("📈 Timeframe Execution Readiness")
+st.subheader("Timeframe Execution Readiness")
 st.dataframe(timeframe_table)
 
 # **Detect Support & Resistance Levels & Align with Predisposition**
@@ -659,20 +659,20 @@ def detect_support_resistance(df, predisposition):
 
 
 # **Tabs for Short, Medium, Full Data Views**
-tab1, tab2, tab3 = st.tabs(["📉 Short-Term (50 Days)",
-"📊 Medium-Term (200 Days)", "📈 Full Data (Filtered)"])
+tab1, tab2, tab3 = st.tabs(["Short-Term (50 Days)",
+"Medium-Term (200 Days)", "Full Data (Filtered)"])
 
 for tab, timeframe, data_slice, tab_key in [
-    (tab1, "📉 Short-Term (50 Days)", filtered_df.tail(50), "short"),
-    (tab2, "📊 Medium-Term (200 Days)", filtered_df.tail(200), "medium"),
-    (tab3, "📈 Full Data (Filtered)", filtered_df, "full")
+    (tab1, "Short-Term (50 Days)", filtered_df.tail(50), "short"),
+    (tab2, "Medium-Term (200 Days)", filtered_df.tail(200), "medium"),
+    (tab3, "Full Data (Filtered)", filtered_df, "full")
 ]:
     with tab:
         st.subheader(timeframe)
 
         # **Naked Charts**
         if selected_use_case == "Naked Charts":
-            st.subheader("📉 Naked Chart (Price Only)")
+            st.subheader("Naked Chart (Price Only)")
             st.plotly_chart(
             plot_naked_chart(
             data_slice), width='stretch',
@@ -681,7 +681,7 @@ for tab, timeframe, data_slice, tab_key in [
         #  **Performance Charts**
         performance_indicators = selected_indicators.get("Performance", [])
         if performance_indicators:
-            st.subheader("📊 Performance Breakdown")
+            st.subheader("Performance Breakdown")
             if "Winning vs. Losing" in performance_indicators:
                 period = indicator_params.get("Winning vs. Losing", 14)
                 st.plotly_chart(
@@ -706,23 +706,23 @@ for tab, timeframe, data_slice, tab_key in [
         #  **Trend & Momentum Chart**
         trend_indicators = selected_indicators.get("Trend & Momentum", [])
         if trend_indicators:
-            st.subheader("📊 Trend & Momentum Analysis")
+            st.subheader("Trend & Momentum Analysis")
             st.plotly_chart(create_price_action_chart(data_slice, trend_indicators, indicator_params), width='stretch', key=f"trend_chart_{tab_key}")
 
             if "Volume-Based Confirmation" in trend_indicators:
                 period = indicator_params.get("Volume-Based Confirmation", 14)
-                st.subheader("📊 Volume-Based Confirmation")
+                st.subheader("Volume-Based Confirmation")
                 st.plotly_chart(plot_volume_based_confirmation(data_slice, period), width='stretch', key=f"volume_conf_{tab_key}_{period}")
 
         #  **Breakout & Mean Reversion Chart**
         breakout_indicators = selected_indicators.get("Breakout & Mean Reversion", [])
         if breakout_indicators:
-            st.subheader("📊 Breakout & Mean Reversion")
+            st.subheader("Breakout & Mean Reversion")
             st.plotly_chart(plot_breakout_mean_reversion_chart(data_slice, breakout_indicators, indicator_params), width='stretch', key=f"breakout_chart_{tab_key}")
 
         if "Volume vs. Price Range Compression" in breakout_indicators:
             period = indicator_params.get("Volume vs. Price Range Compression", 20)
-            st.subheader("📊 Volume vs. Price Compression")
+            st.subheader("Volume vs. Price Compression")
             st.plotly_chart(
                 plot_volume_price_range_compression(data_slice, breakout_indicators, period),
                 width='stretch',
@@ -736,7 +736,7 @@ for tab, timeframe, data_slice, tab_key in [
         tab1a, tab1b = st.tabs(["🔍 Price Action Confirmation", "⚠️ Red Flags"])
 
         with tab1a:
-            st.subheader("🔍 Price Action Confirmation")
+            st.subheader("Price Action Confirmation")
             gb = GridOptionsBuilder.from_dataframe(summary_df)
             gb.configure_default_column(wrapText=True, autoHeight=True)
             gb.configure_grid_options(domLayout='autoHeight')
@@ -750,7 +750,7 @@ for tab, timeframe, data_slice, tab_key in [
             )
 
         with tab1b:
-            st.subheader("⚠️ Red Flags")
+            st.subheader("Red Flags")
             red_flags = summary_df.loc[
                 summary_df["Confirmation"].str.contains("⚠️", na=False)
             ].copy()
@@ -799,7 +799,7 @@ except NameError:
 # Observation Panel (Log + Input)
 # -------------------------------------------------------------------------------------------------
 if show_observation or show_log:
-    st.markdown("## 🧠 Macro Interaction Tools")
+    st.markdown("## Macro Interaction Tools")
 
 render_macro_interaction_tools_panel(
     show_observation=show_observation,
@@ -812,7 +812,7 @@ render_macro_interaction_tools_panel(
 )
 
 # -------------------------------------------------------------------------------------------------
-# 🧠 AI Export Panel — Price Action (Platinum Canonical Call)
+# AI Export Panel — Price Action (Platinum Canonical Call)
 # -------------------------------------------------------------------------------------------------
 if show_ai_export:
     render_ai_export_panel(

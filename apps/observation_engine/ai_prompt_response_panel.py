@@ -1,5 +1,5 @@
 # -------------------------------------------------------------------------------------------------
-# 🧠 AI Prompt & Response Panel — Platinum Build (Final Version)
+# AI Prompt & Response Panel — Platinum Build (Final Version)
 # -------------------------------------------------------------------------------------------------
 
 # pylint: disable=import-error, unused-import
@@ -228,15 +228,15 @@ def is_valid_json(text: str) -> bool:
 # Main Renderer
 # -------------------------------------------------------------------------------------------------
 def render_ai_prompt_response_panel():
-    st.title("🧠 AI Prompt & Response")
+    st.header("AI Prompt & Response")
     st.caption("Load insight bundles, select AI personas, and craft structured prompts.")
 
     # Persona Dropdown and Description
     persona_keys = list(AI_PROMPT_TEMPLATES.keys())
-    persona_label = st.selectbox("🎭 Choose AI Persona:", persona_keys, index=persona_keys.index("Default Persona"))
+    persona_label = st.selectbox("Choose AI Persona:", persona_keys, index=persona_keys.index("Default Persona"))
     persona_config = AI_PROMPT_TEMPLATES.get(persona_label, AI_PROMPT_TEMPLATES["Default Persona"])
 
-    st.caption(f"📄 Active Persona: `{persona_label}`")
+    st.caption(f"Active Persona: `{persona_label}`")
     if desc := persona_config.get("description"):
         st.info(desc)
 
@@ -249,16 +249,16 @@ def render_ai_prompt_response_panel():
     # Add or Clear persona prompts
     col1, col2 = st.columns([1, 1])
     with col1:
-        if st.button("➕ Add Selected Persona Prompt"):
+        if st.button("Add Selected Persona Prompt"):
             current_prompt = persona_config["prompt"]
             st.session_state.persona_prompts.append(current_prompt)
     with col2:
-        if st.button("🧹 Clear All Persona Prompts"):
+        if st.button("Clear All Persona Prompts"):
             st.session_state.persona_prompts = []
 
     # Insight Bundle Loader
     bundle_files = [f.name for f in EXPORT_FOLDER.glob("*.json")]
-    bundle_choice = st.selectbox("📦 Select Insight Bundle", ["None"] + bundle_files)
+    bundle_choice = st.selectbox("Select Insight Bundle", ["None"] + bundle_files)
     bundle = {}
     if bundle_choice != "None":
         bundle_path = EXPORT_FOLDER / bundle_choice
@@ -269,23 +269,23 @@ def render_ai_prompt_response_panel():
             return
 
     # Manual Customisation
-    st.subheader("✏️ Manual Customisation (Optional)")
+    st.subheader("Manual Customisation (Optional)")
     user_text = st.text_area(
-        "Add your own instructions, questions, or multi-persona guidance.",
+        "Add your own context, framing, or multi-perspective inputs.",
         value=st.session_state.get("user_defined_prompt", ""),
         height=160,
         key="manual_customisation"
     )
     st.session_state["user_defined_prompt"] = user_text
 
-    if st.button("🧼 Clear Manual Customisation"):
+    if st.button("Clear Manual Customisation"):
         st.session_state.user_defined_prompt = ""
         st.rerun()
 
         # Final Prompt Review
     if bundle:
         st.markdown("---")
-        st.markdown("📋 **Final Prompt Preview**")
+        st.markdown("**Final Prompt Preview**")
 
         final_prompt_text = deduplicate_prompts(st.session_state.persona_prompts)
         user_text = st.session_state.user_defined_prompt.strip()
@@ -311,16 +311,16 @@ def render_ai_prompt_response_panel():
         )
 
 
-        # 🧩 Show System header
-        st.markdown("#### 🧩 System (persona bootstrap) — paste as SYSTEM message")
+        # Show System header
+        st.markdown("#### System (persona bootstrap) — paste as SYSTEM message")
         st.code(system_header, language="text")
 
-        # 🔒 Silently sanitise exported JSON text (post-processing only)
+        # Silently sanitise exported JSON text (post-processing only)
         raw_envelope_text = json.dumps(envelope, indent=2, ensure_ascii=False)
         export_text = sanitise_json_text(raw_envelope_text)
 
-        # 👤 User message with fenced JSON
-        st.markdown("#### 👤 User (instruction + JSON bundle) — paste as USER message")
+        # User message with fenced JSON
+        st.markdown("#### User (instruction + JSON bundle) — paste as USER message")
         additional_text = ""
         if user_text:
             additional_text = (
@@ -341,7 +341,7 @@ def render_ai_prompt_response_panel():
         col_dl1, col_dl2 = st.columns(2)
         with col_dl1:
             st.download_button(
-                "⬇️ Download SYSTEM header",
+                "Download SYSTEM header",
                 data=system_header,
                 file_name="system_persona_bootstrap.txt",
                 mime="text/plain",
@@ -349,7 +349,7 @@ def render_ai_prompt_response_panel():
             )
         with col_dl2:
             st.download_button(
-                "⬇️ Download USER envelope.json",
+                "Download USER envelope.json",
                 data=export_text,
                 file_name="ai_export_envelope.json",
                 mime="application/json",
@@ -360,7 +360,7 @@ def render_ai_prompt_response_panel():
         st.info("Copy the SYSTEM header and USER body above into ChatGPT/MyGPT. ")
 
     # Persona Help
-    with st.expander("📜 How to Use AI Personas"):
+    with st.expander("How to Use AI Personas"):
         st.markdown("""
         **AI Personas by Blake Wiltshire** guide interpretation using different decision lenses.
 
@@ -368,7 +368,7 @@ def render_ai_prompt_response_panel():
         - Use the Manual Customisation field to add new prompts or override.
         - Use the Final Prompt Preview to export the clean prompt.
 
-        ✅ Designed for flexible workflows and strategic insight bundling.
+        Designed for flexible workflows and strategic insight bundling.
         """)
 
     st.markdown("""

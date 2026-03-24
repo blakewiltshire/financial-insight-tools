@@ -1,5 +1,5 @@
 # -------------------------------------------------------------------------------------------------
-# 🧠 Observation Handler — Intermarket Correlation (Platinum Canonical Build, Updated Interface)
+# Observation Handler — Intermarket Correlation (Platinum Canonical Build, Updated Interface)
 # -------------------------------------------------------------------------------------------------
 # pylint: disable=import-error, wrong-import-position, wrong-import-order
 
@@ -7,7 +7,7 @@
 Handles observation storage, retrieval, and log editing for Intermarket Correlation modules.
 
 Observations are saved centrally to:
-📂 /observation_engine/storage/user_observations/intermarket_correlation/global__intermarket_correlation__user_observations.csv
+/observation_engine/storage/user_observations/intermarket_correlation/global__intermarket_correlation__user_observations.csv
 """
 
 import os
@@ -47,7 +47,7 @@ def observation_input_form(
     Renders the observation input form and saves entries with full metadata context.
     """
     clear_key = f"{form_key}_clear"
-    if st.button("🧹 Clear Observation Form", key=clear_key):
+    if st.button("Clear Observation Form", key=clear_key):
         st.session_state[f"{form_key}_text"] = ""
         st.session_state[f"{form_key}_relevance"] = "None"
         st.session_state[f"{form_key}_sentiment"] = "None"
@@ -55,9 +55,9 @@ def observation_input_form(
         st.session_state[f"{form_key}_tags"] = []
 
     with st.form(form_key):
-        st.subheader("📌 Record Your Observation")
+        st.subheader("Record Your Observation")
 
-        st.caption("✏️ **Observation Text** — Write your insight or comment linked to "
+        st.caption("**Observation Text** — Write your insight or comment linked to "
         "this module. Highlight any pattern, contradiction, or relevant factor "
         "influencing the condition.")
 
@@ -67,7 +67,7 @@ def observation_input_form(
             key=f"{form_key}_text"
         )
 
-        st.caption("🎯 **Relevance Level** — How significant is this observation for "
+        st.caption("**Relevance Level** — How significant is this observation for "
         "the current context?")
 
         relevance_tag = st.selectbox(
@@ -80,7 +80,7 @@ def observation_input_form(
             key=f"{form_key}_relevance"
         )
 
-        st.caption("⚖️ **Sentiment Bias** — Does this observation support or contradict "
+        st.caption("**Sentiment Bias** — Does this observation support or contradict "
         "the directional bias?")
 
         sentiment_tag = st.selectbox(
@@ -93,7 +93,7 @@ def observation_input_form(
             key=f"{form_key}_sentiment"
         )
 
-        st.caption("⏱ **Observation Timing** — Indicate whether this is a live note, directly "
+        st.caption("**Observation Timing** — Indicate whether this is a live note, directly "
         "linked to a data point, or a retrospective comment.")
 
         observation_type = st.selectbox(
@@ -105,7 +105,7 @@ def observation_input_form(
             key=f"{form_key}_obs_type"
         )
 
-        st.caption("🏷 **Optional Tags** — Attach tags to improve future AI referencing and "
+        st.caption("**Optional Tags** — Attach tags to improve future AI referencing and "
         "cross context mapping.")
 
         optional_tags = st.multiselect(
@@ -126,7 +126,7 @@ def observation_input_form(
                 observation_type=observation_type,
                 tags=optional_tags
             )
-            st.success("✅ Observation saved.")
+            st.success("Observation saved.")
 
 # -------------------------------------------------------------------------------------------------
 # Save Observation Entry
@@ -174,20 +174,20 @@ def display_observation_log() -> None:
     folder = ensure_module_folder()
     file_path = os.path.join(folder, FIXED_FILENAME)
 
-    st.subheader("🗂️ Observation Journal")
+    st.subheader("Observation Journal")
 
     if not os.path.exists(file_path):
         st.info("No observations recorded yet.")
         return
 
-    if st.button("🔄 Refresh Observation Log"):
+    if st.button("Refresh Observation Log"):
         st.rerun()
 
     df = pd.read_csv(file_path)
     df = df.sort_values("timestamp", ascending=False).reset_index(drop=True)
 
     st.markdown("""
-    🔎 **Edit or Delete Entries:**
+    **Edit or Delete Entries:**
     - Directly edit any field inline.
     - To delete a row: select row → click trash bin icon 🗑️ next to row.
     - Changes will only be permanently saved when you click **Save Journal Updates**.
@@ -201,6 +201,6 @@ def display_observation_log() -> None:
         key="observation_editor"
     )
 
-    if st.button("💾 Save Journal Updates"):
+    if st.button("Save Journal Updates"):
         edited_df.to_csv(file_path, index=False)
-        st.success("✅ Journal updated successfully.")
+        st.success("Journal updated successfully.")

@@ -1,51 +1,51 @@
 # -------------------------------------------------------------------------------------------------
-# 📈 Visual Config (Local Extension) — Theme 200 Labour Market Dynamics (Platinum+)
+# Visual Config (Local Extension) — Theme 200 Labour Market Dynamics (Platinum+)
 # -------------------------------------------------------------------------------------------------
 # pylint: disable=import-error, wrong-import-position, wrong-import-order
 # pylint: disable=invalid-name, non-ascii-file-name, unused-argument, unused-import
 
 # -------------------------------------------------------------------------------------------------
-# 📘 Docstring
+# Docstring
 # -------------------------------------------------------------------------------------------------
 """
-📈 Local Visual Configuration — Economic Exploration Suite
+Local Visual Configuration — Economic Exploration Suite
 -----------------------------------------------------------------
 
 Defines the country- or theme-specific visual rendering extensions for
 Economic Exploration modules (Themes 100–2100+). This module extends the
 universal charting engine, enabling more granular visualisation layers.
 
-✅ Role in the System:
+Role in the System:
 - Adds localised chart overlays, sector breakdowns, and country-specific displays.
 - Controls tab and subtab layouts per Use Case.
 - Dynamically routes visual rendering based on the selected Use Case.
 
-🧠 System Design Notes:
+System Design Notes:
 - Visual rendering is fully independent of indicator signal evaluation.
 - **Use Case selection controls visual rendering**, with charts configured here.
 - Chart data slices are passed via `df_map`, based on timeframe windows handled locally.
 - Visual keys, tab names, subtab structures, and display logic are fully controlled here.
 - This local module **does not reference indicator_map_XXX.py or insights** directly.
 
-⚙️ Architecture Summary:
+Architecture Summary:
 - Each Use Case receives its own visualisation block inside `render_all_charts_local()`.
 - Subtabs are always required (even for single-chart cases) to ensure consistent UI structure.
 - Chart keys are managed via `display_chart_with_fallback()` to prevent Streamlit key conflicts.
 - Local visuals may call universal chart functions (e.g., from `universal_visual_config_XXX.py`) for consistency.
 
 Usage:
-- Invoked automatically from the main theme module (`100_📈_economic_growth_stability.py`, `200_💼_labour_market_dynamics.py`, etc.)
+- Invoked automatically from the main theme module (`100_economic_growth_stability.py`, `200_💼_labour_market_dynamics.py`, etc.)
 - Required only when country- or theme-specific visuals are implemented.
 - If no local visual config exists, universal visuals render by default.
 
-🧠 AI Implementation Notes:
+AI Implementation Notes:
 - Visual tab structure is critical for AI narrative consistency and export accuracy.
 - Subtab names, chart labels, and layout stability directly influence AI macro narrative parsing.
 
 """
 
 # -------------------------------------------------------------------------------------------------
-# 🧱 Standard Library
+# Standard Library
 # -------------------------------------------------------------------------------------------------
 import os
 import sys
@@ -78,7 +78,7 @@ from universal_visual_config_200 import (
 )
 
 # -------------------------------------------------------------------------------------------------
-# 📊 Sector Columns and Icons Mapping
+# Sector Columns and Icons Mapping
 # -------------------------------------------------------------------------------------------------
 SECTOR_COLUMNS = [
     "Mining and Logging",
@@ -89,23 +89,23 @@ SECTOR_COLUMNS = [
 ]
 
 SECTOR_ICONS = {
-    "Mining and Logging": "⛏️",
-    "Construction": "🚧", "Manufacturing": "⚙️",
-    "Trade Transportation and Utilities": "🚚", "Information": "💻", "Financial Activities": "💰",
-    "Professional and Business Services": "📈", "Education and Health Services": "🏥",
-    "Leisure and Hospitality": "🎯", "Other Services": "🔧", "Government": "🏛️"
+    "Mining and Logging": "",
+    "Construction": "", "Manufacturing": "",
+    "Trade Transportation and Utilities": "", "Information": "", "Financial Activities": "",
+    "Professional and Business Services": "", "Education and Health Services": "",
+    "Leisure and Hospitality": "", "Other Services": "", "Government": ""
 }
 
 # -------------------------------------------------------------------------------------------------
-# 📌 Visual Section Titles Mapping
+# Visual Section Titles Mapping
 # -------------------------------------------------------------------------------------------------
 def get_visual_section_titles():
     return {
-        "Employment Trends": "📈 Employment Growth and Hiring Activity",
-        "Unemployment Context": "📉 Unemployment Rates and Volatility",
-        "Labour Force Engagement": "🧠 Participation and Labour Supply Trends",
-        "Business Sector Employment Breakdown": "🏭 Sector-Level Employment Dynamics",
-        "Employment Type and Wage Dynamics": "🧮 Employment Type, Wage and Jobless Claims"
+        "Employment Trends": "Employment Growth and Hiring Activity",
+        "Unemployment Context": "Unemployment Rates and Volatility",
+        "Labour Force Engagement": "Participation and Labour Supply Trends",
+        "Business Sector Employment Breakdown": "Sector-Level Employment Dynamics",
+        "Employment Type and Wage Dynamics": "Employment Type, Wage and Jobless Claims"
     }
 
 # -------------------------------------------------------------------------------------------------
@@ -161,7 +161,7 @@ def plot_wage_yoy(df):
     fig = go.Figure()
     fig.add_trace(go.Scatter(x=df["date"], y=df["AHE YoY %"], mode="lines+markers"))
     fig.update_layout(
-        title="📈 YoY Wage Growth (%)",
+        title="YoY Wage Growth (%)",
         xaxis_title="Date",
         yaxis_title="% Change",
         template="plotly_white",
@@ -221,9 +221,9 @@ def render_universal_labour_tabs(selected_use_case: str, df: pd.DataFrame, tab_k
     # --- Employment Trends ---
     if selected_use_case == "Employment Trends":
         subtab1, subtab2, subtab3 = st.tabs([
-            "📈 Hiring Momentum",
-            "📉 Volatility Context",
-            "🔁 Inflection Points"
+            "Hiring Momentum",
+            "Volatility Context",
+            "Inflection Points"
         ])
 
         with subtab1:
@@ -263,9 +263,9 @@ def render_universal_labour_tabs(selected_use_case: str, df: pd.DataFrame, tab_k
     # --- Unemployment Context ---
     if selected_use_case == "Unemployment Context":
         subtab1, subtab2, subtab3 = st.tabs([
-            "📈 Unemployment Direction",
-            "📈 Extremes & Reversion",
-            "🌪️ Volatility"
+            "Unemployment Direction",
+            "Extremes & Reversion",
+            "Volatility"
         ])
 
         with subtab1:
@@ -305,9 +305,9 @@ def render_universal_labour_tabs(selected_use_case: str, df: pd.DataFrame, tab_k
     # --- Labour Force Engagement ---
     if selected_use_case == "Labour Force Engagement":
         subtab1, subtab2, subtab3 = st.tabs([
-            "📈 Participation Direction",
-            "🔄 Structural Variability",
-            "📉 Historical Extremes"
+            "Participation Direction",
+            "Structural Variability",
+            "Historical Extremes"
         ])
 
         with subtab1:
@@ -386,7 +386,7 @@ def render_all_charts_local(selected_use_case, tab_mapping, df_map):
                     return
 
                 selected_sector = pills(
-                    "📌 Select Sector",
+                    "Select Sector",
                     options=sectors,
                     icons=[SECTOR_ICONS.get(sector, "🏭") for sector in sectors],
                     key=f"{tab}_sector_pills"
@@ -456,7 +456,7 @@ def render_all_charts_local(selected_use_case, tab_mapping, df_map):
                 summary_df = pd.DataFrame(summary_data).sort_values(by="Sector")
                 summary_df["YoY % Change"] = summary_df["YoY % Change"].fillna("N/A")
 
-                with st.expander("📋 Full Sector Summary Table", expanded=False):
+                with st.expander("Full Sector Summary Table", expanded=False):
                     st.dataframe(
                         summary_df.style.format({
                             "Latest": "{:,.0f}",
@@ -483,9 +483,9 @@ def render_all_charts_local(selected_use_case, tab_mapping, df_map):
                 df_secondary = df_secondary_full.tail(current_periods) if current_periods else df_secondary_full
 
                 subtab1, subtab2, subtab3 = st.tabs([
-                    "🧑‍💼 Full-Time Employment",
-                    "🧑‍🎓 Part-Time Employment",
-                    "⚖️ Full-Time / Part-Time Ratio"
+                    "Full-Time Employment",
+                    "Part-Time Employment",
+                    "Full-Time / Part-Time Ratio"
                 ])
 
                 with subtab1:
@@ -519,8 +519,8 @@ def render_all_charts_local(selected_use_case, tab_mapping, df_map):
                 df_secondary = df_secondary_full.tail(current_periods) if current_periods else df_secondary_full
 
                 subtab1, subtab2 = st.tabs([
-                    "💰 Average Hourly Earnings",
-                    "📈 YoY Wage Growth"
+                    "Average Hourly Earnings",
+                    "YoY Wage Growth"
                 ])
 
                 with subtab1:

@@ -1,5 +1,5 @@
 # -------------------------------------------------------------------------------------------------
-# 🧠 Observation Handler — Trade Structuring & Risk Planning (Reflection Notes Only)
+# Observation Handler — Trade Structuring & Risk Planning (Reflection Notes Only)
 # -------------------------------------------------------------------------------------------------
 
 import os
@@ -27,12 +27,12 @@ def ensure_module_folder() -> str:
 
 def observation_input_form(form_key: str = "ts_observation_form") -> None:
     clear_key = f"{form_key}_clear"
-    if st.button("🧹 Clear Reflection", key=clear_key):
+    if st.button("Clear Reflection", key=clear_key):
         st.session_state[f"{form_key}_text"] = ""
         st.session_state[f"{form_key}_tags"] = []
 
     with st.form(form_key):
-        st.subheader("📝 Trade Planning Reflection")
+        st.subheader("Trade Planning Reflection")
         st.caption("Optional free-form notes on why you're preparing this trade.")
         observation_text = st.text_area("Planning Note", height=120, key=f"{form_key}_text")
 
@@ -44,7 +44,7 @@ def observation_input_form(form_key: str = "ts_observation_form") -> None:
         submitted = st.form_submit_button("Save Reflection")
         if submitted and observation_text.strip():
             save_observation(observation_text.strip(), optional_tags)
-            st.success("✅ Reflection saved.")
+            st.success("Reflection saved.")
 
 def save_observation(observation_text: str, tags: List[str]) -> None:
     folder = ensure_module_folder()
@@ -67,20 +67,20 @@ def display_observation_log() -> None:
     folder = ensure_module_folder()
     file_path = os.path.join(folder, FIXED_FILENAME)
 
-    st.subheader("📘 Planning Reflections Journal")
+    st.subheader("Planning Reflections Journal")
 
     if not os.path.exists(file_path):
         st.info("No reflections recorded yet.")
         return
 
-    if st.button("🔄 Refresh Reflections"):
+    if st.button("Refresh Reflections"):
         st.rerun()
 
     df = pd.read_csv(file_path)
     df = df.sort_values("timestamp", ascending=False).reset_index(drop=True)
 
     st.markdown("""
-    🔎 **Edit or Delete Entries:**
+    **Edit or Delete Entries:**
     - Directly edit any field inline.
     - To delete a row: select row → click trash bin icon 🗑️ next to row.
     - Changes will only be permanently saved when you click **Save Journal Updates**.
@@ -94,6 +94,6 @@ def display_observation_log() -> None:
         key="ts_reflection_editor"
     )
 
-    if st.button("💾 Save Updates"):
+    if st.button("Save Updates"):
         edited_df.to_csv(file_path, index=False)
-        st.success("✅ Reflections updated.")
+        st.success("Reflections updated.")

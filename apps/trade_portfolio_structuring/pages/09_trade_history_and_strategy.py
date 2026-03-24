@@ -11,7 +11,7 @@
 # Docstring
 # -------------------------------------------------------------------------------------------------
 """
-📘 Trade History & Strategy
+Trade History & Strategy
 
 This module provides a structured review of historical trades and strategy execution.
 It allows users to upload a validated trade log and perform diagnostics on past performance.
@@ -88,7 +88,7 @@ APPS_PATH, "observation_engine", "sample_inputs",
 sys.path.append(os.path.join(APPS_PATH, "observation_engine"))
 
 # -------------------------------------------------------------------------------------------------
-# 🧠 Observation Tools (User Observation Logging — Group A)
+# Observation Tools (User Observation Logging — Group A)
 # -------------------------------------------------------------------------------------------------
 from observation_handler_trade_history import (
     observation_input_form,
@@ -99,7 +99,7 @@ from render_macro_interaction_tools_panel_trade_history import render_macro_inte
 from macro_insight_sidebar_panel_trade_portfolio_structuring import render_macro_sidebar_tools
 
 # -------------------------------------------------------------------------------------------------
-# 📘 Trade History & Strategy Template + Validator
+# Trade History & Strategy Template + Validator
 # -------------------------------------------------------------------------------------------------
 from portfolio_trade_modules.trade_log_template import get_trade_log_template
 from portfolio_trade_modules.trade_log_validator import validate_trade_log
@@ -116,13 +116,13 @@ from portfolio_trade_modules.trade_log_validator import validate_trade_log
 # Streamlit Page Setup
 # -------------------------------------------------------------------------------------------------
 st.set_page_config(page_title="Trade History & Strategy", layout="wide")
-st.title("📘 Trade History & Strategy")
+st.title("Trade History & Strategy")
 st.caption("*Check for errors, compute P&L, and extract behavioural insights from trade logs.*")
 
 # -------------------------------------------------------------------------------------------------
 # Info Panel
 # -------------------------------------------------------------------------------------------------
-with st.expander("📌 What is this app about?"):
+with st.expander("ℹ️ About This App"):
     content = load_markdown_file(ABOUT_APP_MD)
     if content:
         st.markdown(content, unsafe_allow_html=True)
@@ -136,7 +136,7 @@ with st.expander("📌 What is this app about?"):
 # Also links back to app dashboard (e.g., app.py)
 # -------------------------------------------------------------------------------------------------
 st.sidebar.title("📂 Navigation Menu")
-st.sidebar.page_link('app.py', label='📈 Trade and Portfolio Structuring')
+st.sidebar.page_link('app.py', label='Trade and Portfolio Structuring')
 for path, label in build_sidebar_links():
     st.sidebar.page_link(path, label=label)
 
@@ -150,13 +150,13 @@ st.logo(BRAND_LOGO_PATH) # pylint: disable=no-member
 # -------------------------------------------------------------------------------------------------
 # Sidebar Upload + Template
 # -------------------------------------------------------------------------------------------------
-st.sidebar.markdown("### 📥 Trade Log Setup")
+st.sidebar.markdown("### Trade Log Setup")
 
 uploaded_file = st.sidebar.file_uploader("Upload your trade log (.csv)", type="csv")
 
 df_template = get_trade_log_template()
 st.sidebar.download_button(
-    label="📥 Get Trade Log Template",
+    label="Get Trade Log Template",
     data=df_template.to_csv(index=False).encode("utf-8"),
     file_name="trade_log_template.csv",
     mime="text/csv",
@@ -168,15 +168,15 @@ st.sidebar.divider()
 # -------------------------------------------------------------------------------------------------
 # Sidebar Section Selection (Excludes Portfolio Snapshot — always shown)
 # -------------------------------------------------------------------------------------------------
-st.sidebar.markdown("### 📂 Select Additional Sections")
+st.sidebar.markdown("### Select Additional Sections")
 selected_sections = st.sidebar.multiselect(
     "Choose one or more views:",
     [
-        "📋 Trade Performance Breakdown",
-        "📉 Risk & Return Metrics",
-        "🧠 Position Sizing & Optimisation",
-        "📈 Performance Visualisation",
-        "🛠️ Trade Log Validator"
+        "Trade Performance Breakdown",
+        "Risk & Return Metrics",
+        "Position Sizing & Optimisation",
+        "Performance Visualisation",
+        "Trade Log Validator"
     ],
     default=[]
 )
@@ -185,7 +185,7 @@ st.sidebar.divider()
 # -------------------------------------------------------------------------------------------------
 # Section 1: Portfolio Snapshot (Always Active)
 # -------------------------------------------------------------------------------------------------
-st.subheader("📊 Portfolio Snapshot")
+st.subheader("Portfolio Snapshot")
 st.markdown("_Overview of uploaded or selected portfolio and trade history._")
 
 # -------------------------------------------------------------------------------------------------
@@ -227,9 +227,9 @@ if df_trades is not None:
     if not errors:
         st.sidebar.markdown("### 🧾 Data Summary")
         if use_sample:
-            st.sidebar.info("📂 Using default sample trade log.")
+            st.sidebar.info("Using default sample trade log.")
         else:
-            st.sidebar.success("✅ Trade log loaded successfully.")
+            st.sidebar.success("Trade log loaded successfully.")
 
         st.sidebar.markdown(f"**Records:** {len(df_trades)}")
         st.sidebar.markdown(f"**Sample:** {'Yes' if use_sample else 'No'}")
@@ -241,7 +241,7 @@ if df_trades is not None:
         </small>
         """, unsafe_allow_html=True)
 
-        with st.expander("📋 Preview Uploaded Trade Log"):
+        with st.expander("Preview Uploaded Trade Log"):
             st.dataframe(df_trades, width='stretch')
 
         # Portfolio metrics
@@ -273,7 +273,7 @@ if df_trades is not None:
                 f"{open_trades} open trade(s) detected — active positions are not evaluated "
                 "in this module.\n\n"
                 "For live exposure, unrealised P&L, and portfolio-level diagnostics, "
-                "visit the **🧭 Live Portfolio Monitor**."
+                "visit the **Live Portfolio Monitor**."
             )
 
     else:
@@ -296,7 +296,7 @@ if df_trades is not None and not errors:
     closed_trades = df_trades[df_trades["Trade Status"] == "Closed"]
 
     if not closed_trades.empty and "Asset" in closed_trades.columns:
-        st.sidebar.markdown("### 🔍 Filter Trades (Closed Only)")
+        st.sidebar.markdown("### Filter Trades (Closed Only)")
         asset_options = sorted(closed_trades["Asset"].dropna().unique())
         selected_assets = st.sidebar.multiselect(
             "Filter by Asset",
@@ -313,12 +313,12 @@ else:
 # -------------------------------------------------------------------------------------------------
 # Section 2: Trade Performance Breakdown
 # -------------------------------------------------------------------------------------------------
-if "📋 Trade Performance Breakdown" in selected_sections:
+if "Trade Performance Breakdown" in selected_sections:
     if df_filtered is not None and not df_filtered.empty:
-        st.subheader("📋 Trade Performance Breakdown")
+        st.subheader("Trade Performance Breakdown")
         st.markdown("_Detailed analysis of individual trade outcomes and aggregate metrics._")
 
-        tabs = st.tabs(["📊 Metrics Overview", "📋 Trade History Table"])
+        tabs = st.tabs(["Metrics Overview", "Trade History Table"])
 
         # ------------------------
         # Tab 1: Metrics Overview
@@ -429,15 +429,15 @@ if "📋 Trade Performance Breakdown" in selected_sections:
                 allow_unsafe_jscode=True
             )
     elif df_trades is not None and errors:
-        st.info("📋 Trade Performance Breakdown not shown — trade log failed validation.")
+        st.info("Trade Performance Breakdown not shown — trade log failed validation.")
 
 st.divider()
 
 # -------------------------------------------------------------------------------------------------
 # Section 3: Risk & Return Metrics
 # -------------------------------------------------------------------------------------------------
-if "📉 Risk & Return Metrics" in selected_sections and df_filtered is not None and not errors:
-    st.subheader("📉 Risk & Return Metrics")
+if "Risk & Return Metrics" in selected_sections and df_filtered is not None and not errors:
+    st.subheader("Risk & Return Metrics")
     st.markdown("_Evaluate performance through volatility and downside-adjusted indicators._")
 
     # Filter closed trades with valid exit dates
@@ -504,7 +504,7 @@ if "📉 Risk & Return Metrics" in selected_sections and df_filtered is not None
     st.caption("Metrics calculated from cumulative trade performance and filtered holding period. "
                "Annualised return uses capital-weighted growth over elapsed calendar days.")
 
-    st.markdown("### 📉 Maximum Drawdown")
+    st.markdown("### Maximum Drawdown")
     if not np.isnan(max_drawdown):
         st.metric("Max Drawdown", f"${max_drawdown:,.2f}")
     else:
@@ -513,8 +513,8 @@ if "📉 Risk & Return Metrics" in selected_sections and df_filtered is not None
 # -------------------------------------------------------------------------------------------------
 # Interpretation and Framing
 # -------------------------------------------------------------------------------------------------
-if "📉 Risk & Return Metrics" in selected_sections and df_filtered is not None and not errors:
-    with st.expander("📌 Metric Interpretation and Context"):
+if "Risk & Return Metrics" in selected_sections and df_filtered is not None and not errors:
+    with st.expander("Metric Interpretation and Context"):
         st.markdown("These indicators summarise the risk-return characteristics of the uploaded "
                     "or filtered trade set.")
 
@@ -568,11 +568,11 @@ not forecasts.
 # Section 4: Position Sizing & Optimisation
 # -------------------------------------------------------------------------------------------------
 if (
-    "🧠 Position Sizing & Optimisation" in selected_sections
+    "Position Sizing & Optimisation" in selected_sections
     and df_filtered is not None
     and not errors
 ):
-    st.subheader("🧠 Position Sizing & Optimisation")
+    st.subheader("Position Sizing & Optimisation")
     st.markdown("_Assess sizing strategies using Kelly and simulate alternate trade weightings._")
 
     # Filter closed trades
@@ -636,13 +636,13 @@ if (
             })
 
         # Display Table
-        st.markdown("### 📊 Sizing Strategy Comparison")
+        st.markdown("### Sizing Strategy Comparison")
         st.dataframe(pd.DataFrame(strategy_summary), width='content')
 
 
         # Explanation
         st.markdown("""
-        **📄 Notes:**
+        **Notes:**
         - **Kelly** sizing uses the full mathematical edge based on historical win \
         rate and payoff ratio.
         - **Fixed Fractional** applies a consistent 2% risk per trade.
@@ -659,8 +659,8 @@ st.divider()
 # -------------------------------------------------------------------------------------------------
 # Section 5: Performance Visualisation
 # -------------------------------------------------------------------------------------------------
-if "📈 Performance Visualisation" in selected_sections and df_filtered is not None and not errors:
-    st.subheader("📈 Performance Visualisation")
+if "Performance Visualisation" in selected_sections and df_filtered is not None and not errors:
+    st.subheader("Performance Visualisation")
     st.caption(
         "Visualise trade outcomes, equity curve development, drawdown cycles, and  "
         "risk-return dynamics. "
@@ -668,7 +668,7 @@ if "📈 Performance Visualisation" in selected_sections and df_filtered is not 
         "and strategy refinement."
     )
 
-    with st.expander("📌 Interpretation Guidance"):
+    with st.expander("Interpretation Guidance"):
         st.markdown("""
 This panel visualises the performance of **closed trades only**, using standard analytical views:
 
@@ -782,13 +782,13 @@ st.divider()
 # -------------------------------------------------------------------------------------------------
 # Section 6: Trade Log Validator
 # -------------------------------------------------------------------------------------------------
-if "🛠️ Trade Log Validator" in selected_sections and df_trades is not None:
-    st.subheader("🛠️ Trade Log Validator")
+if "Trade Log Validator" in selected_sections and df_trades is not None:
+    st.subheader("Trade Log Validator")
     st.markdown("_Identify structural issues, potential anomalies, and inconsistencies \
     in the uploaded trade log._")
 
-    validator_tabs = st.tabs(["🔍 Summary Diagnostics", "📄 Detailed Checks",
-    "📊 Observations & Patterns"])
+    validator_tabs = st.tabs(["Summary Diagnostics", "Detailed Checks",
+    "Observations & Patterns"])
 
     # ------------------------
     # Tab 1: Summary Diagnostics
@@ -800,7 +800,7 @@ if "🛠️ Trade Log Validator" in selected_sections and df_trades is not None:
             for i in issues:
                 st.markdown(f"- {i}")
         else:
-            st.success("✅ No critical issues found in trade log structure.")
+            st.success("No critical issues found in trade log structure.")
 
         st.caption("These checks are applied at upload, but summarised here for transparency.")
 
@@ -808,7 +808,7 @@ if "🛠️ Trade Log Validator" in selected_sections and df_trades is not None:
     # Tab 2: Detailed Checks
     # ------------------------
     with validator_tabs[1]:
-        st.markdown("### 🔧 Field Integrity Checks")
+        st.markdown("### Field Integrity Checks")
 
         missing_exits = df_trades[df_trades["Exit Price"].isna()]
         zero_length = df_trades[
@@ -823,7 +823,7 @@ if "🛠️ Trade Log Validator" in selected_sections and df_trades is not None:
         if len(zero_length) > 0:
             st.warning(f"{len(zero_length)} trades have entry and exit on the same day.")
 
-        st.markdown("### 🔁 P&L Cross-Check")
+        st.markdown("### P&L Cross-Check")
         df_closed = df_trades.dropna(subset=["Exit Price"])
         df_closed["Calc P&L"] = df_closed.apply(
             lambda row: (row["Exit Price"] - row["Entry Price"]) * row["Position Size"]
@@ -840,13 +840,13 @@ if "🛠️ Trade Log Validator" in selected_sections and df_trades is not None:
             st.dataframe(mismatches[["Asset", "Entry Price", "Exit Price", "Position Size",
             "Direction", "P&L (Realised)", "Calc P&L", "Diff"]])
         else:
-            st.success("✅ All closed trades passed P&L recomputation check.")
+            st.success("All closed trades passed P&L recomputation check.")
 
     # ------------------------
     # Tab 3: Observations & Patterns
     # ------------------------
     with validator_tabs[2]:
-        st.markdown("### 📌 Observational Insights")
+        st.markdown("### Observational Insights")
 
         gap_summary = df_trades.sort_values("Trade Date (Entry)").copy()
         gap_summary["Trade Date (Entry)"] = pd.to_datetime(gap_summary["Trade Date (Entry)"],
@@ -863,14 +863,14 @@ if "🛠️ Trade Log Validator" in selected_sections and df_trades is not None:
 st.divider()
 
 # -------------------------------------------------------------------------------------------------
-# 🧠 Define Theme Metadata (for Observation Logging)
+# Define Theme Metadata (for Observation Logging)
 # -------------------------------------------------------------------------------------------------
 theme_code = "trade_history"
 theme_title = "Trade History & Strategy"
 selected_use_case = "Trade History Reflection Snapshot"
 
 # -------------------------------------------------------------------------------------------------
-# 🧠 Activate Observation + Journal Toggles
+# Activate Observation + Journal Toggles
 # -------------------------------------------------------------------------------------------------
 show_observation, show_log = render_macro_sidebar_tools(
     theme_readable=theme_title,
@@ -878,11 +878,11 @@ show_observation, show_log = render_macro_sidebar_tools(
     selected_use_case=selected_use_case
 )
 
-# 🎯 No assets are relevant for historical trade log reflections
+# No assets are relevant for historical trade log reflections
 asset_list_for_observation = []
 
 if show_observation or show_log:
-    st.markdown("## 🧠 Macro Interaction Tools")
+    st.markdown("## Macro Interaction Tools")
     st.caption("*Use this space to log portfolio-wide sentiment, risk concerns, or conviction "
     "commentary relevant to your current exposure.*")
 

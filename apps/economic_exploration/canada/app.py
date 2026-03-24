@@ -63,7 +63,6 @@ BRAND_LOGO_PATH = os.path.join(PROJECT_PATH, "brand", "blake_logo.png")
 # These should be structured clearly by function:
 # -------------------------------------------------------------------------------------------------
 from constants.emoji import FLAGS  # pylint: disable=import-error
-from constants.page_icon import PAGE_ICONS  # pylint: disable=import-error
 
 # -------------------------------------------------------------------------------------------------
 # Streamlit Page Setup
@@ -73,23 +72,21 @@ from constants.page_icon import PAGE_ICONS  # pylint: disable=import-error
 COUNTRY_NAME = "Canada" # Add country name, e.g. United States
 THEME = "insight_launcher" # Add the image name of the theme, remove file extension, e.g. .png
 FLAG = FLAGS.get(COUNTRY_NAME, "🏳️")
-PAGE_ICON = PAGE_ICONS.get(THEME, "❓")
 
 # --- Streamlit Setup ---
 st.set_page_config(
     page_title=f"{COUNTRY_NAME} — {THEME.replace('_', ' ').title()}",
-    page_icon=PAGE_ICON,
     layout="wide"
 )
 
 # --- Header ---
-st.header(f"{FLAG} {COUNTRY_NAME} – Insight Launcher: Economic Exploration")
+st.title(f"{FLAG} {COUNTRY_NAME} – Insight Launcher: Economic Exploration")
 st.caption("*Country-level macro insights organised by theme, signal type, and \
 systemic relevance.*")
 
 
 # --- Info Panel ---
-with st.expander("📌 What is this app about?"):
+with st.expander("ℹ️ About This App"):
     content = load_markdown_file(ABOUT_APP_MD)
     if content:
         st.markdown(content, unsafe_allow_html=True)
@@ -122,11 +119,29 @@ st.sidebar.divider()
 
 # --- About & Support ---
 with st.sidebar.expander("ℹ️ About & Support"):
-    content = load_markdown_file(ABOUT_SUPPORT_MD)
-    if content:
-        st.markdown(content, unsafe_allow_html=True)
-    else:
-        st.error("File not found: docs/about_and_support.md")
+    support_md = load_markdown_file(ABOUT_SUPPORT_MD)
+    if support_md:
+        st.markdown(support_md, unsafe_allow_html=True)
+
+    st.caption("Reference documents bundled with this distribution:")
+
+    with open(os.path.join(PROJECT_PATH, "docs", "crafting-financial-frameworks.pdf"), "rb") as f:
+        st.download_button(
+            "📘 Crafting Financial Frameworks",
+            f.read(),
+            file_name="crafting-financial-frameworks.pdf",
+            mime="application/pdf",
+            width='stretch',
+        )
+
+    with open(os.path.join(PROJECT_PATH, "docs", "fit-unified-index-and-glossary.pdf"), "rb") as f:
+        st.download_button(
+            "📚 FIT — Unified Index & Glossary",
+            f.read(),
+            file_name="fit-unified-index-and-glossary.pdf",
+            mime="application/pdf",
+            width='stretch',
+        )
 
 # -------------------------------------------------------------------------------------------------
 # Main Content

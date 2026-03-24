@@ -6,40 +6,40 @@
 # pylint: disable=unused-argument, unused-import
 
 # -------------------------------------------------------------------------------------------------
-# 📘 Docstring
+# Docstring
 # -------------------------------------------------------------------------------------------------
 """
-📈 Local Visual Configuration — Economic Exploration Suite
+Local Visual Configuration — Economic Exploration Suite
 -----------------------------------------------------------------
 
 Defines the country- or theme-specific visual rendering extensions for
 Economic Exploration modules (Themes 100–2100+). This module extends the
 universal charting engine, enabling more granular visualisation layers.
 
-✅ Role in the System:
+Role in the System:
 - Adds localised chart overlays, sector breakdowns, and country-specific displays.
 - Controls tab and subtab layouts per Use Case.
 - Dynamically routes visual rendering based on the selected Use Case.
 
-🧠 System Design Notes:
+System Design Notes:
 - Visual rendering is fully independent of indicator signal evaluation.
 - **Use Case selection controls visual rendering**, with charts configured here.
 - Chart data slices are passed via `df_map`, based on timeframe windows handled locally.
 - Visual keys, tab names, subtab structures, and display logic are fully controlled here.
 - This local module **does not reference indicator_map_XXX.py or insights** directly.
 
-⚙️ Architecture Summary:
+Architecture Summary:
 - Each Use Case receives its own visualisation block inside `render_all_charts_local()`.
 - Subtabs are always required (even for single-chart cases) to ensure consistent UI structure.
 - Chart keys are managed via `display_chart_with_fallback()` to prevent Streamlit key conflicts.
 - Local visuals may call universal chart functions (e.g., from `universal_visual_config_XXX.py`) for consistency.
 
 Usage:
-- Invoked automatically from the main theme module (`100_📈_economic_growth_stability.py`, `200_💼_labour_market_dynamics.py`, etc.)
+- Invoked automatically from the main theme module (`100_economic_growth_stability.py`, `200_💼_labour_market_dynamics.py`, etc.)
 - Required only when country- or theme-specific visuals are implemented.
 - If no local visual config exists, universal visuals render by default.
 
-🧠 AI Implementation Notes:
+AI Implementation Notes:
 - Visual tab structure is critical for AI narrative consistency and export accuracy.
 - Subtab names, chart labels, and layout stability directly influence AI macro narrative parsing.
 
@@ -90,21 +90,21 @@ def get_visual_section_titles():
     Includes universal and local mappings (if applicable).
     """
     return {
-        "Real GDP": "📉 Real GDP Trends & Visuals",
-        "Nominal GDP": "📉 Nominal GDP Trends & Visuals",
-        "GDP Components Breakdown": "📊 GDP Component Breakdown & Structure",
-        "Macro Composite Signals": "🧠 Composite Indicators & Regime Signals"
+        "Real GDP": "Real GDP Trends & Visuals",
+        "Nominal GDP": "Nominal GDP Trends & Visuals",
+        "GDP Components Breakdown": "GDP Component Breakdown & Structure",
+        "Macro Composite Signals": "Composite Indicators & Regime Signals"
     }
 
 # -------------------------------------------------------------------------------------------------
-# 🧭 Local Chart Configs (If applicable)
+# Local Chart Configs (If applicable)
 # -------------------------------------------------------------------------------------------------
 def plot_cb_leading_index(df):
     """Line chart for the Conference Board Leading Index."""
     return plot_indicator_line_chart(
         df,
         y_column="US Leading Index (Conference Board)",
-        title="📈 Conference Board Leading Index",
+        title="Conference Board Leading Index",
         yaxis_title="Index",
         marker=True
     )
@@ -130,7 +130,7 @@ def plot_wei_with_average(df):
     ))
 
     fig.update_layout(
-        title="📉 Weekly Economic Index (NY Fed)",
+        title="Weekly Economic Index (NY Fed)",
         xaxis_title="Date",
         yaxis_title="Index Level",
         height=480,
@@ -143,7 +143,7 @@ def plot_policy_uncertainty(df):
     return plot_indicator_line_chart(
         df,
         y_column="Economic Policy Uncertainty Index",
-        title="🌀 Economic Policy Uncertainty Index",
+        title="Economic Policy Uncertainty Index",
         yaxis_title="Index Level",
         marker=True
     )
@@ -153,7 +153,7 @@ def plot_cfnai_index(df):
     fig = plot_indicator_line_chart(
         df,
         y_column="Chicago Fed National Activity Index",
-        title="📊 National Activity Index (Chicago Fed)",
+        title="National Activity Index (Chicago Fed)",
         yaxis_title="Index Level",
         marker=True
     )
@@ -162,7 +162,7 @@ def plot_cfnai_index(df):
     return fig
 
 # -------------------------------------------------------------------------------------------------
-# 🚦 Chart Dispatcher — Universal Charts First, Local Extensions After
+# Chart Dispatcher — Universal Charts First, Local Extensions After
 # -------------------------------------------------------------------------------------------------
 def render_all_charts_local(selected_use_case, tab_mapping, df_map):
     """
@@ -174,7 +174,7 @@ def render_all_charts_local(selected_use_case, tab_mapping, df_map):
             df = data_slice.reset_index()
 
             if selected_use_case == "Real GDP":
-                subtab1, subtab2 = st.tabs(["📈 Comparative Growth", "📊 GDP Levels"])
+                subtab1, subtab2 = st.tabs(["Comparative Growth", "GDP Levels"])
                 with subtab1:
                     display_chart_with_fallback(
                         plot_gdp_growth_comparison(df),
@@ -193,7 +193,7 @@ def render_all_charts_local(selected_use_case, tab_mapping, df_map):
                     )
 
             elif selected_use_case == "Nominal GDP":
-                subtab1, subtab2 = st.tabs(["📈 Nominal Growth", "📊 Nominal Level"])
+                subtab1, subtab2 = st.tabs(["Nominal Growth", "Nominal Level"])
                 with subtab1:
                     display_chart_with_fallback(
                         plot_gdp_nominal_yoy_growth(df),
@@ -207,10 +207,10 @@ def render_all_charts_local(selected_use_case, tab_mapping, df_map):
 
             elif selected_use_case == "GDP Components Breakdown":
                 subtab1, subtab2, subtab3, subtab4 = st.tabs([
-                    "📈 Domestic Drivers",
-                    "🌐 Exports vs Imports",
-                    "📐 Structural Share (%)",
-                    "📊 Comparative Growth"
+                    "Domestic Drivers",
+                    "Exports vs Imports",
+                    "Structural Share (%)",
+                    "Comparative Growth"
                 ])
                 with subtab1:
                     display_chart_with_fallback(
@@ -252,10 +252,10 @@ def render_all_charts_local(selected_use_case, tab_mapping, df_map):
                 df_weekly = df_weekly if periods is None else df_weekly.tail(periods)
 
                 subtab1, subtab2, subtab3, subtab4 = st.tabs([
-                    "📈 Leading Index (CB)",
-                    "📉 Weekly Economic Index",
-                    "🌀 Policy Uncertainty",
-                    "⚙️ National Activity Index"
+                    "Leading Index (CB)",
+                    "Weekly Economic Index",
+                    "Policy Uncertainty",
+                    "National Activity Index"
                 ])
 
                 with subtab1:

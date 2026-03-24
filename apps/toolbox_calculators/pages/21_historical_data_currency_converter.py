@@ -59,13 +59,13 @@ os.makedirs(CONVERTED_DIR, exist_ok=True)
 # Page Setup
 # -------------------------------------------------------------------------------------------------
 st.set_page_config(page_title="Historical Data Currency Converter", layout="wide")
-st.title("💱 Historical Data Currency Converter")
+st.title("Historical Data Currency Converter")
 st.caption("*Standardise asset prices for clean multi-asset correlation.*")
 
 # -------------------------------------------------------------------------------------------------
 # App Description and Rationale
 # -------------------------------------------------------------------------------------------------
-with st.expander("📌 What is this app about?"):
+with st.expander("ℹ️ About This App"):
     content = load_markdown_file(ABOUT_APP_MD)
     if content:
         st.markdown(content, unsafe_allow_html=True)
@@ -76,7 +76,7 @@ with st.expander("📌 What is this app about?"):
 # Sidebar Navigation
 # -------------------------------------------------------------------------------------------------
 st.sidebar.title("📂 Navigation Menu")
-st.sidebar.page_link('app.py', label='🛠️ Toolbox & Calculators')
+st.sidebar.page_link('app.py', label='Toolbox & Calculators')
 for path, label in build_sidebar_links():
     st.sidebar.page_link(path, label=label)
 st.sidebar.divider()
@@ -85,7 +85,7 @@ st.logo(BRAND_LOGO_PATH)  # pylint: disable=no-member
 # -------------------------------------------------------------------------------------------------
 # File Upload Section
 # -------------------------------------------------------------------------------------------------
-st.sidebar.title("📁 Upload Historical File")
+st.sidebar.title("Upload Historical File")
 uploaded_file = st.sidebar.file_uploader("Upload CSV", type="csv")
 
 original_currency = st.sidebar.selectbox("Original Currency", ["USD", "GBP", "EUR", "JPY", "Other"])
@@ -94,7 +94,7 @@ exchange_rate = st.sidebar.number_input(
     "Exchange Rate (1 original = ? target)", min_value=0.0001, value=1.25, format="%.4f"
 )
 
-with st.sidebar.expander("💱 Help: Exchange Rate Input"):
+with st.sidebar.expander("Help: Exchange Rate Input"):
     content = load_markdown_file(HELP_APP_MD)
     if content:
         st.markdown(content, unsafe_allow_html=True)
@@ -113,21 +113,21 @@ if uploaded_file and (original_currency != target_currency):
         df = load_data_from_file(uploaded_file)
         df = clean_data_minimal(df)
         df.columns = [col.lower() for col in df.columns]
-        st.success(f"✅ Loaded and cleaned: {safe_name}")
+        st.success(f"Loaded and cleaned: {safe_name}")
 
         # Convertible columns
         convertible_cols = ["open", "high", "low", "close"]
         available_cols = [col for col in convertible_cols if col in df.columns]
 
         # Conversion trigger
-        if st.button("🔄 Apply Currency Conversion"):
+        if st.button("Apply Currency Conversion"):
             if available_cols:
                 for col in available_cols:
                     df[col] *= exchange_rate
                 st.session_state["converted_df"] = df
                 st.session_state["converted_path"] = converted_path
                 st.session_state["converted_filename"] = new_filename
-                st.success("✅ Currency conversion applied.")
+                st.success("Currency conversion applied.")
                 st.dataframe(df.tail(10))
             else:
                 st.warning(
@@ -135,7 +135,7 @@ if uploaded_file and (original_currency != target_currency):
                 )
 
         # Save button
-        if "converted_df" in st.session_state and st.button("💾 Save to Converted Folder"):
+        if "converted_df" in st.session_state and st.button("Save to Converted Folder"):
             try:
                 os.makedirs(CONVERTED_DIR, exist_ok=True)
                 st.session_state["converted_df"].to_csv(
@@ -143,7 +143,7 @@ if uploaded_file and (original_currency != target_currency):
                 )
                 saved_filename = st.session_state["converted_filename"]
                 st.success(
-                    f"✅ File saved to:\n`asset_currency_converted/{saved_filename}`"
+                    f"File saved to:\n`asset_currency_converted/{saved_filename}`"
                 )
 
             except Exception as e:
@@ -155,7 +155,7 @@ if uploaded_file and (original_currency != target_currency):
 elif uploaded_file and original_currency == target_currency:
     st.sidebar.warning("Original and target currencies are the same — no conversion will occur.")
 
-st.sidebar.divider()
+st.sidebar.space()
 
 # --- About & Support ---
 with st.sidebar.expander("ℹ️ About & Support"):
@@ -183,6 +183,6 @@ with st.sidebar.expander("ℹ️ About & Support"):
             width='stretch',
         )
 
-st.divider()
+st.space()
 st.caption("© 2026 Blake Media Ltd. | Financial Insight Tools by Blake Wiltshire — \
 No trading, investment, or policy advice provided.")

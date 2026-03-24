@@ -1,5 +1,5 @@
 # -------------------------------------------------------------------------------------------------
-# 📁 Manage Snapshots Panel (Platinum Implementation)
+# Manage Snapshots Panel (Platinum Implementation)
 # -------------------------------------------------------------------------------------------------
 
 import os
@@ -7,16 +7,16 @@ import sys
 import json
 import streamlit as st
 
-# 📦 Add path to access emoji flags
+# Add path to access emoji flags
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "constants")))
 from emoji import FLAGS  # Flag emoji mapping
 
-# 📦 Add path to access file utilities
+# Add path to access file utilities
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__))))
 from insight_loader import list_all_files
 
 # -------------------------------------------------------------------------------------------------
-# 🏷️ Canonical Module Group Labels
+# Canonical Module Group Labels
 # -------------------------------------------------------------------------------------------------
 
 MODULE_GROUP_LABELS = {
@@ -33,7 +33,7 @@ MODULE_GROUP_LABELS = {
 }
 
 # -------------------------------------------------------------------------------------------------
-# 🧠 Snapshot Display Label
+# Snapshot Display Label
 # -------------------------------------------------------------------------------------------------
 
 def build_snapshot_display_label(filepath: str) -> str:
@@ -56,14 +56,14 @@ def build_snapshot_display_label(filepath: str) -> str:
     return f"🗂️ {filename.replace('_', ' ').title()}"
 
 # -------------------------------------------------------------------------------------------------
-# 📂 Manage AI Snapshots Panel
+# Manage AI Snapshots Panel
 # -------------------------------------------------------------------------------------------------
 
 def render_manage_snapshots_panel():
-    st.header("🔧 Manage Snapshots")
+    st.header("Manage Snapshots")
     st.caption("Review or delete AI-generated snapshot files across modules.")
 
-    if st.button("🔄 Reload Snapshot List", key="reload_snapshot_list"):
+    if st.button("Reload Snapshot List", key="reload_snapshot_list"):
         st.rerun()
 
     # Locate root path
@@ -78,10 +78,10 @@ def render_manage_snapshots_panel():
 
     # Label mapping
     label_map = {build_snapshot_display_label(f): f for f in all_json_files}
-    selected_label = st.selectbox("📁 Select Snapshot File", options=list(label_map.keys()))
+    selected_label = st.selectbox("Select Snapshot File", options=list(label_map.keys()))
     selected_file = label_map[selected_label]
 
-    st.markdown(f"**🧾 File Path:** `{selected_file}`")
+    st.markdown(f"**File Path:** `{selected_file}`")
 
     try:
         with open(selected_file, "r", encoding="utf-8") as f:
@@ -90,13 +90,13 @@ def render_manage_snapshots_panel():
         st.error(f"❌ Failed to read file: {e}")
         return
 
-    with st.expander("📄 View Snapshot JSON"):
+    with st.expander("View Snapshot JSON"):
         st.code(raw_json, language="json")
 
     if st.button("🗑️ Delete This Snapshot"):
         try:
             os.remove(selected_file)
-            st.success(f"✅ Deleted `{os.path.basename(selected_file)}`.")
+            st.success(f"Deleted `{os.path.basename(selected_file)}`.")
             st.rerun()
         except Exception as e:
             st.error(f"❌ Failed to delete file: {e}")

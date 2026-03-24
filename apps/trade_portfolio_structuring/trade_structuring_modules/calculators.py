@@ -34,7 +34,7 @@ def universal_trade_fields():
     """
     Collects universal trading fields for slippage, tax, transaction costs, etc.
     """
-    with st.expander("🧾 Cost & Currency Considerations"):
+    with st.expander("Cost & Currency Considerations"):
         st.markdown("""
         These fields apply to **all trade types** and model real-world frictions:
 
@@ -95,7 +95,7 @@ def shares_calculator_intuitive(asset_name, last_close_price, last_close_date):
     st.subheader(f"Shares (No Leverage) Calculator for **{asset_name}**")
     st.caption("Plan your equity trade structure. Override stop-loss or soft target if \
     using custom levels.")
-    st.caption(f"📅 Last Close Date: {last_close_date.strftime('%Y-%m-%d')}")
+    st.caption(f"Last Close Date: {last_close_date.strftime('%Y-%m-%d')}")
 
     share_price = st.number_input("Current Asset Price",
                                   min_value=0.01, value=round(last_close_price, 2), step=0.01,
@@ -197,7 +197,7 @@ def cfd_calculator(asset_name, last_close_price, last_close_date,
     st.subheader(f"CFD / Spread Betting Calculator for **{asset_name}**")
     st.caption("Structuring CFD or spread betting positions with proper Forex handling, \
     margin planning, and universal fields.")
-    st.caption(f"📅 Last Close Date: {last_close_date.strftime('%Y-%m-%d')}")
+    st.caption(f"Last Close Date: {last_close_date.strftime('%Y-%m-%d')}")
 
     share_price = st.number_input("Current Asset Price",
         min_value=0.00001,

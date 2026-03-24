@@ -1,5 +1,5 @@
 # -------------------------------------------------------------------------------------------------
-# 📋 Manage Observations Panel
+# Manage Observations Panel
 # -------------------------------------------------------------------------------------------------
 
 import os
@@ -7,14 +7,14 @@ import sys
 import pandas as pd
 import streamlit as st
 
-# 📦 Add path to access emoji.py
+# Add path to access emoji.py
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "constants")))
 from emoji import FLAGS  # Reusable flag dictionary
 
 from insight_loader import list_all_files
 
 # -------------------------------------------------------------------------------------------------
-# 🏷️ File Display Label Builder
+# File Display Label Builder
 # -------------------------------------------------------------------------------------------------
 
 def build_file_display_label(filepath: str) -> str:
@@ -65,18 +65,18 @@ def build_file_display_label(filepath: str) -> str:
     return f"{country_label}{theme_title} ({group_label})"
 
 # -------------------------------------------------------------------------------------------------
-# 📋 Main Panel Renderer
+# Main Panel Renderer
 # -------------------------------------------------------------------------------------------------
 
 def render_manage_observations_panel():
-    st.header("📋 Manage Observations")
+    st.header("Manage Observations")
     st.caption("Edit or delete saved observations by selecting a file. Changes are written directly to the original CSV.")
 
-    # 🔄 Reload button
-    if st.button("🔄 Reload Observation Files"):
+    # Reload button
+    if st.button("Reload Observation Files"):
         st.rerun()
 
-    # 📂 Load observation file paths
+    # Load observation file paths
     base_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "storage"))
     all_files = list_all_files(base_path, extension=".csv")
 
@@ -84,13 +84,13 @@ def render_manage_observations_panel():
         st.warning("No observation files found.")
         return
 
-    # 🏷️ Build display labels
+    # Build display labels
     file_options = {
         build_file_display_label(path): path
         for path in all_files
     }
 
-    selected_label = st.selectbox("📁 Select Observation File", options=list(file_options.keys()))
+    selected_label = st.selectbox("Select Observation File", options=list(file_options.keys()))
     selected_file = file_options[selected_label]
 
     try:
@@ -103,8 +103,8 @@ def render_manage_observations_panel():
         st.info("This file contains no observations.")
         return
 
-    # ✍️ Inline Editor
-    st.markdown("### 📝 Edit or Delete Observations")
+    # Inline Editor
+    st.markdown("### Edit or Delete Observations")
     st.caption("Double-click to edit fields or use the row selector to delete entries. All changes are saved on confirmation.")
 
     edited_df = st.data_editor(
@@ -114,10 +114,10 @@ def render_manage_observations_panel():
         key="editor_observations"
     )
 
-    # 💾 Save button
-    if st.button("💾 Save Changes"):
+    # Save button
+    if st.button("Save Changes"):
         try:
             edited_df.to_csv(selected_file, index=False)
-            st.success(f"✅ Changes saved to `{os.path.basename(selected_file)}`.")
+            st.success(f"Changes saved to `{os.path.basename(selected_file)}`.")
         except Exception as e:
             st.error(f"❌ Failed to save file: {e}")

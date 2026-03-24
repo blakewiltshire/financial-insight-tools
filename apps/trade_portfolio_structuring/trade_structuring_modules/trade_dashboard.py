@@ -96,7 +96,7 @@ def add_trade_to_dashboard(trade_data_dict: dict) -> None:
 
     row = {col: trade_data_dict.get(col, "N/A") for col in DASHBOARD_COLUMNS}
     st.session_state.structured_trades.append(row)
-    st.success(f"✅ Trade for {row['Asset (Primary)']} added to dashboard.")
+    st.success(f"Trade for {row['Asset (Primary)']} added to dashboard.")
 
 # -------------------------------------------------------------------------------------------------
 # Display Trade Dashboard
@@ -111,7 +111,7 @@ def display_trade_dashboard() -> None:
     Returns:
         None — updates the UI and session state dynamically.
     """
-    st.subheader("📊 Trade Structuring Dashboard")
+    st.subheader("Trade Structuring Dashboard")
     st.caption(
         "Your planned trade(s), structured using system tools. "
         "Use this panel to review, adjust, and export for broker integration or "
@@ -132,7 +132,7 @@ def display_trade_dashboard() -> None:
 
         csv_dashboard = dashboard_df.to_csv(index=False).encode("utf-8")
         st.download_button(
-            label="📥 Download Structured Trade Dashboard (CSV)",
+            label="Download Structured Trade Dashboard (CSV)",
             data=csv_dashboard,
             file_name="structured_trade_dashboard.csv",
             mime="text/csv",

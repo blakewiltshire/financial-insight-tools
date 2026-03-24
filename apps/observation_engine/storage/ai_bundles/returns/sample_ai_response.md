@@ -1,4 +1,4 @@
-# 🧠 AI Insight Response
+# AI Insight Response
 
 **Persona Used:** Value Investor by Blake Wiltshire
 
@@ -6,9 +6,9 @@
 This insight bundle reveals a compelling value opportunity in mid-cap industrials. Undervaluation is supported by margin stability and strong free cash flow.
 
 **Key Observations:**
-- 📉 P/E ratios at historical lows
-- 📈 Earnings momentum improving
-- ✅ Dividend coverage robust
+- P/E ratios at historical lows
+- Earnings momentum improving
+- Dividend coverage robust
 
 **Recommendation:**
 Investigate rotational allocation from overbought tech into undervalued industrial names.

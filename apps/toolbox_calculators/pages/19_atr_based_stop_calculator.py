@@ -8,7 +8,7 @@
 # Docstring
 # -------------------------------------------------------------------------------------------------
 """
-🛑 ATR-Based Stop Calculator
+ATR-Based Stop Calculator
 
 Supports stop-loss zone estimation using Average True Range (ATR) volatility logic.
 Designed for pre-trade planning, particularly within Trade Structuring & Risk Planning.
@@ -71,7 +71,7 @@ from apps.data_sources.financial_data.user_asset_map import get_user_asset_path
 # Streamlit Page Setup
 # -------------------------------------------------------------------------------------------------
 st.set_page_config(page_title="ATR-Based Stop Calculator", layout="wide")
-st.title("🛑 ATR-Based Stop Calculator")
+st.title("ATR-Based Stop Calculator")
 st.caption("*Use asset volatility to plan structured exit zones.*")
 
 # -------------------------------------------------------------------------------------------------
@@ -80,7 +80,7 @@ st.caption("*Use asset volatility to plan structured exit zones.*")
 # Uses `build_sidebar_links()` to list only structured pages (e.g., 100_....py)
 # Also links back to app dashboard (e.g., app.py)
 # -------------------------------------------------------------------------------------------------
-with st.expander("📌 What is this app about?"):
+with st.expander("ℹ️ About This App"):
     content = load_markdown_file(ABOUT_APP_MD)
     if content:
         st.markdown(content, unsafe_allow_html=True)
@@ -91,7 +91,7 @@ with st.expander("📌 What is this app about?"):
 # Sidebar Setup
 # -------------------------------------------------------------------------------------------------
 st.sidebar.title("📂 Navigation Menu")
-st.sidebar.page_link('app.py', label='🛠 Toolbox & Calculators')
+st.sidebar.page_link('app.py', label='Toolbox & Calculators')
 
 
 for path, label in build_sidebar_links():
@@ -106,7 +106,7 @@ st.logo(BRAND_LOGO_PATH)  # pylint: disable=no-member
 # -------------------------------------------------------------------------------------------------
 # Asset Selection
 # -------------------------------------------------------------------------------------------------
-st.sidebar.title("🔎 Select Asset")
+st.sidebar.title("Select Asset")
 data_source = st.sidebar.selectbox("Choose your data source", [
     "Preloaded Asset Types (Default)",
     "Preloaded Asset Types (User)",
@@ -137,13 +137,6 @@ elif data_source.startswith("Preloaded"):
 st.sidebar.title("Time Horizon")
 period_slider = st.sidebar.slider("Compare over past X periods", 30, 300, 100)
 
-with st.expander("ℹ️ Help: How to interpret ATR-based analysis"):
-    content = load_markdown_file(HELP_APP_MD)
-    if content:
-        st.markdown(content, unsafe_allow_html=True)
-    else:
-        st.error("File not found: docs/help_atr_stop_calculator.md")
-
 # -------------------------------------------------------------------------------------------------
 # ATR Calculation
 # -------------------------------------------------------------------------------------------------
@@ -173,74 +166,88 @@ def calculate_atr(df_slice, window=14):
 # -------------------------------------------------------------------------------------------------
 # pylint: disable=redefined-outer-name
 def render_atr_analysis(df_slice, label, window=14):
-    """
-    Render ATR analysis, including summary statistics and a dual-axis chart.
-
-    Parameters:
-        df_slice (pd.DataFrame): Time-series data including ['high', 'low', 'close', 'date'].
-        label (str): Label for the asset or series being analysed.
-        window (int): Number of periods to use for ATR calculation.
-
-    Returns:
-        None. Renders visual output in the Streamlit app.
-    """
     df_atr = calculate_atr(df_slice, window)
     df_atr = df_atr.dropna().copy()
+
+    df_atr["upper_band"] = df_atr["close"] + df_atr["ATR"]
+    df_atr["lower_band"] = df_atr["close"] - df_atr["ATR"]
+
     latest = df_atr.iloc[-1]
     current_price = latest["close"]
     atr = latest["ATR"]
-    upper = current_price + atr
-    lower = current_price - atr
+    upper = latest["upper_band"]
+    lower = latest["lower_band"]
 
     col1, col2 = st.columns([2, 3])
 
     with col1:
-        st.markdown(f"<h5 style='margin-bottom: 0.5rem;'>ATR Summary "
-                    f"<small>({window}-period window from \
-                    last {len(df_slice)} periods)</small></h5>",
-                    unsafe_allow_html=True)
+        st.markdown(
+            f"<h5 style='margin-bottom: 0.5rem;'>ATR Summary "
+            f"<small>({window}-period window from last {len(df_slice)} periods)</small></h5>",
+            unsafe_allow_html=True
+        )
         st.markdown(f"- **Current ATR ({window}):** {atr:.2f}")
         st.markdown(f"- **Upper Band (Stop Buffer):** {upper:.2f}")
         st.markdown(f"- **Lower Band (Stop Buffer):** {lower:.2f}")
 
         st.caption(
-        f"This view uses a {window}-period window to measure recent \
-        price variability.\n\n"
-        "ATR (Average True Range) reflects typical daily price movement. \
-        It does not predict direction — "
-        "it quantifies how far the asset *might* move in either direction under \
-        recent conditions.\n\n"
-        "The bands shown here represent one ATR above and below the current price. \
-        These are **volatility buffers**, "
-        "not targets. Use them to estimate whether a proposed stop-loss or Desired \
-        Profit Target (DPT) lies "
-        "within typical range movement."
-    )
+            f"This view uses a {window}-period window to measure recent price variability.\n\n"
+            "ATR (Average True Range) reflects typical daily price movement. It does not predict direction — "
+            "it quantifies how far the asset *might* move in either direction under recent conditions.\n\n"
+            "The bands shown here represent one ATR above and below price through time. "
+            "These are **volatility buffers**, not targets."
+        )
 
     with col2:
         fig = go.Figure()
-        fig.add_trace(go.Scatter(x=df_atr['date'], y=df_atr['close'], name="Price"))
-        fig.add_trace(go.Scatter(x=df_atr['date'], y=df_atr['ATR'], name=f"ATR ({window})",
-                                 yaxis="y2", line={"dash": "dot"}))
-        fig.add_trace(go.Scatter(x=df_atr['date'], y=[upper]*len(df_atr),
-                                 name="Upper ATR Band", line={"dash": "dot"}))
-        fig.add_trace(go.Scatter(x=df_atr['date'], y=[lower]*len(df_atr),
-                                 name="Lower ATR Band", line={"dash": "dot"}))
+
+        fig.add_trace(go.Scatter(
+            x=df_atr["date"],
+            y=df_atr["close"],
+            name="Price"
+        ))
+
+        fig.add_trace(go.Scatter(
+            x=df_atr["date"],
+            y=df_atr["upper_band"],
+            name="Upper ATR Band",
+            line={"dash": "dot"}
+        ))
+
+        fig.add_trace(go.Scatter(
+            x=df_atr["date"],
+            y=df_atr["lower_band"],
+            name="Lower ATR Band",
+            line={"dash": "dot"}
+        ))
+
+        fig.add_trace(go.Scatter(
+            x=df_atr["date"],
+            y=df_atr["ATR"],
+            name=f"ATR ({window})",
+            yaxis="y2",
+            line={"dash": "dot"}
+        ))
 
         fig.update_layout(
             title=f"ATR Overlay — {label}",
             xaxis_title="Date",
             yaxis_title="Price",
-            yaxis2={"title": "ATR", "overlaying": "y", "side": "right", "showgrid": False},
+            yaxis2={
+                "title": "ATR",
+                "overlaying": "y",
+                "side": "right",
+                "showgrid": False
+            },
             legend={"x": 0.01, "y": 0.99}
-
         )
-        st.plotly_chart(fig, width='stretch')
+
+        st.plotly_chart(fig, width="stretch")
 
 # -------------------------------------------------------------------------------------------------
 # Main View Tabs
 # -------------------------------------------------------------------------------------------------
-tabs = st.tabs(["📈 Volatility View", "📉 Short-Term (50 Days)", "📊 Medium-Term (200 Days)"])
+tabs = st.tabs(["Volatility View", "Short-Term (50 Days)", "Medium-Term (200 Days)"])
 
 # Daily — user slice
 with tabs[0]:
@@ -255,10 +262,13 @@ for i, (label, window) in enumerate(zip(["Short-Term", "Medium-Term"], [50, 200]
         df_short = resample_data(df.copy(), "Daily").tail(window)
         render_atr_analysis(df_short, f"{label} — {window} Days")
 
-# -------------------------------------------------------------------------------------------------
-# Footer
-# -------------------------------------------------------------------------------------------------
-st.sidebar.divider()
+
+with st.expander("ℹ️ Help: How to interpret ATR-based analysis"):
+    content = load_markdown_file(HELP_APP_MD)
+    if content:
+        st.markdown(content, unsafe_allow_html=True)
+    else:
+        st.error("File not found: docs/help_atr_stop_calculator.md")
 
 # --- About & Support ---
 with st.sidebar.expander("ℹ️ About & Support"):
@@ -285,6 +295,9 @@ with st.sidebar.expander("ℹ️ About & Support"):
             mime="application/pdf",
             width='stretch',
         )
-st.markdown("---")
+# -------------------------------------------------------------------------------------------------
+# Footer
+# -------------------------------------------------------------------------------------------------
+st.space()
 st.caption("© 2026 Blake Media Ltd. | Financial Insight Tools by Blake Wiltshire — "
            "No trading, investment, or policy advice provided.")

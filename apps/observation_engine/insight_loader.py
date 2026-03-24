@@ -1,5 +1,5 @@
 # -------------------------------------------------------------------------------------------------
-# 📦 Insight Loader — Observations & Snapshots (Platinum-Grade, Filename-Driven Version)
+# Insight Loader — Observations & Snapshots (Platinum-Grade, Filename-Driven Version)
 # -------------------------------------------------------------------------------------------------
 
 import os
@@ -9,7 +9,7 @@ import pandas as pd
 from typing import List, Dict, Optional
 
 # -------------------------------------------------------------------------------------------------
-# 📁 Base Paths
+# Base Paths
 # -------------------------------------------------------------------------------------------------
 
 BASE_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "storage"))
@@ -17,7 +17,7 @@ OBS_PATH = os.path.join(BASE_PATH, "user_observations")
 SNAPSHOT_PATH = os.path.join(BASE_PATH, "ai_bundles")
 
 # -------------------------------------------------------------------------------------------------
-# 🧭 Main Module Labels (folder-driven)
+# Main Module Labels (folder-driven)
 # -------------------------------------------------------------------------------------------------
 
 MAIN_MODULE_GROUPS = {
@@ -28,23 +28,23 @@ MAIN_MODULE_GROUPS = {
 }
 
 # -------------------------------------------------------------------------------------------------
-# 🔧 Submodule Labels (filename-driven from second segment)
+# Submodule Labels (filename-driven from second segment)
 # -------------------------------------------------------------------------------------------------
 
 MODULE_DISPLAY_LABELS = {
-    # 🌍 Economic Exploration
+    # Economic Exploration
     "economic_exploration": "Economic Exploration",
     "thematic_correlation": "Thematic Correlation",
 
-    # 🔗 Intermarket Correlation
+    # Intermarket Correlation
     "correlation_heatmaps": "Correlation Heatmaps & Themes",
     "cross_asset_correlation": "Cross-Asset Correlation",
     "spread_ratio_insights": "Spread & Ratio Insights",
 
-    # 🗂 Reference Data
+    # Reference Data
     "classification_schema": "Classification Schema Viewer",
 
-    # 🧭 Trade & Portfolio Structuring
+    # Trade & Portfolio Structuring
     "market_scanner": "Market & Volatility Scanner",
     "price_action": "Price Action & Trend Confirmation",
     "trade_timing": "Trade Timing & Confirmation",
@@ -54,7 +54,7 @@ MODULE_DISPLAY_LABELS = {
 }
 
 # -------------------------------------------------------------------------------------------------
-# 📁 File Utilities
+# File Utilities
 # -------------------------------------------------------------------------------------------------
 
 def list_all_files(base_folder: str, extension: str = ".csv") -> List[str]:
@@ -66,7 +66,7 @@ def list_all_files(base_folder: str, extension: str = ".csv") -> List[str]:
     return sorted(matches)
 
 # -------------------------------------------------------------------------------------------------
-# 📋 Load User Observations (Filename-Driven Parsing)
+# Load User Observations (Filename-Driven Parsing)
 # -------------------------------------------------------------------------------------------------
 
 def load_all_observations() -> pd.DataFrame:
@@ -117,7 +117,7 @@ def load_all_observations() -> pd.DataFrame:
     return pd.concat(records, ignore_index=True) if records else pd.DataFrame()
 
 # -------------------------------------------------------------------------------------------------
-# 🧠 Load AI Snapshots (Used in Snapshot Browser)
+# Load AI Snapshots (Used in Snapshot Browser)
 # -------------------------------------------------------------------------------------------------
 
 def load_all_snapshots() -> List[Dict]:

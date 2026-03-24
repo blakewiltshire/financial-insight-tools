@@ -1,5 +1,5 @@
 # -------------------------------------------------------------------------------------------------
-# 🧠 Render Macro Interaction Tools Panel — Classification Schema Viewer
+# Render Macro Interaction Tools Panel — Classification Schema Viewer
 # -------------------------------------------------------------------------------------------------
 # pylint: disable=missing-function-docstring, too-many-arguments
 # -------------------------------------------------------------------------------------------------
@@ -23,9 +23,9 @@ def render_macro_interaction_tools_panel(
     """
 
     if show_observation:
-        with st.expander("📝 Add Classification Schema Viewer Note", expanded=True):
+        with st.expander("Add Classification Schema Viewer Note", expanded=True):
             observation_input_callback()
 
     if show_log:
-        with st.expander("📋 View/Edit/Delete Classification Schema Viewer Notes", expanded=True):
+        with st.expander("View/Edit/Delete Classification Schema Viewer Notes", expanded=True):
             observation_log_callback()

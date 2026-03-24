@@ -68,7 +68,7 @@ classification_data = load_all_classification_data(DATA_PATH)
 sys.path.append(os.path.join(APPS_PATH, "observation_engine"))
 
 # -------------------------------------------------------------------------------------------------
-# 🧠 Observation Tools (User Observation Logging — Group A)
+# Observation Tools (User Observation Logging — Group A)
 # -------------------------------------------------------------------------------------------------
 from observation_handler_classification_schema import (
     observation_input_form,
@@ -105,7 +105,7 @@ df_largecap = safe_get(classification_data, "company_largecap")
 # Streamlit Setup
 # -------------------------------------------------------------------------------------------------
 st.set_page_config(page_title="Classification Schema Viewer", layout="wide")
-st.title("📚 Classification Schema Viewer")
+st.title("Classification Schema Viewer")
 st.caption(
     "*Explore political, economic, market, and company classifications across "
     "countries and sectors.*"
@@ -114,7 +114,7 @@ st.caption(
 # -------------------------------------------------------------------------------------------------
 # Info Panel
 # -------------------------------------------------------------------------------------------------
-with st.expander("📖 What is this app about?"):
+with st.expander("ℹ️ About This App"):
     content = load_markdown_file(ABOUT_APP_MD)
     if content:
         st.markdown(content, unsafe_allow_html=True)
@@ -125,13 +125,13 @@ with st.expander("📖 What is this app about?"):
 # Sidebar Navigation
 # -------------------------------------------------------------------------------------------------
 st.sidebar.title("📂 Navigation Menu")
-st.sidebar.page_link("app.py", label="📚 Reference Data & Trusted Sources")
+st.sidebar.page_link("app.py", label="Reference Data & Trusted Sources")
 for path, label in build_sidebar_links():
     st.sidebar.page_link(path, label=label)
 st.sidebar.divider()
 st.logo(BRAND_LOGO_PATH)  # pylint: disable=no-member
 
-st.sidebar.subheader("🗂️ View Options")
+st.sidebar.subheader("View Options")
 classification_view = st.sidebar.radio(
     "Choose Classification Dataset",
     [
@@ -151,7 +151,7 @@ with st.sidebar.expander("ℹ️ App Usage Notes"):
         "No values are generated, rated, or interpreted by this tool.\n\n"
         "**Usage Tip**  \n"
         "If you encounter display issues (e.g., blank tables or errors), use the navigation sidebar to "
-        "return to the main 📚 Reference Data & Trusted Sources module, then re-enter this viewer.\n\n"
+        "return to the main Reference Data & Trusted Sources module, then re-enter this viewer.\n\n"
         "This can help reset the rendering state if filters or tabs were changed rapidly."
     )
 
@@ -176,7 +176,7 @@ def render_forum_view(df):
                            related country-level metadata.
     """
 
-    st.subheader("🌐 Forum Membership Matrix")
+    st.subheader("Forum Membership Matrix")
     st.markdown("Filter country participation across global economic and political groupings.")
 
     bloc_categories = [
@@ -192,16 +192,16 @@ def render_forum_view(df):
     selected_blocs = []
     country = []
 
-    with st.expander("🔎 Filter Options"):
+    with st.expander("Filter Options"):
         col1, col2, col3 = st.columns(3)
         with col1:
-            region = st.multiselect("🌐 Region", sorted(df["Region"].dropna().unique()),
+            region = st.multiselect("Region", sorted(df["Region"].dropna().unique()),
             key="region_forum")
-            bloc_category = st.selectbox("🏛️ Membership Category", bloc_categories,
+            bloc_category = st.selectbox("Membership Category", bloc_categories,
             key="bloc_category")
 
         with col2:
-            country = st.multiselect("🌍 Country", sorted(df["Country"].dropna().unique()),
+            country = st.multiselect("Country", sorted(df["Country"].dropna().unique()),
             key="country_forum")
         with col3:
             if bloc_category in df.columns:
@@ -210,7 +210,7 @@ def render_forum_view(df):
                 item.strip() for sublist in bloc_raw for item in sublist.split(",") if item.strip()
                 ]
                 bloc_list = sorted(set(bloc_split))
-            selected_blocs = st.multiselect("🤝 Bloc Membership (Any Match)", options=bloc_list,
+            selected_blocs = st.multiselect("Bloc Membership (Any Match)", options=bloc_list,
             key="bloc_filter")
 
     df_filtered = df.copy()
@@ -251,39 +251,39 @@ def render_political_view(df):
         df (pd.DataFrame): The full dataset containing political, economic, and institutional
                            environment classifications for countries.
     """
-    st.subheader("🛡️ Political and Economic Environment")
+    st.subheader("Political and Economic Environment")
     st.markdown("Filter political stability and development classifications.")
 
-    with st.expander("🔎 Filter Options – Political Stability & Structure"):
+    with st.expander("Filter Options – Political Stability & Structure"):
         col1, col2, col3 = st.columns(3)
 
         with col1:
             region = st.multiselect(
-                "🌐 Region", df["Region"].dropna().unique(),
+                "Region", df["Region"].dropna().unique(),
                 key="region_political"
             )
             gni = st.multiselect(
-                "💰 GNI per Capita", df["GNI per Capita"].dropna().unique(),
+                "GNI per Capita", df["GNI per Capita"].dropna().unique(),
                 key="gni_political"
             )
 
         with col2:
             country = st.multiselect(
-                "🌍 Country", df["Country"].dropna().unique(),
+                "Country", df["Country"].dropna().unique(),
                 key="country_political"
             )
             stability = st.multiselect(
-                "🗳️ Political Stability", df["Political Stability"].dropna().unique(),
+                "Political Stability", df["Political Stability"].dropna().unique(),
                 key="stability_political"
             )
 
         with col3:
             infra = st.multiselect(
-                "🏗️ Market Infrastructure", df["Market Infrastructure"].dropna().unique(),
+                "Market Infrastructure", df["Market Infrastructure"].dropna().unique(),
                 key="infra_political"
             )
             growth = st.multiselect(
-                "📈 Economic Growth Rate", df["Economic Growth Rate"].dropna().unique(),
+                "Economic Growth Rate", df["Economic Growth Rate"].dropna().unique(),
                 key="growth_political"
             )
 
@@ -325,31 +325,31 @@ def render_market_view(df):
     Args:
         df (pd.DataFrame): Sovereign ratings and market status dataset for global economies.
     """
-    st.subheader("📈 Market Credit Ratings and Classification")
+    st.subheader("Market Credit Ratings and Classification")
     st.markdown("Filter sovereign credit profiles and market classification.")
 
-    with st.expander("🔎 Filter Options – Market Ratings & Access"):
+    with st.expander("Filter Options – Market Ratings & Access"):
         col1, col2, col3 = st.columns(3)
 
         with col1:
             region = st.multiselect(
-                "🌐 Region", df["Region"].dropna().unique(),
+                "Region", df["Region"].dropna().unique(),
                 key="region_market"
             )
             status = st.multiselect(
-                "📊 Market Status", df["Market Status"].dropna().unique(),
+                "Market Status", df["Market Status"].dropna().unique(),
                 key="status_market"
             )
 
         with col2:
             country = st.multiselect(
-                "🌍 Country", df["Country"].dropna().unique(),
+                "Country", df["Country"].dropna().unique(),
                 key="country_market"
             )
 
         with col3:
             rating_input = st.text_input(
-                "🔍 Search Ratings (e.g. AAA, BB)", "",
+                "Search Ratings (e.g. AAA, BB)", "",
                 key="rating_market"
             )
 
@@ -377,29 +377,29 @@ def render_company_base_view(df):
     - Company Overview: filters by region, exchange, industry tag, and name/ticker.
     - Identifiers & Listings: includes CUSIP, ISIN, SEDOL, FIGI, CIK, Exchange, MIC.
     """
-    st.subheader("🏢 Global Company Register")
+    st.subheader("Global Company Register")
     st.markdown("Explore company records across global regions, exchanges, industry tags, and listings.")
 
-    tab1, tab2 = st.tabs(["🌍 Company Overview", "🔐 Identifiers & Listings"])
+    tab1, tab2 = st.tabs(["Company Overview", "Identifiers & Listings"])
 
     # --------------------------------
     # COMPANY OVERVIEW TAB
     # --------------------------------
     with tab1:
-        with st.expander("🔎 Filter Options – Company Register"):
+        with st.expander("Filter Options – Company Register"):
             col1, col2, col3 = st.columns(3)
 
             with col1:
-                region = st.multiselect("🌐 Region", sorted(df["Regions"].dropna().unique()), key="region_base")
-                exchange = st.multiselect("🏛️ Exchange", sorted(df["Exchange"].dropna().unique()), key="exchange_base")
+                region = st.multiselect("Region", sorted(df["Regions"].dropna().unique()), key="region_base")
+                exchange = st.multiselect("Exchange", sorted(df["Exchange"].dropna().unique()), key="exchange_base")
 
             with col2:
-                country = st.multiselect("🌍 Country", sorted(df["Country"].dropna().unique()), key="country_base")
-                currency = st.multiselect("💱 Market Currency", sorted(df["Market Currency"].dropna().unique()), key="currency_base")
+                country = st.multiselect("Country", sorted(df["Country"].dropna().unique()), key="country_base")
+                currency = st.multiselect("Market Currency", sorted(df["Market Currency"].dropna().unique()), key="currency_base")
 
             with col3:
-                industry = st.multiselect("🏷️ Industry Tag", sorted(df["Industry Tag"].dropna().unique()), key="industry_base")
-                search_term = st.text_input("🔍 Search Ticker or Name", key="search_base")
+                industry = st.multiselect("Industry Tag", sorted(df["Industry Tag"].dropna().unique()), key="industry_base")
+                search_term = st.text_input("Search Ticker or Name", key="search_base")
 
         df_filtered = df.copy()
         if region:
@@ -431,10 +431,10 @@ def render_company_base_view(df):
     # IDENTIFIERS & LISTINGS TAB
     # --------------------------------
     with tab2:
-        with st.expander("🔎 Filter Options – Identifiers"):
+        with st.expander("Filter Options – Identifiers"):
             col1, col2 = st.columns(2)
-            id_search = col1.text_input("🔍 Search by Ticker or Name", key="id_search")
-            mic_filter = col2.text_input("🔁 MIC Code (e.g., XNYS, XLON)", key="mic_filter")
+            id_search = col1.text_input("Search by Ticker or Name", key="id_search")
+            mic_filter = col2.text_input("MIC Code (e.g., XNYS, XLON)", key="mic_filter")
 
         df_id = df.copy()
         if id_search:
@@ -466,26 +466,26 @@ def render_company_identifiers_view(df):
     Args:
         df (pd.DataFrame): Global company register dataframe with security metadata.
     """
-    st.subheader("🔐 Identifiers & Listings")
+    st.subheader("Identifiers & Listings")
     st.markdown("Cross-reference major global security identifiers and exchange listings."
                 " This tab highlights CUSIP, ISIN, SEDOL, FIGI, and CIK codes — as well as"
                 " primary exchange names and MIC codes.")
 
-    with st.expander("🔎 Filter Options – Identifiers & Listings"):
+    with st.expander("Filter Options – Identifiers & Listings"):
         col1, col2, col3 = st.columns(3)
-        region = col1.multiselect("🌐 Region", sorted(df["Regions"].dropna().unique()), key="region_ids")
-        country = col2.multiselect("🌍 Country", sorted(df["Country"].dropna().unique()), key="country_ids")
-        exchange = col3.multiselect("🏛️ Primary Exchange", sorted(df["Exchange"].dropna().unique()), key="exchange_ids")
+        region = col1.multiselect("Region", sorted(df["Regions"].dropna().unique()), key="region_ids")
+        country = col2.multiselect("Country", sorted(df["Country"].dropna().unique()), key="country_ids")
+        exchange = col3.multiselect("Primary Exchange", sorted(df["Exchange"].dropna().unique()), key="exchange_ids")
 
         col4, col5, col6 = st.columns(3)
-        cusip = col4.text_input("🔐 CUSIP", key="cusip_ids")
-        isin = col5.text_input("🌍 ISIN", key="isin_ids")
-        sedol = col6.text_input("🇬🇧 SEDOL", key="sedol_ids")
+        cusip = col4.text_input("CUSIP", key="cusip_ids")
+        isin = col5.text_input("ISIN", key="isin_ids")
+        sedol = col6.text_input("SEDOL", key="sedol_ids")
 
         col7, col8, col9 = st.columns(3)
-        figi = col7.text_input("📊 FIGI", key="figi_ids")
-        cik = col8.text_input("📁 CIK", key="cik_ids")
-        mic = col9.text_input("🆔 MIC Code", key="mic_ids")
+        figi = col7.text_input("FIGI", key="figi_ids")
+        cik = col8.text_input("CIK", key="cik_ids")
+        mic = col9.text_input("MIC Code", key="mic_ids")
 
     df_ids = df.copy()
     if region:
@@ -515,11 +515,11 @@ def render_company_identifiers_view(df):
             "Regions", "Country", "Market Currency"
         ]],
         column_config={
-            "MIC Code": st.column_config.TextColumn("🆔 MIC Code"),
-            "Exchange": st.column_config.TextColumn("🏛️ Primary Exchange"),
-            "ISIN": st.column_config.TextColumn("🌍 ISIN"),
-            "CUSIP": st.column_config.TextColumn("🔐 CUSIP"),
-            "CIK": st.column_config.TextColumn("📁 CIK")
+            "MIC Code": st.column_config.TextColumn("MIC Code"),
+            "Exchange": st.column_config.TextColumn("Primary Exchange"),
+            "ISIN": st.column_config.TextColumn("ISIN"),
+            "CUSIP": st.column_config.TextColumn("CUSIP"),
+            "CIK": st.column_config.TextColumn("CIK")
         },
         width='stretch',
         disabled=True
@@ -553,26 +553,26 @@ def render_company_largecap_view(df):
     st.markdown("Structured exploration of S&P 500, DJIA, and Nasdaq 100 constituents with "
     "sector and industry crosswalks.")
 
-    tab1, tab2, tab3 = st.tabs(["💼 Profile", "📱 Social & Links", "🎯 Classification Crosswalk"])
+    tab1, tab2, tab3 = st.tabs(["Profile", "Social & Links", "Classification Crosswalk"])
 
     # ------------------------
     # PROFILE TAB
     # ------------------------
     with tab1:
-        with st.expander("🔎 Filter Options – Profile"):
+        with st.expander("Filter Options – Profile"):
             col0, col1, col2 = st.columns(3)
-            search_ticker = col0.text_input("🔁 Search Ticker", key="profile_ticker")
-            search_name = col1.text_input("🧾 Search Company Name", key="profile_name")
-            index_membership = col2.multiselect("📈 Index Membership", [
+            search_ticker = col0.text_input("Search Ticker", key="profile_ticker")
+            search_name = col1.text_input("Search Company Name", key="profile_name")
+            index_membership = col2.multiselect("Index Membership", [
                 "S&P 500", "DJIA", "Nasdaq 100"
             ], key="index_lc1")
 
             col3, col4 = st.columns(2)
             country = col3.multiselect(
-                "🌍 Country", sorted(df["Country"].dropna().unique()), key="country_lc1"
+                "Country", sorted(df["Country"].dropna().unique()), key="country_lc1"
             )
             year = col4.multiselect(
-                "🏗️ Year Incorporated", sorted(df["Year Incorporated"].dropna().unique()), key="year_lc1"
+                "Year Incorporated", sorted(df["Year Incorporated"].dropna().unique()), key="year_lc1"
             )
 
         df_filtered = df.copy()
@@ -599,10 +599,10 @@ def render_company_largecap_view(df):
     # SOCIAL & LINKS TAB
     # ------------------------
     with tab2:
-        with st.expander("🔎 Filter Options – Social Media"):
+        with st.expander("Filter Options – Social Media"):
             col0, col1 = st.columns(2)
-            search_ticker = col0.text_input("🔁 Search Ticker", key="social_ticker")
-            search_name = col1.text_input("🧾 Search Company Name", key="social_name")
+            search_ticker = col0.text_input("Search Ticker", key="social_ticker")
+            search_name = col1.text_input("Search Company Name", key="social_name")
 
         df_social = df.copy()
         if search_ticker:
@@ -630,20 +630,20 @@ def render_company_largecap_view(df):
     # CLASSIFICATION CROSSWALK TAB
     # ------------------------
     with tab3:
-        with st.expander("🔎 Filter Options – Classification"):
+        with st.expander("Filter Options – Classification"):
             col0, col1 = st.columns(2)
-            search_ticker = col0.text_input("🔁 Search Ticker", key="class_ticker")
-            search_name = col1.text_input("🧾 Search Company Name", key="class_name")
+            search_ticker = col0.text_input("Search Ticker", key="class_ticker")
+            search_name = col1.text_input("Search Company Name", key="class_name")
 
             col2, col3, col4 = st.columns(3)
-            sic_code = col2.text_input("🔢 SIC Code", key="sic_code")
-            sic_title = col3.text_input("🏷️ SIC Industry Title", key="sic_title")
-            naics_sector_code = col4.text_input("🔢 NAICS Sector Code", key="naics_sector_code")
+            sic_code = col2.text_input("SIC Code", key="sic_code")
+            sic_title = col3.text_input("SIC Industry Title", key="sic_title")
+            naics_sector_code = col4.text_input("NAICS Sector Code", key="naics_sector_code")
 
             col5, col6, col7 = st.columns(3)
-            naics_sector = col5.text_input("🏷️ NAICS Sector", key="naics_sector")
-            naics_national_code = col6.text_input("🔢 NAICS National Industry Code", key="naics_nat_code")
-            naics_national = col7.text_input("🏷️ NAICS National Industry", key="naics_nat")
+            naics_sector = col5.text_input("NAICS Sector", key="naics_sector")
+            naics_national_code = col6.text_input("NAICS National Industry Code", key="naics_nat_code")
+            naics_national = col7.text_input("NAICS National Industry", key="naics_nat")
 
 
         df_class = apply_classification_filters(
@@ -713,14 +713,14 @@ elif classification_view == "Company Register — US Large-Cap":
 st.divider()
 
 # -------------------------------------------------------------------------------------------------
-# 🧠 Define Theme Metadata (for Observation Logging)
+# Define Theme Metadata (for Observation Logging)
 # -------------------------------------------------------------------------------------------------
 theme_code = "classification_schema_viewer"
 theme_title = "Classification Schema Viewer"
 selected_use_case = "Classification Schema Viewer Snapshot"
 
 # -------------------------------------------------------------------------------------------------
-# 🧠 Activate Observation + Journal Toggles
+# Activate Observation + Journal Toggles
 # -------------------------------------------------------------------------------------------------
 show_observation, show_log = render_macro_sidebar_tools(
     theme_readable=theme_title,
@@ -728,11 +728,11 @@ show_observation, show_log = render_macro_sidebar_tools(
     selected_use_case=selected_use_case
 )
 
-# 🎯 No fixed assets selected in live dashboard — use empty list
+# No fixed assets selected in live dashboard — use empty list
 asset_list_for_observation = []
 
 if show_observation or show_log:
-    st.markdown("## 🧠 Macro Interaction Tools")
+    st.markdown("## Macro Interaction Tools")
     st.caption("*.*")
 
 render_macro_interaction_tools_panel(
@@ -775,7 +775,7 @@ with st.sidebar.expander("ℹ️ About & Support"):
 # -------------------------------------------------------------------------------------------------
 # Footer
 # -------------------------------------------------------------------------------------------------
-st.divider()
+st.space()
 st.caption(
     "© 2026 Blake Media Ltd. | Financial Insight Tools by Blake Wiltshire — No trading, \
 investment, or policy advice provided."

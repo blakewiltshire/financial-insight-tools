@@ -7,7 +7,7 @@
 # Docstring
 # -------------------------------------------------------------------------------------------------
 """
-🔗 Intermarket & Correlation — Insight Launcher
+Intermarket & Correlation — Insight Launcher
 
 Modular dashboard for analysing cross-asset relationships, macro linkages, and volatility dynamics
 within the Financial Insight Tools suite.
@@ -113,11 +113,10 @@ st.logo(BRAND_LOGO_PATH) # pylint: disable=no-member
 # -------------------------------------------------------------------------------------------------
 
 # --- Getting Started, Branding Image and Caption ---
-st.sidebar.markdown("### 🧭 Getting Started")
 st.sidebar.caption("*Cross-market relationships, regime shifts, and volatility interplay.*")
 
 st.sidebar.info("""
-**🔗 Intermarket & Correlation**
+**Intermarket & Correlation**
 
 Analyse relationships between assets, indicators, and macro variables.
 
@@ -157,42 +156,44 @@ with st.sidebar.expander("ℹ️ About & Support"):
 # -------------------------------------------------------------------------------------------------
 
 # --- Load About Markdown (auto-skips if not replaced) ---
-with st.expander("📖 About This App"):
+with st.expander("ℹ️ About This App"):
     markdown_content = load_markdown_file(ABOUT_APP_MD)
     if markdown_content:
         st.markdown(markdown_content, unsafe_allow_html=True)
     else:
         st.error("File not found: docs/about_intermarket_correlation.md")
-st.divider()
+st.space()
 
 # --- Modules ---
-st.header("📂 Module Sections")
-col1, col2 = st.columns(2)
+col1, col2 = st.columns(2, gap="small")
 
 with col1:
-    st.markdown("### 🔀 Cross-Asset Correlation")
-    st.write("Explore correlation strength between asset classes.")
-    if st.button("🔄 Explore Cross-Asset Correlations"):
-        st.switch_page("pages/11_cross_asset_correlation.py")
-    st.divider()
-
-    st.markdown("### 🗺️ Correlation Heatmaps & Themes")
-    st.write("Visualise multi-asset correlation matrices by theme.")
-    if st.button("🌐 View Heatmaps & Macro Themes"):
-        st.switch_page("pages/13_correlation_heatmaps_and_themes.py")
-    st.divider()
+    with st.container(border=True):
+        st.markdown("### Cross-Asset Correlation")
+        st.write("Explore correlation strength between asset classes.")
+        if st.button("Explore Cross-Asset Correlations"):
+            st.switch_page("pages/11_cross_asset_correlation.py")
 
 with col2:
-    st.markdown("### ⚖️ Spread & Ratio Insights")
-    st.write("Analyse relative pricing across instruments and themes.")
-    if st.button("🧮 Launch Spread & Ratio Analysis"):
-        st.switch_page("pages/12_spread_ratio_insights.py")
-    st.divider()
+    with st.container(border=True):
+        st.markdown("### Spread & Ratio Insights")
+        st.write("Analyse relative pricing across instruments and themes.")
+        if st.button("Launch Spread & Ratio Analysis"):
+            st.switch_page("pages/12_spread_ratio_insights.py")
+
+col1, col2 = st.columns(2, gap="small")
+
+with col1:
+    with st.container(border=True):
+        st.markdown("### Correlation Heatmaps & Themes")
+        st.write("Visualise multi-asset correlation matrices by theme.")
+        if st.button("View Heatmaps & Macro Themes"):
+            st.switch_page("pages/13_correlation_heatmaps_and_themes.py")
 
 # -------------------------------------------------------------------------------------------------
 # Footer
 # -------------------------------------------------------------------------------------------------
-st.markdown("---")
+st.space()
 st.caption(
     "© 2026 Blake Media Ltd. | Financial Insight Tools by Blake Wiltshire — No trading, \
     investment, or policy advice provided."

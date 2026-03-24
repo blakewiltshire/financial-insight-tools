@@ -1,5 +1,5 @@
 # -------------------------------------------------------------------------------------------------
-# 🚀 Economic Exploration — 🔗 Thematic Correlation Explorer
+# Economic Exploration — 🔗 Thematic Correlation Explorer
 # -------------------------------------------------------------------------------------------------
 # pylint: disable=import-error, wrong-import-position, wrong-import-order
 
@@ -84,10 +84,10 @@ from render_macro_interaction_tools_panel_thematic_correlation import render_mac
 # Page Setup (Canonical)
 # -------------------------------------------------------------------------------------------------
 st.set_page_config(page_title="Thematic Correlation Explorer", layout="wide")
-st.title("🔗 Thematic Correlation Explorer")
+st.title("Thematic Correlation Explorer")
 st.caption("*Explore cross-theme macroeconomic relationships via fully harmonised multi-indicator correlation.*")
 
-with st.expander("📌 What is this app about?"):
+with st.expander("ℹ️ About This App"):
     content = load_markdown_file(ABOUT_APP_MD)
     if content:
         st.markdown(content, unsafe_allow_html=True)
@@ -96,7 +96,7 @@ with st.expander("📌 What is this app about?"):
 # Sidebar Navigation (Canonical)
 # -------------------------------------------------------------------------------------------------
 st.sidebar.title("📂 Navigation Menu")
-st.sidebar.page_link('app.py', label='🌍 Economic Exploration')
+st.sidebar.page_link('app.py', label='Economic Exploration')
 for path, label in build_sidebar_links():
     st.sidebar.page_link(path, label=label)
 st.sidebar.divider()
@@ -107,27 +107,27 @@ st.logo(BRAND_LOGO_PATH)  # pylint: disable=no-member
 # Thematic Groupings (Canonical)
 # -------------------------------------------------------------------------------------------------
 theme_options = {
-    "100_economic_growth_stability": "📈 Economic Growth Stability",
-    "200_labour_market_dynamics": "💼 Labour Market Dynamics",
-    "300_consumer_behaviour_confidence": "🛒 Consumer Behaviour Confidence",
-    "400_inflation_price_dynamics": "📉 Inflation Price Dynamics",
-    "500_monetary_indicators_policy_effects": "💵 Monetary Indicators Policy Effects",
-    "600_financial_conditions_risk_analysis": "🔍 Financial Conditions Risk Analysis",
-    "700_global_trade_economic_relations": "🌍 Global Trade Economic Relations",
-    "800_supply_chains_logistics": "🚢 Supply Chains Logistics",
-    "900_commodity_markets_pricing": "📦 Commodity Markets Pricing",
-    "1000_currency_exchange_movements": "💱 Currency Exchange Movements",
-    "1100_market_trends_financial_health": "📊 Market Trends Financial Health",
-    "1200_industry_performance_production": "🏠 Industry Performance Production",
-    "1300_sustainability_green_economy": "🌱 Sustainability Green Economy",
-    "1400_digital_economy_ecommerce": "🔢 Digital Economy Ecommerce",
-    "1500_innovation_rd_investment": "🚀 Innovation Rd Investment",
-    "1600_urbanisation_and_smart_cities": "🌆 Urbanisation And Smart Cities",
-    "1700_healthcare_economics": "🏥 Healthcare Economics",
-    "1800_education_and_human_capital": "📚 Education And Human Capital",
-    "1900_social_impact_and_inequality": "🤝 Social Impact And Inequality",
-    "2000_geopolitical_risks_and_global_stability": "🌐 Geopolitical Risks And Global Stability",
-    "2010_frontier_sectors": "🔮 Frontier Sectors"
+    "100_economic_growth_stability": "Economic Growth Stability",
+    "200_labour_market_dynamics": "Labour Market Dynamics",
+    "300_consumer_behaviour_confidence": "Consumer Behaviour Confidence",
+    "400_inflation_price_dynamics": "Inflation Price Dynamics",
+    "500_monetary_indicators_policy_effects": "Monetary Indicators Policy Effects",
+    "600_financial_conditions_risk_analysis": "Financial Conditions Risk Analysis",
+    "700_global_trade_economic_relations": "Global Trade Economic Relations",
+    "800_supply_chains_logistics": "Supply Chains Logistics",
+    "900_commodity_markets_pricing": "Commodity Markets Pricing",
+    "1000_currency_exchange_movements": "Currency Exchange Movements",
+    "1100_market_trends_financial_health": "Market Trends Financial Health",
+    "1200_industry_performance_production": "Industry Performance Production",
+    "1300_sustainability_green_economy": "Sustainability Green Economy",
+    "1400_digital_economy_ecommerce": "Digital Economy Ecommerce",
+    "1500_innovation_rd_investment": "Innovation Rd Investment",
+    "1600_urbanisation_and_smart_cities": "Urbanisation And Smart Cities",
+    "1700_healthcare_economics": "Healthcare Economics",
+    "1800_education_and_human_capital": "Education And Human Capital",
+    "1900_social_impact_and_inequality": "Social Impact And Inequality",
+    "2000_geopolitical_risks_and_global_stability": "Geopolitical Risks And Global Stability",
+    "2010_frontier_sectors": "Frontier Sectors"
 }
 
 # -------------------------------------------------------------------------------------------------
@@ -334,10 +334,10 @@ show_observation, show_log = render_macro_sidebar_tools(
 )
 
 # -------------------------------------------------------------------------------------------------
-# 🧠 Macro Interaction Tools (Visible Title + Panels)
+# Macro Interaction Tools (Visible Title + Panels)
 # -------------------------------------------------------------------------------------------------
 if show_observation or show_log:
-    st.markdown("## 🧠 Macro Interaction Tools")
+    st.markdown("## Macro Interaction Tools")
 
 render_macro_interaction_tools_panel(
     show_observation=show_observation,
@@ -382,7 +382,7 @@ with st.sidebar.expander("ℹ️ About & Support"):
 # -------------------------------------------------------------------------------------------------
 # Footer
 # -------------------------------------------------------------------------------------------------
-st.divider()
+
 
 st.caption(
     "© 2026 Blake Media Ltd. | Financial Insight Tools by Blake Wiltshire — \

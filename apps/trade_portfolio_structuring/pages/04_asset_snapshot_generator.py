@@ -105,13 +105,13 @@ CATEGORY_MAP = {
 # Streamlit Page Setup
 # -------------------------------------------------------------------------------------------------
 st.set_page_config(page_title="Asset Snapshot Scanner", layout="wide")
-st.title("📋 Asset Snapshot Scanner")
+st.title("Asset Snapshot Scanner")
 st.caption("*Pull key stats (e.g., last close, % change, 52w range) for preloaded asset folders.*")
 
 # -------------------------------------------------------------------------------------------------
 # Load About Markdown (auto-skips if not replaced)
 # -------------------------------------------------------------------------------------------------
-with st.expander("📌 What is this app about?"):
+with st.expander("ℹ️ About This App"):
     content = load_markdown_file(ABOUT_APP_MD)
     if content:
         st.markdown(content, unsafe_allow_html=True)
@@ -125,7 +125,7 @@ with st.expander("📌 What is this app about?"):
 # Also links back to app dashboard (e.g., app.py)
 # -------------------------------------------------------------------------------------------------
 st.sidebar.title("📂 Navigation Menu")
-st.sidebar.page_link('app.py', label='📈 Trade and Portfolio Structuring')
+st.sidebar.page_link('app.py', label='Trade and Portfolio Structuring')
 for path, label in build_sidebar_links():
     st.sidebar.page_link(path, label=label)
 
@@ -139,7 +139,7 @@ st.logo(BRAND_LOGO_PATH) # pylint: disable=no-member
 
 # --- Data Source ---
 snapshot_source = st.sidebar.radio(
-    "📁 Choose Asset Snapshot Source",
+    "Choose Asset Snapshot Source",
     ["Preloaded Asset Types (Default)", "Preloaded Asset Types (User)"],
     index=0
 )
@@ -182,7 +182,7 @@ EXCLUDED_DIRS = {
     "processing_correlation_assets", "trade_history"
 }
 
-with st.expander("⚙️ Advanced: Customise Data Directory"):
+with st.expander("Customise Data Directory"):
     default_path = os.path.join(APPS_PATH, "data_sources", "financial_data")
     data_root = st.text_input("📂 Enter path to your local data folder:", value=default_path)
 
@@ -446,7 +446,7 @@ for category, records in category_data.items():
     if df.empty:
         continue
 
-    st.markdown(f"### 📊 {category}")
+    st.markdown(f"### {category}")
     st.data_editor(
         df,
         width='stretch',
@@ -477,14 +477,14 @@ export_folder_path = os.path.join(data_root, export_folder_name)
 csv_snapshot_path = os.path.join(data_root, "preprocessed_snapshot")
 
 # UI Section: Save Snapshot
-with st.expander("📦 Export Asset Snapshot Summary"):
+with st.expander("Export Asset Snapshot Summary"):
     st.markdown("Choose where you'd like to save the cleaned `.pkl` snapshot \
     and download the `.csv`.")
 
     # Display export path for confirmation
     st.code(f"Saving snapshot to: {export_folder_path}")
 
-    if st.button("✅ Save Snapshot as Pickle"):
+    if st.button("Save Snapshot as Pickle"):
         os.makedirs(export_folder_path, exist_ok=True)
         pickle_path = os.path.join(export_folder_path, "preloaded_asset_summary.pkl")
         df_snapshot.to_pickle(pickle_path)
@@ -497,7 +497,7 @@ with st.expander("📦 Export Asset Snapshot Summary"):
     df_snapshot.to_csv(csv_path, index=False)
 
     st.download_button(
-        "📅 Download Snapshot CSV",
+        "Download Snapshot CSV",
         data=csv,
         file_name="asset_snapshot_summary.csv",
         mime="text/csv"

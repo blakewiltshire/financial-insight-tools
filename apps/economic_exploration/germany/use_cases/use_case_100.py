@@ -134,10 +134,10 @@ def render_use_case_selector(get_use_cases_fn) -> tuple[str, dict]:
         st.error(f"❌ Could not load use cases: {type(e).__name__} – {str(e)}")
         return None, {}
 
-    st.sidebar.title("📌 Select a Use Case")
+    st.sidebar.title("Select a Use Case")
     selected = st.sidebar.selectbox("Insight Use Case", list(use_cases.keys()), index=0)
 
-    with st.sidebar.expander("🎯 Use Cases for This Theme", expanded=False):
+    with st.sidebar.expander("Use Cases for This Theme", expanded=False):
         for label, config in use_cases.items():
             st.markdown(f"**🔹 {label}**")
             st.markdown(f"*Indicators:* {', '.join(config.get('Indicators', []))}*")

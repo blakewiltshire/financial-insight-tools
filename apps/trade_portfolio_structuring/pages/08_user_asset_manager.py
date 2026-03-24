@@ -9,7 +9,7 @@
 # Docstring
 # -------------------------------------------------------------------------------------------------
 """
-📁 User Asset Manager
+User Asset Manager
 
 Module to support inspection, validation, and snapshot preparation of user-uploaded financial data.
 Designed for integration with the Preloaded Asset Types (User) system used across multiple tools.
@@ -87,13 +87,13 @@ DATA_ROOT = os.path.join(ROOT_PATH, "apps", "data_sources", "financial_data")
 # Streamlit Config
 # -------------------------------------------------------------------------------------------------
 st.set_page_config(page_title="User Asset Manager", layout="wide")
-st.title("📁 User Asset Manager")
+st.title("User Asset Manager")
 st.caption("*Structure uploaded datasets for use across Insight Tools.*")
 
 # -------------------------------------------------------------------------------------------------
 # About This App
 # -------------------------------------------------------------------------------------------------
-with st.expander("📌 What is this app about?"):
+with st.expander("ℹ️ About This App"):
     content = load_markdown_file(ABOUT_APP_MD)
     if content:
         st.markdown(content, unsafe_allow_html=True)
@@ -103,7 +103,7 @@ with st.expander("📌 What is this app about?"):
 # -------------------------------------------------------------------------------------------------
 # Optional Directory Override
 # -------------------------------------------------------------------------------------------------
-with st.expander("⚙️ Advanced: Customise Data Directory"):
+with st.expander("Customise Data Directory"):
     default_path = os.path.join(ROOT_PATH, "apps", "data_sources", "financial_data")
     DATA_ROOT = st.text_input("📂 Data folder root path:", value=default_path)
 
@@ -115,7 +115,7 @@ with st.expander("⚙️ Advanced: Customise Data Directory"):
 # Sidebar Navigation
 # -------------------------------------------------------------------------------------------------
 st.sidebar.title("📂 Navigation Menu")
-st.sidebar.page_link("app.py", label="📈 Trade and Portfolio Structuring")
+st.sidebar.page_link("app.py", label="Trade and Portfolio Structuring")
 for path, label in build_sidebar_links():
     st.sidebar.page_link(path, label=label)
 
@@ -125,11 +125,11 @@ st.logo(BRAND_LOGO_PATH)  # pylint: disable=no-member
 # -------------------------------------------------------------------------------------------------
 # Sidebar: Provider Reference
 # -------------------------------------------------------------------------------------------------
-with st.sidebar.expander("📡 Supported Market Data Providers"):
+with st.sidebar.expander("Supported Market Data Providers"):
     for provider, meta in MARKET_DATA_PROVIDERS.items():
         st.markdown(f"- [{provider}]({meta['url']})")
 
-with st.sidebar.expander("🌐 Market Data Providers (Manual Upload Guide)"):
+with st.sidebar.expander("Market Data Providers (Manual Upload Guide)"):
     content = load_markdown_file(EXTERNAL_PROVIDERS_MD)
     if content:
         st.markdown(content, unsafe_allow_html=True)
@@ -139,7 +139,7 @@ with st.sidebar.expander("🌐 Market Data Providers (Manual Upload Guide)"):
 # -------------------------------------------------------------------------------------------------
 # Folder Overview and Asset Presence
 # -------------------------------------------------------------------------------------------------
-st.subheader("📦 Uploaded Folder Overview")
+st.subheader("Uploaded Folder Overview")
 st.markdown("""
 Below are the recognised folders for Preloaded Asset Types (User) and the associated uploaded CSVs.
 """)
@@ -157,7 +157,7 @@ for folder in USER_FOLDERS:
         "Folder": folder,
         "Files Found": len(csv_files),
         "CSV Asset Names": file_list,
-        "Status": "✅ Ready" if csv_files else "⚠️ Empty or Missing"
+        "Status": "Ready" if csv_files else "⚠️ Empty or Missing"
     })
 
 df_status = pd.DataFrame(status_table)
@@ -165,7 +165,7 @@ df_status = pd.DataFrame(status_table)
 # -------------------------------------------------------------------------------------------------
 # Asset Name Filter
 # -------------------------------------------------------------------------------------------------
-search_term = st.text_input("🔍 Search CSV Asset Names", "")
+search_term = st.text_input("Search CSV Asset Names", "")
 filtered_df = df_status[df_status["CSV Asset Names"].str.contains(
 search_term, case=False)] if search_term else df_status
 
@@ -185,7 +185,7 @@ headerTooltip="Cleaned asset names from uploaded CSVs"
 gb.configure_grid_options(domLayout="normal")
 
 with st.container():
-    st.markdown("### 🗂️ Folder & Asset Summary")
+    st.markdown("### Folder & Asset Summary")
     AgGrid(
         filtered_df,
         gridOptions=gb.build(),
@@ -199,21 +199,21 @@ with st.container():
 # Snapshot Manifest
 # -------------------------------------------------------------------------------------------------
 st.markdown("---")
-st.subheader("📥 User Asset Snapshot Manifest")
+st.subheader("User Asset Snapshot Manifest")
 st.markdown("""
 This manifest summarises your uploaded asset files by folder category. It allows you to verify
 file presence, naming, and logical grouping before running the full snapshot process.
 
 To generate `.pkl` snapshots used in analytical modules such as:
 
-- 🔎 Market & Volatility Scanner
-- 📋 Asset Snapshot Scanner
-- 📊 Group Summary & Comparison Views
+- Market & Volatility Scanner
+- Asset Snapshot Scanner
+- Group Summary & Comparison Views
 
 ...please proceed to the **Asset Snapshot Scanner** module after reviewing this summary.
 """)
 
-with st.expander("📦 View and Download CSV Manifest"):
+with st.expander("View and Download CSV Manifest"):
     snapshot_records = []
     for folder in USER_FOLDERS:
         folder_path = os.path.join(DATA_ROOT, folder)
@@ -233,7 +233,7 @@ with st.expander("📦 View and Download CSV Manifest"):
 
         csv_bytes = df_snapshot.to_csv(index=False).encode("utf-8")
         st.download_button(
-            label="📥 Download CSV Manifest",
+            label="Download CSV Manifest",
             data=csv_bytes,
             file_name="user_asset_manifest.csv",
             mime="text/csv",

@@ -8,7 +8,7 @@
 # Docstring
 # -------------------------------------------------------------------------------------------------
 """
-💸 Compounding Calculator
+Compounding Calculator
 
 Visualise how recurring investments grow with compounding over time.
 Supports monthly or annual contributions and allows inflation and tax drag adjustment.
@@ -57,31 +57,24 @@ BRAND_LOGO_PATH = os.path.join(PROJECT_PATH, "brand", "blake_logo.png")
 # Streamlit Page Setup
 # -------------------------------------------------------------------------------------------------
 st.set_page_config(page_title="Compounding Calculator", layout="wide")
-st.title("💸 Compounding Calculator")
+st.title("Compounding Calculator")
 st.caption("*Understand how contributions and time impact portfolio outcomes.*")
 
 # -------------------------------------------------------------------------------------------------
 # Info Panels
 # -------------------------------------------------------------------------------------------------
-with st.expander("📘 What is this app about?"):
+with st.expander("ℹ️ About This App"):
     content = load_markdown_file(ABOUT_APP_MD)
     if content:
         st.markdown(content, unsafe_allow_html=True)
     else:
         st.error("File not found: docs/about_compounding_calculator.md")
 
-with st.expander("ℹ️ How to interpret investment compounding"):
-    content = load_markdown_file(HELP_APP_MD)
-    if content:
-        st.markdown(content, unsafe_allow_html=True)
-    else:
-        st.error("File not found: docs/help_compounding_calculator.md")
-
 # -------------------------------------------------------------------------------------------------
 # Sidebar Navigation
 # -------------------------------------------------------------------------------------------------
 st.sidebar.title("📂 Navigation Menu")
-st.sidebar.page_link('app.py', label='🛠️ Toolbox & Calculators')
+st.sidebar.page_link('app.py', label='Toolbox & Calculators')
 for path, label in build_sidebar_links():
     st.sidebar.page_link(path, label=label)
 st.sidebar.divider()
@@ -90,7 +83,7 @@ st.logo(BRAND_LOGO_PATH)  # pylint: disable=no-member
 # -------------------------------------------------------------------------------------------------
 # Input Parameters
 # -------------------------------------------------------------------------------------------------
-st.sidebar.title("💳 Investment Parameters")
+st.sidebar.title("Investment Parameters")
 initial = st.sidebar.number_input("Initial Investment ($)", min_value=0, value=1000, step=100)
 contribution = st.sidebar.number_input("Recurring Contribution ($)", min_value=0,
 value=200, step=50)
@@ -165,7 +158,7 @@ with col1:
     if adjust_for_inflation:
         st.caption("Inflation-adjusted to 2% annual.")
     if estimated_tax_drag > 0:
-        st.caption(f"📉 Adjusted return used for compounding: {effective_rate:.2f}% "
+        st.caption(f"Adjusted return used for compounding: {effective_rate:.2f}% "
                    f"(after {estimated_tax_drag:.1f}% tax drag)")
 
 with col2:
@@ -219,9 +212,16 @@ with st.sidebar.expander("ℹ️ About & Support"):
             width='stretch',
         )
 
+with st.expander("ℹ️ How to interpret investment compounding"):
+    content = load_markdown_file(HELP_APP_MD)
+    if content:
+        st.markdown(content, unsafe_allow_html=True)
+    else:
+        st.error("File not found: docs/help_compounding_calculator.md")
+
 # -------------------------------------------------------------------------------------------------
 # Footer
 # -------------------------------------------------------------------------------------------------
-st.divider()
+st.space()
 st.caption("© 2026 Blake Media Ltd. | Financial Insight Tools by Blake Wiltshire — "
            "No trading, investment, or policy advice provided.")

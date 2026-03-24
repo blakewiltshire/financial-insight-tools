@@ -53,7 +53,7 @@ def render_timeframe_selector() -> tuple[str, str]:
         "All": "Full History"
     }
 
-    st.sidebar.title("🕒 Select Timeframe for Analysis")
+    st.sidebar.title("Select Timeframe for Analysis")
     selected = st.sidebar.selectbox(
         "Timeframe",
         options=list(TIMEFRAME_OPTIONS.keys()),
@@ -62,12 +62,12 @@ def render_timeframe_selector() -> tuple[str, str]:
     label = TIMEFRAME_OPTIONS[selected]
     st.sidebar.caption(f"🔍 Analyzing: **{label}**")
 
-    with st.sidebar.expander("🧭 Timeframe Guidance"):
+    with st.sidebar.expander("Timeframe Guidance"):
         st.markdown("""
-- **📉 Latest**: Focuses on the most recent available observation period.
+- **Latest**: Focuses on the most recent available observation period.
 - **3P / 6P / 12P**: Captures short to medium term dynamics based on the data frequency
   of the selected dataset (monthly, quarterly, or weekly).
-- **📈 All**: Full available history for structural pattern analysis.
+- **All**: Full available history for structural pattern analysis.
 
 _Note: Actual period length depends on the underlying dataset frequency
 (monthly, quarterly, or weekly)._

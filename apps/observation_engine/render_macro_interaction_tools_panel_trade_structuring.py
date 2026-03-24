@@ -1,6 +1,6 @@
 
 # -------------------------------------------------------------------------------------------------
-# 🧠 Render Macro Interaction Tools Panel — Trade Structuring & Risk Planning
+# Render Macro Interaction Tools Panel — Trade Structuring & Risk Planning
 # -------------------------------------------------------------------------------------------------
 # pylint: disable=missing-function-docstring, too-many-arguments
 # -------------------------------------------------------------------------------------------------
@@ -28,9 +28,9 @@ def render_macro_interaction_tools_panel(
     """
 
     if show_observation:
-        with st.expander("📝 Add New Note", expanded=True):
+        with st.expander("Add New Note", expanded=True):
             observation_input_callback()
 
     if show_log:
-        with st.expander("📋 View/Edit/Delete Notes", expanded=True):
+        with st.expander("View/Edit/Delete Notes", expanded=True):
             observation_log_callback()

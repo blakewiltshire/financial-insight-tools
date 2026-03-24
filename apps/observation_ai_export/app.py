@@ -1,24 +1,24 @@
 # -------------------------------------------------------------------------------------------------
-# 🧠 Observation & AI Export — Central Intelligence Hub
+# Observation & AI Export — Central Intelligence Hub
 # -------------------------------------------------------------------------------------------------
 # pylint: disable=import-error, wrong-import-position, wrong-import-order
 # -------------------------------------------------------------------------------------------------
 # Docstring
 # -------------------------------------------------------------------------------------------------
 """
-🧠 Observation & AI Export — Central Intelligence Hub
+Observation & AI Export — Central Intelligence Hub
 
 This Streamlit application serves as the consolidated intelligence and workflow hub
 for reviewing, bundling, and exporting structured macroeconomic observations and insights.
 
 It integrates the following key components:
 
-- 📂 Snapshot Browser: Explore saved macro snapshots with full metadata.
-- 📋 Observation Browser: Review user-generated notes, matched to indicators.
-- 🔧 Manage Snapshots & Observations: Edit or delete previously saved insights.
-- 🔗 Build Export Bundle: Combine selected insights into an AI-ready JSON bundle.
-- 🧠 AI Prompt & Response: Compose structured AI prompts and save persona-aligned responses.
-- 📥 Load / Restore: Upload, preview, and manage saved JSON/Markdown files.
+- Snapshot Browser: Explore saved macro snapshots with full metadata.
+- Observation Browser: Review user-generated notes, matched to indicators.
+- Manage Snapshots & Observations: Edit or delete previously saved insights.
+- Build Export Bundle: Combine selected insights into an AI-ready JSON bundle.
+- AI Prompt & Response: Compose structured AI prompts and save persona-aligned responses.
+- Load / Restore: Upload, preview, and manage saved JSON/Markdown files.
 
 Session state tracks active snapshot and observation bundles for export.
 
@@ -74,7 +74,7 @@ BRAND_LOGO_PATH = os.path.join(ROOT_PATH, "brand", "blake_logo.png")
 # Observation Engine Path — Enable observation tools (form + journal)
 # -------------------------------------------------------------------------------------------------
 # -------------------------------------------------------------------------------------------------
-# 🔧 Observation Engine Module Path Setup
+# Observation Engine Module Path Setup
 # Required for importing from apps/observation_engine inside app.py (located in observation_ai_export)
 # -------------------------------------------------------------------------------------------------
 OBS_ENGINE_PATH = os.path.join(APPS_PATH, "observation_engine")
@@ -107,7 +107,7 @@ st.caption("")
 # -------------------------------------------------------------------------------------------------
 # Load About Markdown (auto-skips if not replaced)
 # -------------------------------------------------------------------------------------------------
-with st.expander("📖 About This App"):
+with st.expander("ℹ️ About This App"):
     content = load_markdown_file(ABOUT_APP_MD)
     if content:
         st.markdown(content, unsafe_allow_html=True)
@@ -115,36 +115,34 @@ with st.expander("📖 About This App"):
         st.error("File not found: docs/about_observation_ai_export.md")
 
 # -------------------------------------------------------------------------------------------------
-# 🎛️ Sidebar — Global Settings or Filters
+#  Sidebar — Global Settings or Filters
 # -------------------------------------------------------------------------------------------------
 
  # --- Branding ---
 st.logo(BRAND_LOGO_PATH) # pylint: disable=no-member
 
 # --- Getting Started, Branding Image and Caption ---
-st.sidebar.markdown("### 🧭 Getting Started")
 st.sidebar.caption("*Consolidate your insights. Review, bundle, and export AI-ready snapshots "
 "and observations.*")
 
 # -------------------------------------------------------------------------------------------------
-# 🎛️ Sidebar — Info
+# Sidebar — Info
 # -------------------------------------------------------------------------------------------------
-
 st.sidebar.info("""
 **Observation & AI Export Dashboard**
 
-- **📂 Snapshot Browser:** View saved macro snapshots with metadata.
-- **📋 Observation Browser:** Review notes and insights across modules.
-- **🔧 Manage Snapshots / Observations:** Organise or remove saved entries.
-- **🔗 Build Export Bundle:** Package insights into structured AI-ready files.
-- **🧠 AI Prompt & Response:** Load personas and generate AI interactions.
-- **📥 Load / Restore:** Upload, preview, and manage saved files.
+- **Snapshot Browser:** View saved macro snapshots with metadata.
+- **Observation Browser:** Review notes and insights across modules.
+- **Manage Snapshots / Observations:** Organise or remove saved entries.
+- **Build Export Bundle:** Package insights into structured AI-ready files.
+- **AI Prompt & Response:** Load personas and generate AI interactions.
+- **Load / Restore:** Upload, preview, and manage saved files.
 
 Designed as a modular workspace for structured insight and analysis.
 """)
 
 # -------------------------------------------------------------------------------------------------
-# 💾 Initialise Session State for Bundling
+# Initialise Session State for Bundling
 # -------------------------------------------------------------------------------------------------
 if "bundle_snapshots" not in st.session_state:
     st.session_state["bundle_snapshots"] = []
@@ -156,16 +154,16 @@ if "ai_bundle_current" not in st.session_state:
     st.session_state["ai_bundle_current"] = {}
 
 # -------------------------------------------------------------------------------------------------
-# 🧭 Main Tab Navigation
+# Main Tab Navigation
 # -------------------------------------------------------------------------------------------------
 tabs = st.tabs([
-    "📂 Snapshot Browser",          # 0 — Insight Browsing
-    "📋 Observation Browser",       # 1
-    "🔧 Manage Snapshots",          # 2 — Insight Management
-    "🔧 Manage Observations",       # 3
-    "🔗 Build Export Bundle",       # 4 — Insight Operations
-    "🧠 AI Prompt & Response",      # 5
-    "📥 Load / Restore"             # 6
+    "Snapshot Browser",          # 0 — Insight Browsing
+    "Observation Browser",       # 1
+    "Manage Snapshots",          # 2 — Insight Management
+    "Manage Observations",       # 3
+    "Build Export Bundle",       # 4 — Insight Operations
+    "AI Prompt & Response",      # 5
+    "Load / Restore"             # 6
 ])
 
 # -------------------------------------------------------------------------------------------------

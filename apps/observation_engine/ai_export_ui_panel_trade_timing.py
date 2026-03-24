@@ -1,5 +1,5 @@
 # -------------------------------------------------------------------------------------------------
-# 📤 Trade Timing — AI Export UI Panel (Platinum-Aligned)
+# Trade Timing — AI Export UI Panel (Platinum-Aligned)
 # -------------------------------------------------------------------------------------------------
 import os
 import sys
@@ -27,7 +27,7 @@ STORAGE_FOLDER = os.path.join(APP_PATH, "observation_engine", "storage", "ai_bun
 os.makedirs(STORAGE_FOLDER, exist_ok=True)
 
 # -------------------------------------------------------------------------------------------------
-# 🔍 Render AI Export Panel — Trade Timing Snapshot
+# Render AI Export Panel — Trade Timing Snapshot
 # -------------------------------------------------------------------------------------------------
 def render_ai_export_panel(
     asset: str,
@@ -43,7 +43,7 @@ def render_ai_export_panel(
     """
     Displays the export UI panel and handles bundle save for Trade Timing modules.
     """
-    st.markdown("### 🔎 Macro Insight Snapshots")
+    st.markdown("### Macro Insight Snapshots")
 
     # Build the snapshot using the canonical builder
     success, snapshot = build_macro_insight_snapshot_trade_timing(
@@ -63,7 +63,7 @@ def render_ai_export_panel(
         return
 
     # Preview snapshot inline
-    st.markdown("#### 📦 Export Bundle Preview")
+    st.markdown("#### Export Bundle Preview")
     st.caption("Snapshot of macro insight metadata and scoring structure")
     st.json(snapshot, expanded=False)
 
@@ -82,4 +82,4 @@ def render_ai_export_panel(
         with open(save_path, "w", encoding="utf-8") as f:
             json.dump(snapshot, f, indent=2)
 
-        st.success(f"📁 Snapshot saved to: `{save_path}`")
+        st.success(f"Snapshot saved to: `{save_path}`")

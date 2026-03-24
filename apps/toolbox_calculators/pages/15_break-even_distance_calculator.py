@@ -8,7 +8,7 @@
 # Docstring
 # -------------------------------------------------------------------------------------------------
 """
-📏 Break-Even Distance Calculator
+Break-Even Distance Calculator
 
 Calculate the minimum move needed to cover costs and reach profitability.
 Useful for determining the distance an asset must move in favour of the position to offset fees,
@@ -58,31 +58,26 @@ BRAND_LOGO_PATH = os.path.join(PROJECT_PATH, "brand", "blake_logo.png")
 # Streamlit Page Setup
 # -------------------------------------------------------------------------------------------------
 st.set_page_config(page_title="Break-Even Distance Calculator", layout="wide")
-st.title("📏 Break-Even Distance Calculator")
+st.title("Break-Even Distance Calculator")
 st.caption("*Estimate the minimum price shift required to cover trading costs.*")
 
 # -------------------------------------------------------------------------------------------------
 # Info Panels
 # -------------------------------------------------------------------------------------------------
-with st.expander("📘 What is this app about?"):
+with st.expander("ℹ️ About This App"):
     content = load_markdown_file(ABOUT_APP_MD)
     if content:
         st.markdown(content, unsafe_allow_html=True)
     else:
         st.error("File not found: docs/about_break_even_calculator.md")
 
-with st.expander("ℹ️ How to interpret break-even distance"):
-    content = load_markdown_file(HELP_APP_MD)
-    if content:
-        st.markdown(content, unsafe_allow_html=True)
-    else:
-        st.error("File not found: docs/help_break_even_calculator.md")
+
 
 # -------------------------------------------------------------------------------------------------
 # Sidebar Navigation
 # -------------------------------------------------------------------------------------------------
 st.sidebar.title("📂 Navigation Menu")
-st.sidebar.page_link('app.py', label='🛠️ Toolbox & Calculators')
+st.sidebar.page_link('app.py', label='Toolbox & Calculators')
 for path, label in build_sidebar_links():
     st.sidebar.page_link(path, label=label)
 st.sidebar.divider()
@@ -91,7 +86,7 @@ st.logo(BRAND_LOGO_PATH)  # pylint: disable=no-member
 # -------------------------------------------------------------------------------------------------
 # Break-Even Calculator Inputs
 # -------------------------------------------------------------------------------------------------
-st.sidebar.title("📊 Cost and Trade Inputs")
+st.sidebar.title("Cost and Trade Inputs")
 entry_price = st.sidebar.number_input("Entry Price ($)", min_value=0.01, value=100.0, step=0.1)
 spread = st.sidebar.number_input("Spread (Per Side, $)", min_value=0.0, value=0.5, step=0.1,
     help="Bid/Ask spread cost per side. Doubled to reflect round-trip.")
@@ -130,7 +125,7 @@ with col1:
 # Chart Output
 # -------------------------------------------------------------------------------------------------
 with col2:
-    tabs = st.tabs(["📈 Per Share View", "📊 Total Value View"])
+    tabs = st.tabs(["Per Share View", "Total Value View"])
 
     # Dynamically widen buffer based on how far break-even deviates from entry
     buffer_per_share = max(5, abs(break_even_per_share - entry_price) * 1.5)
@@ -193,7 +188,7 @@ with col2:
         st.plotly_chart(fig, width='stretch')
 
         st.caption(
-            "📉 This chart shows net profit or loss per share as the exit price changes. "
+            "This chart shows net profit or loss per share as the exit price changes. "
             "The blue marker highlights the minimum break-even level — where total "
             "trading costs are recovered."
         )
@@ -258,10 +253,18 @@ with col2:
         st.plotly_chart(fig2, width='stretch')
 
         st.caption(
-            "📉 This chart shows net profit or loss for the entire position as the exit value "
+            "This chart shows net profit or loss for the entire position as the exit value "
             "changes. The blue marker highlights the minimum break-even level — where "
             "total trading costs are recovered."
         )
+
+
+with st.expander("ℹ️ How to interpret break-even distance"):
+    content = load_markdown_file(HELP_APP_MD)
+    if content:
+        st.markdown(content, unsafe_allow_html=True)
+    else:
+        st.error("File not found: docs/help_break_even_calculator.md")
 
 # -------------------------------------------------------------------------------------------------
 # About & Support
@@ -294,6 +297,6 @@ with st.sidebar.expander("ℹ️ About & Support"):
 # -------------------------------------------------------------------------------------------------
 # Footer
 # -------------------------------------------------------------------------------------------------
-st.divider()
+st.space()
 st.caption("© 2026 Blake Media Ltd. | Financial Insight Tools by Blake Wiltshire — "
            "No trading, investment, or policy advice provided.")

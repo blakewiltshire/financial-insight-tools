@@ -83,31 +83,32 @@ BRAND_LOGO_PATH = os.path.join(PROJECT_PATH, "brand", "blake_logo.png")
 # Streamlit Page Setup
 # -------------------------------------------------------------------------------------------------
 st.set_page_config(page_title="Data Cleaner & Inspector", layout="wide")
-st.title('🧼 Data Cleaner & Inspector')
+st.title('Data Cleaner & Inspector')
 st.caption("*Fix formatting issues, inspect outliers, and validate fields.*")
 
 # -------------------------------------------------------------------------------------------------
 # Load About Markdown (auto-skips if not replaced)
 # -------------------------------------------------------------------------------------------------
-with st.expander("📌 What is this app about?"):
+with st.expander("ℹ️ About This App"):
     content = load_markdown_file(ABOUT_APP_MD)
     if content:
         st.markdown(content, unsafe_allow_html=True)
     else:
         st.error("File not found: docs/about_data_cleaning_toolbox.md")
 
+st.space()
 # -------------------------------------------------------------------------------------------------
 # Start Sidebar Operations
 # -------------------------------------------------------------------------------------------------
 st.sidebar.title("📂 Navigation Menu")
-st.sidebar.page_link('app.py', label='🛠 Toolbox & Calculators')
+st.sidebar.page_link('app.py', label='Toolbox & Calculators')
 for path, label in build_sidebar_links():
     st.sidebar.page_link(path, label=label)
 st.sidebar.divider()
 
 # Branding
 st.logo(BRAND_LOGO_PATH) # pylint: disable=no-member
-st.sidebar.title("🔎 Select Data Type")
+st.sidebar.title("Select Data Type")
 
 # --- Date Conversion Function ---
 def convert_date_to_us_format(dataframe, date_column="date"):
@@ -231,12 +232,12 @@ if uploaded_file:
     st.write("### Raw Uploaded Data:")
     st.dataframe(df.head())
 
-    if st.checkbox("🔎 Show Missing Values Summary"):
+    if st.checkbox("Show Missing Values Summary"):
         st.write(df.isnull().sum())
 
     cleaned_df = clean_data(df.copy(), data_type)
 
-    if st.checkbox("🔎 Highlight Outliers"):
+    if st.checkbox("Highlight Outliers"):
         highlight_columns = [
         col for col in ['open', 'high', 'low', 'close', 'volume'] if col in cleaned_df.columns
         ]
@@ -260,7 +261,7 @@ if uploaded_file:
 
     csv = edited_df.to_csv(index=False).encode('utf-8')
     st.download_button(
-        "📥 Download Cleaned & Edited Data CSV",
+        "Download Cleaned & Edited Data CSV",
         data=csv,
         file_name=cleaned_filename
     )
@@ -300,7 +301,7 @@ with st.sidebar.expander("ℹ️ About & Support"):
 # -------------------------------------------------------------------------------------------------
 # Footer
 # -------------------------------------------------------------------------------------------------
-st.divider()
+st.space()
 st.caption(
     "© 2026 Blake Media Ltd. | Financial Insight Tools by Blake Wiltshire — \
     No trading, investment, or policy advice provided.")

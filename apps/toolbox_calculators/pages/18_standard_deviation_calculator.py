@@ -8,7 +8,7 @@
 # Docstring
 # -------------------------------------------------------------------------------------------------
 """
-📊 Standard Deviation Calculator
+Standard Deviation Calculator
 
 Supports volatility benchmarking and trade expectation planning based on
 historic asset variability.
@@ -96,13 +96,13 @@ from apps.data_sources.financial_data.user_asset_map import get_user_asset_path
 # Streamlit Page Setup
 # -------------------------------------------------------------------------------------------------
 st.set_page_config(page_title="Standard Deviation Calculator", layout="wide")
-st.title("📊 Standard Deviation Calculator")
+st.title("Standard Deviation Calculator")
 st.caption("*Assess return dispersion to support risk control logic.*")
 
 # -------------------------------------------------------------------------------------------------
 # Load About Markdown (auto-skips if not replaced)
 # -------------------------------------------------------------------------------------------------
-with st.expander("📌 What is this app about?"):
+with st.expander("ℹ️ About This App"):
     content = load_markdown_file(ABOUT_APP_MD)
     if content:
         st.markdown(content, unsafe_allow_html=True)
@@ -116,7 +116,7 @@ with st.expander("📌 What is this app about?"):
 # Also links back to app dashboard (e.g., app.py)
 # -------------------------------------------------------------------------------------------------
 st.sidebar.title("📂 Navigation Menu")
-st.sidebar.page_link('app.py', label='🛠 Toolbox & Calculators')
+st.sidebar.page_link('app.py', label='Toolbox & Calculators')
 for path, label in build_sidebar_links():
     st.sidebar.page_link(path, label=label)
 st.sidebar.divider()
@@ -129,7 +129,7 @@ st.logo(BRAND_LOGO_PATH)  # pylint: disable=no-member
 # -------------------------------------------------------------------------------------------------
 # Asset Selection
 # -------------------------------------------------------------------------------------------------
-st.sidebar.title("🔎 Select Asset")
+st.sidebar.title("Select Asset")
 data_source = st.sidebar.selectbox("Choose your data source", [
     "Preloaded Asset Types (Default)",
     "Preloaded Asset Types (User)",
@@ -165,20 +165,12 @@ timeframe = "Timeframe Label"  # Label Output
 period_slider = st.sidebar.slider("Compare over past X periods", min_value=30,
 max_value=300, value=100)
 
-# -------------------------------------------------------------------------------------------------
-# Help
-# -------------------------------------------------------------------------------------------------
-with st.expander("ℹ️ Help: How to interpret standard deviation analysis"):
-    content = load_markdown_file(HELP_APP_MD)
-    if content:
-        st.markdown(content, unsafe_allow_html=True)
-    else:
-        st.error("File not found: docs/help_standard_deviation.md")
+
 
 # -------------------------------------------------------------------------------------------------
 # Main View Tabs
 # -------------------------------------------------------------------------------------------------
-tabs = st.tabs(["📈 Variability Overview", "📉 Short-Term (50 Days)", "📊 Medium-Term (200 Days)"])
+tabs = st.tabs(["Variability Overview", "Short-Term (50 Days)", "Medium-Term (200 Days)"])
 
 def analyse_volatility(subset_df, title_suffix):
     """
@@ -251,6 +243,18 @@ for i, (label, window) in enumerate(zip(["Short-Term", "Medium-Term"], [50, 200]
         slice_df = df.tail(window)
         analyse_volatility(slice_df, f"{label} — {window} Days")
 
+
+# -------------------------------------------------------------------------------------------------
+# Help
+# -------------------------------------------------------------------------------------------------
+with st.expander("ℹ️ Help: How to interpret standard deviation analysis"):
+    content = load_markdown_file(HELP_APP_MD)
+    if content:
+        st.markdown(content, unsafe_allow_html=True)
+    else:
+        st.error("File not found: docs/help_standard_deviation.md")
+
+
 # -------------------------------------------------------------------------------------------------
 # About & Support
 # -------------------------------------------------------------------------------------------------
@@ -282,6 +286,6 @@ with st.sidebar.expander("ℹ️ About & Support"):
 # -------------------------------------------------------------------------------------------------
 # Footer
 # -------------------------------------------------------------------------------------------------
-st.sidebar.divider()
+st.space()
 st.caption("© 2026 Blake Media Ltd. | Financial Insight Tools by Blake Wiltshire — "
            "No trading, investment, or policy advice provided.")

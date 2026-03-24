@@ -69,31 +69,24 @@ TRADE_HISTORY_PATH = os.path.join(PROJECT_PATH, "apps", "data_sources",
 # Streamlit Page Setup
 # -------------------------------------------------------------------------------------------------
 st.set_page_config(page_title="Kelly Criterion Calculator", layout="wide")
-st.title("🧠 Kelly Criterion Calculator")
+st.title("Kelly Criterion Calculator")
 st.caption("*Optimise position sizing based on probability and reward-to-risk ratios.*")
 
 # -------------------------------------------------------------------------------------------------
 # Info Panels
 # -------------------------------------------------------------------------------------------------
-with st.expander("📘 What is this app about?"):
+with st.expander("ℹ️ About This App"):
     content = load_markdown_file(ABOUT_APP_MD)
     if content:
         st.markdown(content, unsafe_allow_html=True)
     else:
         st.error("File not found: docs/about_kelly_criterion_calculator.md")
 
-with st.expander("ℹ️ How to interpret Kelly sizing"):
-    content = load_markdown_file(HELP_APP_MD)
-    if content:
-        st.markdown(content, unsafe_allow_html=True)
-    else:
-        st.error("File not found: docs/help_kelly_criterion_calculator.md")
-
 # -------------------------------------------------------------------------------------------------
 # Sidebar Navigation
 # -------------------------------------------------------------------------------------------------
 st.sidebar.title("📂 Navigation Menu")
-st.sidebar.page_link('app.py', label='🛠️ Toolbox & Calculators')
+st.sidebar.page_link('app.py', label='Toolbox & Calculators')
 for path, label in build_sidebar_links():
     st.sidebar.page_link(path, label=label)
 st.sidebar.divider()
@@ -134,7 +127,7 @@ if default_trade_history is not None:
 # -------------------------------------------------------------------------------------------------
 # Trade History Upload or Auto-load
 # -------------------------------------------------------------------------------------------------
-st.sidebar.title("📄 Upload Trade History (Optional)")
+st.sidebar.title("Upload Trade History (Optional)")
 
 with st.sidebar.expander("ℹ️ Upload Format Guide"):
     st.markdown("""
@@ -204,7 +197,7 @@ def calculate_kelly_fraction(p, R):
 # -------------------------------------------------------------------------------------------------
 # User Input or Derived Metrics
 # -------------------------------------------------------------------------------------------------
-st.sidebar.title("📊 Kelly Inputs")
+st.sidebar.title("Kelly Inputs")
 
 if use_uploaded:
     st.sidebar.success("Trade history detected. Using derived inputs.")
@@ -353,7 +346,7 @@ with col2:
     st.plotly_chart(fig, width='stretch')
 
     st.caption(
-        "📉 This chart visualises expected growth relative to capital allocation under a given "
+        "This chart visualises expected growth relative to capital allocation under a given "
         "risk–reward profile. The curve reflects theoretical return potential across different "
         "sizing fractions. Markers highlight both the raw Kelly fraction "
         "(optimal theoretical sizing) and the applied fraction (user-adjusted sizing), offering "
@@ -388,9 +381,16 @@ with st.sidebar.expander("ℹ️ About & Support"):
             width='stretch',
         )
 
+with st.expander("ℹ️ How to interpret Kelly sizing"):
+    content = load_markdown_file(HELP_APP_MD)
+    if content:
+        st.markdown(content, unsafe_allow_html=True)
+    else:
+        st.error("File not found: docs/help_kelly_criterion_calculator.md")
+
 # -------------------------------------------------------------------------------------------------
 # Footer
 # -------------------------------------------------------------------------------------------------
-st.divider()
+st.space()
 st.caption("© 2026 Blake Media Ltd. | Financial Insight Tools by Blake Wiltshire — \
 No trading, investment, or policy advice provided.")

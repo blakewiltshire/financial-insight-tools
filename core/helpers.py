@@ -89,33 +89,36 @@ def load_about_file(base_path, module_name):
 # -------------------------------------------------------------------------------------------------
 def render_module_dashboard(modules, root_path):
     """
-    Generate Insight Tools launcher UI with launch buttons.
+    Generate Financial Insight Tools launcher UI with launch buttons.
 
     Args:
-        modules (list): List of dicts (title, description, path, filename, button, column).
+        modules (list): List of dicts containing title, description, path, filename, button, column.
         root_path (str): Absolute path to project root.
     """
-    st.header("📂 Main Modules")
-    col1, col2 = st.columns(2)
+    st.space()
+
+    col1, col2 = st.columns(2, gap="small")
+
     for module in modules:
-        with col1 if module["column"] == 1 else col2:
-            st.markdown(f"### {module['title']}")
-            st.write(module["description"])
-            if st.button(module["button"]):
-                try:
-                    full_path = Path(root_path) / Path(module["path"])
-                    launch_streamlit_app(str(full_path), module["filename"])
-                except FileNotFoundError:
-                    st.error(
-                        f"Launch failed: File not found at {module['path']}/{module['filename']}"
-                    )
-                except RuntimeError as e:
-                    st.error(f"Launch failed: {str(e)}")
-                except OSError as e:
-                    st.error(f"OSError encountered: {e}")
+        target_col = col1 if module["column"] == 1 else col2
 
-            st.divider()
+        with target_col:
+            with st.container(border=True):
+                st.markdown(f"### {module['title']}")
+                st.write(module["description"])
 
+                if st.button(module["button"], key=f"launch_{module['title']}"):
+                    try:
+                        full_path = Path(root_path) / Path(module["path"])
+                        launch_streamlit_app(str(full_path), module["filename"])
+                    except FileNotFoundError:
+                        st.error(
+                            f"Launch failed: File not found at {module['path']}/{module['filename']}"
+                        )
+                    except RuntimeError as exc:
+                        st.error(f"Launch failed: {str(exc)}")
+                    except OSError as exc:
+                        st.error(f"OSError encountered: {exc}")
 
 # -------------------------------------------------------------------------------------------------
 # Function: get_project_base_path
