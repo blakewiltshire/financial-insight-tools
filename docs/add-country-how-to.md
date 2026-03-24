@@ -1,4 +1,4 @@
-# 🌍 HOW-TO: Add a New Country to Economic Exploration
+## HOW-TO: Add a New Country to Economic Exploration
 
 This guide explains how to add a new country (e.g. **China**) to the Economic Exploration dashboard.
 

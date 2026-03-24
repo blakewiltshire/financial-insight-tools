@@ -1,4 +1,4 @@
-# 📖 About Geopolitical Risks & Global Stability
+## Geopolitical Risks & Global Stability
 
 This module surfaces structured indicators related to political, institutional, and cross-border stability.
 It enables comparative framing of geopolitical risks, state fragility, and governance dynamics

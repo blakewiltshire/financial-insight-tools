@@ -1,5 +1,5 @@
 
-# ℹ️ Help: How to interpret ATR-based analysis
+## How-To interpret ATR-based analysis
 This module calculates **Average True Range (ATR)** — a volatility measure showing how much an asset typically moves over a given period.
 
 Each summary includes:
@@ -10,9 +10,9 @@ Each summary includes:
 - **Lower Zone**: Price − ATR — a lower reference boundary for planning.
 
 ### Views Compared:
-- 📈 **Volatility View** — e.g. last 100 periods
-- 📉 **Short-Term** — 50 periods
-- 📊 **Medium-Term** — 200 periods
+- **Volatility View** — e.g. last 100 periods
+- **Short-Term** — 50 periods
+- **Medium-Term** — 200 periods
 
 ### How to interpret:
 - A **higher ATR** suggests wide movement — buffers may need to expand.
@@ -20,7 +20,7 @@ Each summary includes:
 - **Upper Zone** ≠ target — it marks a likely stretch range for price movement.
 - **Lower Zone** ≠ support — it’s a volatility floor, not a directional clue.
 
-### 🔍 Example:
+### Example:
 - **Asset**: Tesla (Last 50 Days)  
 - **ATR**: $11.65  
 - **Price**: $254.80  

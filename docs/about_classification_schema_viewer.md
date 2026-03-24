@@ -1,6 +1,4 @@
-📘 What is this app about?
-
-**Classification Schema Viewer**
+## Classification Schema Viewer
 
 This module enables structured exploration of classification systems, governance factors, and cross-sectional economic attributes relevant to institutional, regional, and market-level screening. It consolidates disparate public reference data into a single interactive interface — allowing for strategic review, comparison, and documentation.
 
@@ -25,5 +23,5 @@ Built to assist structural review, ecosystem design, and due diligence across cl
 
 ---
 
-© 2025 Blake Media Ltd. | Financial Insight Tools by Blake Wiltshire
+© 2026 Blake Media Ltd. | Financial Insight Tools by Blake Wiltshire
 No trading, investment, or policy advice provided.

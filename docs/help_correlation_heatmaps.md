@@ -1,4 +1,4 @@
-#### Correlation Interpretation:
+## Correlation Interpretation:
 
 Correlation measures the strength and direction of relationship between asset pairs.
 
@@ -61,4 +61,4 @@ The scatter plot visualizes direct relationship between two asset price series.
 
 ---
 
-✅ This is *decision support*: surfacing structural relationships, not prescribing trade actions.
+This is *decision support*: surfacing structural relationships, not prescribing trade actions.

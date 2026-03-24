@@ -1,4 +1,4 @@
-# ⚠️ Value at Risk (VaR) Calculator
+## Value at Risk (VaR) Calculator
 
 This module estimates potential downside exposure of an asset over a given holding period and confidence level.
 

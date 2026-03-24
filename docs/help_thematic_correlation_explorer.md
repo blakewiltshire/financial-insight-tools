@@ -1,8 +1,8 @@
-## 🔗 Thematic Correlation Explorer — ℹ️ Help: How to Read These Summaries
+## Help: Thematic Correlation Explorer
 
 This module surfaces structural relationships across macroeconomic indicators, enabling multi-theme, multi-country correlation analysis across diverse combinations of signals.
 
-### 🧮 What is being calculated?
+### What is being calculated?
 
 - **Z-score Standardisation:**  
   All indicators are internally normalised, removing original units, levels, and scales. Each series reflects its standard deviation movement around its own historical mean.
@@ -15,7 +15,7 @@ This module surfaces structural relationships across macroeconomic indicators, e
   - 📊 *Medium-Term (200 periods)* — broader structural trends  
   - 🕰 *Full History* — full available dataset range
 
-📊 Interpreting the Correlation Outputs
+Interpreting the Correlation Outputs
 
 - **Heatmaps:**  
 
@@ -45,7 +45,7 @@ These directional markers are not thresholds of significance, but reference anch
 
 ---
 
-### 💡 Practical Example: GDP vs S&P500
+### Practical Example: GDP vs S&P500
 
 As illustration:
 
@@ -64,7 +64,7 @@ This approach supports **multi-dimensional reflection** rather than prediction. 
 
 ---
 
-### 🔄 Time Alignment and Lagged Relationships
+### Time Alignment and Lagged Relationships
 
 The module aligns all series on the same time axis after resampling. This means all comparisons are performed contemporaneously — indicator values for a given month are evaluated side-by-side.
 
@@ -79,13 +79,13 @@ Monetary policy shifts may influence financial markets after several months.
 
 **Thematic Correlation Explorer does not automatically apply lag adjustments.** Users must interpret whether observed contemporaneous correlations reflect leading, coincident, or lagging dynamics based on domain knowledge.
 
-### 🔎 Advanced Lag and Event-Based Exploration
+### Advanced Lag and Event-Based Exploration
 
 For users seeking to investigate time-shifted relationships or event-based sequencing:
 
-- **🔎 Market & Volatility Scanner**
+- **Market & Volatility Scanner**
 Includes Event-Based Analysis Filtering, enabling targeted analysis of asset behaviour (e.g. SP500) around key macroeconomic releases (e.g. GDP reports, CPI prints, central bank decisions). This supports practical event-driven timing assessments.
-- **🧠 Observation & AI Export**
+- **Observation & AI Export**
 Users can construct observation bundles reflecting hypothesised lead-lag sequences for AI-supported scenario evaluation and portfolio framing.
 
 ---

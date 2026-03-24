@@ -1,4 +1,4 @@
-# 📖 What is this app about?
+## Standard Deviations
 
 This module calculates and presents volatility zones based on standard deviation bands across daily, weekly, and monthly timeframes.
 

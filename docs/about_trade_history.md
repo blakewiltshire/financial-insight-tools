@@ -1,4 +1,4 @@
-### 📘 What is this app about?
+## Trade History & Strategy
 
 The **Trade History & Strategy** module provides a structured review of executed trades and investment decisions. It validates uploaded trade logs for structural integrity and logical coherence, including checks on entry/exit dates, direction, position sizing, and realised P&L alignment.
 
@@ -23,5 +23,3 @@ Common uses include:
 ### ⚠️ This module does not offer investment advice
 
 It provides structural validation and performance diagnostics based solely on the uploaded dataset. Interpretive insights, trade rationale, and strategic conclusions remain external to the tool.
-
----

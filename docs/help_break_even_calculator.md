@@ -1,4 +1,4 @@
-### ℹ️ How to interpret break-even distance
+## How-To interpret break-even distance
 
 This calculator estimates the price your trade needs to reach in order to **cover all transaction-related costs**.
 

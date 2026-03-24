@@ -1,6 +1,6 @@
-# 📖 About the AI Persona Reference Guide (FIT)
+## About the AI Persona Reference Guide (FIT)
 
-The **🧠 AI Persona Reference Guide** provides a structured catalogue of role-based AI personas
+The **AI Persona Reference Guide** provides a structured catalogue of role-based AI personas
 used across the **Financial Insight Tools (FIT)** environment and the
 *Navigating the World of Economics, Finance, and Markets* guide series.
 
@@ -12,7 +12,7 @@ mechanics, risk, and strategy. Personas provide perspectives — not predictions
 - Roles spanning macro analysis, portfolio structure, behavioural framing, data interpretation,
   and financial system modelling
 - A YAML-backed catalogue stored at `docs/catalogues/ai_personas.yaml`
-- Integration with the 🔺 Triangular Navigation Program used throughout the guides
+- Integration with the **Triangular Navigation Program** used throughout the guides
 
 ### How to use this module
 - Browse personas to understand how each role structures system questions

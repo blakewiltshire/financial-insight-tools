@@ -1,6 +1,4 @@
-# 📘 What is this app about?
-
-Thematic Registry Explorer
+## Thematic Registry Explorer
 
 This module allows structured inspection of all thematic groupings and economic indicator mappings within the Financial Insight Tools ecosystem. It is designed for internal governance, ensuring that all data sources, themes, and indicator references remain consistent, validated, and system-aligned.
 
@@ -25,5 +23,5 @@ This module allows structured inspection of all thematic groupings and economic 
 
 ---
 
-© 2025 Blake Media Ltd. | Financial Insight Tools by Blake Wiltshire  
+© 2026 Blake Media Ltd. | Financial Insight Tools by Blake Wiltshire  
 No trading, investment, or policy advice provided.

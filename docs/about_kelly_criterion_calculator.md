@@ -1,4 +1,4 @@
-# 📘 What is this app about?
+## Kelly Criterion Calculator
 
 The **Kelly Criterion Calculator** estimates the optimal bet size to maximise long-term capital growth for repeated investment decisions where the probability of gain and loss is known or estimated.
 

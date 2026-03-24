@@ -1,6 +1,6 @@
-# 📖 About Reference Data & Trusted Sources
+## Reference Data & Trusted Sources
 
-The **📚 Institutional Reference Directory** provides structured access to institutional-grade
+The **Institutional Reference Directory** provides structured access to institutional-grade
 reference points used throughout the Financial Insight Tools (FIT) environment.
 
 ### What this module provides

@@ -1,4 +1,4 @@
-# ℹ️ Help: How to interpret VaR analysis
+## How-To interpret VaR analysis
 
 This app estimates how much an asset might lose, under typical historical conditions, with a specified statistical confidence.
 

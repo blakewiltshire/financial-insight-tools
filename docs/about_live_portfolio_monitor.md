@@ -1,4 +1,4 @@
-### 🧭 What is this app about?
+## Live Portfolio Monitor
 
 The **Live Portfolio Monitor** delivers structured diagnostics on currently active positions. As part of the Trade & Portfolio Structuring suite within the Financial Insight Tools system, it supports situational awareness, exposure visibility, and alignment with system-based planning thresholds.
 
@@ -23,5 +23,3 @@ Common uses include:
 ### ⚠️ This module does not offer investment advice
 
 Diagnostic outputs are derived from uploaded data and system calculations. Interpretive judgment, risk management decisions, and trade execution remain external to the system.
-
----

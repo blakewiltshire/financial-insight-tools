@@ -2,7 +2,7 @@ The **Cross-Asset Correlation Module** evaluates the relationship between two di
 
 ---
 
-## 🔢 Key Metrics Explained:
+## Key Metrics Explained:
 
 ### Spread Ratio
 
@@ -35,11 +35,11 @@ The **Cross-Asset Correlation Module** evaluates the relationship between two di
 
 ---
 
-## 🔬 Application Perspective:
+## Application Perspective:
 
 - This tool complements other modules such as:
-    - 📉 Spread & Ratio Insights (pairs and spread-based micro-relationships)
-    - 🔎 Market & Volatility Scanner (primary asset to reference market correlations)
-    - 🌍 Economic Exploration (macro-economic drivers)
+    - Spread & Ratio Insights (pairs and spread-based micro-relationships)
+    - Market & Volatility Scanner (primary asset to reference market correlations)
+    - Economic Exploration (macro-economic drivers)
 
 Cross-Asset Correlation helps map the **interconnected fabric** of global markets.

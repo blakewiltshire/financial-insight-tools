@@ -1,4 +1,4 @@
-# 📖 About Monetary Indicators & Policy Effects
+## Monetary Indicators & Policy Effects
 
 This module examines central banking signals, monetary aggregates, and the broader liquidity landscape.
 It integrates interest rate paths, base money trends, and institutional balance sheet dynamics to assess

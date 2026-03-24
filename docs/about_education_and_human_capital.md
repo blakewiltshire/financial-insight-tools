@@ -1,4 +1,4 @@
-# 📖 About Education & Human Capital
+## Education & Human Capital
 
 This module explores structured signals related to national education systems and the development of human capital.
 It covers investment in education, enrolment across academic levels, and skill formation within the labour force.

@@ -1,10 +1,10 @@
-# ℹ️ Help: How to interpret standard deviation analysis
+## How-To interpret standard deviation analysis
 
 This summary presents how an asset’s recent price behaviour compares to its historical average over three timeframes:
 
-- 📈 **Variability Overview** — Full dataset (e.g., 300 periods)
-- 📉 **Short-Term (50 Days)**
-- 📊 **Medium-Term (200 Days)**
+- **Variability Overview** — Full dataset (e.g., 300 periods)
+- **Short-Term (50 Days)**
+- **Medium-Term (200 Days)**
 
 Each segment includes:
 
@@ -36,5 +36,3 @@ For Tesla (Short-Term):
 → The current price is moderately above the short-term mean, nearing the top of a 1σ range.
 This may influence how tight or wide to set planning buffers — especially if seeking a directional
 move with defined reward-to-risk logic.
-
----

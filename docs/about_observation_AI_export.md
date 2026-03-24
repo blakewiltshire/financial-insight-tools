@@ -1,9 +1,9 @@
-# 🧠 Observation & AI Export — Structured Intelligence Layer
+## Observation & AI Export
 
 The **Observation & AI Export** module consolidates and structures insight data generated across Financial Insight Tools. It functions as the central integration layer between economic analysis, market diagnostics, and portfolio observations.
 
 ---
-## 🔍 Core Functions
+## Core Functions
 
 - **Browse & Review:** View structured observations and previously generated insight bundles.
 - **Bundle Insights:** Select multiple entries and assemble structured export-ready JSON envelopes.
@@ -12,7 +12,7 @@ The **Observation & AI Export** module consolidates and structures insight data 
 
 ---
 
-## 🧭 System Role
+## System Role
 
 This module serves as the bridge between modular analysis and structured interpretation.
 

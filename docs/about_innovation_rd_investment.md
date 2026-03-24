@@ -1,4 +1,4 @@
-# About Innovation, R&D, and Investment
+## Innovation, R&D, and Investment
 
 This module presents indicators capturing national efforts in research, innovation, and
 capital deployment toward technological progress. It includes data on R&D expenditure,

@@ -1,6 +1,6 @@
-### 📘 What is this app about?
+## Compounding Calculator
 
-The Compounding Calculator estimates how investments grow over time through the effects of compounding.
+The **Compounding Calculator** estimates how investments grow over time through the effects of compounding.
 
 It allows users to model:
 

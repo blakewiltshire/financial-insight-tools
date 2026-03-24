@@ -1,4 +1,4 @@
-# 📖 About Healthcare Economics
+## About Healthcare Economics
 
 This module presents structured indicators related to national healthcare systems, economic resource allocation,
 and population-level service access. It highlights trends in public and private expenditure, infrastructure capacity,

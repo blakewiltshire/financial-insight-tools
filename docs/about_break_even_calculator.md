@@ -1,4 +1,4 @@
-### 📘 What is this app about?
+## Break-Even Distance Calculator
 
 The **Break-Even Distance Calculator** estimates the minimum price movement required for a trade to cover its costs and become profitable.
 

@@ -1,4 +1,4 @@
-# 📖 About Market Trends & Financial Health
+## Market Trends & Financial Health
 
 This module offers a structured lens on capital market behaviour and the financial robustness of economies
 or listed entities. It highlights trends in equity indices, valuation dynamics, sector rotation, and

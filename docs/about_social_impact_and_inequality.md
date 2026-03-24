@@ -1,4 +1,4 @@
-# 📖 About Social Impact & Inequality
+## Social Impact & Inequality
 
 This module explores structured indicators reflecting socio-economic equity, distributional outcomes, and
 social access across key population groups. It surfaces inequality dynamics and social signals relevant

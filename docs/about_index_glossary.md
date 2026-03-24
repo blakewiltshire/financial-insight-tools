@@ -1,6 +1,6 @@
-# 📖 About the Index & Glossary Viewer (FIT)
+## Index & Glossary Viewer (FIT)
 
-The **🗂️ Index & Glossary Viewer** consolidates terminology, structural
+The **Index & Glossary Viewer** consolidates terminology, structural
 concepts, and analytical references used throughout the **Financial Insight
 Tools (FIT)** environment and the guide series
 *Navigating the World of Economics, Finance, and Markets*.
@@ -19,7 +19,7 @@ reasoning.
   `docs/catalogues/index_glossary.yaml`
 - Cross-linking to guide chapters for contextual grounding
 - A lightweight, non-prescriptive reference layer for use with FIT modules and
-the 🔺 Triangular Navigation Program
+the **Triangular Navigation Program**
 
 ---
 

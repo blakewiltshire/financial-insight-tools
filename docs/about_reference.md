@@ -1,4 +1,4 @@
-# 📚 Reference Data & Trusted Sources
+## Reference Data & Trusted Sources
 
 This module provides access to foundational tools for inspecting, validating, and navigating core reference components within the Financial Insight Tools system.
 
@@ -6,7 +6,7 @@ Rather than interacting with data directly, these tools offer institutional-grad
 
 ---
 
-## 📚 Institutional Reference Directory
+## Institutional Reference Directory
 
 A curated set of non-interactive external links to global financial regulators, economic agencies, classification standards, and market data providers.
 
@@ -25,7 +25,7 @@ All entries are outbound links — no API usage, downloads, or in-app processing
 
 ---
 
-## 📚 Classification Schema Viewer
+## Classification Schema Viewer
 
 An internal tool for **viewing, filtering, and interpreting global economic classification systems**, including:
 
@@ -41,7 +41,7 @@ An internal tool for **viewing, filtering, and interpreting global economic clas
 
 ---
 
-## 📚 Thematic Registry Explorer
+## Thematic Registry Explorer
 
 Interactive browser for inspecting:
 

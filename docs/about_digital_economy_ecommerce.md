@@ -1,4 +1,4 @@
-# 📖 About Digital Economy & E-Commerce
+## Digital Economy & E-Commerce
 
 This module surfaces indicators related to the structural expansion of digital economic activity.
 It presents data on digital infrastructure, information technology investment, and trends in

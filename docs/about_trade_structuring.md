@@ -1,4 +1,4 @@
-### 🛠 What is this app about?
+## Trade Structuring & Risk Planning
 
 The **Trade Structuring & Risk Planning** module enables the design and preparation of structured trades — including single-asset, multi-leg, and leveraged strategies. It forms a core part of the *Trade & Portfolio Structuring* suite within the Financial Insight Tools system.
 

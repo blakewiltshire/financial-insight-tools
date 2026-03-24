@@ -1,4 +1,4 @@
-# ℹ️ Help: How to Interpret Live Portfolio Monitoring
+## How-To Interpret Live Portfolio Monitoring
 
 This module evaluates the structure and risk composition of your **currently active positions**, offering real-time diagnostics for exposure, leverage, and return asymmetry.
 

@@ -1,4 +1,4 @@
-# 📖 What is this app about?
+## ATR-Based Stop Calculator
 
 This module calculates and visualises stop-loss buffer zones using Average True Range (ATR) analysis across daily, weekly, and monthly timeframes.
 

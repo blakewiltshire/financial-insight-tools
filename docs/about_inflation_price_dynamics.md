@@ -1,4 +1,4 @@
-# 📖 About Inflation & Price Dynamics
+## Inflation & Price Dynamics
 
 This module explores inflationary signals and pricing behaviour across the economy. It presents headline and core inflation
 metrics, alongside optional granular components such as housing, energy, and producer prices.

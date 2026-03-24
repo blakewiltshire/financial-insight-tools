@@ -1,4 +1,4 @@
-## 💱 Help: Exchange Rate Input
+## How-To Exchange Rate Input
 
 This is the rate at which the **original currency** will be converted into the **target currency**.
 

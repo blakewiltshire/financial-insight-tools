@@ -1,11 +1,11 @@
-## 🧭 How to Use This Dashboard
+## How to Use This Dashboard
 
 This dashboard provides structured access to macroeconomic indicators by country, organised through thematic groupings. Each theme reflects a logical domain of economic activity — enabling comparative analysis, systemic insight, and policy-aware framing.
 
 - Use the **sidebar** to navigate available thematic categories.
 - Select a theme to explore its associated indicators and visualisations.
 
-## 🗂️ About Thematic Groupings
+## About Thematic Groupings
 
 Thematic groupings categorise macroeconomic indicators by their role within the economic system — such as growth, inflation, labour markets, or global trade.
 
@@ -13,7 +13,7 @@ Each grouping reflects a policy-relevant or structurally significant domain. Ava
 
 ---
 
-## 🧩 Thematic Groups Overview
+## Thematic Groups Overview
 
 ### 🟩 Macroeconomic Fundamentals
 Core indicators that anchor systemic health, policy response, and national accounts.
@@ -72,5 +72,3 @@ Structural drivers of resilience, equity, and long-term capacity.
   Tracks conflict, institutional fragility, and global risk spillovers.
 - **Frontier Sectors**  
   Includes transformative domains such as AI, quantum, biotech — shaping future macro frontiers.
-
----

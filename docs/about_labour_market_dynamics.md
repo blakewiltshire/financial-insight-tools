@@ -1,4 +1,4 @@
-# 📖 About Labour Market and Dynamics
+## Labour Market and Dynamics
 
 This module provides a structured exploration of employment signals and labour force indicators.
 It covers headline metrics such as unemployment, participation, and employment growth, as well as

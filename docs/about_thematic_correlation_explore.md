@@ -1,4 +1,4 @@
-# 🔗 What is this app about?
+## Thematic Correlation Explorer
 
 The **Thematic Correlation Explorer** enables cross-theme, multi-country correlation analysis across macroeconomic indicators. Rather than narrowly examining isolated signals, this module allows the user to select combinations of indicators across economic growth, labour dynamics, inflation, monetary policy, and other systemic groupings.
 
@@ -18,5 +18,3 @@ While not predictive or prescriptive, this module supports:
 ### ⚠️ This module does not offer forecasts or policy recommendations
 
 It provides structured cross-theme, multi-country correlation analysis across macroeconomic indicators. Interpretation, evaluation, and strategic application remain at the user’s discretion.
-
----

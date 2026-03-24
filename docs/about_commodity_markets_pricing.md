@@ -1,4 +1,4 @@
-# 📖 About Commodity Markets & Pricing
+## Commodity Markets & Pricing
 
 This module examines price movements, volatility patterns, and structural trends across global commodity markets.
 It includes energy, metals, and agricultural resources — surfacing macro signals tied to input costs, supply-demand imbalances,

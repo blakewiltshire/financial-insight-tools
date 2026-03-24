@@ -1,6 +1,4 @@
 
-# ℹ️ Help: How to read these summaries
-
 - **Average Spread Ratio**: Mean ratio of long/short asset prices over the period.
 
 - **Volatility (Std Dev)**: Standard deviation of the spread ratio, showing historical variability.

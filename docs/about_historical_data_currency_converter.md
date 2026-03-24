@@ -1,17 +1,17 @@
-## 📌 What is this app about?
+## Historical Data Currency Converter
 
 This utility applies a **manual currency conversion** to uploaded historical
 OHLC data (Open, High, Low, Close).
 
-✅ **Primary Use Case:** Unifying currency for correlation or spread analysis
-  
-🧩 **Use With:** Market & Volatility Scanner, Intermarket Correlation, and related modules  
+**Primary Use Case:** Unifying currency for correlation or spread analysis
 
-⚠️ **Supported Format:** Tested with Investing.com historical data files only  
+**Use With:** Market & Volatility Scanner, Intermarket Correlation, and related modules  
 
-❌ **Do Not Use:** With mixed-currency comparisons — always align base currencies  
+**Supported Format:** Tested with Investing.com historical data files only  
 
-📁 **Saved Location:**
+**Do Not Use:** With mixed-currency comparisons — always align base currencies  
+
+**Saved Location:**
   ```plaintext
   /financial_data/asset_currency_converted/
   ```

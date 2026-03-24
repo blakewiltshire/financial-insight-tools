@@ -1,4 +1,4 @@
-# 📖 About Supply Chains & Logistics
+## Supply Chains & Logistics
 
 This module explores macro-level signals related to supply chain health, logistics infrastructure, and distribution efficiency.
 It highlights bottlenecks, freight conditions, and transport-linked economic indicators that affect production, inventory, and trade flows.

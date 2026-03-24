@@ -1,4 +1,4 @@
-### 📖 About Asset Snapshot Scanner
+## Asset Snapshot Scanner
 
 The **Asset Snapshot Scanner** module enables structured inspection and export of individual or grouped assets for diagnostic review, comparison, and downstream integration. It provides a clean snapshot of asset data, with selectable source layers and export-ready formatting.
 
@@ -19,5 +19,3 @@ Common uses include:
 ### ⚠️ No investment advice or recommendations are provided
 
 This module supports data preparation and structural insight only. Interpretive use, strategic conclusions, or execution decisions fall outside its scope.
-
----

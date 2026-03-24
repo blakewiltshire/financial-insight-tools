@@ -1,4 +1,4 @@
-# 📖 About Economic Growth Stability
+## Economic Growth Stability
 
 This module provides a structured exploration of macroeconomic growth signals and national output dynamics. It focuses on core GDP indicators — both real and nominal — alongside component-level contributions such as consumption, investment, government expenditure, and net trade.
 

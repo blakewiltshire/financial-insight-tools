@@ -1,4 +1,4 @@
-# About Urbanisation & Smart Cities
+## Urbanisation & Smart Cities
 
 This module presents structured indicators on urban expansion, infrastructure development,
 and the emergence of smart city ecosystems. It highlights trends in population density, transport systems,

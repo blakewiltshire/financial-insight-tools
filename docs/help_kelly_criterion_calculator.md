@@ -1,4 +1,4 @@
-# ℹ️ Help: How to interpret Kelly Criterion analysis
+## Help: How to interpret Kelly Criterion analysis
 
 The Kelly Criterion offers a structural way to estimate how much capital to allocate to a single trade, based on your probability of success and reward-to-risk profile.
 

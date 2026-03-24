@@ -1,6 +1,5 @@
-📊 Data Cleaning & Inspection Toolbox — README & Help Guide
+## Data Cleaning & Inspection Toolbox — README & Help Guide
 
-✅ About This App
 
 The Data Cleaning & Inspection Toolbox is designed to help users quickly and effectively clean, inspect, and prepare both securities data and economic indicator datasets before analysis.
 
@@ -20,7 +19,7 @@ Download the cleaned and manually updated data with dynamic, descriptive filenam
 
 This app supports integration into larger data analysis workflows or can be used independently.
 
-🛠 Features Overview
+### Features Overview
 
 1️⃣ Upload Data
 
@@ -84,7 +83,7 @@ Economic Indicators
 
 date, value columns (flexible; only date and numeric consistency enforced)
 
-✅ Best Practices & Recommendations
+### Best Practices & Recommendations
 
 Always review missing values and correct them where applicable.
 
@@ -94,7 +93,7 @@ Use manual editing for final refinements, especially if large or nonsensical out
 
 Download the cleaned file and store versioned backups.
 
-🚀 Deployment Notes
+### Deployment Notes
 
 Fully compatible with Streamlit Cloud.
 
@@ -102,14 +101,10 @@ No external dependencies beyond pandas, numpy, and streamlit.
 
 Dynamic reruns and session clearing ensure users start fresh when switching data types.
 
-📚 Help & Future Enhancements
+### Help & Future Enhancements
 
 Tooltips to explain each field (planned).
 
 Automated suggested corrections for common anomalies (future version).
 
 Integration hooks for export into other Streamlit apps (optional add-on).
-
-✅ Contact / Feedback
-
-For issues, feedback, or suggestions, please contact the development team or raise a ticket in the associated GitHub repository.

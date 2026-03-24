@@ -1,4 +1,4 @@
-# ℹ️ About & Support
+## About & Support
 
 Companion framework: *Navigating the World of Economics, Finance, and Markets* — a structured guide series examining macroeconomic systems, financial architecture, market dynamics, and decision environments across six thematic areas.
 

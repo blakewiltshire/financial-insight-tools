@@ -1,10 +1,10 @@
-# ℹ️ Help: Thematic Registry Explorer
+## Help: Thematic Registry Explorer
 
 This module enables structured querying and validation of key internal registries that govern the Financial Insight Tools ecosystem. It operates across two core files:
 
 ---
 
-### 📁 What This App Queries
+### What This App Queries
 
 #### 1. `thematic_groupings.py`
 Defines the architecture of all economic themes used across the system.
@@ -24,7 +24,7 @@ Maps all economic indicators to:
 
 ---
 
-### 🧭 Why This Matters
+### Why This Matters
 
 This tool exists to:
 - Surface the **structure** behind every economic module in the system
@@ -39,7 +39,7 @@ It does **not**:
 
 ---
 
-### 🛠 What You Can Do
+### What You Can Do
 
 Examples of supported queries:
 - See which indicators are included under a thematic grouping (e.g., labour market dynamics)
@@ -50,13 +50,13 @@ Examples of supported queries:
 
 ---
 
-### 🔐 Governance and Scope
+### Governance and Scope
 
 This module is internal-facing — used to ensure the system operates on a consistent, validated base. It supports development, integration, and refinement of macroeconomic workflows across:
 
-- 🌍 Economic Exploration
-- 🔗 Intermarket & Correlation
-- 🧠 Observation & AI Export
+- Economic Exploration
+- Intermarket & Correlation
+- Observation & AI Export
 
 ---
 

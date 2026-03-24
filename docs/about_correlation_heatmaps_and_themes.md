@@ -1,4 +1,4 @@
-# 📖 About Correlation Heatmaps & Themes
+## Correlation Heatmaps & Themes
 
 This module provides an exploratory lens into systemic relationships within selected asset groups.
 It surfaces internal co-movement, cross-asset clustering, and correlation dynamics across multiple timeframes.

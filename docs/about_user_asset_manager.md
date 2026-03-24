@@ -1,4 +1,4 @@
-### 📖 About User Asset Manager
+## User Asset Manager
 
 The **User Asset Manager** serves as a structured reference lens for managing user-defined assets across the Financial Insight Tools system.
 
@@ -20,5 +20,3 @@ All files must be manually placed in the relevant _user folders — this app doe
 ### ⚠️ No investment advice or recommendations are provided
 
 This module supports structured planning and diagnostic exploration. Interpretive judgement, scenario assumptions, and execution decisions remain the responsibility of the end user. No trading signals or investment recommendations are produced by this system.
-
----

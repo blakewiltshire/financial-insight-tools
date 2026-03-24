@@ -1,4 +1,4 @@
-# ℹ️ Help: How to interpret Trade History Review
+## How-To interpret Trade History Review
 
 This module performs a structural review of your **closed historical trades**, enabling insight into realised performance, trade consistency, and outcome variance.
 

@@ -1,4 +1,4 @@
-# 📖 About Industry Performance & Production
+## Industry Performance & Production
 
 This module enables a structured view of industrial sector activity and production dynamics within
 national or regional economies. It surfaces trends in manufacturing output, construction activity,

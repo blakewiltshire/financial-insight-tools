@@ -1,10 +1,10 @@
-## 🌐 External Market Data Sources
+## External Market Data Sources
 
 To prepare your own user-uploaded asset sets, we recommend using the following historical data providers. Ensure you download **daily historical data in CSV format**, with standard columns: `date, open, high, low, close, volume`.
 
 ---
 
-### 📈 [Investing.com](https://www.investing.com/)
+### [Investing.com](https://www.investing.com/)
 - Offers free historical data for equities, ETFs, indices, commodities, bonds, and forex.
 - Steps:
   1. Navigate to the desired asset page (e.g. Tesla, Gold, S&P 500).
@@ -14,7 +14,7 @@ To prepare your own user-uploaded asset sets, we recommend using the following h
 
 ---
 
-### 📊 Other Compatible Providers
+### Other Compatible Providers
 These platforms also allow manual CSV downloads compatible with the Insight Tools system:
 
 - [TradingView](https://www.tradingview.com/) – Charts and historical data for major assets.
@@ -24,7 +24,7 @@ These platforms also allow manual CSV downloads compatible with the Insight Tool
 
 ---
 
-### ⚠️ Currency & Format Reminders
+### Currency & Format Reminders
 - Ensure all assets for spread analysis are **in the same currency** (e.g., all in USD).
 - If needed, use the **Historical Data Currency Converter** module before building your snapshot.
 - Remove any non-numeric columns (e.g., dividend flags, adjusted closes).

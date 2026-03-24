@@ -1,4 +1,4 @@
-### 📌 What is this app about?
+## Country Insight Launcher: Economic Exploration
 
 This module serves as the **entry point for exploring country-level macroeconomic indicators** through structured thematic groupings. It acts as a navigation buffer between the high-level regional selection and detailed indicator modules, ensuring usability even when the number of themes grows large.
 

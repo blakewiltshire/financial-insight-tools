@@ -1,4 +1,4 @@
-# 📖 About Sustainability & Green Economy
+## Sustainability & Green Economy
 
 This module enables structured exploration of economic-environmental interactions through indicators
 linked to sustainability, decarbonisation, and the evolving green economy. It presents metrics such as

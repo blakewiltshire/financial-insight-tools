@@ -1,4 +1,4 @@
-# 📖 About Currency & Exchange Rate Movements
+## Currency & Exchange Rate Movements
 
 This module presents structured insights into currency valuation trends and exchange rate dynamics.
 It includes bilateral FX rates, nominal and real effective exchange rate indices (NEER/REER), and

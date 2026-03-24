@@ -1,15 +1,15 @@
-# 🔀 What is this app about?
+## Asset Class Relationships
 
 This module supports strategic evaluation of relationships across asset classes, sectors, and instruments by analysing historical cross-asset correlations.
 
-## 🔍 Key Analytical Focus:
+## Key Analytical Focus:
 
 - **Spread Ratio:** Relationship between selected asset pair over time.
 - **Correlation Stability:** Rolling correlation to observe shifts in systemic co-movement.
 - **Z-Score Deviation:** Degree of deviation from historical ratio mean.
 - **Cross-Asset Behaviour:** Identifies synchronisation, decoupling, or regime shifts between asset pairs.
 
-## ⚙️ Strategic Application:
+## Strategic Application:
 
 This tool supports multi-asset assessments such as:
 

@@ -98,7 +98,9 @@ All outputs are structural and exploratory in nature.
 
 ## Screenshots
 
-### 🧭 Unified Launcher — Structural Orientation
+---
+
+### Unified Launcher — Structural Orientation
 
 ![Unified Launcher](docs/screenshots/01-launcher.png)
 
@@ -107,81 +109,71 @@ The unified launcher presents FIT’s modular architecture and clarifies:
 - The analytical domains available  
 - How modules interrelate  
 - Where configuration and export functions reside  
-- Where to begin  
 
 This is the orientation layer before moving into structured analysis.
 
 ---
 
-### 📊 Market & Volatility Scanner — Distribution Backbone
+### Economic Exploration — Macro System View
 
-![Market Scanner](docs/screenshots/02-market-scanner.png)
+![Economic Exploration](docs/screenshots/02-economic-map.png)
 
-The market scanner surfaces distribution structure and volatility context, including:
+A structural view across macroeconomic conditions and country-level indicators:
+
+- Growth, inflation, labour, and trade signals  
+- Thematic grouping and indicator structure  
+- Cross-country comparison and aggregation  
+- System-level economic context  
+
+Provides the macro foundation for downstream analytical workflows.
+
+---
+
+### Market & Volatility Scanner — Distribution Backbone
+
+![Market Scanner](docs/screenshots/03-market-scanner.png)
+
+A structural view across market behaviour and volatility conditions:
 
 - Frequency and dispersion metrics  
 - Shape characteristics  
 - Regime-sensitive return framing  
 - Structural probability context  
 
-This module establishes quantitative grounding for downstream modelling.
+Provides quantitative grounding for downstream modelling.
 
 ---
 
-### 🛠 Trade Structuring & Risk Planning — Position Architecture
+### Trade Structuring & Risk Planning — Position Architecture
 
-![Trade Structuring](docs/screenshots/03-trade-structuring.png)
+![Trade Structuring](docs/screenshots/04-trade-structuring.png)
 
-Trade structuring provides scenario-based modelling of:
+A structured view across trade construction and risk framing:
 
-- Entry and stop logic  
+- Entry and stop structure  
 - Exposure calibration  
 - Position sensitivity  
-- Risk framing within defined parameters  
+- Scenario-based evaluation  
 
-This module supports disciplined analytical evaluation without automating execution.
-
----
-
-### 🔗 Cross-Asset Correlation — Relationship Mapping
-
-![Correlation Heatmap](docs/screenshots/04-correlation-heatmap.png)
-
-The correlation dashboard presents cross-asset and thematic relationships through structured heatmaps and comparative views, enabling examination of regime alignment and structural interdependence.
+Supports analytical evaluation without automating execution.
 
 ---
 
-### 🌍 Economic Exploration — Macro Landscape
+### Cross-Asset Correlation — Relationship Mapping
 
-![Economic Map](docs/screenshots/05-economic-map.png)
+![Correlation Heatmap](docs/screenshots/05-correlation-heatmap.png)
 
-Economic Exploration enables country-level macroeconomic analysis through structured indicator selection and global mapping across growth, inflation, labour, trade, and structural themes.
-
----
-
-### 🇺🇸 Country Deep Dive — Indicator Drill-Down
-
-![Country Example](docs/screenshots/06-economic-country.png)
-
-Focused jurisdictional analysis (e.g., GDP, inflation, labour dynamics) presents structured macroeconomic detail within a single country context.
+A structural view across cross-asset and thematic relationships, enabling examination of regime alignment and interdependence.
 
 ---
 
-### 🧭 Setup & Registry Manager — Configuration Backbone
+### Build Export Bundle — Structured Artefact Assembly
 
-![Registry Manager](docs/screenshots/07-registry-manager.png)
+![Export Bundle](docs/screenshots/06-export-bundle.png)
 
-The configuration layer governs indicator selection, registry mappings, and structural consistency across modules, preserving coherence throughout the environment.
+The export module organises analytical components into structured bundles for documentation, research artefacts, and AI-assisted workflows.
 
----
-
-### 🤖 Build Export Bundle — Structured Artefact Assembly
-
-![Export Bundle](docs/screenshots/08-export-bundle.png)
-
-The export module organises analytical components into structured bundles suitable for documentation, research artefacts, or AI-assisted interpretation workflows.
-
-Exports preserve linkage to the underlying analytical structure.
+Outputs preserve linkage to the underlying analytical structure.
 
 ---
 

@@ -1,4 +1,4 @@
-# 📖 About Global Trade & Economic Relations
+## Global Trade & Economic Relations
 
 This module analyses cross-border economic interactions and international trade flows. It highlights
 national export/import dynamics, trade balances, and openness to external economic forces.

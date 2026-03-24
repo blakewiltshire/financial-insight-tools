@@ -1,4 +1,4 @@
-# 📖 About Consumer Behaviour & Confidence
+## Consumer Behaviour & Confidence
 
 This module examines household consumption trends, retail performance, and behavioural indicators of consumer sentiment.
 It integrates consumption volume metrics, sales turnover, and confidence signals (where available) to evaluate national

@@ -1,4 +1,4 @@
-# 📖 About Financial Conditions & Risk Analysis
+## Financial Conditions & Risk Analysis
 
 This module surfaces indicators related to the stability, liquidity, and credit dynamics of the financial system.
 It provides structured visibility into financial condition indices, systemic stress metrics, and credit market trends —

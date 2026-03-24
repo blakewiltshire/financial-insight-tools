@@ -1,10 +1,10 @@
-### ℹ️ How to interpret investment compounding
+## How-To interpret investment compounding
 
 Compounding means reinvesting returns so that each period’s gains also earn returns in the next period. Over time, this produces exponential growth.
 
 ---
 
-### 🧮 Key Components
+### Key Components
 
 - **Initial Investment**: The starting capital.
 - **Recurring Contribution**: Additional investments made at each period.
@@ -14,7 +14,7 @@ Compounding means reinvesting returns so that each period’s gains also earn re
 
 ---
 
-### 📈 Interpreting the Output
+### Interpreting the Output
 
 - **Total Contributions**: How much you've put in, manually or regularly.
 - **Final Portfolio Value**: How much it's worth at the end, before inflation.
@@ -22,7 +22,7 @@ Compounding means reinvesting returns so that each period’s gains also earn re
 
 ---
 
-### 🔁 Inflation and Compounding — A Dual Effect
+### Inflation and Compounding — A Dual Effect
 
 Inflation plays a dual role in long-term investing:
 
@@ -33,7 +33,7 @@ This app helps separate these effects — so users can see both the headline gro
 
 ---
 
-### 📌 Example
+### Example
 
 - invest $1,000 initially
 - add $100 per month

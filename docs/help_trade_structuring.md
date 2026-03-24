@@ -1,17 +1,17 @@
 
-# 🛠️ Trade Structuring & Risk Planning — Help
+## Trade Structuring & Risk Planning — Help
 
 This module allows users to construct structured trade setups — from single-leg instruments like shares or CFDs to more complex multi-leg spreads or mean-reversion pairs. It draws together diagnostic insights from other modules (volatility, timing, trends) into a final planning layer.
 
 ---
 
-## ℹ️ What Does This App Do?
+## What Does This App Do?
 
 The Trade Structuring & Risk Planning module provides a hands-on interface to configure trades using real asset data. Users define trade type, select assets, determine direction, set price targets and stops, and review structural sizing logic. Outputs are added to a session-based dashboard for download or future evaluation.
 
 ---
 
-## 💡 Use Case Walkthrough
+## Use Case Walkthrough
 
 **Example:** You’ve uploaded a trade journal and wish to structure a new **Pairs Trade** using user-defined preloaded assets.
 
@@ -25,7 +25,7 @@ This structured flow enables real-world preparation for execution — aligning t
 
 ---
 
-## 🧭 Key Concepts
+## Key Concepts
 
 - **Trade Type:** Affects available calculators and structuring logic (e.g., leverage vs non-leverage).
 - **Long / Short Legs:** Required for Pairs or Multi-Leg strategies.
@@ -45,7 +45,7 @@ This module is **non-advisory and structural only**. It does not estimate fees, 
 
 ---
 
-## ✅ Output Options
+## Output Options
 
 - Real-time trade preview with calculator feedback
 - Editable trade dashboard (session state)

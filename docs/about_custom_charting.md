@@ -1,11 +1,10 @@
-
-# 📖 About Custom Charting
+## About Custom Charting
 
 The charting system used across the Financial Insight Tools suite supports **modular extension** by design. Each module—such as *Price Action & Confirmation*—includes a dedicated charting file where custom visualisations can be added using a consistent, platinum-grade structure.
 
 ---
 
-## 🧱 Charting Architecture
+## Charting Architecture
 
 Each charting function:
 - Is stored in a shared file (e.g. `charting_price_action.py`)
@@ -17,7 +16,7 @@ Each charting function:
 
 ---
 
-## 🛠 How to Add a Custom Chart
+## How to Add a Custom Chart
 
 1. **Identify the Use Case:**
    - What decision or pattern are you supporting?
