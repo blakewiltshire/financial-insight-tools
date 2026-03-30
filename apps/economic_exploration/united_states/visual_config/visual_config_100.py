@@ -103,8 +103,8 @@ def plot_cb_leading_index(df):
     """Line chart for the Conference Board Leading Index."""
     return plot_indicator_line_chart(
         df,
-        y_column="US Leading Index (Conference Board)",
-        title="Conference Board Leading Index",
+        y_column="Leading Economic Index (Conference Board)",
+        title="Leading Economic Index (Conference Board)",
         yaxis_title="Index",
         marker=True
     )
@@ -252,7 +252,7 @@ def render_all_charts_local(selected_use_case, tab_mapping, df_map):
                 df_weekly = df_weekly if periods is None else df_weekly.tail(periods)
 
                 subtab1, subtab2, subtab3, subtab4 = st.tabs([
-                    "Leading Index (CB)",
+                    "Leading Economic Index (Conference Board)",
                     "Weekly Economic Index",
                     "Policy Uncertainty",
                     "National Activity Index"
@@ -261,7 +261,7 @@ def render_all_charts_local(selected_use_case, tab_mapping, df_map):
                 with subtab1:
                     display_chart_with_fallback(
                         plot_cb_leading_index(df_monthly.reset_index()),
-                        label="Conference Board Leading Index"
+                        label="Leading Economic Index (Conference Board)"
                     )
 
                 with subtab2:

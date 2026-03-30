@@ -40,15 +40,16 @@ Usage:
 """
 
 # -------------------------------------------------------------------------------------------------
-# 📦 Imports
+# Imports
 # -------------------------------------------------------------------------------------------------
-import pandas as pd
-import streamlit as st
-import plotly.graph_objects as go
 import uuid
+import pandas as pd
+import plotly.graph_objects as go
+import streamlit as st
+
 
 # -------------------------------------------------------------------------------------------------
-# 🧩 Chart Display Wrapper with Fallback
+# Chart Display Wrapper with Fallback
 # -------------------------------------------------------------------------------------------------
 def display_chart_with_fallback(
     fig: go.Figure,
@@ -68,95 +69,331 @@ def display_chart_with_fallback(
         return
 
     unique_key = custom_key if custom_key else f"{label}_{uuid.uuid4().hex}"
-    st.plotly_chart(fig, width='stretch', key=unique_key)
+    st.plotly_chart(fig, width="stretch", key=unique_key)
 
     if allow_partial and partial_warning:
         st.info(f"ℹ️ {label} displayed with partial data.")
 
+
 # -------------------------------------------------------------------------------------------------
-# 📊 Generic Plot — Signal A: Basic Time Series
+# Helper — Z-Score Normalisation
 # -------------------------------------------------------------------------------------------------
-def plot_signal_a_chart(df: pd.DataFrame) -> go.Figure:
+def zscore_series(series: pd.Series) -> pd.Series:
     """
-    Renders a simple time series line chart for 'Signal A'.
+    Returns a z-score normalised version of a series.
     """
-    if "date" not in df.columns or "Signal A" not in df.columns:
+    series = series.dropna()
+    if series.empty or series.std() == 0:
+        return pd.Series(index=series.index, dtype=float)
+
+    return (series - series.mean()) / series.std()
+
+
+# -------------------------------------------------------------------------------------------------
+# Forward Production Conditions — Trend Comparison Chart
+# -------------------------------------------------------------------------------------------------
+def plot_forward_production_conditions_chart(df: pd.DataFrame) -> go.Figure:
+    """
+    Renders a standardised overlay for:
+    - Business Conditions Diffusion Index
+    - Industrial Production Index
+    - Manufacturing Durable Goods Orders
+    """
+
+    required_cols = [
+        "date",
+        "Business Conditions Diffusion Index",
+        "Industrial Production Index",
+        "Manufacturing Durable Goods Orders"
+    ]
+
+    if not all(col in df.columns for col in required_cols):
+        return go.Figure()
+
+    plot_df = df[required_cols].copy().dropna()
+
+    if plot_df.empty:
+        return go.Figure()
+
+    plot_df["Business Conditions Diffusion Index (Z)"] = zscore_series(
+        plot_df["Business Conditions Diffusion Index"]
+    )
+    plot_df["Industrial Production Index (Z)"] = zscore_series(
+        plot_df["Industrial Production Index"]
+    )
+    plot_df["Manufacturing Durable Goods Orders (Z)"] = zscore_series(
+        plot_df["Manufacturing Durable Goods Orders"]
+    )
+
+    fig = go.Figure()
+
+    fig.add_trace(go.Scatter(
+        x=plot_df["date"],
+        y=plot_df["Business Conditions Diffusion Index (Z)"],
+        mode="lines",
+        name="Business Conditions Diffusion Index"
+    ))
+
+    fig.add_trace(go.Scatter(
+        x=plot_df["date"],
+        y=plot_df["Industrial Production Index (Z)"],
+        mode="lines",
+        name="Industrial Production Index"
+    ))
+
+    fig.add_trace(go.Scatter(
+        x=plot_df["date"],
+        y=plot_df["Manufacturing Durable Goods Orders (Z)"],
+        mode="lines",
+        name="Manufacturing Durable Goods Orders"
+    ))
+
+    fig.add_hline(
+        y=0,
+        line_dash="dot",
+        line_color="grey",
+        line_width=1
+    )
+
+    fig.update_layout(
+        title="Forward Production Conditions",
+        xaxis_title="Date",
+        yaxis_title="Trend Comparison",
+        height=420,
+        template="plotly_white",
+        legend=dict(
+            orientation="h",
+            yanchor="bottom",
+            y=1.02,
+            xanchor="right",
+            x=1
+        )
+    )
+
+    return fig
+
+
+# -------------------------------------------------------------------------------------------------
+# Single-Series Levels Chart
+# -------------------------------------------------------------------------------------------------
+def plot_single_series_levels_chart(
+    df: pd.DataFrame,
+    column_name: str,
+    chart_title: str,
+    yaxis_title: str
+) -> go.Figure:
+    """
+    Renders a single-series levels chart with a simple trend line.
+    """
+    required_cols = ["date", column_name]
+
+    if not all(col in df.columns for col in required_cols):
+        return go.Figure()
+
+    plot_df = df[required_cols].copy().dropna()
+
+    if plot_df.empty:
         return go.Figure()
 
     fig = go.Figure()
+
     fig.add_trace(go.Scatter(
-        x=df["date"], y=df["Signal A"],
-        mode="lines+markers", name="Signal A"
+        x=plot_df["date"],
+        y=plot_df[column_name],
+        mode="lines",
+        name=column_name
     ))
 
+    try:
+        import numpy as np
+
+        y = plot_df[column_name].values
+        x = np.arange(len(y))
+
+        coeffs = np.polyfit(x, y, 1)
+        trend = coeffs[0] * x + coeffs[1]
+
+        fig.add_trace(go.Scatter(
+            x=plot_df["date"],
+            y=trend,
+            mode="lines",
+            name="Trend",
+            line=dict(color="grey", dash="dash", width=1)
+        ))
+    except Exception:
+        pass
+
     fig.update_layout(
-        title="🔹 Signal A — Time Series Chart",
+        title=chart_title,
         xaxis_title="Date",
-        yaxis_title="Value",
-        height=400,
-        template="plotly_white"
+        yaxis_title=yaxis_title,
+        height=420,
+        template="plotly_white",
+        legend=dict(
+            orientation="h",
+            yanchor="bottom",
+            y=1.02,
+            xanchor="right",
+            x=1
+        )
     )
+
     return fig
 
+
 # -------------------------------------------------------------------------------------------------
-# 📊 Generic Plot — Signal B: Rolling Average
+# Business Conditions Diffusion Index — Levels Chart
 # -------------------------------------------------------------------------------------------------
-def plot_signal_b_chart(df: pd.DataFrame, window: int = 3) -> go.Figure:
+def plot_business_conditions_chart(df: pd.DataFrame) -> go.Figure:
     """
-    Renders 'Signal B' with an optional rolling average overlay.
+    Renders the Business Conditions Diffusion Index levels chart.
     """
-    if "date" not in df.columns or "Signal B" not in df.columns:
+    return plot_single_series_levels_chart(
+        df=df,
+        column_name="Business Conditions Diffusion Index",
+        chart_title="Business Conditions Diffusion Index",
+        yaxis_title="Levels"
+    )
+
+
+# -------------------------------------------------------------------------------------------------
+# Industrial Production Index — Levels Chart
+# -------------------------------------------------------------------------------------------------
+def plot_industrial_production_chart(df: pd.DataFrame) -> go.Figure:
+    """
+    Renders the Industrial Production Index levels chart.
+    """
+    return plot_single_series_levels_chart(
+        df=df,
+        column_name="Industrial Production Index",
+        chart_title="Industrial Production Index",
+        yaxis_title="Levels"
+    )
+
+
+# -------------------------------------------------------------------------------------------------
+# Manufacturing Durable Goods Orders — Levels Chart
+# -------------------------------------------------------------------------------------------------
+def plot_manufacturing_orders_chart(df: pd.DataFrame) -> go.Figure:
+    """
+    Renders the Manufacturing Durable Goods Orders levels chart.
+    """
+    return plot_single_series_levels_chart(
+        df=df,
+        column_name="Manufacturing Durable Goods Orders",
+        chart_title="Manufacturing Durable Goods Orders",
+        yaxis_title="Levels"
+    )
+
+# -------------------------------------------------------------------------------------------------
+# Services Activity Conditions — Trend Comparison Chart
+# -------------------------------------------------------------------------------------------------
+def plot_services_activity_conditions_chart(df: pd.DataFrame) -> go.Figure:
+    """
+    Renders a standardised overlay for:
+    - Business Conditions Diffusion Index
+    - Services Consumption (Nominal)
+    - Services Consumption (Real)
+    """
+
+    required_cols = [
+        "date",
+        "Business Conditions Diffusion Index",
+        "Services Consumption (Nominal)",
+        "Services Consumption (Real)"
+    ]
+
+    if not all(col in df.columns for col in required_cols):
         return go.Figure()
 
-    df = df.copy()
-    df["Rolling Avg"] = df["Signal B"].rolling(window).mean()
+    plot_df = df[required_cols].copy().dropna()
 
-    fig = go.Figure()
-    fig.add_trace(go.Scatter(
-        x=df["date"], y=df["Signal B"],
-        mode="lines", name="Signal B"
-    ))
-    fig.add_trace(go.Scatter(
-        x=df["date"], y=df["Rolling Avg"],
-        mode="lines", name=f"{window}-Period Avg",
-        line={"dash": "dot"}
-    ))
-
-    fig.update_layout(
-        title="🔹 Signal B — With Rolling Average",
-        xaxis_title="Date",
-        yaxis_title="Value",
-        height=400,
-        template="plotly_white"
-    )
-    return fig
-
-# -------------------------------------------------------------------------------------------------
-# 📊 Generic Plot — Signal C: Band Highlight
-# -------------------------------------------------------------------------------------------------
-def plot_signal_c_chart(df: pd.DataFrame) -> go.Figure:
-    """
-    Plots 'Signal C' with highlighted bands (e.g., thresholds or confidence zone).
-    """
-    if "date" not in df.columns or "Signal C" not in df.columns:
+    if plot_df.empty:
         return go.Figure()
 
+    plot_df["Business Conditions Diffusion Index (Z)"] = zscore_series(
+        plot_df["Business Conditions Diffusion Index"]
+    )
+    plot_df["Services Consumption (Nominal) (Z)"] = zscore_series(
+        plot_df["Services Consumption (Nominal)"]
+    )
+    plot_df["Services Consumption (Real) (Z)"] = zscore_series(
+        plot_df["Services Consumption (Real)"]
+    )
+
     fig = go.Figure()
+
     fig.add_trace(go.Scatter(
-        x=df["date"], y=df["Signal C"],
-        mode="lines", name="Signal C"
+        x=plot_df["date"],
+        y=plot_df["Business Conditions Diffusion Index (Z)"],
+        mode="lines",
+        name="Business Conditions Diffusion Index"
     ))
 
-    # Example band (e.g., neutral zone between -1 and 1)
-    fig.add_shape(type="rect", xref="paper", yref="y",
-                  x0=0, x1=1, y0=-1, y1=1,
-                  fillcolor="LightGray", opacity=0.3, line_width=0)
+    fig.add_trace(go.Scatter(
+        x=plot_df["date"],
+        y=plot_df["Services Consumption (Nominal) (Z)"],
+        mode="lines",
+        name="Services Consumption (Nominal)"
+    ))
+
+    fig.add_trace(go.Scatter(
+        x=plot_df["date"],
+        y=plot_df["Services Consumption (Real) (Z)"],
+        mode="lines",
+        name="Services Consumption (Real)"
+    ))
+
+    fig.add_hline(
+        y=0,
+        line_dash="dot",
+        line_color="grey",
+        line_width=1
+    )
 
     fig.update_layout(
-        title="🔹 Signal C — With Neutral Band",
+        title="Services Activity Conditions",
         xaxis_title="Date",
-        yaxis_title="Value",
-        height=400,
-        template="plotly_white"
+        yaxis_title="Trend Comparison",
+        height=420,
+        template="plotly_white",
+        legend=dict(
+            orientation="h",
+            yanchor="bottom",
+            y=1.02,
+            xanchor="right",
+            x=1
+        )
     )
+
     return fig
+
+
+# -------------------------------------------------------------------------------------------------
+# Services Consumption (Nominal) — Levels Chart
+# -------------------------------------------------------------------------------------------------
+def plot_services_consumption_nominal_chart(df: pd.DataFrame) -> go.Figure:
+    """
+    Renders the Services Consumption (Nominal) levels chart.
+    """
+    return plot_single_series_levels_chart(
+        df=df,
+        column_name="Services Consumption (Nominal)",
+        chart_title="Services Consumption (Nominal)",
+        yaxis_title="Levels"
+    )
+
+
+# -------------------------------------------------------------------------------------------------
+# Services Consumption (Real) — Levels Chart
+# -------------------------------------------------------------------------------------------------
+def plot_services_consumption_real_chart(df: pd.DataFrame) -> go.Figure:
+    """
+    Renders the Services Consumption (Real) levels chart.
+    """
+    return plot_single_series_levels_chart(
+        df=df,
+        column_name="Services Consumption (Real)",
+        chart_title="Services Consumption (Real)",
+        yaxis_title="Levels"
+    )

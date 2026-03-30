@@ -78,24 +78,25 @@ if UNIVERSAL_PATH not in sys.path:
 # -------------------------------------------------------------------------------------------------
 # Import and merge use cases
 # -------------------------------------------------------------------------------------------------
-from universal_use_cases_100 import get_use_cases as get_universal_use_cases
+from universal_use_cases_1200 import get_use_cases as get_universal_use_cases
 
 USE_CASES = dict(get_universal_use_cases())  # Shallow copy for local extension
 
 # Optionally extend below
 USE_CASES.update({
-    "Macro Composite Signals": {
-        "Indicators": [
-            "Leading Economic Index (Conference Board)",
-            "Weekly Economic Index (NY Fed)",
-            "Uncertainty Index Impact",
-            "National Activity Composite"
-        ],
-        "Categories": ["Macro Composite"],
-        "Description": "Captures forward-looking macro risk, activity strength, and regime \
-        instability using freely available, policy-grade indicators."
-    }
+    # "Macro Composite Signals (Local)": {
+    #     "Indicators": [
+    #         "Composite Output Index",
+    #         "National Activity Tracker",
+    #         "Local Economic Uncertainty Index",
+    #         "Regional PMI Series"
+    #     ],
+    #     "Categories": ["Macro Composite"],
+    #     "Description": "Tracks short-term national macro momentum using composite indicators —
+    #     including growth, sentiment, and uncertainty dynamics."
+    # }
 })
+
 
 def get_use_cases():
     """

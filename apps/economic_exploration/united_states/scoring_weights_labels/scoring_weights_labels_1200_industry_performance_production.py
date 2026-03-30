@@ -1,5 +1,5 @@
 # -------------------------------------------------------------------------------------------------
-#  ---- pylint global exceptions ----
+# 🎯 Thematic Indicator Scoring — Local Wrapper
 # -------------------------------------------------------------------------------------------------
 # pylint: disable=import-error, wrong-import-position, wrong-import-order
 # pylint: disable=invalid-name, non-ascii-file-name, line-too-long, unused-argument
@@ -51,69 +51,73 @@ to account for national context, additional indicators, and refined interpretati
 """
 
 # -------------------------------------------------------------------------------------------------
-# Imports and Path Setup
+# 📦 Standard Library
 # -------------------------------------------------------------------------------------------------
 import os
 import sys
 
+# -------------------------------------------------------------------------------------------------
+# 🛠 Path Configuration
+# -------------------------------------------------------------------------------------------------
 LOCAL_PATH = os.path.abspath(os.path.dirname(__file__))
 UNIVERSAL_PATH = os.path.abspath(os.path.join(LOCAL_PATH, "..", "universal_scoring_labels"))
 if UNIVERSAL_PATH not in sys.path:
     sys.path.append(UNIVERSAL_PATH)
 
-from universal_scoring_weight_labels_100 import (
+# -------------------------------------------------------------------------------------------------
+# 📥 Universal Imports
+# -------------------------------------------------------------------------------------------------
+from universal_scoring_weight_labels_1200 import (
     get_alignment_score_label as get_alignment_score_label_universal,
     indicator_weights as universal_indicator_weights
 )
 
 # -------------------------------------------------------------------------------------------------
-# Local Scoring Label Map (Optional)
+# 🧭 Local Scoring Label Definitions (Optional)
 # -------------------------------------------------------------------------------------------------
 USE_CASE_SCORING_LABELS = {
-    "Macro Composite Signals": lambda ratio_val: (
-        ("✅ Strong Macro Composite Alignment", "Composite indicators suggest improving forward conditions and broad strength.")
-        if ratio_val >= 0.85 else
-        ("⚠️ Mixed Composite Signals", "Mixed leading and breadth signals—watch for divergence in expectations vs structure.")
-        if ratio_val >= 0.33 else
-        ("⚠️ Soft Composite Misalignment", "Momentum may be weakening—signals suggest muted trends or instability.")
-        if ratio_val >= -0.2 else
-        ("🚨 Composite Misalignment", "Leading indicators show deterioration—uncertainty and weak breadth dominate.")
-    )
+    # Example:
+    # "Signal A": lambda ratio: ("🟢 Strong Alignment", "All indicators show consistent strength.")
 }
 
 # -------------------------------------------------------------------------------------------------
-# Dispatcher — Local First, Fallback to Universal
+# 🔁 Dispatcher — Label Fallback Logic
 # -------------------------------------------------------------------------------------------------
 def get_alignment_score_label(alignment_ratio: float, use_case: str) -> tuple[str, str]:
     """
-    Returns scoring label and explanation for a given alignment ratio and use case.
+    Retrieves scoring label and explanation based on alignment ratio and use case.
 
-    Logic:
-    - Checks local scoring map first
-    - Falls back to universal dispatcher if undefined
+    Priority:
+    - First checks for local override in `USE_CASE_SCORING_LABELS`
+    - Falls back to universal logic if none found
 
-    Parameters:
-        alignment_ratio (float): Calculated macro alignment score
-        use_case (str): Use case label string
+    Args:
+        alignment_ratio (float): Composite score for selected indicators
+        use_case (str): Label of the active use case
 
     Returns:
-        tuple[str, str]: (Short label with emoji, Long explanation)
+        tuple[str, str]: (Short label, Long explanation)
     """
     if use_case in USE_CASE_SCORING_LABELS:
         return USE_CASE_SCORING_LABELS[use_case](alignment_ratio)
     return get_alignment_score_label_universal(alignment_ratio, use_case)
 
 # -------------------------------------------------------------------------------------------------
-# Indicator Weights (Local Overrides or Extensions)
+# ⚖️ Indicator Weights — Influence Over Composite Score
 # -------------------------------------------------------------------------------------------------
 indicator_weights = {
-    "Leading Economic Index (Conference Board)": 3,
-    "Weekly Economic Index (NY Fed)": 2,
-    "National Activity Composite": 2,
-    "Uncertainty Index Impact": 1
+    # Optional: "Signal A": 3, "Signal B": 2
 }
-
 indicator_weights.update(universal_indicator_weights)
 
 def get_indicator_weight(indicator_name: str) -> int:
+    """
+    Returns the relative weight (1–3) for a given macroeconomic indicator.
+
+    Args:
+        indicator_name (str): Display label of the indicator
+
+    Returns:
+        int: Assigned weight, defaults to 1
+    """
     return indicator_weights.get(indicator_name, 1)

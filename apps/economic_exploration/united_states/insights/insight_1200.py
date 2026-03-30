@@ -1,5 +1,5 @@
 # -------------------------------------------------------------------------------------------------
-# 📈 Economic Growth Stability — Insight Generator (Local Wrapper)
+# 🧠 Insight Generator (Local Wrapper)
 # -------------------------------------------------------------------------------------------------
 # pylint: disable=import-error, wrong-import-position, wrong-import-order
 # pylint: disable=invalid-name, non-ascii-file-name, line-too-long, unused-argument
@@ -60,7 +60,7 @@ extensions to the system-wide universal insight map.
 """
 
 # -------------------------------------------------------------------------------------------------
-# Imports and Path Setup
+# 📦 Imports and Path Setup
 # -------------------------------------------------------------------------------------------------
 import os
 import sys
@@ -70,95 +70,30 @@ UNIVERSAL_PATH = os.path.abspath(os.path.join(LOCAL_PATH, "..", "universal_insig
 if UNIVERSAL_PATH not in sys.path:
     sys.path.append(UNIVERSAL_PATH)
 
-from universal_insights_100 import generate_universal_econ_insights
+# -------------------------------------------------------------------------------------------------
+# 🔁 Universal Insight Import
+# -------------------------------------------------------------------------------------------------
+from universal_insights_1200 import generate_universal_econ_insights
 
 # -------------------------------------------------------------------------------------------------
-# Local Insight Definitions (Bias + Text)
+# 🗺️ Local Insight Definitions (Optional)
 # -------------------------------------------------------------------------------------------------
 LOCAL_INSIGHTS = {
-    "Leading Economic Index (Conference Board)": {
-        "Uptrend Confirmed": {
-            "bias": "Growth Supportive",
-            "text": "The Leading Growth Index is trending higher—signals possible expansionary phase ahead."
-        },
-        "Downtrend Confirmed": {
-            "bias": "Contraction Warning",
-            "text": "Leading indicators are weakening—suggests potential macroeconomic deceleration."
-        },
-        "Flat or Reversing": {
-            "bias": "Neutral",
-            "text": "Composite signals appear directionless or reversing—indicates uncertainty in forward trajectory."
-        },
-        "Insufficient Data": {
-            "bias": "Neutral",
-            "text": "Leading Growth Index signal could not be generated—check data completeness."
-        }
-    },
-    "Weekly Economic Index (NY Fed)": {
-        "Momentum Strengthening": {
-            "bias": "Growth Supportive",
-            "text": "Weekly Economic Index shows rising momentum—near-term conditions are improving."
-        },
-        "Momentum Weakening": {
-            "bias": "Contraction Warning",
-            "text": "Recent weekly trends are softening—suggests growth moderation or volatility."
-        },
-        "Stagnant or Mixed": {
-            "bias": "Neutral",
-            "text": "Weekly signals are flat or mixed—near-term economic bias unclear."
-        },
-        "Insufficient Data": {
-            "bias": "Neutral",
-            "text": "Weekly index data unavailable or incomplete—signal cannot be derived."
-        }
-    },
-    "Uncertainty Index Impact": {
-        "High Volatility Risk": {
-            "bias": "Contraction Warning",
-            "text": "Economic uncertainty has surged—may increase regime instability and reduce forward visibility."
-        },
-        "Moderate Uncertainty": {
-            "bias": "Neutral",
-            "text": "Uncertainty indicators are elevated but stable—can signal caution or delay in business/policy decisions."
-        },
-        "Low Uncertainty Environment": {
-            "bias": "Growth Supportive",
-            "text": "Uncertainty measures remain subdued—suggests stable sentiment and clearer economic expectations."
-        },
-        "Insufficient Data": {
-            "bias": "Neutral",
-            "text": "Uncertainty index signal unavailable—data insufficient."
-        }
-    },
-    "National Activity Composite": {
-        "Above Trend Activity": {
-            "bias": "Growth Supportive",
-            "text": "National Activity Index indicates above-trend economic strength—broad-based improvement across sectors."
-        },
-        "Below Trend Activity": {
-            "bias": "Contraction Warning",
-            "text": "Activity index shows below-trend conditions—broad economic momentum may be weakening."
-        },
-        "Near Neutral Benchmark": {
-            "bias": "Neutral",
-            "text": "Activity is consistent with long-term trend—macro pressures appear balanced."
-        },
-        "Insufficient Data": {
-            "bias": "Neutral",
-            "text": "National Activity Index data insufficient for meaningful signal."
-        }
-    }
+    # Placeholder for local indicator-specific insights
+    # "Labour Market Pulse": {
+    #     "Strengthening": "Recent labour data suggests tightening conditions.",
+    #     "Weakening": "Indicators point to a cooling employment trend."
+    # }
 }
 
 # -------------------------------------------------------------------------------------------------
-# Dispatcher — Universal Fallback with Local Override
+# 🔄 Dispatcher — Local First, Fallback to Universal
 # -------------------------------------------------------------------------------------------------
 def generate_econ_insights(indicator: str, signal_result: str, timeframe: str, extra_value=None) -> tuple[str, str]:
     """
-    Local-first insight generator — falls back to universal if no local match found.
+    Returns (insight text, bias classification) for given indicator and signal.
     """
     local_map = LOCAL_INSIGHTS.get(indicator, {})
-
     if signal_result in local_map:
         entry = local_map[signal_result]
         text_template = entry["text"]
@@ -175,5 +110,4 @@ def generate_econ_insights(indicator: str, signal_result: str, timeframe: str, e
 
         return text_final, entry["bias"]
 
-    # Always fall back to universal
-    return generate_universal_econ_insights(indicator, signal_result, timeframe, extra_value)
+    return generate_universal_econ_insights(indicator, signal_result, timeframe)

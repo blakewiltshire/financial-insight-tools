@@ -35,43 +35,45 @@ requiring different dataframes than the universal default.
 """
 
 # -------------------------------------------------------------------------------------------------
-# Standard Library
+# 🧱 Standard Library
 # -------------------------------------------------------------------------------------------------
-
 import os
 import sys
 
 # -------------------------------------------------------------------------------------------------
-# Third-party Libraries
-# -------------------------------------------------------------------------------------------------
-import pandas as pd
-
-# -------------------------------------------------------------------------------------------------
-# Path Setup
+# 🛠️ Path Setup
 # -------------------------------------------------------------------------------------------------
 LOCAL_PATH = os.path.abspath(os.path.dirname(__file__))
 UNIVERSAL_PATH = os.path.abspath(os.path.join(LOCAL_PATH, "..", "universal_routing"))
 if UNIVERSAL_PATH not in sys.path:
     sys.path.append(UNIVERSAL_PATH)
 
-from universal_routing_100 import get_indicator_input as get_indicator_input_universal
+# -------------------------------------------------------------------------------------------------
+# 📦 Universal Routing Import
+# -------------------------------------------------------------------------------------------------
+from universal_routing_1200 import get_indicator_input as get_indicator_input_universal
 
 # -------------------------------------------------------------------------------------------------
-# Local Routing Overrides (Optional)
+# 📊 Third-party Libraries
 # -------------------------------------------------------------------------------------------------
-COMPOSITE_MONTHLY_INDICATORS = {
-    "National Activity Composite",     # CFNAI
-    "Leading Economic Index (Conference Board)",       # CBLEI
-    "Uncertainty Index Impact"         # EPU
-}
+import pandas as pd
 
-COMPOSITE_WEEKLY_INDICATORS = {
-    "Weekly Economic Index (NY Fed)"   # WEI
-}
-
+# -------------------------------------------------------------------------------------------------
+# 🚦 Local Routing Overrides (Optional)
+# -------------------------------------------------------------------------------------------------
 def get_indicator_input(indicator_name: str, df_dict: dict) -> pd.DataFrame | None:
-    if indicator_name in COMPOSITE_MONTHLY_INDICATORS:
-        return df_dict.get("df_secondary_slice")
-    if indicator_name in COMPOSITE_WEEKLY_INDICATORS:
-        return df_dict.get("df_extended_slice")
+    """
+    Retrieves the dataframe corresponding to the given indicator.
+
+    Logic:
+    - Checks local override logic first (if defined)
+    - Falls back to universal routing dispatcher
+
+    Parameters:
+        indicator_name (str): Name of the indicator from use case
+        df_dict (dict): Dictionary of available preloaded dataframes
+
+    Returns:
+        pd.DataFrame | None: Matching dataframe for the indicator
+    """
     return get_indicator_input_universal(indicator_name, df_dict)

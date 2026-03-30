@@ -138,7 +138,7 @@ def clean_economic_data(df: pd.DataFrame, theme: str = None) -> pd.DataFrame:
 
 
     df = df.drop_duplicates().sort_values(by="date").reset_index(drop=True)
-    df = df.ffill()
+    # df = df.ffill()
 
     # --- THEME-SPECIFIC LOGIC ---
     if theme in [None, "100_economic_growth_stability"]:

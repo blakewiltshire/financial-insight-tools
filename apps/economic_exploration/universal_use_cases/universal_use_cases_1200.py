@@ -57,29 +57,40 @@ framing for any theme not explicitly overridden at country level.
 # Use Cases
 # -------------------------------------------------------------------------------------------------
 USE_CASES = {
-    "Signal A": {
-        "Indicators": ["Signal A"],
-        "Categories": ["Template Category"],
-        "Description": "Standalone demonstration of Signal A logic and rendering."
+    "Forward Production Conditions": {
+        "Indicators": [
+            "Business Conditions",
+            "Production Activity",
+            "Demand Transmission"
+        ],
+        "Categories": [
+            "Business Conditions",
+            "Production",
+            "Demand"
+        ],
+        "Description": "Examines how forward production conditions emerge through the interaction of business sentiment, industrial output, and order-based demand signals."
     },
-    "Signal B": {
-        "Indicators": ["Signal B"],
-        "Categories": ["Template Category"],
-        "Description": "Standalone demonstration of Signal B logic and rendering."
-    },
-    "Signal C": {
-        "Indicators": ["Signal C"],
-        "Categories": ["Template Category"],
-        "Description": "Standalone demonstration of Signal C logic and rendering."
+    "Services Activity Conditions": {
+        "Indicators": [
+            "Business Conditions",
+            "Services Consumption",
+            "Real Services Demand"
+        ],
+        "Categories": [
+            "Business Conditions",
+            "Services Consumption",
+            "Real Demand"
+        ],
+        "Description": "Examines how services activity conditions emerge through the interaction of business sentiment, nominal consumption trends, and real consumer demand."
     }
 }
 
 
 def get_use_cases():
     """
-    Returns the placeholder use case structure for unconfigured thematic modules.
+    Returns the configured use case structure for forward production and services activity conditions.
 
     Returns:
-        dict: Generic use cases for UI and structural fallback.
+        dict: Use cases for UI and structural fallback.
     """
     return USE_CASES

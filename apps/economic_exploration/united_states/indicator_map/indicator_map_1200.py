@@ -1,5 +1,5 @@
 # -------------------------------------------------------------------------------------------------
-#  ---- pylint global exceptions ----
+# 🔧 Pylint Global Exceptions
 # -------------------------------------------------------------------------------------------------
 # pylint: disable=import-error, wrong-import-position, wrong-import-order
 # pylint: disable=invalid-name, non-ascii-file-name
@@ -71,127 +71,37 @@ system-stable.
 """
 
 # -------------------------------------------------------------------------------------------------
-# Standard Library
+# Imports and Path Setup
 # -------------------------------------------------------------------------------------------------
 import os
 import sys
 
-# -------------------------------------------------------------------------------------------------
-# Third-party Libraries
-# -------------------------------------------------------------------------------------------------
-import pandas as pd
-
-# -------------------------------------------------------------------------------------------------
-# Add universal indicator module path explicitly
-# -------------------------------------------------------------------------------------------------
 LOCAL_PATH = os.path.abspath(os.path.dirname(__file__))
 UNIVERSAL_PATH = os.path.abspath(os.path.join(LOCAL_PATH, "..", "universal_indicator_map"))
 if UNIVERSAL_PATH not in sys.path:
     sys.path.append(UNIVERSAL_PATH)
 
 # -------------------------------------------------------------------------------------------------
-# Imports — Universal Indicators
+# Universal Template Signal Import
 # -------------------------------------------------------------------------------------------------
-from universal_indicator_map_100 import (
-    options_gdp_growth_rate_map,
-    options_nominal_gdp_map,
-    options_gdp_components_map
+from universal_indicator_map_1200 import (
+    options_forward_production_conditions_map,
+    options_services_activity_conditions_map,
 )
 
-# Optionally extend below
-def conference_board_leading_signal(df, period=3):
-    """Evaluates directional momentum of the US Leading Index (CB)."""
-    col = "Leading Economic Index (Conference Board)"
-    if df is None or col not in df.columns:
-        return "Insufficient Data"
-    recent = df[col].dropna().tail(period)
-    if len(recent) < period:
-        return "Insufficient Data"
-    trend = recent.diff().mean()
-    if trend > 0.1:
-        return "Uptrend Confirmed"
-    if trend < -0.1:
-        return "Downtrend Confirmed"
-    return "Flat or Reversing"
-
-
-def weekly_economic_index_signal(df, period=4):
-    """Evaluates weekly trends in the Weekly Economic Index (NY Fed)."""
-    col = "Weekly Economic Index (Lewis-Mertens-Stock)"
-    if df is None or col not in df.columns:
-        return "Insufficient Data"
-    recent = df[col].dropna().tail(period)
-    if len(recent) < period:
-        return "Insufficient Data"
-    trend = recent.diff().mean()
-    if trend > 0.02:
-        return "Momentum Strengthening"
-    if trend < -0.02:
-        return "Momentum Weakening"
-    return "Stagnant or Mixed"
-
-
-def uncertainty_index_signal(df_recent, df_full=None, period=3):
-    """Compares recent vs long-term economic policy uncertainty."""
-    col = "Economic Policy Uncertainty Index"
-    try:
-        recent = df_recent[col].dropna().tail(period)
-        if len(recent) < period:
-            return "Insufficient Data"
-        avg = recent.mean()
-        long_term = df_full[col].dropna().rolling(12).mean().iloc[-1]
-        if pd.isna(long_term):
-            return "Insufficient Data"
-        ratio = avg / long_term
-        if ratio >= 1.25:
-            return "High Volatility Risk"
-        if ratio <= 0.85:
-            return "Low Uncertainty Environment"
-        return "Moderate Uncertainty"
-    except Exception as e:
-        print("⚠️ Signal error:", e)
-        return "Insufficient Data"
-
-
-def chicago_fed_national_index_signal(df, period=3):
-    """Evaluates economic momentum from CFNAI."""
-    col = "Chicago Fed National Activity Index"
-    if df is None or col not in df.columns:
-        return "Insufficient Data"
-    recent = df[col].dropna().tail(period)
-    if len(recent) < period:
-        return "Insufficient Data"
-    mean_val = recent.mean()
-    if mean_val > 0.25:
-        return "Above Trend Activity"
-    if mean_val < -0.25:
-        return "Below Trend Activity"
-    return "Near Neutral Benchmark"
-
-
-# --- US-Specific Indicator Mapping ---
-options_us_macro_composite_map = {
-    "Leading Economic Index (Conference Board)": conference_board_leading_signal,
-    "Weekly Economic Index (NY Fed)": weekly_economic_index_signal,
-    "Uncertainty Index Impact": uncertainty_index_signal,
-    "National Activity Composite": chicago_fed_national_index_signal
-}
-
 # -------------------------------------------------------------------------------------------------
-# Merge: Universal + Local Indicator Maps
+# Signal Mapping
 # -------------------------------------------------------------------------------------------------
 ALL_INDICATOR_MAPS = {
-    # Universal Indicators
-    "Real GDP": options_gdp_growth_rate_map,
-    "Nominal GDP": options_nominal_gdp_map,
-    "GDP Components Breakdown": options_gdp_components_map,
-    # Local to Coutry (If applicable)
-    "Macro Composite Signals": options_us_macro_composite_map
+    "Forward Production Conditions": options_forward_production_conditions_map,
+    "Services Activity Conditions": options_services_activity_conditions_map,
 }
 
+# -------------------------------------------------------------------------------------------------
+# Dispatcher
+# -------------------------------------------------------------------------------------------------
 def get_indicator_maps():
     """
-    Returns the full set of indicators applicable to the current country
-    for Economic Growth and Stability.
+    Returns the complete indicator mapping aligned to signal-level use cases.
     """
     return ALL_INDICATOR_MAPS
