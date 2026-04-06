@@ -35,58 +35,6 @@ Functions:
 from fractions import Fraction
 import pandas as pd
 
-
-# -------------------------------------------------------------------------------------------------
-# Function: calculate_asset_metrics_basic
-# Purpose: Compute foundational metrics such as last price, peak/min levels, and bear market onset.
-# Use Case: Asset Snapshot / Metric Summary (Market & Volatility module)
-# -------------------------------------------------------------------------------------------------
-# def calculate_asset_metrics_basic(processed_df):
-#     """
-#     Basic metrics for the asset: last price, max, min prices, and dates.
-#     """
-#     if processed_df.empty:
-#         raise ValueError("The DataFrame is empty, cannot calculate asset metrics.")
-#
-#     last_price = processed_df['close'].iloc[-1] if processed_df.shape[0] > 0 else None
-#     peak_price = processed_df['close'].max() if processed_df.shape[0] > 0 else None
-#
-#     # Ensure we have data for bear market threshold calculation
-#     bear_market_threshold = peak_price * 0.80 if peak_price is not None else None
-#
-#     bear_market_start_date = processed_df[
-#         processed_df['close'] <= bear_market_threshold
-#     ].iloc[0]['date'] if bear_market_threshold is not None else None
-#
-#     # Ensure we have data for max price and date
-#     max_price = processed_df['close'].max() if processed_df.shape[0] > 0 else None
-#     max_price_date = processed_df.loc[
-#         processed_df['close'] == max_price, 'date'
-#     ].iloc[0] if max_price is not None else None
-#
-#     # Ensure we have data for min price and date
-#     min_price = processed_df['close'].min() if processed_df.shape[0] > 0 else None
-#     min_price_date = processed_df.loc[
-#         processed_df['close'] == min_price, 'date'
-#     ].iloc[0] if min_price is not None else None
-#
-#     # Ensure we have data for high price and date
-#     high_price = processed_df['high'].max() if processed_df.shape[0] > 0 else None
-#     high_price_date = processed_df.loc[
-#         processed_df['high'] == high_price, 'date'
-#     ].iloc[0] if high_price is not None else None
-#
-#     # Ensure we have data for low price and date
-#     low_price = processed_df['low'].min() if processed_df.shape[0] > 0 else None
-#     low_price_date = processed_df.loc[
-#         processed_df['low'] == low_price, 'date'
-#     ].iloc[0] if low_price is not None else None
-#
-#     return (
-#         last_price, bear_market_start_date, max_price, max_price_date, min_price, min_price_date,
-#         high_price, high_price_date, low_price, low_price_date
-#     )
-
 def calculate_asset_metrics_basic(processed_df):
     if processed_df.empty:
         raise ValueError("The DataFrame is empty, cannot calculate asset metrics.")
@@ -162,19 +110,28 @@ def calculate_asset_metrics(processed_df):
     """
     Calls the basic metrics and returns the full asset metrics.
     """
+    # Calculate basic price metrics
     last_price, bear_market_start_date, max_price, max_price_date, \
     min_price, min_price_date, high_price, high_price_date, \
     low_price, low_price_date = calculate_asset_metrics_basic(processed_df)
 
+    # Calculate multi-period returns
     daily_return, weekly_return, monthly_return = calculate_asset_returns(processed_df)
 
-    # Calculate days since bear market
-    last_bear_market_date = pd.to_datetime(bear_market_start_date)
-    current_date = pd.to_datetime(processed_df['date'].iloc[-1])
-    days_since_bear_market = (current_date - last_bear_market_date).days
+    # Calculate days since last bear market safely
+    if bear_market_start_date is not None and not pd.isna(bear_market_start_date):
+        last_bear_market_date = pd.to_datetime(bear_market_start_date)
+        current_date = pd.to_datetime(processed_df['date'].iloc[-1])
+        days_since_bear_market = (current_date - last_bear_market_date).days
+    else:
+        # No bear market date available
+        days_since_bear_market = None
+        # Optional: log a warning
+        asset_name = processed_df['asset'].iloc[0] if 'asset' in processed_df.columns else "Unknown Asset"
+        print(f"Warning: Bear market start date missing for {asset_name}")
 
     # Calculate current drawdown (percentage drop from peak to current price)
-    current_drawdown = ((max_price - last_price) / max_price) * 100
+    current_drawdown = ((max_price - last_price) / max_price) * 100 if max_price else None
 
     return (
         last_price,
