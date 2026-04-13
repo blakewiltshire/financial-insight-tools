@@ -145,8 +145,7 @@ asset_files = {
         "Utilities": resolve_data_file_path("etf_sectors", "XLU ETF Stock Price History.csv"),#XLU - https://www.investing.com/etfs/spdr-select-sector---utilities-historical-data
     },
     "ETFs - Countries": {
-        "Unites States": resolve_data_file_path(
-        "etf_countries", "EUSA ETF Stock Price History.csv"),#EUSA - https://www.investing.com/etfs/ishares-msci-usa-historical-data
+        "United States": resolve_data_file_path("etf_countries", "EUSA ETF Stock Price History.csv"), #EUSA - https://www.investing.com/etfs/ishares-msci-usa-historical-data
         "Australia": resolve_data_file_path("etf_countries", "EWA ETF Stock Price History.csv"),#EWA - https://www.investing.com/etfs/ishares-msci-australia-index-historical-data
         "Canada": resolve_data_file_path("etf_countries", "EWC ETF Stock Price History.csv"),#EWC - https://www.investing.com/etfs/ishares-msci-canada-historical-data
         "France": resolve_data_file_path("etf_countries", "EWQ ETF Stock Price History.csv"),#EWQ - https://www.investing.com/etfs/ishares-msci-france-historical-data
@@ -159,8 +158,7 @@ asset_files = {
         "South Korea": resolve_data_file_path("etf_countries", "EWY ETF Stock Price History.csv"),#EWY - https://www.investing.com/etfs/ishares-south-korea-index-historical-data
         "Spain": resolve_data_file_path("etf_countries", "EWP ETF Stock Price History.csv"),#EWP - https://www.investing.com/etfs/ishares-msci-spain-historical-data
         "Switzerland": resolve_data_file_path("etf_countries", "EWL ETF Stock Price History.csv"),#EWL - https://www.investing.com/etfs/ishares-msci-switzerland-index-historical-data
-        "United Kingdom": resolve_data_file_path(
-        "etf_countries", "EWU ETF Stock Price History.csv"),#EWU - https://www.investing.com/etfs/ishares-msci-uk-historical-data
+        "United Kingdom": resolve_data_file_path("etf_countries", "EWU ETF Stock Price History.csv"),#EWU - https://www.investing.com/etfs/ishares-msci-uk-historical-data
     },
     "Short-Term Bonds": {
         "Canada": resolve_data_file_path(

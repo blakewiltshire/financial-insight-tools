@@ -403,7 +403,7 @@ def load_asset_data(
     if asset_file is None:
         # Fallback to Tesla if the requested asset is unavailable
         asset_file = (
-            "app/data_sources/financial_data/equities_mag7/Tesla Stock Price History.csv"
+            "apps/data_sources/financial_data/equities_mag7/Tesla Stock Price History.csv"
         )
         asset_sample = "Tesla"
         asset_category = "Equities - Magnificent Seven"

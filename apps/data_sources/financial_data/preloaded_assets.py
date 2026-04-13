@@ -12,9 +12,9 @@ Provides a predefined dictionary of asset groupings used across multiple decisio
 These asset lists are surfaced when users select "Preloaded Asset Types" from the sidebar input.
 
 Used in:
-- 02_🔎_Market_and_Volatility_Scanner.py
-- 03_⏳_Trade_Timing_and_Confirmation.py
-- 04_📊_Price_Action_and_Trend_Confirmation.py
+- 02_Market_and_Volatility_Scanner.py
+- 03_Trade_Timing_and_Confirmation.py
+- 04_Price_Action_and_Trend_Confirmation.py
 
 Located in `/apps/data_sources/` for clear alignment with other structured data inputs.
 """
