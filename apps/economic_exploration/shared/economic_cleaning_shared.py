@@ -225,11 +225,8 @@ def clean_economic_data(df: pd.DataFrame, theme: str = None) -> pd.DataFrame:
     if not isinstance(df, pd.DataFrame):
         raise TypeError(f"Cleaned output is not a DataFrame — got: {type(df)}")
 
-        if df.empty:
-            raise ValueError("Cleaned DataFrame is empty.")
-
-        return df
-
+    if df.empty:
+        raise ValueError("Cleaned DataFrame is empty.")
 
     print(f"[DEBUG] Returning data type: {type(df)} — Shape: {df.shape if isinstance(df, pd.DataFrame) else 'N/A'}")
 

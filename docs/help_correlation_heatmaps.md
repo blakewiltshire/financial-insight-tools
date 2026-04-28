@@ -12,13 +12,13 @@ Correlation measures the strength and direction of relationship between asset pa
 
 | Correlation Coefficient (r) | Interpretation |
 |---|---|
-| **0.70 to 1.00** | 🔵 Strong positive co-movement |
-| **0.40 to 0.70** | 🟢 Moderate positive relationship |
-| **0.20 to 0.40** | 🟠 Weak positive alignment |
-| **-0.20 to 0.20** | ⚪ Negligible correlation |
-| **-0.40 to -0.20** | 🟠 Weak negative relationship |
-| **-0.70 to -0.40** | 🔴 Moderate inverse behaviour |
-| **-1.00 to -0.70** | 🔻 Strong inverse co-movement |
+| **0.70 to 1.00** | Strong positive co-movement |
+| **0.40 to 0.70** | Moderate positive relationship |
+| **0.20 to 0.40** | Weak positive alignment |
+| **-0.20 to 0.20** | Negligible correlation |
+| **-0.40 to -0.20** | Weak negative relationship |
+| **-0.70 to -0.40** | Moderate inverse behaviour |
+| **-1.00 to -0.70** | Strong inverse co-movement |
 
 ---
 
@@ -60,5 +60,3 @@ The scatter plot visualizes direct relationship between two asset price series.
 - **Top Positive** and **Top Inverse Correlations** highlight which pairs exhibit strongest alignment or opposition.
 
 ---
-
-This is *decision support*: surfacing structural relationships, not prescribing trade actions.

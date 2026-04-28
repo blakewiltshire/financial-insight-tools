@@ -5,22 +5,22 @@
 # pylint: disable=invalid-name, non-ascii-file-name, line-too-long, unused-argument
 
 # -------------------------------------------------------------------------------------------------
-# 📘 Docstring
+# Docstring
 # -------------------------------------------------------------------------------------------------
 """
-🧠 Universal Insight Map — Structured Narrative Layer (Theme-Independent Template)
+Universal Insight Map — Structured Narrative Layer (Theme-Independent Template)
 -------------------------------------------------------------------------------
 
 This module defines universal, plain-language insights and bias classifications for system-wide
 macroeconomic signals. It serves as the primary interpretive layer supporting AI narratives,
 insight panels, macro alignment scoring, and external DSS agents.
 
-✅ System Role:
+System Role:
 - Delivers standardised insight text and directional bias for all signals across themes
 - Supports AI export narratives, scoring overlays, and structured observation pipelines
 - Used automatically when no local override is present in `insight_XXX.py` modules
 
-🧠 AI Persona Alignment Notes:
+AI Persona Alignment Notes:
 - Insight functions return:
     • Textual insight strings (e.g., "Growth remains above trend")
     • Bias labels (e.g., "Growth Supportive", "Neutral", "Warning")
@@ -29,16 +29,16 @@ insight panels, macro alignment scoring, and external DSS agents.
     • DSS macro condition summaries
     • AI persona reflection and export modules
 
-⚙️ System Structure & Compatibility:
-1️⃣ **Strict String Matching**
+System Structure & Compatibility:
+**Strict String Matching**
     - Signal names must match exactly the outputs from `indicator_map_XXX.py` functions.
     - No inference or dynamic mapping allowed.
 
-2️⃣ **Bias Labels Aligned to Scoring Framework**
+**Bias Labels Aligned to Scoring Framework**
     - Valid bias tags: `"Growth Supportive"`, `"Neutral"`, `"Contraction Warning"`
     (or approved equivalents)
 
-3️⃣ **Dispatcher Consistency**
+**Dispatcher Consistency**
     - Interface includes:
         - `indicator` (signal key)
         - `value` (signal string)
@@ -46,59 +46,260 @@ insight panels, macro alignment scoring, and external DSS agents.
         - `extra_value` (optional; unused for universal module but preserved for
         interface consistency)
 
-4️⃣ **No Embedded Logic**
+**No Embedded Logic**
     - This module performs no calculations or evaluations.
     - All inputs are fully processed signal strings passed from upstream evaluation logic.
 
-🧭 Governance Note:
+Governance Note:
 - This universal insight map is system-stable and globally applied.
 - Country-specific or theme-specific extensions occur via local `insight_XXX.py` files only.
 """
 
 # -------------------------------------------------------------------------------------------------
-# Insight Map with Embedded Bias Labels (Neutral Format)
+# Insight Dictionary
 # -------------------------------------------------------------------------------------------------
 insights = {
-    "001_signal_a": {
-        "Signal A1": {
-            "bias": "Supportive",
-            "text": "Condition A1 indicates favourable alignment or constructive trend development."
+
+    # ---------------------------------------------------------------------------------------------
+    # Money Supply and Velocity Dynamics
+    # ---------------------------------------------------------------------------------------------
+    "Narrow Money Conditions": {
+        "Narrow Liquidity Expanding": {
+            "bias": "Growth Supportive",
+            "text": (
+                "Narrow money supply is expanding relative to its recent trend, "
+                "suggesting increased liquidity availability and faster short-cycle "
+                "monetary transmission across the system."
+            )
         },
-        "Signal A2": {
-            "bias": "Warning",
-            "text": "Condition A2 may reflect weakening fundamentals or emerging headwinds."
-        },
-        "Signal A3": {
+        "Narrow Liquidity Stable": {
             "bias": "Neutral",
-            "text": "Condition A3 is broadly consistent with past norms or indecisive behaviour."
+            "text": (
+                "Narrow money supply is broadly stable, indicating liquidity conditions "
+                "are holding close to recent norms without material expansion or contraction."
+            )
+        },
+        "Narrow Liquidity Contracting": {
+            "bias": "Contraction Warning",
+            "text": (
+                "Narrow money supply is contracting relative to its recent trend, "
+                "which may suggest tighter short-cycle liquidity conditions."
+            )
         }
     },
-    "002_signal_b": {
-        "Signal B1": {
-            "bias": "Supportive",
-            "text": "Signal B1 suggests directional strength and alignment with key drivers."
+
+    "Broad Money Conditions": {
+        "Broad Liquidity Expanding": {
+            "bias": "Growth Supportive",
+            "text": (
+                "Broad money supply is expanding, suggesting wider system liquidity "
+                "conditions remain supportive across households, institutions, and credit channels."
+            )
         },
-        "Signal B2": {
-            "bias": "Warning",
-            "text": "Signal B2 may indicate volatility, reversals, or structural dislocations."
-        },
-        "Signal B3": {
+        "Broad Liquidity Stable": {
             "bias": "Neutral",
-            "text": "Signal B3 reflects stable or muted momentum — further monitoring warranted."
+            "text": (
+                "Broad money supply is broadly stable, indicating no significant shift "
+                "in wider monetary conditions."
+            )
+        },
+        "Broad Liquidity Contracting": {
+            "bias": "Contraction Warning",
+            "text": (
+                "Broad money supply is contracting, suggesting broader liquidity conditions "
+                "may be tightening across the financial system."
+            )
         }
     },
-    "003_signal_c": {
-        "Signal C1": {
-            "bias": "Supportive",
-            "text": "Outcome C1 supports confidence in sustained directional positioning."
+
+    "Narrow Money Velocity": {
+        "Narrow Money Circulation Accelerating": {
+            "bias": "Growth Supportive",
+            "text": (
+                "Narrow money velocity is accelerating, indicating faster circulation "
+                "of short-cycle liquidity through the economy."
+            )
         },
-        "Signal C2": {
-            "bias": "Warning",
-            "text": "Outcome C2 reflects divergence or inconsistency across components."
-        },
-        "Signal C3": {
+        "Narrow Money Circulation Stable": {
             "bias": "Neutral",
-            "text": "Outcome C3 remains within expected bounds — no actionable divergence noted."
+            "text": (
+                "Narrow money velocity is broadly stable, suggesting circulation "
+                "patterns remain close to recent norms."
+            )
+        },
+        "Narrow Money Circulation Slowing": {
+            "bias": "Contraction Warning",
+            "text": (
+                "Narrow money velocity is slowing, which may indicate weaker circulation "
+                "and reduced transaction activity."
+            )
+        }
+    },
+
+    "Broad Money Velocity": {
+        "Broad Money Circulation Accelerating": {
+            "bias": "Growth Supportive",
+            "text": (
+                "Broad money velocity is accelerating, suggesting faster movement "
+                "of liquidity across the wider economy."
+            )
+        },
+        "Broad Money Circulation Stable": {
+            "bias": "Neutral",
+            "text": (
+                "Broad money velocity is broadly stable, indicating system-wide "
+                "circulation remains close to recent trends."
+            )
+        },
+        "Broad Money Circulation Slowing": {
+            "bias": "Contraction Warning",
+            "text": (
+                "Broad money velocity is slowing, which may indicate weaker circulation "
+                "and softer demand conditions."
+            )
+        }
+    },
+
+    # ---------------------------------------------------------------------------------------------
+    # Interest Rate Regime and Transmission
+    # ---------------------------------------------------------------------------------------------
+    "Policy Rate Positioning": {
+        "Policy Stance Tightening": {
+            "bias": "Contraction Warning",
+            "text": (
+                "Central bank policy rates are rising relative to recent norms, "
+                "suggesting a tighter monetary stance and greater system constraint."
+            )
+        },
+        "Policy Stance Stable": {
+            "bias": "Neutral",
+            "text": (
+                "Policy rates are broadly stable, indicating no material change "
+                "in the central bank policy stance."
+            )
+        },
+        "Policy Stance Easing": {
+            "bias": "Growth Supportive",
+            "text": (
+                "Policy rates are easing relative to recent norms, suggesting a more "
+                "supportive monetary stance."
+            )
+        }
+    },
+
+    "Funding Rate Conditions": {
+        "Funding Conditions Tightening": {
+            "bias": "Contraction Warning",
+            "text": (
+                "Short-term funding rates are rising, indicating tighter liquidity "
+                "conditions within money markets."
+            )
+        },
+        "Funding Conditions Stable": {
+            "bias": "Neutral",
+            "text": (
+                "Funding rates are broadly stable, suggesting liquidity conditions "
+                "remain close to recent norms."
+            )
+        },
+        "Funding Conditions Easing": {
+            "bias": "Growth Supportive",
+            "text": (
+                "Funding rates are easing, indicating improved liquidity conditions "
+                "within short-term funding markets."
+            )
+        }
+    },
+
+    "Bank Lending Rate Pressure": {
+        "Bank Lending Pressure Rising": {
+            "bias": "Contraction Warning",
+            "text": (
+                "Prime lending rates are rising, suggesting tighter borrowing "
+                "conditions for credit-sensitive activity."
+            )
+        },
+        "Bank Lending Pressure Stable": {
+            "bias": "Neutral",
+            "text": (
+                "Prime lending rates are broadly stable, indicating borrowing "
+                "conditions are holding close to recent norms."
+            )
+        },
+        "Bank Lending Pressure Easing": {
+            "bias": "Growth Supportive",
+            "text": (
+                "Prime lending rates are easing, suggesting less restrictive "
+                "credit conditions."
+            )
+        }
+    },
+
+    "Mortgage Rate Conditions": {
+        "Mortgage Conditions Tightening": {
+            "bias": "Contraction Warning",
+            "text": (
+                "Mortgage borrowing costs are rising, suggesting tighter "
+                "housing financing conditions."
+            )
+        },
+        "Mortgage Conditions Stable": {
+            "bias": "Neutral",
+            "text": (
+                "Mortgage borrowing costs are broadly stable relative to recent norms."
+            )
+        },
+        "Mortgage Conditions Easing": {
+            "bias": "Growth Supportive",
+            "text": (
+                "Mortgage borrowing costs are easing, improving housing financing conditions."
+            )
+        }
+    },
+
+    "Treasury Curve Structure": {
+        "Curve Steepening": {
+            "bias": "Growth Supportive",
+            "text": (
+                "The yield curve is steepening relative to recent norms, which may "
+                "indicate improving growth expectations and less compressed financial conditions."
+            )
+        },
+        "Curve Stable": {
+            "bias": "Neutral",
+            "text": (
+                "The yield curve structure is broadly stable."
+            )
+        },
+        "Curve Flattening": {
+            "bias": "Contraction Warning",
+            "text": (
+                "The yield curve is flattening, which may indicate tighter "
+                "financial conditions or weaker growth expectations."
+            )
+        }
+    },
+
+    "Real Policy Rate Proxy": {
+        "Real Policy Constraint Rising": {
+            "bias": "Contraction Warning",
+            "text": (
+                "The proxy policy rate is rising relative to recent norms, "
+                "suggesting increasing real policy constraint."
+            )
+        },
+        "Real Policy Constraint Stable": {
+            "bias": "Neutral",
+            "text": (
+                "The proxy policy rate remains broadly stable."
+            )
+        },
+        "Real Policy Constraint Easing": {
+            "bias": "Growth Supportive",
+            "text": (
+                "The proxy policy rate is easing, indicating less restrictive "
+                "real policy conditions."
+            )
         }
     }
 }

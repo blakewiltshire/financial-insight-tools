@@ -1,5 +1,5 @@
 # -------------------------------------------------------------------------------------------------
-#  Generic Template — Visual Config (Local Extension)
+# Visual Config (Local Extension)
 # -------------------------------------------------------------------------------------------------
 # pylint: disable=import-error, wrong-import-position, wrong-import-order
 # pylint: disable=invalid-name, non-ascii-file-name, unused-argument, unused-import
@@ -34,7 +34,7 @@ Architecture Summary:
 - Local visuals may call universal chart functions (e.g., from `universal_visual_config_XXX.py`) for consistency.
 
 Usage:
-- Invoked automatically from the main theme module (`100_economic_growth_stability.py`, `200_💼_labour_market_dynamics.py`, etc.)
+- Invoked automatically from the main theme module (`100_economic_growth_stability.py`, `200_labour_market_dynamics.py`, etc.)
 - Required only when country- or theme-specific visuals are implemented.
 - If no local visual config exists, universal visuals render by default.
 
@@ -45,7 +45,7 @@ AI Implementation Notes:
 """
 
 # -------------------------------------------------------------------------------------------------
-# 🧱 Standard Library
+# Standard Library
 # -------------------------------------------------------------------------------------------------
 import os
 import sys
@@ -90,7 +90,7 @@ def get_visual_section_titles():
 # -------------------------------------------------------------------------------------------------
 
 # -------------------------------------------------------------------------------------------------
-#  Chart Dispatcher for Template Theme
+# Chart Dispatcher for Template Theme
 # -------------------------------------------------------------------------------------------------
 def render_all_charts_local(selected_use_case, tab_mapping, df_map):
     """
@@ -138,7 +138,7 @@ def render_all_charts_local(selected_use_case, tab_mapping, df_map):
             else:
                 st.info("ℹ️ No charts available for the selected use case.")
 
-            # 🔧 Optional extension block (add local visuals if needed)
+            # Optional extension block (add local visuals if needed)
             # elif selected_use_case == "Local Macro Indicator":
             #     display_chart_with_fallback(
             #         plot_indicator_line_chart(...),

@@ -1,5 +1,5 @@
 # -------------------------------------------------------------------------------------------------
-# 🧹 Observation Log Cleanup Utility — Validate and Remove Corrupted CSVs
+# Observation Log Cleanup Utility — Validate and Remove Corrupted CSVs
 # -------------------------------------------------------------------------------------------------
 
 import os

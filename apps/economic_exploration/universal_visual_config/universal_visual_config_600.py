@@ -74,7 +74,6 @@ def display_chart_with_fallback(
     if allow_partial and partial_warning:
         st.info(f"ℹ️ {label} displayed with partial data.")
 
-
 # -------------------------------------------------------------------------------------------------
 # Housing Construction Pipeline — Multi-Series Chart
 # -------------------------------------------------------------------------------------------------
@@ -99,7 +98,6 @@ def plot_housing_pipeline_chart(df: pd.DataFrame) -> go.Figure:
 
     fig = go.Figure()
 
-    # --- Authorized ---
     fig.add_trace(go.Scatter(
         x=df["date"],
         y=df["Housing Units Authorized"],
@@ -107,7 +105,6 @@ def plot_housing_pipeline_chart(df: pd.DataFrame) -> go.Figure:
         name="Housing Units Authorized"
     ))
 
-    # --- Starts ---
     fig.add_trace(go.Scatter(
         x=df["date"],
         y=df["Housing Units Started"],
@@ -115,7 +112,6 @@ def plot_housing_pipeline_chart(df: pd.DataFrame) -> go.Figure:
         name="Housing Units Started"
     ))
 
-    # --- Completions ---
     fig.add_trace(go.Scatter(
         x=df["date"],
         y=df["Housing Units Completed"],
@@ -123,7 +119,6 @@ def plot_housing_pipeline_chart(df: pd.DataFrame) -> go.Figure:
         name="Housing Units Completed"
     ))
 
-    # --- Authorized Trend Line ---
     try:
         import numpy as np
 
@@ -149,13 +144,7 @@ def plot_housing_pipeline_chart(df: pd.DataFrame) -> go.Figure:
         yaxis_title="Units (SAAR)",
         height=420,
         template="plotly_white",
-        legend=dict(
-            orientation="h",
-            yanchor="bottom",
-            y=1.02,
-            xanchor="right",
-            x=1
-        )
+        legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1)
     )
 
     return fig
@@ -167,11 +156,11 @@ def plot_housing_pipeline_chart(df: pd.DataFrame) -> go.Figure:
 def plot_mortgage_financing_chart(df: pd.DataFrame) -> go.Figure:
     """
     Renders the Mortgage Financing Conditions chart with:
-    - 30-Year Mortgage Rate
+    - Long-Term Mortgage Rate
     - Linear trend line
     """
 
-    required_cols = ["date", "30-Year Mortgage Rate"]
+    required_cols = ["date", "Long-Term Mortgage Rate"]
 
     if not all(col in df.columns for col in required_cols):
         return go.Figure()
@@ -180,15 +169,15 @@ def plot_mortgage_financing_chart(df: pd.DataFrame) -> go.Figure:
 
     fig.add_trace(go.Scatter(
         x=df["date"],
-        y=df["30-Year Mortgage Rate"],
+        y=df["Long-Term Mortgage Rate"],
         mode="lines",
-        name="30-Year Mortgage Rate"
+        name="Long-Term Mortgage Rate"
     ))
 
     try:
         import numpy as np
 
-        y = df["30-Year Mortgage Rate"].values
+        y = df["Long-Term Mortgage Rate"].values
         x = np.arange(len(y))
 
         coeffs = np.polyfit(x, y, 1)
@@ -210,13 +199,7 @@ def plot_mortgage_financing_chart(df: pd.DataFrame) -> go.Figure:
         yaxis_title="Rate (%)",
         height=420,
         template="plotly_white",
-        legend=dict(
-            orientation="h",
-            yanchor="bottom",
-            y=1.02,
-            xanchor="right",
-            x=1
-        )
+        legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1)
     )
 
     return fig
@@ -247,15 +230,8 @@ def plot_yield_curve_structure_chart(df: pd.DataFrame) -> go.Figure:
         name="Yield Curve Spread"
     ))
 
-    # --- Zero Line ---
-    fig.add_hline(
-        y=0,
-        line_dash="dot",
-        line_color="grey",
-        line_width=1
-    )
+    fig.add_hline(y=0, line_dash="dot", line_color="grey", line_width=1)
 
-    # --- Trend Line ---
     try:
         import numpy as np
 
@@ -279,6 +255,314 @@ def plot_yield_curve_structure_chart(df: pd.DataFrame) -> go.Figure:
         title="Yield Curve Structure",
         xaxis_title="Date",
         yaxis_title="Spread (%)",
+        height=420,
+        template="plotly_white",
+        legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1)
+    )
+
+    return fig
+
+
+# -------------------------------------------------------------------------------------------------
+# Sovereign Debt Sustainability — Dual-Axis Chart
+# -------------------------------------------------------------------------------------------------
+def plot_sovereign_debt_sustainability_chart(df_quarterly: pd.DataFrame, df_annual: pd.DataFrame) -> go.Figure:
+    """
+    Renders sovereign debt sustainability using:
+    - Left axis: Sovereign Debt % GDP
+    - Right axis: Government Fiscal Balance, Government Interest Outlays
+    """
+    fig = go.Figure()
+
+    if df_quarterly is not None and not df_quarterly.empty:
+        if "Sovereign Debt Percentage of GDP" in df_quarterly.columns:
+            fig.add_trace(go.Scatter(
+                x=df_quarterly["date"],
+                y=df_quarterly["Sovereign Debt Percentage of GDP"],
+                mode="lines",
+                name="Sovereign Debt % GDP",
+                yaxis="y1"
+            ))
+
+    if df_annual is not None and not df_annual.empty:
+        if "Government Fiscal Balance" in df_annual.columns:
+            fig.add_trace(go.Bar(
+                x=df_annual["date"],
+                y=df_annual["Government Fiscal Balance"],
+                name="Government Fiscal Balance",
+                yaxis="y2",
+                opacity=0.55
+            ))
+
+        if "Government Interest Outlays" in df_annual.columns:
+            fig.add_trace(go.Scatter(
+                x=df_annual["date"],
+                y=df_annual["Government Interest Outlays"],
+                mode="lines",
+                name="Government Interest Outlays",
+                yaxis="y2"
+            ))
+
+    fig.update_layout(
+        title="Sovereign Debt Sustainability",
+        xaxis_title="Date",
+        yaxis=dict(
+            title="Debt Burden (% GDP)",
+            side="left"
+        ),
+        yaxis2=dict(
+            title="Fiscal / Interest Levels",
+            overlaying="y",
+            side="right",
+            showgrid=False
+        ),
+        height=440,
+        template="plotly_white",
+        legend=dict(
+            orientation="h",
+            yanchor="bottom",
+            y=1.02,
+            xanchor="right",
+            x=1
+        ),
+        barmode="overlay"
+    )
+
+    return fig
+
+
+# -------------------------------------------------------------------------------------------------
+# Sovereign Liquidity and Refinancing Pressure — Dual-Axis Chart
+# -------------------------------------------------------------------------------------------------
+def plot_sovereign_liquidity_refinancing_chart(df_weekly: pd.DataFrame, df_annual: pd.DataFrame) -> go.Figure:
+    """
+    Renders sovereign refinancing conditions using:
+    - Left axis: 10-Year Sovereign Yield
+    - Right axis: Government Interest Outlays, Government Receipts
+    """
+    fig = go.Figure()
+
+    if df_weekly is not None and not df_weekly.empty:
+        if "10-Year Sovereign Yield" in df_weekly.columns:
+            fig.add_trace(go.Scatter(
+                x=df_weekly["date"],
+                y=df_weekly["10-Year Sovereign Yield"],
+                mode="lines",
+                name="10-Year Sovereign Yield",
+                yaxis="y1"
+            ))
+
+    if df_annual is not None and not df_annual.empty:
+        if "Government Interest Outlays" in df_annual.columns:
+            fig.add_trace(go.Scatter(
+                x=df_annual["date"],
+                y=df_annual["Government Interest Outlays"],
+                mode="lines",
+                name="Government Interest Outlays",
+                yaxis="y2"
+            ))
+
+        if "Government Receipts" in df_annual.columns:
+            fig.add_trace(go.Bar(
+                x=df_annual["date"],
+                y=df_annual["Government Receipts"],
+                name="Government Receipts",
+                yaxis="y2",
+                opacity=0.45
+            ))
+
+    fig.update_layout(
+        title="Sovereign Liquidity and Refinancing Pressure",
+        xaxis_title="Date",
+        yaxis=dict(
+            title="Yield (%)",
+            side="left"
+        ),
+        yaxis2=dict(
+            title="Fiscal Levels",
+            overlaying="y",
+            side="right",
+            showgrid=False
+        ),
+        height=440,
+        template="plotly_white",
+        legend=dict(
+            orientation="h",
+            yanchor="bottom",
+            y=1.02,
+            xanchor="right",
+            x=1
+        ),
+        barmode="overlay"
+    )
+
+    return fig
+
+
+# -------------------------------------------------------------------------------------------------
+# Balance Sheet Expansion and System Constraint — Dual-Axis Chart
+# -------------------------------------------------------------------------------------------------
+def plot_balance_sheet_expansion_constraint_chart(
+    df_weekly: pd.DataFrame,
+    df_quarterly: pd.DataFrame
+) -> go.Figure:
+    """
+    Renders sovereign and central bank balance sheet signals using:
+    - Left axis: Sovereign Debt % GDP
+    - Right axis: Central Bank Total Assets
+    """
+    fig = go.Figure()
+
+    # Left axis — sovereign debt burden
+    if df_quarterly is not None and not df_quarterly.empty:
+        if "Sovereign Debt Percentage of GDP" in df_quarterly.columns:
+            fig.add_trace(go.Scatter(
+                x=df_quarterly["date"],
+                y=df_quarterly["Sovereign Debt Percentage of GDP"],
+                mode="lines",
+                name="Sovereign Debt % GDP",
+                yaxis="y1"
+            ))
+
+    # Right axis — central bank balance sheet
+    if df_weekly is not None and not df_weekly.empty:
+        if "Central Bank Total Assets" in df_weekly.columns:
+            fig.add_trace(go.Scatter(
+                x=df_weekly["date"],
+                y=df_weekly["Central Bank Total Assets"],
+                mode="lines",
+                name="Central Bank Total Assets",
+                yaxis="y2"
+            ))
+
+    fig.update_layout(
+        title="Balance Sheet Expansion and System Constraint",
+        xaxis_title="Date",
+        yaxis=dict(
+            title="Sovereign Debt (% GDP)",
+            side="left"
+        ),
+        yaxis2=dict(
+            title="Central Bank Assets ($ Mn)",
+            overlaying="y",
+            side="right",
+            showgrid=False
+        ),
+        height=440,
+        template="plotly_white",
+        legend=dict(
+            orientation="h",
+            yanchor="bottom",
+            y=1.02,
+            xanchor="right",
+            x=1
+        )
+    )
+
+    return fig
+
+# -------------------------------------------------------------------------------------------------
+# Credit Conditions and Financing Pressure — Multi-Series Chart
+# -------------------------------------------------------------------------------------------------
+def plot_credit_conditions_financing_pressure_chart(df: pd.DataFrame) -> go.Figure:
+    """
+    Renders credit spread conditions across quality tiers.
+    """
+    required_cols = [
+        "date",
+        "Corporate Credit Spread",
+        "High Yield Credit Spread",
+        "CCC and Lower Credit Spread",
+    ]
+
+    if not all(col in df.columns for col in required_cols):
+        return go.Figure()
+
+    fig = go.Figure()
+
+    fig.add_trace(go.Scatter(
+        x=df["date"],
+        y=df["Corporate Credit Spread"],
+        mode="lines",
+        name="Corporate Credit Spread"
+    ))
+
+    fig.add_trace(go.Scatter(
+        x=df["date"],
+        y=df["High Yield Credit Spread"],
+        mode="lines",
+        name="High Yield Credit Spread"
+    ))
+
+    fig.add_trace(go.Scatter(
+        x=df["date"],
+        y=df["CCC and Lower Credit Spread"],
+        mode="lines",
+        name="CCC and Lower Credit Spread"
+    ))
+
+    fig.update_layout(
+        title="Credit Conditions and Financing Pressure",
+        xaxis_title="Date",
+        yaxis_title="Spread (%)",
+        height=420,
+        template="plotly_white",
+        legend=dict(
+            orientation="h",
+            yanchor="bottom",
+            y=1.02,
+            xanchor="right",
+            x=1
+        )
+    )
+
+    return fig
+
+
+# -------------------------------------------------------------------------------------------------
+# Bank Balance Sheet Liquidity and Credit Capacity — Multi-Series Chart
+# -------------------------------------------------------------------------------------------------
+def plot_bank_balance_sheet_liquidity_chart(df: pd.DataFrame) -> go.Figure:
+    """
+    Renders bank liquidity and asset capacity signals.
+    """
+    required_cols = [
+        "date",
+        "Bank Cash Assets",
+        "Treasury and Agency Securities Holdings",
+        "Bank Total Assets",
+    ]
+
+    if not all(col in df.columns for col in required_cols):
+        return go.Figure()
+
+    fig = go.Figure()
+
+    fig.add_trace(go.Scatter(
+        x=df["date"],
+        y=df["Bank Cash Assets"],
+        mode="lines",
+        name="Bank Cash Assets"
+    ))
+
+    fig.add_trace(go.Scatter(
+        x=df["date"],
+        y=df["Treasury and Agency Securities Holdings"],
+        mode="lines",
+        name="Treasury and Agency Securities Holdings"
+    ))
+
+    fig.add_trace(go.Scatter(
+        x=df["date"],
+        y=df["Bank Total Assets"],
+        mode="lines",
+        name="Bank Total Assets"
+    ))
+
+    fig.update_layout(
+        title="Bank Balance Sheet Liquidity and Credit Capacity",
+        xaxis_title="Date",
+        yaxis_title="Level",
         height=420,
         template="plotly_white",
         legend=dict(

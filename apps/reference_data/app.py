@@ -146,14 +146,14 @@ with col1:
         st.markdown("### Institutional Reference Directory")
         st.write("Directory of market data platforms, regulators, and statistical portals.")
         if st.button("Launch Institutional Directory"):
-            st.switch_page("pages/22_institutional_reference_directory.py")
+            st.switch_page("pages/24_institutional_reference_directory.py")
 
 with col2:
     with st.container(border=True):
         st.markdown("### Classification Schema Viewer")
         st.write("Visualise economic/industry classification hierarchies.")
         if st.button("Launch Classification Viewer"):
-            st.switch_page("pages/23_classification_schema_viewer.py")
+            st.switch_page("pages/25_classification_schema_viewer.py")
 
 col1, col2 = st.columns(2, gap="small")
 
@@ -162,14 +162,14 @@ with col1:
         st.markdown("### AI Persona Reference")
         st.write("Centralised repository of role definitions and exploration frameworks.")
         if st.button("AI Persona Reference"):
-            st.switch_page("pages/24_ai_persona_reference.py")
+            st.switch_page("pages/26_ai_persona_reference.py")
 
 with col2:
     with st.container(border=True):
         st.markdown("### Index & Glossary Viewer")
         st.write("Alphabetical cross-reference of key concepts, terms, and chapter references.")
         if st.button("Index & Glossary Viewer"):
-            st.switch_page("pages/25_index_glossary_viewer.py")
+            st.switch_page("pages/27_index_glossary_viewer.py")
 
 # -------------------------------------------------------------------------------------------------
 # Footer

@@ -1,32 +1,32 @@
 # -------------------------------------------------------------------------------------------------
-# ⏳ Timeframe Slicer (Platinum Canonical — Period-Based Labeling)
+# Timeframe Slicer (Platinum Canonical — Period-Based Labeling)
 # -------------------------------------------------------------------------------------------------
 # pylint: disable=import-error
 
 # -------------------------------------------------------------------------------------------------
-# 📘 Docstring
+# Docstring
 # -------------------------------------------------------------------------------------------------
 """
-📊 Timeframe Slicer — Economic Exploration Suite (Period-Based Processing)
+Timeframe Slicer — Economic Exploration Suite (Period-Based Processing)
 ---------------------------------------------------------------
 
-✅ System Role:
+System Role:
 - Converts user timeframe selections into precise row-based data slices.
 - Fully decoupled from calendar frequencies (monthly, quarterly, weekly agnostic).
 
-✅ Key Design Principle:
+Key Design Principle:
 - All downstream signal evaluation modules receive data already pre-sliced.
 - Slicing governance remains fully centralized within this module.
 
-✅ Allowed Input Keys:
+Allowed Input Keys:
 - 'Latest', '3P', '6P', '12P', '24P', '60P', 'Full'
 
-✅ Usage Alignment:
+Usage Alignment:
 - Paired with `timeframe_selector.py` UI component
 - Called in all `df_primary_slice` and related slicing operations across thematic modules.
 
 ---------------------------------------------------------------
-🔐 Canonical Platinum Rule — System Locked:
+Canonical Platinum Rule — System Locked:
 - Never embed slicing logic within downstream insight or signal functions.
 - Only this module governs slice window definitions.
 """

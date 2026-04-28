@@ -738,7 +738,7 @@ st.markdown("<hr>", unsafe_allow_html=True)  # Divider for better separation
 # ─────────────────────────────────────────────────────────────────────────────
 st.header('Statistical Analysis')
 
-with st.expander("ℹ️ Help: How to"):
+with st.expander("ℹ️ Help"):
     content = load_markdown_file(HELP_APP_MD)
     if content:
         st.markdown(content, unsafe_allow_html=True)
@@ -797,7 +797,7 @@ else:
         filter_applied_description = "Range filter applied (date range unknown)"
 
 # -------------------------------------------------------------------------------------------------
-# 🧮 Descriptive Statistics — Sidebar Selection and Result Capture
+# Descriptive Statistics — Sidebar Selection and Result Capture
 # -------------------------------------------------------------------------------------------------
 for header, (options_map, categories) in options_maps.items():
     if header == 'Descriptive Statistics':
@@ -824,7 +824,7 @@ for header, (options_map, categories) in options_maps.items():
                 st.warning(f"⚠️ Error computing {option}: {e}")
 
 # -------------------------------------------------------------------------------------------------
-# ☢️ Risk & Uncertainty Analysis — Sidebar Selection and Result Capture
+# Risk & Uncertainty Analysis — Sidebar Selection and Result Capture
 # -------------------------------------------------------------------------------------------------
 for header, (options_map, categories) in options_maps.items():
     if header == 'Risk and Uncertainty Analysis':
@@ -870,7 +870,7 @@ for header, (options_map, categories) in options_maps.items():
                         not achieved under the current filtering conditions.
                         """)
 
-                    # ✅ Save for snapshot
+                    # Save for snapshot
                     risk_uncertainty_results["Probability of Hitting DPT"] = {
                         "selected_dpt_pct": desired_profit_target,
                         "direction": direction,
@@ -893,7 +893,7 @@ for header, (options_map, categories) in options_maps.items():
                 st.warning(f"⚠️ Error computing {option}: {e}")
 
 # -------------------------------------------------------------------------------------------------
-# 🌪️ Market Dynamics — Sidebar Selection and Result Capture
+# Market Dynamics — Sidebar Selection and Result Capture
 # -------------------------------------------------------------------------------------------------
 for header, (options_map, categories) in options_maps.items():
     if header == 'Market Dynamics':
@@ -1441,7 +1441,7 @@ render_macro_interaction_tools_panel(
 )
 
 # -------------------------------------------------------------------------------------------------
-# 🤖 AI Export Panel — Market & Volatility Scanner (Canonical Call)
+# AI Export Panel — Market & Volatility Scanner
 # -------------------------------------------------------------------------------------------------
 if show_ai_export:
     render_ai_export_panel(

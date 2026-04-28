@@ -1,24 +1,24 @@
 # -------------------------------------------------------------------------------------------------
-# 🧠 Insight Generator (Local Wrapper)
+# Insight Generator (Local Wrapper)
 # -------------------------------------------------------------------------------------------------
 # pylint: disable=import-error, wrong-import-position, wrong-import-order
 # pylint: disable=invalid-name, non-ascii-file-name, line-too-long, unused-argument
 
 # -------------------------------------------------------------------------------------------------
-# 📘 Docstring
+# Docstring
 # -------------------------------------------------------------------------------------------------
 """
-📌 Local Insight Summaries — Thematic Module
+Local Insight Summaries — Thematic Module
 ------------------------------------------------
 
 Provides structured textual insights for each use case based on evaluated signals.
 Intended to support user understanding, AI augmentation, and export-ready summaries.
 
-✅ Structure:
+Structure:
 - One function per use case (e.g., `summarise_employment_trends(...)`)
 - Each function should accept a dictionary of signal values
 
-🧠 AI Notes:
+AI Notes:
 - Designed for hybrid manual + AI insight generation
 - Avoid advisory language; maintain analytical, factual tone
 
@@ -28,7 +28,7 @@ Usage:
 """
 
 # -------------------------------------------------------------------------------------------------
-# 📦 Imports and Path Setup
+# Imports and Path Setup
 # -------------------------------------------------------------------------------------------------
 import os
 import sys
@@ -39,12 +39,12 @@ if UNIVERSAL_PATH not in sys.path:
     sys.path.append(UNIVERSAL_PATH)
 
 # -------------------------------------------------------------------------------------------------
-# 🔁 Universal Insight Import
+# Universal Insight Import
 # -------------------------------------------------------------------------------------------------
 from universal_insights_000 import generate_universal_econ_insights
 
 # -------------------------------------------------------------------------------------------------
-# 🗺️ Local Insight Definitions (Optional)
+# Local Insight Definitions (Optional)
 # -------------------------------------------------------------------------------------------------
 LOCAL_INSIGHTS = {
     # Placeholder for local indicator-specific insights
@@ -55,7 +55,7 @@ LOCAL_INSIGHTS = {
 }
 
 # -------------------------------------------------------------------------------------------------
-# 🧭 Combined Dispatcher
+# Combined Dispatcher
 # -------------------------------------------------------------------------------------------------
 def generate_econ_insights(indicator: str, value: str, timeframe: str) -> str:
     """

@@ -1,5 +1,5 @@
 # -------------------------------------------------------------------------------------------------
-# Economic Exploration — 🔗 Thematic Correlation Explorer
+# Economic Exploration — Thematic Correlation Explorer
 # -------------------------------------------------------------------------------------------------
 # pylint: disable=import-error, wrong-import-position, wrong-import-order
 
@@ -150,15 +150,20 @@ for country, themes in ECONOMIC_SERIES_MAP.items():
     for theme_code, templates in themes.items():
         if theme_code in selected_theme_codes:
             for template_key, indicators in templates.items():
-                for indicator_name, metadata in indicators.items():
+                for registry_key, metadata in indicators.items():
                     if metadata.get("allow_correlation"):
                         seasonal, value_type, unit_type = standardise_metadata_fields(metadata)
+
+                        cleaned_name = metadata.get("name", registry_key)
+                        ui_display_name = metadata.get("ui_display_name", cleaned_name)
+
                         eligible_indicators.append({
-                            "label": f"{country} — {indicator_name}",
+                            "label": f"{country} — {ui_display_name}",
                             "country": country,
                             "theme_code": theme_code,
                             "indicator_id": metadata.get("indicator_id"),
-                            "indicator_name": indicator_name,
+                            "registry_key": registry_key,
+                            "indicator_name": cleaned_name,
                             "seasonal": seasonal,
                             "value_type": value_type,
                             "unit_type": unit_type
@@ -180,25 +185,25 @@ if not selected_objects:
     st.stop()
 
 # -------------------------------------------------------------------------------------------------
-# Metadata Diagnostics Summary (Canonical)
+# Metadata Diagnostics Summary
 # -------------------------------------------------------------------------------------------------
 for category, label in [("seasonal", "Seasonal Adjustment"),
                         ("value_type", "Value Type"),
                         ("unit_type", "Unit Scale")]:
-    unique_vals = set([obj[category] for obj in selected_objects])
+    unique_vals = sorted(set(obj[category] for obj in selected_objects))
     if len(unique_vals) > 1:
         st.sidebar.warning(f"⚠ Mixed {label}: {', '.join(unique_vals)}")
 
 with st.sidebar.expander("ℹ️ Harmonisation Signals"):
     st.markdown("""
 **Seasonal Adjustment**
-Differences may introduce distortion between adjusted and raw data.
+Differences between adjusted and non-adjusted data may affect comparability and timing.
 
 **Value Type**
-Mixing levels, growth rates, and indexes may affect comparability.
+Mixing aggregates, components, growth rates, percentages, or indexes may affect interpretation.
 
 **Unit Scale**
-Standardisation helps but scaling disparities still warrant caution.
+Standardisation improves readability, but underlying scale and economic basis may still differ.
 """)
 
 # -------------------------------------------------------------------------------------------------
@@ -210,6 +215,7 @@ for obj in selected_objects:
         "country": obj["country"],
         "theme_code": obj["theme_code"],
         "indicator_id": obj["indicator_id"],
+        "registry_key": obj["registry_key"],
         "indicator_name": obj["indicator_name"]
     }
     series, metadata, status = load_indicator_data(loader_obj, PROJECT_PATH)
@@ -272,7 +278,7 @@ summary_df = pd.DataFrame(summary_data)
 # -------------------------------------------------------------------------------------------------
 # Main Correlation Analysis Tabs (Canonical)
 # -------------------------------------------------------------------------------------------------
-tabs = st.tabs(["Overview Summary", "📉 Short-Term (50 Periods)", "📊 Medium-Term (200 Periods)", "🕰 Full History", "ℹ️ Help"])
+tabs = st.tabs(["Overview Summary", "Short-Term (50 Periods)", "Medium-Term (200 Periods)", "Full History", "ℹ️ Help"])
 
 # Overview Tab
 with tabs[0]:

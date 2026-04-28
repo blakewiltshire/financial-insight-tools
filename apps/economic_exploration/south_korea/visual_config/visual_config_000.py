@@ -45,10 +45,11 @@ AI Implementation Notes:
 """
 
 # -------------------------------------------------------------------------------------------------
-# 🧱 Standard Library
+# Standard Library
 # -------------------------------------------------------------------------------------------------
 import os
 import sys
+import pandas as pd
 import streamlit as st
 
 # -------------------------------------------------------------------------------------------------
@@ -70,14 +71,16 @@ from universal_visual_config_000 import (
 )
 
 # -------------------------------------------------------------------------------------------------
+# Shared Statistical Profile Import
+# -------------------------------------------------------------------------------------------------
+from universal_visual_shared import calculate_statistical_profile
+
+# -------------------------------------------------------------------------------------------------
 # Section Header Mapping
 # -------------------------------------------------------------------------------------------------
 def get_visual_section_titles():
     """
     Returns a mapping of use case labels to section headers in the UI.
-
-    Returns:
-        dict: Mapping of use case name → section display title.
     """
     return {
         "Signal A": "Signal A — Time Series",
@@ -86,11 +89,92 @@ def get_visual_section_titles():
     }
 
 # -------------------------------------------------------------------------------------------------
-# Local Chart Configs (If applicable)
+# Local Helpers
 # -------------------------------------------------------------------------------------------------
+def _prepare_df(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Resets index where needed, normalises the date column, and sorts values.
+    """
+    if df is None or df.empty:
+        return df
+
+    df = df.copy()
+
+    if hasattr(df, "reset_index"):
+        df = df.reset_index()
+
+    if "date" in df.columns:
+        df["date"] = pd.to_datetime(df["date"], errors="coerce")
+        df = df.dropna(subset=["date"]).sort_values("date")
+
+    return df
+
+
+def _get_visual_df(tab_df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Returns the already-sliced dataframe provided by tab_mapping.
+    """
+    return _prepare_df(tab_df)
+
+
+def _get_stable_series_selection(widget_key: str, options: list[str], default_index: int = 0) -> str:
+    """
+    Preserves statistical profile series selection across Streamlit reruns.
+    """
+    if not options:
+        return None
+
+    if widget_key not in st.session_state or st.session_state[widget_key] not in options:
+        st.session_state[widget_key] = options[default_index]
+
+    selected = st.selectbox(
+        "Select series for statistical profile",
+        options=options,
+        index=options.index(st.session_state[widget_key]),
+        key=f"{widget_key}__selectbox"
+    )
+
+    st.session_state[widget_key] = selected
+    return selected
+
+
+def _render_statistical_profile(
+    df: pd.DataFrame,
+    candidate_columns: list[str],
+    widget_key: str,
+    warning_message: str
+) -> None:
+    """
+    Renders a generic statistical profile block below the chart.
+    """
+    available_series = [
+        col for col in candidate_columns
+        if df is not None and not df.empty and col in df.columns and df[col].dropna().shape[0] > 0
+    ]
+
+    if not available_series:
+        st.warning(warning_message)
+        return
+
+    selected_series = _get_stable_series_selection(
+        widget_key=widget_key,
+        options=available_series,
+        default_index=0
+    )
+
+    stats_df = calculate_statistical_profile(df[selected_series])
+
+    if stats_df.empty:
+        st.warning("⚠️ Statistical profile not available — selected series contains insufficient data.")
+        return
+
+    st.caption("Statistical profile reflects the currently selected period window.")
+    st.markdown(f"**Statistical Profile: {selected_series}**")
+    st.table(stats_df.set_index("Metric"))
+
 
 # -------------------------------------------------------------------------------------------------
-#  Chart Dispatcher for Template Theme
+# Chart Dispatcher for Template Theme
 # -------------------------------------------------------------------------------------------------
 def render_all_charts_local(selected_use_case, tab_mapping, df_map):
     """
@@ -100,47 +184,58 @@ def render_all_charts_local(selected_use_case, tab_mapping, df_map):
         selected_use_case (str): Selected insight use case (Signal A, B, or C).
         tab_mapping (dict): Dictionary of tab label → dataframe subset.
         df_map (dict): Original dataset registry dictionary.
-
-    Renders:
-        Streamlit visual tabs with fallback messaging.
     """
-    for tab, data_slice in tab_mapping.items():
+    for tab_index, (tab, data_slice) in enumerate(tab_mapping.items()):
         with tab:
-            df = data_slice.reset_index()
+            df = _get_visual_df(data_slice)
 
             # --- Signal A ---
             if selected_use_case == "Signal A":
-                subtab1, = st.tabs(["Signal A Chart"])
-                with subtab1:
-                    display_chart_with_fallback(
-                        plot_signal_a_chart(df),
-                        label=f"{tab}_SignalA"
-                    )
+                display_chart_with_fallback(
+                    plot_signal_a_chart(df),
+                    label=f"{tab}_SignalA"
+                )
+
+                st.markdown("---")
+
+                _render_statistical_profile(
+                    df=df,
+                    candidate_columns=["Signal A"],
+                    widget_key=f"stats_profile_000_signal_a_tab_{tab_index}",
+                    warning_message="⚠️ Statistical profile not available — no Signal A series loaded."
+                )
 
             # --- Signal B ---
             elif selected_use_case == "Signal B":
-                subtab1, = st.tabs(["Signal B Chart"])
-                with subtab1:
-                    display_chart_with_fallback(
-                        plot_signal_b_chart(df),
-                        label=f"{tab}_SignalB"
-                    )
+                display_chart_with_fallback(
+                    plot_signal_b_chart(df),
+                    label=f"{tab}_SignalB"
+                )
+
+                st.markdown("---")
+
+                _render_statistical_profile(
+                    df=df,
+                    candidate_columns=["Signal B"],
+                    widget_key=f"stats_profile_000_signal_b_tab_{tab_index}",
+                    warning_message="⚠️ Statistical profile not available — no Signal B series loaded."
+                )
 
             # --- Signal C ---
             elif selected_use_case == "Signal C":
-                subtab1, = st.tabs(["Signal C Chart"])
-                with subtab1:
-                    display_chart_with_fallback(
-                        plot_signal_c_chart(df),
-                        label=f"{tab}_SignalC"
-                    )
+                display_chart_with_fallback(
+                    plot_signal_c_chart(df),
+                    label=f"{tab}_SignalC"
+                )
+
+                st.markdown("---")
+
+                _render_statistical_profile(
+                    df=df,
+                    candidate_columns=["Signal C"],
+                    widget_key=f"stats_profile_000_signal_c_tab_{tab_index}",
+                    warning_message="⚠️ Statistical profile not available — no Signal C series loaded."
+                )
 
             else:
                 st.info("ℹ️ No charts available for the selected use case.")
-
-            # 🔧 Optional extension block (add local visuals if needed)
-            # elif selected_use_case == "Local Macro Indicator":
-            #     display_chart_with_fallback(
-            #         plot_indicator_line_chart(...),
-            #         label="Local Chart Title"
-            #     )

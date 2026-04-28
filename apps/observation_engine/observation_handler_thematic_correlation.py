@@ -71,13 +71,13 @@ def observation_input_form(
         "the current context?")
 
         relevance_tag = st.selectbox("Relevance Level", [
-            "None", "🌱 Early Observation", "📊 Relevant to This Use Case", "🚨 Potential Macro Shift"
+            "None", "Early Observation", "Relevant to This Use Case", "Potential Macro Shift"
         ], key=f"{form_key}_relevance")
 
         st.caption("**Sentiment Bias** — Does this observation support or contradict the directional macro bias?")
 
         sentiment_tag = st.selectbox("Sentiment Bias", [
-            "None", "✅ Supportive", "⚠️ Neutral", "🚨 Contradictory"
+            "None", "Supportive", "Neutral", "Contradictory"
         ], key=f"{form_key}_sentiment")
 
         st.caption("**Observation Timing** — Indicate whether this is a live note, directly linked to a data point, or a retrospective comment.")

@@ -11,9 +11,9 @@ This module surfaces structural relationships across macroeconomic indicators, e
   Pairwise Pearson correlation coefficients are calculated between all selected indicators. Correlation strength ranges from `-1.0` (perfect inverse) to `+1.0` (perfect direct alignment).
 
 - **Rolling Timeline Slicing:**  
-  - 📉 *Short-Term (50 periods)* — most recent dynamics  
-  - 📊 *Medium-Term (200 periods)* — broader structural trends  
-  - 🕰 *Full History* — full available dataset range
+  - *Short-Term (50 periods)* — most recent dynamics  
+  - *Medium-Term (200 periods)* — broader structural trends  
+  - *Full History* — full available dataset range
 
 Interpreting the Correlation Outputs
 

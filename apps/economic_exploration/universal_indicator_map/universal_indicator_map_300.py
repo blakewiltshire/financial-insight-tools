@@ -5,10 +5,10 @@
 # pylint: disable=invalid-name, non-ascii-file-name
 
 # -------------------------------------------------------------------------------------------------
-# 📘 Docstring
+#  Docstring
 # -------------------------------------------------------------------------------------------------
 """
-📊 Universal Indicator Signal Functions — System Core Logic
+Universal Indicator Signal Functions — System Core Logic
 -----------------------------------------------------------
 
 This module defines the universal signal-generation functions for the
@@ -16,12 +16,12 @@ Economic Exploration suite.
 It governs baseline indicator evaluation across all thematic groupings
 (themes 100–2100+).
 
-✅ System Role:
+System Role:
 - Forms the core signal processing logic across all countries and themes
 - Enables insight generation, macro alignment scoring, and AI persona compatibility
 - Supports real-time macro summaries, AI export pipelines, and structured DSS workflows
 
-🧠 AI Persona Alignment Notes:
+AI Persona Alignment Notes:
 - Signal functions must return strict string-based classifications
   (e.g., "Accelerating", "Stable", "Decelerating", "Insufficient Data")
 - Output strings are consumed directly by external AI workflows, structured
@@ -29,16 +29,16 @@ insights panels, and DSS scoring engines
 - No numeric payloads are returned; outputs are pure interpretive classifications
 
 ---------------------------------------------------------------
-⚙️ System Structure — Integration & Compatibility Requirements
+System Structure — Integration & Compatibility Requirements
 ---------------------------------------------------------------
 
-1️⃣ **Function Signature Consistency**
+**Function Signature Consistency**
 - All signal functions must accept:
     - `df` (input dataframe)
     - `period=None` (optional parameter, always included for compatibility)
 - Signature: `def signal_function(df, period=None): ...`
 
-2️⃣ **String-Based Return Values**
+**String-Based Return Values**
 - Every function must return a string output suitable for:
     - Signal summaries
     - Insight generation
@@ -46,15 +46,15 @@ insights panels, and DSS scoring engines
 - Example return values: `"Uptrend Confirmed"`, `"Mixed Signals"`, `"Flat"`,
 `"Insufficient Data"`
 
-3️⃣ **Pure Logic (No Side Effects)**
+**Pure Logic (No Side Effects)**
 - No functions may reference hardcoded external data, models, or manual overrides.
 - Outputs must derive entirely from the provided dataframe inputs.
 
-4️⃣ **No Numeric Secondary Payloads**
+**No Numeric Secondary Payloads**
 - Signal outputs are always returned as **single strings only**.
 - No tuples, numeric scores, or dynamic secondary values are allowed.
 
-5️⃣ **Dispatcher Independence**
+**Dispatcher Independence**
 - Signal routing and evaluation orchestration is handled externally via:
     - `get_indicator_maps()`
     - `compute_econ_alignment()`
@@ -63,7 +63,7 @@ insights panels, and DSS scoring engines
 directly into their return strings. All entity-specific content is handled downstream
 during insight generation.
 
-🧭 Governance Note:
+Governance Note:
 - Universal signal modules form system-wide stable infrastructure.
 - User extensions, overrides, or country-specific adaptations occur only within local
 `indicator_map_XXX.py` files.

@@ -1,5 +1,5 @@
 # -------------------------------------------------------------------------------------------------
-# 🔗 Correlation Visualisation — Heatmap & Overlay Display Scaffold (Platinum Canonical Build)
+# Correlation Visualisation — Heatmap & Overlay Display Scaffold (Platinum Canonical Build)
 # -------------------------------------------------------------------------------------------------
 # pylint: disable=import-error, wrong-import-position, wrong-import-order
 

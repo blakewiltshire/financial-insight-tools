@@ -27,12 +27,12 @@ and volatility comparisons
 Structure
 - Modules accessed via the main window using `st.switch_page()` (no sidebar navigation)
 - Markdown and branding loaded from shared directories (`/docs`, `/brand`)
-- Page resolution based on `NN_🔠_Descriptive_Name.py` format for consistency
+- Page resolution based on `NN_Descriptive_Name.py` format for consistency
 
 User Considerations
 - All tools run inside the same Streamlit instance for unified correlation analysis
 - Supports pre-configured use cases and custom comparisons
-- For simultaneous cross-module workflows, launch via the 🚀 Financial Insight Tools entry point
+- For simultaneous cross-module workflows, launch via the Financial Insight Tools entry point
 
 Developer Notes
 - Pages are fully self-contained and interoperable via shared helper utilities
@@ -189,6 +189,25 @@ with col1:
         st.write("Visualise multi-asset correlation matrices by theme.")
         if st.button("View Heatmaps & Macro Themes"):
             st.switch_page("pages/13_correlation_heatmaps_and_themes.py")
+
+with col2:
+    with st.container(border=True):
+        st.markdown("### Relative Macro Transmission")
+        st.write("Track exogenous differentials across systems, including growth, rates, spreads, FX pressure, and macro-asset divergence.")
+        if st.button("Launch Relative Macro Transmission"):
+            st.switch_page("pages/14_relative_macro_transmission.py")
+
+col1, col2 = st.columns(2, gap="small")
+
+with col1:
+    with st.container(border=True):
+        st.markdown("### Positioning & Crowding")
+        st.write("Review leveraged positioning, crowding, percentile extremes, and flip behaviour across core futures markets.")
+        if st.button("Launch Positioning & Crowding"):
+            st.switch_page("pages/15_positioning_and_crowding.py")
+
+with col2:
+    st.empty()
 
 # -------------------------------------------------------------------------------------------------
 # Footer

@@ -5,24 +5,24 @@
 # pylint: disable=invalid-name, non-ascii-file-name
 
 # -------------------------------------------------------------------------------------------------
-# 📘 Docstring
+# Docstring
 # -------------------------------------------------------------------------------------------------
 """
-🧩 Universal Use Case Definitions — Economic Exploration Core System
+Universal Use Case Definitions — Economic Exploration Core System
 -----------------------------------------------------------------------
 
 This module defines the default universal use case mappings for thematic modules within
 the Economic Exploration suite. It governs UI structure, scoring alignment, and AI-supported
 framing for any theme not explicitly overridden at country level.
 
-✅ System Role:
+System Role:
 - Supplies standardised use case definitions to:
     • Charting engines (tab ordering, dropdown generation)
     • Macro alignment scoring panels
     • AI persona narrative structures and DSS exports
     • Placeholder rendering for unconfigured modules
 
-🧠 AI Persona & DSS Notes:
+AI Persona & DSS Notes:
 - Use case keys must match entries used in:
     • `indicator_map_XXX.py`
     • `insight_XXX.py`
@@ -33,21 +33,21 @@ framing for any theme not explicitly overridden at country level.
     • Observational journaling
     • Triangular navigation pathways across DSS
 
-⚙️ Structure & Interface Governance:
-1️⃣ **Strict Key Consistency**
+Structure & Interface Governance:
+**Strict Key Consistency**
     - Use case names in this module must exactly match those referenced across indicator maps and insights.
 
-2️⃣ **Indicator Registry**
+**Indicator Registry**
     - Each use case includes a list of indicator signal labels used for scoring and insight evaluation.
     - These indicators must exist within the corresponding universal indicator maps.
 
-3️⃣ **Metadata Inclusion**
+**Metadata Inclusion**
     - Each use case includes:
         - `"Indicators"` → List of signals
         - `"Categories"` → UI grouping tags (used for streamlit tabs, filters)
         - `"Description"` → AI-assist narrative frame
 
-🧭 Governance Note:
+Governance Note:
 - This universal use case map provides system-wide default scaffolding.
 - Local overrides per country or theme occur via local `use_cases_XXX.py`.
 - No universal entries are modified by users directly — universal remains stable foundation.
@@ -57,20 +57,43 @@ framing for any theme not explicitly overridden at country level.
 # Use Cases
 # -------------------------------------------------------------------------------------------------
 USE_CASES = {
-    "Signal A": {
-        "Indicators": ["Signal A"],
-        "Categories": ["Template Category"],
-        "Description": "Standalone demonstration of Signal A logic and rendering."
+    "Country External Balance": {
+        "Indicators": [
+            "Export Conditions",
+            "Import Conditions",
+            "Trade Balance Position",
+            "Current Account Position",
+            "Reserve Layer Support"
+        ],
+        "Categories": [
+            "Exports",
+            "Imports",
+            "Trade Balances",
+            "Current Account Balance",
+            "Reserve Layer"
+        ],
+        "Description": (
+            "Tracks exports, imports, trade balances, current account position, and reserve support "
+            "to observe how external balance conditions evolve under changing global demand and trade structure."
+        )
     },
-    "Signal B": {
-        "Indicators": ["Signal B"],
-        "Categories": ["Template Category"],
-        "Description": "Standalone demonstration of Signal B logic and rendering."
-    },
-    "Signal C": {
-        "Indicators": ["Signal C"],
-        "Categories": ["Template Category"],
-        "Description": "Standalone demonstration of Signal C logic and rendering."
+    "External Constraint Capital Flow": {
+        "Indicators": [
+            "Current Account Anchor",
+            "Net International Position",
+            "Investment Income Pressure",
+            "Reserve Support Conditions"
+        ],
+        "Categories": [
+            "Current Account Anchor",
+            "Net International Position",
+            "Investment Income",
+            "Reserve Support"
+        ],
+        "Description": (
+            "Tracks current account position, external asset and liability structure, investment income, "
+            "and reserve support to observe capital flow dependence and broader external constraint."
+        )
     }
 }
 

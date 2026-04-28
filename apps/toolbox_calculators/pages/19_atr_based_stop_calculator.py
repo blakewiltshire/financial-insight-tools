@@ -263,7 +263,7 @@ for i, (label, window) in enumerate(zip(["Short-Term", "Medium-Term"], [50, 200]
         render_atr_analysis(df_short, f"{label} — {window} Days")
 
 
-with st.expander("ℹ️ Help: How to interpret ATR-based analysis"):
+with st.expander("ℹ️ Help"):
     content = load_markdown_file(HELP_APP_MD)
     if content:
         st.markdown(content, unsafe_allow_html=True)

@@ -5,22 +5,22 @@
 # pylint: disable=invalid-name, non-ascii-file-name, line-too-long, unused-argument
 
 # -------------------------------------------------------------------------------------------------
-# 📘 Docstring
+# Docstring
 # -------------------------------------------------------------------------------------------------
 """
-🧠 Universal Insight Map — Structured Narrative Layer (Theme-Independent Template)
+Universal Insight Map — Structured Narrative Layer (Theme-Independent Template)
 -------------------------------------------------------------------------------
 
 This module defines universal, plain-language insights and bias classifications for system-wide
 macroeconomic signals. It serves as the primary interpretive layer supporting AI narratives,
 insight panels, macro alignment scoring, and external DSS agents.
 
-✅ System Role:
+System Role:
 - Delivers standardised insight text and directional bias for all signals across themes
 - Supports AI export narratives, scoring overlays, and structured observation pipelines
 - Used automatically when no local override is present in `insight_XXX.py` modules
 
-🧠 AI Persona Alignment Notes:
+AI Persona Alignment Notes:
 - Insight functions return:
     • Textual insight strings (e.g., "Growth remains above trend")
     • Bias labels (e.g., "Growth Supportive", "Neutral", "Warning")
@@ -29,16 +29,16 @@ insight panels, macro alignment scoring, and external DSS agents.
     • DSS macro condition summaries
     • AI persona reflection and export modules
 
-⚙️ System Structure & Compatibility:
-1️⃣ **Strict String Matching**
+System Structure & Compatibility:
+**Strict String Matching**
     - Signal names must match exactly the outputs from `indicator_map_XXX.py` functions.
     - No inference or dynamic mapping allowed.
 
-2️⃣ **Bias Labels Aligned to Scoring Framework**
+**Bias Labels Aligned to Scoring Framework**
     - Valid bias tags: `"Growth Supportive"`, `"Neutral"`, `"Contraction Warning"`
     (or approved equivalents)
 
-3️⃣ **Dispatcher Consistency**
+**Dispatcher Consistency**
     - Interface includes:
         - `indicator` (signal key)
         - `value` (signal string)
@@ -46,11 +46,11 @@ insight panels, macro alignment scoring, and external DSS agents.
         - `extra_value` (optional; unused for universal module but preserved for
         interface consistency)
 
-4️⃣ **No Embedded Logic**
+**No Embedded Logic**
     - This module performs no calculations or evaluations.
     - All inputs are fully processed signal strings passed from upstream evaluation logic.
 
-🧭 Governance Note:
+Governance Note:
 - This universal insight map is system-stable and globally applied.
 - Country-specific or theme-specific extensions occur via local `insight_XXX.py` files only.
 """

@@ -1,30 +1,30 @@
 # -------------------------------------------------------------------------------------------------
-# ⏳ Timeframe Selector (Platinum Canonical — Period-Based Labeling)
+# Timeframe Selector (Platinum Canonical — Period-Based Labeling)
 # -------------------------------------------------------------------------------------------------
 # pylint: disable=import-error
 
 # -------------------------------------------------------------------------------------------------
-# 📘 Docstring
+# Docstring
 # -------------------------------------------------------------------------------------------------
 """
-📊 Timeframe Selector UI Component — Economic Exploration Suite
+Timeframe Selector UI Component — Economic Exploration Suite
 ---------------------------------------------------------------
 
-✅ System Role:
+System Role:
 - Provides standardised sidebar interface for timeframe selection across all
   Economic Exploration thematic modules.
 
-✅ Period-Based Governance:
+Period-Based Governance:
 - Timeframes are row-based, frequency-neutral selections (not calendar dependent).
 - Supports datasets across quarterly, monthly, weekly or mixed-period inputs.
 - Downstream signal processing functions receive correctly pre-sliced datasets.
 
-✅ Returned Payload:
+Returned Payload:
 - `selected`: internal timeframe key used by downstream slicer functions.
 - `label`: user-readable string for annotation, AI persona reference, or export metadata.
 
 ---------------------------------------------------------------
-🔐 Canonical Platinum Rule — System Locked:
+Canonical Platinum Rule — System Locked:
 - This module governs uniform user interface behavior across all themes.
 - Never embed frequency assumptions into downstream logic — slicing remains fully decoupled.
 """

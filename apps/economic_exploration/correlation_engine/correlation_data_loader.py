@@ -1,5 +1,5 @@
 # -------------------------------------------------------------------------------------------------
-# 🔗 Universal Correlation Data Loader (Hardened - Production Grade)
+# Universal Correlation Data Loader
 # -------------------------------------------------------------------------------------------------
 # pylint: disable=import-error, wrong-import-position, wrong-import-order
 
@@ -39,6 +39,7 @@ from harmonisation_engine import standardise_metadata_fields
 # Country Code Mapping (ISO ➔ Folder Code)
 # -------------------------------------------------------------------------------------------------
 COUNTRY_FOLDER_MAP = {
+    "World": "world",
     "United States": "us",
     "United Kingdom": "uk",
     "Germany": "de",
@@ -73,16 +74,9 @@ def _safe_series_cleanup(series: pd.Series) -> pd.Series:
     series = series.copy()
     series.index = idx
 
-    # Drop bad dates
     series = series[~series.index.isna()]
-
-    # Sort
     series = series.sort_index()
-
-    # Drop duplicate timestamps (critical for resample/reindex)
     series = series[~series.index.duplicated(keep="last")]
-
-    # Numeric coercion (read_csv(thousands=',' ) helps, but some columns still arrive as object)
     series = pd.to_numeric(series, errors="coerce").dropna()
 
     return series
@@ -91,26 +85,17 @@ def _safe_series_cleanup(series: pd.Series) -> pd.Series:
 def _harmonise_to_monthly(series: pd.Series, frequency_raw: str) -> pd.Series:
     """
     Harmonise a series to monthly frequency.
-
-    Rules:
-    - Quarterly: convert to quarter-end timestamps, dedupe, then forward-fill to monthly.
-    - Monthly: forward-fill to month-end.
-    - Weekly: aggregate to weekly mean, then monthly mean.
-    - Unknown: forward-fill to monthly (best-effort).
     """
     if series is None or series.empty:
         return series
 
     freq = (frequency_raw or "").strip().lower()
-
-    # Always clean before any resample
     series = _safe_series_cleanup(series)
 
     if series.empty:
         return series
 
     if "quarter" in freq:
-        # Collapse to quarter-end, then monthly
         series.index = series.index.to_period("Q").to_timestamp("Q")
         series = series.sort_index()
         series = series[~series.index.duplicated(keep="last")]
@@ -120,17 +105,13 @@ def _harmonise_to_monthly(series: pd.Series, frequency_raw: str) -> pd.Series:
         series = series.resample("M").ffill()
 
     elif "week" in freq:
-        # Weekly -> Monthly (mean)
         series = series.resample("W").mean()
         series = series.resample("M").mean()
 
     else:
-        # Best-effort: treat as low frequency and forward-fill
         series = series.resample("M").ffill()
 
-    # Final cleanup (ensures resample didn't create oddities)
     series = _safe_series_cleanup(series)
-
     return series
 
 
@@ -146,20 +127,37 @@ def _find_registry_entry(
     try:
         country = indicator_obj["country"]
         theme_code = indicator_obj["theme_code"]
-        indicator_name = indicator_obj["indicator_name"]
+        registry_key = indicator_obj.get("registry_key")
+        indicator_name = indicator_obj.get("indicator_name")
 
         theme_block = ECONOMIC_SERIES_MAP[country][theme_code]
 
-        for template_key in theme_block:
-            if indicator_name in theme_block[template_key]:
-                return theme_block[template_key][indicator_name], None
+        # 1. Exact lookup by unique outer registry key
+        if registry_key:
+            for template_key, indicators in theme_block.items():
+                if registry_key in indicators:
+                    return indicators[registry_key], None
 
-        return None, f"Indicator metadata not found for '{indicator_name}' in {country} ➔ {theme_code}"
+        # 2. Fallback lookup by metadata["name"]
+        if indicator_name:
+            for template_key, indicators in theme_block.items():
+                for _, metadata in indicators.items():
+                    if metadata.get("name") == indicator_name:
+                        return metadata, None
+
+        return None, (
+            f"Indicator metadata not found for registry key "
+            f"'{registry_key}' / name '{indicator_name}' "
+            f"in {country} ➔ {theme_code}"
+        )
 
     except KeyError as e:
         return None, f"Metadata key missing: {str(e)}"
     except Exception:
-        return None, f"Metadata not found for {indicator_obj.get('country')} ➔ {indicator_obj.get('theme_code')}"
+        return None, (
+            f"Metadata not found for "
+            f"{indicator_obj.get('country')} ➔ {indicator_obj.get('theme_code')}"
+        )
 
 
 # -------------------------------------------------------------------------------------------------
@@ -182,7 +180,6 @@ def load_indicator_data(
         str: status message (empty if success)
     """
 
-    # --- Validate country mapping ---
     country = indicator_obj.get("country")
     country_code = COUNTRY_FOLDER_MAP.get(country)
 
@@ -202,7 +199,10 @@ def load_indicator_data(
     unit_type_raw = entry.get("unit_type", "")
 
     if not folder or not filename:
-        return None, None, f"Invalid registry entry (missing folder/filename) for {country}: {indicator_obj.get('indicator_name')}"
+        return None, None, (
+            f"Invalid registry entry (missing folder/filename) for "
+            f"{country}: {indicator_obj.get('indicator_name')}"
+        )
 
     full_path = os.path.join(
         root_path,
@@ -226,14 +226,13 @@ def load_indicator_data(
     if "date" not in df.columns:
         return None, None, f"Missing 'date' column in file: {filename}"
 
-    # Parse date column; drop invalid
     df["date"] = pd.to_datetime(df["date"], errors="coerce")
     df = df.dropna(subset=["date"]).copy()
     df = df.sort_values("date")
     df = df.set_index("date")
 
     # --- Extract column ---
-    column_name = indicator_obj.get("indicator_name")
+    column_name = entry.get("name") or indicator_obj.get("indicator_name")
     if not column_name:
         return None, None, "Indicator name missing in indicator_obj"
 
@@ -255,7 +254,9 @@ def load_indicator_data(
     if series is None or series.empty:
         return None, None, f"No usable data after harmonisation for: {country} — {column_name}"
 
-    series.name = f"{country} — {column_name}"
+    # --- Use ui_display_name for user-facing chart labels ---
+    ui_display_name = entry.get("ui_display_name") or column_name
+    series.name = f"{country} — {ui_display_name}"
 
     # --- Metadata standardisation for diagnostics ---
     seasonal, value_type, unit_type = standardise_metadata_fields(
@@ -269,6 +270,7 @@ def load_indicator_data(
     metadata_standardised = {
         "country": country,
         "indicator": column_name,
+        "ui_display_name": ui_display_name,
         "frequency_raw": frequency_raw,
         "seasonal": seasonal,
         "value_type": value_type,

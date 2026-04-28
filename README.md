@@ -1,8 +1,8 @@
 # Financial Insight Tools (FIT) — Structured Financial Reasoning Environment
 
-Financial Insight Tools (FIT) is a modular research environment for exploring financial markets, macroeconomic structure, portfolio construction, cross-asset relationships, and structured decision workflows through a consistent analytical model.
+Financial Insight Tools (FIT) is a modular research environment for exploring financial markets, macroeconomic structure, portfolio construction, cross-asset relationships, transmission dynamics, positioning structure, and structured decision workflows through a consistent analytical model.
 
-FIT provides consistent structure across distribution analysis, trade modelling, macroeconomic exploration, correlation mapping, and observation capture so that material can be examined, aligned, and carried forward into documentation, research workflows, or AI-assisted reasoning environments.
+FIT provides consistent structure across distribution analysis, trade modelling, macroeconomic exploration, thematic correlation, relative macro transmission, positioning analysis, and observation capture so that material can be examined, aligned, and carried forward into documentation, research workflows, or AI-assisted reasoning environments.
 
 ---
 
@@ -10,10 +10,11 @@ FIT provides consistent structure across distribution analysis, trade modelling,
 
 FIT includes companion documents under `docs/`:
 
-- *Crafting Financial Frameworks — Modular, AI-Ready Systems for Structured Decision Support*  
+- *Crafting Financial Frameworks — Modular, AI-Ready Systems for Structured Decision Support*
 - *Financial Insight Tools — Unified Index & Glossary Reference*
 
-These documents provide architectural framing and consolidated reference material.  
+These documents provide architectural framing and consolidated reference material.
+
 Note: GitHub’s in-browser PDF preview may not render complex code-block formatting reliably; download for the best viewing experience.
 
 ---
@@ -87,12 +88,56 @@ http://localhost:8501
 ## What This Is (and Isn’t)
 
 **Is:**  
-A structured, modular environment for examining financial data, macroeconomic indicators, portfolio behaviour, trade scenarios, and cross-asset relationships through consistent analytical scaffolds.
+A structured, modular environment for examining financial data, macroeconomic indicators, portfolio behaviour, trade scenarios, cross-market relationships, and system-level interaction through consistent analytical scaffolds.
 
 **Isn’t:**  
 A brokerage platform, automated trading system, signal engine, portfolio manager, advisory service, or predictive model. FIT does not execute trades, provide financial advice, or generate investment recommendations.
 
 All outputs are structural and exploratory in nature.
+
+---
+
+## Platform Architecture
+
+FIT is structured across three connected analytical layers.
+
+### System Foundation
+
+- Economic Exploration
+- Thematic Correlation
+- Relative Macro Transmission
+- Positioning & Crowding
+
+These modules frame macro conditions, systemic relationships, transmission pathways, and market participation structure.
+
+---
+
+### Financial Application
+
+- Market & Volatility Scanner
+- Asset Snapshot Generator
+- Trade Timing & Confirmation
+- Price Action & Trend Confirmation
+- Trade Structuring & Risk Planning
+- Spread Ratio Insights
+- Cross Asset Correlation
+- Live Portfolio Monitor
+
+These modules apply structural context to scenario analysis, portfolio framing, and market inspection.
+
+---
+
+### Utility & Decision Support
+
+- Kelly Criterion
+- VaR Calculator
+- Compounding Calculator
+- Standard Deviation Calculator
+- Historical Data Currency Converter
+- Data Cleaner & Inspector
+- Observation & Export Bundle Builder
+
+These modules support operational consistency, validation, and structured documentation workflows.
 
 ---
 
@@ -106,9 +151,9 @@ All outputs are structural and exploratory in nature.
 
 The unified launcher presents FIT’s modular architecture and clarifies:
 
-- The analytical domains available  
-- How modules interrelate  
-- Where configuration and export functions reside  
+- the analytical domains available
+- how modules interrelate
+- where configuration, observation, and export functions reside
 
 This is the orientation layer before moving into structured analysis.
 
@@ -116,60 +161,97 @@ This is the orientation layer before moving into structured analysis.
 
 ### Economic Exploration — Macro System View
 
-![Economic Exploration](docs/screenshots/02-economic-map.png)
+![Economic Exploration](docs/screenshots/02-economic-exploration.png)
 
 A structural view across macroeconomic conditions and country-level indicators:
 
-- Growth, inflation, labour, and trade signals  
-- Thematic grouping and indicator structure  
-- Cross-country comparison and aggregation  
-- System-level economic context  
+- growth, inflation, labour, and trade signals
+- thematic grouping and indicator structure
+- cross-country comparison and aggregation
+- system-level economic context
 
 Provides the macro foundation for downstream analytical workflows.
 
 ---
 
+### Thematic Correlation — Relationship Mapping
+
+![Thematic Correlation](docs/screenshots/03-thematic-correlation.png)
+
+A structural view across macroeconomic themes and systemic relationships:
+
+- thematic clustering across economic indicators
+- direct and inverse relationships
+- macro alignment and divergence
+- cross-country and cross-theme co-movement
+
+This provides the relationship layer before transmission analysis.
+
+---
+
+### Relative Macro Transmission — Exogenous Differential Architecture
+
+![Relative Macro Transmission](docs/screenshots/04-relative-macro-transmission.png)
+
+Tracks exogenous differentials across systems and how macro pressure transmits through markets:
+
+- growth and inflation differentials
+- interest rate and carry structures
+- external balance and FX pressure
+- sovereign, equity, and cross-market divergence
+
+This moves beyond correlation into structural transmission analysis.
+
+---
+
+### Positioning & Crowding — Position Architecture
+
+![Positioning & Crowding](docs/screenshots/05-positioning-crowding.png)
+
+A structural view across leveraged positioning, percentile extremes, and market participation behaviour:
+
+- Commitment of Traders (COT) positioning
+- percentile extremes and crowding conditions
+- positioning turns and reversal structures
+- market overlay and regime interpretation
+
+This provides the participant behaviour layer across major futures markets.
+
+---
+
 ### Market & Volatility Scanner — Distribution Backbone
 
-![Market Scanner](docs/screenshots/03-market-scanner.png)
+![Market Scanner](docs/screenshots/06-market-scanner.png)
 
 A structural view across market behaviour and volatility conditions:
 
-- Frequency and dispersion metrics  
-- Shape characteristics  
-- Regime-sensitive return framing  
-- Structural probability context  
+- frequency and dispersion metrics
+- shape characteristics
+- regime-sensitive return framing
+- structural probability context
 
 Provides quantitative grounding for downstream modelling.
 
 ---
 
-### Trade Structuring & Risk Planning — Position Architecture
+### Trade Structuring & Risk Planning — Scenario Architecture
 
-![Trade Structuring](docs/screenshots/04-trade-structuring.png)
+![Trade Structuring](docs/screenshots/07-trade-structuring.png)
 
 A structured view across trade construction and risk framing:
 
-- Entry and stop structure  
-- Exposure calibration  
-- Position sensitivity  
-- Scenario-based evaluation  
+- entry and stop structure
+- exposure calibration
+- position sensitivity
+- scenario-based evaluation
 
 Supports analytical evaluation without automating execution.
 
 ---
 
-### Cross-Asset Correlation — Relationship Mapping
-
-![Correlation Heatmap](docs/screenshots/05-correlation-heatmap.png)
-
-A structural view across cross-asset and thematic relationships, enabling examination of regime alignment and interdependence.
-
----
-
 ### Build Export Bundle — Structured Artefact Assembly
 
-![Export Bundle](docs/screenshots/06-export-bundle.png)
+![Export Bundle](docs/screenshots/08-export-bundle.png)
 
 The export module organises analytical components into structured bundles for documentation, research artefacts, and AI-assisted workflows.
 
@@ -179,11 +261,13 @@ Outputs preserve linkage to the underlying analytical structure.
 
 ## Where to Start
 
-- **Market & Volatility Scanner** — distribution and regime context  
-- **Trade Structuring & Risk Planning** — scenario modelling  
-- **Economic Exploration** — macro landscape analysis  
-- **Cross-Asset Correlation** — relationship mapping  
-- **Observation & Export** — structured artefact assembly  
+- **Economic Exploration** — macro system structure and country-level diagnostics
+- **Thematic Correlation** — relationship mapping across macroeconomic themes
+- **Relative Macro Transmission** — exogenous differential analysis and regime divergence
+- **Positioning & Crowding** — leveraged positioning, percentile extremes, and positioning turns
+- **Market & Volatility Scanner** — distribution structure and regime context
+- **Trade Structuring & Risk Planning** — scenario modelling and exposure framing
+- **Observation & Export** — structured artefact assembly for documentation and AI workflows
 
 Each module presents a different perspective on the same underlying analytical framework without fragmenting or redefining it.
 
@@ -191,7 +275,7 @@ Each module presents a different perspective on the same underlying analytical f
 
 ## Structure (High-Level)
 
-```
+```text
 financial-insight-tools/
   apps/          # Modular application domains
   core/          # Shared structural logic and helpers
@@ -228,8 +312,9 @@ Only files that have changed in the repository will be updated locally.
 
 Regular updates include:
 
-- Weekly historical asset data refreshes (financial datasets)
-- Periodic macroeconomic data updates
+- Historical asset price datasets refreshed on a regular weekly maintenance cadence
+- Weekly positioning and Commitment of Traders (COT) dataset updates
+- Macroeconomic datasets updated as new releases become available
 - Refinements to shared universal configuration layers
 - Module-level enhancements where applicable
 
@@ -272,6 +357,7 @@ If a new indicator requires shared scoring, routing, or visual logic across the 
 ### Data Update Policy
 
 - Historical financial asset datasets are refreshed on a regular cadence.
+- Weekly positioning datasets are updated through Commitment of Traders (COT) releases.
 - Macroeconomic datasets are updated as new releases become available.
 - Updates modify canonical data files under `apps/data_sources/...`.
 

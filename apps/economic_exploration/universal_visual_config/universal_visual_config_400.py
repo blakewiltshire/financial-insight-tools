@@ -5,29 +5,29 @@
 # pylint: disable=invalid-name, non-ascii-file-name, unused-argument
 
 # -------------------------------------------------------------------------------------------------
-# 📘 Docstring
+# Docstring
 # -------------------------------------------------------------------------------------------------
 """
-📊 Universal Visualisation Engine — Economic Exploration Suite
+Universal Visualisation Engine — Economic Exploration Suite
 -----------------------------------------------------------------
 
 Defines the universal chart rendering functions for thematic modules (Themes 100–2100+)
 within the Economic Exploration platform. This module serves as the foundation for
 consistent charting across countries and themes.
 
-✅ Role in the System:
+Role in the System:
 - Provides reusable chart functions for any theme where local visuals are not extended.
 - Ensures consistent UI presentation across all countries using shared indicators.
 - Supports Streamlit tab structures and AI-export-ready visual formats.
 
-🧠 System Design Notes:
+System Design Notes:
 - Visual rendering operates fully independently of indicator signals and insights.
 - **Use Case selection controls chart rendering**, not indicator map output.
 - Charts respond to the selected Use Case from `use_cases_XXX.py`.
 - Chart data slices are passed via `df_map` based on timeframe logic configured in `visual_config_XXX.py`.
 - Indicator signals (computed via `indicator_map_XXX.py`) are not used inside chart functions.
 
-⚙️ Architecture Summary:
+Architecture Summary:
 - Universal visuals serve as default chart renderers across all countries.
 - Local visual_config modules (e.g., `visuals_100.py`, `visuals_200.py`) can optionally override and extend visuals.
 - Each Use Case maps to one or more visual tabs and subtabs defined within local visual_config files.
@@ -40,15 +40,16 @@ Usage:
 """
 
 # -------------------------------------------------------------------------------------------------
-# 📦 Imports
+# Imports
 # -------------------------------------------------------------------------------------------------
-import pandas as pd
-import streamlit as st
-import plotly.graph_objects as go
 import uuid
+import pandas as pd
+import plotly.graph_objects as go
+import streamlit as st
+
 
 # -------------------------------------------------------------------------------------------------
-# 🧩 Chart Display Wrapper with Fallback
+# Chart Display Wrapper with Fallback
 # -------------------------------------------------------------------------------------------------
 def display_chart_with_fallback(
     fig: go.Figure,
@@ -68,95 +69,159 @@ def display_chart_with_fallback(
         return
 
     unique_key = custom_key if custom_key else f"{label}_{uuid.uuid4().hex}"
-    st.plotly_chart(fig, width='stretch', key=unique_key)
+    st.plotly_chart(fig, width="stretch", key=unique_key)
 
     if allow_partial and partial_warning:
         st.info(f"ℹ️ {label} displayed with partial data.")
 
+
 # -------------------------------------------------------------------------------------------------
-# 📊 Generic Plot — Signal A: Basic Time Series
+# Inflation Comparison Chart
 # -------------------------------------------------------------------------------------------------
-def plot_signal_a_chart(df: pd.DataFrame) -> go.Figure:
+def plot_inflation_comparison_chart(df: pd.DataFrame) -> go.Figure:
     """
-    Renders a simple time series line chart for 'Signal A'.
+    Renders headline and core inflation across consumer and producer layers.
     """
-    if "date" not in df.columns or "Signal A" not in df.columns:
+
+    required_cols = ["date", "Headline CPI", "Core CPI", "Headline PPI", "Core PPI"]
+    if not all(col in df.columns for col in required_cols):
         return go.Figure()
 
     fig = go.Figure()
+
     fig.add_trace(go.Scatter(
-        x=df["date"], y=df["Signal A"],
-        mode="lines+markers", name="Signal A"
+        x=df["date"],
+        y=df["Headline CPI"],
+        mode="lines",
+        name="Headline CPI"
+    ))
+
+    fig.add_trace(go.Scatter(
+        x=df["date"],
+        y=df["Core CPI"],
+        mode="lines",
+        name="Core CPI"
+    ))
+
+    fig.add_trace(go.Scatter(
+        x=df["date"],
+        y=df["Headline PPI"],
+        mode="lines",
+        name="Headline PPI"
+    ))
+
+    fig.add_trace(go.Scatter(
+        x=df["date"],
+        y=df["Core PPI"],
+        mode="lines",
+        name="Core PPI"
     ))
 
     fig.update_layout(
-        title="🔹 Signal A — Time Series Chart",
+        title="Inflation Pressure and Transmission",
         xaxis_title="Date",
-        yaxis_title="Value",
-        height=400,
-        template="plotly_white"
+        yaxis_title="Index Level",
+        height=420,
+        template="plotly_white",
+        legend=dict(
+            orientation="h",
+            yanchor="bottom",
+            y=1.02,
+            xanchor="right",
+            x=1
+        )
     )
+
     return fig
 
+
 # -------------------------------------------------------------------------------------------------
-# 📊 Generic Plot — Signal B: Rolling Average
+# Consumer Inflation Chart
 # -------------------------------------------------------------------------------------------------
-def plot_signal_b_chart(df: pd.DataFrame, window: int = 3) -> go.Figure:
+def plot_consumer_inflation_chart(df: pd.DataFrame) -> go.Figure:
     """
-    Renders 'Signal B' with an optional rolling average overlay.
+    Renders headline and core consumer inflation.
     """
-    if "date" not in df.columns or "Signal B" not in df.columns:
+
+    required_cols = ["date", "Headline CPI", "Core CPI"]
+    if not all(col in df.columns for col in required_cols):
         return go.Figure()
 
-    df = df.copy()
-    df["Rolling Avg"] = df["Signal B"].rolling(window).mean()
-
     fig = go.Figure()
+
     fig.add_trace(go.Scatter(
-        x=df["date"], y=df["Signal B"],
-        mode="lines", name="Signal B"
+        x=df["date"],
+        y=df["Headline CPI"],
+        mode="lines",
+        name="Headline CPI"
     ))
+
     fig.add_trace(go.Scatter(
-        x=df["date"], y=df["Rolling Avg"],
-        mode="lines", name=f"{window}-Period Avg",
-        line={"dash": "dot"}
+        x=df["date"],
+        y=df["Core CPI"],
+        mode="lines",
+        name="Core CPI"
     ))
 
     fig.update_layout(
-        title="🔹 Signal B — With Rolling Average",
+        title="Consumer Inflation",
         xaxis_title="Date",
-        yaxis_title="Value",
-        height=400,
-        template="plotly_white"
+        yaxis_title="Index Level",
+        height=420,
+        template="plotly_white",
+        legend=dict(
+            orientation="h",
+            yanchor="bottom",
+            y=1.02,
+            xanchor="right",
+            x=1
+        )
     )
+
     return fig
 
+
 # -------------------------------------------------------------------------------------------------
-# 📊 Generic Plot — Signal C: Band Highlight
+# Producer Inflation Chart
 # -------------------------------------------------------------------------------------------------
-def plot_signal_c_chart(df: pd.DataFrame) -> go.Figure:
+def plot_producer_inflation_chart(df: pd.DataFrame) -> go.Figure:
     """
-    Plots 'Signal C' with highlighted bands (e.g., thresholds or confidence zone).
+    Renders headline and core producer inflation.
     """
-    if "date" not in df.columns or "Signal C" not in df.columns:
+
+    required_cols = ["date", "Headline PPI", "Core PPI"]
+    if not all(col in df.columns for col in required_cols):
         return go.Figure()
 
     fig = go.Figure()
+
     fig.add_trace(go.Scatter(
-        x=df["date"], y=df["Signal C"],
-        mode="lines", name="Signal C"
+        x=df["date"],
+        y=df["Headline PPI"],
+        mode="lines",
+        name="Headline PPI"
     ))
 
-    # Example band (e.g., neutral zone between -1 and 1)
-    fig.add_shape(type="rect", xref="paper", yref="y",
-                  x0=0, x1=1, y0=-1, y1=1,
-                  fillcolor="LightGray", opacity=0.3, line_width=0)
+    fig.add_trace(go.Scatter(
+        x=df["date"],
+        y=df["Core PPI"],
+        mode="lines",
+        name="Core PPI"
+    ))
 
     fig.update_layout(
-        title="🔹 Signal C — With Neutral Band",
+        title="Producer Inflation",
         xaxis_title="Date",
-        yaxis_title="Value",
-        height=400,
-        template="plotly_white"
+        yaxis_title="Index Level",
+        height=420,
+        template="plotly_white",
+        legend=dict(
+            orientation="h",
+            yanchor="bottom",
+            y=1.02,
+            xanchor="right",
+            x=1
+        )
     )
+
     return fig

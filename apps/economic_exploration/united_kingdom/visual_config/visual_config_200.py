@@ -72,12 +72,17 @@ from universal_visual_config_200 import (
 )
 
 # -------------------------------------------------------------------------------------------------
+# Shared Statistical Profile Import
+# -------------------------------------------------------------------------------------------------
+from universal_visual_shared import calculate_statistical_profile
+
+# -------------------------------------------------------------------------------------------------
 # Visual Section Titles Mapping
 # -------------------------------------------------------------------------------------------------
 def get_visual_section_titles():
     """
     Returns a mapping of use case labels to visual section headers.
-    Includes universal and local mappings (if applicable).
+    Includes universal and local mappings where applicable.
     """
     return {
         "Employment Trends": "Employment Growth and Hiring Activity",
@@ -86,14 +91,64 @@ def get_visual_section_titles():
     }
 
 # -------------------------------------------------------------------------------------------------
-# Local Chart Configs (If applicable)
+# Local Helpers
 # -------------------------------------------------------------------------------------------------
+def _prepare_df(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Resets index where needed, normalises the date column, and sorts values.
+    """
+    if df is None or df.empty:
+        return df
+
+    df = df.copy()
+
+    if hasattr(df, "reset_index"):
+        df = df.reset_index()
+
+    if "date" in df.columns:
+        df["date"] = pd.to_datetime(df["date"], errors="coerce")
+        df = df.dropna(subset=["date"]).sort_values("date")
+
+    return df
+
+
+def _get_visual_df(tab_df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Returns the already-sliced dataframe provided by tab_mapping.
+    """
+    return _prepare_df(tab_df)
+
+
+def _get_stable_series_selection(widget_key: str, options: list[str], default_index: int = 0) -> str:
+    """
+    Preserves statistical profile series selection across Streamlit reruns.
+    """
+    if not options:
+        return None
+
+    if widget_key not in st.session_state or st.session_state[widget_key] not in options:
+        st.session_state[widget_key] = options[default_index]
+
+    selected = st.selectbox(
+        "Select series for statistical profile",
+        options=options,
+        index=options.index(st.session_state[widget_key]),
+        key=f"{widget_key}__selectbox"
+    )
+
+    st.session_state[widget_key] = selected
+    return selected
 
 
 # -------------------------------------------------------------------------------------------------
 # Universal Labour Tabs
 # -------------------------------------------------------------------------------------------------
-def render_universal_labour_tabs(selected_use_case: str, df: pd.DataFrame, tab_key: str) -> bool:
+def render_universal_labour_tabs(
+    selected_use_case: str,
+    df: pd.DataFrame,
+    tab_index: int,
+    tab_key: str
+) -> bool:
     """
     Universal UI (consistent across all countries) for:
     - Employment Trends
@@ -104,10 +159,11 @@ def render_universal_labour_tabs(selected_use_case: str, df: pd.DataFrame, tab_k
     """
     # --- Employment Trends ---
     if selected_use_case == "Employment Trends":
-        subtab1, subtab2, subtab3 = st.tabs([
+        subtab1, subtab2, subtab3, subtab4 = st.tabs([
             "Hiring Momentum",
             "Volatility Context",
-            "Inflection Points"
+            "Inflection Points",
+            "Statistical Profile"
         ])
 
         with subtab1:
@@ -142,14 +198,45 @@ def render_universal_labour_tabs(selected_use_case: str, df: pd.DataFrame, tab_k
                 ),
                 label=f"{tab_key}_EmploymentInflection"
             )
+
+        with subtab4:
+            available_series = [
+                col for col in [
+                    "Number of People in Employment"
+                ]
+                if df is not None and not df.empty and col in df.columns and df[col].dropna().shape[0] > 0
+            ]
+
+            if not available_series:
+                st.warning("⚠️ Statistical profile not available — no employment series loaded.")
+            else:
+                selected_series = _get_stable_series_selection(
+                    widget_key=f"stats_profile_uk_200_employment_tab_{tab_index}",
+                    options=available_series,
+                    default_index=0
+                )
+
+                stats_df = calculate_statistical_profile(df[selected_series])
+
+                if stats_df.empty:
+                    st.warning("⚠️ Statistical profile not available — selected series contains insufficient data.")
+                else:
+                    col1, col2 = st.columns([2, 5])
+
+                    with col1:
+                        st.caption("Statistical profile reflects the currently selected period window.")
+                        st.markdown(f"**Statistical Profile: {selected_series}**")
+                        st.table(stats_df.set_index("Metric"))
+
         return True
 
     # --- Unemployment Context ---
     if selected_use_case == "Unemployment Context":
-        subtab1, subtab2, subtab3 = st.tabs([
+        subtab1, subtab2, subtab3, subtab4 = st.tabs([
             "Unemployment Direction",
             "Extremes & Reversion",
-            "Volatility"
+            "Volatility",
+            "Statistical Profile"
         ])
 
         with subtab1:
@@ -184,14 +271,45 @@ def render_universal_labour_tabs(selected_use_case: str, df: pd.DataFrame, tab_k
                 ),
                 label=f"{tab_key}_UnemploymentVolatility"
             )
+
+        with subtab4:
+            available_series = [
+                col for col in [
+                    "Unemployment Rate"
+                ]
+                if df is not None and not df.empty and col in df.columns and df[col].dropna().shape[0] > 0
+            ]
+
+            if not available_series:
+                st.warning("⚠️ Statistical profile not available — no unemployment series loaded.")
+            else:
+                selected_series = _get_stable_series_selection(
+                    widget_key=f"stats_profile_uk_200_unemployment_tab_{tab_index}",
+                    options=available_series,
+                    default_index=0
+                )
+
+                stats_df = calculate_statistical_profile(df[selected_series])
+
+                if stats_df.empty:
+                    st.warning("⚠️ Statistical profile not available — selected series contains insufficient data.")
+                else:
+                    col1, col2 = st.columns([2, 5])
+
+                    with col1:
+                        st.caption("Statistical profile reflects the currently selected period window.")
+                        st.markdown(f"**Statistical Profile: {selected_series}**")
+                        st.table(stats_df.set_index("Metric"))
+
         return True
 
     # --- Labour Force Engagement ---
     if selected_use_case == "Labour Force Engagement":
-        subtab1, subtab2, subtab3 = st.tabs([
+        subtab1, subtab2, subtab3, subtab4 = st.tabs([
             "Participation Direction",
             "Structural Variability",
-            "Historical Extremes"
+            "Historical Extremes",
+            "Statistical Profile"
         ])
 
         with subtab1:
@@ -227,22 +345,58 @@ def render_universal_labour_tabs(selected_use_case: str, df: pd.DataFrame, tab_k
                 ),
                 label=f"{tab_key}_ParticipationExtremes"
             )
+
+        with subtab4:
+            available_series = [
+                col for col in [
+                    "Labour Participation Rate"
+                ]
+                if df is not None and not df.empty and col in df.columns and df[col].dropna().shape[0] > 0
+            ]
+
+            if not available_series:
+                st.warning("⚠️ Statistical profile not available — no participation series loaded.")
+            else:
+                selected_series = _get_stable_series_selection(
+                    widget_key=f"stats_profile_uk_200_participation_tab_{tab_index}",
+                    options=available_series,
+                    default_index=0
+                )
+
+                stats_df = calculate_statistical_profile(df[selected_series])
+
+                if stats_df.empty:
+                    st.warning("⚠️ Statistical profile not available — selected series contains insufficient data.")
+                else:
+                    col1, col2 = st.columns([2, 5])
+
+                    with col1:
+                        st.caption("Statistical profile reflects the currently selected period window.")
+                        st.markdown(f"**Statistical Profile: {selected_series}**")
+                        st.table(stats_df.set_index("Metric"))
+
         return True
 
     return False
 
+
 # -------------------------------------------------------------------------------------------------
-# 🚦 Chart Dispatcher — Universal Charts First, Local Extensions After
+# Chart Dispatcher — Universal Charts First, Local Extensions After
 # -------------------------------------------------------------------------------------------------
 def render_all_charts_local(selected_use_case, tab_mapping, df_map):
     """
     Chart dispatcher for Labour Market Dynamics — with fallback messaging and AI compatibility.
     """
-    for tab, data_slice in tab_mapping.items():
+    for tab_index, (tab, data_slice) in enumerate(tab_mapping.items()):
         with tab:
-            df = data_slice.reset_index()
+            df = _get_visual_df(data_slice)
 
-            # --- Universal (consistent across countries) ---
-            handled = render_universal_labour_tabs(selected_use_case, df, tab)
+            handled = render_universal_labour_tabs(
+                selected_use_case=selected_use_case,
+                df=df,
+                tab_index=tab_index,
+                tab_key=str(tab)
+            )
+
             if handled:
                 continue

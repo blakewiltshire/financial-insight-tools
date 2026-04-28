@@ -1,4 +1,4 @@
-# 📦 Modules Template — Thematic Grouping Blueprint Repository
+# Modules Template — Thematic Grouping Blueprint Repository
 
 This directory contains pre-built template modules for each {country} **thematic grouping** within the Economic Exploration suite.
 
@@ -13,13 +13,13 @@ This directory contains pre-built template modules for each {country} **thematic
 | `use_cases/`          | Use case selector structure and default logic |
 | `visual_config/`      | Generic visualisation logic for charts |
 
-## 🛠 Usage
+## Usage
 
 - Use these templates when building a new country module.
 - Copy only the files corresponding to the desired **theme ID** (e.g., `100`, `200`) into your country folder.
 - Do **not** modify these templates directly. They serve as a universal foundation for customisation.
 
-## 🚫 Important
+## Important
 
 - These files are **not loaded at runtime**.
 - Universal logic (shared across countries) lives in `/apps/economic_exploration/universal_*`.

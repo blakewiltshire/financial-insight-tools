@@ -14,8 +14,8 @@ Used across all modules for price-action, volatility, return, and correlation an
 Relative Macro Transmission
 Positioning & Crowding
 
-Note: Do not uncomment. asset_files is used across the 📈 Trade & Portfolio Structuring Modules.
-The # commented out files are so we have the source indictor name and file paths in one place.
+Note: Do not uncomment. asset_files is used across the Trade & Portfolio Structuring Modules.
+The # commented out files are so we have the source indicator name and file paths in one place.
 """
 
 # -------------------------------------------------------------------------------------------------
@@ -269,25 +269,29 @@ def get_asset_path(category: str, name: str) -> str:
 
 # Weekly asset map for COTS - cots_assets_default.csv
 
-
-#AUD positioning - AUD/USD -  https://www.investing.com/currencies/aud-usd-historical-data
-#EUR positioning - EUR/USD - https://www.investing.com/currencies/eur-usd-historical-data
-#GBP positioning - GBP/USD -  https://www.investing.com/currencies/gbp-usd-historical-data
-#JPY positioning - USD/JPY - https://www.investing.com/currencies/usd-jpy-historical-data
-#USD Index positioning - DXY - https://www.investing.com/indices/usdollar-historical-data?cid=1224074
 #UST 2Y positioning - US2YT=X - https://www.investing.com/rates-bonds/u.s.-2-year-bond-yield-historical-data
 #UST 10Y positioning - US10YT=X - https://www.investing.com/rates-bonds/u.s.-10-year-bond-yield-historical-data
-#Russell 2000 positioning - #US2000 - https://www.investing.com/indices/smallcap-2000-historical-data
+#AUD positioning - AUD/USD -  https://www.investing.com/currencies/aud-usd-historical-data
+#GBP positioning - GBP/USD -  https://www.investing.com/currencies/gbp-usd-historical-data
+#Russell 2000 positioning - #US2000 - https://www.investing.com/indices/smallcap-2000-historical-data (E-Mini Russell)
+#EUR positioning - EUR/USD - https://www.investing.com/currencies/eur-usd-historical-data
+#JPY positioning - USD/JPY - https://www.investing.com/currencies/usd-jpy-historical-data
 #S&P 500 positioning - us500 - https://www.investing.com/indices/us-spx-500-historical-data
+#USD Index positioning - DXY - https://www.investing.com/indices/usdollar-historical-data?cid=1224074
 #VIX positioning - VIX - https://www.investing.com/indices/volatility-s-p-500-historical-data
+
+
+#Gold positioning - GC - https://www.investing.com/commodities/gold-historical-data
+#Silver positioning - SI - https://www.investing.com/commodities/silver-historical-data
 
 # COTS Reports - Weekly Weekend
 
 # https://www.cftc.gov/MarketReports/CommitmentsofTraders/HistoricalCompressed/index.htm
+# Traders in Financial Futures ; Futures Only Reports:.
+# Disaggregated Futures Only Reports:
 
 # Traders in Financial Futures ; Futures Only Reports:
 
-# 2026 - Excel - fut_fin_xls_2026.zip
 # Remove columns and leave:
 # Market_and_Exchange_Names
 # Report_Date_as_MM_DD_YYYY
@@ -297,6 +301,17 @@ def get_asset_path(category: str, name: str) -> str:
 # Change_in_Lev_Money_Short_All
 # Pct_of_OI_Lev_Money_Long_All
 # Pct_of_OI_Lev_Money_Short_All
+
+# Disaggregated Futures Only Reports:
+
+# Market_and_Exchange_Names
+# Report_Date_as_MM_DD_YYYY
+# M_Money_Positions_Long_All
+# M_Money_Positions_Short_All
+# Change_in_M_Money_Long_All
+# Change_in_M_Money_Short_All
+# Pct_of_OI_M_Money_Long_All
+# Pct_of_OI_M_Money_Short_All
 
 # These are then added to each of these files.
 
@@ -310,6 +325,8 @@ def get_asset_path(category: str, name: str) -> str:
 # ust_2y_positioning.csv
 # ust_10y_positioning.csv
 # vix_positioning.csv
+# gold_positioning.csv
+# siver_positioning.csv
 
 #  To show visuals in human readable format copy into predefined column labels as follows.
 
@@ -334,3 +351,5 @@ def get_asset_path(category: str, name: str) -> str:
 # UST 2Y NOTE - CHICAGO BOARD OF TRADE -> US 2Y NOTE
 # UST 10Y NOTE - CHICAGO BOARD OF TRADE -> US 10Y NOTE
 # VIX FUTURES - CBOE FUTURES EXCHANGE -> VIX
+# GOLD - COMMODITY EXCHANGE INC. -> Gold
+# SILVER - COMMODITY EXCHANGE INC. -> Silver

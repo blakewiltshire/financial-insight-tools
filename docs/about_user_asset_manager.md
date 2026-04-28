@@ -11,9 +11,21 @@ It does not provide an upload interface — instead, it guides how to organise c
 - **Cross-Tool Compatibility:** Assets stored in valid folders are automatically integrated into scanners, structuring tools, and calculators
 - **Preprocessing Expectations:** Files should be cleaned and structured consistently before placement
 
-### ⚠️ File Handling & Currency Normalisation
+### File Handling, Currency Normalisation & Date Format
 
-All files must be manually placed in the relevant _user folders — this app does not support drag-and-drop uploads. Ensure consistent base currencies across all assets before using them in comparative or structural tools. Use the Historical Data Currency Converter module if currency alignment is required.
+All files must be manually placed in the relevant `_user` folders — this app does not support drag-and-drop uploads.
+
+Before using custom assets, ensure:
+
+- files are saved in CSV format
+- required columns are present
+- dates use the standard international format: `YYYY-MM-DD`
+- assets used together are aligned to the same currency
+- unnecessary non-numeric columns are removed unless required by the module
+
+Regional date formats such as `DD/MM/YYYY` or `MM/DD/YYYY` should not be used. They can be parsed incorrectly and may cause charts, overlays, joins, and calculations to render incorrectly.
+
+Use the Historical Data Currency Converter module if currency alignment is required.
 
 ---
 

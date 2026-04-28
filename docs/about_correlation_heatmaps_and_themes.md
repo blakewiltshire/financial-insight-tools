@@ -12,4 +12,4 @@ The tool focuses on:
 
 ##### ⚠️ This module operates on full-group comparisons.
 
-For directional trade timing, asset-specific filters, or event-driven sequencing, refer to 🔎 Market & Volatility Scanner.
+For directional trade timing, asset-specific filters, or event-driven sequencing, refer to Market & Volatility Scanner.

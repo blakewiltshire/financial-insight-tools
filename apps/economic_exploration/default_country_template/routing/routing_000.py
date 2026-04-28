@@ -1,25 +1,25 @@
 # -------------------------------------------------------------------------------------------------
-# 🔀 Routing Wrapper — Indicator Input Dispatcher
+# Routing Wrapper — Indicator Input Dispatcher
 # -------------------------------------------------------------------------------------------------
 # pylint: disable=import-error, wrong-import-position, wrong-import-order
 # pylint: disable=invalid-name, non-ascii-file-name
 
 # -------------------------------------------------------------------------------------------------
-# 📘 Docstring
+# Docstring
 # -------------------------------------------------------------------------------------------------
 """
-📍 Local Use Case Routing — Thematic Module
+Local Use Case Routing — Thematic Module
 ------------------------------------------------
 
 Maps the selected use case to the appropriate indicator functions for evaluation.
 This file defines which indicators contribute to each high-level analytical theme.
 
-✅ Structure:
+Structure:
 - `options_*_signals_map` assigns indicators to each use case
 - Must align with entries in `indicator_map`
 - Used by the insight generation and scoring engines
 
-🧠 AI Notes:
+AI Notes:
 - Enables the AI and alignment engine to dynamically dispatch signals
 - Helps determine the “macro story” behind observed trends
 
@@ -29,13 +29,13 @@ Usage:
 """
 
 # -------------------------------------------------------------------------------------------------
-# 🧱 Standard Library
+# Standard Library
 # -------------------------------------------------------------------------------------------------
 import os
 import sys
 
 # -------------------------------------------------------------------------------------------------
-# 🛠️ Path Setup
+# Path Setup
 # -------------------------------------------------------------------------------------------------
 LOCAL_PATH = os.path.abspath(os.path.dirname(__file__))
 UNIVERSAL_PATH = os.path.abspath(os.path.join(LOCAL_PATH, "..", "universal_routing"))
@@ -43,17 +43,17 @@ if UNIVERSAL_PATH not in sys.path:
     sys.path.append(UNIVERSAL_PATH)
 
 # -------------------------------------------------------------------------------------------------
-# 📦 Universal Routing Import
+# Universal Routing Import
 # -------------------------------------------------------------------------------------------------
 from universal_routing_000 import get_indicator_input as get_indicator_input_universal
 
 # -------------------------------------------------------------------------------------------------
-# 📊 Third-party Libraries
+# Third-party Libraries
 # -------------------------------------------------------------------------------------------------
 import pandas as pd
 
 # -------------------------------------------------------------------------------------------------
-# 🚦 Local Routing Overrides (Optional)
+# Local Routing Overrides (Optional)
 # -------------------------------------------------------------------------------------------------
 def get_indicator_input(indicator_name: str, df_dict: dict) -> pd.DataFrame | None:
     """

@@ -23,8 +23,10 @@ THEMATIC_GROUPS = {
         "placeholder values when implementing a live country-theme module.",
         "memberships": {
             "001_signal_a": {
-                "Use Case": "Placeholder Use Case A",
-                "title": "Signal A Group",
+                "title": "Signal A",
+                "applicable_use_cases": [
+                    "Signal A"
+                ],
                 "overview": "This placeholder group contains Signal A.",
                 "why_it_matters": "Demonstrates structure for an early-stage insight group.",
                 "temporal_categorisation": "Leading Indicator",
@@ -39,8 +41,10 @@ THEMATIC_GROUPS = {
                 "path": "default_template/pages/000_template.py"
             },
             "002_signal_b": {
-                "Use Case": "Placeholder Use Case A",
-                "title": "Signal B Group",
+                "title": "Signal B",
+                "applicable_use_cases": [
+                    "Signal B"
+                ],
                 "overview": "This group includes placeholder signal B for testing.",
                 "why_it_matters": "Used to validate UI structure and insight group logic.",
                 "temporal_categorisation": "Coincident Indicator",
@@ -55,8 +59,10 @@ THEMATIC_GROUPS = {
                 "path": "default_template/pages/000_template.py"
             },
             "003_signal_c": {
-                "Use Case": "Placeholder Use Case B",
-                "title": "Signal C Group",
+                "title": "Signal C",
+                "applicable_use_cases": [
+                    "Signal C"
+                ],
                 "overview": "Standalone signal group under Use Case B.",
                 "why_it_matters": "Final example group for template scaffolding.",
                 "temporal_categorisation": "Lagging Indicator",
@@ -94,9 +100,13 @@ THEMATIC_GROUPS = {
         "conclusion_and_further_exploration": "GDP-related and leading macro indicators serve as composite signals reflecting expansion dynamics, volatility bands, and regime transitions across economic cycles.",
         "memberships": {
             "101_real_gdp": {
-                "Use Case": "GDP Signals",
                 "title": "Real GDP",
-                "template": "gdp_template",
+                "applicable_use_cases": [
+                    "Real GDP",
+                    "Sovereign Debt Sustainability",
+                    "Sovereign Liquidity and Refinancing Pressure",
+                    "Balance Sheet Expansion and System Constraint"
+                ],
                 "overview": "Real GDP measures the inflation-adjusted value of economic output, reflecting the pace of expansion or contraction in an economy.",
                 "why_it_matters": "A foundational metric for assessing the health of an economy. Real GDP is used to track business cycles, anticipate shifts in macro conditions, and evaluate momentum in growth. Often referenced in market and policy commentary.",
                 "temporal_categorisation": "Coincident indicator",
@@ -111,9 +121,10 @@ THEMATIC_GROUPS = {
                 "path": "{country}/pages/100_economic_growth_stability.py"
             },
             "102_nominal_gdp": {
-                "Use Case": "GDP Signals",
                 "title": "Nominal GDP",
-                "template": "gdp_template",
+                "applicable_use_cases": [
+                    "Nominal GDP"
+                ],
                 "overview": "Nominal GDP captures the value of economic output using current market prices, without inflation adjustment.",
                 "why_it_matters": "Useful for understanding market size and pricing trends. Supports comparison of economic scale across countries.",
                 "temporal_categorisation": "Coincident indicator",
@@ -128,9 +139,10 @@ THEMATIC_GROUPS = {
                 "path": "{country}/pages/100_economic_growth_stability.py"
             },
             "103_gdp_components_breakdown": {
-                "Use Case": "GDP Signals",
                 "title": "GDP Components Breakdown",
-                "template": "gdp_template",
+                "applicable_use_cases": [
+                    "GDP Components Breakdown"
+                ],
                 "overview": "GDP component analysis breaks down economic output into key sectors such as consumption, investment, government spending, and net exports.",
                 "why_it_matters": "The contributions of each GDP component can help identify the drivers behind economic growth or contraction, aiding in macroeconomic and sector analysis.",
                 "temporal_categorisation": "Coincident indicator",
@@ -145,9 +157,10 @@ THEMATIC_GROUPS = {
                 "path": "{country}/pages/100_economic_growth_stability.py"
             },
             "104_conference_board_leading_index": {
-                "Use Case": "Macro Composite Signals",
-                "title": "Leading Growth Index (Conference Board)",
-                "template": "gdp_macro_composite_template",
+                "title": "Macro Composite Signals",
+                "applicable_use_cases": [
+                    "Macro Composite Signals"
+                ],
                 "overview": "Composite index blending present situation and expectations. Broader gauge of household sentiment.",
                 "why_it_matters": "Used widely as a policy and market sentiment reference.",
                 "temporal_categorisation": "Leading indicator",
@@ -163,9 +176,10 @@ THEMATIC_GROUPS = {
             },
 
             "105_weekly_economic_index": {
-                "Use Case": "Macro Composite Signals",
-                "title": "Weekly Economic Index (NY Fed)",
-                "template": "gdp_macro_composite_template",
+                "title": "Economic Index",
+                "applicable_use_cases": [
+                    "Macro Composite Signals"
+                ],
                 "overview": "High-frequency index combining multiple real-time indicators to monitor economic activity.",
                 "why_it_matters": "Provides early insight into output shifts, helping assess momentum in fast-moving macro environments.",
                 "temporal_categorisation": "Leading indicator",
@@ -181,9 +195,10 @@ THEMATIC_GROUPS = {
             },
 
             "106_economic_uncertainty_index": {
-                "Use Case": "Macro Composite Signals",
                 "title": "Economic Uncertainty Index",
-                "template": "gdp_macro_composite_template",
+                "applicable_use_cases": [
+                    "Macro Composite Signals"
+                ],
                 "overview": "Text-based index capturing macro and policy uncertainty from media, announcements, and institutional signals.",
                 "why_it_matters": "Used to monitor systemic uncertainty and prepare for volatility regimes.",
                 "temporal_categorisation": "Leading indicator",
@@ -199,9 +214,10 @@ THEMATIC_GROUPS = {
             },
 
             "107_chicago_fed_national_activity_index": {
-                "Use Case": "Macro Composite Signals",
-                "title": "National Activity Composite (Chicago Fed)",
-                "template": "gdp_macro_composite_template",
+                "title": "Chicago Fed National Activity Index",
+                "applicable_use_cases": [
+                    "Macro Composite Signals"
+                ],
                 "overview": "A weighted index of 85 indicators covering income, employment, consumption, production, and housing.",
                 "why_it_matters": "Assesses economic activity relative to trend and identifies broad pressures across macro drivers.",
                 "temporal_categorisation": "Coincident indicator",
@@ -241,8 +257,10 @@ THEMATIC_GROUPS = {
         "conclusion_and_further_exploration": "Employment-based indicators act as coincident and leading markers for productivity cycles, sector resilience, and systemic employment adjustments without directional forecasting.",
         "memberships": {
             "201_total_employment": {
-                "Use Case": "Employment Template",
-                "title": "Number of People in Employment",
+                "title": "Employment Trends",
+                "applicable_use_cases": [
+                    "Employment Trends"
+                ],
                 "overview": "Measures total employment. Tracks macro-level hiring trends and is a core signal of business cycle strength.",
                 "why_it_matters": "A key employment indicator used in policy and market discussions. Tracks the pace of hiring and sectoral growth or contraction.",
                 "temporal_categorisation": "Coincident indicator",
@@ -257,8 +275,10 @@ THEMATIC_GROUPS = {
                 "path": "{country}/pages/200_labour_market_dynamics.py"
             },
             "202_unemployment_rate": {
-                "Use Case": "Employment Template",
-                "title": "Unemployment Rate",
+                "title": "Unemployment Context",
+                "applicable_use_cases": [
+                    "Unemployment Context"
+                ],
                 "overview": "Percentage of the total labour force currently without a job but actively seeking work. Used to assess slack or tightness in the labour market and potential policy sensitivity.",
                 "why_it_matters": "It serves as a key indicator of economic slack, labour demand, and consumer sentiment.",
                 "temporal_categorisation": "Coincident indicator",
@@ -273,8 +293,10 @@ THEMATIC_GROUPS = {
                 "path": "{country}/pages/200_labour_market_dynamics.py"
             },
             "203_labour_participation_rate": {
-                "Use Case": "Employment Template",
-                "title": "Labour Participation Rate",
+                "title": "Labour Force Engagement",
+                "applicable_use_cases": [
+                    "Labour Force Engagement"
+                ],
                 "overview": "Share of the working-age population either employed or actively seeking employment. Can reflect demographic trends, inclusion, and structural labour engagement.",
                 "why_it_matters": "Provides insight into workforce engagement and demographic labor shifts.",
                 "temporal_categorisation": "Lagging indicator",
@@ -289,8 +311,10 @@ THEMATIC_GROUPS = {
                 "path": "{country}/pages/200_labour_market_dynamics.py"
             },
             "204_business_sector_employment": {
-                "Use Case": "Employment Composite",
                 "title": "Business Sector Employment Breakdown",
+                "applicable_use_cases": [
+                    "Business Sector Employment Breakdown"
+                ],
                 "overview": "Disaggregates employment across goods, services, and public sectors, capturing structural momentum and cyclical dispersion.",
                 "why_it_matters": "Tracks employment shifts by sector — critical for sectoral rotation, policy targeting, and understanding cyclical exposure.",
                 "temporal_categorisation": "Coincident indicator",
@@ -305,8 +329,10 @@ THEMATIC_GROUPS = {
                 "path": "{country}/pages/200_labour_market_dynamics.py"
             },
             "205_full_part_time_employment": {
-                "Use Case": "Employment Composite",
                 "title": "Full-Time vs Part-Time Employment",
+                "applicable_use_cases": [
+                    "Full-Time vs Part-Time Employment"
+                ],
                 "overview": "Contrasts stable full-time roles with flexible or underemployed part-time positions — a signal of labour market quality and resilience.",
                 "why_it_matters": "A shift toward part-time work may indicate hidden slack, cost pressures, or structural changes in job stability.",
                 "temporal_categorisation": "Coincident indicator",
@@ -321,8 +347,10 @@ THEMATIC_GROUPS = {
                 "path": "{country}/pages/200_labour_market_dynamics.py"
             },
             "206_average_hourly_earnings": {
-                "Use Case": "Employment Composite",
                 "title": "Average Hourly Earnings",
+                "applicable_use_cases": [
+                    "Average Hourly Earnings"
+                ],
                 "overview": "Measures the average hourly compensation for employees across sectors — a key input for inflation and policy decisions.",
                 "why_it_matters": "Wages link employment to consumption, inflation, and monetary policy positioning.",
                 "temporal_categorisation": "Lagging indicator",
@@ -337,8 +365,10 @@ THEMATIC_GROUPS = {
                 "path": "{country}/pages/200_labour_market_dynamics.py"
             },
             "207_initial_jobless_claims": {
-                "Use Case": "Employment Composite",
                 "title": "Initial Jobless Claims",
+                "applicable_use_cases": [
+                    "Jobless Claims"
+                ],
                 "overview": "Measures the number of new claims for unemployment insurance — a high-frequency signal of stress or recovery.",
                 "why_it_matters": "Functions as a directional risk marker — rising claims often precede employment deterioration or policy response.",
                 "temporal_categorisation": "Leading indicator",
@@ -353,8 +383,10 @@ THEMATIC_GROUPS = {
                 "path": "{country}/pages/200_labour_market_dynamics.py"
             },
             "208_continued_jobless_claims": {
-                "Use Case": "Employment Composite",
                 "title": "Continued Jobless Claims",
+                "applicable_use_cases": [
+                    "Jobless Claims"
+                ],
                 "overview": "Tracks those who remain on unemployment benefits, suggesting persistent dislocation or policy frictions.",
                 "why_it_matters": "A stickiness signal — shows whether people are finding jobs or remaining structurally unemployed.",
                 "temporal_categorisation": "Lagging indicator",
@@ -391,6 +423,10 @@ THEMATIC_GROUPS = {
         "conclusion_and_further_exploration": "Consumption and sentiment indicators provide structural demand signals tied to aggregate economic balance, policy sensitivity, and household confidence trends.",
         "memberships": {
             "301_retail_sales_mom": {
+                "title": "",
+                "applicable_use_cases": [
+                    ""
+                ],
                 "overview": "Measures month-over-month change in total retail sales, reflecting near-term demand activity.",
                 "why_it_matters": "Retail sales are a critical gauge of consumer strength, closely watched for economic turning points.",
                 "temporal_categorisation": "Coincident indicator",
@@ -402,9 +438,13 @@ THEMATIC_GROUPS = {
                 "averages": "Smooths trend to see sustained consumer cycles.",
                 "year_over_year": "Evaluates broader consumption shifts.",
                 "recommended_time_periods": ["MM", "3M", "6M", "12M"],
-                "path": "pages/301_retail_sales_mom.py"
+                "path": "{country}/pages/300_consumer_behaviour_confidence.py"
             },
             "302_core_retail_sales": {
+                "title": "",
+                "applicable_use_cases": [
+                    ""
+                ],
                 "overview": "Retail sales excluding autos, fuel, and/or volatile categories. A more stable view of core demand.",
                 "why_it_matters": "Provides clarity on underlying consumption trends by filtering noise from volatile items.",
                 "temporal_categorisation": "Coincident indicator",
@@ -416,9 +456,13 @@ THEMATIC_GROUPS = {
                 "averages": "Tracks consistent underlying demand.",
                 "year_over_year": "Shows annualised consumer behaviour trends.",
                 "recommended_time_periods": ["MM", "3M", "6M", "12M"],
-                "path": "pages/302_core_retail_sales.py"
+                "path": "{country}/pages/300_consumer_behaviour_confidence.py"
             },
             "303_consumer_sentiment_index": {
+                "title": "",
+                "applicable_use_cases": [
+                    ""
+                ],
                 "overview": "A measure of how optimistic or pessimistic consumers are regarding their expected financial situation.",
                 "why_it_matters": "Often leads actual consumption and investment behaviour. Used to gauge confidence and economic mood.",
                 "temporal_categorisation": "Leading indicator",
@@ -430,9 +474,13 @@ THEMATIC_GROUPS = {
                 "averages": "Shows mean confidence over time.",
                 "year_over_year": "Provides long-term attitude trendlines.",
                 "recommended_time_periods": ["MM", "3M", "6M"],
-                "path": "pages/303_consumer_sentiment_index.py"
+                "path": "{country}/pages/300_consumer_behaviour_confidence.py"
             },
             "304_consumer_expectations_index": {
+                "title": "",
+                "applicable_use_cases": [
+                    ""
+                ],
                 "overview": "Forward-looking component of consumer sentiment focused on expectations for income, jobs, and economy.",
                 "why_it_matters": "Can shift prior to actual changes in behaviour or spending patterns.",
                 "temporal_categorisation": "Leading indicator",
@@ -444,9 +492,13 @@ THEMATIC_GROUPS = {
                 "averages": "Useful for smoothing volatile readings.",
                 "year_over_year": "Highlights long-term outlook shifts.",
                 "recommended_time_periods": ["MM", "3M"],
-                "path": "pages/304_consumer_expectations_index.py"
+                "path": "{country}/pages/300_consumer_behaviour_confidence.py"
             },
             "305_leading_economic_index": {
+                "title": "",
+                "applicable_use_cases": [
+                    ""
+                ],
                 "overview": "Composite leading index designed to signal shifts in U.S. economic direction before they appear in broader realised activity data.",
                 "why_it_matters": "Used as a high-level forward economic reference across business cycle analysis, policy interpretation, and market context.",
                 "temporal_categorisation": "Leading indicator",
@@ -458,9 +510,13 @@ THEMATIC_GROUPS = {
                 "averages": "Benchmarks expectations.",
                 "year_over_year": "Adds context for long-cycle patterns.",
                 "recommended_time_periods": ["MM", "3M", "6M"],
-                "path": "pages/305_conference_board_index.py"
+                "path": "{country}/pages/300_consumer_behaviour_confidence.py"
             },
             "306_bull_bear_index": {
+                "title": "",
+                "applicable_use_cases": [
+                    ""
+                ],
                 "overview": "A sentiment survey tracking the proportion of bullish vs bearish outlooks among market participants.",
                 "why_it_matters": "Useful for gauging crowd psychology. Often used as a contrarian signal or to contextualise extremes in market sentiment.",
                 "temporal_categorisation": "Leading indicator",
@@ -472,9 +528,13 @@ THEMATIC_GROUPS = {
                 "averages": "Smoothing of directional sentiment.",
                 "year_over_year": "Contextualizing trend consistency.",
                 "recommended_time_periods": ["3M", "6M"],
-                "path": "pages/306_bull_bear_index.py"
+                "path": "{country}/pages/300_consumer_behaviour_confidence.py"
             },
             "307_speculation_index": {
+                "title": "",
+                "applicable_use_cases": [
+                    ""
+                ],
                 "overview": "Captures speculative appetite across retail or derivatives activity.",
                 "why_it_matters": "May reflect risk-taking appetite or complacency during market runs.",
                 "temporal_categorisation": "Leading indicator",
@@ -486,9 +546,13 @@ THEMATIC_GROUPS = {
                 "averages": "Helps smooth behavioural impulses.",
                 "year_over_year": "Broadens speculative trends.",
                 "recommended_time_periods": ["3M", "6M", "12M"],
-                "path": "pages/307_speculation_index.py"
+                "path": "{country}/pages/300_consumer_behaviour_confidence.py"
             },
             "308_cot_positioning": {
+                "title": "",
+                "applicable_use_cases": [
+                    ""
+                ],
                 "overview": "Tracks trader positioning across futures contracts, segmented by commercial, non-commercial, and retail traders.",
                 "why_it_matters": "Highlights commitment of large institutions and speculators, offering positioning clues.",
                 "temporal_categorisation": "Lagging indicator",
@@ -500,9 +564,13 @@ THEMATIC_GROUPS = {
                 "averages": "Smooths weekly data to identify regime change.",
                 "year_over_year": "Compares positioning evolution over time.",
                 "recommended_time_periods": ["1W", "3M", "6M"],
-                "path": "pages/308_cot_positioning.py"
+                "path": "{country}/pages/300_consumer_behaviour_confidence.py"
             },
             "309_put_call_ratio": {
+                "title": "",
+                "applicable_use_cases": [
+                    ""
+                ],
                 "overview": "Ratio of put options to call options traded. Used to gauge sentiment and hedging demand.",
                 "why_it_matters": "Higher readings suggest fear or hedging, while lower may imply complacency or bullishness.",
                 "temporal_categorisation": "Leading indicator",
@@ -514,9 +582,13 @@ THEMATIC_GROUPS = {
                 "averages": "Trend-based smoothing.",
                 "year_over_year": "Evaluates broader sentiment cycles.",
                 "recommended_time_periods": ["1W", "3M"],
-                "path": "pages/309_put_call_ratio.py"
+                "path": "{country}/pages/300_consumer_behaviour_confidence.py"
             },
             "310_rsi_14_day": {
+                "title": "",
+                "applicable_use_cases": [
+                    ""
+                ],
                 "overview": "Relative Strength Index (14-day) is a momentum oscillator indicating overbought or oversold conditions.",
                 "why_it_matters": "Popular tool for gauging short-term price exhaustion. Used across asset classes.",
                 "temporal_categorisation": "Leading indicator",
@@ -528,7 +600,7 @@ THEMATIC_GROUPS = {
                 "averages": "Smooths oscillations.",
                 "year_over_year": "Supports comparative asset behaviour analysis.",
                 "recommended_time_periods": ["1W", "1M"],
-                "path": "pages/310_rsi_14_day.py"
+                "path": "{country}/pages/300_consumer_behaviour_confidence.py"
             },
         }
     },
@@ -553,6 +625,10 @@ THEMATIC_GROUPS = {
         "conclusion_and_further_exploration": "Inflation-linked measures serve as anchor variables across monetary policy regimes, household purchasing stability, and systemic price volatility assessment.",
         "memberships": {
             "401_core_cpi": {
+                "title": "Core CPI",
+                "applicable_use_cases": [
+                    "Inflation Pressure and Transmission"
+                ],
                 "overview": "Core Consumer Price Index excludes volatile food and energy prices, providing a clearer view of underlying inflation.",
                 "why_it_matters": "A preferred gauge for central banks, it helps in determining longer-term inflation trends.",
                 "temporal_categorisation": "Coincident indicator",
@@ -564,9 +640,13 @@ THEMATIC_GROUPS = {
                 "averages": "Smooths short-term volatility.",
                 "year_over_year": "Used to assess persistent price changes.",
                 "recommended_time_periods": ["MM", "3M", "6M", "12M"],
-                "path": "pages/401_core_cpi.py"
+                "path": "{country}/pages/400_inflation_price_dynamics.py"
             },
             "402_headline_cpi": {
+                "title": "Headline CPI",
+                "applicable_use_cases": [
+                    "Inflation Pressure and Transmission"
+                ],
                 "overview": "Headline CPI reflects the total change in consumer prices, including food and energy.",
                 "why_it_matters": "Captures the full inflationary experience for households.",
                 "temporal_categorisation": "Coincident indicator",
@@ -578,9 +658,13 @@ THEMATIC_GROUPS = {
                 "averages": "Supports smoothing of high-volatility months.",
                 "year_over_year": "Long-run CPI trend monitoring.",
                 "recommended_time_periods": ["MM", "3M", "6M", "12M"],
-                "path": "pages/402_headline_cpi.py"
+                "path": "{country}/pages/400_inflation_price_dynamics.py"
             },
             "403_core_pce": {
+                "title": "",
+                "applicable_use_cases": [
+                    ""
+                ],
                 "overview": "The Core Personal Consumption Expenditures Price Index is the Federal Reserve’s preferred inflation metric, removing food and energy.",
                 "why_it_matters": "Often cited in Fed forecasts and rate decision commentary.",
                 "temporal_categorisation": "Coincident indicator",
@@ -592,9 +676,13 @@ THEMATIC_GROUPS = {
                 "averages": "Smoothed to remove noise from volatile categories.",
                 "year_over_year": "Used for long-term target comparisons.",
                 "recommended_time_periods": ["3M", "6M", "12M"],
-                "path": "pages/403_core_pce.py"
+                "path": "{country}/pages/400_inflation_price_dynamics.py"
             },
             "404_headline_pce": {
+                "title": "",
+                "applicable_use_cases": [
+                    ""
+                ],
                 "overview": "Headline PCE includes food and energy prices and reflects broad consumption-based inflation.",
                 "why_it_matters": "Used for broader macroeconomic consumption-based inflation evaluation.",
                 "temporal_categorisation": "Coincident indicator",
@@ -606,23 +694,31 @@ THEMATIC_GROUPS = {
                 "averages": "Used to confirm longer cycles.",
                 "year_over_year": "Benchmarks annual inflation expectations.",
                 "recommended_time_periods": ["3M", "6M", "12M"],
-                "path": "pages/404_headline_pce.py"
+                "path": "{country}/pages/400_inflation_price_dynamics.py"
             },
-            "405_ppi_all_commodities": {
-                "overview": "Producer Price Index (PPI) for All Commodities reflects changes in input prices across sectors.",
-                "why_it_matters": "Used to assess upstream price pressures that may pass through to consumers.",
+            "405_headline_ppi": {
+                "title": "Headline PPI",
+                "applicable_use_cases": [
+                    "Inflation Pressure and Transmission"
+                ],
+                "overview": "Producer Price Index (PPI) for Final Demand: Finished Goods reflects changes in wholesale prices for finished goods before they reach consumers.",
+                "why_it_matters": "Used to assess upstream price pressures and cost pass-through dynamics that may later influence consumer inflation.",
                 "temporal_categorisation": "Coincident indicator",
-                "investment_action_importance": "🌟🌟 - Valuable for anticipating margin pressures and sector rotation.",
-                "personal_impact_importance": "🌟 - Indirect but felt through cost pass-through in goods and services.",
-                "current_vs_previous": "Shows shifts in wholesale pricing power.",
-                "points_percentage_changes": "Tracks rate and speed of change.",
-                "min_max_12months": "Assesses commodity-driven inflation risk.",
-                "averages": "Smooths out seasonal effects.",
-                "year_over_year": "Highlights cyclical pressure trends.",
+                "investment_action_importance": "🌟🌟 - Valuable for assessing margin pressure, sector sensitivity, and inflation transmission risk.",
+                "personal_impact_importance": "🌟 - Indirectly felt through price pass-through into consumer goods and services.",
+                "current_vs_previous": "Shows shifts in finished goods pricing pressure at the wholesale level.",
+                "points_percentage_changes": "Tracks the pace and persistence of price changes.",
+                "min_max_12months": "Assesses finished goods inflation extremes over the past year.",
+                "averages": "Smooths short-term volatility and temporary pricing distortions.",
+                "year_over_year": "Highlights cyclical and structural pricing pressure trends.",
                 "recommended_time_periods": ["3M", "6M", "12M"],
-                "path": "pages/405_ppi_all_commodities.py"
+                "path": "{country}/pages/400_inflation_price_dynamics.py"
             },
             "406_core_ppi": {
+                "title": "Core PPI",
+                "applicable_use_cases": [
+                    "Inflation Pressure and Transmission"
+                ],
                 "overview": "Core PPI strips out food and energy to focus on stable wholesale price trends.",
                 "why_it_matters": "Often more predictive of long-run cost structures and pricing pass-through.",
                 "temporal_categorisation": "Coincident indicator",
@@ -634,7 +730,7 @@ THEMATIC_GROUPS = {
                 "averages": "Gives longer-term view without shocks.",
                 "year_over_year": "Provides basis for structural inflation assessment.",
                 "recommended_time_periods": ["3M", "6M", "12M"],
-                "path": "pages/406_core_ppi.py"
+                "path": "{country}/pages/400_inflation_price_dynamics.py"
             },
         }
     },
@@ -651,7 +747,7 @@ THEMATIC_GROUPS = {
             "money_supply_template": "Money Supply Template – For monetary aggregates and their velocity across the economy."
         },
         "data_points": [
-            "Policy Rate Signals: Fed Funds Rate and similar benchmarks to assess tightening or easing.",
+            "Policy Rate Signals: Central Bank Funds Rate and similar benchmarks to assess tightening or easing.",
             "Yield Curve Structure: Shape and slope of government bond curves signalling macro expectations, financial conditions, and recession risk.",
             "Monetary Aggregates: M1/M2 to understand liquidity and credit availability.",
             "Velocity Metrics: Insights into how fast money circulates and supports demand."
@@ -659,8 +755,12 @@ THEMATIC_GROUPS = {
         "navigating_the_theme": "Policy rate adjustments, balance sheet movements, and liquidity operations reflect official calibrations intended to balance growth support with inflation management objectives.",
         "conclusion_and_further_exploration": "Monetary policy indicators form part of forward reaction functions observed for systemic risk containment, growth modulation, and currency stability maintenance.",
         "memberships": {
-            "501_fed_funds_rate": {
-                "overview": "The Federal Funds Rate is the primary tool used by the U.S. Federal Reserve to influence short-term interest rates and liquidity.",
+            "501_central_bank_funds_rate": {
+                "title": "Central Bank Funds Rate",
+                "applicable_use_cases": [
+                    "Aggregate Equity Allocation"
+                ],
+                "overview": "Central Bank Funds Rate is the primary tool used by Central Banks to influence short-term interest rates and liquidity.",
                 "why_it_matters": "It signals central bank stance and influences all downstream borrowing costs.",
                 "temporal_categorisation": "Coincident indicator",
                 "investment_action_importance": "🌟🌟🌟 - Directly affects valuation models, funding costs, and currency strength.",
@@ -671,9 +771,13 @@ THEMATIC_GROUPS = {
                 "averages": "Useful to measure neutral or tight conditions.",
                 "year_over_year": "Contextualises current policy.",
                 "recommended_time_periods": ["6M", "12M"],
-                "path": "pages/501_fed_funds_rate.py"
+                "path": "{country}/pages/500_monetary_indicators_policy_effects.py"
             },
             "502_treasury_yields": {
+                "title": "",
+                "applicable_use_cases": [
+                    ""
+                ],
                 "overview": "Treasury yields represent benchmark borrowing costs across maturities, used globally to assess risk-free rates.",
                 "why_it_matters": "Signals market expectations of inflation, growth, and policy path.",
                 "temporal_categorisation": "Coincident indicator",
@@ -685,9 +789,13 @@ THEMATIC_GROUPS = {
                 "averages": "Establishes benchmark trend.",
                 "year_over_year": "Used for positioning outlooks.",
                 "recommended_time_periods": ["3M", "6M", "12M"],
-                "path": "pages/502_treasury_yields.py"
+                "path": "{country}/pages/500_monetary_indicators_policy_effects.py"
             },
             "503_yield_curve_spread": {
+                "title": "",
+                "applicable_use_cases": [
+                    ""
+                ],
                 "overview": "This spread measures the difference between long-term and short-term Treasury yields, often used to signal recession risk.",
                 "why_it_matters": "A widely followed indicator of investor sentiment, policy outlook, and economic momentum.",
                 "temporal_categorisation": "Leading indicator",
@@ -699,9 +807,13 @@ THEMATIC_GROUPS = {
                 "averages": "Used to calculate expected slope.",
                 "year_over_year": "Highlights regime changes.",
                 "recommended_time_periods": ["6M", "12M"],
-                "path": "pages/503_yield_curve_spread.py"
+                "path": "{country}/pages/500_monetary_indicators_policy_effects.py"
             },
             "504_eurodollar_futures": {
+                "title": "",
+                "applicable_use_cases": [
+                    ""
+                ],
                 "overview": "Eurodollar futures reflect market expectations for future interest rates and are used to price rate risk.",
                 "why_it_matters": "Useful for forward guidance and policy pricing by traders and institutions.",
                 "temporal_categorisation": "Leading indicator",
@@ -713,9 +825,13 @@ THEMATIC_GROUPS = {
                 "averages": "Establishes expected path.",
                 "year_over_year": "Shows policy divergence.",
                 "recommended_time_periods": ["6M", "12M"],
-                "path": "pages/504_eurodollar_futures.py"
+                "path": "{country}/pages/500_monetary_indicators_policy_effects.py"
             },
             "505_money_supply_m1": {
+                "title": "M1 Money Supply",
+                "applicable_use_cases": [
+                    "Money Supply and Velocity Dynamics"
+                ],
                 "overview": "M1 includes the most liquid forms of money like cash and checking deposits.",
                 "why_it_matters": "Reflects liquidity directly available for spending and transaction.",
                 "temporal_categorisation": "Coincident indicator",
@@ -727,9 +843,13 @@ THEMATIC_GROUPS = {
                 "averages": "Reveals trendline support.",
                 "year_over_year": "Key for long-run money conditions.",
                 "recommended_time_periods": ["3M", "6M", "12M"],
-                "path": "pages/505_money_supply_m1.py"
+                "path": "{country}/pages/500_monetary_indicators_policy_effects.py"
             },
             "506_money_supply_m2": {
+                "title": "M2 Money Supply",
+                "applicable_use_cases": [
+                    "Money Supply and Velocity Dynamics"
+                ],
                 "overview": "M2 includes M1 plus savings deposits and money market funds.",
                 "why_it_matters": "More expansive view of liquidity and savings behaviour.",
                 "temporal_categorisation": "Coincident indicator",
@@ -741,9 +861,13 @@ THEMATIC_GROUPS = {
                 "averages": "Provides macro context.",
                 "year_over_year": "Used for historical benchmark.",
                 "recommended_time_periods": ["3M", "6M", "12M"],
-                "path": "pages/506_money_supply_m2.py"
+                "path": "{country}/pages/500_monetary_indicators_policy_effects.py"
             },
             "507_velocity_m1": {
+                "title": "M1 Velocity",
+                "applicable_use_cases": [
+                    "Money Supply and Velocity Dynamics"
+                ],
                 "overview": "Velocity of M1 measures how frequently money is used in economic transactions.",
                 "why_it_matters": "Higher velocity indicates stronger demand and consumption.",
                 "temporal_categorisation": "Leading indicator",
@@ -755,9 +879,13 @@ THEMATIC_GROUPS = {
                 "averages": "Highlights sustained shifts.",
                 "year_over_year": "Macro-level behavioural shifts.",
                 "recommended_time_periods": ["6M", "12M"],
-                "path": "pages/507_velocity_m1.py"
+                "path": "{country}/pages/500_monetary_indicators_policy_effects.py"
             },
             "508_velocity_m2": {
+                "title": "M2 Velocity",
+                "applicable_use_cases": [
+                    "Money Supply and Velocity Dynamics"
+                ],
                 "overview": "Velocity of M2 examines broader money use across savings and investment layers.",
                 "why_it_matters": "Low velocity often coincides with deleveraging or low confidence.",
                 "temporal_categorisation": "Leading indicator",
@@ -769,7 +897,82 @@ THEMATIC_GROUPS = {
                 "averages": "Smooths year-end noise.",
                 "year_over_year": "Macro liquidity pacing.",
                 "recommended_time_periods": ["6M", "12M"],
-                "path": "pages/508_velocity_m2.py"
+                "path": "{country}/pages/500_monetary_indicators_policy_effects.py"
+            },
+            "509_proxy_fed_funds_rate": {
+                "title": "Central Bank Proxy Effective Rate",
+                "applicable_use_cases": [
+                    "Interest Rate Regime and Transmission"
+                ],
+                "overview": "A proxy measure of central bank effective rate conditions used to estimate policy stance during constrained or unconventional periods.",
+                "why_it_matters": "Helps assess monetary transmission when traditional benchmark rates alone do not fully reflect funding conditions.",
+                "temporal_categorisation": "Coincident indicator",
+                "investment_action_importance": "🌟🌟 - Useful for interpreting policy regime shifts, liquidity conditions, and rate-sensitive assets.",
+                "personal_impact_importance": "🌟 - Indirectly influences borrowing costs and broader financial conditions.",
+                "current_vs_previous": "Tracks short-term changes in effective policy conditions.",
+                "points_percentage_changes": "Measures the pace and direction of policy transmission shifts.",
+                "min_max_12months": "Highlights tightening or easing extremes over the year.",
+                "averages": "Smooths short-term distortions and exceptional market events.",
+                "year_over_year": "Provides longer-run monetary regime context.",
+                "recommended_time_periods": ["3M", "6M", "12M"],
+                "path": "{country}/pages/500_monetary_indicators_policy_effects.py"
+            },
+            "510_interest_rate_yield": {
+                "title": "Interest Rate Yield",
+                "applicable_use_cases": [
+                    "Interest Rate Regime and Transmission",
+                    "Sovereign Liquidity and Refinancing Pressure",
+                    "Balance Sheet Expansion and System Constraint",
+                    "Aggregate Equity Allocation"
+                ],
+                "overview": "The 10-Year Sovereign Yield reflects long-term borrowing costs and market expectations for growth, inflation, and policy direction.",
+                "why_it_matters": "A core benchmark for discount rates, fixed income pricing, and macroeconomic expectations.",
+                "temporal_categorisation": "Coincident indicator",
+                "investment_action_importance": "🌟🌟🌟 - Highly relevant across bonds, equities, FX, and valuation frameworks.",
+                "personal_impact_importance": "🌟🌟 - Influences mortgage pricing, savings products, and long-term borrowing costs.",
+                "current_vs_previous": "Monitors shifts in long-term market pricing and risk expectations.",
+                "points_percentage_changes": "Tracks directional changes in yield structure.",
+                "min_max_12months": "Highlights yield extremes and regime shifts.",
+                "averages": "Smooths temporary market volatility.",
+                "year_over_year": "Shows structural shifts in long-term financing conditions.",
+                "recommended_time_periods": ["1M", "3M", "6M", "12M"],
+                "path": "{country}/pages/500_monetary_indicators_policy_effects.py"
+            },
+            "511_prime_lending_rate": {
+                "title": "Prime Lending Rate",
+                "applicable_use_cases": [
+                    "Interest Rate Regime and Transmission"
+                ],
+                "overview": "Prime Lending Rate reflects the benchmark rate commercial banks use for pricing loans to creditworthy borrowers.",
+                "why_it_matters": "A key indicator of borrowing conditions for businesses and households.",
+                "temporal_categorisation": "Coincident indicator",
+                "investment_action_importance": "🌟🌟 - Relevant for credit-sensitive sectors and financing conditions.",
+                "personal_impact_importance": "🌟🌟 - Directly affects lending products and borrowing costs.",
+                "current_vs_previous": "Tracks short-term lending condition changes.",
+                "points_percentage_changes": "Measures lending cost adjustments.",
+                "min_max_12months": "Highlights restrictive or accommodative credit conditions.",
+                "averages": "Smooths temporary repricing moves.",
+                "year_over_year": "Provides structural lending environment context.",
+                "recommended_time_periods": ["1M", "3M", "6M", "12M"],
+                "path": "{country}/pages/500_monetary_indicators_policy_effects.py"
+            },
+            "512_overnight_funding_rate": {
+                "title": "Overnight Funding Rate",
+                "applicable_use_cases": [
+                    "Interest Rate Regime and Transmission"
+                ],
+                "overview": "Overnight Funding Rate reflects short-term secured funding conditions and liquidity pricing within the financial system.",
+                "why_it_matters": "A core indicator of short-term funding stress, liquidity transmission, and rate expectations.",
+                "temporal_categorisation": "Coincident indicator",
+                "investment_action_importance": "🌟🌟🌟 - Critical for short-duration instruments, carry conditions, and funding-sensitive markets.",
+                "personal_impact_importance": "🌟 - Indirectly influences broader financing conditions.",
+                "current_vs_previous": "Tracks daily liquidity and funding condition shifts.",
+                "points_percentage_changes": "Measures short-term funding rate movement.",
+                "min_max_12months": "Highlights funding stress or easing extremes.",
+                "averages": "Useful for smoothing short-term volatility through 30-day and 90-day views.",
+                "year_over_year": "Provides structural liquidity regime context.",
+                "recommended_time_periods": ["1M", "3M", "6M", "12M"],
+                "path": "{country}/pages/500_monetary_indicators_policy_effects.py"
             },
         }
     },
@@ -782,14 +985,18 @@ THEMATIC_GROUPS = {
             "lagging_indicators": "Historical data that reveal long-term financial stability or the delayed impact of policy measures."
         },
         "template": {
-            "financial_conditions_template": "Financial Conditions Template – For stress indicators, credit growth, and broad financial market conditions.",
+            "financial_conditions_template": "Financial Conditions Template – For liquidity conditions, funding stress, credit spreads, and broad market risk transmission.",
+            "credit_conditions_template": "Credit Conditions and Financing Pressure Template – For bank balance sheet capacity, lending stress, spread widening, and capital availability across the system.",
+            "sovereign_balance_sheet_template": "Sovereign Balance Sheets Template – For sovereign debt, fiscal capacity, debt servicing pressure, and liquidity support conditions.",
             "credit_cycle_default_template": "Credit Cycle & Default Risk Template – For credit tightening, default trends, and high-yield spread monitoring.",
             "housing_cycle_template": "Housing Construction Cycle Template – For financing conditions, permits, starts, and completions tracking across housing demand, credit sensitivity, and construction supply flow stages."
         },
         "data_points": [
-            "Liquidity Flows: Assess levels of available capital in financial markets.",
-            "Credit Expansion Trends: Understand the pace and breadth of lending and borrowing.",
-            "Banking Sector Health: Evaluate stress metrics and resilience levels across the financial system.",
+            "Liquidity Flows: Assess the availability and movement of capital across the financial system.",
+            "Credit Expansion Trends: Understand the pace and breadth of lending, leverage, and financing activity.",
+            "Banking Sector Health: Evaluate liquidity buffers, asset composition, and balance sheet resilience across the banking system.",
+            "Credit Spread Pressure: Observe corporate, high-yield, and deep speculative spread widening as signals of financing stress.",
+            "Capital Availability: Assess whether funding conditions are tightening or easing across credit-sensitive sectors.",
             "Housing Construction Pipeline: Observe authorization, build activity, and completion flow as credit-sensitive signals shaping supply, industry activity, and broader economic interpretation.",
             "Mortgage Financing Conditions: Monitor long-term mortgage borrowing costs influencing housing affordability and construction demand.",
             "Yield Curve Structure: Observe long- versus short-term interest rate dynamics signalling liquidity conditions and macroeconomic expectations."
@@ -798,6 +1005,10 @@ THEMATIC_GROUPS = {
         "conclusion_and_further_exploration": "Financial conditions and credit indicators serve as composite signals reflecting systemic liquidity regimes, leverage sensitivity, credit tightening phases, and evolving systemic stress states across policy cycles.",
         "memberships": {
             "601_bank_stress_index": {
+                "title": "",
+                "applicable_use_cases": [
+                    ""
+                ],
                 "overview": "Tracks banking system stress using composite indicators or credit default spread proxies.",
                 "why_it_matters": "Early signal of instability in the banking sector. Useful for identifying systemic risk or financial fragility.",
                 "temporal_categorisation": "Leading indicator",
@@ -809,9 +1020,13 @@ THEMATIC_GROUPS = {
                 "averages": "Helps assess if conditions are unusually tight or loose.",
                 "year_over_year": "Compares structural shifts in the financial system.",
                 "recommended_time_periods": ["3M", "6M", "12M"],
-                "path": "pages/601_bank_stress_index.py"
+                "path": "{country}/pages/600_financial_conditions_risk_analysis.py"
             },
             "602_credit_growth": {
+                "title": "",
+                "applicable_use_cases": [
+                    ""
+                ],
                 "overview": "Measures the rate at which new credit is expanding across the economy.",
                 "why_it_matters": "Credit growth often precedes economic momentum or overextension. Useful for policy analysis and cyclical shifts.",
                 "temporal_categorisation": "Leading indicator",
@@ -823,9 +1038,13 @@ THEMATIC_GROUPS = {
                 "averages": "Establishes baseline credit conditions.",
                 "year_over_year": "Used for structural credit growth assessment.",
                 "recommended_time_periods": ["3M", "6M", "12M"],
-                "path": "pages/602_credit_growth.py"
+                "path": "{country}/pages/600_financial_conditions_risk_analysis.py"
             },
             "603_bank_credit": {
+                "title": "",
+                "applicable_use_cases": [
+                    ""
+                ],
                 "overview": "Total bank credit extended, encompassing business and household lending.",
                 "why_it_matters": "Reflects overall credit supply conditions. Serves as a proxy for financial activity and willingness to lend.",
                 "temporal_categorisation": "Coincident indicator",
@@ -837,9 +1056,13 @@ THEMATIC_GROUPS = {
                 "averages": "Baseline lending levels.",
                 "year_over_year": "Assess structural changes in bank behaviour.",
                 "recommended_time_periods": ["3M", "6M", "12M"],
-                "path": "pages/603_bank_credit.py"
+                "path": "{country}/pages/600_financial_conditions_risk_analysis.py"
             },
             "604_financial_conditions_index": {
+                "title": "",
+                "applicable_use_cases": [
+                    ""
+                ],
                 "overview": "An aggregate index capturing interest rates, spreads, equity valuations, and volatility.",
                 "why_it_matters": "Tracks overall tightness or looseness in financial markets. Useful for gauging policy effectiveness or risk appetite shifts.",
                 "temporal_categorisation": "Coincident indicator",
@@ -851,9 +1074,13 @@ THEMATIC_GROUPS = {
                 "averages": "Smooths noise across multiple indicators.",
                 "year_over_year": "Captures high-level liquidity and sentiment shifts.",
                 "recommended_time_periods": ["3M", "6M", "12M"],
-                "path": "pages/604_financial_conditions_index.py"
+                "path": "{country}/pages/600_financial_conditions_risk_analysis.py"
             },
             "605_loan_officer_survey": {
+                "title": "",
+                "applicable_use_cases": [
+                    ""
+                ],
                 "overview": "Survey of senior loan officers regarding changes in credit standards and demand for loans.",
                 "why_it_matters": "Acts as a forward-looking view of tightening or loosening credit availability.",
                 "temporal_categorisation": "Leading indicator",
@@ -865,9 +1092,13 @@ THEMATIC_GROUPS = {
                 "averages": "Smooths signals across quarters.",
                 "year_over_year": "Evaluates long-term shifts in credit market stance.",
                 "recommended_time_periods": ["3M", "6M", "12M"],
-                "path": "pages/605_loan_officer_survey.py"
+                "path": "{country}/pages/600_financial_conditions_risk_analysis.py"
             },
             "606_high_yield_spread": {
+                "title": "",
+                "applicable_use_cases": [
+                    ""
+                ],
                 "overview": "Spread between high-yield (junk) bond yields and safer government bonds.",
                 "why_it_matters": "Acts as a stress barometer in credit markets—wider spreads imply more fear or default risk.",
                 "temporal_categorisation": "Leading indicator",
@@ -879,9 +1110,13 @@ THEMATIC_GROUPS = {
                 "averages": "Provides cyclical norm reference.",
                 "year_over_year": "Shows broader market regime shifts.",
                 "recommended_time_periods": ["MM", "3M", "6M", "12M"],
-                "path": "pages/606_high_yield_spread.py"
+                "path": "{country}/pages/600_financial_conditions_risk_analysis.py"
             },
             "607_default_rate_index": {
+                "title": "",
+                "applicable_use_cases": [
+                    ""
+                ],
                 "overview": "Measures corporate or consumer loan default rates over time.",
                 "why_it_matters": "Elevated defaults often reflect deeper economic or financial stress, trailing tightening periods.",
                 "temporal_categorisation": "Lagging indicator",
@@ -893,9 +1128,13 @@ THEMATIC_GROUPS = {
                 "averages": "Reveals baseline financial health.",
                 "year_over_year": "Used to confirm trend reversals.",
                 "recommended_time_periods": ["6M", "12M"],
-                "path": "pages/607_default_rate_index.py"
+                "path": "{country}/pages/600_financial_conditions_risk_analysis.py"
             },
             "608_leveraged_loan_index": {
+                "title": "",
+                "applicable_use_cases": [
+                    ""
+                ],
                 "overview": "Captures pricing and volume trends in the leveraged loan market.",
                 "why_it_matters": "Reflects credit appetite in higher-risk lending markets and liquidity pressure.",
                 "temporal_categorisation": "Leading indicator",
@@ -907,12 +1146,13 @@ THEMATIC_GROUPS = {
                 "averages": "Benchmark levels of issuance.",
                 "year_over_year": "Highlights major cyclical shifts.",
                 "recommended_time_periods": ["3M", "6M", "12M"],
-                "path": "pages/608_leveraged_loan_index.py"
+                "path": "{country}/pages/600_financial_conditions_risk_analysis.py"
             },
             "609_housing_units_authorized": {
-                "Use Case": "Housing Construction Cycle",
                 "title": "Housing Units Authorized",
-                "template": "housing_cycle_template",
+                "applicable_use_cases": [
+                    "Housing Construction Cycle"
+                ],
                 "overview": "Measures the number of housing units authorized for future construction, capturing the earliest stage of the residential building pipeline.",
                 "why_it_matters": "Housing authorizations act as a forward-looking signal for construction activity, financing demand, supply pipeline formation, and broader credit-sensitive economic momentum.",
                 "temporal_categorisation": "Leading indicator",
@@ -924,12 +1164,13 @@ THEMATIC_GROUPS = {
                 "averages": "Uses average levels to identify whether authorization activity is running above or below recent housing-cycle norms.",
                 "year_over_year": "Compares current authorizations with the same period last year to surface broader directional shifts in the housing pipeline.",
                 "recommended_time_periods": ["MM", "3M", "6M", "12M"],
-                "path": "{country}/pages/600_🔍_financial_conditions_risk_analysis.py"
+                "path": "{country}/pages/600_financial_conditions_risk_analysis.py"
             },
             "610_housing_units_started": {
-                "Use Case": "Housing Construction Cycle",
                 "title": "Housing Units Started",
-                "template": "housing_cycle_template",
+                "applicable_use_cases": [
+                    "Housing Construction Cycle"
+                ],
                 "overview": "Measures the number of housing units on which construction has begun, reflecting active build execution within the residential pipeline.",
                 "why_it_matters": "Housing starts provide a live read on construction activity, financing follow-through, developer confidence, and the conversion of approvals into real-economy building momentum.",
                 "temporal_categorisation": "Coincident indicator",
@@ -941,12 +1182,13 @@ THEMATIC_GROUPS = {
                 "averages": "Calculates average start levels to reveal whether current activity is above or below recent construction norms.",
                 "year_over_year": "Compares starts with the same period last year to surface broader changes in construction momentum.",
                 "recommended_time_periods": ["MM", "3M", "6M", "12M"],
-                "path": "{country}/pages/600_🔍_financial_conditions_risk_analysis.py"
+                "path": "{country}/pages/600_financial_conditions_risk_analysis.py"
             },
             "611_housing_units_completed": {
-                "Use Case": "Housing Construction Cycle",
                 "title": "Housing Units Completed",
-                "template": "housing_cycle_template",
+                "applicable_use_cases": [
+                    "Housing Construction Cycle"
+                ],
                 "overview": "Measures the number of housing units completed and ready to enter available supply, reflecting the delivery stage of the construction cycle.",
                 "why_it_matters": "Housing completions help reveal when pipeline activity is converting into delivered supply, with implications for housing availability, construction follow-through, and broader system interpretation.",
                 "temporal_categorisation": "Lagging indicator",
@@ -958,12 +1200,14 @@ THEMATIC_GROUPS = {
                 "averages": "Uses average completion levels to show whether delivered supply is running above or below recent norms.",
                 "year_over_year": "Compares completions with the same period last year to confirm broader shifts in delivered housing supply.",
                 "recommended_time_periods": ["MM", "3M", "6M", "12M"],
-                "path": "{country}/pages/600_🔍_financial_conditions_risk_analysis.py"
+                "path": "{country}/pages/600_financial_conditions_risk_analysis.py"
             },
             "612_30_year_mortgage_rate": {
-                "Use Case": "Housing Construction Cycle",
-                "title": "30-Year Mortgage Rate",
-                "template": "housing_cycle_template",
+                "title": "30-year Fixed Rate Mortgages",
+                "applicable_use_cases": [
+                    "Mortgage Financing Conditions",
+                    "Interest Rate Regime and Transmission"
+                ],
                 "overview": "Represents the average interest rate charged on standard 30-year fixed-rate mortgages, reflecting prevailing long-term borrowing costs in residential housing finance.",
                 "why_it_matters": "Mortgage rates influence housing affordability, borrowing demand, refinancing activity, and the willingness of households and developers to enter the housing market.",
                 "temporal_categorisation": "Leading indicator",
@@ -975,12 +1219,13 @@ THEMATIC_GROUPS = {
                 "averages": "Uses average rate levels to reveal whether current mortgage costs sit above or below recent borrowing cost norms.",
                 "year_over_year": "Compares current mortgage rates with the same period last year to surface broader shifts in long-term housing financing conditions.",
                 "recommended_time_periods": ["MM", "3M", "6M", "12M"],
-                "path": "{country}/pages/600_🔍_financial_conditions_risk_analysis.py"
+                "path": "{country}/pages/600_financial_conditions_risk_analysis.py"
             },
             "613_yield_curve_spread": {
-                "Use Case": "Housing Construction Cycle",
-                "title": "Yield Curve Spread",
-                "template": "housing_cycle_template",
+                "title": "Yield Curve Structure",
+                "applicable_use_cases": [
+                    "Yield Curve Structure"
+                ],
                 "overview": "Measures the difference between long-term and short-term government bond yields, commonly represented by the spread between 10-year and 2-year Treasury rates.",
                 "why_it_matters": "Yield curve structure reflects expectations around economic growth, inflation, and monetary policy direction, often signalling shifts in financial conditions and macroeconomic momentum.",
                 "temporal_categorisation": "Leading indicator",
@@ -992,7 +1237,245 @@ THEMATIC_GROUPS = {
                 "averages": "Uses average spread levels to show whether the current curve structure is above or below recent macro cycle norms.",
                 "year_over_year": "Compares the current spread with the same period last year to surface structural shifts in the yield curve environment.",
                 "recommended_time_periods": ["MM", "3M", "6M", "12M"],
-                "path": "{country}/pages/600_🔍_financial_conditions_risk_analysis.py"
+                "path": "{country}/pages/600_financial_conditions_risk_analysis.py"
+            },
+            "614_bank_cash_assets": {
+                "title": "Bank Cash Assets",
+                "applicable_use_cases": [
+                    "Bank Balance Sheet Liquidity and Credit Capacity"
+                ],
+                "overview": "Bank Cash Assets reflect the liquid cash holdings of commercial banks, providing a view of immediate balance sheet liquidity and defensive positioning.",
+                "why_it_matters": "Cash buffers help frame how much liquidity banks are holding relative to lending, market stress, and uncertainty in broader financial conditions.",
+                "temporal_categorisation": "Coincident indicator",
+                "investment_action_importance": "🌟🌟 - Useful for assessing liquidity preference, credit caution, and defensive positioning within the banking system.",
+                "personal_impact_importance": "🌟 - Indirectly influences lending flexibility and broader credit availability.",
+                "current_vs_previous": "Compares current cash holdings with prior periods to reveal whether banks are building or reducing liquidity buffers.",
+                "points_percentage_changes": "Tracks changes in cash asset levels to identify shifts in liquidity preference and financial caution.",
+                "min_max_12months": "Highlights the highest and lowest cash holdings observed over the past year to place current liquidity positioning in context.",
+                "averages": "Uses average levels to show whether current bank cash holdings are above or below recent liquidity norms.",
+                "year_over_year": "Compares cash asset levels with the same period last year to surface structural shifts in banking system liquidity.",
+                "recommended_time_periods": ["1M", "3M", "6M", "12M"],
+                "path": "{country}/pages/600_financial_conditions_risk_analysis.py"
+            },
+            "615_bank_total_assets": {
+                "title": "Bank Total Assets",
+                "applicable_use_cases": [
+                    "Bank Balance Sheet Liquidity and Credit Capacity"
+                ],
+                "overview": "Bank Total Assets measure the overall size of commercial bank balance sheets, reflecting the scale of asset intermediation within the financial system.",
+                "why_it_matters": "Changes in total assets help frame the banking system’s balance sheet capacity, expansion, contraction, and broader role in credit creation.",
+                "temporal_categorisation": "Coincident indicator",
+                "investment_action_importance": "🌟🌟 - Useful for assessing balance sheet growth, financial system capacity, and the scale of credit intermediation.",
+                "personal_impact_importance": "🌟 - Indirectly affects the banking system’s ability to support lending and financial stability.",
+                "current_vs_previous": "Compares current total asset levels with prior periods to show whether balance sheets are expanding or contracting.",
+                "points_percentage_changes": "Tracks the pace of bank asset growth or retrenchment.",
+                "min_max_12months": "Highlights the highest and lowest total asset levels observed over the past year.",
+                "averages": "Uses average balance sheet size to place current readings in broader context.",
+                "year_over_year": "Compares total assets with the same period last year to reveal structural changes in bank balance sheet scale.",
+                "recommended_time_periods": ["3M", "6M", "12M"],
+                "path": "{country}/pages/600_financial_conditions_risk_analysis.py"
+            },
+            "616_bank_treasury_agency_securities": {
+                "title": "Treasury and Agency Securities Holdings",
+                "applicable_use_cases": [
+                    "Bank Balance Sheet Liquidity and Credit Capacity"
+                ],
+                "overview": "Treasury and Agency Securities Holdings reflect the share of bank balance sheets allocated to highly rated sovereign and agency-linked assets.",
+                "why_it_matters": "These holdings help frame risk preference, liquidity positioning, and the balance between defensive asset allocation and credit extension.",
+                "temporal_categorisation": "Coincident indicator",
+                "investment_action_importance": "🌟🌟 - Useful for assessing defensive balance sheet positioning, risk appetite, and liquidity orientation within the banking sector.",
+                "personal_impact_importance": "🌟 - Indirectly influences credit conditions through bank asset allocation choices.",
+                "current_vs_previous": "Compares current securities holdings with prior periods to show whether banks are increasing or reducing defensive asset exposure.",
+                "points_percentage_changes": "Tracks changes in Treasury and agency holdings to detect shifts in risk and liquidity preference.",
+                "min_max_12months": "Highlights the highest and lowest holdings observed over the past year to place current allocation in context.",
+                "averages": "Uses average holdings to show whether banks are more or less defensively positioned than recent norms.",
+                "year_over_year": "Compares holdings with the same period last year to surface structural changes in balance sheet composition.",
+                "recommended_time_periods": ["3M", "6M", "12M"],
+                "path": "{country}/pages/600_financial_conditions_risk_analysis.py"
+            },
+            "617_corporate_credit_spread": {
+                "title": "Corporate Credit Spread",
+                "applicable_use_cases": [
+                    "Credit Conditions and Financing Pressure"
+                ],
+                "overview": "Corporate Credit Spread measures the additional yield demanded by investors to hold corporate debt over safer benchmark securities.",
+                "why_it_matters": "Spread levels help frame financing pressure, credit market confidence, and the availability of capital for corporate borrowers.",
+                "temporal_categorisation": "Coincident indicator",
+                "investment_action_importance": "🌟🌟🌟 - Widely used to assess credit conditions, financing stress, and investor risk appetite across markets.",
+                "personal_impact_importance": "🌟 - Indirectly affects borrowing costs, employment conditions, and the resilience of credit-sensitive sectors.",
+                "current_vs_previous": "Compares current spreads with previous readings to show whether financing conditions are tightening or easing.",
+                "points_percentage_changes": "Tracks the pace of spread widening or compression to detect shifts in credit market stress.",
+                "min_max_12months": "Highlights the highest and lowest spread levels observed over the past year to place current conditions in context.",
+                "averages": "Uses average spread levels to show whether current credit pricing is above or below recent financing norms.",
+                "year_over_year": "Compares spreads with the same period last year to reveal structural changes in credit market conditions.",
+                "recommended_time_periods": ["1M", "3M", "6M", "12M"],
+                "path": "{country}/pages/600_financial_conditions_risk_analysis.py"
+            },
+            "618_high_yield_credit_spread": {
+                "title": "High Yield Credit Spread",
+                "applicable_use_cases": [
+                    "Credit Conditions and Financing Pressure"
+                ],
+                "overview": "High Yield Credit Spread measures the additional yield demanded for holding below-investment-grade corporate debt over safer benchmark securities.",
+                "why_it_matters": "It helps frame risk appetite, financing pressure, and the availability of capital to more leveraged or lower-rated borrowers.",
+                "temporal_categorisation": "Coincident indicator",
+                "investment_action_importance": "🌟🌟🌟 - Highly relevant for assessing risk pricing, financial stress, and capital availability across speculative credit markets.",
+                "personal_impact_importance": "🌟 - Indirectly influences financing conditions, business resilience, and broader credit-sensitive activity.",
+                "current_vs_previous": "Compares current high yield spreads with prior readings to show whether speculative credit conditions are tightening or easing.",
+                "points_percentage_changes": "Tracks the pace of spread widening or compression to detect changes in investor risk tolerance.",
+                "min_max_12months": "Highlights the highest and lowest high yield spread levels observed over the past year.",
+                "averages": "Uses average spread levels to show whether current speculative credit pricing is above or below recent norms.",
+                "year_over_year": "Compares high yield spreads with the same period last year to reveal structural changes in financing stress.",
+                "recommended_time_periods": ["1M", "3M", "6M", "12M"],
+                "path": "{country}/pages/600_financial_conditions_risk_analysis.py"
+            },
+            "619_ccc_lower_credit_spread": {
+                "title": "CCC and Lower Credit Spread",
+                "applicable_use_cases": [
+                    "Credit Conditions and Financing Pressure"
+                ],
+                "overview": "CCC and Lower Credit Spread measures the additional yield demanded for holding the lowest-rated speculative-grade debt over safer benchmark securities.",
+                "why_it_matters": "It provides a concentrated view of stress, fragility, and capital availability at the riskiest end of credit markets.",
+                "temporal_categorisation": "Coincident indicator",
+                "investment_action_importance": "🌟🌟🌟 - Highly sensitive measure of financing stress, speculative risk appetite, and late-cycle credit fragility.",
+                "personal_impact_importance": "🌟 - Indirectly reflects broader system stress and the vulnerability of weaker borrowers.",
+                "current_vs_previous": "Compares current CCC and lower spreads with previous readings to show whether deep speculative financing conditions are tightening or easing.",
+                "points_percentage_changes": "Tracks the pace of spread widening or compression at the weakest end of the credit spectrum.",
+                "min_max_12months": "Highlights the highest and lowest CCC spread levels observed over the past year to place current stress in context.",
+                "averages": "Uses average spread levels to show whether current deep high yield risk pricing is above or below recent norms.",
+                "year_over_year": "Compares CCC spreads with the same period last year to reveal structural changes in severe financing pressure.",
+                "recommended_time_periods": ["1M", "3M", "6M", "12M"],
+                "path": "{country}/pages/600_financial_conditions_risk_analysis.py"
+            },
+            "620_sovereign_debt": {
+                "title": "Sovereign Debt",
+                "applicable_use_cases": [
+                    "Sovereign Debt Sustainability"
+                ],
+                "overview": "Sovereign Debt measures the stock of public-sector borrowing outstanding, providing a structural view of fiscal burden and refinancing exposure.",
+                "why_it_matters": "Debt levels help frame sovereign flexibility, refinancing pressure, and the interaction between fiscal capacity and changing financing conditions.",
+                "temporal_categorisation": "Coincident indicator",
+                "investment_action_importance": "🌟🌟🌟 - Highly relevant for sovereign risk, refinancing conditions, bond market pressure, and long-cycle fiscal sustainability.",
+                "personal_impact_importance": "🌟 - Indirectly affects public finances, tax flexibility, and economic resilience under stress.",
+                "current_vs_previous": "Compares the current debt stock with previous periods to show whether sovereign leverage is expanding or stabilising.",
+                "points_percentage_changes": "Tracks the pace of sovereign borrowing growth or consolidation.",
+                "min_max_12months": "Highlights the highest and lowest debt levels observed over the past year to place current sovereign burden in context.",
+                "averages": "Uses average debt levels to show whether current sovereign borrowing stands above or below recent fiscal norms.",
+                "year_over_year": "Compares debt levels with the same period last year to reveal structural changes in sovereign balance sheet pressure.",
+                "recommended_time_periods": ["6M", "12M"],
+                "path": "{country}/pages/600_financial_conditions_risk_analysis.py"
+            },
+            "621_sovereign_debt_to_gdp": {
+                "title": "Sovereign Debt Percentage of GDP",
+                "applicable_use_cases": [
+                    "Sovereign Debt Sustainability",
+                    "Balance Sheet Expansion and System Constraint"
+                ],
+                "overview": "Sovereign Debt to GDP measures public debt relative to the size of the economy, providing a scale-adjusted view of sovereign leverage.",
+                "why_it_matters": "It helps frame debt sustainability, fiscal burden, and the economy’s capacity to absorb public borrowing over time.",
+                "temporal_categorisation": "Coincident indicator",
+                "investment_action_importance": "🌟🌟🌟 - Widely used for sovereign sustainability analysis, credit assessment, and long-run fiscal constraint framing.",
+                "personal_impact_importance": "🌟 - Indirectly influences fiscal flexibility, public service resilience, and macroeconomic stability.",
+                "current_vs_previous": "Compares the current debt ratio with previous periods to show whether sovereign leverage is rising or easing relative to economic size.",
+                "points_percentage_changes": "Tracks changes in debt burden relative to output.",
+                "min_max_12months": "Highlights the highest and lowest debt-to-GDP readings observed over the past year.",
+                "averages": "Uses average debt ratios to place current sovereign leverage in broader context.",
+                "year_over_year": "Compares debt-to-GDP with the same period last year to reveal structural changes in sovereign burden.",
+                "recommended_time_periods": ["6M", "12M"],
+                "path": "{country}/pages/600_financial_conditions_risk_analysis.py"
+            },
+            "622_government_receipts": {
+                "title": "Government Receipts",
+                "applicable_use_cases": [
+                    "Sovereign Liquidity and Refinancing Pressure",
+                    "Balance Sheet Expansion and System Constraint"
+                ],
+                "overview": "Government Receipts measure total public-sector income collected through taxation and other revenue sources.",
+                "why_it_matters": "Receipts help frame fiscal capacity, debt-servicing ability, and the revenue side of sovereign balance sheet resilience.",
+                "temporal_categorisation": "Coincident indicator",
+                "investment_action_importance": "🌟🌟 - Useful for assessing fiscal capacity, sovereign funding strength, and resilience to higher financing costs.",
+                "personal_impact_importance": "🌟 - Indirectly influences public spending capacity and fiscal flexibility.",
+                "current_vs_previous": "Compares current receipts with prior periods to show whether the public revenue base is strengthening or weakening.",
+                "points_percentage_changes": "Tracks the pace of revenue growth or contraction.",
+                "min_max_12months": "Highlights the strongest and weakest receipt periods observed over the past year.",
+                "averages": "Uses average receipts to place current fiscal income in context.",
+                "year_over_year": "Compares receipts with the same period last year to reveal structural changes in sovereign revenue conditions.",
+                "recommended_time_periods": ["12M"],
+                "path": "{country}/pages/600_financial_conditions_risk_analysis.py"
+            },
+            "623_government_net_outlays": {
+                "title": "Government Net Outlays",
+                "applicable_use_cases": [
+                    "Sovereign Debt Sustainability"
+                ],
+                "overview": "Government Net Outlays measure total public-sector spending net of offsetting receipts and adjustments.",
+                "why_it_matters": "Outlays help frame fiscal pressure, sovereign funding needs, and the spending side of balance sheet expansion or restraint.",
+                "temporal_categorisation": "Coincident indicator",
+                "investment_action_importance": "🌟🌟 - Useful for assessing fiscal pressure, sovereign financing needs, and the scale of public expenditure commitments.",
+                "personal_impact_importance": "🌟 - Indirectly affects public service provision, fiscal flexibility, and the macro policy environment.",
+                "current_vs_previous": "Compares current net outlays with prior periods to show whether fiscal spending pressure is rising or stabilising.",
+                "points_percentage_changes": "Tracks the pace of sovereign spending expansion or restraint.",
+                "min_max_12months": "Highlights periods of unusually high or low net outlays.",
+                "averages": "Uses average outlays to place current fiscal spending in broader context.",
+                "year_over_year": "Compares net outlays with the same period last year to reveal structural changes in sovereign spending pressure.",
+                "recommended_time_periods": ["12M"],
+                "path": "{country}/pages/600_financial_conditions_risk_analysis.py"
+            },
+            "624_government_fiscal_balance": {
+                "title": "Government Fiscal Balance",
+                "applicable_use_cases": [
+                    "Sovereign Debt Sustainability"
+                ],
+                "overview": "Government Fiscal Balance measures the surplus or deficit between public receipts and public outlays.",
+                "why_it_matters": "It helps frame sovereign financing gaps, debt issuance pressure, and the degree of fiscal constraint within the system.",
+                "temporal_categorisation": "Coincident indicator",
+                "investment_action_importance": "🌟🌟🌟 - Highly relevant for sovereign borrowing needs, fiscal pressure, and medium-term debt sustainability.",
+                "personal_impact_importance": "🌟 - Indirectly influences taxation, public spending flexibility, and macroeconomic resilience.",
+                "current_vs_previous": "Compares the current fiscal balance with previous periods to show whether deficits are widening or narrowing.",
+                "points_percentage_changes": "Tracks the pace of fiscal deterioration or improvement.",
+                "min_max_12months": "Highlights the deepest deficits and strongest surpluses observed over the past year.",
+                "averages": "Uses average fiscal balance levels to place current sovereign funding conditions in context.",
+                "year_over_year": "Compares the fiscal balance with the same period last year to reveal structural shifts in sovereign pressure.",
+                "recommended_time_periods": ["12M"],
+                "path": "{country}/pages/600_financial_conditions_risk_analysis.py"
+            },
+            "625_government_interest_outlays": {
+                "title": "Government Interest Outlays",
+                "applicable_use_cases": [
+                    "Sovereign Debt Sustainability",
+                    "Sovereign Liquidity and Refinancing Pressure",
+                    "Balance Sheet Expansion and System Constraint"
+                ],
+                "overview": "Government Interest Outlays measure the public-sector cost of servicing outstanding debt through interest payments.",
+                "why_it_matters": "Interest costs help frame refinancing pressure, debt-service burden, and the sensitivity of sovereign finances to higher rates.",
+                "temporal_categorisation": "Coincident indicator",
+                "investment_action_importance": "🌟🌟🌟 - Highly relevant for refinancing risk, fiscal constraint, and rate sensitivity across sovereign balance sheets.",
+                "personal_impact_importance": "🌟 - Indirectly affects fiscal flexibility and the capacity to sustain spending under rising debt-service costs.",
+                "current_vs_previous": "Compares current interest outlays with prior periods to show whether debt-service pressure is rising or easing.",
+                "points_percentage_changes": "Tracks the pace of increase or decline in sovereign interest burden.",
+                "min_max_12months": "Highlights periods of elevated debt-service strain or relative relief.",
+                "averages": "Uses average interest outlays to place current sovereign servicing pressure in context.",
+                "year_over_year": "Compares interest outlays with the same period last year to reveal structural changes in refinancing burden.",
+                "recommended_time_periods": ["12M"],
+                "path": "{country}/pages/600_financial_conditions_risk_analysis.py"
+            },
+            "626_central_bank_total_assets": {
+                "title": "Central Bank Total Assets",
+                "applicable_use_cases": [
+                    "Balance Sheet Expansion and System Constraint"
+                ],
+                "overview": "Central Bank Total Assets measure the size of the central bank balance sheet, reflecting liquidity support, asset purchases, and system-level intervention capacity.",
+                "why_it_matters": "Balance sheet size helps frame sovereign liquidity support, monetary backstop conditions, and the interaction between fiscal strain and financial system stabilisation.",
+                "temporal_categorisation": "Coincident indicator",
+                "investment_action_importance": "🌟🌟🌟 - Highly relevant for liquidity support, sovereign-financial linkage, and system-wide balance sheet expansion under stress.",
+                "personal_impact_importance": "🌟 - Indirectly influences macro stability, inflation sensitivity, and the broader financing environment.",
+                "current_vs_previous": "Compares current central bank asset levels with prior periods to show whether liquidity support is expanding or receding.",
+                "points_percentage_changes": "Tracks the pace of balance sheet expansion or contraction.",
+                "min_max_12months": "Highlights periods of elevated intervention or relative balance sheet restraint.",
+                "averages": "Uses average balance sheet levels to place current support conditions in broader context.",
+                "year_over_year": "Compares central bank total assets with the same period last year to reveal structural changes in liquidity support.",
+                "recommended_time_periods": ["1M", "3M", "6M", "12M"],
+                "path": "{country}/pages/600_financial_conditions_risk_analysis.py"
             }
         }
     },
@@ -1017,6 +1500,10 @@ THEMATIC_GROUPS = {
          "conclusion_and_further_exploration": "Trade indicators serve as composite signals reflecting external sector stability, capital allocation dependencies, and cyclical positioning of cross-border flows within global economic regimes.",
          "memberships": {
             "701_trade_balance": {
+                "title": "",
+                "applicable_use_cases": [
+                    ""
+                ],
                 "overview": "Trade Balance measures the difference between exports and imports of goods and services.",
                 "why_it_matters": "A persistent surplus or deficit can influence currency strength, external stability, and macro risk exposure.",
                  "temporal_categorisation": "Coincident indicator",
@@ -1028,9 +1515,13 @@ THEMATIC_GROUPS = {
                  "averages": "Assess trend direction across quarters.",
                  "year_over_year": "Understand cyclical vs structural shifts.",
                  "recommended_time_periods": ["3M", "6M", "12M"],
-                 "path": "pages/701_trade_balance.py"
+                 "path": "{country}/pages/700_global_trade_economic_relations.py"
            },
            "702_import_growth": {
+                 "title": "",
+                 "applicable_use_cases": [
+                     ""
+                 ],
                  "overview": "Import Growth tracks the change in the volume or value of goods and services brought into a country.",
                  "why_it_matters": "Signals domestic demand and potential exposure to foreign supply chain risks.",
                  "temporal_categorisation": "Coincident indicator",
@@ -1042,9 +1533,13 @@ THEMATIC_GROUPS = {
                  "averages": "Contextualise sharp moves in seasonal activity.",
                  "year_over_year": "Capture annual demand trends and currency impacts.",
                  "recommended_time_periods": ["MM", "3M", "6M"],
-                 "path": "pages/702_import_growth.py"
+                 "path": "{country}/pages/700_global_trade_economic_relations.py"
            },
            "703_export_growth": {
+                 "title": "",
+                 "applicable_use_cases": [
+                     ""
+                 ],
                  "overview": "Export Growth tracks outbound trade, often seen as a signal of competitiveness and global demand for domestic goods.",
                  "why_it_matters": "Informs positioning in export-linked sectors and macro trade resilience.",
                  "temporal_categorisation": "Leading indicator",
@@ -1056,9 +1551,13 @@ THEMATIC_GROUPS = {
                  "averages": "Helps normalise cyclical moves in external demand.",
                  "year_over_year": "Highlights durable trade growth or structural erosion.",
                  "recommended_time_periods": ["3M", "6M", "12M"],
-                 "path": "pages/703_export_growth.py"
+                 "path": "{country}/pages/700_global_trade_economic_relations.py"
            },
            "704_net_exports_gdp": {
+                 "title": "",
+                 "applicable_use_cases": [
+                     ""
+                 ],
                  "overview": "Net Exports as a % of GDP provides a sense of trade dependency and external leverage.",
                  "why_it_matters": "Frames how much GDP is driven by trade surplus or deficit.",
                  "temporal_categorisation": "Lagging indicator",
@@ -1070,9 +1569,13 @@ THEMATIC_GROUPS = {
                  "averages": "Contextualises trade role across cycles.",
                  "year_over_year": "Detect longer-run movement in export/import contribution to GDP.",
                  "recommended_time_periods": ["Q", "12M"],
-                 "path": "pages/704_net_exports_gdp.py"
+                 "path": "{country}/pages/700_global_trade_economic_relations.py"
            },
            "705_trade_percent_gdp": {
+                 "title": "",
+                 "applicable_use_cases": [
+                     ""
+                 ],
                  "overview": "Total trade (imports + exports) as a % of GDP reflects an economy’s openness and exposure to global markets.",
                  "why_it_matters": "Higher ratios suggest integration with the global economy; lower ones may indicate autarky or internal demand focus.",
                  "temporal_categorisation": "Lagging indicator",
@@ -1084,8 +1587,246 @@ THEMATIC_GROUPS = {
                  "averages": "Normalises trade role for structural assessment.",
                  "year_over_year": "Highlight trade integration or decoupling trends.",
                  "recommended_time_periods": ["6M", "12M"],
-                 "path": "pages/705_trade_percent_gdp.py"
+                 "path": "{country}/pages/700_global_trade_economic_relations.py"
              },
+             "706_current_account_balance": {
+                "title": "Current Account Balance",
+                "applicable_use_cases": [
+                    "Country External Balance",
+                    "External Constraint Capital Flow",
+                    "Current Account Balance"
+                ],
+                "overview": "Current Account Balance measures the net flow of goods, services, income, and transfers between a country and the rest of the world.",
+                "why_it_matters": "Persistent deficits or surpluses reflect external funding needs, competitiveness, and structural economic positioning.",
+                "temporal_categorisation": "Coincident indicator",
+                "investment_action_importance": "🌟🌟 - Important for currency dynamics, external sustainability, and cross-border capital dependence.",
+                "personal_impact_importance": "🌟 - Influences long-term currency stability and external economic resilience.",
+                "current_vs_previous": "Tracks changes in external balance across reporting periods.",
+                "points_percentage_changes": "Measures the scale of surplus or deficit relative to prior periods or GDP.",
+                "min_max_12months": "Highlights external imbalances and adjustment periods.",
+                "averages": "Smooths volatility to identify underlying trends.",
+                "year_over_year": "Provides context for structural shifts in external positioning.",
+                "recommended_time_periods": ["3M", "6M", "12M"],
+                "path": "{country}/pages/700_global_trade_economic_relations.py"
+            },
+            "707_official_reserves_excluding_gold": {
+                "title": "Official Reserves Excluding Gold",
+                "applicable_use_cases": [
+                    "Country External Balance",
+                    "External Constraint Capital Flow",
+                    "Currency Regime Framework"
+                ],
+                "overview": "Official Reserves Excluding Gold represent a country’s foreign currency assets held by monetary authorities for external stability and liquidity management.",
+                "why_it_matters": "Reserve levels signal a country’s ability to manage currency volatility, support external obligations, and respond to financial stress.",
+                "temporal_categorisation": "Coincident indicator",
+                "investment_action_importance": "🌟🌟 - Relevant for assessing currency stability, intervention capacity, and external risk exposure.",
+                "personal_impact_importance": "🌟 - Indirectly affects economic stability and resilience to external shocks.",
+                "current_vs_previous": "Tracks accumulation or drawdown of reserves over time.",
+                "points_percentage_changes": "Measures changes in reserve levels and external buffer strength.",
+                "min_max_12months": "Highlights periods of reserve stress or accumulation.",
+                "averages": "Smooths short-term movements to identify broader trends.",
+                "year_over_year": "Provides insight into structural reserve changes and external positioning.",
+                "recommended_time_periods": ["3M", "6M", "12M"],
+                "path": "{country}/pages/700_global_trade_economic_relations.py"
+            },
+            "708_exports_of_goods_and_services": {
+                "title": "Exports of Goods and Services",
+                "applicable_use_cases": [
+                    "Country External Balance"
+                ],
+                "overview": "Exports of Goods and Services measure the value of domestically produced goods and services sold abroad.",
+                "why_it_matters": "Export strength reflects external demand, competitiveness, and the contribution of foreign markets to domestic economic activity.",
+                "temporal_categorisation": "Coincident indicator",
+                "investment_action_importance": "🌟🌟 - Useful for assessing trade momentum, external demand, and export-sensitive sectors.",
+                "personal_impact_importance": "🌟 - Indirectly influences employment, income stability, and external economic resilience.",
+                "current_vs_previous": "Tracks changes in aggregate export flow across reporting periods.",
+                "points_percentage_changes": "Measures the pace of export expansion or contraction.",
+                "min_max_12months": "Highlights periods of unusually strong or weak external demand.",
+                "averages": "Smooths short-term volatility to identify broader trade trends.",
+                "year_over_year": "Provides context for cyclical and structural export shifts.",
+                "recommended_time_periods": ["3M", "6M", "12M"],
+                "path": "{country}/pages/700_global_trade_economic_relations.py"
+            },
+            "709_exports_of_goods": {
+                "title": "Exports of Goods",
+                "applicable_use_cases": [
+                    "Country External Balance"
+                ],
+                "overview": "Exports of Goods measure the value of physical goods sold to foreign markets.",
+                "why_it_matters": "They help assess manufacturing demand, trade competitiveness, and external exposure through goods-producing sectors.",
+                "temporal_categorisation": "Coincident indicator",
+                "investment_action_importance": "🌟🌟 - Relevant for trade-sensitive industries, industrial demand, and external growth conditions.",
+                "personal_impact_importance": "🌟 - Indirectly affects employment and income in export-linked sectors.",
+                "current_vs_previous": "Tracks changes in goods export flow over time.",
+                "points_percentage_changes": "Measures the pace of goods export growth or decline.",
+                "min_max_12months": "Highlights extremes in goods trade performance.",
+                "averages": "Smooths short-term trade volatility.",
+                "year_over_year": "Provides structural context for goods trade trends.",
+                "recommended_time_periods": ["3M", "6M", "12M"],
+                "path": "{country}/pages/700_global_trade_economic_relations.py"
+            },
+            "710_exports_of_services": {
+                "title": "Exports of Services",
+                "applicable_use_cases": [
+                    "Country External Balance"
+                ],
+                "overview": "Exports of Services measure the value of services provided to foreign customers and markets.",
+                "why_it_matters": "They reflect the international reach of service sectors and help frame a country’s external earnings beyond goods trade.",
+                "temporal_categorisation": "Coincident indicator",
+                "investment_action_importance": "🌟🌟 - Useful for assessing service-sector competitiveness and external revenue contribution.",
+                "personal_impact_importance": "🌟 - Indirectly affects employment and income in internationally exposed service sectors.",
+                "current_vs_previous": "Tracks changes in services export flow across reporting periods.",
+                "points_percentage_changes": "Measures the pace of services export growth or contraction.",
+                "min_max_12months": "Highlights unusually strong or weak service trade periods.",
+                "averages": "Smooths volatility in service export activity.",
+                "year_over_year": "Provides structural context for external services demand trends.",
+                "recommended_time_periods": ["3M", "6M", "12M"],
+                "path": "{country}/pages/700_global_trade_economic_relations.py"
+            },
+            "711_imports_of_goods_and_services": {
+                "title": "Imports of Goods and Services",
+                "applicable_use_cases": [
+                    "Country External Balance"
+                ],
+                "overview": "Imports of Goods and Services measure the value of goods and services purchased from abroad.",
+                "why_it_matters": "Import demand reflects domestic consumption, production needs, and the economy’s reliance on foreign supply.",
+                "temporal_categorisation": "Coincident indicator",
+                "investment_action_importance": "🌟🌟 - Useful for assessing domestic demand strength, supply dependence, and trade balance pressure.",
+                "personal_impact_importance": "🌟 - Influences availability, pricing, and exposure to foreign supply conditions.",
+                "current_vs_previous": "Tracks changes in aggregate import flow across reporting periods.",
+                "points_percentage_changes": "Measures the pace of import expansion or contraction.",
+                "min_max_12months": "Highlights periods of unusually strong or weak import demand.",
+                "averages": "Smooths short-term volatility to identify broader import trends.",
+                "year_over_year": "Provides context for cyclical and structural import shifts.",
+                "recommended_time_periods": ["3M", "6M", "12M"],
+                "path": "{country}/pages/700_global_trade_economic_relations.py"
+            },
+            "712_imports_of_goods": {
+                "title": "Imports of Goods",
+                "applicable_use_cases": [
+                    "Country External Balance"
+                ],
+                "overview": "Imports of Goods measure the value of physical goods purchased from foreign markets.",
+                "why_it_matters": "They help assess domestic demand, supply-chain reliance, and the role of imported goods in consumption and production.",
+                "temporal_categorisation": "Coincident indicator",
+                "investment_action_importance": "🌟🌟 - Relevant for understanding domestic demand, trade dependence, and goods-sector pressure.",
+                "personal_impact_importance": "🌟 - Influences consumer choice, input availability, and price sensitivity to global supply conditions.",
+                "current_vs_previous": "Tracks changes in goods import flow over time.",
+                "points_percentage_changes": "Measures the pace of goods import growth or decline.",
+                "min_max_12months": "Highlights extremes in goods import demand.",
+                "averages": "Smooths short-term trade volatility.",
+                "year_over_year": "Provides structural context for goods import trends.",
+                "recommended_time_periods": ["3M", "6M", "12M"],
+                "path": "{country}/pages/700_global_trade_economic_relations.py"
+            },
+            "713_imports_of_services": {
+                "title": "Imports of Services",
+                "applicable_use_cases": [
+                    "Country External Balance"
+                ],
+                "overview": "Imports of Services measure the value of services purchased from foreign providers and markets.",
+                "why_it_matters": "They help frame external service dependence and the role of imported services in domestic consumption and business activity.",
+                "temporal_categorisation": "Coincident indicator",
+                "investment_action_importance": "🌟 - Useful for understanding the service side of external demand and dependency.",
+                "personal_impact_importance": "🌟 - Indirectly affects pricing and access in internationally linked service categories.",
+                "current_vs_previous": "Tracks changes in services import flow across reporting periods.",
+                "points_percentage_changes": "Measures the pace of services import growth or contraction.",
+                "min_max_12months": "Highlights unusually strong or weak service import periods.",
+                "averages": "Smooths volatility in service import activity.",
+                "year_over_year": "Provides structural context for external services dependency trends.",
+                "recommended_time_periods": ["3M", "6M", "12M"],
+                "path": "{country}/pages/700_global_trade_economic_relations.py"
+            },
+            "714_trade_balance_goods_and_services": {
+                "title": "Trade Balance — Goods and Services",
+                "applicable_use_cases": [
+                    "Country External Balance"
+                ],
+                "overview": "Trade Balance — Goods and Services measures the net difference between total exports and total imports.",
+                "why_it_matters": "It provides a broad view of external trade contribution, competitiveness, and pressure on external balance.",
+                "temporal_categorisation": "Coincident indicator",
+                "investment_action_importance": "🌟🌟 - Useful for currency context, external demand analysis, and trade-linked market interpretation.",
+                "personal_impact_importance": "🌟 - Can influence purchasing power, inflation exposure, and employment in trade-sensitive sectors.",
+                "current_vs_previous": "Tracks overall trade surplus or deficit shifts across reporting periods.",
+                "points_percentage_changes": "Measures the scale of trade balance improvement or deterioration.",
+                "min_max_12months": "Highlights periods of unusually large surplus or deficit pressure.",
+                "averages": "Smooths short-term trade volatility to identify broader balance trends.",
+                "year_over_year": "Provides structural context for trade balance shifts.",
+                "recommended_time_periods": ["3M", "6M", "12M"],
+                "path": "{country}/pages/700_global_trade_economic_relations.py"
+            },
+            "715_trade_balance_goods": {
+                "title": "Trade Balance — Goods",
+                "applicable_use_cases": [
+                    "Country External Balance"
+                ],
+                "overview": "Trade Balance — Goods measures the net difference between goods exports and goods imports.",
+                "why_it_matters": "It helps frame industrial competitiveness, goods demand balance, and external goods-sector pressure.",
+                "temporal_categorisation": "Coincident indicator",
+                "investment_action_importance": "🌟🌟 - Relevant for manufacturing, industrial exposure, and trade-linked sector analysis.",
+                "personal_impact_importance": "🌟 - Indirectly affects employment and pricing in goods-producing and goods-consuming sectors.",
+                "current_vs_previous": "Tracks changes in the goods trade surplus or deficit over time.",
+                "points_percentage_changes": "Measures the pace of goods balance improvement or deterioration.",
+                "min_max_12months": "Highlights unusually large goods trade imbalances.",
+                "averages": "Smooths short-term goods trade volatility.",
+                "year_over_year": "Provides structural context for goods balance trends.",
+                "recommended_time_periods": ["3M", "6M", "12M"],
+                "path": "{country}/pages/700_global_trade_economic_relations.py"
+            },
+            "716_trade_balance_services": {
+                "title": "Trade Balance — Services",
+                "applicable_use_cases": [
+                    "Country External Balance"
+                ],
+                "overview": "Trade Balance — Services measures the net difference between services exports and services imports.",
+                "why_it_matters": "It helps assess the contribution of internationally traded services to external balance and economic resilience.",
+                "temporal_categorisation": "Coincident indicator",
+                "investment_action_importance": "🌟 - Useful for understanding the external role of the service economy.",
+                "personal_impact_importance": "🌟 - Indirectly influences activity in internationally exposed service sectors.",
+                "current_vs_previous": "Tracks changes in the services trade surplus or deficit over time.",
+                "points_percentage_changes": "Measures the pace of services balance improvement or deterioration.",
+                "min_max_12months": "Highlights extremes in services trade positioning.",
+                "averages": "Smooths short-term services trade volatility.",
+                "year_over_year": "Provides structural context for services balance trends.",
+                "recommended_time_periods": ["3M", "6M", "12M"],
+                "path": "{country}/pages/700_global_trade_economic_relations.py"
+            },
+            "717_primary_investment_income_payments": {
+                "title": "Primary Investment Income Payments",
+                "applicable_use_cases": [
+                    "External Constraint Capital Flow"
+                ],
+                "overview": "Primary Investment Income Payments measure cross-border income outflows linked to investment holdings and external financial claims.",
+                "why_it_matters": "They help frame the income side of external balance and the ongoing cost of foreign capital dependence or asset ownership structure.",
+                "temporal_categorisation": "Coincident indicator",
+                "investment_action_importance": "🌟🌟 - Relevant for external constraint analysis, capital flow context, and sustainability of cross-border income dynamics.",
+                "personal_impact_importance": "🌟 - Indirectly affects national income retention and external economic resilience.",
+                "current_vs_previous": "Tracks changes in external investment income payment flows across reporting periods.",
+                "points_percentage_changes": "Measures the pace of increase or decline in investment income outflows.",
+                "min_max_12months": "Highlights periods of elevated income payment pressure.",
+                "averages": "Smooths reporting volatility to identify broader payment trends.",
+                "year_over_year": "Provides structural context for external income flow changes.",
+                "recommended_time_periods": ["3M", "6M", "12M"],
+                "path": "{country}/pages/700_global_trade_economic_relations.py"
+            },
+            "718_net_international_investment_position": {
+                "title": "Net International Investment Position",
+                "applicable_use_cases": [
+                    "External Constraint Capital Flow"
+                ],
+                "overview": "Net International Investment Position measures the difference between a country’s external financial assets and liabilities.",
+                "why_it_matters": "It provides a structural view of external balance sheet strength, foreign asset ownership, and long-run external constraint.",
+                "temporal_categorisation": "Coincident indicator",
+                "investment_action_importance": "🌟🌟🌟 - Highly relevant for external sustainability, currency context, sovereign risk framing, and long-cycle capital position analysis.",
+                "personal_impact_importance": "🌟 - Indirectly influences external resilience, macroeconomic stability, and long-run financial flexibility.",
+                "current_vs_previous": "Tracks changes in the net external asset-liability position over time.",
+                "points_percentage_changes": "Measures the pace of improvement or deterioration in external balance sheet position.",
+                "min_max_12months": "Highlights periods of unusual external strengthening or weakening.",
+                "averages": "Smooths shorter-term valuation and reporting fluctuations.",
+                "year_over_year": "Provides structural context for long-run external position shifts.",
+                "recommended_time_periods": ["6M", "12M"],
+                "path": "{country}/pages/700_global_trade_economic_relations.py"
+            },
          }
      },
  "800_supply_chains_logistics": {
@@ -1108,6 +1849,10 @@ THEMATIC_GROUPS = {
          "conclusion_and_further_exploration": "Supply chain indicators serve as composite signals quantifying logistics-driven cost pressure, production volatility sensitivity, and frictional input constraints across manufacturing and distribution cycles.",
          "memberships": {
              "801_baltic_dry_index": {
+                 "title": "",
+                 "applicable_use_cases": [
+                     ""
+                 ],
                  "overview": "Tracks the cost of shipping raw materials like coal, iron ore, and grain across major global routes.",
                  "why_it_matters": "Serves as a proxy for global trade activity and industrial demand.",
                  "temporal_categorisation": "Leading indicator",
@@ -1119,9 +1864,13 @@ THEMATIC_GROUPS = {
                  "averages": "Identifies sustained pressures or relief in trade lanes.",
                  "year_over_year": "Provides historical perspective on trade flows.",
                  "recommended_time_periods": ["MM", "3M", "6M"],
-                 "path": "pages/801_baltic_dry_index.py"
+                 "path": "{country}/pages/800_supply_chains_logistics.py"
              },
              "802_global_container_shipping_index": {
+                 "title": "",
+                 "applicable_use_cases": [
+                     ""
+                 ],
                  "overview": "Aggregates global container rates across key ports and shipping routes.",
                  "why_it_matters": "Reflects logistics congestion and cost spikes that can ripple through supply chains.",
                  "temporal_categorisation": "Coincident indicator",
@@ -1133,9 +1882,13 @@ THEMATIC_GROUPS = {
                  "averages": "Smooths short-term spikes to reveal trend.",
                  "year_over_year": "Highlights major supply/demand imbalances.",
                  "recommended_time_periods": ["MM", "3M", "6M", "12M"],
-                 "path": "pages/802_global_container_shipping_index.py"
+                 "path": "{country}/pages/800_supply_chains_logistics.py"
              },
              "803_supply_chain_pressure_index": {
+                 "title": "",
+                 "applicable_use_cases": [
+                     ""
+                 ],
                  "overview": "Composite index measuring global transportation, inventory, and delivery delays.",
                  "why_it_matters": "A broader gauge of supply-side friction across economies.",
                  "temporal_categorisation": "Coincident to leading",
@@ -1147,7 +1900,7 @@ THEMATIC_GROUPS = {
                  "averages": "Highlights average stress trend.",
                  "year_over_year": "Maps relief or escalation from prior year.",
                  "recommended_time_periods": ["3M", "6M", "12M"],
-                 "path": "pages/803_supply_chain_pressure_index.py"
+                 "path": "{country}/pages/800_supply_chains_logistics.py"
              },
          }
      },
@@ -1171,6 +1924,10 @@ THEMATIC_GROUPS = {
      "conclusion_and_further_exploration": "Commodity price signals serve as structural markers of inflation transmission, resource scarcity dynamics, geopolitical friction exposure, and cyclical positioning across global production regimes.",
      "memberships": {
          "901_wti_crude_future": {
+             "title": "",
+             "applicable_use_cases": [
+                 ""
+             ],
              "overview": "West Texas Intermediate (WTI) is a benchmark for US crude oil prices, reflecting supply/demand in North America.",
              "why_it_matters": "Crucial for energy cost trends, inflation expectations, and geopolitical sensitivity.",
              "temporal_categorisation": "Coincident indicator",
@@ -1182,9 +1939,13 @@ THEMATIC_GROUPS = {
              "averages": "Identify fair value zones.",
              "year_over_year": "Analyze oil price cycles and geopolitical episodes.",
              "recommended_time_periods": ["1W", "1M", "3M", "6M", "12M"],
-             "path": "pages/901_wti_crude_future.py"
+             "path": "{country}/pages/900_commodity_markets_pricing.py"
          },
          "902_brent_crude_future": {
+             "title": "",
+             "applicable_use_cases": [
+                 ""
+             ],
              "overview": "Brent is the global benchmark for crude oil, reflecting international supply-demand conditions.",
              "why_it_matters": "Used for global pricing and trade contracts, especially outside North America.",
              "temporal_categorisation": "Coincident indicator",
@@ -1196,9 +1957,13 @@ THEMATIC_GROUPS = {
              "averages": "Gauge medium-term trendlines.",
              "year_over_year": "Track price recovery or decline across economic cycles.",
              "recommended_time_periods": ["1W", "1M", "3M", "6M", "12M"],
-             "path": "pages/902_brent_crude_future.py"
+             "path": "{country}/pages/900_commodity_markets_pricing.py"
          },
          "903_natural_gas_future": {
+             "title": "",
+             "applicable_use_cases": [
+                 ""
+             ],
              "overview": "Natural gas futures reflect energy market dynamics in power generation and industrial usage.",
              "why_it_matters": "Highly sensitive to weather and energy substitution trends.",
              "temporal_categorisation": "Coincident indicator",
@@ -1210,9 +1975,13 @@ THEMATIC_GROUPS = {
              "averages": "Smooth pricing patterns for insight.",
              "year_over_year": "Compare across seasonal heating cycles.",
              "recommended_time_periods": ["1W", "1M", "3M", "6M", "12M"],
-             "path": "pages/903_natural_gas_future.py"
+             "path": "{country}/pages/900_commodity_markets_pricing.py"
          },
          "904_soybean_future": {
+             "title": "",
+             "applicable_use_cases": [
+                 ""
+             ],
              "overview": "Soybeans are a key agricultural commodity used in food, biofuel, and livestock feed.",
              "why_it_matters": "Prices reflect global food supply, weather impacts, and trade policies.",
              "temporal_categorisation": "Coincident indicator",
@@ -1224,9 +1993,13 @@ THEMATIC_GROUPS = {
              "averages": "Evaluate mean reversion or pricing trends.",
              "year_over_year": "Supports broader inflation analysis.",
              "recommended_time_periods": ["1M", "3M", "6M", "12M"],
-             "path": "pages/904_soybean_future.py"
+             "path": "{country}/pages/900_commodity_markets_pricing.py"
          },
          "905_corn_future": {
+             "title": "",
+             "applicable_use_cases": [
+                 ""
+             ],
              "overview": "Corn is a staple crop with uses in food, fuel, and animal feed.",
              "why_it_matters": "Reflects agricultural cycles and trade conditions.",
              "temporal_categorisation": "Coincident indicator",
@@ -1238,9 +2011,13 @@ THEMATIC_GROUPS = {
              "averages": "Highlight production baselines.",
              "year_over_year": "Use in food inflation tracking.",
              "recommended_time_periods": ["1M", "3M", "6M", "12M"],
-             "path": "pages/905_corn_future.py"
+             "path": "{country}/pages/900_commodity_markets_pricing.py"
          },
          "906_wheat_future": {
+             "title": "",
+             "applicable_use_cases": [
+                 ""
+             ],
              "overview": "Wheat futures track global staple grain markets and geopolitical impacts on food trade.",
              "why_it_matters": "High relevance during global shocks or sanctions.",
              "temporal_categorisation": "Coincident indicator",
@@ -1252,9 +2029,13 @@ THEMATIC_GROUPS = {
              "averages": "Assess pricing floors or ceilings.",
              "year_over_year": "Reveal trend shifts across economic phases.",
              "recommended_time_periods": ["1M", "3M", "6M", "12M"],
-             "path": "pages/906_wheat_future.py"
+             "path": "{country}/pages/900_commodity_markets_pricing.py"
          },
          "907_gold_spot": {
+             "title": "",
+             "applicable_use_cases": [
+                 ""
+             ],
              "overview": "Gold is a traditional store of value, widely viewed as a hedge against inflation and systemic risk.",
              "why_it_matters": "Responds to real yields, USD strength, and risk sentiment.",
              "temporal_categorisation": "Coincident indicator",
@@ -1266,9 +2047,13 @@ THEMATIC_GROUPS = {
              "averages": "Identify mean-reverting behaviour.",
              "year_over_year": "Useful for real return tracking.",
              "recommended_time_periods": ["1M", "3M", "6M", "12M"],
-             "path": "pages/907_gold_spot.py"
+             "path": "{country}/pages/900_commodity_markets_pricing.py"
          },
          "908_silver_spot": {
+             "title": "",
+             "applicable_use_cases": [
+                 ""
+             ],
              "overview": "Silver combines industrial and precious metal characteristics, making it sensitive to growth and sentiment.",
              "why_it_matters": "Acts as a hybrid commodity linked to both macro and industrial cycles.",
              "temporal_categorisation": "Coincident indicator",
@@ -1280,9 +2065,13 @@ THEMATIC_GROUPS = {
              "averages": "Support macro regime awareness.",
              "year_over_year": "Useful for trend analysis.",
              "recommended_time_periods": ["1M", "3M", "6M", "12M"],
-             "path": "pages/908_silver_spot.py"
+             "path": "{country}/pages/900_commodity_markets_pricing.py"
          },
          "909_platinum_spot": {
+             "title": "",
+             "applicable_use_cases": [
+                 ""
+             ],
              "overview": "Platinum is a rare industrial and precious metal with use in catalysts and jewelry.",
              "why_it_matters": "Tightly tied to automotive and industrial demand.",
              "temporal_categorisation": "Coincident indicator",
@@ -1294,9 +2083,13 @@ THEMATIC_GROUPS = {
              "averages": "Smoothed behaviour across time.",
              "year_over_year": "Supports cyclical interpretation.",
              "recommended_time_periods": ["1M", "3M", "6M", "12M"],
-             "path": "pages/909_platinum_spot.py"
+             "path": "{country}/pages/900_commodity_markets_pricing.py"
          },
          "910_palladium_spot": {
+             "title": "",
+             "applicable_use_cases": [
+                 ""
+             ],
              "overview": "Palladium is heavily used in automotive catalytic converters and is considered a tight-supply metal.",
              "why_it_matters": "Highly sensitive to industry cycles and regulation.",
              "temporal_categorisation": "Coincident indicator",
@@ -1308,9 +2101,13 @@ THEMATIC_GROUPS = {
              "averages": "Support broader materials sentiment.",
              "year_over_year": "Highlight recovery or collapse periods.",
              "recommended_time_periods": ["1M", "3M", "6M", "12M"],
-             "path": "pages/910_palladium_spot.py"
+             "path": "{country}/pages/900_commodity_markets_pricing.py"
          },
          "911_copper_future": {
+             "title": "",
+             "applicable_use_cases": [
+                 ""
+             ],
              "overview": "Copper is a global bellwether for construction, electronics, and industrial growth trends.",
              "why_it_matters": "Closely watched for insights into manufacturing cycles and China demand.",
              "temporal_categorisation": "Leading indicator",
@@ -1322,9 +2119,13 @@ THEMATIC_GROUPS = {
              "averages": "Show structural trend shifts.",
              "year_over_year": "Anchor analysis around global growth.",
              "recommended_time_periods": ["1M", "3M", "6M", "12M"],
-             "path": "pages/911_copper_future.py"
+             "path": "{country}/pages/900_commodity_markets_pricing.py"
          },
          "912_lme_metals": {
+             "title": "",
+             "applicable_use_cases": [
+                 ""
+             ],
              "overview": "LME Metals Index represents a basket of base metals traded on the London Metal Exchange.",
              "why_it_matters": "Serves as a benchmark for global industrial commodity demand and cost pressures.",
              "temporal_categorisation": "Coincident indicator",
@@ -1336,9 +2137,13 @@ THEMATIC_GROUPS = {
              "averages": "Smooth intermetallic noise.",
              "year_over_year": "Anchor base metal macro thesis.",
              "recommended_time_periods": ["1M", "3M", "6M", "12M"],
-             "path": "pages/912_lme_metals.py"
+             "path": "{country}/pages/900_commodity_markets_pricing.py"
          },
          "913_bloomberg_commodity_index": {
+             "title": "",
+             "applicable_use_cases": [
+                 ""
+             ],
              "overview": "The Bloomberg Commodity Index (BCOM) tracks a diversified basket of commodity futures.",
              "why_it_matters": "Used to evaluate broad commodity trends and inflation sensitivity.",
              "temporal_categorisation": "Lagging indicator",
@@ -1350,7 +2155,7 @@ THEMATIC_GROUPS = {
              "averages": "Review macro balance conditions.",
              "year_over_year": "Anchor multi-commodity analysis.",
              "recommended_time_periods": ["1M", "3M", "6M", "12M"],
-             "path": "pages/913_bloomberg_commodity_index.py"
+             "path": "{country}/pages/900_commodity_markets_pricing.py"
              },
          }
      },
@@ -1374,6 +2179,10 @@ THEMATIC_GROUPS = {
      "conclusion_and_further_exploration": "Currency indicators serve as composite signals reflecting trade competitiveness, policy alignment gradients, external balance stress points, and capital flow sensitivity across macroeconomic cycles.",
      "memberships": {
          "1001_dxy_index": {
+             "title": "",
+             "applicable_use_cases": [
+                 ""
+             ],
              "overview": "The US Dollar Index (DXY) measures the value of the USD against a basket of major world currencies.",
              "why_it_matters": "Widely referenced as a gauge of global USD strength, often inversely correlated with commodities and risk appetite.",
              "temporal_categorisation": "Coincident indicator",
@@ -1385,9 +2194,13 @@ THEMATIC_GROUPS = {
              "averages": "Smooth dollar index fluctuations over time.",
              "year_over_year": "Assess broader cyclical shifts in dollar strength.",
              "recommended_time_periods": ["1W", "1M", "3M", "6M", "12M"],
-             "path": "pages/1001_dxy_index.py"
+             "path": "{country}/pages/1000_currency_exchange_movements.py"
          },
          "1002_usd_fx_crosses": {
+             "title": "",
+             "applicable_use_cases": [
+                 ""
+             ],
              "overview": "Tracks the USD's performance against individual currencies (e.g., EUR/USD, USD/JPY, GBP/USD).",
              "why_it_matters": "Helps assess bilateral trade dynamics, monetary divergence, and capital flow shifts.",
              "temporal_categorisation": "Coincident indicator",
@@ -1399,9 +2212,13 @@ THEMATIC_GROUPS = {
              "averages": "Evaluate relative value trends.",
              "year_over_year": "Track longer-term currency cycles.",
              "recommended_time_periods": ["1W", "1M", "3M", "6M", "12M"],
-             "path": "pages/1002_usd_fx_crosses.py"
+             "path": "{country}/pages/1000_currency_exchange_movements.py"
          },
          "1003_neer_index": {
+             "title": "",
+             "applicable_use_cases": [
+                 ""
+             ],
              "overview": "Nominal Effective Exchange Rate (NEER) shows a country's average currency value relative to a basket of other currencies, unadjusted for inflation.",
              "why_it_matters": "Used to evaluate trade competitiveness and nominal relative strength.",
              "temporal_categorisation": "Coincident indicator",
@@ -1413,9 +2230,13 @@ THEMATIC_GROUPS = {
              "averages": "Smooth fluctuations for better macro insight.",
              "year_over_year": "Useful for inflation pass-through and trade trend context.",
              "recommended_time_periods": ["1M", "3M", "6M", "12M"],
-             "path": "pages/1003_neer_index.py"
+             "path": "{country}/pages/1000_currency_exchange_movements.py"
          },
          "1004_reer_index": {
+             "title": "",
+             "applicable_use_cases": [
+                 ""
+             ],
              "overview": "The Real Effective Exchange Rate (REER) adjusts NEER for relative inflation differences, offering a truer measure of currency value.",
              "why_it_matters": "Critical for evaluating actual trade competitiveness over time.",
              "temporal_categorisation": "Lagging indicator",
@@ -1427,9 +2248,13 @@ THEMATIC_GROUPS = {
              "averages": "Reveal fair value trends over time.",
              "year_over_year": "Support structural competitiveness evaluation.",
              "recommended_time_periods": ["3M", "6M", "12M"],
-             "path": "pages/1004_reer_index.py"
+             "path": "{country}/pages/1000_currency_exchange_movements.py"
          },
          "1005_fx_volatility_index": {
+             "title": "",
+             "applicable_use_cases": [
+                 ""
+             ],
              "overview": "Measures expected volatility in foreign exchange markets (e.g., JPM VXY or similar indices).",
              "why_it_matters": "Used to assess risk appetite and stress across currency markets.",
              "temporal_categorisation": "Leading indicator",
@@ -1441,8 +2266,27 @@ THEMATIC_GROUPS = {
              "averages": "Gauge typical volatility levels for reference.",
              "year_over_year": "Understand structural shifts in FX market behaviour.",
              "recommended_time_periods": ["1W", "1M", "3M", "12M"],
-             "path": "pages/1005_fx_volatility_index.py"
-             },
+             "path": "{country}/pages/1000_currency_exchange_movements.py"
+         },
+         "1006_trade_weighted_currency_index": {
+            "title": "Trade-Weighted Currency Index",
+            "applicable_use_cases": [
+                "Currency Regime Framework",
+                "Dollar Strength and Global Transmission"
+            ],
+            "overview": "Trade-Weighted Currency Index tracks a currency’s value against a basket of trading partner currencies, offering a broader view than single-pair exchange rates.",
+            "why_it_matters": "It helps assess external competitiveness, currency strength, and the transmission of exchange-rate movements across trade and financial conditions.",
+            "temporal_categorisation": "Coincident indicator",
+            "investment_action_importance": "🌟🌟 - Useful for interpreting broad currency strength, trade pressure, and macro-financial transmission.",
+            "personal_impact_importance": "🌟 - Indirectly affects import prices, purchasing power, and external price pressures.",
+            "current_vs_previous": "Tracks short-term shifts in broad currency strength against trading partners.",
+            "points_percentage_changes": "Measures the pace and direction of broad exchange-rate movement.",
+            "min_max_12months": "Highlights periods of unusually strong or weak external currency positioning.",
+            "averages": "Smooths short-term volatility to reveal broader currency trends.",
+            "year_over_year": "Provides context for structural exchange-rate shifts and external competitiveness.",
+            "recommended_time_periods": ["1M", "3M", "6M", "12M"],
+            "path": "{country}/pages/1000_currency_exchange_movements.py"
+            },
          }
      },
     "1100_market_trends_financial_health": {
@@ -1466,6 +2310,10 @@ THEMATIC_GROUPS = {
         "conclusion_and_further_exploration": "Market trend signals serve as composite markers reflecting cyclical leadership shifts, systemic volatility transitions, regional capital allocation gradients, and macroeconomic news sensitivity across evolving financial regimes.",
         "memberships": {
             "1101_broad_equity_index": {
+                "title": "Broad Equity Index",
+                "applicable_use_cases": [
+                    "Aggregate Equity Allocation"
+                ],
                 "overview": "Tracks headline equity market performance for large, diversified indices (e.g., S&P 500, MSCI World).",
                 "why_it_matters": "Serves as a benchmark for assessing broad equity performance and macroeconomic health.",
                 "temporal_categorisation": "Coincident indicator",
@@ -1477,9 +2325,13 @@ THEMATIC_GROUPS = {
                 "averages": "Reveals trend strength via moving averages.",
                 "year_over_year": "Highlights longer-term performance.",
                 "recommended_time_periods": ["1W", "1M", "3M", "6M", "12M"],
-                "path": "pages/1101_broad_equity_index.py"
+                "path": "{country}/pages/1100_market_trends_financial_health.py"
             },
             "1102_sector_equity_index": {
+                "title": "",
+                "applicable_use_cases": [
+                    ""
+                ],
                 "overview": "Tracks performance of specific economic sectors such as technology, energy, or financials.",
                 "why_it_matters": "Reveals sectoral leadership during various macro phases (inflation, growth, recession, etc.).",
                 "temporal_categorisation": "Coincident indicator",
@@ -1491,9 +2343,13 @@ THEMATIC_GROUPS = {
                 "averages": "Supports trend durability analysis.",
                 "year_over_year": "Evaluates relative strength over long cycles.",
                 "recommended_time_periods": ["1M", "3M", "6M", "12M"],
-                "path": "pages/1102_sector_equity_index.py"
+                "path": "{country}/pages/1100_market_trends_financial_health.py"
             },
             "1103_emerging_market_equity_index": {
+                "title": "",
+                "applicable_use_cases": [
+                    ""
+                ],
                 "overview": "Reflects equity market activity in developing economies.",
                 "why_it_matters": "Useful for global diversification context and understanding capital flow risk.",
                 "temporal_categorisation": "Coincident indicator",
@@ -1505,9 +2361,13 @@ THEMATIC_GROUPS = {
                 "averages": "Evaluates sustained under/overperformance.",
                 "year_over_year": "Captures long-cycle shifts and capital reallocation patterns.",
                 "recommended_time_periods": ["3M", "6M", "12M"],
-                "path": "pages/1103_emerging_market_equity_index.py"
+                "path": "{country}/pages/1100_market_trends_financial_health.py"
             },
             "1104_value_vs_growth_index": {
+                "title": "",
+                "applicable_use_cases": [
+                    ""
+                ],
                 "overview": "Tracks relative performance between value-oriented and growth-oriented equities.",
                 "why_it_matters": "Captures macro rotation themes influenced by rates, inflation, and liquidity.",
                 "temporal_categorisation": "Leading/Rotational indicator",
@@ -1519,9 +2379,13 @@ THEMATIC_GROUPS = {
                 "averages": "Smooths relative performance trendlines.",
                 "year_over_year": "Signals prolonged market regime shifts.",
                 "recommended_time_periods": ["1M", "3M", "6M", "12M"],
-                "path": "pages/1104_value_vs_growth_index.py"
+                "path": "{country}/pages/1100_market_trends_financial_health.py"
             },
             "1105_cyclical_vs_defensive_index": {
+                "title": "",
+                "applicable_use_cases": [
+                    ""
+                ],
                 "overview": "Monitors performance between economically sensitive and defensive sectors.",
                 "why_it_matters": "Indicates economic confidence or caution, especially during policy or earnings shifts.",
                 "temporal_categorisation": "Leading indicator",
@@ -1533,9 +2397,13 @@ THEMATIC_GROUPS = {
                 "averages": "Evaluates rotation timing.",
                 "year_over_year": "Highlights performance gaps between sectors.",
                 "recommended_time_periods": ["1M", "3M", "6M"],
-                "path": "pages/1105_cyclical_vs_defensive_index.py"
+                "path": "{country}/pages/1100_market_trends_financial_health.py"
             },
             "1106_small_cap_vs_large_cap_index": {
+                "title": "",
+                "applicable_use_cases": [
+                    ""
+                ],
                 "overview": "Compares the performance of small-cap and large-cap equities.",
                 "why_it_matters": "Reflects risk appetite and credit sensitivity in equity markets.",
                 "temporal_categorisation": "Leading indicator",
@@ -1547,9 +2415,13 @@ THEMATIC_GROUPS = {
                 "averages": "Measures leadership consistency.",
                 "year_over_year": "Evaluates relative resilience across business cycles.",
                 "recommended_time_periods": ["1M", "3M", "6M"],
-                "path": "pages/1106_small_cap_vs_large_cap_index.py"
+                "path": "{country}/pages/1100_market_trends_financial_health.py"
             },
             "1107_economic_surprise_index_us": {
+                "title": "",
+                "applicable_use_cases": [
+                    ""
+                ],
                 "overview": "Tracks whether US economic data releases exceed or fall short of expectations.",
                 "why_it_matters": "Useful for assessing sentiment, volatility risk, and macroeconomic adjustment pressure.",
                 "temporal_categorisation": "Leading indicator",
@@ -1561,9 +2433,13 @@ THEMATIC_GROUPS = {
                 "averages": "Smooths noise for policy signal tracking.",
                 "year_over_year": "Contextual comparison of current vs prior regime surprises.",
                 "recommended_time_periods": ["1W", "1M", "3M"],
-                "path": "pages/1107_economic_surprise_index_us.py"
+                "path": "{country}/pages/1100_market_trends_financial_health.py"
             },
             "1108_economic_surprise_index_eu": {
+                "title": "",
+                "applicable_use_cases": [
+                    ""
+                ],
                 "overview": "Monitors surprise dynamics across Eurozone economic data releases.",
                 "why_it_matters": "Helps interpret policy surprise risk in ECB settings and euro area growth signals.",
                 "temporal_categorisation": "Leading indicator",
@@ -1575,7 +2451,133 @@ THEMATIC_GROUPS = {
                 "averages": "Assesses policy signal stability.",
                 "year_over_year": "Annual sentiment comparison vs macro backdrop.",
                 "recommended_time_periods": ["1W", "1M", "3M"],
-                "path": "pages/1108_economic_surprise_index_eu.py"
+                "path": "{country}/pages/1100_market_trends_financial_health.py"
+            },
+            "1109_domestic_financial_sector_equities": {
+                "title": "",
+                "applicable_use_cases": [
+                    "Aggregate Equity Allocation"
+                ],
+                "overview": "Domestic financial sector corporate equity liabilities reflect the scale of equity claims issued within the financial system.",
+                "why_it_matters": "They help frame how financial-sector balance sheet structure interacts with market depth, capital allocation, and long-cycle valuation context.",
+                "temporal_categorisation": "Coincident indicator",
+                "investment_action_importance": "🌟🌟 - Useful for assessing financial-sector market structure and equity supply conditions.",
+                "personal_impact_importance": "🌟 - Indirectly reflects the scale and role of financial markets within the wider economy.",
+                "current_vs_previous": "Tracks changes in financial-sector equity liability levels over time.",
+                "points_percentage_changes": "Measures the pace of expansion or contraction in equity claims.",
+                "min_max_12months": "Highlights periods of unusually high or low financial-sector equity issuance.",
+                "averages": "Smooths shorter-term balance sheet fluctuations.",
+                "year_over_year": "Provides structural context for long-cycle financial market development.",
+                "recommended_time_periods": ["6M", "12M"],
+                "path": "{country}/pages/1100_market_trends_financial_health.py"
+            },
+            "1110_central_government_debt_liabilities": {
+                "title": "Central government debt liabilities",
+                "applicable_use_cases": [
+                    "Aggregate Equity Allocation"
+                ],
+                "overview": "Central government debt liabilities capture the stock of sovereign borrowing through debt securities and loans.",
+                "why_it_matters": "They provide context for public-sector financing, debt issuance pressure, and the interaction between sovereign balance sheets and wider capital markets.",
+                "temporal_categorisation": "Coincident indicator",
+                "investment_action_importance": "🌟🌟 - Relevant for long-run debt structure, sovereign issuance trends, and market absorption capacity.",
+                "personal_impact_importance": "🌟 - Indirectly affects fiscal flexibility, long-run financing conditions, and macroeconomic resilience.",
+                "current_vs_previous": "Tracks changes in public debt levels across reporting periods.",
+                "points_percentage_changes": "Measures the pace of sovereign balance sheet expansion or contraction.",
+                "min_max_12months": "Highlights periods of debt acceleration or relative stability.",
+                "averages": "Smooths quarter-to-quarter issuance volatility.",
+                "year_over_year": "Provides structural perspective on sovereign financing trends.",
+                "recommended_time_periods": ["6M", "12M"],
+                "path": "{country}/pages/1100_market_trends_financial_health.py"
+            },
+            "1111_household_nonprofit_debt_liabilities": {
+                "title": "Household and nonprofit debt liabilities",
+                "applicable_use_cases": [
+                    "Aggregate Equity Allocation"
+                ],
+                "overview": "Household and nonprofit debt liabilities reflect borrowing across the household and nonprofit sectors through debt securities and loans.",
+                "why_it_matters": "They help frame leverage conditions, credit dependence, and the role of household balance sheets within the broader financial system.",
+                "temporal_categorisation": "Coincident indicator",
+                "investment_action_importance": "🌟 - Useful for understanding leverage-sensitive demand and long-cycle debt conditions.",
+                "personal_impact_importance": "🌟🌟 - Closely linked to borrowing conditions, household leverage, and financial vulnerability.",
+                "current_vs_previous": "Tracks changes in household and nonprofit debt burdens over time.",
+                "points_percentage_changes": "Measures the pace of debt accumulation or deleveraging.",
+                "min_max_12months": "Highlights periods of elevated leverage expansion or balance sheet restraint.",
+                "averages": "Smooths quarter-to-quarter shifts in borrowing activity.",
+                "year_over_year": "Provides structural context for household debt trends.",
+                "recommended_time_periods": ["6M", "12M"],
+                "path": "{country}/pages/1100_market_trends_financial_health.py"
+            },
+            "1112_nonfinancial_corporate_equities": {
+                "title": "Nonfinancial Corporate Equity",
+                "applicable_use_cases": [
+                    "Aggregate Equity Allocation"
+                ],
+                "overview": "Nonfinancial corporate equity liabilities reflect the stock of equity claims issued by the nonfinancial corporate sector.",
+                "why_it_matters": "They provide context for equity market scale, corporate capital structure, and the long-cycle supply of marketable equity.",
+                "temporal_categorisation": "Coincident indicator",
+                "investment_action_importance": "🌟🌟🌟 - Highly relevant for market structure, equity supply, valuation context, and long-cycle allocation analysis.",
+                "personal_impact_importance": "🌟 - Indirectly reflects the scale and structure of corporate market financing.",
+                "current_vs_previous": "Tracks changes in the stock of nonfinancial corporate equity liabilities.",
+                "points_percentage_changes": "Measures shifts in equity supply and capital structure over time.",
+                "min_max_12months": "Highlights periods of unusually high or low equity expansion.",
+                "averages": "Smooths temporary market and balance sheet distortions.",
+                "year_over_year": "Provides structural context for long-run corporate equity market development.",
+                "recommended_time_periods": ["6M", "12M"],
+                "path": "{country}/pages/1100_market_trends_financial_health.py"
+            },
+            "1113_nonfinancial_corporate_debt_liabilities": {
+                "title": "Nonfinancial Corporate Debt",
+                "applicable_use_cases": [
+                    "Aggregate Equity Allocation"
+                ],
+                "overview": "Nonfinancial corporate debt liabilities capture borrowing by the corporate sector through debt securities and loans.",
+                "why_it_matters": "They help frame corporate leverage, financing structure, and the balance between debt and equity across the business sector.",
+                "temporal_categorisation": "Coincident indicator",
+                "investment_action_importance": "🌟🌟 - Useful for assessing leverage conditions, refinancing pressure, and long-cycle corporate balance sheet structure.",
+                "personal_impact_importance": "🌟 - Indirectly influences corporate resilience, hiring conditions, and economic sensitivity to rates.",
+                "current_vs_previous": "Tracks changes in corporate borrowing levels over time.",
+                "points_percentage_changes": "Measures the pace of debt accumulation or retrenchment.",
+                "min_max_12months": "Highlights leverage expansion and debt stress periods.",
+                "averages": "Smooths quarter-to-quarter balance sheet changes.",
+                "year_over_year": "Provides structural context for corporate financing trends.",
+                "recommended_time_periods": ["6M", "12M"],
+                "path": "{country}/pages/1100_market_trends_financial_health.py"
+            },
+            "1114_rest_of_world_debt_liabilities": {
+                "title": "Rest of the World Debt",
+                "applicable_use_cases": [
+                    "Aggregate Equity Allocation"
+                ],
+                "overview": "Rest of the world debt liabilities reflect external sector claims through debt securities and loans linked to cross-border financing structures.",
+                "why_it_matters": "They help frame foreign participation, external funding conditions, and the interaction between domestic markets and international capital flows.",
+                "temporal_categorisation": "Coincident indicator",
+                "investment_action_importance": "🌟🌟 - Relevant for external financing structure, international exposure, and cross-border allocation context.",
+                "personal_impact_importance": "🌟 - Indirectly affects external resilience and sensitivity to global funding conditions.",
+                "current_vs_previous": "Tracks changes in external debt-linked liabilities over time.",
+                "points_percentage_changes": "Measures shifts in foreign-linked financing exposure.",
+                "min_max_12months": "Highlights periods of elevated external balance sheet expansion or contraction.",
+                "averages": "Smooths quarter-to-quarter fluctuations in cross-border liability structure.",
+                "year_over_year": "Provides structural context for international capital linkage trends.",
+                "recommended_time_periods": ["6M", "12M"],
+                "path": "{country}/pages/1100_market_trends_financial_health.py"
+            },
+            "1115_state_local_government_debt_liabilities": {
+                "title": "State and Local Government Debt Liabilities",
+                "applicable_use_cases": [
+                    "Aggregate Equity Allocation"
+                ],
+                "overview": "State and local government debt liabilities capture borrowing by sub-sovereign public entities through debt securities and loans.",
+                "why_it_matters": "They provide context for sub-national financing conditions, public-sector balance sheet structure, and long-cycle debt allocation across the economy.",
+                "temporal_categorisation": "Coincident indicator",
+                "investment_action_importance": "🌟 - Useful for understanding public financing structure and municipal debt context.",
+                "personal_impact_importance": "🌟 - Indirectly linked to local fiscal capacity, public services, and regional financing conditions.",
+                "current_vs_previous": "Tracks changes in sub-sovereign debt levels over time.",
+                "points_percentage_changes": "Measures the pace of local and regional borrowing shifts.",
+                "min_max_12months": "Highlights periods of accelerated or stabilised public debt growth.",
+                "averages": "Smooths quarter-to-quarter issuance and liability movements.",
+                "year_over_year": "Provides structural context for sub-national public debt trends.",
+                "recommended_time_periods": ["6M", "12M"],
+                "path": "{country}/pages/1100_market_trends_financial_health.py"
             },
         }
     },
@@ -1602,6 +2604,10 @@ THEMATIC_GROUPS = {
     "conclusion_and_further_exploration": "Industry and production indicators serve as composite signals framing business cycle amplitude, sector expansion durability, and systemic production capacity alignment across evolving macro regimes.",
         "memberships": {
             "1201_manufacturing_pmi": {
+                "title": "",
+                "applicable_use_cases": [
+                    ""
+                ],
                 "overview": "Tracks sentiment in manufacturing, capturing output, orders, and inventories across firms.",
                 "why_it_matters": "Used globally to assess business sentiment and potential inflection points in economic activity.",
                 "temporal_categorisation": "Leading indicator",
@@ -1613,9 +2619,13 @@ THEMATIC_GROUPS = {
                 "averages": "Contextualises normal levels of optimism or caution.",
                 "year_over_year": "Not always applicable due to short-term sentiment nature.",
                 "recommended_time_periods": ["MM", "3M", "6M"],
-                "path": "pages/1201_manufacturing_pmi.py"
+                "path": "{country}/pages/1200_industry_performance_production.py"
             },
             "1202_services_pmi": {
+                "title": "",
+                "applicable_use_cases": [
+                    ""
+                ],
                 "overview": "Captures service sector sentiment across employment, orders, and pricing.",
                 "why_it_matters": "Complements manufacturing PMI to gauge broader economic activity, especially in service-led economies.",
                 "temporal_categorisation": "Leading indicator",
@@ -1627,9 +2637,13 @@ THEMATIC_GROUPS = {
                 "averages": "Provides trend-level outlook.",
                 "year_over_year": "Limited value due to month-to-month focus.",
                 "recommended_time_periods": ["MM", "3M"],
-                "path": "pages/1202_services_pmi.py"
+                "path": "{country}/pages/1200_industry_performance_production.py"
             },
             "1203_new_orders_pmi": {
+                "title": "",
+                "applicable_use_cases": [
+                    ""
+                ],
                 "overview": "Measures new order flow in manufacturing and services.",
                 "why_it_matters": "Leads output and hiring decisions; a powerful forward-looking signal.",
                 "temporal_categorisation": "Leading indicator",
@@ -1641,9 +2655,13 @@ THEMATIC_GROUPS = {
                 "averages": "Contextualises structural order demand.",
                 "year_over_year": "Used to benchmark annual trend sentiment.",
                 "recommended_time_periods": ["MM", "3M", "6M"],
-                "path": "pages/1203_new_orders_pmi.py"
+                "path": "{country}/pages/1200_industry_performance_production.py"
             },
             "1204_business_activity_pmi": {
+                "title": "",
+                "applicable_use_cases": [
+                    ""
+                ],
                 "overview": "Focuses on real-time business output expectations and performance.",
                 "why_it_matters": "Tracks expansion/contraction phases and business performance signals.",
                 "temporal_categorisation": "Leading indicator",
@@ -1655,9 +2673,13 @@ THEMATIC_GROUPS = {
                 "averages": "Frames longer-term trend range.",
                 "year_over_year": "Limited in value due to short survey cycles.",
                 "recommended_time_periods": ["MM", "3M"],
-                "path": "pages/1204_business_activity_pmi.py"
+                "path": "{country}/pages/1200_industry_performance_production.py"
             },
             "1205_industrial_production_index": {
+                "title": "Industrial Production Index",
+                "applicable_use_cases": [
+                    "Forward Production Conditions"
+                ],
                 "overview": "Tracks real output across industrial sectors such as manufacturing, utilities, and mining.",
                 "why_it_matters": "Provides a realised view of industrial activity and helps show whether production expectations are translating into output.",
                 "temporal_categorisation": "Coincident indicator",
@@ -1669,9 +2691,13 @@ THEMATIC_GROUPS = {
                 "averages": "Helps frame trend persistence and baseline output conditions.",
                 "year_over_year": "Supports benchmarking of industrial activity over time.",
                 "recommended_time_periods": ["MM", "3M", "6M", "12M"],
-                "path": "pages/1205_industrial_production_index.py"
+                "path": "{country}/pages/1200_industry_performance_production.py"
             },
             "1206_capacity_utilization_rate": {
+                "title": "",
+                "applicable_use_cases": [
+                    ""
+                ],
                 "overview": "Measures the extent to which productive capacity is being used.",
                 "why_it_matters": "Higher utilization may precede inflationary pressures or capital investment.",
                 "temporal_categorisation": "Coincident indicator",
@@ -1683,9 +2709,13 @@ THEMATIC_GROUPS = {
                 "averages": "Shows normal production intensity.",
                 "year_over_year": "Used in capacity trend analysis.",
                 "recommended_time_periods": ["MM", "3M", "6M"],
-                "path": "pages/1206_capacity_utilization_rate.py"
+                "path": "{country}/pages/1200_industry_performance_production.py"
             },
             "1207_steel_utilization_index": {
+                "title": "",
+                "applicable_use_cases": [
+                    ""
+                ],
                 "overview": "Tracks production and use of steel as a proxy for industrial health.",
                 "why_it_matters": "Heavily used in construction, manufacturing, and infrastructure—often an early signal of hard demand.",
                 "temporal_categorisation": "Coincident to leading indicator",
@@ -1697,9 +2727,14 @@ THEMATIC_GROUPS = {
                 "averages": "Frames steady-state usage.",
                 "year_over_year": "Benchmarks broad activity swings.",
                 "recommended_time_periods": ["MM", "3M", "6M"],
-                "path": "pages/1207_steel_utilization_index.py"
+                "path": "{country}/pages/1200_industry_performance_production.py"
             },
             "1208_business_conditions_diffusion_index": {
+                "title": "Business Conditions Diffusion Index",
+                "applicable_use_cases": [
+                    "Forward Production Conditions",
+                    "Services Activity Conditions"
+                ],
                 "overview": "Tracks directional shifts in business conditions through survey-based diffusion measures reflecting sentiment, activity expectations, and industrial outlook.",
                 "why_it_matters": "Provides an earlier view of changing production conditions by surfacing how firms perceive shifts in activity before those changes fully appear in realised output.",
                 "temporal_categorisation": "Leading indicator",
@@ -1711,10 +2746,14 @@ THEMATIC_GROUPS = {
                 "averages": "Provides context for whether current conditions are elevated, muted, or broadly in line with recent norms.",
                 "year_over_year": "Can support broader comparison of survey conditions across time, though monthly directional change is often more relevant.",
                 "recommended_time_periods": ["MM", "3M", "6M"],
-                "path": "{country}/pages/1200_forward_production_conditions.py"
+                "path": "{country}/pages/1200_industry_performance_production.py"
             },
             "1209_manufacturing_durable_goods_orders": {
-                "overview": "Tracks order-based demand across manufacturing or durable goods categories, helping show whether production expectations are being supported by underlying demand.",
+                "title": "Manufacturing Durable Goods",
+                "applicable_use_cases": [
+                    "Forward Production Conditions"
+                ],
+                "overview": "Tracks order-based demand across manufacturing durable goods categories, helping show whether production expectations are being supported by underlying demand.",
                 "why_it_matters": "Acts as a transmission layer between business sentiment and realised output, offering context for whether forward production conditions are being reinforced or weakening.",
                 "temporal_categorisation": "Leading indicator",
                 "investment_action_importance": "🌟🌟 - Useful for observing demand momentum, production follow-through, and shifts in industrial order flow.",
@@ -1725,9 +2764,13 @@ THEMATIC_GROUPS = {
                 "averages": "Helps frame whether current order levels are firm, subdued, or broadly in line with recent conditions.",
                 "year_over_year": "Supports broader benchmarking of order demand across changing production environments.",
                 "recommended_time_periods": ["MM", "3M", "6M"],
-                "path": "{country}/pages/1200_forward_production_conditions.py"
+                "path": "{country}/pages/1200_industry_performance_production.py"
             },
             "1210_services_consumption_nominal": {
+                "title": "Services Consumptions - Nominal",
+                "applicable_use_cases": [
+                    "Services Activity Conditions"
+                ],
                 "overview": "Tracks nominal spending across retail and food services, providing a high-frequency view of consumer-facing demand conditions within the services layer of the economy.",
                 "why_it_matters": "Helps show whether service-oriented demand is strengthening or weakening, offering context for how consumer activity may be supporting or constraining broader forward conditions.",
                 "temporal_categorisation": "Coincident indicator",
@@ -1739,9 +2782,13 @@ THEMATIC_GROUPS = {
                 "averages": "Provides context for whether current nominal spending is elevated, subdued, or broadly in line with recent conditions.",
                 "year_over_year": "Supports broader comparison of spending momentum across changing demand environments.",
                 "recommended_time_periods": ["MM", "3M", "6M"],
-                "path": "{country}/pages/1200_forward_production_conditions.py"
+                "path": "{country}/pages/1200_industry_performance_production.py"
             },
             "1211_services_consumption_real": {
+                "title": "Services Consumptions - Real",
+                "applicable_use_cases": [
+                    "Services Activity Conditions"
+                ],
                 "overview": "Tracks inflation-adjusted spending across retail and food services, helping show whether underlying services demand is holding after price effects are removed.",
                 "why_it_matters": "Provides a cleaner read on real consumer-facing demand, helping distinguish between spending driven by actual activity and spending influenced primarily by price changes.",
                 "temporal_categorisation": "Coincident indicator",
@@ -1753,7 +2800,7 @@ THEMATIC_GROUPS = {
                 "averages": "Provides context for whether real spending is firm, muted, or broadly aligned with recent norms.",
                 "year_over_year": "Supports broader benchmarking of real demand across changing economic conditions.",
                 "recommended_time_periods": ["MM", "3M", "6M"],
-                "path": "{country}/pages/1200_forward_production_conditions.py"
+                "path": "{country}/pages/1200_industry_performance_production.py"
             },
         }
     },
@@ -1777,6 +2824,10 @@ THEMATIC_GROUPS = {
     "conclusion_and_further_exploration": "Sustainability signals serve as composite markers reflecting structural capital reallocation, long-cycle energy transition processes, policy-aligned investment flows, and decarbonisation trajectory alignment across national and sectoral systems.",
     "memberships": {
         "1301_carbon_emissions_gdp": {
+            "title": "",
+            "applicable_use_cases": [
+                ""
+            ],
             "overview": "This indicator measures carbon dioxide emissions per unit of GDP, capturing the environmental intensity of economic activity.",
             "why_it_matters": "Used to evaluate decarbonization progress and the efficiency of economic growth in lowering emissions.",
             "temporal_categorisation": "Lagging indicator",
@@ -1788,9 +2839,13 @@ THEMATIC_GROUPS = {
             "averages": "Identify consistent improvement or setbacks.",
             "year_over_year": "Reveal structural change or stalling.",
             "recommended_time_periods": ["1Y", "3Y", "5Y"],
-            "path": "pages/1301_carbon_emissions_gdp.py"
+            "path": "{country}/pages/1300_sustainability_green_economy.py"
         },
         "1302_renewable_energy_production": {
+            "title": "",
+            "applicable_use_cases": [
+                ""
+            ],
             "overview": "Tracks the share or total volume of energy derived from renewable sources like solar, wind, hydro, and geothermal.",
             "why_it_matters": "A leading signal of energy transition, investment opportunity, and policy-driven infrastructure evolution.",
             "temporal_categorisation": "Coincident to leading indicator",
@@ -1802,9 +2857,13 @@ THEMATIC_GROUPS = {
             "averages": "Reveal sustainable trajectory trends.",
             "year_over_year": "Gauge broader success of energy transition.",
             "recommended_time_periods": ["1M", "6M", "1Y", "3Y"],
-            "path": "pages/1302_renewable_energy_production.py"
+            "path": "{country}/pages/1300_sustainability_green_economy.py"
         },
         "1303_green_investment_trends": {
+            "title": "",
+            "applicable_use_cases": [
+                ""
+            ],
             "overview": "Measures capital flows into green sectors, ESG-focused funds, and renewable infrastructure.",
             "why_it_matters": "Indicates market sentiment toward sustainability and regulatory traction around ESG mandates.",
             "temporal_categorisation": "Leading indicator",
@@ -1816,7 +2875,7 @@ THEMATIC_GROUPS = {
             "averages": "Assess baseline participation growth.",
             "year_over_year": "Anchor long-term green capital trends.",
             "recommended_time_periods": ["3M", "6M", "1Y"],
-            "path": "pages/1303_green_investment_trends.py"
+            "path": "{country}/pages/1300_sustainability_green_economy.py"
             },
         }
     },
@@ -1840,6 +2899,10 @@ THEMATIC_GROUPS = {
     "conclusion_and_further_exploration": "Digital economy signals serve as composite markers reflecting technological absorption depth, structural consumption reallocation, cross-sector platform scaling dynamics, and macroeconomic competitiveness positioning under digitalisation transitions.",
     "memberships": {
         "1401_internet_penetration_rate": {
+            "title": "",
+            "applicable_use_cases": [
+                ""
+            ],
             "overview": "Measures the percentage of the population with access to the internet, serving as a foundational enabler of the digital economy.",
             "why_it_matters": "High penetration supports scalability of e-commerce, digital services, and remote work ecosystems.",
             "temporal_categorisation": "Coincident to leading indicator",
@@ -1851,9 +2914,13 @@ THEMATIC_GROUPS = {
             "averages": "Gauge long-run access trends.",
             "year_over_year": "Monitor long-term infrastructure and policy effects.",
             "recommended_time_periods": ["6M", "1Y", "3Y"],
-            "path": "pages/1401_internet_penetration_rate.py"
+            "path": "{country}/pages/1400_digital_economy_ecommerce.py"
         },
         "1402_ecommerce_gdp_contribution": {
+            "title": "",
+            "applicable_use_cases": [
+                ""
+            ],
             "overview": "Represents the share of GDP generated by digital commerce activities, including online retail, marketplaces, and digital service platforms.",
             "why_it_matters": "A proxy for economic digitization, e-commerce reflects consumption shifts, business model changes, and platform-led growth.",
             "temporal_categorisation": "Coincident indicator",
@@ -1865,9 +2932,13 @@ THEMATIC_GROUPS = {
             "averages": "Understand structural composition over time.",
             "year_over_year": "Frame longer-term digital substitution trends.",
             "recommended_time_periods": ["1Q", "1Y", "3Y"],
-            "path": "pages/1402_ecommerce_gdp_contribution.py"
+            "path": "{country}/pages/1400_digital_economy_ecommerce.py"
         },
         "1403_digital_sales_growth": {
+            "title": "",
+            "applicable_use_cases": [
+                ""
+            ],
             "overview": "Tracks the rate of change in digital or online sales across sectors, often expressed as a monthly or annual growth percentage.",
             "why_it_matters": "Signals adoption momentum and the strength of the digital retail ecosystem.",
             "temporal_categorisation": "Leading to coincident indicator",
@@ -1879,7 +2950,7 @@ THEMATIC_GROUPS = {
             "averages": "Compare normalised periods (e.g., post-COVID or regulatory shifts).",
             "year_over_year": "Anchor long-run adoption insights.",
             "recommended_time_periods": ["1M", "3M", "6M", "1Y"],
-            "path": "pages/1403_digital_sales_growth.py"
+            "path": "{country}/pages/1400_digital_economy_ecommerce.py"
             },
         }
     },
@@ -1903,6 +2974,10 @@ THEMATIC_GROUPS = {
     "conclusion_and_further_exploration": "Innovation and R&D signals serve as composite markers reflecting long-cycle growth differentials, competitive productivity asymmetries, and sectoral leadership positioning across evolving technological adoption regimes.",
     "memberships": {
         "1501_innovation_index": {
+            "title": "",
+            "applicable_use_cases": [
+                ""
+            ],
             "overview": "Captures a country's relative innovation capacity using composite metrics including education, infrastructure, R&D investment, and patent output.",
             "why_it_matters": "Useful for comparing innovation ecosystems and forecasting long-term growth environments.",
             "temporal_categorisation": "Leading indicator",
@@ -1914,9 +2989,13 @@ THEMATIC_GROUPS = {
             "averages": "Smooth cyclical volatility for trend clarity.",
             "year_over_year": "Assess sustained innovation performance.",
             "recommended_time_periods": ["1Y", "3Y", "5Y"],
-            "path": "pages/1501_innovation_index.py"
+            "path": "{country}/pages/1500_innovation_rd_investment.py"
         },
         "1502_patent_applications": {
+            "title": "",
+            "applicable_use_cases": [
+                ""
+            ],
             "overview": "Measures the volume of patents filed within a country or sector over a given time period.",
             "why_it_matters": "Patents represent tangible innovation output and intellectual property creation.",
             "temporal_categorisation": "Coincident to leading indicator",
@@ -1928,9 +3007,13 @@ THEMATIC_GROUPS = {
             "averages": "Analyze underlying innovation pace.",
             "year_over_year": "Assess structural growth in IP creation.",
             "recommended_time_periods": ["6M", "1Y", "3Y"],
-            "path": "pages/1502_patent_applications.py"
+            "path": "{country}/pages/1500_innovation_rd_investment.py"
         },
         "1503_rd_spending_gdp": {
+            "title": "",
+            "applicable_use_cases": [
+                ""
+            ],
             "overview": "Tracks gross domestic expenditure on research and development as a percentage of GDP.",
             "why_it_matters": "A key proxy for innovation intensity and future growth potential.",
             "temporal_categorisation": "Lagging to coincident indicator",
@@ -1942,7 +3025,7 @@ THEMATIC_GROUPS = {
             "averages": "Understand persistent trends in innovation allocation.",
             "year_over_year": "Review structural commitment to research.",
             "recommended_time_periods": ["1Y", "3Y", "5Y"],
-            "path": "pages/1503_rd_spending_gdp.py"
+            "path": "{country}/pages/1500_innovation_rd_investment.py"
             },
         }
     },
@@ -1966,6 +3049,10 @@ THEMATIC_GROUPS = {
     "conclusion_and_further_exploration": "Urbanisation and smart city signals serve as composite markers reflecting demographic pressure gradients, infrastructure capital allocation cycles, service delivery efficiency, and spatial growth alignment across evolving macroeconomic systems.",
     "memberships": {
         "1601_urban_population_growth": {
+            "title": "",
+            "applicable_use_cases": [
+                ""
+            ],
             "overview": "Tracks the rate of population growth in urban areas relative to rural or national growth.",
             "why_it_matters": "Higher urbanisation often correlates with rising infrastructure needs, real estate demand, and service delivery challenges.",
             "temporal_categorisation": "Coincident indicator",
@@ -1977,9 +3064,13 @@ THEMATIC_GROUPS = {
             "averages": "Smooths temporary spikes in migration or reclassification.",
             "year_over_year": "Assesses broader shifts toward urbanisation over time.",
             "recommended_time_periods": ["1Y", "3Y", "5Y"],
-            "path": "pages/1601_urban_population_growth.py"
+            "path": "{country}/pages/1600_urbanisation_and_smart_cities.py"
         },
         "1602_urban_density_services_index": {
+            "title": "",
+            "applicable_use_cases": [
+                ""
+            ],
             "overview": "Measures the relationship between population density and service delivery (e.g., healthcare, transport, utilities).",
             "why_it_matters": "Essential for evaluating the resilience, accessibility, and quality of urban services.",
             "temporal_categorisation": "Coincident indicator",
@@ -1991,9 +3082,13 @@ THEMATIC_GROUPS = {
             "averages": "Highlights service adequacy across different cities or regions.",
             "year_over_year": "Compares systemic change over a longer period.",
             "recommended_time_periods": ["1Y", "3Y", "5Y"],
-            "path": "pages/1602_urban_density_services_index.py"
+            "path": "{country}/pages/1600_urbanisation_and_smart_cities.py"
         },
         "1603_smart_infrastructure_investment": {
+            "title": "",
+            "applicable_use_cases": [
+                ""
+            ],
             "overview": "Tracks public and private investment into smart infrastructure, such as transport tech, digital grids, and intelligent systems.",
             "why_it_matters": "Smart infrastructure signals a shift toward sustainable urban living and efficient city management.",
             "temporal_categorisation": "Leading indicator",
@@ -2005,7 +3100,7 @@ THEMATIC_GROUPS = {
             "averages": "Normalises data for trend tracking and regional comparison.",
             "year_over_year": "Evaluates commitment to long-term digital transformation.",
             "recommended_time_periods": ["1Y", "3Y", "5Y"],
-            "path": "pages/1603_smart_infrastructure_investment.py"
+            "path": "{country}/pages/1600_urbanisation_and_smart_cities.py"
             },
         }
     },
@@ -2029,6 +3124,10 @@ THEMATIC_GROUPS = {
     "conclusion_and_further_exploration": "Healthcare economics signals serve as composite markers reflecting fiscal sustainability regimes, service delivery efficiency, policy-induced allocation gradients, and structural demographic pressures across evolving healthcare systems.",
     "memberships": {
         "1701_access_to_care_index": {
+            "title": "",
+            "applicable_use_cases": [
+                ""
+            ],
             "overview": "Evaluates the availability, quality, and equity of healthcare services across populations.",
             "why_it_matters": "A core proxy for social stability, inclusion, and health sector reach. It reflects access gaps and potential stress points in systems.",
             "temporal_categorisation": "Coincident to lagging indicator",
@@ -2040,9 +3139,13 @@ THEMATIC_GROUPS = {
             "averages": "Helps benchmark healthcare access levels over time.",
             "year_over_year": "Supports structural review of national systems.",
             "recommended_time_periods": ["1Y", "3Y", "5Y"],
-            "path": "pages/1701_access_to_care_index.py"
+            "path": "{country}/pages/1700_healthcare_economics.py"
         },
         "1702_healthcare_spending_gdp": {
+            "title": "",
+            "applicable_use_cases": [
+                ""
+            ],
             "overview": "Measures healthcare expenditures as a percentage of gross domestic product.",
             "why_it_matters": "Signals national prioritization of healthcare and structural cost pressures on the economy.",
             "temporal_categorisation": "Coincident indicator",
@@ -2054,9 +3157,13 @@ THEMATIC_GROUPS = {
             "averages": "Helps reveal systemic healthcare allocation trends.",
             "year_over_year": "Supports broader fiscal context and health prioritization.",
             "recommended_time_periods": ["1Y", "3Y", "5Y"],
-            "path": "pages/1702_healthcare_spending_gdp.py"
+            "path": "{country}/pages/1700_healthcare_economics.py"
         },
         "1703_public_vs_private_spending": {
+            "title": "",
+            "applicable_use_cases": [
+                ""
+            ],
             "overview": "Compares the share of healthcare expenditures funded publicly versus privately (e.g., out-of-pocket, insurance).",
             "why_it_matters": "Reveals structural dynamics in health funding and potential burdens on individuals or public systems.",
             "temporal_categorisation": "Coincident indicator",
@@ -2068,7 +3175,7 @@ THEMATIC_GROUPS = {
             "averages": "Reveal baseline cost-sharing dynamics.",
             "year_over_year": "Assess multi-year changes in healthcare burden distribution.",
             "recommended_time_periods": ["1Y", "3Y", "5Y"],
-            "path": "pages/1703_public_vs_private_spending.py"
+            "path": "{country}/pages/1700_healthcare_economics.py"
             },
         }
     },
@@ -2092,6 +3199,10 @@ THEMATIC_GROUPS = {
     "conclusion_and_further_exploration": "Education and human capital signals serve as composite markers reflecting long-cycle growth capacity, structural workforce competitiveness, productivity asymmetries, and national innovation leverage under evolving economic regimes.",
     "memberships": {
         "1801_education_spending_gdp": {
+            "title": "",
+            "applicable_use_cases": [
+                ""
+            ],
             "overview": "Tracks public and private education expenditures as a percentage of GDP.",
             "why_it_matters": "A high share signals long-term investment in human capital and may reflect policy prioritization.",
             "temporal_categorisation": "Coincident indicator",
@@ -2103,9 +3214,13 @@ THEMATIC_GROUPS = {
             "averages": "Provides baseline context for educational prioritization.",
             "year_over_year": "Highlights long-term commitment trends.",
             "recommended_time_periods": ["1Y", "3Y", "5Y"],
-            "path": "pages/1801_education_spending_gdp.py"
+            "path": "{country}/pages/1800_education_and_human_capital.py"
         },
         "1802_tertiary_enrollment": {
+            "title": "",
+            "applicable_use_cases": [
+                ""
+            ],
             "overview": "Measures enrollment in higher education institutions (e.g., universities, colleges) as a percentage of the eligible population.",
             "why_it_matters": "A key signal of future workforce qualification and knowledge-based economy readiness.",
             "temporal_categorisation": "Leading indicator",
@@ -2117,9 +3232,13 @@ THEMATIC_GROUPS = {
             "averages": "Smooths cyclical fluctuations.",
             "year_over_year": "Shows year-over-year educational access progress.",
             "recommended_time_periods": ["1Y", "3Y", "5Y"],
-            "path": "pages/1802_tertiary_enrollment.py"
+            "path": "{country}/pages/1800_education_and_human_capital.py"
         },
         "1803_skills_gap_metrics": {
+            "title": "",
+            "applicable_use_cases": [
+                ""
+            ],
             "overview": "Assesses the mismatch between workforce skills and labor market demands.",
             "why_it_matters": "A rising skills gap can limit growth and productivity. Closing it enhances employment quality and competitiveness.",
             "temporal_categorisation": "Leading indicator",
@@ -2131,7 +3250,7 @@ THEMATIC_GROUPS = {
             "averages": "Provides long-term perspective on structural misalignment.",
             "year_over_year": "Supports planning around talent pipeline reforms.",
             "recommended_time_periods": ["1Y", "3Y", "5Y"],
-            "path": "pages/1803_skills_gap_metrics.py"
+            "path": "{country}/pages/1800_education_and_human_capital.py"
             },
         }
     },
@@ -2155,6 +3274,10 @@ THEMATIC_GROUPS = {
     "conclusion_and_further_exploration": "Social inequality signals serve as composite markers reflecting resource distribution asymmetries, demographic participation gradients, political economy stress points, and long-horizon systemic sustainability alignment across evolving economic regimes.",
     "memberships": {
         "1901_gini_coefficient": {
+            "title": "",
+            "applicable_use_cases": [
+                ""
+            ],
             "overview": "Measures income or wealth inequality within a country on a 0 to 1 scale, where 0 indicates perfect equality and 1 indicates perfect inequality.",
             "why_it_matters": "Serves as a benchmark for evaluating fairness in income distribution and its implications for long-term stability and social cohesion.",
             "temporal_categorisation": "Lagging indicator",
@@ -2166,9 +3289,13 @@ THEMATIC_GROUPS = {
             "averages": "Used to track persistent inequality trends.",
             "year_over_year": "Assesses annual shifts in economic equality.",
             "recommended_time_periods": ["1Y", "3Y", "5Y"],
-            "path": "pages/1901_gini_coefficient.py"
+            "path": "{country}/pages/1900_social_impact_and_inequality.py"
         },
         "1902_poverty_rate": {
+            "title": "",
+            "applicable_use_cases": [
+                ""
+            ],
             "overview": "Represents the percentage of the population living below the poverty threshold, either nationally defined or relative to median income.",
             "why_it_matters": "Highlights economic exclusion and access challenges within society, often influencing consumption patterns, education outcomes, and healthcare usage.",
             "temporal_categorisation": "Lagging indicator",
@@ -2180,9 +3307,13 @@ THEMATIC_GROUPS = {
             "averages": "Tracks long-term poverty persistence.",
             "year_over_year": "Annualised assessment of progress or decline.",
             "recommended_time_periods": ["1Y", "3Y", "5Y"],
-            "path": "pages/1902_poverty_rate.py"
+            "path": "{country}/pages/1900_social_impact_and_inequality.py"
         },
         "1903_social_spending_gdp": {
+            "title": "",
+            "applicable_use_cases": [
+                ""
+            ],
             "overview": "Tracks government spending on social programs as a share of GDP, including health, welfare, education, and pensions.",
             "why_it_matters": "Reflects the fiscal commitment to equity, redistribution, and societal stability. Also influences budgetary flexibility.",
             "temporal_categorisation": "Coincident indicator",
@@ -2194,7 +3325,7 @@ THEMATIC_GROUPS = {
             "averages": "Supports longer-term welfare analysis.",
             "year_over_year": "Assesses yearly shifts in state-backed support.",
             "recommended_time_periods": ["1Y", "3Y", "5Y"],
-            "path": "pages/1903_social_spending_gdp.py"
+            "path": "{country}/pages/1900_social_impact_and_inequality.py"
             },
         }
     },
@@ -2218,6 +3349,10 @@ THEMATIC_GROUPS = {
         "conclusion_and_further_exploration": "Geopolitical risk signals serve as composite markers reflecting sovereign credit stress asymmetries, defense-capital allocation cycles, political economy fragility gradients, and volatility transmission channels across global macroeconomic systems.",
         "memberships": {
             "2001_conflict_impact_score": {
+                "title": "",
+                "applicable_use_cases": [
+                    ""
+                ],
                 "overview": "Quantifies the economic and market impact of geopolitical conflicts based on proximity, intensity, and persistence.",
                 "why_it_matters": "Conflict can disrupt trade, increase risk premiums, and shift regional capital allocations.",
                 "temporal_categorisation": "Coincident indicator",
@@ -2229,9 +3364,13 @@ THEMATIC_GROUPS = {
                 "averages": "Normalises recent conflict data for trend recognition.",
                 "year_over_year": "Provides context on rising or abating conflict effects.",
                 "recommended_time_periods": ["6M", "12M", "3Y"],
-                "path": "pages/2001_conflict_impact_score.py"
+                "path": "{country}/pages/2000_geopolitical_risks_and_global_stability.py"
             },
             "2002_military_spending": {
+                "title": "",
+                "applicable_use_cases": [
+                    ""
+                ],
                 "overview": "Tracks national and global defense spending as a percentage of GDP or in absolute terms.",
                 "why_it_matters": "Sustained or rising military expenditure often signals geopolitical shifts, policy redirection, or fiscal reprioritization.",
                 "temporal_categorisation": "Lagging indicator",
@@ -2243,9 +3382,13 @@ THEMATIC_GROUPS = {
                 "averages": "Tracks normalised expenditure trends over time.",
                 "year_over_year": "Shows policy direction over longer periods.",
                 "recommended_time_periods": ["1Y", "3Y", "5Y"],
-                "path": "pages/2002_military_spending.py"
+                "path": "{country}/pages/2000_geopolitical_risks_and_global_stability.py"
             },
             "2003_political_risk_indexpolitical_risk_index": {
+                "title": "",
+                "applicable_use_cases": [
+                    ""
+                ],
                 "overview": "Combines indicators of political stability, governance effectiveness, civil unrest, and rule of law.",
                 "why_it_matters": "Political risk affects investor confidence, capital flight potential, and sovereign funding costs.",
                 "temporal_categorisation": "Leading indicator",
@@ -2257,9 +3400,13 @@ THEMATIC_GROUPS = {
                 "averages": "Smooths volatility across cycles.",
                 "year_over_year": "Compares recent data with long-term governance norms.",
                 "recommended_time_periods": ["1Y", "3Y", "5Y"],
-                "path": "pages/2003_political_risk_index.py"
+                "path": "{country}/pages/2000_geopolitical_risks_and_global_stability.py"
             },
             "2004_sovereign_risk_spreads": {
+                "title": "",
+                "applicable_use_cases": [
+                    ""
+                ],
                 "overview": "Reflects the credit spread between sovereign bonds and benchmark rates, signaling perceived default risk.",
                 "why_it_matters": "Used by markets to assess a country’s creditworthiness and risk of fiscal instability.",
                 "temporal_categorisation": "Coincident indicator",
@@ -2271,7 +3418,7 @@ THEMATIC_GROUPS = {
                 "averages": "Provides context on sustained stress or improvement.",
                 "year_over_year": "Confirms long-term shifts in credit risk perception.",
                 "recommended_time_periods": ["3M", "6M", "12M"],
-                "path": "pages/2004_sovereign_risk_spreads.py"
+                "path": "{country}/pages/2000_geopolitical_risks_and_global_stability.py"
             },
         }
     },
@@ -2295,6 +3442,10 @@ THEMATIC_GROUPS = {
     "conclusion_and_further_exploration": "Frontier sector signals serve as composite markers reflecting speculative innovation capital flows, early adoption dynamics, transformative technology scale gradients, and long-cycle disruptive leverage potential across evolving economic architectures.",
     "memberships": {
         "2101_ai_investment_trends": {
+            "title": "",
+            "applicable_use_cases": [
+                ""
+            ],
             "overview": "Tracks investment activity into artificial intelligence across public markets, startups, and institutional funding.",
             "why_it_matters": "Signals the rise of automation and intelligence-driven disruption across industries. AI investment serves as a bellwether for digital transformation.",
             "temporal_categorisation": "Leading indicator",
@@ -2306,9 +3457,13 @@ THEMATIC_GROUPS = {
             "averages": "Smooths volatility in quarterly or annual investment data.",
             "year_over_year": "Tracks annual growth or cooling periods.",
             "recommended_time_periods": ["6M", "12M", "3Y"],
-            "path": "pages/2101_ai_investment_trends.py"
+            "path": "{country}/pages/2100_frontier_sectors.py"
         },
         "2102_biotech_rd_growth": {
+            "title": "",
+            "applicable_use_cases": [
+                ""
+            ],
             "overview": "Measures the expansion of R&D spending in the biotechnology sector, across both public and private institutions.",
             "why_it_matters": "Reflects innovation in healthcare, gene editing, drug development, and life sciences—sectors with high barriers but transformative potential.",
             "temporal_categorisation": "Coincident indicator",
@@ -2320,9 +3475,13 @@ THEMATIC_GROUPS = {
             "averages": "Tracks smoothed investment and focus levels.",
             "year_over_year": "Analyzes longer-term funding momentum.",
             "recommended_time_periods": ["1Y", "3Y", "5Y"],
-            "path": "pages/2102_biotech_rd_growth.py"
+            "path": "{country}/pages/2100_frontier_sectors.py"
         },
         "2103_venture_capital_activity": {
+            "title": "",
+            "applicable_use_cases": [
+                ""
+            ],
             "overview": "Captures VC activity across emerging sectors, including deal count, funding size, and thematic focus areas.",
             "why_it_matters": "Acts as a proxy for private market confidence in new technologies or business models. Often precedes public market attention.",
             "temporal_categorisation": "Leading indicator",
@@ -2334,7 +3493,7 @@ THEMATIC_GROUPS = {
             "averages": "Smooths cyclical peaks and troughs in VC flow.",
             "year_over_year": "Assesses structural capital shifts.",
             "recommended_time_periods": ["6M", "12M", "3Y"],
-            "path": "pages/2103_venture_capital_activity.py"
+            "path": "{country}/pages/2100_frontier_sectors.py"
             },
         }
     },

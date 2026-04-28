@@ -5,29 +5,29 @@
 # pylint: disable=invalid-name, non-ascii-file-name, unused-argument
 
 # -------------------------------------------------------------------------------------------------
-# 📘 Docstring
+# Docstring
 # -------------------------------------------------------------------------------------------------
 """
-📊 Universal Visualisation Engine — Economic Exploration Suite
+Universal Visualisation Engine — Economic Exploration Suite
 -----------------------------------------------------------------
 
 Defines the universal chart rendering functions for thematic modules (Themes 100–2100+)
 within the Economic Exploration platform. This module serves as the foundation for
 consistent charting across countries and themes.
 
-✅ Role in the System:
+Role in the System:
 - Provides reusable chart functions for any theme where local visuals are not extended.
 - Ensures consistent UI presentation across all countries using shared indicators.
 - Supports Streamlit tab structures and AI-export-ready visual formats.
 
-🧠 System Design Notes:
+System Design Notes:
 - Visual rendering operates fully independently of indicator signals and insights.
 - **Use Case selection controls chart rendering**, not indicator map output.
 - Charts respond to the selected Use Case from `use_cases_XXX.py`.
 - Chart data slices are passed via `df_map` based on timeframe logic configured in `visual_config_XXX.py`.
 - Indicator signals (computed via `indicator_map_XXX.py`) are not used inside chart functions.
 
-⚙️ Architecture Summary:
+Architecture Summary:
 - Universal visuals serve as default chart renderers across all countries.
 - Local visual_config modules (e.g., `visuals_100.py`, `visuals_200.py`) can optionally override and extend visuals.
 - Each Use Case maps to one or more visual tabs and subtabs defined within local visual_config files.
@@ -40,7 +40,7 @@ Usage:
 """
 
 # -------------------------------------------------------------------------------------------------
-# 📦 Imports
+# Imports
 # -------------------------------------------------------------------------------------------------
 import pandas as pd
 import streamlit as st
@@ -48,7 +48,7 @@ import plotly.graph_objects as go
 import uuid
 
 # -------------------------------------------------------------------------------------------------
-# 🧩 Chart Display Wrapper with Fallback
+# Chart Display Wrapper with Fallback
 # -------------------------------------------------------------------------------------------------
 def display_chart_with_fallback(
     fig: go.Figure,
@@ -74,7 +74,7 @@ def display_chart_with_fallback(
         st.info(f"ℹ️ {label} displayed with partial data.")
 
 # -------------------------------------------------------------------------------------------------
-# 📊 Generic Plot — Signal A: Basic Time Series
+# Generic Plot — Signal A: Basic Time Series
 # -------------------------------------------------------------------------------------------------
 def plot_signal_a_chart(df: pd.DataFrame) -> go.Figure:
     """
@@ -99,7 +99,7 @@ def plot_signal_a_chart(df: pd.DataFrame) -> go.Figure:
     return fig
 
 # -------------------------------------------------------------------------------------------------
-# 📊 Generic Plot — Signal B: Rolling Average
+# Generic Plot — Signal B: Rolling Average
 # -------------------------------------------------------------------------------------------------
 def plot_signal_b_chart(df: pd.DataFrame, window: int = 3) -> go.Figure:
     """
@@ -132,7 +132,7 @@ def plot_signal_b_chart(df: pd.DataFrame, window: int = 3) -> go.Figure:
     return fig
 
 # -------------------------------------------------------------------------------------------------
-# 📊 Generic Plot — Signal C: Band Highlight
+# Generic Plot — Signal C: Band Highlight
 # -------------------------------------------------------------------------------------------------
 def plot_signal_c_chart(df: pd.DataFrame) -> go.Figure:
     """

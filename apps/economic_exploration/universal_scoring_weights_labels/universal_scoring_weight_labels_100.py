@@ -5,24 +5,24 @@
 # pylint: disable=invalid-name, non-ascii-file-name, line-too-long, unused-argument
 
 # -------------------------------------------------------------------------------------------------
-# 📘 Docstring
+# Docstring
 # -------------------------------------------------------------------------------------------------
 """
-🧮 Universal Scoring & Weighting Labels — Economic Exploration System
+Universal Scoring & Weighting Labels — Economic Exploration System
 -----------------------------------------------------------------------
 
 Defines the core alignment scoring framework for all thematic modules in the Economic Exploration suite.
 This module transforms raw signal outputs into structured alignment labels, insight narratives,
 and composite scoring weights applied across the entire decision-support system.
 
-✅ System Role:
+System Role:
 - Converts macro alignment ratios into labelled narrative outputs for:
     • Macro Conditions Summaries
     • AI personas and insight generators
     • Scoring dashboards and composite panels
 - Provides default indicator weightings to determine signal importance
 
-🧠 AI Persona & DSS Notes:
+AI Persona & DSS Notes:
 - Alignment labels returned by `get_alignment_score_label()` directly drive:
     • AI narrative generation
     • Macro scorecard reporting
@@ -33,8 +33,8 @@ and composite scoring weights applied across the entire decision-support system.
     • `indicator_map_XXX.py`
     • `insight_XXX.py`
 
-⚙️ Structural Rules:
-1️⃣ **Score Label Dispatcher**
+Structural Rules:
+**Score Label Dispatcher**
 - `get_alignment_score_label(alignment_ratio, use_case)` returns:
     • A concise label (emoji + text)
     • A long-form AI-compatible explanation
@@ -45,16 +45,16 @@ and composite scoring weights applied across the entire decision-support system.
     • −0.2–0.33 → Soft Misalignment
     • < −0.2 → Clear Misalignment
 
-2️⃣ **Weighting System**
+**Weighting System**
 - `get_indicator_weight(indicator_name)` maps indicators to relative weights (scale 1–3)
 - Weighting influences composite thematic scoring totals
 - Defaults to weight 1 if not explicitly assigned
 
-3️⃣ **Universal Stability**
+**Universal Stability**
 - This universal module is imported across all countries and themes
 - Local modules (e.g., `scoring_weights_labels_XXX.py`) extend or override mappings as needed
 
-🧭 Governance Note:
+Governance Note:
 - This scoring module forms core system infrastructure.
 - User configuration occurs via local extensions only — universal logic remains stable across releases.
 """

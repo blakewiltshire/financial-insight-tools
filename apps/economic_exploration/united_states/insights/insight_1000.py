@@ -1,0 +1,163 @@
+# -------------------------------------------------------------------------------------------------
+# Insight Generator (Local Wrapper)
+# -------------------------------------------------------------------------------------------------
+# pylint: disable=import-error, wrong-import-position, wrong-import-order
+# pylint: disable=invalid-name, non-ascii-file-name, line-too-long, unused-argument
+
+# -------------------------------------------------------------------------------------------------
+# Docstring
+# -------------------------------------------------------------------------------------------------
+"""
+Local Insight Map — Country-Specific Narrative Extensions
+-------------------------------------------------------------------------------
+
+This module defines localised insight narratives and bias classifications for country-level
+customisation within the Economic Exploration suite. It allows country-specific or theme-specific
+extensions to the system-wide universal insight map.
+
+System Role:
+- Provides extended or overridden insight text for local indicators
+- Supports AI narratives, macro scoring, observation journals, and external DSS agents
+- Used when local indicators exist or where country-level nuance is required
+
+AI Persona Alignment Notes:
+- Insight mappings return:
+    • Textual insight strings (e.g., "Full-time employment is leading expansion")
+    • Bias labels (e.g., "Growth Supportive", "Neutral", "Contraction Warning")
+- Output strings directly feed:
+    • Insight panels
+    • DSS macro condition summaries
+    • AI persona export narratives
+
+System Structure & Compatibility:
+**Strict Key Matching**
+    - Keys must match exactly the signal output strings from `indicator_map_XXX.py`
+    - Any sector-level tuple disaggregation handled upstream before calling insights
+
+**Bias Labels Aligned to Scoring Framework**
+    - Valid bias tags: `"Growth Supportive"`, `"Neutral"`, `"Contraction Warning"`, `"Caution"`
+
+**String-Based Substitution Only**
+    - Text templates may include `{sector}` or `{value}` placeholders if dynamic context is passed
+    - No numeric payloads returned — insight output always resolves to pure
+    text + bias classification
+
+**Dispatcher Consistency**
+    - Interface includes:
+        - `indicator` (use case signal)
+        - `signal_result` (strict string match)
+        - `timeframe` (pass-through)
+        - `extra_value` (optional sector string substitution where applicable)
+
+**No Embedded Evaluation Logic**
+    - This module performs no calculations.
+    - All logic and signal evaluation occurs upstream in indicator map functions.
+
+Governance Note:
+- This local insight map overrides universal logic where defined.
+- If no local match exists, the system falls back automatically to `universal_insights_XXX.py`.
+- This ensures full global-local modular consistency across countries and themes.
+"""
+
+# -------------------------------------------------------------------------------------------------
+# Imports and Path Setup
+# -------------------------------------------------------------------------------------------------
+import os
+import sys
+
+LOCAL_PATH = os.path.abspath(os.path.dirname(__file__))
+UNIVERSAL_PATH = os.path.abspath(os.path.join(LOCAL_PATH, "..", "universal_insights"))
+if UNIVERSAL_PATH not in sys.path:
+    sys.path.append(UNIVERSAL_PATH)
+
+# -------------------------------------------------------------------------------------------------
+# Universal Insight Import
+# -------------------------------------------------------------------------------------------------
+from universal_insights_1000 import generate_universal_econ_insights
+
+# -------------------------------------------------------------------------------------------------
+# Local Insight Definitions (Optional)
+# -------------------------------------------------------------------------------------------------
+LOCAL_INSIGHTS = {
+    "Dollar Strength Positioning": {
+        "Dollar Strength Firming": {
+            "bias": "Contraction Warning",
+            "text": "Dollar strength is increasing relative to recent levels, suggesting a firmer "
+            "currency regime with broader potential transmission effects across markets."
+        },
+        "Dollar Strength Stable": {
+            "bias": "Neutral",
+            "text": "Dollar strength is broadly stable, indicating limited recent change in the "
+            "overall dollar regime."
+        },
+        "Dollar Strength Softening": {
+            "bias": "Growth Supportive",
+            "text": "Dollar strength is easing relative to recent levels, suggesting a somewhat "
+            "less restrictive currency backdrop."
+        }
+    },
+
+    "Trade Weighted Dollar Pressure": {
+        "Trade Weighted Pressure Rising": {
+            "bias": "Contraction Warning",
+            "text": "Trade-weighted dollar pressure is increasing, suggesting a firmer external "
+            "currency position and potentially greater pressure across global trade-sensitive channels."
+        },
+        "Trade Weighted Pressure Stable": {
+            "bias": "Neutral",
+            "text": "Trade-weighted dollar pressure is broadly stable, indicating limited recent "
+            "change in broad dollar transmission conditions."
+        },
+        "Trade Weighted Pressure Easing": {
+            "bias": "Growth Supportive",
+            "text": "Trade-weighted dollar pressure is easing, suggesting a somewhat softer broad "
+            "currency backdrop across trade-sensitive channels."
+        }
+    },
+
+    "Cross Market Transmission": {
+        "Transmission Pressure Building": {
+            "bias": "Contraction Warning",
+            "text": "Dollar-linked transmission pressure is building, suggesting broader potential "
+            "spillover across markets and external system conditions."
+        },
+        "Transmission Pressure Stable": {
+            "bias": "Neutral",
+            "text": "Dollar-linked transmission pressure is broadly stable, indicating little recent "
+            "change in the wider cross-market regime."
+        },
+        "Transmission Pressure Easing": {
+            "bias": "Growth Supportive",
+            "text": "Dollar-linked transmission pressure is easing, suggesting a somewhat softer "
+            "cross-market transmission backdrop."
+        }
+    },
+}
+
+# -------------------------------------------------------------------------------------------------
+# Dispatcher — Universal Fallback with Local Override
+# -------------------------------------------------------------------------------------------------
+def generate_econ_insights(indicator: str, signal_result: str, timeframe: str, extra_value=None) -> tuple[str, str]:
+    """
+    Local-first insight generator — falls back to universal if no local match found.
+    """
+    local_map = LOCAL_INSIGHTS.get(indicator, {})
+
+    if signal_result in local_map:
+        entry = local_map[signal_result]
+        text_template = entry["text"]
+
+        if "{sector}" in text_template and extra_value:
+            text_final = text_template.replace("{sector}", str(extra_value))
+        elif "{value}" in text_template and extra_value is not None:
+            try:
+                text_final = text_template.replace("{value}", f"{extra_value:.2f}")
+            except:
+                text_final = text_template
+        else:
+            text_final = text_template
+
+        return text_final, entry["bias"]
+
+    # Always fall back to universal
+    return generate_universal_econ_insights(indicator, signal_result, timeframe, extra_value)

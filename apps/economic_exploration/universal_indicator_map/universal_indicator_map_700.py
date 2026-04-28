@@ -5,10 +5,10 @@
 # pylint: disable=invalid-name, non-ascii-file-name
 
 # -------------------------------------------------------------------------------------------------
-# 📘 Docstring
+#  Docstring
 # -------------------------------------------------------------------------------------------------
 """
-📊 Universal Indicator Signal Functions — System Core Logic
+Universal Indicator Signal Functions — System Core Logic
 -----------------------------------------------------------
 
 This module defines the universal signal-generation functions for the
@@ -16,12 +16,12 @@ Economic Exploration suite.
 It governs baseline indicator evaluation across all thematic groupings
 (themes 100–2100+).
 
-✅ System Role:
+System Role:
 - Forms the core signal processing logic across all countries and themes
 - Enables insight generation, macro alignment scoring, and AI persona compatibility
 - Supports real-time macro summaries, AI export pipelines, and structured DSS workflows
 
-🧠 AI Persona Alignment Notes:
+AI Persona Alignment Notes:
 - Signal functions must return strict string-based classifications
   (e.g., "Accelerating", "Stable", "Decelerating", "Insufficient Data")
 - Output strings are consumed directly by external AI workflows, structured
@@ -29,16 +29,16 @@ insights panels, and DSS scoring engines
 - No numeric payloads are returned; outputs are pure interpretive classifications
 
 ---------------------------------------------------------------
-⚙️ System Structure — Integration & Compatibility Requirements
+System Structure — Integration & Compatibility Requirements
 ---------------------------------------------------------------
 
-1️⃣ **Function Signature Consistency**
+**Function Signature Consistency**
 - All signal functions must accept:
     - `df` (input dataframe)
     - `period=None` (optional parameter, always included for compatibility)
 - Signature: `def signal_function(df, period=None): ...`
 
-2️⃣ **String-Based Return Values**
+**String-Based Return Values**
 - Every function must return a string output suitable for:
     - Signal summaries
     - Insight generation
@@ -46,15 +46,15 @@ insights panels, and DSS scoring engines
 - Example return values: `"Uptrend Confirmed"`, `"Mixed Signals"`, `"Flat"`,
 `"Insufficient Data"`
 
-3️⃣ **Pure Logic (No Side Effects)**
+**Pure Logic (No Side Effects)**
 - No functions may reference hardcoded external data, models, or manual overrides.
 - Outputs must derive entirely from the provided dataframe inputs.
 
-4️⃣ **No Numeric Secondary Payloads**
+**No Numeric Secondary Payloads**
 - Signal outputs are always returned as **single strings only**.
 - No tuples, numeric scores, or dynamic secondary values are allowed.
 
-5️⃣ **Dispatcher Independence**
+**Dispatcher Independence**
 - Signal routing and evaluation orchestration is handled externally via:
     - `get_indicator_maps()`
     - `compute_econ_alignment()`
@@ -63,7 +63,7 @@ insights panels, and DSS scoring engines
 directly into their return strings. All entity-specific content is handled downstream
 during insight generation.
 
-🧭 Governance Note:
+Governance Note:
 - Universal signal modules form system-wide stable infrastructure.
 - User extensions, overrides, or country-specific adaptations occur only within local
 `indicator_map_XXX.py` files.
@@ -77,53 +77,253 @@ import pandas as pd
 
 
 # -------------------------------------------------------------------------------------------------
-# Template Signal Functions
+# Country External Balance Indicator Logic
 # -------------------------------------------------------------------------------------------------
-
-def signal_strength_template(df: pd.DataFrame, period=None):  # pylint: disable=unused-argument
+def export_conditions_signal(df, period=12):
     """
-    Returns a fixed string representing a placeholder signal.
-    Simulates strong alignment or positive interpretation.
+    Evaluates total exports of goods and services relative to the recent average.
+
+    Returns:
+        str: Export conditions signal.
     """
-    return "Template Signal A"
+    if df is None or "Exports of Goods and Services" not in df.columns:
+        return "Insufficient Data"
+
+    series = df["Exports of Goods and Services"].dropna()
+    if len(series) < period:
+        return "Insufficient Data"
+
+    latest = series.iloc[-1]
+    avg_recent = series.tail(period).mean()
+
+    if latest > avg_recent * 1.02:
+        return "Export Conditions Strengthening"
+    if latest < avg_recent * 0.98:
+        return "Export Conditions Softening"
+    return "Export Conditions Stable"
 
 
-def signal_variation_template(df: pd.DataFrame, period=None):  # pylint: disable=unused-argument
+def import_conditions_signal(df, period=12):
     """
-    Returns a fixed string representing a secondary placeholder signal.
-    Simulates variation or transitional logic.
+    Evaluates total imports of goods and services relative to the recent average.
+
+    Returns:
+        str: Import conditions signal.
     """
-    return "Template Signal B"
+    if df is None or "Imports of Goods and Services" not in df.columns:
+        return "Insufficient Data"
+
+    series = df["Imports of Goods and Services"].dropna()
+    if len(series) < period:
+        return "Insufficient Data"
+
+    latest = series.iloc[-1]
+    avg_recent = series.tail(period).mean()
+
+    if latest > avg_recent * 1.02:
+        return "Import Pressure Rising"
+    if latest < avg_recent * 0.98:
+        return "Import Pressure Easing"
+    return "Import Conditions Stable"
 
 
-def signal_generic_template(df: pd.DataFrame, period=None):  # pylint: disable=unused-argument
+def trade_balance_position_signal(df, period=12):
     """
-    Returns a fixed string for an alternate placeholder case.
-    Simulates a fallback or generic interpretation.
+    Evaluates the trade balance in goods and services relative to the recent average.
+
+    Higher values imply improvement in the trade balance position
+    (e.g. smaller deficit or larger surplus).
+
+    Returns:
+        str: Trade balance position signal.
     """
-    return "Template Signal C"
+    if df is None or "Trade Balance Goods and Services" not in df.columns:
+        return "Insufficient Data"
+
+    series = df["Trade Balance Goods and Services"].dropna()
+    if len(series) < period:
+        return "Insufficient Data"
+
+    latest = series.iloc[-1]
+    avg_recent = series.tail(period).mean()
+
+    if latest > avg_recent * 1.02:
+        return "Trade Balance Improving"
+    if latest < avg_recent * 0.98:
+        return "Trade Balance Deteriorating"
+    return "Trade Balance Stable"
 
 
-# -------------------------------------------------------------------------------------------------
-# Indicator Mapping
-# -------------------------------------------------------------------------------------------------
+def current_account_position_signal(df, period=8):
+    """
+    Evaluates the current account balance relative to the recent average.
 
-options_template_signal_map = {
-    "Signal A": signal_strength_template,
-    "Signal B": signal_variation_template,
-    "Signal C": signal_generic_template
+    Higher values imply improvement in the current account position
+    (e.g. smaller deficit or larger surplus).
+
+    Returns:
+        str: Current account position signal.
+    """
+    if df is None or "Current Account Balance" not in df.columns:
+        return "Insufficient Data"
+
+    series = df["Current Account Balance"].dropna()
+    if len(series) < period:
+        return "Insufficient Data"
+
+    latest = series.iloc[-1]
+    avg_recent = series.tail(period).mean()
+
+    if latest > avg_recent * 1.02:
+        return "Current Account Improving"
+    if latest < avg_recent * 0.98:
+        return "Current Account Weakening"
+    return "Current Account Stable"
+
+
+def reserve_layer_support_signal(df, period=12):
+    """
+    Evaluates official reserves excluding gold relative to the recent average.
+
+    Returns:
+        str: Reserve layer support signal.
+    """
+    if df is None or "Official Reserves Excluding Gold" not in df.columns:
+        return "Insufficient Data"
+
+    series = df["Official Reserves Excluding Gold"].dropna()
+    if len(series) < period:
+        return "Insufficient Data"
+
+    latest = series.iloc[-1]
+    avg_recent = series.tail(period).mean()
+
+    if latest > avg_recent * 1.02:
+        return "Reserve Support Strengthening"
+    if latest < avg_recent * 0.98:
+        return "Reserve Support Softening"
+    return "Reserve Support Stable"
+
+
+options_country_external_balance_map = {
+    "Export Conditions": export_conditions_signal,
+    "Import Conditions": import_conditions_signal,
+    "Trade Balance Position": trade_balance_position_signal,
+    "Current Account Position": current_account_position_signal,
+    "Reserve Layer Support": reserve_layer_support_signal,
 }
 
 
 # -------------------------------------------------------------------------------------------------
-# Accessor Function
+# External Constraint Capital Flow Indicator Logic
 # -------------------------------------------------------------------------------------------------
-
-def get_indicator_signal_map():
+def current_account_anchor_signal(df, period=8):
     """
-    Returns the dictionary mapping placeholder indicator names to signal functions.
+    Evaluates the current account balance relative to the recent average.
+
+    Higher values imply a firmer external anchor
+    (e.g. smaller deficit or larger surplus).
 
     Returns:
-        dict[str, function]: Mapping of indicator label to function logic.
+        str: Current account anchor signal.
     """
-    return options_template_signal_map
+    if df is None or "Current Account Balance" not in df.columns:
+        return "Insufficient Data"
+
+    series = df["Current Account Balance"].dropna()
+    if len(series) < period:
+        return "Insufficient Data"
+
+    latest = series.iloc[-1]
+    avg_recent = series.tail(period).mean()
+
+    if latest > avg_recent * 1.02:
+        return "External Anchor Improving"
+    if latest < avg_recent * 0.98:
+        return "External Anchor Weakening"
+    return "External Anchor Stable"
+
+
+def net_international_position_signal(df, period=8):
+    """
+    Evaluates the quarterly net international investment position relative to the recent average.
+
+    Higher values imply an improving net international position
+    (e.g. less negative or more positive).
+
+    Returns:
+        str: Net international position signal.
+    """
+    if df is None or "Net International Investment Position Quarterly" not in df.columns:
+        return "Insufficient Data"
+
+    series = df["Net International Investment Position Quarterly"].dropna()
+    if len(series) < period:
+        return "Insufficient Data"
+
+    latest = series.iloc[-1]
+    avg_recent = series.tail(period).mean()
+
+    if latest > avg_recent * 1.02:
+        return "Net International Position Improving"
+    if latest < avg_recent * 0.98:
+        return "Net International Position Deteriorating"
+    return "Net International Position Stable"
+
+
+def investment_income_pressure_signal(df, period=8):
+    """
+    Evaluates primary investment income payments relative to the recent average.
+
+    Higher values imply greater outward income pressure.
+
+    Returns:
+        str: Investment income pressure signal.
+    """
+    if df is None or "Primary Investment Income payments" not in df.columns:
+        return "Insufficient Data"
+
+    series = df["Primary Investment Income payments"].dropna()
+    if len(series) < period:
+        return "Insufficient Data"
+
+    latest = series.iloc[-1]
+    avg_recent = series.tail(period).mean()
+
+    if latest > avg_recent * 1.02:
+        return "Investment Income Pressure Rising"
+    if latest < avg_recent * 0.98:
+        return "Investment Income Pressure Easing"
+    return "Investment Income Pressure Stable"
+
+
+def reserve_support_conditions_signal(df, period=12):
+    """
+    Evaluates official reserves excluding gold relative to the recent average.
+
+    Returns:
+        str: Reserve support conditions signal.
+    """
+    if df is None or "Official Reserves Excluding Gold" not in df.columns:
+        return "Insufficient Data"
+
+    series = df["Official Reserves Excluding Gold"].dropna()
+    if len(series) < period:
+        return "Insufficient Data"
+
+    latest = series.iloc[-1]
+    avg_recent = series.tail(period).mean()
+
+    if latest > avg_recent * 1.02:
+        return "Reserve Conditions Strengthening"
+    if latest < avg_recent * 0.98:
+        return "Reserve Conditions Softening"
+    return "Reserve Conditions Stable"
+
+
+options_external_constraint_capital_flow_map = {
+    "Current Account Anchor": current_account_anchor_signal,
+    "Net International Position": net_international_position_signal,
+    "Investment Income Pressure": investment_income_pressure_signal,
+    "Reserve Support Conditions": reserve_support_conditions_signal,
+}

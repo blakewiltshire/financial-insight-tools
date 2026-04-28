@@ -24,8 +24,10 @@ These platforms also allow manual CSV downloads compatible with the Insight Tool
 
 ---
 
-### Currency & Format Reminders
-- Ensure all assets for spread analysis are **in the same currency** (e.g., all in USD).
-- If needed, use the **Historical Data Currency Converter** module before building your snapshot.
-- Remove any non-numeric columns (e.g., dividend flags, adjusted closes).
-- Use consistent formatting for headers and dates (e.g., YYYY-MM-DD).
+### Currency & Format Requirements
+
+- Ensure all assets for spread analysis are in the same currency.
+- If needed, use the Historical Data Currency Converter before building your snapshot.
+- Remove non-numeric columns unless the module explicitly requires them.
+- All uploaded datasets must use `YYYY-MM-DD` date formatting.
+- Required market data columns: `date, open, high, low, close, volume`.

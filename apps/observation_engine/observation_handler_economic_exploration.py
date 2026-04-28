@@ -74,9 +74,9 @@ def observation_input_form(
         relevance_tag = st.selectbox(
             "Relevance Level", [
                 "None",
-                "🌱 Early Observation",
-                "📊 Relevant to This Use Case",
-                "🚨 Potential Macro Shift"
+                "Early Observation",
+                "Relevant to This Use Case",
+                "Potential Macro Shift"
             ],
             key=f"{form_key}_relevance"
         )
@@ -86,9 +86,9 @@ def observation_input_form(
         sentiment_tag = st.selectbox(
             "Sentiment Bias", [
                 "None",
-                "✅ Supportive",
-                "⚠️ Neutral",
-                "🚨 Contradictory"
+                "Supportive",
+                "Neutral",
+                "Contradictory"
             ],
             key=f"{form_key}_sentiment"
         )

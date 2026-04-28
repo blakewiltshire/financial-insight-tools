@@ -1,33 +1,26 @@
 # -------------------------------------------------------------------------------------------------
-# 📈 Economic Growth Stability — Scoring Label Generator (Local Wrapper)
+# Thematic Indicator Scoring — Local Wrapper
 # -------------------------------------------------------------------------------------------------
-# This module provides scoring labels and indicator weightings for the
-# Economic Growth Stability theme (Theme 100) within a given country context.
-#
-# It wraps universal logic with optional local overrides for label phrasing
-# or scoring weight adjustments.
-# -------------------------------------------------------------------------------------------------
-
 # pylint: disable=import-error, wrong-import-position, wrong-import-order
 # pylint: disable=invalid-name, non-ascii-file-name, line-too-long, unused-argument
 
 # -------------------------------------------------------------------------------------------------
-# 📘 Docstring
+# Docstring
 # -------------------------------------------------------------------------------------------------
 """
-🧮 Local Scoring Weights & Alignment Labels — Thematic Module Extension
+Local Scoring Weights & Alignment Labels — Thematic Module Extension
 -----------------------------------------------------------------------
 
 This module defines the country-specific scoring weights and alignment labels
 for individual use cases within a given thematic grouping. It extends the universal scoring framework
 to account for national context, additional indicators, and refined interpretations.
 
-✅ System Role:
+System Role:
 - Provides localised scoring narratives for macro alignment ratios
 - Overrides or supplements universal logic as new use cases are added
 - Supports fully integrated AI narratives, macro summaries, and DSS scorecards
 
-🧠 AI Persona & DSS Notes:
+AI Persona & DSS Notes:
 - Returned labels directly drive AI export summaries, scoring panels, and triangular navigation flows
 - Alignment scoring logic remains consistent across themes:
     • ≥ 0.85 → Strong Alignment
@@ -35,36 +28,36 @@ to account for national context, additional indicators, and refined interpretati
     • −0.2–0.33 → Soft Misalignment
     • < −0.2 → Clear Misalignment
 
-⚙️ Structural Governance:
-1️⃣ **Label Mapping Dispatcher**
+Structural Governance:
+**Label Mapping Dispatcher**
 - `get_alignment_score_label(alignment_ratio, use_case)` applies local thresholds per use case.
 - Always checks for a local override first, otherwise falls back to the universal dispatcher.
 
-2️⃣ **Indicator Weighting System (Extended)**
+**Indicator Weighting System (Extended)**
 - `get_indicator_weight(indicator_name)` returns a 1–3 weight scale per indicator.
 - Local weights supplement and merge with the universal indicator weight registry.
 - Supports composite macro scoring logic across all scoring layers.
 
-3️⃣ **Interface Consistency**
+**Interface Consistency**
 - Function names and use case names must strictly match:
     • `use_cases_XXX.py`
     • `indicator_map_XXX.py`
     • `insight_XXX.py`
     • Universal scoring contract remains stable — local extensions must integrate seamlessly.
 
-🧭 Governance Note:
+Governance Note:
 - Local scoring files are only created when country-specific indicators or signal groupings exist.
 - If no local scoring exists, the universal scoring contract fully governs system operation.
 """
 
 # -------------------------------------------------------------------------------------------------
-# 🧱 Standard Library and Pathing
+# Standard Library and Pathing
 # -------------------------------------------------------------------------------------------------
 import os
 import sys
 
 # -------------------------------------------------------------------------------------------------
-# 🧭 Path Setup: Add Universal Scoring Module to System Path
+# Path Setup: Add Universal Scoring Module to System Path
 # -------------------------------------------------------------------------------------------------
 LOCAL_PATH = os.path.abspath(os.path.dirname(__file__))
 UNIVERSAL_PATH = os.path.abspath(os.path.join(LOCAL_PATH, "..", "universal_scoring_labels"))
@@ -72,7 +65,7 @@ if UNIVERSAL_PATH not in sys.path:
     sys.path.append(UNIVERSAL_PATH)
 
 # -------------------------------------------------------------------------------------------------
-# 🔁 Imports: Universal Scoring Logic (Do Not Modify)
+# Imports: Universal Scoring Logic (Do Not Modify)
 # -------------------------------------------------------------------------------------------------
 from universal_scoring_weight_labels_100 import (
     get_alignment_score_label as get_alignment_score_label_universal,
@@ -80,7 +73,7 @@ from universal_scoring_weight_labels_100 import (
 )
 
 # -------------------------------------------------------------------------------------------------
-# 🏛️ Local Use Case Scoring Labels (Optional)
+# Local Use Case Scoring Labels (Optional)
 # -------------------------------------------------------------------------------------------------
 # Provide per-use-case override functions here if necessary.
 # Structure: { "Use Case Label": function(alignment_ratio) → (label, explanation) }
@@ -90,7 +83,7 @@ USE_CASE_SCORING_LABELS = {
 }
 
 # -------------------------------------------------------------------------------------------------
-# 🧩 Dispatcher — Local First, Fallback to Universal
+# Dispatcher — Local First, Fallback to Universal
 # -------------------------------------------------------------------------------------------------
 def get_alignment_score_label(alignment_ratio: float, use_case: str) -> tuple[str, str]:
     """
@@ -112,7 +105,7 @@ def get_alignment_score_label(alignment_ratio: float, use_case: str) -> tuple[st
     return get_alignment_score_label_universal(alignment_ratio, use_case)
 
 # -------------------------------------------------------------------------------------------------
-# ⚖️ Indicator Weights (Merged: Universal + Local Overrides)
+# Indicator Weights (Merged: Universal + Local Overrides)
 # -------------------------------------------------------------------------------------------------
 # Local weight overrides (if any)
 indicator_weights = {

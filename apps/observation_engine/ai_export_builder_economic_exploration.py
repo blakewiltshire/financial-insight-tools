@@ -15,7 +15,7 @@ import os
 import sys
 import json
 import importlib.util
-from typing import List, Dict
+from typing import Dict
 import pandas as pd
 
 # -------------------------------------------------------------------------------------------------
@@ -26,7 +26,13 @@ PROJECT_BASE = os.path.abspath(os.path.join(CURRENT_DIR, ".."))
 APPS_PATH = os.path.join(PROJECT_BASE, "economic_exploration")
 
 # Unified AI Bundles storage location
-AI_BUNDLES_FOLDER = os.path.join(PROJECT_BASE, "observation_engine", "storage", "ai_bundles", "economic_exploration")
+AI_BUNDLES_FOLDER = os.path.join(
+    PROJECT_BASE,
+    "observation_engine",
+    "storage",
+    "ai_bundles",
+    "economic_exploration"
+)
 os.makedirs(AI_BUNDLES_FOLDER, exist_ok=True)
 
 # -------------------------------------------------------------------------------------------------
@@ -36,6 +42,26 @@ sys.path.append(os.path.join(PROJECT_BASE, "registry"))
 from thematic_groupings import THEMATIC_GROUPS  # pylint: disable=import-error
 
 from observation_handler_economic_exploration import export_observations_for_ai
+
+# -------------------------------------------------------------------------------------------------
+# Helper — Collect All Membership Metadata Globally
+# -------------------------------------------------------------------------------------------------
+def collect_all_thematic_memberships() -> Dict[str, dict]:
+    """
+    Collects all indicator metadata memberships across all thematic groupings.
+
+    Returns:
+        Dict[str, dict]: Mapping of indicator_id -> metadata block.
+    """
+    all_memberships = {}
+
+    for _, theme_data in THEMATIC_GROUPS.items():
+        memberships = theme_data.get("memberships", {})
+        for indicator_id, meta in memberships.items():
+            all_memberships[indicator_id] = meta
+
+    return all_memberships
+
 
 # -------------------------------------------------------------------------------------------------
 # Build AI Bundle
@@ -51,7 +77,7 @@ def create_theme_ai_bundle(
     selected_timeframe: str
 ) -> dict:
     """
-    Build full AI bundle for given country + theme.
+    Build full AI bundle for a given country + theme.
     """
     theme_data = THEMATIC_GROUPS.get(theme_code, {})
     if not theme_data:
@@ -59,12 +85,13 @@ def create_theme_ai_bundle(
 
     indicator_weights = load_country_indicator_weights(country, theme_code)
 
-    # 🔧 Unified observation loading — filename-aligned version
     all_user_obs = export_observations_for_ai(
         module_type="economic_exploration",
         country=country,
         theme_code=theme_code
     )
+
+    all_memberships = collect_all_thematic_memberships()
 
     bundle = {
         "country": country,
@@ -92,13 +119,13 @@ def create_theme_ai_bundle(
         "use_cases": []
     }
 
-    memberships = theme_data.get("memberships", {})
-
     for use_case in use_case_scores:
         score = use_case_scores.get(use_case)
         label = use_case_labels.get(use_case)
         explanation = use_case_explanations.get(use_case)
         signal_df = summary_table_map.get(use_case)
+
+        target_use_case = use_case.strip().lower()
 
         user_observations = [
             obs for obs in all_user_obs
@@ -108,13 +135,27 @@ def create_theme_ai_bundle(
         ]
 
         metadata = []
-        for indicator_id, meta in memberships.items():
+        seen_indicator_ids = set()
+
+        for indicator_id, meta in all_memberships.items():
+            applicable_use_cases = [
+                item.strip().lower()
+                for item in meta.get("applicable_use_cases", [])
+                if isinstance(item, str)
+            ]
+
+            legacy_use_case = meta.get("Use Case", "").strip().lower()
+
             if (
-                meta.get("Use Case", "").strip().lower() == use_case.strip().lower()
-                or meta.get("title", "").strip().lower() == use_case.strip().lower()
+                target_use_case in applicable_use_cases
+                or legacy_use_case == target_use_case
             ):
+                if indicator_id in seen_indicator_ids:
+                    continue
+
                 metadata.append({
-                    "use_case_metric": meta.get("title") or use_case,
+                    "indicator_id": indicator_id,
+                    "use_case_metric": meta.get("title"),
                     "overview": meta.get("overview"),
                     "why_it_matters": meta.get("why_it_matters"),
                     "temporal_categorisation": meta.get("temporal_categorisation"),
@@ -122,6 +163,7 @@ def create_theme_ai_bundle(
                     "personal_impact_importance": meta.get("personal_impact_importance"),
                     "recommended_time_periods": meta.get("recommended_time_periods")
                 })
+                seen_indicator_ids.add(indicator_id)
 
         use_case_entry = {
             "name": use_case,
@@ -137,6 +179,7 @@ def create_theme_ai_bundle(
 
     return bundle
 
+
 # -------------------------------------------------------------------------------------------------
 # Load Country Indicator Weights
 # -------------------------------------------------------------------------------------------------
@@ -145,18 +188,23 @@ def load_country_indicator_weights(country: str, theme_code: str) -> dict:
     Load fully merged weights from local scoring files.
     """
     local_path = os.path.join(
-        PROJECT_BASE, "economic_exploration",
-        country, "scoring_weights_labels",
+        PROJECT_BASE,
+        "economic_exploration",
+        country,
+        "scoring_weights_labels",
         f"scoring_weights_labels_{theme_code}.py"
     )
 
     if not os.path.isfile(local_path):
-        raise FileNotFoundError(f"Missing scoring file for country: {country}, theme: {theme_code}")
+        raise FileNotFoundError(
+            f"Missing scoring file for country: {country}, theme: {theme_code}"
+        )
 
     spec = importlib.util.spec_from_file_location("scoring_weights_labels", local_path)
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
     return module.indicator_weights
+
 
 # -------------------------------------------------------------------------------------------------
 # Save AI Bundle to File
@@ -170,7 +218,10 @@ def save_ai_bundle_to_file(bundle: dict, replace_existing: bool = True) -> str:
     use_case = bundle.get("use_cases", [{}])[0].get("name", "unknown_use_case")
     timeframe = bundle.get("use_cases", [{}])[0].get("timeframe", "unknown_timeframe")
 
-    filename = f"economic_exploration__{country}__{theme_code}__{use_case.lower().replace(' ', '_')}__{timeframe}.json"
+    filename = (
+        f"economic_exploration__{country}__{theme_code}__"
+        f"{use_case.lower().replace(' ', '_')}__{timeframe}.json"
+    )
     file_path = os.path.join(AI_BUNDLES_FOLDER, filename)
 
     if os.path.exists(file_path) and not replace_existing:

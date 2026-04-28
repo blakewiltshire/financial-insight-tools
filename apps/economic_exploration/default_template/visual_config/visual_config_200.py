@@ -1,11 +1,11 @@
 # -------------------------------------------------------------------------------------------------
-# 📈 Generic Template — Visual Config (Local Extension)
+# Visual Config (Local Extension)
 # -------------------------------------------------------------------------------------------------
 # pylint: disable=import-error, wrong-import-position, wrong-import-order
 # pylint: disable=invalid-name, non-ascii-file-name, unused-argument, unused-import
 
 # -------------------------------------------------------------------------------------------------
-# 📘 Docstring
+# Docstring
 # -------------------------------------------------------------------------------------------------
 """
 Local Visual Configuration — Economic Exploration Suite
@@ -34,7 +34,7 @@ Architecture Summary:
 - Local visuals may call universal chart functions (e.g., from `universal_visual_config_XXX.py`) for consistency.
 
 Usage:
-- Invoked automatically from the main theme module (`100_economic_growth_stability.py`, `200_💼_labour_market_dynamics.py`, etc.)
+- Invoked automatically from the main theme module (`100_economic_growth_stability.py`, `200_labour_market_dynamics.py`, etc.)
 - Required only when country- or theme-specific visuals are implemented.
 - If no local visual config exists, universal visuals render by default.
 
@@ -52,7 +52,7 @@ import sys
 import streamlit as st
 
 # -------------------------------------------------------------------------------------------------
-# 🛠 Path Setup
+# Path Setup
 # -------------------------------------------------------------------------------------------------
 LOCAL_PATH = os.path.abspath(os.path.dirname(__file__))
 UNIVERSAL_PATH = os.path.abspath(os.path.join(LOCAL_PATH, "..", "universal_visual_config"))
@@ -60,7 +60,7 @@ if UNIVERSAL_PATH not in sys.path:
     sys.path.append(UNIVERSAL_PATH)
 
 # -------------------------------------------------------------------------------------------------
-# Universal Chart Imports (Theme 200)
+# Universal Chart Imports
 # -------------------------------------------------------------------------------------------------
 from universal_visual_config_200 import (
     display_chart_with_fallback,
@@ -69,7 +69,7 @@ from universal_visual_config_200 import (
 )
 
 # -------------------------------------------------------------------------------------------------
-# 📌 Visual Section Titles Mapping
+# Visual Section Titles Mapping
 # -------------------------------------------------------------------------------------------------
 def get_visual_section_titles():
     """
@@ -90,7 +90,7 @@ def get_visual_section_titles():
 
 
 # -------------------------------------------------------------------------------------------------
-#  Chart Dispatcher — Universal Charts First, Local Extensions After
+# Chart Dispatcher — Universal Charts First, Local Extensions After
 # -------------------------------------------------------------------------------------------------
 def render_all_charts_local(selected_use_case, tab_mapping, df_map):
     """

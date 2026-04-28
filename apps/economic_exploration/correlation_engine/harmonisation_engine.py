@@ -1,10 +1,10 @@
 # -------------------------------------------------------------------------------------------------
-# 🔗 Correlation Harmonisation Engine — Metadata Standardisation Layer (Fully Expanded Version)
+# Correlation Harmonisation Engine — Metadata Standardisation Layer
 # -------------------------------------------------------------------------------------------------
 # pylint: disable=import-error, wrong-import-position, wrong-import-order
 
 """
-This module provides canonical mappings to standardise metadata fields from ingestion registry.
+This module provides canonical mappings to standardise metadata fields from the ingestion registry.
 It enables consistent messaging, diagnostics, and safeguards inside the correlation engine.
 """
 
@@ -15,12 +15,13 @@ SEASONAL_STANDARDISATION_MAP = {
     "Seasonally Adjusted Annual Rate": "SAAR",
     "Seasonally adjusted at annual rates": "SAAR",
     "Seasonally Adjusted (annualized)": "SAAR",
-    "Seasonally Adjusted": "SA",
     "Calendar and seasonally adjusted data [Y]": "SAAR",
+    "Seasonally Adjusted": "SA",
     "Not Seasonally Adjusted": "NSA",
     "Non seasonal adjustment annual": "NSA",
     "Not adjusted": "NSA",
-    "": "Unknown"
+    "Not Applicable": "NA", 
+    "": "Unknown",
 }
 
 # -------------------------------------------------------------------------------------------------
@@ -28,52 +29,59 @@ SEASONAL_STANDARDISATION_MAP = {
 # -------------------------------------------------------------------------------------------------
 VALUE_TYPE_STANDARDISATION_MAP = {
     "Level": "Level",
-    "Component": "Level",
+    "level": "Level",
+    "Component": "Component",
     "Percent": "Percent",
+    "percent": "Percent",
     "Share of GDP": "Percent",
     "Index": "Index",
+    "index": "Index",
     "Diffusion Index": "Index",
     "Ratio": "Ratio",
-    "Growth Rate": "Rate",
     "Rate": "Rate",
-    "": "Unknown"
+    "Growth Rate": "Rate",
+    "Spread": "Spread",
+    "": "Unknown",
 }
 
 # -------------------------------------------------------------------------------------------------
-# Canonical Mappings for Unit Type (Unit Scale Harmonisation)
+# Canonical Mappings for Unit Type
 # -------------------------------------------------------------------------------------------------
 UNIT_TYPE_STANDARDISATION_MAP = {
-    # United States variants
-    "Billions of Dollars": "Billions",
-    "Chained Volume Measures, USD Billions": "Billions",
+    # Real output / volume measures
+    "Chained Volume Measures, USD Billions": "Real Billions",
+    "Chained Volume Measures, GBP Millions": "Real Millions",
+    "Chained Volume Measures, EUR Millions": "Real Millions",
+    "Chained Volume Measures, CAD Millions": "Real Millions",
+    "Chained Volume Measures, Yen Billions": "Real Billions",
 
-    # UK
-    "Chained Volume Measures, GBP Millions": "Billions",
-    "GBP Millions": "Billions",
+    # Nominal / current-price currency measures
+    "Billions of Dollars": "Nominal Billions",
+    "Millions of Dollars": "Nominal Millions",
+    "Current Prices, USD Billions": "Nominal Billions",
+    "GBP Millions": "Nominal Millions",
+    "EUR Millions": "Nominal Millions",
+    "CAD Millions": "Nominal Millions",
+    "Millions of Local Currency": "Nominal Millions",
 
-    # Europe
-    "Chained Volume Measures, EUR Millions": "Billions",
-    "EUR Millions": "Billions",
+    # Labour / persons
+    "Thousands of Persons": "Millions of Persons",
+    "Thousands": "Millions of Persons",
+    "Millions of Persons": "Millions of Persons",
 
-    # Canada
-    "Chained Volume Measures, CAD Millions": "Billions",
-    "CAD Millions": "Billions",
+    # Earnings / flow rates
+    "Dollars per Hour": "Currency Rate",
+    "USD per Hour": "Currency Rate",
 
-    # Japan
-    "Chained Volume Measures, Yen Billions": "Billions",
-
-    # General other mappings
-    "Millions of Local Currency": "Billions",
-    "Thousands of Persons": "Millions",
-    "Thousands": "Millions",
-    "Millions of Persons": "Millions",
-    "Dollars per Hour": "Currency",
-    "USD per Hour": "Currency",
+    # Standard scalar classes
     "Percent": "Percent",
     "Index": "Index",
     "Units": "Units",
     "Number": "Units",
-    "": "Unknown"
+
+    # Explicit placeholders
+    "Unknown": "Unknown",
+    "": "Unknown",
 }
 
 # -------------------------------------------------------------------------------------------------
@@ -92,7 +100,3 @@ def standardise_metadata_fields(entry):
     unit_type = UNIT_TYPE_STANDARDISATION_MAP.get(unit_raw, "Unknown")
 
     return seasonal, value_type, unit_type
-
-# -------------------------------------------------------------------------------------------------
-# End of Harmonisation Engine
-# -------------------------------------------------------------------------------------------------

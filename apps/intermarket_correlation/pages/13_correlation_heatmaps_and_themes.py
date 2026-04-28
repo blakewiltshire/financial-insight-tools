@@ -204,7 +204,7 @@ if filtered_df is not None and len(filtered_df.columns) > 2:
         st.write("**Top Inverse Correlations:**")
         st.table(bottom_pairs[['Asset X', 'Asset Y', 'Correlation']])
 
-    tab1, tab2, tab3, tab4 = st.tabs(["Pairwise Scatter", "Rolling Correlation", "Full Heatmap", "ℹ️ Help: How to"])
+    tab1, tab2, tab3, tab4 = st.tabs(["Pairwise Scatter", "Rolling Correlation", "Full Heatmap", "ℹ️ Help"])
 
     with tab1:
         asset_columns = list(filtered_df.columns)

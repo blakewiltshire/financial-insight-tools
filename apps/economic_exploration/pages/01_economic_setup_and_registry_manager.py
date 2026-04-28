@@ -1,5 +1,5 @@
 # -------------------------------------------------------------------------------------------------
-# Theme Module Creator UI (Messaging-Only Prototype)
+# Economic Setup & Registry Manager (Reference Guide)
 # -------------------------------------------------------------------------------------------------
 
 # -------------------------------------------------------------------------------------------------
@@ -12,9 +12,16 @@
 # Docstring
 # -------------------------------------------------------------------------------------------------
 """
-Theme Module Creation UI (Messaging Only)
-Structured messaging interface for managing thematic and country module creation.
-This version focuses on user guidance before enabling automation.
+Economic Setup & Registry Manager
+---------------------------------
+Reference guide for expanding the FIT macroeconomic framework.
+
+This page separates three implementation paths:
+1. Registry-only series for Thematic Correlation, Relative Macro Transmission, or Custom Comparison.
+2. Full Economic Exploration country scaffolding.
+3. Full Economic Exploration DSS theme integration.
+
+The module is intentionally instructional. It does not automate setup actions.
 """
 
 # -------------------------------------------------------------------------------------------------
@@ -32,9 +39,9 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '.
 # -------------------------------------------------------------------------------------------------
 # Third-party Libraries
 # -------------------------------------------------------------------------------------------------
-import streamlit as st
 import importlib.util
 import pandas as pd
+import streamlit as st
 from st_aggrid import AgGrid, GridOptionsBuilder
 
 # -------------------------------------------------------------------------------------------------
@@ -51,8 +58,6 @@ from core.helpers import (
 # -------------------------------------------------------------------------------------------------
 PATHS = get_named_paths(__file__)
 PROJECT_PATH = PATHS["level_up_3"]
-APP_PATH = PATHS["level_up_1"]
-ROOT_PATH = PATHS["level_up_4"]
 
 # -------------------------------------------------------------------------------------------------
 # Shared Docs & Branding
@@ -61,37 +66,36 @@ ABOUT_SUPPORT_MD = os.path.join(PROJECT_PATH, "docs", "about_and_support.md")
 HELP_APP_MD = os.path.join(PROJECT_PATH, "docs", "help_thematic_registry_explorer.md")
 BRAND_LOGO_PATH = os.path.join(PROJECT_PATH, "brand", "blake_logo.png")
 
-
 # -------------------------------------------------------------------------------------------------
-# Load Constants: Thematic Groupings and Indicator Map
+# Registry Paths
 # -------------------------------------------------------------------------------------------------
-
-# Define constant file paths
 GROUPINGS_PATH = os.path.join(PROJECT_PATH, "apps", "registry", "thematic_groupings.py")
 INDICATOR_MAP_PATH = os.path.join(PROJECT_PATH, "apps", "registry", "economic_series_map.py")
 
+
+# -------------------------------------------------------------------------------------------------
 # Load module helper
+# -------------------------------------------------------------------------------------------------
 def load_module(module_name, file_path):
     """
-    Dynamically loads a Python module from the specified file path.
+    Dynamically load a Python module from a file path.
 
     Args:
-        module_name (str): Desired name to assign to the loaded module.
-        file_path (str): Full path to the Python file (.py) to be imported.
+        module_name (str): Name assigned to the loaded module.
+        file_path (str): Full path to the Python file.
 
     Returns:
-        module: The loaded Python module, accessible as an object.
-
-    Notes:
-        This is used to import indicator map or thematic data structures at runtime,
-        especially where modular separation or local overrides are required.
+        module: Loaded Python module.
     """
     spec = importlib.util.spec_from_file_location(module_name, file_path)
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
     return module
 
+
+# -------------------------------------------------------------------------------------------------
 # Load constants into memory
+# -------------------------------------------------------------------------------------------------
 groupings_module = load_module("thematic_groupings", GROUPINGS_PATH)
 indicator_module = load_module("economic_series_map", INDICATOR_MAP_PATH)
 
@@ -103,12 +107,11 @@ ECONOMIC_SERIES_MAP = indicator_module.ECONOMIC_SERIES_MAP
 # -------------------------------------------------------------------------------------------------
 st.set_page_config(page_title="Economic Setup & Registry Manager", layout="wide")
 st.title("Economic Setup & Registry Manager")
-st.caption("*Central interface for configuring countries, applying thematic modules, and "
-"validating the full macroeconomic registry system.*")
+st.caption(
+    "*Reference guide for configuring registry series, Economic Exploration countries, "
+    "and thematic modules across the FIT macroeconomic system.*"
+)
 
-# -------------------------------------------------------------------------------------------------
-# Sidebar Navigation
-# -------------------------------------------------------------------------------------------------
 # -------------------------------------------------------------------------------------------------
 # Sidebar Navigation
 # -------------------------------------------------------------------------------------------------
@@ -124,25 +127,26 @@ st.logo(BRAND_LOGO_PATH)  # pylint: disable=no-member
 st.sidebar.info("""
 **Economic Setup & Registry Manager**
 
-Configure new countries or extend existing economic themes through modular scaffolding,
-dataset integration, and indicator registration.
+This page provides the implementation reference for expanding the Financial Insight Tools
+macroeconomic framework.
 
-Use this module when:
+It distinguishes between three setup paths:
 
-• Adding new countries to Economic Exploration
+• **Registry Series** — add data for Thematic Correlation, Relative Macro Transmission,
+  or Custom Comparison without creating a full Economic Exploration dashboard.
 
-• Extending existing country indicators and scoring logic
+• **Economic Exploration Country** — create a full country scaffold with launcher routing,
+  metadata, template validation, and dashboard availability.
 
-• Integrating structured datasets into visualisation and AI export layers
+• **Economic Exploration Theme** — add a full DSS module to an existing Economic Exploration
+  country, including use cases, indicators, scoring, insights, visuals, routing, and CSVs.
 
-• Aligning country-level configurations with shared system behaviour
+Universal layers define shared methods, routing expectations, reusable scaffolds,
+and analytical behaviour.
 
-The framework distinguishes between shared structural layers (universal logic) and
-country-level implementations.
-
-Outputs remain fully compatible with the Insight Launcher and live dashboards.
+Country and registry implementations define available datasets, source mappings,
+local folders, CSV files, and enabled indicators.
 """)
-
 
 # -------------------------------------------------------------------------------------------------
 # About & Support
@@ -154,1729 +158,1398 @@ with st.sidebar.expander("ℹ️ About & Support"):
 
     st.caption("Reference documents bundled with this distribution:")
 
-    with open(os.path.join(PROJECT_PATH, "docs", "crafting-financial-frameworks.pdf"), "rb") as f:
-        st.download_button(
-            "📘 Crafting Financial Frameworks",
-            f.read(),
-            file_name="crafting-financial-frameworks.pdf",
-            mime="application/pdf",
-            width='stretch',
-        )
+    crafting_pdf = os.path.join(PROJECT_PATH, "docs", "crafting-financial-frameworks.pdf")
+    if os.path.exists(crafting_pdf):
+        with open(crafting_pdf, "rb") as f:
+            st.download_button(
+                "📘 Crafting Financial Frameworks",
+                f.read(),
+                file_name="crafting-financial-frameworks.pdf",
+                mime="application/pdf",
+                width='stretch',
+            )
 
-    with open(os.path.join(PROJECT_PATH, "docs", "fit-unified-index-and-glossary.pdf"), "rb") as f:
-        st.download_button(
-            "📚 FIT — Unified Index & Glossary",
-            f.read(),
-            file_name="fit-unified-index-and-glossary.pdf",
-            mime="application/pdf",
-            width='stretch',
-        )
+    glossary_pdf = os.path.join(PROJECT_PATH, "docs", "fit-unified-index-and-glossary.pdf")
+    if os.path.exists(glossary_pdf):
+        with open(glossary_pdf, "rb") as f:
+            st.download_button(
+                "📚 FIT — Unified Index & Glossary",
+                f.read(),
+                file_name="fit-unified-index-and-glossary.pdf",
+                mime="application/pdf",
+                width='stretch',
+            )
 
 # -------------------------------------------------------------------------------------------------
-# Tab 1: Add New Country to Economic Exploration
+# Tabs
 # -------------------------------------------------------------------------------------------------
 tabs = st.tabs([
-    "Add New Country",
-    "Add Theme",
-    "View Theme Definitions & Indicator Registry"
+    "Choose Setup Path",
+    "Add Registry Series",
+    "Add Economic Exploration Country",
+    "Add Economic Exploration Theme",
+    "View Theme Definitions & Indicator Registry",
 ])
 
-
+# -------------------------------------------------------------------------------------------------
+# Tab 1: Choose Setup Path
+# -------------------------------------------------------------------------------------------------
 with tabs[0]:
-    st.header("➕ Add a New Country to Economic Exploration")
+    st.header("Choose the Correct Setup Path")
+
     st.markdown("""
-This section walks through the step-by-step process of adding a new country to
-the **Economic Exploration** framework.
+Before adding folders, CSV files, or registry entries, decide which setup path applies.
 
-For demonstration purposes, we use the **United States** as a working example.
-The setup includes:
+The FIT macroeconomic system supports three distinct implementation routes. These routes are
+separate by design. Not every country needs a full Economic Exploration dashboard.
 
-- Creating the country folder structure and Streamlit scaffolding
-- Adding required entries to system constants (e.g., `regions.py`, `emoji.py`)
-- Validating initial configuration using placeholder test data
-
-Once complete, your country is ready to integrate thematic modules.
-
-This process sets the foundation — it does not require live data at this stage.
+Some countries are only needed for Thematic Correlation, Relative Macro Transmission, or
+Custom Comparison. In those cases, registry-only setup is the correct path.
 """)
 
+    col1, col2, col3 = st.columns(3)
 
-    with st.expander("📘 Integration Context"):
+    with col1:
         st.markdown("""
-    The **Add New Country** process scaffolds all required components to
-    integrate a new country into the **Economic Exploration** system.
+### Route A — Registry Series Only
 
-    ---
+Use when data is needed for:
 
-    **What this step prepares:**
+- Thematic Correlation
+- Relative Macro Transmission
+- Custom Comparison
 
-    - Creates the folder structure for `/economic_exploration/{country name}/`
-    - Initializes required Streamlit files (e.g., `.streamlit/`, `app.py`)
-    - Adds entries to:
-      - `constants/regions.py` (country code, name)
-      - `constants/emoji.py` (country flag)
+Requires:
 
-    ---
+- country-code data folder
+- source/theme folder
+- CSV file(s)
+- `economic_series_map.py` entry
+- TC/RMT flags
 
-    **What gets copied:**
+Does **not** require Economic Exploration country scaffolding.
+""")
 
-    - `000_template.py` → starter page for the new country
-    - Placeholder insight modules and configs (from `modules_template/`)
-    - Test data from `000_generic/` and `000_m_000_structural.csv`
+    with col2:
+        st.markdown("""
+### Route B — Economic Exploration Country
 
-    ---
+Use when a country should appear inside the Economic Exploration dashboard.
 
-    **Outputs include:**
+Requires:
 
-    - Fully scaffolded country folder with correct app routing
-    - Country-ready Streamlit Template module (e.g., `000_template.py`)
-    - Placeholder datasets for initial validation (renamed to match country code)
+- launcher entry
+- sidebar navigation
+- country routing
+- metadata
+- template page
+- validation data
 
-    ---
+No live indicators are required at this stage.
+""")
 
-    **Important Notes:**
+    with col3:
+        st.markdown("""
+### Route C — Economic Exploration Theme
 
-    - This is a **structural onboarding** step — no live data or indicators are included
-    - All CSVs and config files are placeholders, sourced from default `000/` templates
-    - Data and insight logic must be added by the user or aligned from shared universal modules
+Use when an existing Economic Exploration country needs a full DSS theme.
 
-    Once scaffolding is complete, the country is ready to begin thematic
-    module configuration using
-    **Add Theme to Existing Country**.
-    """)
+Requires:
+
+- theme page
+- use cases
+- indicator maps
+- scoring and labels
+- insights
+- visual configuration
+- routing
+- CSV integration
+""")
+
+    st.info(
+        "Registry-only setup is the clean route for countries or markets used in TC/RMT "
+        "without a full dashboard. Full Economic Exploration setup is only needed when the "
+        "country should appear as a dashboard country."
+    )
+
+# -------------------------------------------------------------------------------------------------
+# Tab 2: Add Registry Series
+# -------------------------------------------------------------------------------------------------
+with tabs[1]:
+    st.header("➕ Add Registry Series")
+
+    st.markdown("""
+Use this section to add indicators for Thematic Correlation, Relative Macro Transmission,
+or Custom Comparison without creating a full Economic Exploration country dashboard.
+
+This route is commonly used for countries or markets that support comparative macro structure,
+for example sovereign yields, equity indices, FX pairs, reserves, external balances, or other
+series needed by TC/RMT surfaces.
+""")
+
+    with st.expander("1️⃣ Create the Country Data Folder", expanded=True):
+        st.markdown("""
+Create a country-code folder inside:
+
+```text
+apps/data_sources/economic_data/
+```
+
+Example:
+
+```text
+apps/data_sources/economic_data/ch
+```
+
+Use the same country code convention applied elsewhere in the system:
+
+- `us` = United States
+- `uk` = United Kingdom
+- `ch` = Switzerland
+- `au` = Australia
+""")
+
+    with st.expander("2️⃣ Create the Theme or Source Folder", expanded=True):
+        st.markdown("""
+Inside the country folder, create the thematic folder required by the registry entry.
+
+Examples:
+
+- `600_sovereign_yields`
+- `1100_equity_index`
+- `400_headline_core_inflation`
+
+Example structure:
+
+```text
+apps/data_sources/economic_data/ch
+├── 1100_equity_index
+│   └── ch_m_1100_structural.csv
+└── 600_sovereign_yields
+    └── ch_m_600_structural.csv
+```
+""")
+
+    with st.expander("3️⃣ Create the CSV File", expanded=True):
+        st.markdown("""
+Use the same generic column headings where possible.
+
+Example:
+
+```text
+date,CH2YT,CH10YT
+2024-01-01,0.85,1.12
+2024-02-01,0.88,1.16
+```
+
+Important:
+
+- Column names must exactly match the `name` field in `economic_series_map.py`
+- Maintain consistent naming across countries where the structure is universal
+- Use country-specific labels only when the series is genuinely local or source-specific
+- Keep numeric values clean, without symbols, commas, or mixed text
+- All datasets must use the standard international date format: `YYYY-MM-DD`
+""")
+
+    with st.expander("4️⃣ Register in `economic_series_map.py`", expanded=True):
+        st.markdown("""
+Add the indicator entry inside:
+
+```text
+apps/registry/economic_series_map.py
+```
+
+Minimum required fields for registry-only TC/RMT use:
+
+- `use_case`
+- `name`
+- `ui_display_name`
+- `indicator_id`
+- `source_indicator`
+- `theme`
+- `template`
+- `unit_type`
+- `unit_multiplier`
+- `frequency`
+- `seasonal_adjustment`
+- `value_type`
+- `country`
+- `source`
+- `source_url`
+- `folder`
+- `filename`
+- `release_schedule_final`
+- `note`
+- `allow_correlation`
+- `allow_relative_macro_transmission`
+- `relative_series_type`
+- `rmt_surface_type`
+
+Example:
+
+```python
+"Switzerland": {
+    "600_financial_conditions_risk_analysis": {
+        "600_sovereign_yields_template": {
+            "CH10YT": {
+                "use_case": "Not Applicable",
+                "name": "CH10YT",
+                "ui_display_name": "Long-Term Sovereign Yield (10Y)",
+                "indicator_id": "Not Applicable",
+                "source_indicator": "CH10YT=RR",
+                "theme": "600_financial_conditions_risk_analysis",
+                "template": "interest_rate_template",
+                "unit_type": "Prices",
+                "unit_multiplier": 1,
+                "frequency": "Monthly",
+                "seasonal_adjustment": "Not Applicable",
+                "value_type": "Index",
+                "country": "Switzerland",
+                "source": "Investing.com",
+                "source_url": "https://www.investing.com/rates-bonds/switzerland-10-year-bond-yield-historical-data",
+                "folder": "600_sovereign_yields",
+                "filename": "ch_m_600_structural.csv",
+                "release_schedule_final": "End of Month",
+                "note": "",
+                "allow_correlation": True,
+                "allow_relative_macro_transmission": True,
+                "relative_series_type": "market",
+                "rmt_surface_type": "sovereign_yield",
+            },
+        }
+    }
+}
+```
+""")
+
+    with st.expander("5️⃣ Set Correlation and RMT Flags", expanded=True):
+        st.markdown("""
+These flags determine where the indicator becomes available.
+
+```python
+"allow_correlation": True
+```
+
+Makes the series available inside Thematic Correlation.
+
+```python
+"allow_relative_macro_transmission": True
+```
+
+Makes the series available inside Relative Macro Transmission and Custom Comparison.
+
+```python
+"relative_series_type": "macro"
+```
+
+or
+
+```python
+"relative_series_type": "market"
+```
+
+Defines whether the series behaves as a macro or market series inside RMT.
+
+```python
+"rmt_surface_type": "sovereign_yield"
+```
+
+Assigns the indicator to a primary RMT surface, such as:
+
+- `sovereign_yield`
+- `carry_rate`
+- `external_balance`
+
+Use a blank value when the series should only be available for Custom Comparison and does not
+belong to a named RMT surface:
+
+```python
+"rmt_surface_type": ""
+```
+""")
+
+    with st.expander("6️⃣ Validate the Integration", expanded=True):
+        st.markdown("""
+After registration:
+
+- Confirm the series appears inside Thematic Correlation where expected
+- Confirm the series appears inside Relative Macro Transmission where expected
+- Test Custom Comparison selection
+- Confirm charts render correctly
+- Confirm no missing-column errors exist
+
+If the series is not visible, check:
+
+- folder mismatch
+- filename mismatch
+- CSV column mismatch
+- incorrect `country` naming
+- incorrect `allow_correlation` or `allow_relative_macro_transmission` flag
+- incorrect `relative_series_type`
+- unexpected `rmt_surface_type`
+""")
+
+# -------------------------------------------------------------------------------------------------
+# Tab 3: Add Economic Exploration Country
+# -------------------------------------------------------------------------------------------------
+with tabs[2]:
+    st.header("➕ Add an Economic Exploration Country")
+
+    st.markdown("""
+Use this section only when a country should appear inside the Economic Exploration dashboard.
+
+This full scaffold is not required when adding series only for Thematic Correlation,
+Relative Macro Transmission, or Custom Comparison. For those workflows, use
+**Add Registry Series**.
+
+For demonstration purposes, this walkthrough uses the United States as the example country.
+""")
+
+    with st.expander("📘 Integration Context", expanded=True):
+        st.markdown("""
+The Economic Exploration country setup creates the full dashboard scaffold.
+
+It prepares:
+
+- `/apps/economic_exploration/<country_name>/`
+- `.streamlit/` configuration
+- country `app.py`
+- indicator map, insight, routing, scoring, use case, and visual folders
+- a starter template page
+- country metadata in shared constants
+- validation data copied from `000/` templates
+
+This step creates the dashboard shell only. Live theme data is added later through
+**Add Economic Exploration Theme**.
+""")
 
     with st.expander("1️⃣ Prepare the Country Directory"):
-
         st.markdown("""
-**Project Root Assumption:** All commands assume you're in the root folder:
-`/FinTechWorkspace/financial-insight-tools/`
+Create the folder for the new country inside:
+
+```text
+apps/economic_exploration/
+```
+
+Example:
+
+```bash
+mkdir apps/economic_exploration/united_states
+```
+
+Windows:
+
+```cmd
+mkdir apps\\economic_exploration\\united_states
+```
 """)
 
+    with st.expander("2️⃣ Copy `default_country_template` Contents"):
         st.markdown("""
-Create the folder for your new country within the project’s app structure.
+Copy all contents of:
 
-**Terminal / Command Line Options**
+```text
+apps/economic_exploration/default_country_template/
+```
 
-- **macOS / Linux:**
-        """)
-        st.code("mkdir apps/economic_exploration/united_states", language="bash")
+into the new country folder.
 
-        st.markdown("- **Windows (CMD):**")
-        st.code("mkdir apps\\economic_exploration\\united_states", language="cmd")
+macOS / Linux:
 
-        st.markdown("""
----
+```bash
+cp -r apps/economic_exploration/default_country_template/ apps/economic_exploration/united_states/
+```
 
-**File Explorer / Finder Option**
+Windows:
 
-- **macOS**: Use Finder → navigate to `apps/economic_exploration` and create
-the folder `united_states`.
-- **Windows**: Use File Explorer → navigate to `apps\\economic_exploration`
-and create the folder `united_states`.
+```cmd
+xcopy apps\\economic_exploration\\default_country_template\\* apps\\economic_exploration\\united_states\\ /E /I /H
+```
+
+This copies the app shell, hidden configuration, and local module folders.
 """)
 
-
-    with st.expander("2️⃣ Copy `default_country_template` Folder Contents"):
+    with st.expander("3️⃣ Add the Universal Starter Page"):
         st.markdown("""
-To scaffold the new country module (e.g., **United States**), copy **all contents** of
-the `default_country_template/` directory into your new country folder.
+Copy the universal starter module:
 
-This includes hidden configuration files (`.streamlit`) and default folders such
-as `app.py`, `indicator_map`, `insights`, `use_cases`, etc.
+```text
+apps/economic_exploration/pages_template/000_template.py
+```
 
----
+into:
 
-**Terminal / Command Line Options**
+```text
+apps/economic_exploration/<country_name>/pages/
+```
 
-- **macOS / Linux:**
-        """)
-        st.code("cp -r apps/economic_exploration/default_country_template/ "
-        "apps/economic_exploration/united_states/", language="bash")
+Example:
 
-        st.markdown("- **Windows (CMD):**")
-        st.code("xcopy apps\\economic_exploration\\default_country_template"
-        "\\* apps\\economic_exploration\\united_states\\ /E /I /H", language="cmd")
-
-        st.markdown("""
----
-
-**File Explorer / Finder Option**
-
-1. **Enable hidden files**:
-   - **macOS Finder:** Press `Cmd + Shift + .`
-   - **Windows Explorer:** Go to **View > Hidden items**
-
-2. Navigate to:
-   - `apps/economic_exploration/default_country_template/`
-
-3. **Select and copy all contents**
-
-4. Paste into your new country folder:
-   - `apps/economic_exploration/united_states/`
-
-This step ensures the default folder structure and config logic are in place.
+```bash
+cp apps/economic_exploration/pages_template/000_template.py apps/economic_exploration/united_states/pages/
+```
 """)
 
-    with st.expander("3️⃣ Add Thematic Grouping Page (Universal Template)"):
-
+    with st.expander("4️⃣ Create the Validation Data Folder"):
         st.markdown("""
-    To validate that the country setup is functioning, begin with
-    the **universal starter module** only:
+Create a country-code folder inside:
 
-    - `000_template.py`
+```text
+apps/data_sources/economic_data/
+```
 
-    Located at:
+Example:
 
-    ```bash
-    apps/economic_exploration/pages_template/000_template.py
-    ```
+```bash
+mkdir apps/data_sources/economic_data/us
+```
 
-    ---
+Copy only the validation files from the `000/` template area:
 
-    **Terminal / Command Line Option (example: Growth Stability):**
+- `000_generic/`
+- `000_m_000_structural.csv`
 
-    - macOS / Linux:
-        """)
-        st.code("cp apps/economic_exploration/pages_template/000_template.py "
-        "apps/economic_exploration/united_states/pages/", language="bash")
+Then rename:
 
-        st.markdown("- Windows:")
-        st.code("copy apps\\economic_exploration\\pages_template\\"
-        "000_template.py apps\\economic_exploration\\"
-        "united_states\\pages\\", language="cmd")
+```text
+000_m_000_structural.csv → us_m_000_structural.csv
+```
 
-        st.markdown("""
-    ---
-
-    **File Explorer / Finder Option:**
-
-    1. Navigate to:
-       `apps/economic_exploration/pages_template/`
-
-    2. Copy the desired file(s) — e.g., `000_template.py`
-
-    3. Paste into:
-       `apps/economic_exploration/united_states/pages/`
-
-    """)
-
-
-    with st.expander("4️⃣ Create Data Source Folder"):
-        st.markdown("""
-    Each country requires a dedicated folder to store economic data inputs.
-    This step establishes the **minimum required structure** using the
-    default `000/`-based templates.
-
-    ---
-
-    **Step 1: Create a Folder for Your Country**
-
-    **Terminal / Command Line**
-
-    - **macOS / Linux:**
-    """)
-        st.code("mkdir apps/data_sources/economic_data/us", language="bash")
-
-        st.markdown("- **Windows (CMD):**")
-        st.code("mkdir apps\\data_sources\\economic_data\\us", language="cmd")
-
-        st.markdown("""
-    ---
-
-    **File Explorer / Finder Option**
-
-    1. Navigate to:
-       `apps/data_sources/economic_data/`
-
-    2. Create a new folder and name it using your country code, e.g.:
-       - `us` for United States
-
-    ---
-
-    **Step 2: Copy Validation Template Files**
-
-    Copy only the essential items used to validate country scaffolding:
-
-    **Required files to copy:**
-    - `000_generic/` directory
-    - `000_m_000_structural.csv` file (monthly composite placeholder)
-
-    These enable basic placeholder charts and insight signals.
-
-    **Terminal / Command Line**
-
-    - **macOS / Linux:**
-    """)
-        st.code("""cp -r apps/data_sources/economic_data/000/000_generic/
-        apps/data_sources/economic_data/us/
-    cp apps/data_sources/economic_data/000/000_m_000_structural.csv
-    apps/data_sources/economic_data/us/""", language="bash")
-
-        st.markdown("- **Windows (CMD):**")
-        st.code("""xcopy apps\\data_sources\\economic_data\\000\\000_generic\\*
-        apps\\data_sources\\economic_data\\us\\000_generic\\ /E /I /H
-    copy apps\\data_sources\\economic_data\\000\\000_m_000_structural.csv
-    apps\\data_sources\\economic_data\\us\\
-    """, language="cmd")
-
-        st.markdown("""
-    ---
-
-    **File Explorer / Finder Option**
-
-    1. Navigate to:
-       `apps/data_sources/economic_data/000/`
-
-    2. Copy:
-       - the **folder** `000_generic/`
-       - the **file** `000_m_000_structural.csv`
-
-    3. Paste them into your country folder, e.g.:
-       `apps/data_sources/economic_data/us/`
-
-
-   **Do not copy the entire `000/` folder** — only these files are required at this stage.
-
-
-    ---
-
-    **Step 3: Rename the CSV File**
-
-    To align with country-specific processing, rename the placeholder file:
-
-    - `000_m_000_structural.csv` → `us_m_000_structural.csv`
-
-    This ensures it matches the expected prefix used in validation and chart generation.
-
-    ---
-
-    These files enable:
-    - Basic visual and signal rendering
-    - Validation of module structure and country setup logic
-
-    """)
+These placeholder files validate the country scaffold. They are not live source data.
+""")
 
     with st.expander("5️⃣ Update Shared Metadata"):
         st.markdown("""
-Update all shared config files and app settings:
+Update shared configuration so the country appears correctly in the launcher.
 
----
+Examples:
 
-**constants/regions.py**
-""")
-        st.code('"United States": (35.9078, 127.7669)', language="python")
+```python
+# constants/regions.py
+"United States": (35.9078, 127.7669)
 
-        st.markdown("**constants/emoji.py**")
-        st.code('"United States": "🇺🇸"', language="python")
+# constants/emoji.py
+"United States": "🇺🇸"
+```
 
-        st.markdown("""
-**app.py (within country folder)**
+Update the country app metadata:
 
-Update header metadata:
-""")
-        st.code("""
-COUNTRY_NAME = "United States"
-        """, language="python")
-
-        st.markdown("""
-**000_template.py**
-
-Update the following variables:
-""")
-        st.code("""
+```python
 COUNTRY_NAME = "United States"
 COUNTRY_CODE = "us"
-        """, language="python")
+```
+""")
 
     with st.expander("6️⃣ Verify Launch"):
         st.markdown("""
-    Launch the main dashboard to ensure all shared updates and metadata have been applied.
+Restart the launcher and confirm:
 
-    **Restart Launcher**
+- Country appears in the expected region / sub-region
+- Country dashboard opens without error
+- Sidebar shows the starter Template page
+- Placeholder charts and summaries render
+- No unresolved paths, missing configs, or undefined variables appear
 
-    Close any active session of:
-    - Insight Launcher: Economic Exploration
-
-    Then relaunch from:
-    - Financial Insight Tools
-
-    ---
-
-    **Region Selection**
-
-    Once reloaded, select the following from the launcher:
-
-    - **Select a Region:** Americas
-    - **Select a Sub-Region:** North America
-    - **Select a Country:** United States
-
-    After clicking **Explore United States**, the following confirmation should appear:
-
-    > 🇺🇸 **United States – Insight Launcher: Economic Exploration**
-
-    ---
-
-    **Navigation Confirmation**
-
-    In the left sidebar under **📂 Navigation Menu**, the universal starter module
-    should now be visible:
-
-    > **Template**
-
-    ---
-
-    **Final Verification**
-
-    Confirm the following to ensure your country scaffolding is correctly in place:
-
-    - Template page opens without error
-    - Placeholder visuals load correctly from the copied and renamed CSV file.
-    - Country label displays correctly (e.g., `🇺🇸 United States – Template`)
-    - No unresolved paths, undefined variables, or missing configs
-
-    Insight Panels
-
-    - `Insight Use Cases` are populated (e.g., Signal A, B, C)
-    - `Macro Conditions Summary` renders with expected structure
-    - `Charts` tab shows placeholder visuals by use case
-    - `Macro Signal Summary` evaluates with fallback scoring
-
-    Macro Interaction Tools Verification
-
-    - Add Custom Observation toggle visible in sidebar
-    - Observation form allows full data entry (text, relevance, sentiment, tags)
-    - Observation writes correctly to:
-
-    ```csv
-    /apps/observation_engine/storage/user_observations/economic_exploration/{country}__{theme_code}__user_observations.csv
-    ```
-
-    - Observation Journal displays saved entries, allows inline editing, and correctly commits updates
-    - Preview AI Export toggle visible in sidebar
-    - AI Export generates full JSON bundle for selected use case
-    - Saved JSON appears under:
-
-    ```json
-    /apps/observation_engine/storage/ai_bundles/{country}__{theme_code}__{use_case}__{timeframe}.json
-    ```
-
-    You have now fully validated the country scaffold with complete macro insight system integration.
-
-    Proceed to Add Theme to Existing Country to configure full thematic modules and begin sourcing live data.
-    """)
+Once verified, the country is ready for full theme integration.
+""")
 
 # -------------------------------------------------------------------------------------------------
-# Tab 2: Add Theme
+# Tab 4: Add Economic Exploration Theme
 # -------------------------------------------------------------------------------------------------
+with tabs[3]:
+    st.header("➕ Add an Economic Exploration Theme")
 
-with tabs[1]:
-    st.header("Add Theme")
     st.markdown("""
-Use this section to attach a thematic grouping (e.g., **GDP**, **Labour**, **Inflation**)
-to a country that has already been configured and scaffolded.
+Use this section when a country already exists inside Economic Exploration and you want to add
+a full DSS theme such as Labour Market Dynamics, Inflation Price Dynamics, Financial Conditions
+and Risk Analysis or Market Trends Financial Health.
 
-We assume the country — in this walkthrough, **United States** — has already been
-created via **➕ Add New Country**.
-
-For demonstration purposes, we use the **`200_labour_market_dynamics.py`** theme
-as the implementation example. This theme includes:
-
-- Live scoring logic
-- Signal routing and use case logic
-- AI export integration
-- Chart and data visualisation modules
-
-This structure applies across all themes. Once familiar with this flow, you can repeat it for
-additional groupings (`200_labour_market_dynamics.py`, `300_inflation_and_prices.py`, etc.).
+This route is different from registry-only setup. It creates a full dashboard surface with use
+cases, scoring, charts, insight logic, routing, data loading, and optional AI export context.
 """)
 
     theme_tabs = st.tabs([
         "Step 1: Copy and Activate Theme Module",
         "Step 2: Review and Validate Mapping",
         "Step 3: Prepare and Upload CSV",
-        "Step 4: Advanced Configuration (Optional)"
+        "Step 4: Advanced Configuration",
     ])
 
-    # --- Step 1: Copy and Activate Theme Module ---
     with theme_tabs[0]:
         st.subheader("Step 1: Copy and Activate Theme Module")
 
         st.markdown("""
-        ### About Theme Suffixes
+Each thematic grouping is identified by a numeric prefix, for example:
 
-        Each thematic grouping in the system is identified by a unique
-        numeric prefix (e.g., `100`, `200`, etc.).
-        This number links the primary theme app file with all its supporting
-        logic modules. For example:
+- `200_labour_market_dynamics.py` → theme app page
+- `indicator_map_200.py` → indicator signal mapping
+- `insight_200.py` → insight text and bias mapping
+- `routing_200.py` → data routing
+- `use_case_200.py` → use case definitions
+- `visual_config_200.py` → chart rendering
+- `scoring_weights_labels_200_labour_market_dynamics.py` → weighting and labels
 
-        - `200_labour_market_dynamics.py` → Theme app page
-        - `insight_200.py`, `routing_200.py`, `use_case_200.py` → Supporting logic modules
+Copy the required files from:
 
-        Always match the suffix (`_100`, `_200`, etc.) between your
-        app page and the helper modules.
-        """)
+```text
+apps/economic_exploration/modules_template/
+```
+
+into the matching folders for the target country:
+
+```text
+apps/economic_exploration/<country_name>/
+```
+
+Set the country metadata inside the copied page:
+
+```python
+COUNTRY_NAME = "United States"
+COUNTRY_CODE = "000"  # temporary validation mode
+```
+
+Use `COUNTRY_CODE = "000"` first to validate layout and placeholder logic. Switch to the
+real country code once live CSV data is ready.
+""")
+
+    with theme_tabs[1]:
+        st.subheader("Step 2: Review and Validate Mapping")
 
         st.markdown("""
-### What to Copy
+Before uploading data, define how the system interprets each indicator.
 
-Each theme includes modular components that must be placed into your country’s folder.
+`economic_series_map.py` is the shared metadata layer connecting CSV columns to:
 
-**Source Folder:**
-`apps/economic_exploration/modules_template/`
+- Economic Exploration DSS use cases
+- chart labels and source metadata
+- Thematic Correlation availability
+- Relative Macro Transmission and Custom Comparison availability
+- AI-facing metadata context where applicable
 
-**Destination Folder:**
-`apps/economic_exploration/<your_country>/`
-
-**Required Files:**
-- `indicator_map/indicator_map_200.py`
-- `insights/insight_200.py`
-- `routing/routing_200.py`
-- `scoring_weights_labels/scoring_weights_labels_200_labour_market_dynamics.py`
-- `use_cases/use_case_200.py`
-- `visual_config/visual_config_200.py`
-- `pages/200_labour_market_dynamics.py`
+Use the registry viewer tab to inspect existing structures before adding new entries.
 """)
 
         st.markdown("""
----
-
-**Terminal / Command Line Options**
-
-**macOS / Linux:**
-```bash
-cp apps/economic_exploration/modules_template/indicator_map/indicator_map_200.py
-apps/economic_exploration/united_states/indicator_map/
-cp apps/economic_exploration/modules_template/insights/insight_200.py
-apps/economic_exploration/united_states/insights/
-# Repeat for other folders
-```
-
-**Windows (CMD):**
-```cmd
-xcopy apps\\economic_exploration\\modules_template\\insights\\insight_200.py
-apps\\economic_exploration\\united_states\\insights\\"
-```
-
----
-
-### File Explorer / Finder Option
-
-1. Navigate to: `apps/economic_exploration/modules_template/`
-2. For each subfolder (e.g., `indicator_map/`, `insights/`, etc.):
-   - Copy the relevant `_200.py` file
-   - Paste it into the corresponding subfolder of your country
-3. For the app page:
-   - Copy `200_labour_market_dynamics.py` from `modules_template/pages/`
-   - Paste it into `apps/economic_exploration/<your_country>/pages/`
-
----
-
-**Final Activation**
-
-Once copied, open the app file (e.g., 200_labour_market_dynamics.py) and set:
-
-- **COUNTRY_NAME = "United States**"
-- **COUNTRY_CODE = "000**"  # Leave as '000' for now to load default test data
-
-Keeping COUNTRY_CODE = "000" allows the theme to load test signals and visuals
-using 000_m_100.csv, while you source and format your real data.
-
-This ensures the app is fully functional with placeholder logic, so you can
-immediately validate layout, scoring, and routing before uploading real datasets.
-
-Once complete, the module is fully connected and ready for Step 2: Review and Validate Mapping
-
-
-""")
-
-# --- Review and Validate Mapping ---
-with theme_tabs[1]:
-    st.subheader("Step 2: Review and Validate Mapping")
-
-    st.markdown("""
-Before uploading any data, you must define how the system interprets your indicators.
-
-**`economic_series_map.py`** is the master metadata file that links your raw CSV columns
-to scoring logic, visualisation tools, and AI export layers. This mapping must be complete
-before data upload is possible.
-
----
-
-### Purpose of this Step
-
-This is where you tell the system:
-
-- What each indicator represents
-- Where to find it, and how to scale and label it
-- How it connects to themes, scoring, and routing logic
-
-This mapping bridges your **local dataset** with the system’s **modular analytical framework**.
-
----
-
-### Reference the Indicator Registry
-
-Before manually creating entries, use the **View Theme Definitions &
-Indicator Registry** tab to:
-
-- Review supported themes and their default indicators
-- Understand required use cases for each module
-- Inspect examples across existing countries
-- Copy structure from completed implementations (e.g., United States, France)
-
-This ensures consistency and reduces duplication when expanding to new countries.
-
----
-
-### Reviewing Use Cases First
-
-Each theme module defines required use cases — e.g., **"Employment Template"**
-for `200_labour_market_dynamics.py`.
-
-These use cases are defined in:
-
-apps/economic_exploration/<your_country>/use_cases/use_case_200.py
-
-Review the active use cases before sourcing indicators so you only search for what’s needed.
-
-This step is especially helpful when working with new countries, where source coverage may vary.
-
----
-
 ### Mapping File Structure
 
-apps/economic_exploration/economic_series_map.py
-```
+```python
 {
-  "<Country Name>": {
-    "<Theme ID>": {
-      "<Template Group>": {
-        ...
-      }
-    }
-  }
-}
-```
-
----
-
-### Required Fields per Indicator
-
-| Field                 | Purpose                                                                 |
-|-----------------------|-------------------------------------------------------------------------|
-| `name`                | **Must exactly match** the column name in your CSV                      |
-| `indicator_id`        | Unique internal ID (e.g., `201_total_employment`) for use case tracking |
-| `Use Case`            | Logical group (e.g., `Employment Template`) for internal organisation   |
-| `ui_display_name`     | Friendly label for charts and summaries                                 |
-| `source_indicator`    | Full source name (e.g., FRED Economic Data)                             |
-| `unit_type`           | Thousands of Persons                                                    |
-| `unit_multiplier`     | Multiplier to adjust units (e.g., 0.001 to convert millions to billions)|
-| `frequency`           | Frequency of observation (e.g., `Monthly`)                            |
-| `seasonal_adjustment` | If applicable (e.g., Seasonally Adjusted, NSA)                          |
-| `value_type`          | Level or change (e.g., `Level`, `YoY %`, `QoQ %`)                       |
-| `source`              | Full source name (e.g., FRED, ABS, ECB)                                 |
-| `filename`            | Name of the CSV file this indicator appears in                          |
-| `release_schedule`    | Optional — for adding contextual release info                           |
-| `note`                | Optional — free text for assumptions or clarification                   |
-
----
-
-### Example Entry (United States – Employment Template)
-```
-"United States": {
-    "200_labour_market_dynamics": {
-        "employment_template": {
-            "Number of People in Employment": {
-                "Use Case": "Employment Trends",
-                "name": "Number of People in Employment",
-                "ui_display_name": "Total Employment Number of People in Employment (Thousands)",
-                "indicator_id": "201_total_employment",
-                "source_indicator": "PAYEMS",
-                "theme": "200_labour_market_dynamics",
-                "template": "employment_template",
-                "unit_type": "Thousands of Persons",
-                "unit_multiplier": 1,
-                "frequency": "Monthly",
-                "seasonal_adjustment": "Seasonally Adjusted",
-                "value_type": "Level",
-                "country": "United States",
-                "source": "FRED Economic Data (BLS)",
-                "source_url": "https://fred.stlouisfed.org/series/PAYEMS",
-                "filename": "us_m_200_structural.csv",
-                "release_schedule: final": "First Friday after month-end (BLS Employment Situation Report)",
-                "note": "Primary US employment measure excluding farm workers and military."
+    "<Country Name>": {
+        "<Theme ID>": {
+            "<Template Group>": {
+                "<Indicator Key>": {
+                    ...
+                }
             }
         }
     }
 }
 ```
-
-Once this metadata is complete, proceed to:
-Step 3: Prepare and Upload CSV
 """)
 
-    # --- Step 3: Prepare and Upload CSV ---
-with theme_tabs[2]:
-    st.subheader("Step 3: Prepare and Upload CSV")
+        st.markdown("""
+### Required Fields per Indicator
 
-    st.markdown("""
-Before uploading data, you must prepare a clean, structured CSV aligned to
-your configured indicators.
-
-This file will be ingested by the system for your selected **country** and **theme module**.
-
----
-
-### Use the Provided Template
-
-Each theme module includes a standardised file template.
-
-For `200_labour_market_dynamics.py`, use:
-
-`/apps/data_sources/economic_data/000/200_employment/000_m_200_structural.csv`
-
-To prepare your dataset:
-
-1. **Copy** the template file and folder (e.g., `200_employment/000_m_200_structural.csv`)
-   into your country directory:
-   `/apps/data_sources/economic_data/<country_code>/`
-
-2. **Rename** the template file using the format:
-   `{country_code}_{frequency_tag}_{theme_id}_structural.csv`
-   Example: `us_m_200_structural.csv`
-
-3. **Replace placeholder values** with your sourced indicators,
-   ensuring **column names exactly match** those defined in your
-   country’s `economic_series_map.py`.
-
----
-
-### File Naming Convention
-
-To ensure compatibility, all files must follow this pattern:
-
-`{country_code}_{frequency_tag}_{theme_id}_structural.csv`
-
-or
-
-`{country_code}_{frequency_tag}_{theme_id}_composite.csv`
-
-| Component                 | Meaning                                      |
-|-------------------------- |----------------------------------------------|
-| `country_code`            | ISO shorthand (e.g., `us`, `uk`, `fr`)       |
-| `frequency_tag`           | `q` = quarterly, `m` = monthly, `w` = weekly |
-| `theme_id`                | Theme identifier (e.g., `100`, `200`)        |
-| structural / composite    | e.g. _structural.csv                         |
-
-#### Examples:
-- `us_q_100_structural.csv` → US quarterly data for Economic Growth
-- `uk_m_200_structural.csv` → UK monthly data for Labour Market
-- `us_m_100_composite.csv` →  US specific monthly composite data
-
----
-
-### Required CSV Format
-
-Each dataset must meet the following:
-
-- **UTF-8 encoded**
-- **Date format**: `YYYY-MM-DD` in the first column
-- **Column headers**: Must match `name` fields in `economic_series_map.py`
-- **Clean, numeric values** — no formatting, symbols, or mixed types
-
-**Destination Path**:
-`/apps/data_sources/economic_data/<country_code>/`
-
-#### Example Structure:
-| Date       | Participation Rate |Number of People in Employment | Unemployment Rate | ... |
-|------------|--------------------|--------------------------|-------------------|-----|
-| 1948-01-01 | 58.6               | 44679                    | 3.4               |     |
-
----
-
-### Why Not Use an API?
-
-This system is designed for structured, auditable, and externalAI-augmented workflows
-using static files.
-
-While you may source data via API externally, this internal system prioritises:
-
--  **Auditability** — full visibility into each input
--  **Offline compatibility** — works in air-gapped environments
--  **Minimal dependencies** — no API setup required
--  **AI readiness** — structured inputs enable robust augmentation
-
-As long as your CSV follows the template structure, any source is acceptable.
-
----
-
-### Update Metadata (COUNTRY_CODE)
-
-Open your theme app file (e.g., `200_labour_market_dynamics.py`) and set:
-
-`COUNTRY_CODE = "us"`
-(This ensures the app pulls from `/data_sources/economic_data/us/`)
-
----
-
-### Verify Launch
-
-After preparing your data:
-
-1. Restart Economic Exploration by closing the app and relaunching via:
-
-`Financial Insight Tools`
-
-2. Navigate to your new module:
-
-- Select Region: `Americas`
-- Select Sub-Region: `North America`
-- Select Country: `United States`
-- Click: `Explore United States`
-
-You should see:
-
-`🇺🇸 United States – Insight Launcher: Economic Exploration`
-
----
-
-### Navigation Confirmation
-
-In the sidebar under **📂 Navigation Menu**, confirm your theme appears:
-
-> Labour Market Dynamics
-
----
-
-### Final Verification Checklist (After CSV Upload)
-
-- App launches without error
-- CSV file loads correctly (renamed according to country code, e.g., us_m_200_composite.csv)
-- All expected columns present and correctly mapped to indicator functions
-- Header displays: 🇺🇸 United States – Labour Market Dynamics
-- No unresolved paths, missing configs, or import issues
-
-Insight Panels:
-
-- Insight Use Cases are populated (e.g., Employment Trends, Unemployment Context)
-- Macro Conditions Summary displays correctly
-- Charts Tab shows correct visual renderings
-- Macro Signal Summary returns evaluated scoring and bias labels
-
-⚠ Critical Validation Rule:
-
-- All CSV column names must exactly match indicator_map_200.py keys.
-- No deviations, extra columns, or misspellings permitted.
-
----
-
-Congratulations — you’ve now created a default implementation of:
-
-**Labour Market Dynamics for the United States**
-
----
-
-Advanced users may enhance the module with country-specific insights,
-composite overlays, regime triggers, or tailored scoring logic.
-Step 4: Advanced Configuration (Optional)
+| Field | Purpose |
+|---|---|
+| `use_case` | Logical DSS use case, e.g. `Employment Trends`. |
+| `name` | Must exactly match the CSV column name. |
+| `ui_display_name` | Friendly label used in charts, selectors, and summaries. |
+| `indicator_id` | Internal ID used for DSS logic and thematic metadata mapping. |
+| `source_indicator` | Source series code or source-native identifier. |
+| `theme` | Theme ID, e.g. `200_labour_market_dynamics`. |
+| `template` | Template group within the theme. |
+| `unit_type` | Unit description, e.g. `Index`, `%`, `Thousands of Persons`. |
+| `unit_multiplier` | Multiplier used to standardise values. |
+| `frequency` | Observation frequency. |
+| `seasonal_adjustment` | Seasonal status. |
+| `value_type` | Level, index, YoY %, QoQ %, etc. |
+| `country` | Country implementation name. |
+| `source` | Full data source name. |
+| `source_url` | Source reference URL. |
+| `folder` | Dataset folder under the country data source path. |
+| `filename` | CSV filename containing the indicator. |
+| `release_schedule_final` | Optional release timing or publication note. |
+| `note` | Optional clarification or source caveat. |
+| `allow_correlation` | Enables the indicator for Thematic Correlation. |
+| `allow_relative_macro_transmission` | Enables the indicator for RMT / Custom Comparison. |
+| `relative_series_type` | RMT classification: `macro` or `market`. |
+| `rmt_surface_type` | Optional named RMT surface. Blank is valid for Custom Comparison-only availability. |
 """)
 
-# --- Step 4: Advanced Configuration (Optional) ---
-with theme_tabs[3]:
-    st.subheader("Advanced Configuration (Optional)")
-
-    st.markdown("""
-    This step is optional — but often essential.
-
-    It allows you to curate country-specific enhancements that elevate your thematic
-    modules beyond the defaults. Whether you’re adding unique indicators, adjusting
-    scoring weightings, or embedding system-specific insights, **this is where
-    structure meets strategy**.
-
-    The goal isn’t complexity — it’s relevance.
-
-    You’re not just adapting a template; you’re defining the way your system interprets
-    context, and potentially how your AI tooling will respond downstream.
-
-    Use this section to:
-    - Add new indicators that matter in your national or thematic context
-    - Refine signal logic or scoring alignment for greater diagnostic precision
-    - Embed interpretations that support AI export and reflection workflows
-    """)
-
-    with st.expander("Why Curate Indicators and Insights?"):
         st.markdown("""
-    At the heart of this system lies a foundational principle:
-    **Context is not a supplement — it is the primary asset.**
+### Correlation and Relative Macro Transmission Flags
 
-    Whether you’re building a strategy, interrogating trends, or exporting observations
-    for AI interpretation, what matters is not how much data you collect — but
-    what meaning you choose to embed.
+Indicators can be exposed beyond Economic Exploration through routing flags:
 
-    Adding country-specific indicators or scoring logic isn’t just about tuning precision.
-    It’s about **shaping the conditions for intelligence to emerge.**
+```python
+"allow_correlation": True,
+"allow_relative_macro_transmission": True,
+"relative_series_type": "macro",
+"rmt_surface_type": "",
+```
 
-    Each label, definition, and decision you set becomes part of a structured
-    environment — not just powering visuals or summaries, but **conditioning how
-    your tools interpret, reflect, and interact** with your view of the world.
+A blank `rmt_surface_type` is valid when the indicator should be available for Custom Comparison
+but does not belong to a named RMT surface.
+""")
 
-    ---
-
-    ### Framing Signals, Not Just Data
-
-    This framework treats indicators as signals with weight — economically, personally,
-    strategically. Their structure shapes how inference flows through your system:
-
-    - `why_it_matters` clarifies relevance — not universally, but to your context
-    - `temporal_categorisation` tags systemic role — leading, lagging, coincident
-    - `investment_action_importance` connects signal strength to macro or market logic
-    - `personal_impact_importance` anchors insight to lived experience
-
-    You’re not filling out metadata.
-    You’re defining how meaning travels.
-
-    ---
-
-    ### Context Before Questions
-
-    AI is not embedded into this system — and that’s intentional.
-
-    Instead, structure is built to travel: to a model, a conversation, or a strategic
-    prompt — **with clarity, context, and coherence already defined**.
-
-    This isn’t about asking better questions.
-    It’s about **designing the conditions** in which better answers can emerge — regardless
-    of the platform you choose.
-    """)
-
-    st.markdown("---")
-    st.subheader("Walkthrough: United States – Labour Market Dynamics")
-
-    st.markdown("""
-    To demonstrate how advanced configuration works in context, we’ll walk through the module:
-    `200_labour_market_dynamics.py` for the **United States**.
-
-    This example applies the core principles of indicator curation, scoring logic, and insight
-    tagging to real-world labour data — covering employment, unemployment,
-    and participation trends.
-
-    We’ll explore how:
-
-    - Default templates are extended using locally relevant indicators
-    - Signals are assigned structured metadata (e.g. `why_it_matters`, `temporal_categorisation`)
-    - Scoring logic is applied to define interpretation flow
-    - Visuals and summaries reflect curated insight logic
-
-    This example serves as both **reference implementation** and **repeatable pattern** for
-    expanding other country or thematic modules.
-    """)
-
-    st.markdown("---")
-    st.subheader("Act 1: Expand the Signal — United States Labour Market Dynamics")
-
-    with st.expander("Why Extend the Signal?"):
         st.markdown("""
-    The default indicators establish a shared foundation. But depending on what matters to you —
-    structurally, personally, or strategically — additional signals may
-    help sharpen interpretation.
+### Example Entry
 
-    We apply a simple filter:
+```python
+"Number of People in Employment - Employment Trends": {
+    "use_case": "Employment Trends",
+    "name": "Number of People in Employment",
+    "ui_display_name": "Number of People in Employment (Thousands)",
+    "indicator_id": "201_total_employment",
+    "source_indicator": "PAYEMS",
+    "theme": "200_labour_market_dynamics",
+    "template": "employment_template",
+    "unit_type": "Thousands of Persons",
+    "unit_multiplier": 0.001,
+    "frequency": "Monthly",
+    "seasonal_adjustment": "Seasonally Adjusted Annual Rate",
+    "value_type": "Level",
+    "country": "United States",
+    "source": "FRED Economic Data (BLS)",
+    "source_url": "https://fred.stlouisfed.org/series/PAYEMS",
+    "folder": "200_employment",
+    "filename": "us_m_200_structural.csv",
+    "release_schedule_final": "First Friday after month-end (BLS Employment Situation Report)",
+    "note": "Primary US employment measure excluding farm workers and military.",
+    "allow_correlation": True,
+    "allow_relative_macro_transmission": True,
+    "relative_series_type": "macro",
+    "rmt_surface_type": "",
+},
+```
+""")
 
-    - Can the data be sourced reliably?
-    - Does the signal contribute to understanding labour market dynamics?
-    - Does it align with investment logic, economic structuring, or personal decision-making?
+    with theme_tabs[2]:
+        st.subheader("Step 3: Prepare and Upload CSV")
 
-    Some users might want to explore where jobs are growing, or how sectoral
-    resilience shifts over time.
-    Others may watch jobless claims or full-time ratios as directional pressure on markets.
-    This module doesn't replace deeper sources — but it can frame them, export them,
-    or connect them into broader system context.
-    """)
-
-    with st.expander("What We’re Adding — Structured, Not Excessive"):
         st.markdown("""
-    Each indicator below has been **sourced from FRED**, with its purpose carefully considered.
+Prepare a clean CSV aligned to the indicators configured in `economic_series_map.py`.
 
-    #### Business Sector Employment (Monthly)
-    Breaks down employment by sector — manufacturing, construction, financials, and more.
-    - PAYEMS: `Total Nonfarm`
-    - USPRIV: `Total Private`
-    - USGOOD: `Goods-Producing`
-    - USMINE: `Mining and Logging`
-    - USCONS: `Construction`
-    - MANEMP: `Manufacturing`
-    - CES0800000001: `Private Service-Providing`
-    - USTPU: `Trade Transportation and Utilities`
-    - USINFO: `Information`
-    - USFIRE: `Financial Activities`
-    - USPBS: `Professional and Business Services`
-    - USEHS: `Education and Health Services`
-    - USLAH: `Leisure and Hospitality`
-    - USSERV: `Other Services`
-    - USGOVT: `Government`
-    - CES9091000001: `Federal`
-    - CES9092000001: `State Government`
-    - CES9093000001: `Local Government`
+Required CSV format:
 
-    **Purpose:** Structural signal for sector momentum, labour dispersion, and cyclical exposure
-    **Group:** `employment_composite`
+- UTF-8 encoded
+- first column named `date`
+- date format: standard international format (`YYYY-MM-DD`)
+- column headers exactly match `name` fields in `economic_series_map.py`
+- numeric values only; no commas, symbols, or mixed strings
 
-    #### Full-Time vs Part-Time Employment (Monthly)
-    - Full-Time: `LNS12500000`
-    - Part-Time: `LNS12600000`
+File naming pattern:
 
-    **Purpose:** Labour quality, underemployment tension, and wage structure implications
-    **Group:** `employment_type`
+```text
+{country_code}_{frequency_tag}_{theme_id}_structural.csv
+{country_code}_{frequency_tag}_{theme_id}_composite.csv
+```
 
-    #### Jobless Claims (Weekly)
-    - Initial Claims: `ICSA`
-    - Continued Claims: `CCSA`
+Examples:
 
-    **Purpose:** Directional pressure, stress signals, and timing cues — especially
-    when high frequency matters
-    **Group:** `jobless_claims`
+- `us_q_100_structural.csv`
+- `uk_m_200_structural.csv`
+- `us_w_200_composite.csv`
 
-    #### Wage Signals (Monthly)
-    - Average Hourly Earnings — Total Private (`CES0500000003`)
+After uploading the file, switch the theme page from validation mode to the live country code:
 
-    **Purpose:** Household income context, policy sensitivity, and contribution to
-    inflation narratives
-    **Group:** `wage_signals`
+```python
+COUNTRY_CODE = "us"
+```
+""")
 
-    These additions form a curated signal set — extending the module’s relevance across decision
-    types, from macro positioning and market risk to personal financial planning
-    or career strategy.
-    """)
+    with theme_tabs[3]:
+        st.subheader("Step 4: Advanced Configuration")
+
+        st.markdown("""
+Advanced configuration is used when a default Economic Exploration theme needs to move beyond
+the universal scaffold.
+
+This is where a country-specific theme becomes meaningful.
+
+The core principle is:
+
+**Universal = scaffold**
+**Local = meaning**
+
+Universal files prove the default module structure works.
+Local files define the real country-specific interpretation.
+
+This walkthrough uses the proven implementation:
+
+```text
+🇺🇸 United States - Market Trends Financial Health
+Use Case: Aggregate Equity Allocation
+Theme ID: 1100
+```
+
+Use this example as the reference pattern when extending other local country modules.
+""")
+
+        st.info(
+            "Reference example: 🇺🇸 United States - Market Trends Financial Health "
+            "with the local use case Aggregate Equity Allocation."
+        )
+
+        st.markdown("""
+### What Advanced Configuration Adds
+
+Use advanced configuration when adding:
+
+- real local use cases
+- country-specific indicators
+- local signal logic
+- custom insight text
+- scoring weights and labels
+- local routing rules
+- custom visual sections
+- additional datasets or frequencies
+- statistical profile panels
+- AI-ready local context
+
+Do **not** modify the universal layer unless you are deliberately changing the reusable scaffold
+for every country using that theme.
+""")
+
+        st.markdown("""
+### Default Scaffold vs Local Meaning
+
+A default theme may begin with placeholder use cases such as:
+
+```text
+Signal A
+Signal B
+Signal C
+```
+
+These are not real indicators. They exist to prove the module plumbing works:
+
+- page loading
+- use case selection
+- indicator dispatch
+- scoring display
+- visual rendering
+- AI bundle structure
+- template validation
+
+When a local use case is added, the country module extends the scaffold:
+
+```text
+Signal A
+Signal B
+Signal C
+Aggregate Equity Allocation
+```
+
+The placeholder signals remain available, but the page should open on the real local
+implementation where appropriate:
+
+```python
+DEFAULT_USE_CASE = "Aggregate Equity Allocation"
+```
+""")
 
         st.markdown("---")
-    st.subheader("Act 2: Extend the Framework — Implementing United States Labour Market Dynamics")
 
-    with st.expander("Why Extend the Framework?"):
+        st.subheader("Local Modules Commonly Updated")
+
         st.markdown("""
-    A single headline figure—like the unemployment rate—offers a limited view.
-    To enable consistent framing across themes, we’ve added supporting inputs including sector-level
-    employment, participation dynamics, wage indicators, and jobless claims.
+When extending a theme locally, the following files are commonly updated:
 
-    This act outlines the practical steps taken to build a structured thematic grouping within
-    the **Economic Exploration** suite.
-    The result: a multi-dimensional framework that supports signal interpretation and downstream
-    module alignment.
+```text
+use_cases/use_case_<theme>.py
+indicator_map/indicator_map_<theme>.py
+insights/insight_<theme>.py
+scoring_weights_labels/scoring_weights_labels_<theme>.py
+routing/routing_<theme>.py
+visual_config/visual_config_<theme>.py
+pages/<theme_page>.py
+```
 
-    ### Registry Metadata (Advanced)
+The main page usually controls:
 
-    When extending the framework with new indicators, templates, or use cases, you may also update:
+- `COUNTRY_NAME`
+- `COUNTRY_CODE`
+- `THEME`
+- `THEME_ID`
+- `STRUCTURAL_FOLDER`
+- `COMPOSITE_FOLDER`
+- `DEFAULT_USE_CASE`
+- `DATASET_REGISTRY`
+- `df_dict`
+- `df_map`
+- chart dispatcher call signature
+""")
 
-    `apps/registry/thematic_groupings.py`
-
-    This file defines the **semantic registry layer** of the Economic Exploration system.
-    It provides descriptive metadata used for:
-
-    • theme documentation and registry browsing
-    • indicator context and interpretive descriptions
-    • AI-facing metadata bundles
-    • structural alignment across the thematic framework
-
-    Updating this file is **not required for the application to run**.
-
-    However, it is recommended when:
-
-    • formalising a new indicator within an existing theme
-    • introducing a new template structure
-    • adding a supported use case within the registry
-    • providing richer contextual metadata for AI interpretation
-
-    If an indicator is being used only for **local experimentation**, updating
-    `economic_series_map.py` alone is typically sufficient.
-    """)
-
-    with st.expander("What Was Done — From Registry to Runtime"):
         st.markdown("""
-    Each addition is context-aware and integrated across system layers — registry, series mapping,
-    templates, and source management — ensuring readiness for structured signal
-    use and AI augmentation.
+### Required String Alignment
 
-    ### Key Steps Completed
+Most integration issues come from string mismatches.
 
-    **1. Reviewed Theme Definitions**
-    • Selected: `200_labour_market_dynamics`
-    • Use cases grouped by: Employment, Wage Signals, Jobless Claims
-    → Reference: *View Theme Definitions & Indicator Registry*
+Keep exact alignment across:
 
-    **2. Updated Economic Series Map**
-    • Country: `"United States"` → Module: `"200_labour_market_dynamics"`
-    • Entries mapped with:
-     – FRED series codes (e.g., `PAYEMS`, `ICSA`)
-     – Frequency, seasonal adjustment, unit type, value type, source URLs
-    • Templates applied:
-     – `employment_composite_template` for all series (monthly and weekly)
+```text
+CSV headers
+→ economic_series_map.py
+→ use_cases
+→ indicator_map
+→ insights
+→ scoring_weights_labels
+→ routing
+→ visual_config
+→ page registry
+```
 
-    **3. Validated CSV Templates**
-    • Column headers aligned with registry entries
-    • Split by frequency:
-     – `us_m_200_composite.csv` (monthly)
-     – `us_w_200_composite.csv` (weekly)
-    • Stored under:
-    ```plaintext
-    /apps/data_sources/economic_data/us/200_employment_composite/
-    ```
+If one label differs, the system may still load, but signals, insights, scoring,
+visuals, or routing may silently fail or return insufficient data.
+""")
 
-    **4. Created FRED Datalists**
-    - Source validation and continuity maintained through FRED watchlists
-    - Optional: User can subscribe or visit the project website to retrieve updated datasets.
+        with st.expander("1️⃣ Use Cases — Define the Local User-Facing Surface"):
+            st.markdown("""
+`use_cases` defines what appears in the sidebar dropdown.
 
-    #### Summary Snapshot
+A local extension should import universal use cases first, then add country-specific use cases.
 
-    | Component                    | Status                                                           |
-    | ---------------------------- | -----------------------------------------------------------------|
-    | Thematic Grouping            | `200_labour_market_dynamics`                                     |
-    | Use Cases Covered            | Employment Sectors, Full/Part Time, Wages, Jobless Claims        |
-    | Templates Used               | `employment_composite_template` (monthly + weekly)               |
-    | Series Map Updated           | Yes — per-indicator entries with FRED alignment                |
-    | Template Column Names        | Created to match `economic_series_map` keys                    |
-    | Data Loaded & Saved          | `us_m_200_composite.csv`, `us_w_200_composite.csv`                                 |
-    | Registry Integrity           | Confirmed via theme + indicator mappings                       |
-    | Source Validity              | FRED verified with release schedule and units set              |
-    | Modular Readiness            | Ready for AI export & Insight Flow                             |
-    | Viewable Registry Entries    | Available via *View Theme Definitions & Indicator Registry* tab|
+Example pattern:
 
+```python
+from universal_use_cases_1100 import get_use_cases as get_universal_use_cases
 
-    """)
+USE_CASES = dict(get_universal_use_cases())
 
-    with st.expander("Source Datalists — FRED Series (External Link)"):
-        st.markdown("""
-    Curated source datasets are available via official FRED watchlists to support transparency and
-    continuity across modules:
-
-    - [🇺🇸 US Labour Market — Monthly Indicators](https://fred.stlouisfed.org/graph/?g=EXAMPLE1)
-    - [🇺🇸 US Labour Market — Weekly Indicators](https://fred.stlouisfed.org/graph/?g=EXAMPLE2)
-
-    These Datalists include:
-    - Sector employment series (e.g., Manufacturing, Government, Services)
-    - Labour status breakdowns (e.g., Full-Time vs Part-Time)
-    - Wage signals (e.g., Average Hourly Earnings)
-    - High-frequency jobless claims (e.g., ICSA, CCSA)
-
-    Users may review or subscribe to FRED to obtain these lists as needed.
-    For broader sourcing principles and ingestion practices, refer to
-    *Chapter 5: Building the Data Backbone* in the supplemental guide.
-        """)
-
-        st.markdown("---")
-    st.subheader("Act 3: Finalise the Module — Activate Labour Market Dynamics")
-
-    with st.expander("Use Case Definitions (`use_cases`)"):
-        st.markdown("""
-    Use cases represent the interpretive layer that ties indicator groups to decision-support logic.
-    Each entry defines:
-
-    - **Indicator Groupings**: Sets of related signals from the registry.
-    - **Focus Categories**: Framing tags for AI export and insight routing.
-    - **Contextual Descriptions**: Used across the sidebar and guide-linked outputs.
-
-    These are derived from the **Thematic Grouping titles** and extended to support downstream
-    logic in insights, visuals, and scoring overlays.
-
-    ---
-
-    **`Business Sector Employment Breakdown`** as a structured use case.
-
-    ```python
-    USE_CASES.update({
-        "Business Sector Employment Breakdown": {
-            "Indicators": [
-                "Business Sector Employment Breakdown – Momentum",
-                "Business Sector Employment Breakdown – Stress",
-                "Business Sector Employment Breakdown – Summary"
-            ],
-            "Categories": ["Labour Market", "Employment Structure"],
-            "Description": "Tracks sector hiring acceleration, dispersion and stress signals across industries."
-        },
-
-    """)
-
-    with st.expander("Indicator Mapping (`indicator_map`)"):
-        st.markdown("""
-    The indicator map connects raw dataset columns to:
-
-    - **Use Case Groupings** (e.g. *Business Sector Employment Breakdown*)
-    - **Dashboard Routing**
-    - **Scoring Summaries and Signal Outputs**
-
-    This is a foundational module — the labels and logic defined here enable interpretability
-    across the platform. These functions act as signal generators, translating recent indicator
-    behaviour into context-aware summaries such as:
-
-    - *Highest Momentum: Professional and Business Services*
-    - *Largest Decline: Information Sector*
-
-    ---
-
-    **Status:** Labour Market Dynamics template CSVs loaded and signal logic defined.
-
-    **Next Step:** Register and activate signal functions for:
-
-    - `us_m_200_composite.csv` — Monthly: Structural employment and wage data
-    - `us_w_200_composite.csv` — Weekly: Jobless claims and high-frequency stress signals
-
-    ---
-
-    **Example: Signal Logic and Mapping — Sector Momentum**
-
-    ```python
-    def sector_employment_momentum(df, period=None):
-        if df is None or df.empty:
-            return "Insufficient Data"
-        try:
-            recent = df.drop(columns=["date"], errors="ignore").dropna().tail(period or 3)
-            momentum_scores = recent.diff().mean().sort_values(ascending=False)
-            top_sector = momentum_scores.index[0]
-            return f"Sector Momentum: {top_sector}"
-        except Exception:
-            return "Insufficient Data"
-
-
-    # Sector momentum, stress, and average shifts
-    BUSINESS_SECTOR_EMPLOYMENT_SIGNALS = {
-        "Business Sector Employment Breakdown – Momentum": sector_employment_momentum,
+USE_CASES.update({
+    "Aggregate Equity Allocation": {
+        "Indicators": [
+            "Equity Market Value Position",
+            "Economy Wide Liability Structure",
+            "Aggregate Equity Allocation Ratio"
+        ],
+        "Categories": [
+            "Equity Value Numerator",
+            "Liability Denominator"
+        ],
+        "Description": (
+            "Tracks aggregate equity market value against economy-wide liability structure "
+            "to observe long-cycle allocation conditions, capital positioning, and broader market context."
+        )
     }
+})
 
-    # Merge: Universal + Local Indicator Maps
-    ALL_INDICATOR_MAPS = {
-        # --- Universal Shared Use Cases ---
-        "Employment Trends": options_employment_signals_map,
-        "Unemployment Context": options_unemployment_signals_map,
-        "Labour Force Engagement": options_participation_signals_map,
 
-        # --- Local Use Cases ---
-        "Business Sector Employment Breakdown": BUSINESS_SECTOR_EMPLOYMENT_SIGNALS,
-        "Full-Time vs Part-Time Employment": FULL_PART_TIME_EMPLOYMENT_SIGNALS,
-        "Average Hourly Earnings": AVERAGE_HOURLY_EARNINGS_SIGNALS,
-        "Jobless Claims": {
-            **INITIAL_JOBLESS_CLAIMS_SIGNALS,
-            **CONTINUED_JOBLESS_CLAIMS_SIGNALS
-        }
-    }
+def get_use_cases():
+    return USE_CASES
+```
 
-    def get_indicator_maps():
-        return ALL_INDICATOR_MAPS
-    ```
+If the local use case should open first, call the selector with the page default:
 
-    **Why this matters:**
-    This modular registry architecture ensures each country-theme implementation can combine universal logic with localised signals — without disrupting app-level workflows or requiring downstream code changes.
-    """)
+```python
+selected_use_case, USE_CASES = render_use_case_selector(
+    get_use_cases,
+    default_use_case=DEFAULT_USE_CASE,
+)
+```
+""")
 
-    with st.expander("Scoring & Labels (`scoring_weights_labels`)"):
-        st.markdown("""
-        Assigns interpretation weights and classification labels to mapped indicators.
+        with st.expander("2️⃣ Indicator Map — Connect Use Cases to Signal Functions"):
+            st.markdown("""
+`indicator_map` connects each selected indicator to a signal function.
 
-        This module powers score overlays, alignment interpretation, and broader AI signal synthesis.
-        By mapping indicator importance and directional thresholds, it helps translate raw signal trends
-        into meaningful human-readable classifications (e.g., "Labour Market Stress" or "Resilience Building").
+The local file should:
 
-        ---
+1. import universal placeholder signal maps
+2. define local signal functions
+3. merge universal and local indicator maps
 
-        **Status:** Universal and local scoring label dispatchers integrated.
-        **Next Step:** Extend label logic and weight mappings for:
+Example structure:
 
-        - Monthly employment signals (e.g. *Business Sector Breakdown*)
-        - Wage growth and participation trends
-        - Weekly high-frequency indicators (e.g. *Initial/Continued Jobless Claims*)
+```python
+from universal_indicator_map_1100 import get_indicator_signal_map
 
-        ---
+template_signals = get_indicator_signal_map()
 
-        **Example: Dispatcher and Local Weight Map**
+ALL_INDICATOR_MAPS = {
+    "Signal A": {
+        "Signal A": template_signals["Signal A"]
+    },
+    "Signal B": {
+        "Signal B": template_signals["Signal B"]
+    },
+    "Signal C": {
+        "Signal C": template_signals["Signal C"]
+    },
+    "Aggregate Equity Allocation": {
+        "Equity Market Value Position": equity_market_value_position_signal,
+        "Economy Wide Liability Structure": economy_wide_liability_structure_signal,
+        "Aggregate Equity Allocation Ratio": aggregate_equity_allocation_ratio_signal,
+    },
+}
 
-        ```python
-        # scoring_weights_labels_200.py
 
-        Local Scoring Label Functions (Per Use Case)
+def get_indicator_maps():
+    return ALL_INDICATOR_MAPS
+```
 
-        def label_from_thresholds(ratio_val, strong, mixed, soft, stress):
-            if ratio_val >= 0.85:
-                return ("✅ " + strong[0], strong[1])
-            if ratio_val >= 0.33:
-                return ("⚠️ " + mixed[0], mixed[1])
-            if ratio_val >= -0.2:
-                return ("⚠️ " + soft[0], soft[1])
-            return ("🚨 " + stress[0], stress[1])
+The indicator names in `use_cases` must match the keys inside the local indicator map.
+""")
 
-        USE_CASE_SCORING_LABELS = {
+        with st.expander("3️⃣ Insights — Map Signal Outputs to Narrative Context"):
+            st.markdown("""
+`insights` maps signal outputs to narrative text and bias labels.
 
-            "Business Sector Employment Breakdown": lambda ratio_val: label_from_thresholds(
-                ratio_val,
-                ("Broad Sector Expansion", "Most industries are expanding with strong sector hiring breadth."),
-                ("Mixed Sector Momentum", "Some sectors show strength while others are flat or contracting."),
-                ("Flat or Uneven Sector Trends", "Minimal dispersion — sector trends are not aligned strongly."),
-                ("Widespread Sector Weakness", "Majority of sectors showing contraction — possible macro fragility.")
+The local insight file should:
+
+1. import the universal insight dispatcher
+2. define local insight text for real local signals
+3. fall back to universal insight logic for placeholder signals
+
+Example:
+
+```python
+LOCAL_INSIGHTS = {
+    "Aggregate Equity Allocation Ratio": {
+        "Equity Allocation Share Elevated": {
+            "bias": "Growth Supportive",
+            "text": (
+                "The aggregate equity allocation ratio is strengthening relative to recent norms, "
+                "suggesting a larger share of the combined equity-and-liability structure is being "
+                "accounted for by equity market value."
             ),
-
-        def get_alignment_score_label(alignment_ratio: float, use_case: str):
-            if use_case in USE_CASE_SCORING_LABELS:
-                return USE_CASE_SCORING_LABELS[use_case](alignment_ratio)
-            return get_alignment_score_label_universal(alignment_ratio, use_case)
-
-            Indicator Weights — Labour Market Dynamics (Local Extension)
-
-            indicator_weights = {
-            # Business Sector Employment Breakdown
-            "Business Sector Employment Breakdown – Momentum": 3,
-            "Business Sector Employment Breakdown – Stress": 2,
-            "Business Sector Employment Breakdown – Summary": 1,
-
-            # Full-Time vs Part-Time
-            "Employment Type Balance": 3,
-            "Part-Time Employment Stress": 2,
-
-            # Wages
-            "Wage Growth Trend": 3,
-
-            # Jobless Claims
-            "Initial Jobless Claims": 3,
-            "Continued Jobless Claims": 2
-        }
-
-        # Merge universal weights
-        indicator_weights.update(universal_indicator_weights)
-
-        def get_indicator_weight(indicator_name: str) -> int:
-            return indicator_weights.get(indicator_name, 1)
-        ```
-
-        Why this matters:
-        The scoring and weighting layer ensures the system doesn’t treat all indicators equally. It encodes priority,
-        strength, and context relevance — forming the bedrock for composite interpretation and AI-enhanced alignment summaries.
-        """)
+        },
+        "Equity Allocation Share Stable": {
+            "bias": "Neutral",
+            "text": (
+                "The aggregate equity allocation ratio is broadly stable, indicating limited recent "
+                "change in long-cycle allocation balance between equity value and economy-wide liabilities."
+            ),
+        },
+        "Equity Allocation Share Softening": {
+            "bias": "Contraction Warning",
+            "text": (
+                "The aggregate equity allocation ratio is easing relative to recent norms, suggesting "
+                "equity market value is accounting for a smaller share of the combined structure."
+            ),
+        },
+    },
+}
 
 
-    with st.expander("Insights Configuration (`insights`)"):
-        st.markdown("""
-        This module configures structured insight logic tied to each signal. These insights are used across:
+def generate_econ_insights(indicator, signal_result, timeframe, extra_value=None):
+    local_map = LOCAL_INSIGHTS.get(indicator, {})
 
-        - **Summary Tables:** Auto-generated commentary below each chart group
-        - **Macro Framing Tabs:** Dynamic panels that contextualise recent changes
-        - **AI Export Overlays:** Embedded in generated reflections and strategy prompts
+    if signal_result in local_map:
+        entry = local_map[signal_result]
+        return entry["text"], entry["bias"]
 
-        These insights are not predictive or advisory — they translate observed patterns into
-        **narrative framing** to support comparative and cyclical understanding. Each insight
-        includes:
-
-        - **Signal Outcome** (e.g. *Momentum Strengthening*)
-        - **Insight Text** (e.g. "Weekly Economic Index shows rising momentum...")
-        - **Bias Tag** (e.g. *Growth Supportive*, *Neutral*, *Contraction Warning*)
-
-        This allows downstream apps and exports to align reasoning across markets, indicators, and
-        user portfolios without requiring hardcoded logic.
-
-        ---
-
-        **Status:** Labour Market Dynamics insight templates are implemented.
-
-        **Next Step:** Continue refining context-aware summaries for:
-
-        - Sector-level employment shifts
-        - Real and nominal wage signals
-        - Initial and continued jobless claim reversals
-
-        ---
-
-        **Example: Insight Template for Initial Jobless Claims**
-
-        ```python
-        LOCAL_INSIGHTS = {
-            "Initial Jobless Claims": {
-                "Initial Claims Surge": {
-                    "bias": "Contraction Warning",
-                    "text": "Initial claims spiked — elevated job market stress emerging."
-                },
-                "Stable": {
-                    "bias": "Neutral",
-                    "text": "Initial jobless claims remain stable."
-                },
-                "Insufficient Data": {
-                    "bias": "Neutral",
-                    "text": "Insufficient data for initial claims signal."
-                }
-            },
-
-        def generate_econ_insights(indicator: str, signal_result: str, timeframe: str, extra_value=None) -> tuple[str, str]:
-            Returns (insight text, bias classification) for given indicator and signal.
-
-            local_map = LOCAL_INSIGHTS.get(indicator, {})
-            if signal_result in local_map:
-                entry = local_map[signal_result]
-                text_template = entry["text"]
-
-                if "{sector}" in text_template and extra_value:
-                    text_final = text_template.replace("{sector}", str(extra_value))
-                elif "{value}" in text_template and extra_value is not None:
-                    try:
-                        text_final = text_template.replace("{value}", f"{extra_value:.2f}")
-                    except:
-                        text_final = text_template
-                else:
-                    text_final = text_template
-
-                return text_final, entry["bias"]
-
-            return generate_universal_econ_insights(indicator, signal_result, timeframe)
-        ```
-
-        **Why this matters:**
-        By codifying commentary logic here, you unlock consistent and scalable narrative generation across
-        all modules — reducing noise while supporting human-AI collaborative framing.
-        """)
-
-
-    with st.expander("Visual Configuration (`visual_config`)"):
-        st.markdown("""
-    The `visual_config` module defines how each **Insight Use Case** maps to its corresponding visual layout.
-
-    - Use Case registry (`use_cases`)
-    - Visual output rendering (`visual_config`)
-
-    ---
-
-    ### Visual Configuration Role
-
-    - Each Use Case triggers its assigned chart logic via `render_all_charts_local()`.
-    - Charts are dispatched into visual sections and sub-tabs aligned with user navigation.
-    - Helper functions (`plot_*`) handle Plotly figure generation.
-    - `display_chart_with_fallback()` ensures stable Streamlit key management.
-
-    This structure guarantees:
-
-    - **Alignment:** Between Use Case selection, data slices, visual output,
-    and AI overlays
-    - **Flexibility:** Country-level extensions remain cleanly decoupled
-    - **Scalability:** Additional Use Cases or charts can be integrated without
-    modifying core data ingestion
-
-    ---
-
-    ### Example Use Case Mapping — *Jobless Claims*
-
-    | Component | Value |
-    | --------- | ----- |
-    | **Insight Use Case** | `Jobless Claims` |
-    | **Indicators** | `Initial Jobless Claims`, `Continued Jobless Claims` |
-    | **Categories** | `High-Frequency Stress`, `Labour Market Weakness` |
-    | **Description** | *Real-time unemployment stress signals derived from weekly claims data.* |
-    | **Visual Layout** | Combined dual-line chart |
-
-    ---
-
-    **Example: Jobless Claims Visual Logic**
-
-    Each chart helper remains isolated, ensuring clean reusable structure.
-
-    ```python
-    def plot_jobless_claims(df):
-    Render a combined line chart for Initial and Continued Jobless Claims.
-    This chart helper is called directly by the visual dispatcher
-    for the relevant use case.
-    df = df.copy()
-    if "date" not in df.columns or \
-
-       "Initial Jobless Claims" not in df.columns or \
-
-       "Continued Jobless Claims" not in df.columns:
-        return go.Figure()
-
-    fig = go.Figure()
-
-    fig.add_trace(go.Scatter(
-        x=df["date"],
-        y=df["Initial Jobless Claims"],
-        mode="lines+markers",
-        name="Initial Claims",
-        line={"color": "#1f77b4"}
-    ))
-
-    fig.add_trace(go.Scatter(
-        x=df["date"],
-        y=df["Continued Jobless Claims"],
-        mode="lines+markers",
-        name="Continued Claims",
-        line={"color": "#ff7f0e"}
-    ))
-
-    fig.update_layout(
-        title="Jobless Claims Overview",
-        xaxis_title="Date",
-        yaxis_title="Number of Claims",
-        template="plotly_white",
-        height=460
+    return generate_universal_econ_insights(
+        indicator,
+        signal_result,
+        timeframe,
+        extra_value
     )
-    return fig
-    ```
+```
 
-    The dispatcher then calls this helper dynamically:
+Bias labels should stay aligned with the scoring framework:
 
-    ```python
-    def render_all_charts_local(selected_use_case, tab_mapping, df_map):
-    Visual dispatcher that routes chart rendering based on selected use case.
-    Period slicing is controlled per tab dynamically.
-    Universal charts are always dispatched first (not shown here),
-    followed by local extensions.
+```text
+Growth Supportive
+Neutral
+Contraction Warning
+```
+""")
 
-    period_options = [3, 6, 12, 24, 60, None]  # Period slicing options for sub-tabs
-    composite_tabs = list(tab_mapping.keys())[:6]
+        with st.expander("4️⃣ Scoring Weights & Labels — Set Local Interpretation Weight"):
+            st.markdown("""
+`scoring_weights_labels` defines how indicator results contribute to the thematic alignment score.
 
-    for tab, data_slice in tab_mapping.items():
-        with tab:
-            df = data_slice.reset_index()
+Local scoring should:
 
-            # --- Local Extension: Jobless Claims Use Case ---
-            if selected_use_case == "Jobless Claims":
-                current_periods = next((p for t, p in zip(
-                composite_tabs, period_options) if t == tab), None)
-                df_extended_full = df_map["df_extended"].reset_index()
-                df_extended = df_extended_full.tail(
-                current_periods) if current_periods else df_extended_full
+1. import universal scoring labels and weights
+2. define local use-case scoring labels
+3. merge universal weights first
+4. apply local weights second
 
-                display_chart_with_fallback(
-                    plot_jobless_claims(df_extended),
-                    label=f"{tab}_JoblessClaims"
-                )
-    ```
+Example:
 
-    **Why this matters:**
-    Visual Configuration acts only on how validated data slices are presented visually.
-    The intelligence remains driven by upstream signal logic (indicator_map and insights),
-    but is rendered with clean UI control and full AI export compatibility.
-    """)
+```python
+from universal_scoring_weight_labels_1100 import (
+    get_alignment_score_label as get_alignment_score_label_universal,
+    indicator_weights as universal_indicator_weights
+)
 
-    with st.expander("Routing (`routing`)"):
-        st.markdown("""
-    The `routing` module connects each **indicator signal** to its correct data slice.
 
-    This ensures:
-    - Monthly indicators pull from `df_secondary`
-    - Weekly indicators pull from `df_extended`
-    - Fully dynamic dispatcher for insights, scoring, and AI overlays.
+def score_aggregate_equity_allocation(alignment_ratio):
+    if alignment_ratio >= 0.85:
+        return (
+            "✅ Equity Allocation Conditions Firm",
+            "Aggregate equity allocation indicators are broadly aligned in a supportive direction."
+        )
 
-    ---
+    if alignment_ratio >= 0.33:
+        return (
+            "⚠️ Mixed Allocation Signals",
+            "Aggregate equity allocation indicators show partial alignment."
+        )
 
-    ### Example: routing_200.py
+    if alignment_ratio >= -0.2:
+        return (
+            "⚠️ Allocation Conditions Softening",
+            "Aggregate equity allocation signals suggest some softening."
+        )
 
-    ```python
-    SECONDARY_DATA_INDICATORS = {
-        "Business Sector Employment Breakdown – Momentum",
-        "Business Sector Employment Breakdown – Stress",
-        "Business Sector Employment Breakdown – Summary",
-        "Employment Type Balance",
-        "Part-Time Employment Stress",
-        "Employment Quality Shift",
-        "Wage Growth Trend"
+    return (
+        "🚨 Liability Structure Dominating",
+        "The broader liability structure appears to be dominating the allocation backdrop."
+    )
+
+
+USE_CASE_SCORING_LABELS = {
+    "Aggregate Equity Allocation": score_aggregate_equity_allocation,
+}
+
+
+def get_alignment_score_label(alignment_ratio, use_case):
+    if use_case in USE_CASE_SCORING_LABELS:
+        return USE_CASE_SCORING_LABELS[use_case](alignment_ratio)
+
+    return get_alignment_score_label_universal(alignment_ratio, use_case)
+
+
+indicator_weights = dict(universal_indicator_weights)
+
+indicator_weights.update({
+    "Equity Market Value Position": 3,
+    "Economy Wide Liability Structure": 2,
+    "Aggregate Equity Allocation Ratio": 3,
+})
+
+
+def get_indicator_weight(indicator_name):
+    return indicator_weights.get(indicator_name, 1)
+```
+
+This preserves placeholder scoring while allowing the local use case to carry its own weightings.
+""")
+
+        with st.expander("5️⃣ Routing — Send Each Indicator to the Correct Dataset"):
+            st.markdown("""
+`routing` connects each indicator to the correct dataframe.
+
+Local routing should:
+
+1. route country-specific indicators first
+2. fall back to universal routing for template signals
+3. avoid pandas truth-value checks such as `df_a or df_b`
+
+Use explicit `is not None` checks.
+
+Example:
+
+```python
+from universal_routing_1100 import get_indicator_input as get_indicator_input_universal
+
+
+def get_indicator_input(indicator_name, df_dict):
+    aggregate_equity_indicators = {
+        "Equity Market Value Position",
+        "Economy Wide Liability Structure",
+        "Aggregate Equity Allocation Ratio",
     }
 
-    EXTENDED_DATA_INDICATORS = {
-        "Initial Jobless Claims",
-        "Continued Jobless Claims"
-    }
+    if indicator_name in aggregate_equity_indicators:
+        df_local_slice = df_dict.get("df_aggregate_equity_allocation_slice")
+        df_local_full = df_dict.get("df_aggregate_equity_allocation_full")
+        df_fallback = df_dict.get("df_primary_slice")
 
-    def get_indicator_input(indicator_name: str, df_dict: dict) -> pd.DataFrame | None:
-        Direct string-matched routing for local labour market indicators.
-        Fully consistent across signal maps and insight maps.
+        if df_local_slice is not None:
+            return df_local_slice
 
-        if indicator_name in SECONDARY_DATA_INDICATORS:
-            return df_dict.get("df_secondary_slice")
+        if df_local_full is not None:
+            return df_local_full
 
-        if indicator_name in EXTENDED_DATA_INDICATORS:
-            return df_dict.get("df_extended_slice")
+        return df_fallback
 
-        # Fallback for any universal indicators (e.g. Employment Trends, Unemployment Context etc)
-        return get_indicator_input_universal(indicator_name, df_dict)
-    ```
+    return get_indicator_input_universal(indicator_name, df_dict)
+```
 
-    **Why this matters:**
+Routing is especially important where the local use case uses a different dataset or frequency
+from the default template signals.
+""")
 
-    - Clean separation between data sources
-    - Enables flexible multi-frequency models
-    - Supports automated expansion for future indicators
+        with st.expander("6️⃣ Visual Configuration — Keep Local Charts Local"):
+            st.markdown("""
+`visual_config` controls how use cases are displayed.
 
-    """)
+The visual layer follows the same architecture:
 
-    with st.expander("Module Runtime Integration (`200_labour_market_dynamics.py`)"):
-        st.markdown("""
-    Integrates all upstream module logic and dataset configurations into the live Streamlit app.
+```text
+Universal visuals = default scaffold charts
+Local visuals = real country/use-case charts
+```
 
-    Includes dataset registration, use case selection, and dashboard rendering.
+Universal should only contain generic template plots such as:
 
-    Configuration is strictly tied to this module and is required for it to function correctly with the data prepared in **Act 2**.
+```python
+plot_signal_a_chart
+plot_signal_b_chart
+plot_signal_c_chart
+display_chart_with_fallback
+```
 
-    ---
+Real local visuals should be defined in the local visual file.
 
-    ### Module-Level Updates Required
+Example imports:
 
-    | Section                  | Action                                                                 |
-    |--------------------------|------------------------------------------------------------------------|
-    | `THEME CONFIGURATION`    | Add new data source path: `COMPOSITE_FOLDER = "200_employment_composite"` |
-    |                          | Ensures access to weekly + composite indicators in addition to monthly core. |
-    | `DATASET_REGISTRY`       | Register:                                                               |
-    |                          | &nbsp;&nbsp;– `df_secondary` for monthly composites (e.g. wages)        |
-    |                          | &nbsp;&nbsp;– `df_extended` for weekly indicators (e.g. jobless claims) |
-    | `df_dict`                | Uncomment to enable routing of these dataframes within the app.        |
-    | `df_map`                 | Add these datasets for chart rendering and dynamic visual dispatch.     |
+```python
+from universal_visual_config_1100 import (
+    display_chart_with_fallback,
+    plot_signal_a_chart,
+    plot_signal_b_chart,
+    plot_signal_c_chart,
+)
 
-    ---
+from universal_visual_shared import calculate_statistical_profile
+```
 
-    #### Dataset Registry
+Then define local chart helpers such as:
 
-    Ensure the following `DATASET_REGISTRY` entries are present:
+```python
+plot_equity_market_value_chart
+plot_liability_structure_chart
+plot_aggregate_equity_allocation_ratio_chart
+build_aear_statistical_series_map
+```
 
-    ```python
-    DATASET_REGISTRY = {
+Do not put local use-case chart logic into universal unless it is intended to become reusable
+for every country using that theme.
+""")
+
+        with st.expander("7️⃣ Visual Dispatcher — Template vs Local Extension"):
+            st.markdown("""
+There are two valid dispatcher patterns.
+
+### Default Template Page
+
+For simple placeholder themes using only Signal A / Signal B / Signal C:
+
+```python
+render_all_charts_local(
+    selected_use_case=selected_use_case,
+    tab_mapping=tab_mapping,
+    df_map=df_map
+)
+```
+
+This is lightweight and sufficient where local tab-container control is not required.
+
+---
+
+### Local Extended Page
+
+For local use cases with nested chart tabs, statistical profiles, or multi-dataset visuals:
+
+```python
+render_all_charts_local(
+    selected_use_case=selected_use_case,
+    tabs_dict=tabs_dict,
+    tab_mapping=tab_mapping,
+    df_map=df_map,
+)
+```
+
+Use this when local visuals need access to the actual Streamlit tab containers.
+
+This avoids treating a dataframe as a tab object and supports richer local chart rendering.
+
+---
+
+### Important Rule
+
+Do not change the page-wide timeframe tab architecture unless necessary.
+
+Adapt the local visual dispatcher to the existing page structure rather than refactoring every page.
+""")
+
+        with st.expander("8️⃣ Main Page Dataset Registry — Register Local Datasets"):
+            st.markdown("""
+The main page defines which datasets exist and how they are loaded.
+
+For local extensions, add new datasets to `DATASET_REGISTRY`.
+
+Example:
+
+```python
+DATASET_REGISTRY = {
     "df_primary": {
-        "label": "📄 Employment",
+        "label": "📄 Default Template",
         "file": f"{COUNTRY_CODE}_m_{THEME_ID}_structural.csv",
         "folder": STRUCTURAL_FOLDER,
-        "cleaner": clean_economic_data,
-        "show_in_underlying_data": True,
-        "plot": True,
-        "create_slice": True,
-        "frequency": "monthly"
-    },
-    "df_secondary": {
-        "label": "📄 Employment Composite",
-        "file": f"{COUNTRY_CODE}_m_{THEME_ID}_composite.csv",
-        "folder": COMPOSITE_FOLDER,
+        "frequency": "monthly",
         "cleaner": clean_economic_data,
         "show_in_underlying_data": True,
         "plot": True,
         "create_slice": True
     },
-    "df_extended": {
-        "label": "📄 Employment Composite",
-        "file": f"{COUNTRY_CODE}_w_{THEME_ID}_composite.csv",
-        "folder": COMPOSITE_FOLDER,
+
+    "df_aggregate_equity_allocation": {
+        "label": "Aggregate Equity Allocation Dataset",
+        "file": f"{COUNTRY_CODE}_q_{THEME_ID}_structural.csv",
+        "folder": "1100_equity_allocations",
+        "frequency": "quarterly",
         "cleaner": clean_economic_data,
         "show_in_underlying_data": True,
         "plot": True,
         "create_slice": True
+    },
+
+    "df_market_context": {
+        "label": "Aggregate Equity Allocation Market Context Dataset",
+        "file": f"{COUNTRY_CODE}_m_{THEME_ID}_structural.csv",
+        "folder": "1100_equity_index",
+        "frequency": "monthly",
+        "cleaner": clean_economic_data,
+        "show_in_underlying_data": False,
+        "plot": False,
+        "create_slice": False
     }
-    ```
+}
+```
 
-    #### Routing Dictionary (df_dict)
+Then expose the relevant datasets through `df_dict` and `df_map`:
 
-    Ensure the following block is active (uncommented):
+```python
+df_dict = {
+    "df_primary_slice": df_primary_slice,
+    "df_full": df_primary,
+    "df_aggregate_equity_allocation_slice": globals().get("df_aggregate_equity_allocation_slice"),
+    "df_aggregate_equity_allocation_full": globals().get("df_aggregate_equity_allocation"),
+    "df_market_context": globals().get("df_market_context"),
+}
 
-    ```python
-    # --- Routing Dictionary ---
-    df_dict = {
-        "df_primary_slice": df_primary_slice,
-        "df_full": df_primary,
-        "df_secondary_slice": df_secondary_slice,
-        "df_extended_slice": df_extended_slice
-    }
-    ```
-
-    #### Chart Rendering Map (df_map)
-
-    Ensure visuals are linked correctly across all datasets:
-
-    ```python
-    df_map = {
-        "df_primary": df_primary,
-        "df_secondary": df_secondary,
-        "df_extended": df_extended
-    }
-    ```
+df_map = {
+    "df_primary": df_primary,
+    "df_aggregate_equity_allocation": globals().get("df_aggregate_equity_allocation"),
+    "df_market_context": globals().get("df_market_context"),
+}
+```
 """)
 
-    with st.expander("Validate & Run Final Checks"):
+        with st.expander("9️⃣ economic_series_map.py — When Registry Metadata Is Needed"):
+            st.markdown("""
+`economic_series_map.py` is primarily used for:
+
+- Thematic Correlation
+- Relative Macro Transmission
+- Custom Comparison
+- source metadata
+- source URLs
+- AI bundle context
+- registry visibility
+
+Do not add placeholder entries to `economic_series_map.py`.
+
+Only add an entry when:
+
+- the data is actually sourced
+- the series should be visible to TC / RMT / Custom Comparison
+- the local EE DSS needs full metadata support
+- the series should appear in registry-backed AI context
+
+A user who only wants to add a TC/RMT comparison series does not need a full Economic Exploration
+theme page.
+
+They may only need:
+
+```text
+local data source folder
+CSV file
+economic_series_map.py entry
+```
+
+This keeps **Add Registry Series** separate from **Add Economic Exploration Theme**.
+""")
+
+        with st.expander("🔟 Validation Checklist"):
+            st.markdown("""
+Before treating a local extension as complete, confirm:
+
+### Use Case
+
+- local use case appears in the sidebar
+- `DEFAULT_USE_CASE` opens the correct local use case
+- placeholder signals remain available if inherited from universal
+
+### Data
+
+- files exist in the expected country folder
+- CSV headers match indicator names or source column logic
+- date column loads cleanly
+- correct frequency is declared
+
+### Indicator Logic
+
+- every selected indicator has a function
+- every function returns a string signal
+- insufficient data is handled safely
+
+### Insights
+
+- every possible signal string maps to insight text
+- bias labels use the correct scoring vocabulary
+
+### Scoring
+
+- local weights override universal where needed
+- use-case scoring labels return clean labels and explanations
+- `score / max_score` behaves as expected
+
+### Routing
+
+- each local indicator receives the correct dataframe
+- no pandas dataframe is evaluated in an `or` chain
+- local routing falls back to universal safely
+
+### Visuals
+
+- local charts are defined locally
+- universal charts remain scaffold-only
+- chart dispatcher signature matches the page call
+- tabs are not confused with dataframe slices
+
+### Page Integration
+
+- `DATASET_REGISTRY` contains every required dataset
+- `df_dict` supports scoring and routing
+- `df_map` supports visual rendering
+- underlying data expander shows only intended datasets
+""")
+
+        st.markdown("---")
+
+        st.subheader("Final Rule")
+
         st.markdown("""
+If the feature is reusable across every country, it may belong in universal.
 
-    ### Validation Checklist
+If the feature depends on a specific country, dataset, source, scoring assumption,
+visual interpretation, or local use case, it belongs in local.
 
-    - **Use Cases Defined**: `Business Sector Employment Breakdown, Full-Time vs Part-Time Employment, Average Hourly Earnings, Jobless Claims` present in sidebar and structured.
-    - **Indicators Mapped**: All columns in `us_m_200_composite.csv` and `us_w_200_composite.csv` are present in `indicator_map.py`.
-    - **Insights Enabled**: Summary commentary functions mapped and returning correct bias labels.
-    - **Visuals Assigned**: All datasets flagged with `plot=True` in `DATASET_REGISTRY` correctly routed to visuals.
-    - **Scoring Labels Applied**: Weighting files updated and bias mappings assigned.
-    - **Routing Active**: Local `routing.py` file correctly maps indicators to dataframes.
-    - **Main Module Synced**: Main module `200_labour_market_dynamics.py` reflects updated theme registry and paths.
+```text
+Universal = scaffold
+Local = meaning
+```
 
-    ---
-
-
-
-    ### Next Steps
-
-    Launch the main dashboard to verify full integration of your theme module:
-
-    **Restart Launcher**
-    - Close any running instance of:
-      *Insight Launcher: Economic Exploration*
-
-    - Reopen via:
-      *Financial Insight Tools*
-
-    **Region Selection**
-    - **Region:** Americas
-    - **Sub-Region:** North America
-    - **Country:** United States
-
-    You should see:
-
-    > 🇺🇸 **United States – Insight Launcher: Economic Exploration**
-
-    ---
-
-    ### Navigation Confirmation
-
-    Check the left sidebar Navigation Menu for:
-
-    > **Labour Market Dynamics**
-
-    ---
-
-    ### System-Level Full Verification
-
-    Post Integration Test:
-
-    - Restart Insight Launcher → Select Country → Enter Economic Exploration
-    - Sidebar Navigation shows Labour Market Dynamics available
-    - All charts, scoring, and insight evaluations execute cleanly
-
-    ---
-
-    ### Structural Ruleset (No Deviation Allowed)
-
-    - **Strict String Matching:**
-    Use Case Names → Indicator Names → CSV Headers → Insight Labels → Visual Config → Routing Keys
-
-    - **Exact Column Alignment:**
-    Every column in CSV must match an indicator function.
-
-    - **Insight Map Synchronisation:**
-    Every signal output must match insight mapping keys, using pure strings only.
-
-    - **Routing Correctness:**
-    Each indicator mapped to correct data slice via routing file.
-
-    - **Visual Dependency Structure:**
-    Visual configs depend strictly on use cases defined.
-
-    - **Registry Integrity:**
-
-        - economic_series_map.py correctly populated for full AI persona access
-        - thematic_groupings.py updated with country → theme integration
-
-    - **Docstring Compliance:**
-        All modules carry full docstrings defining scope for both AI and user guidance.
-
-    """)
+That rule should govern every advanced configuration decision.
+""")
 
 # -------------------------------------------------------------------------------------------------
-# Tab 3: View Theme Definitions & Indicator Registry
+# Tab 5: View Theme Definitions & Indicator Registry
 # -------------------------------------------------------------------------------------------------
-with tabs[2]:
+with tabs[4]:
     st.header("View Theme Definitions & Indicator Registry")
-    st.caption("Browse high-level themes, inspect country-specific indicator maps, "
-    "and validate registry structure.")
+    st.caption("Browse high-level themes, inspect country-specific indicator maps, and validate registry structure.")
 
-    with st.expander("ℹ️ Help: Thematic Registry Explorer"):
+    with st.expander("ℹ️ Help"):
         content = load_markdown_file(HELP_APP_MD)
         if content:
             st.markdown(content, unsafe_allow_html=True)
@@ -1885,130 +1558,78 @@ with tabs[2]:
 
     sub_tabs = st.tabs(["Thematic Groupings", "Indicator Map", "Audit Panel"])
 
-
-    # --- Sub-tab 0: Thematic Groupings ---
+    # ---------------------------------------------------------------------------------------------
+    # Sub-tab 1: Thematic Groupings
+    # ---------------------------------------------------------------------------------------------
     with sub_tabs[0]:
         st.subheader("Thematic Groupings Overview")
-        st.markdown("*Browse high-level theme definitions and individual indicator roles \
-        within each grouping.*")
+        st.markdown("*Browse high-level theme definitions and indicator memberships.*")
 
-        # --- Flatten Theme Overview ---
         theme_data = []
         for theme_id, theme in THEMATIC_GROUPS.items():
             title = theme.get("theme_title", "")
             intro = theme.get("theme_introduction", "")
             templates = ", ".join(theme.get("template", {}).keys())
-            use_cases = [entry.get(
-            "Use Case", "") for entry in theme.get("memberships", {}).values()]
+            memberships = theme.get("memberships", {})
+            use_cases = sorted({entry.get("Use Case", entry.get("use_case", "")) for entry in memberships.values()})
             theme_data.append({
                 "Theme ID": theme_id,
                 "Theme Title": title,
                 "Templates": templates,
-                "Use Cases": ", ".join(use_cases),
-                "Introduction": intro[:150] + "..." if len(intro) > 150 else intro
+                "Use Cases": ", ".join([u for u in use_cases if u]),
+                "Introduction": intro[:180] + "..." if len(intro) > 180 else intro,
             })
+
         theme_df = pd.DataFrame(theme_data)
-
-        st.markdown("#### High-Level Theme Overview")
         gb = GridOptionsBuilder.from_dataframe(theme_df)
-        gb.configure_default_column(wrapText=True, autoHeight=True, filter=True, sortable=True,
-        resizable=True)
-        gb.configure_column("Theme ID", pinned="left", width=120)
-        gb.configure_column("Theme Title", width=200)
-        gb.configure_column("Templates", width=200)
-        gb.configure_column("Use Cases", width=240)
-        gb.configure_column("Introduction", width=300)
+        gb.configure_default_column(wrapText=True, autoHeight=True, filter=True, sortable=True, resizable=True)
+        gb.configure_column("Theme ID", pinned="left", width=140)
         gb.configure_pagination(paginationAutoPageSize=True)
-        gb.configure_grid_options(domLayout='normal')
         grid_options = gb.build()
+        AgGrid(theme_df, gridOptions=grid_options, height=340, fit_columns_on_grid_load=True)
 
-        AgGrid(theme_df, gridOptions=grid_options, height=300, fit_columns_on_grid_load=True,
-        columns_auto_size_mode='FIT_CONTENTS')
-
-        # --- Theme Selector for Membership Drilldown ---
         def sort_key(k):
-            """
-            Extracts the numeric prefix from a theme ID string to support sorted display.
-
-            Args:
-                k (str): Theme ID string in the format '100_theme_name', '200_theme_name', etc.
-
-            Returns:
-                int | float: Integer prefix if successfully parsed; infinity if parsing fails.
-
-            Notes:
-                This is used to ensure the thematic dropdown and tables follow an intuitive,
-                numerically ordered sequence aligned with internal grouping logic.
-            """
             try:
-                return int(k.split("_")[0])
+                return int(str(k).split("_")[0])
             except ValueError:
                 return float("inf")
 
         sorted_theme_options = sorted(THEMATIC_GROUPS.keys(), key=sort_key)
-
         st.divider()
-        selected_theme = st.selectbox("Explore Membership of a Theme",
-        options=sorted_theme_options, key="theme_selector")
-        st.markdown(f"#### Membership Details for **{selected_theme}**")
-
+        selected_theme = st.selectbox("Explore Membership of a Theme", options=sorted_theme_options)
         selected_members = THEMATIC_GROUPS[selected_theme].get("memberships", {})
+
         member_data = []
         for code, entry in selected_members.items():
+            overview = entry.get("overview", "")
             member_data.append({
                 "Indicator Code": code,
-                "Use Case": entry.get("Use Case", ""),
+                "Use Case": entry.get("Use Case", entry.get("use_case", "")),
                 "Title": entry.get("title", ""),
-                "Overview": entry.get(
-                "overview", "")[:150] + "..." if len(entry.get(
-                "overview", "")) > 150 else entry.get("overview", ""),
+                "Overview": overview[:180] + "..." if len(overview) > 180 else overview,
                 "Investment Impact": entry.get("investment_action_importance", ""),
                 "Personal Impact": entry.get("personal_impact_importance", ""),
                 "Recommended Periods": ", ".join(entry.get("recommended_time_periods", [])),
             })
+
         membership_df = pd.DataFrame(member_data)
+        st.markdown(f"#### Membership Details for **{selected_theme}**")
+        if not membership_df.empty:
+            gb = GridOptionsBuilder.from_dataframe(membership_df)
+            gb.configure_default_column(wrapText=True, autoHeight=True, filter=True, sortable=True, resizable=True)
+            gb.configure_column("Indicator Code", pinned="left", width=140)
+            gb.configure_pagination(paginationAutoPageSize=True)
+            grid_options = gb.build()
+            AgGrid(membership_df, gridOptions=grid_options, height=420, fit_columns_on_grid_load=True)
+        else:
+            st.info("No membership entries found for this theme.")
 
-        st.markdown("##### Filter Membership Table")
-        col1, col2, col3 = st.columns(3)
-        use_case_filter = col1.multiselect("Use Case",
-        sorted(membership_df["Use Case"].dropna().unique()), key="membership_use_case")
-        invest_impact_filter = col2.multiselect("Investment Impact",
-        sorted(membership_df["Investment Impact"].dropna().unique()), key="membership_investment")
-        personal_impact_filter = col3.multiselect("Personal Impact",
-        sorted(membership_df["Personal Impact"].dropna().unique()), key="membership_personal")
-
-        filtered_membership_df = membership_df.copy()
-        if use_case_filter:
-            filtered_membership_df = filtered_membership_df[filtered_membership_df[
-            "Use Case"].isin(use_case_filter)]
-        if invest_impact_filter:
-            filtered_membership_df = filtered_membership_df[filtered_membership_df[
-            "Investment Impact"].isin(invest_impact_filter)]
-        if personal_impact_filter:
-            filtered_membership_df = filtered_membership_df[filtered_membership_df[
-            "Personal Impact"].isin(personal_impact_filter)]
-
-        gb = GridOptionsBuilder.from_dataframe(filtered_membership_df)
-        gb.configure_default_column(wrapText=True, autoHeight=True, filter=True,
-        sortable=True, resizable=True)
-        gb.configure_column("Indicator Code", pinned="left", width=120)
-        gb.configure_column("Use Case", width=160)
-        gb.configure_column("Title", width=200)
-        gb.configure_column("Overview", width=300)
-        gb.configure_column("Investment Impact", width=100)
-        gb.configure_column("Personal Impact", width=100)
-        gb.configure_column("Recommended Periods", width=160)
-        gb.configure_pagination(paginationAutoPageSize=True)
-        gb.configure_grid_options(domLayout='normal')
-        grid_options = gb.build()
-
-        AgGrid(filtered_membership_df, gridOptions=grid_options, height=400,
-        fit_columns_on_grid_load=True, columns_auto_size_mode='FIT_CONTENTS')
-
-    # --- Sub-tab 1: Indicator Map ---
+    # ---------------------------------------------------------------------------------------------
+    # Sub-tab 2: Indicator Map
+    # ---------------------------------------------------------------------------------------------
     with sub_tabs[1]:
         st.subheader("Indicator Map Explorer")
-        st.markdown("*Query indicators by country, theme, template, or source.*")
+        st.markdown("*Query indicators by country, theme, template, source, and module flags.*")
 
         indicator_records = []
         for country, themes in ECONOMIC_SERIES_MAP.items():
@@ -2020,139 +1641,118 @@ with tabs[2]:
                             "Theme": theme,
                             "Template": template,
                             "Indicator Code": code,
-                            "Use Case": entry.get("Use Case", ""),
+                            "Use Case": entry.get("use_case", entry.get("Use Case", "")),
+                            "Name": entry.get("name", ""),
                             "Display Name": entry.get("ui_display_name", entry.get("name", "")),
+                            "Indicator ID": entry.get("indicator_id", ""),
+                            "Source Indicator": entry.get("source_indicator", ""),
                             "Unit": entry.get("unit_type", ""),
                             "Frequency": entry.get("frequency", ""),
                             "Seasonal Adj.": entry.get("seasonal_adjustment", ""),
                             "Value Type": entry.get("value_type", ""),
                             "Source": entry.get("source", ""),
                             "Source URL": entry.get("source_url", ""),
-                            "Release (Prelim)": entry.get("release_schedule: preliminary", ""),
-                            "Release (Second)": entry.get("release_schedule: second", ""),
-                            "Release (Final)": entry.get("release_schedule: final", ""),
-                            "Note": entry.get("note", "")
+                            "Folder": entry.get("folder", ""),
+                            "Filename": entry.get("filename", ""),
+                            "Allow Correlation": entry.get("allow_correlation", False),
+                            "Allow RMT": entry.get("allow_relative_macro_transmission", False),
+                            "Relative Series Type": entry.get("relative_series_type", ""),
+                            "RMT Surface Type": entry.get("rmt_surface_type", ""),
+                            "Release Final": entry.get("release_schedule_final", entry.get("release_schedule: final", "")),
+                            "Note": entry.get("note", ""),
                         })
 
         indicator_df = pd.DataFrame(indicator_records)
 
-        st.markdown("##### Filter Options")
-        col1, col2, col3 = st.columns(3)
-        country_filter = col1.multiselect("Country", sorted(indicator_df["Country"].unique()),
-        key="indmap_country")
-        theme_filter = col2.multiselect("Theme", sorted(indicator_df["Theme"].unique()),
-        key="indmap_theme")
-        use_case_filter = col3.multiselect("Use Case",
-        sorted(indicator_df["Use Case"].dropna().unique()), key="indmap_use_case")
-        source_filter = st.text_input("Source Contains (e.g., FRED, ECB)", "",
-        key="indmap_source")
+        if indicator_df.empty:
+            st.warning("No indicator records found.")
+        else:
+            col1, col2, col3 = st.columns(3)
+            country_filter = col1.multiselect("Country", sorted(indicator_df["Country"].dropna().unique()))
+            theme_filter = col2.multiselect("Theme", sorted(indicator_df["Theme"].dropna().unique()))
+            use_case_filter = col3.multiselect("Use Case", sorted(indicator_df["Use Case"].dropna().unique()))
 
-        filtered_df = indicator_df.copy()
-        if country_filter:
-            filtered_df = filtered_df[filtered_df["Country"].isin(country_filter)]
-        if theme_filter:
-            filtered_df = filtered_df[filtered_df["Theme"].isin(theme_filter)]
-        if use_case_filter:
-            filtered_df = filtered_df[filtered_df["Use Case"].isin(use_case_filter)]
-        if source_filter:
-            filtered_df = filtered_df[filtered_df["Source"].str.contains(
-            source_filter, case=False, na=False)]
+            col4, col5, col6 = st.columns(3)
+            source_filter = col4.text_input("Source Contains", "")
+            correlation_only = col5.toggle("Correlation Enabled Only", value=False)
+            rmt_only = col6.toggle("RMT Enabled Only", value=False)
 
-        st.markdown("#### Filtered Indicator Table")
-        col_toggle, release_toggle = st.columns(2)
-        show_all = col_toggle.toggle("Show All Columns", value=False, key="indmap_toggle_all")
-        show_schedule = release_toggle.toggle("Include Release Schedule",
-        value=False, key="indmap_toggle_release")
+            filtered_df = indicator_df.copy()
+            if country_filter:
+                filtered_df = filtered_df[filtered_df["Country"].isin(country_filter)]
+            if theme_filter:
+                filtered_df = filtered_df[filtered_df["Theme"].isin(theme_filter)]
+            if use_case_filter:
+                filtered_df = filtered_df[filtered_df["Use Case"].isin(use_case_filter)]
+            if source_filter:
+                filtered_df = filtered_df[filtered_df["Source"].str.contains(source_filter, case=False, na=False)]
+            if correlation_only:
+                filtered_df = filtered_df[filtered_df["Allow Correlation"] == True]
+            if rmt_only:
+                filtered_df = filtered_df[filtered_df["Allow RMT"] == True]
 
-        display_cols = ["Country", "Theme", "Use Case", "Source", "Source URL", "Note"]
-        if show_schedule:
-            display_cols += ["Release (Prelim)", "Release (Second)", "Release (Final)"]
+            show_all = st.toggle("Show All Columns", value=False)
+            default_cols = [
+                "Country", "Theme", "Use Case", "Display Name", "Frequency", "Source",
+                "Folder", "Filename", "Allow Correlation", "Allow RMT", "RMT Surface Type",
+            ]
+            table_df = filtered_df if show_all else filtered_df[default_cols].copy()
 
-        table_df = filtered_df if show_all else filtered_df[display_cols].copy()
+            st.markdown(f"#### Filtered Indicator Table ({len(table_df)} records)")
+            gb = GridOptionsBuilder.from_dataframe(table_df)
+            gb.configure_default_column(wrapText=True, autoHeight=True, filter=True, sortable=True, resizable=True)
+            if "Country" in table_df.columns:
+                gb.configure_column("Country", pinned="left", width=120)
+            gb.configure_pagination(paginationAutoPageSize=True)
+            grid_options = gb.build()
+            AgGrid(table_df, gridOptions=grid_options, height=520, fit_columns_on_grid_load=True)
 
-        gb = GridOptionsBuilder.from_dataframe(table_df)
-        gb.configure_default_column(wrapText=True, autoHeight=True, filter=True,
-        sortable=True, resizable=True)
-
-        if "Country" in table_df.columns:
-            gb.configure_column("Country", pinned="left", width=100)
-        if "Theme" in table_df.columns:
-            gb.configure_column("Theme", width=160)
-        if "Template" in table_df.columns:
-            gb.configure_column("Template", width=160)
-        if "Use Case" in table_df.columns:
-            gb.configure_column("Use Case", width=180)
-        if "Source" in table_df.columns:
-            gb.configure_column("Source", width=200)
-
-        gb.configure_pagination(paginationAutoPageSize=True)
-        gb.configure_grid_options(domLayout='normal')
-        grid_options = gb.build()
-
-        AgGrid(table_df, gridOptions=grid_options, height=600, fit_columns_on_grid_load=True,
-        columns_auto_size_mode='FIT_CONTENTS')
-
-    # --- Sub-tab 2: Audit Panel ---
+    # ---------------------------------------------------------------------------------------------
+    # Sub-tab 3: Audit Panel
+    # ---------------------------------------------------------------------------------------------
     with sub_tabs[2]:
-        st.subheader("Thematic Audit Panel")
-        st.markdown("This audit validates the consistency and structural integrity of defined "
-        "theme groupings and mapped indicators across the system.")
+        st.subheader("Registry Audit Panel")
+        st.markdown("*Check common registry issues across CSV routing and TC/RMT flags.*")
 
-        st.markdown("#### 1️⃣ Duplicate Indicator Codes")
-        indicator_seen = set()
-        indicator_duplicates = set()
+        audit_records = []
         for country, themes in ECONOMIC_SERIES_MAP.items():
             for theme, templates in themes.items():
                 for template, indicators in templates.items():
-                    for code in indicators.keys():
-                        if code in indicator_seen:
-                            indicator_duplicates.add(code)
-                        indicator_seen.add(code)
+                    for code, entry in indicators.items():
+                        issues = []
 
-        if indicator_duplicates:
-            st.warning(
-            f"Duplicate indicator codes found: `{', '.join(sorted(indicator_duplicates))}`")
+                        required = ["name", "theme", "template", "country", "folder", "filename"]
+                        for field in required:
+                            if not entry.get(field):
+                                issues.append(f"Missing `{field}`")
+
+                        if entry.get("allow_relative_macro_transmission") and not entry.get("relative_series_type"):
+                            issues.append("RMT enabled but `relative_series_type` is blank")
+
+                        if entry.get("allow_correlation") is None:
+                            issues.append("Missing `allow_correlation` flag")
+
+                        if entry.get("allow_relative_macro_transmission") is None:
+                            issues.append("Missing `allow_relative_macro_transmission` flag")
+
+                        if issues:
+                            audit_records.append({
+                                "Country": country,
+                                "Theme": theme,
+                                "Template": template,
+                                "Indicator Code": code,
+                                "Name": entry.get("name", ""),
+                                "Issues": "; ".join(issues),
+                            })
+
+        audit_df = pd.DataFrame(audit_records)
+        if audit_df.empty:
+            st.success("No common registry issues detected.")
         else:
-            st.success("No duplicate indicator codes found across countries.")
-
-        st.markdown("#### 2️⃣ Unused or Orphaned Themes")
-        all_used_themes = set()
-        for country_data in ECONOMIC_SERIES_MAP.values():
-            all_used_themes.update(country_data.keys())
-
-        all_defined_themes = set(THEMATIC_GROUPS.keys())
-        unused_themes = sorted(all_defined_themes - all_used_themes)
-
-        if unused_themes:
-            st.warning(f"Themes defined but not used in any country: `{', '.join(unused_themes)}`")
-            st.caption("Note: Not all themes are expected to be implemented across all countries.")
-        else:
-            st.success("All defined themes are currently in use.")
-
-        st.markdown("#### 3️⃣ Templates Used but Not Declared in Theme Groupings")
-        undeclared_templates = []
-        for country, themes in ECONOMIC_SERIES_MAP.items():
-            for theme_id, templates in themes.items():
-                declared_templates = set(THEMATIC_GROUPS.get(theme_id, {}).get("template",
-                {}).keys())
-                for template_id in templates.keys():
-                    if template_id not in declared_templates:
-                        undeclared_templates.append({
-                            "Country": country,
-                            "Theme ID": theme_id,
-                            "Template": template_id
-                        })
-
-        if undeclared_templates:
-            st.warning("Templates found in the indicator map that are not declared in the \
-            thematic groupings.")
-            AgGrid(pd.DataFrame(undeclared_templates), height=300)
-        else:
-            st.success("All templates used in the indicator map are properly declared.")
-
-# -------------------------------------------------------------------------------------------------
-# Footer
-# -------------------------------------------------------------------------------------------------
-st.divider()
-st.caption("© 2026 Blake Media Ltd. | Financial Insight Tools by Blake Wiltshire — "
-            "No trading, investment, or policy advice provided.")
+            st.warning(f"{len(audit_df)} potential issue(s) found.")
+            gb = GridOptionsBuilder.from_dataframe(audit_df)
+            gb.configure_default_column(wrapText=True, autoHeight=True, filter=True, sortable=True, resizable=True)
+            gb.configure_column("Country", pinned="left", width=120)
+            gb.configure_pagination(paginationAutoPageSize=True)
+            grid_options = gb.build()
+            AgGrid(audit_df, gridOptions=grid_options, height=520, fit_columns_on_grid_load=True)

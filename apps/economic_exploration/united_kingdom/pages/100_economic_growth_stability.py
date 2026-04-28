@@ -9,7 +9,7 @@
 # Docstring
 # -------------------------------------------------------------------------------------------------
 """
-📈 Economic Growth Stability — Thematic Indicator Module
+Economic Growth Stability — Thematic Indicator Module
 --------------------------------------------------------
 
 This module provides a structured decision-support interface for evaluating a country’s economic
@@ -32,7 +32,7 @@ Outputs are standardised and modular, enabling integration with:
 - Observation logs and AI export layers
 - Visual diagnostics and trend mapping
 
-This app is one of several thematic modules within the 🌍 Economic Exploration suite of the
+This app is one of several thematic modules within the Economic Exploration suite of the
 Financial Insight Tools system.
 
 Usage Notes:
@@ -42,7 +42,7 @@ Usage Notes:
 - All modular logic (insights, weights, visuals, use cases) can be expanded per country
 or shared universally
 
-⚠️ This module does not provide forecasts, policy advice, or trading signals.
+This module does not provide forecasts, policy advice, or trading signals.
 It provides structural framing for macroeconomic exploration and strategic alignment.
 
 """
@@ -147,9 +147,9 @@ from render_macro_interaction_tools_panel_economic_exploration import render_mac
 from ai_export_ui_panel_economic_exploration import render_ai_export_ui_panel
 
 # -------------------------------------------------------------------------------------------------
-# 🧭 CONFIGURATION INSTRUCTIONS (MINIMUM SETUP FOR COUNTRY MODULE)
+# CONFIGURATION INSTRUCTIONS (MINIMUM SETUP FOR COUNTRY MODULE)
 # -------------------------------------------------------------------------------------------------
-# ✅ REQUIRED USER INPUT TO ACTIVATE THIS MODULE:
+# REQUIRED USER INPUT TO ACTIVATE THIS MODULE:
 #
 # 1. COUNTRY_NAME
 #    - Used for display titles, flag rendering, and AI persona exports.
@@ -160,7 +160,7 @@ from ai_export_ui_panel_economic_exploration import render_ai_export_ui_panel
 #    - Used to locate subdirectory under /data_sources/economic_data/
 #    - This is required for file path resolution.
 #
-# 🔒 DO NOT MODIFY THEME, STRUCTURAL_FOLDER, COMPOSITE_FOLDER, or DEFAULT_USE_CASE unless:
+# DO NOT MODIFY THEME, STRUCTURAL_FOLDER, COMPOSITE_FOLDER, or DEFAULT_USE_CASE unless:
 #     - You are configuring a real dataset for this theme
 #     - You have created or copied a valid folder structure under your country directory
 #
@@ -174,19 +174,19 @@ from ai_export_ui_panel_economic_exploration import render_ai_export_ui_panel
 #     Leave them as-is when bootstrapping the template —
 #     update only when preparing full country coverage.
 #
-# ⚠️ All CSV files must be properly structured (e.g., ISO 8601 `date` columns, matching schema),
+# All CSV files must be properly structured (e.g., ISO 8601 `date` columns, matching schema),
 #     and located under the correct folder path defined in STRUCTURAL_FOLDER or COMPOSITE_FOLDER.
 #
 # Example bootstrapping:
 #     COUNTRY_NAME = "South Korea"
 #     COUNTRY_CODE = "kr"
 
-# --- 🌍 COUNTRY-SPECIFIC SETTINGS ---
+# --- COUNTRY-SPECIFIC SETTINGS ---
 
 COUNTRY_NAME = "United Kingdom"      # Display name (used for titles, flags)
 COUNTRY_CODE = "uk"  # Pulls CSV from /datasource/000/ — switch to e.g. 'us' after data is sourced
 
-# 📊 THEME CONFIGURATION (align with thematic_groupings.py)
+# THEME CONFIGURATION (align with thematic_groupings.py)
 
 THEME = "economic_growth_stability"  # Theme slug (used in file lookup, visuals, AI bundles)
 THEME_ID = "100"                     # Theme ID
@@ -196,7 +196,7 @@ DEFAULT_USE_CASE = "Real GDP"        # Default focus in use case selector (must 
 
 
 # -------------------------------------------------------------------------------------------------
-# 🧾 DATASET_REGISTRY — REQUIRED INPUTS FOR LOADING AND STRUCTURING DATA
+#  DATASET_REGISTRY — REQUIRED INPUTS FOR LOADING AND STRUCTURING DATA
 # -------------------------------------------------------------------------------------------------
 # This dictionary defines all datasets used in this country + theme module.
 #
@@ -213,11 +213,11 @@ DEFAULT_USE_CASE = "Real GDP"        # Default focus in use case selector (must 
 #     - plot: Whether to include in the charting panel
 #     - create_slice: Whether to create a timeframe slice (e.g., df_primary_slice)
 #
-# ⚠️ All CSVs must include a `date` column in ISO format (e.g., 2023-12-31).
-# ⚠️ Do NOT alter registry structure unless familiar with downstream logic dependencies
+# All CSVs must include a `date` column in ISO format (e.g., 2023-12-31).
+# Do NOT alter registry structure unless familiar with downstream logic dependencies
 #     (e.g., insights, visuals, scoring functions).
 #
-# 🔁 If you add country-specific features later (e.g., composite signals, weekly/monthly layers),
+# If you add country-specific features later (e.g., composite signals, weekly/monthly layers),
 #     you can register additional datasets here (e.g., df_secondary).
 #     These are typically integrated once the module is fully extended.
 # -------------------------------------------------------------------------------------------------
@@ -238,11 +238,11 @@ DATASET_REGISTRY = {
 # --- End of User Configuration ---
 
 # -------------------------------------------------------------------------------------------------
-# 📄 FILE PATHS (Static — Driven by THEME or ROOT)
+# FILE PATHS (Static — Driven by THEME or ROOT)
 # -------------------------------------------------------------------------------------------------
 # These paths load markdown and branding files required for each app instance.
 #
-# ABOUT_APP_MD       = Theme-specific app overview (auto-shown under "ℹ️ About This App")
+# ABOUT_APP_MD       = Theme-specific app overview (auto-shown under "About This App")
 # HELP_APP_MD        = Theme-specific instructions (may be used in future Help panel)
 # ABOUT_SUPPORT_MD   = Universal help/support metadata (displayed system-wide)
 # BRAND_LOGO_PATH    = Blake logo (displayed in sidebar/footer)
@@ -254,7 +254,7 @@ ABOUT_SUPPORT_MD = os.path.join(ROOT_PATH, "docs", "about_and_support.md")
 BRAND_LOGO_PATH = os.path.join(ROOT_PATH, "brand", "blake_logo.png")
 
 # -------------------------------------------------------------------------------------------------
-# 🎨 THEMATIC VISUALS & COUNTRY FLAG MAPPING
+# THEMATIC VISUALS & COUNTRY FLAG MAPPING
 # -------------------------------------------------------------------------------------------------
 # These constants drive page icons, flag visuals, and AI module alignment.
 #
@@ -270,7 +270,7 @@ FLAG = FLAGS.get(COUNTRY_NAME, '🏳️')              # Country flag (see emoji
 st.logo(BRAND_LOGO_PATH)  # pylint: disable=no-member
 
 # -------------------------------------------------------------------------------------------------
-# 🚀 Streamlit Page Configuration
+# Streamlit Page Configuration
 # -------------------------------------------------------------------------------------------------
 
 st.set_page_config(
@@ -282,7 +282,7 @@ st.title(f"{FLAG} {COUNTRY_NAME} - {THEME.replace('_', ' ').title()}")
 st.caption("*Employment, wages, and participation trends shaping labour markets.*")
 
 # -------------------------------------------------------------------------------------------------
-# 📌 App Info Panel (Displays about_{THEME}.md contents)
+# App Info Panel (Displays about_{THEME}.md contents)
 # -------------------------------------------------------------------------------------------------
 
 with st.expander("ℹ️ About This App"):
@@ -294,7 +294,7 @@ with st.expander("ℹ️ About This App"):
 
 
 # -------------------------------------------------------------------------------------------------
-# 🔁 LOAD REGISTERED DATASETS INTO MEMORY
+# LOAD REGISTERED DATASETS INTO MEMORY
 # -------------------------------------------------------------------------------------------------
 # This section loads all datasets defined in DATASET_REGISTRY into memory.
 #
@@ -305,7 +305,7 @@ with st.expander("ℹ️ About This App"):
 # - Sets the 'date' column as index
 # - Registers cleaned DataFrame in globals() for app-wide access
 #
-# ✅ Result: All datasets are available by variable name (e.g., df_primary)
+# Result: All datasets are available by variable name (e.g., df_primary)
 # -------------------------------------------------------------------------------------------------
 
 loaded_datasets = {}
@@ -364,7 +364,10 @@ st.sidebar.divider()
 selected_timeframe, selected_label = render_timeframe_selector()
 
 # --- Render Use Case Sidebar ---
-selected_use_case, USE_CASES = render_use_case_selector(get_use_cases)
+selected_use_case, USE_CASES = render_use_case_selector(
+    get_use_cases,
+    default_use_case=DEFAULT_USE_CASE,
+)
 
 # --- Retrieve Applicable Indicator Maps (Universal + Local) ---
 # This call merges standard indicators with country-specific signal sets,
@@ -389,7 +392,7 @@ with st.sidebar.expander("Customise Indicators"):
     )
 
 # -------------------------------------------------------------------------------------------------
-# 🔒 Generic Slice (Always Present — Fixed Variable Name)
+# Generic Slice (Always Present — Fixed Variable Name)
 #
 # This core slice anchors visualisation panels, AI augmentation, and thematic summaries.
 # Do not rename. This is a hardcoded dependency across downstream logic.
@@ -397,7 +400,7 @@ with st.sidebar.expander("Customise Indicators"):
 df_primary_slice = slice_data_by_timeframe(df_primary, selected_timeframe)
 
 # -------------------------------------------------------------------------------------------------
-# 🔁 Auto-Slice All Registered Datasets with Slicing Enabled
+# Auto-Slice All Registered Datasets with Slicing Enabled
 #
 # Datasets with `"create_slice": True` are dynamically sliced using their registry keys.
 # -------------------------------------------------------------------------------------------------
@@ -417,7 +420,7 @@ df_dict = {
     # "df_extended_slice": df_extended_slice
 }
 
-# --- Alignment Score (Platinum-Grade Unified Version) ---
+# --- Alignment Score  ---
 def compute_econ_alignment(
     df_dict: dict,
     indicators: list[str],
@@ -426,9 +429,9 @@ def compute_econ_alignment(
     """
     Computes economic alignment score and generates full insight summaries.
 
-    ✅ Fully supports string-based signals.
-    ✅ Automatically parses advanced signals with dynamic sector or value payloads.
-    ✅ Fully backward compatible across universal and local modules.
+    Fully supports string-based signals.
+    Automatically parses advanced signals with dynamic sector or value payloads.
+    Fully backward compatible across universal and local modules.
 
     Parameters:
         df_dict (dict): Cleaned data dictionary.
@@ -464,7 +467,7 @@ def compute_econ_alignment(
         signal = func(df_input)
         weight = get_indicator_weight(name)
 
-        # --- New platinum parsing block ---
+        # --- Parsing block ---
         if isinstance(signal, str) and ":" in signal:
             signal_main, extra_value = signal.split(":", 1)
             signal_main = signal_main.strip()
@@ -544,7 +547,7 @@ ai_bundle = create_theme_ai_bundle(
 )
 
 # -------------------------------------------------------------------------------------------------
-# 📊 Charting Visuals
+# Charting Visuals
 #
 # This section controls the visualisation output for the selected thematic module.
 #
@@ -552,15 +555,12 @@ ai_bundle = create_theme_ai_bundle(
 # ▪ `df_map` must include all plot-enabled datasets using the same key names as the registry.
 # ▪ If adding country-specific charts or secondary datasets, extend `df_map` accordingly.
 #
-# ⚠️ No user changes are required unless expanding the visual dataset scope.
+# No user changes are required unless expanding the visual dataset scope.
 # -------------------------------------------------------------------------------------------------
-
-# st.write("🔍 Columns in df_primary_slice:", df_primary_slice.columns.tolist())
-# st.write("📅 df_primary_slice timeframe:", df_primary_slice["date"].min(), "to", df_primary_slice["date"].max())
 
 
 # -------------------------------------------------------------------------------------------------
-# 🗂️ Timeframe Tab Definition Based on Observations (Frequency-Agnostic)
+# Timeframe Tab Definition Based on Observations
 # -------------------------------------------------------------------------------------------------
 def define_timeframe_tabs_and_mapping(base_df: pd.DataFrame) -> tuple[dict, dict]:
     """
@@ -604,7 +604,7 @@ def define_timeframe_tabs_and_mapping(base_df: pd.DataFrame) -> tuple[dict, dict
 
     return tabs_dict, tab_mapping
 
-# --- Timeframe Tabs and Mapping (Frequency-Agnostic Style) ---
+# --- Timeframe Tabs and Mapping ---
 tabs_dict, tab_mapping = define_timeframe_tabs_and_mapping(df_primary)
 
 # Context message
@@ -612,7 +612,7 @@ st.caption(f"📌 Each 'Observation' corresponds to one data entry, based on the
 own frequency. (Quarterly, Monthly, Weekly)")
 
 # -------------------------------------------------------------------------------------------------
-# 📁 Dataset Map for Chart Dispatcher
+# Dataset Map for Chart Dispatcher
 #
 # This must match keys from the registry that have `"plot": True`.
 # Maintain alignment manually across:
@@ -649,15 +649,8 @@ AgGrid(summary_df, gridOptions=gb.build(), height=300, fit_columns_on_grid_load=
 
 
 # -------------------------------------------------------------------------------------------------
-# Macro Interaction Panel — Observation + AI Bundle (Platinum Canonical Build)
+# Macro Interaction Panel — Observation + AI Bundle
 # -------------------------------------------------------------------------------------------------
-
-# COUNTRY, THEME_CODE, THEME_DATA are already defined earlier in your file
-# For reference:
-# COUNTRY_NAME = "United States"
-# COUNTRY = COUNTRY_NAME.lower().replace(" ", "_")
-# THEME_CODE = f"{THEME_ID}_{THEME}"
-# THEME_DATA = THEMATIC_GROUPS.get(THEME_CODE, {})
 
 # Sidebar toggles (unchanged)
 show_obs, show_ai, show_log = render_macro_sidebar_tools(
@@ -670,7 +663,7 @@ show_obs, show_ai, show_log = render_macro_sidebar_tools(
     explanation=explanation
 )
 
-# Main interaction tools — ✅ fully updated call
+# Main interaction tools
 render_macro_interaction_tools_panel(
     module_type="economic_exploration",
     country=COUNTRY_NAME.lower().replace(" ", "_"),
@@ -693,11 +686,11 @@ render_macro_interaction_tools_panel(
 st.sidebar.divider()
 
 # -------------------------------------------------------------------------------------------------
-# 📂 View Underlying Data (Generic, Reusable)
+# View Underlying Data (Generic, Reusable)
 # -------------------------------------------------------------------------------------------------
 st.divider()
 with st.expander("📂 View Underlying Data"):
-    # 📝 Caption explaining potential differences between raw files and displayed data
+    # Caption explaining potential differences between raw files and displayed data
     st.caption(
         "Note: Some datasets have been standardised for clarity. For instance, time series originally "
         "reported in millions may be converted to billions using a consistent multiplier. These "

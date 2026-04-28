@@ -5,22 +5,22 @@
 # pylint: disable=invalid-name, non-ascii-file-name, line-too-long, unused-argument
 
 # -------------------------------------------------------------------------------------------------
-# 📘 Docstring
+# Docstring
 # -------------------------------------------------------------------------------------------------
 """
-🧠 Universal Insight Map — Structured Narrative Layer (Theme-Independent Template)
+Universal Insight Map — Structured Narrative Layer (Theme-Independent Template)
 -------------------------------------------------------------------------------
 
 This module defines universal, plain-language insights and bias classifications for system-wide
 macroeconomic signals. It serves as the primary interpretive layer supporting AI narratives,
 insight panels, macro alignment scoring, and external DSS agents.
 
-✅ System Role:
+System Role:
 - Delivers standardised insight text and directional bias for all signals across themes
 - Supports AI export narratives, scoring overlays, and structured observation pipelines
 - Used automatically when no local override is present in `insight_XXX.py` modules
 
-🧠 AI Persona Alignment Notes:
+AI Persona Alignment Notes:
 - Insight functions return:
     • Textual insight strings (e.g., "Growth remains above trend")
     • Bias labels (e.g., "Growth Supportive", "Neutral", "Warning")
@@ -29,16 +29,16 @@ insight panels, macro alignment scoring, and external DSS agents.
     • DSS macro condition summaries
     • AI persona reflection and export modules
 
-⚙️ System Structure & Compatibility:
-1️⃣ **Strict String Matching**
+System Structure & Compatibility:
+**Strict String Matching**
     - Signal names must match exactly the outputs from `indicator_map_XXX.py` functions.
     - No inference or dynamic mapping allowed.
 
-2️⃣ **Bias Labels Aligned to Scoring Framework**
+**Bias Labels Aligned to Scoring Framework**
     - Valid bias tags: `"Growth Supportive"`, `"Neutral"`, `"Contraction Warning"`
     (or approved equivalents)
 
-3️⃣ **Dispatcher Consistency**
+**Dispatcher Consistency**
     - Interface includes:
         - `indicator` (signal key)
         - `value` (signal string)
@@ -46,61 +46,75 @@ insight panels, macro alignment scoring, and external DSS agents.
         - `extra_value` (optional; unused for universal module but preserved for
         interface consistency)
 
-4️⃣ **No Embedded Logic**
+**No Embedded Logic**
     - This module performs no calculations or evaluations.
     - All inputs are fully processed signal strings passed from upstream evaluation logic.
 
-🧭 Governance Note:
+Governance Note:
 - This universal insight map is system-stable and globally applied.
 - Country-specific or theme-specific extensions occur via local `insight_XXX.py` files only.
 """
 
 # -------------------------------------------------------------------------------------------------
-# Insight Map with Embedded Bias Labels (Neutral Format)
+# Insight Map
+# -------------------------------------------------------------------------------------------------
+# -------------------------------------------------------------------------------------------------
+# Insight Map
 # -------------------------------------------------------------------------------------------------
 insights = {
-    "001_signal_a": {
-        "Signal A1": {
-            "bias": "Supportive",
-            "text": "Condition A1 indicates favourable alignment or constructive trend development."
+    "Currency Strength Position": {
+        "Currency Pressure Rising": {
+            "bias": "Contraction Warning",
+            "text": "The trade-weighted currency index is strengthening relative to recent levels, "
+            "suggesting firmer exchange pressure and a potentially more restrictive external backdrop."
         },
-        "Signal A2": {
-            "bias": "Warning",
-            "text": "Condition A2 may reflect weakening fundamentals or emerging headwinds."
-        },
-        "Signal A3": {
+        "Currency Pressure Stable": {
             "bias": "Neutral",
-            "text": "Condition A3 is broadly consistent with past norms or indecisive behaviour."
+            "text": "The trade-weighted currency index is broadly stable, indicating limited recent "
+            "change in overall exchange pressure conditions."
+        },
+        "Currency Pressure Easing": {
+            "bias": "Growth Supportive",
+            "text": "The trade-weighted currency index is softening relative to recent levels, "
+            "suggesting some easing in exchange pressure across the wider currency regime."
         }
     },
-    "002_signal_b": {
-        "Signal B1": {
-            "bias": "Supportive",
-            "text": "Signal B1 suggests directional strength and alignment with key drivers."
+
+    "Reserve Stability Conditions": {
+        "Reserve Position Strengthening": {
+            "bias": "Growth Supportive",
+            "text": "Official reserves excluding gold are improving relative to recent norms, "
+            "suggesting a somewhat stronger reserve stability backdrop."
         },
-        "Signal B2": {
-            "bias": "Warning",
-            "text": "Signal B2 may indicate volatility, reversals, or structural dislocations."
-        },
-        "Signal B3": {
+        "Reserve Position Stable": {
             "bias": "Neutral",
-            "text": "Signal B3 reflects stable or muted momentum — further monitoring warranted."
+            "text": "Official reserves excluding gold are broadly stable, indicating limited "
+            "recent change in reserve conditions."
+        },
+        "Reserve Position Softening": {
+            "bias": "Contraction Warning",
+            "text": "Official reserves excluding gold are weakening relative to recent norms, "
+            "which may indicate softer reserve stability conditions."
         }
     },
-    "003_signal_c": {
-        "Signal C1": {
-            "bias": "Supportive",
-            "text": "Outcome C1 supports confidence in sustained directional positioning."
+
+    "Current Account Support": {
+        "External Balance Support Improving": {
+            "bias": "Growth Supportive",
+            "text": "The current account position is improving relative to recent norms, "
+            "suggesting stronger external balance support within the currency regime."
         },
-        "Signal C2": {
-            "bias": "Warning",
-            "text": "Outcome C2 reflects divergence or inconsistency across components."
-        },
-        "Signal C3": {
+        "External Balance Support Stable": {
             "bias": "Neutral",
-            "text": "Outcome C3 remains within expected bounds — no actionable divergence noted."
+            "text": "The current account position is broadly stable, indicating limited recent "
+            "change in external balance support."
+        },
+        "External Balance Support Weakening": {
+            "bias": "Contraction Warning",
+            "text": "The current account position is weakening relative to recent norms, which "
+            "may indicate softer external balance support across the regime structure."
         }
-    }
+    },
 }
 
 # -------------------------------------------------------------------------------------------------

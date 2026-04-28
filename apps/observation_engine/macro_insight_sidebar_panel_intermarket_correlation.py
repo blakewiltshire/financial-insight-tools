@@ -1,5 +1,5 @@
 # -------------------------------------------------------------------------------------------------
-# 🧠 Macro Insight Sidebar Panel — Intermarket Correlation Modules (Platinum Canonical Build)
+# Macro Insight Sidebar Panel — Intermarket Correlation Modules (Platinum Canonical Build)
 # -------------------------------------------------------------------------------------------------
 # pylint: disable=import-error, wrong-import-position, wrong-import-order
 

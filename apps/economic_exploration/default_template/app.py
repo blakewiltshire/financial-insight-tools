@@ -7,7 +7,7 @@
 # Docstring
 # -------------------------------------------------------------------------------------------------
 """
-📍 Country-Level App Launcher — Insight Explorer
+Country-Level App Launcher — Insight Explorer
 Modular access to macroeconomic themes by country and topic.
 """
 # -------------------------------------------------------------------------------------------------

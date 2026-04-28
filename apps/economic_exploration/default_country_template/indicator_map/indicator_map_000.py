@@ -1,25 +1,25 @@
 # -------------------------------------------------------------------------------------------------
-# 🔧 Pylint Global Exceptions
+# Pylint Global Exceptions
 # -------------------------------------------------------------------------------------------------
 # pylint: disable=import-error, wrong-import-position, wrong-import-order
 # pylint: disable=invalid-name, non-ascii-file-name
 
 # -------------------------------------------------------------------------------------------------
-# 📄 Docstring
+# Docstring
 # -------------------------------------------------------------------------------------------------
 """
-📊 Local Indicator Map — Thematic Configuration
+Local Indicator Map — Thematic Configuration
 ------------------------------------------------
 
 Defines indicator-to-signal function mappings for a specific thematic module.
 This file extends the universal setup by assigning concrete indicator labels to use cases.
 
-✅ Structure:
+Structure:
 - Each use case maps to one or more labelled indicators
 - Labels must exactly match the CSV column names in the dataset
 - Must align with logic in `options_*_signals_map`
 
-🧠 AI Notes:
+AI Notes:
 - Used in dynamic evaluation via `compute_econ_alignment(...)`
 - Indicator functions must support `period=None` in their signature
 
@@ -29,7 +29,7 @@ Usage:
 """
 
 # -------------------------------------------------------------------------------------------------
-# 📦 Imports and Path Setup
+# Imports and Path Setup
 # -------------------------------------------------------------------------------------------------
 import os
 import sys
@@ -40,12 +40,12 @@ if UNIVERSAL_PATH not in sys.path:
     sys.path.append(UNIVERSAL_PATH)
 
 # -------------------------------------------------------------------------------------------------
-# 🔁 Universal Template Signal Import
+# Universal Template Signal Import
 # -------------------------------------------------------------------------------------------------
 from universal_indicator_map_000 import get_indicator_signal_map
 
 # -------------------------------------------------------------------------------------------------
-# 🧠 Signal Mapping (Signal A, B, C)
+# Signal Mapping (Signal A, B, C)
 # -------------------------------------------------------------------------------------------------
 template_signals = get_indicator_signal_map()
 
@@ -62,7 +62,7 @@ ALL_INDICATOR_MAPS = {
 }
 
 # -------------------------------------------------------------------------------------------------
-# 🔁 Dispatcher
+# Dispatcher
 # -------------------------------------------------------------------------------------------------
 def get_indicator_maps():
     """

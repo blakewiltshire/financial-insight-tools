@@ -1,5 +1,5 @@
 # -------------------------------------------------------------------------------------------------
-# Generic Template — Visual Config (Local Extension)
+# Visual Config (Local Extension) — Theme 200 Labour Market Dynamics (Platinum+)
 # -------------------------------------------------------------------------------------------------
 # pylint: disable=import-error, wrong-import-position, wrong-import-order
 # pylint: disable=invalid-name, non-ascii-file-name, unused-argument, unused-import
@@ -34,7 +34,7 @@ Architecture Summary:
 - Local visuals may call universal chart functions (e.g., from `universal_visual_config_XXX.py`) for consistency.
 
 Usage:
-- Invoked automatically from the main theme module (`100_economic_growth_stability.py`, `200_💼_labour_market_dynamics.py`, etc.)
+- Invoked automatically from the main theme module (`100_economic_growth_stability.py`, `200_labour_market_dynamics.py`, etc.)
 - Required only when country- or theme-specific visuals are implemented.
 - If no local visual config exists, universal visuals render by default.
 
@@ -49,6 +49,7 @@ AI Implementation Notes:
 # -------------------------------------------------------------------------------------------------
 import os
 import sys
+import pandas as pd
 import streamlit as st
 
 # -------------------------------------------------------------------------------------------------
@@ -70,8 +71,13 @@ from universal_visual_config_1200 import (
     plot_manufacturing_orders_chart,
     plot_services_activity_conditions_chart,
     plot_services_consumption_nominal_chart,
-    plot_services_consumption_real_chart,
+    plot_services_consumption_real_chart
 )
+
+# -------------------------------------------------------------------------------------------------
+# Shared Statistical Profile Import
+# -------------------------------------------------------------------------------------------------
+from universal_visual_shared import calculate_statistical_profile
 
 # -------------------------------------------------------------------------------------------------
 # Section Header Mapping
@@ -83,20 +89,71 @@ def get_visual_section_titles():
     }
 
 # -------------------------------------------------------------------------------------------------
+# Local Helpers
+# -------------------------------------------------------------------------------------------------
+def _prepare_df(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Resets index where needed, normalises the date column, and sorts values.
+    """
+    if df is None or df.empty:
+        return df
+
+    df = df.copy()
+
+    if hasattr(df, "reset_index"):
+        df = df.reset_index()
+
+    if "date" in df.columns:
+        df["date"] = pd.to_datetime(df["date"], errors="coerce")
+        df = df.dropna(subset=["date"]).sort_values("date")
+
+    return df
+
+
+def _get_visual_df(tab_df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Returns the already-sliced dataframe provided by tab_mapping.
+    """
+    return _prepare_df(tab_df)
+
+
+def _get_stable_series_selection(widget_key: str, options: list[str], default_index: int = 0) -> str:
+    """
+    Preserves statistical profile series selection across Streamlit reruns.
+    """
+    if not options:
+        return None
+
+    if widget_key not in st.session_state or st.session_state[widget_key] not in options:
+        st.session_state[widget_key] = options[default_index]
+
+    selected = st.selectbox(
+        "Select series for statistical profile",
+        options=options,
+        index=options.index(st.session_state[widget_key]),
+        key=f"{widget_key}__selectbox"
+    )
+
+    st.session_state[widget_key] = selected
+    return selected
+
+
+# -------------------------------------------------------------------------------------------------
 # Chart Dispatcher for Template Theme
 # -------------------------------------------------------------------------------------------------
 def render_all_charts_local(selected_use_case, tab_mapping, df_map):
 
     if selected_use_case == "Forward Production Conditions":
-        for tab, data_slice in tab_mapping.items():
+        for tab_index, (tab, data_slice) in enumerate(tab_mapping.items()):
             with tab:
-                df = data_slice.reset_index()
+                df = _get_visual_df(data_slice)
 
-                subtab1, subtab2, subtab3, subtab4 = st.tabs([
+                subtab1, subtab2, subtab3, subtab4, subtab5 = st.tabs([
                     "Forward Production Conditions",
                     "Business Conditions Diffusion Index",
                     "Industrial Production Index",
-                    "Manufacturing Durable Goods Orders"
+                    "Manufacturing Durable Goods Orders",
+                    "Statistical Profile"
                 ])
 
                 with subtab1:
@@ -123,16 +180,44 @@ def render_all_charts_local(selected_use_case, tab_mapping, df_map):
                         label="ManufacturingDurableGoodsOrders"
                     )
 
-    elif selected_use_case == "Services Activity Conditions":
-        for tab, data_slice in tab_mapping.items():
-            with tab:
-                df = data_slice.reset_index()
+                with subtab5:
+                    available_series = [
+                        col for col in [
+                            "Business Conditions Diffusion Index",
+                            "Industrial Production Index",
+                            "Manufacturing Durable Goods Orders"
+                        ]
+                        if df is not None and not df.empty and col in df.columns
+                    ]
 
-                subtab1, subtab2, subtab3, subtab4 = st.tabs([
+                    if not available_series:
+                        st.warning("⚠️ Statistical profile not available — no forward production series loaded.")
+                    else:
+                        selected_series = _get_stable_series_selection(
+                            widget_key=f"stats_profile_1200_forward_production_tab_{tab_index}",
+                            options=available_series,
+                            default_index=0
+                        )
+
+                        stats_df = calculate_statistical_profile(df[selected_series])
+
+                        col1, col2 = st.columns([2, 5])
+                        with col1:
+                            st.caption("Statistical profile reflects the currently selected period window.")
+                            st.markdown(f"**Statistical Profile: {selected_series}**")
+                            st.table(stats_df.set_index("Metric"))
+
+    elif selected_use_case == "Services Activity Conditions":
+        for tab_index, (tab, data_slice) in enumerate(tab_mapping.items()):
+            with tab:
+                df = _get_visual_df(data_slice)
+
+                subtab1, subtab2, subtab3, subtab4, subtab5 = st.tabs([
                     "Services Activity Conditions",
                     "Business Conditions Diffusion Index",
                     "Services Consumption (Nominal)",
-                    "Services Consumption (Real)"
+                    "Services Consumption (Real)",
+                    "Statistical Profile"
                 ])
 
                 with subtab1:
@@ -158,6 +243,33 @@ def render_all_charts_local(selected_use_case, tab_mapping, df_map):
                         plot_services_consumption_real_chart(df),
                         label="ServicesConsumptionReal"
                     )
+
+                with subtab5:
+                    available_series = [
+                        col for col in [
+                            "Business Conditions Diffusion Index",
+                            "Services Consumption (Nominal)",
+                            "Services Consumption (Real)"
+                        ]
+                        if df is not None and not df.empty and col in df.columns
+                    ]
+
+                    if not available_series:
+                        st.warning("⚠️ Statistical profile not available — no services activity series loaded.")
+                    else:
+                        selected_series = _get_stable_series_selection(
+                            widget_key=f"stats_profile_1200_services_activity_tab_{tab_index}",
+                            options=available_series,
+                            default_index=0
+                        )
+
+                        stats_df = calculate_statistical_profile(df[selected_series])
+
+                        col1, col2 = st.columns([2, 5])
+                        with col1:
+                            st.caption("Statistical profile reflects the currently selected period window.")
+                            st.markdown(f"**Statistical Profile: {selected_series}**")
+                            st.table(stats_df.set_index("Metric"))
 
     else:
         for tab, _ in tab_mapping.items():

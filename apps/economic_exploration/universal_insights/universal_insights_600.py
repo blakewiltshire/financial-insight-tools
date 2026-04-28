@@ -5,22 +5,22 @@
 # pylint: disable=invalid-name, non-ascii-file-name, line-too-long, unused-argument
 
 # -------------------------------------------------------------------------------------------------
-# 📘 Docstring
+# Docstring
 # -------------------------------------------------------------------------------------------------
 """
-🧠 Universal Insight Map — Structured Narrative Layer (Theme-Independent Template)
+Universal Insight Map — Structured Narrative Layer (Theme-Independent Template)
 -------------------------------------------------------------------------------
 
 This module defines universal, plain-language insights and bias classifications for system-wide
 macroeconomic signals. It serves as the primary interpretive layer supporting AI narratives,
 insight panels, macro alignment scoring, and external DSS agents.
 
-✅ System Role:
+System Role:
 - Delivers standardised insight text and directional bias for all signals across themes
 - Supports AI export narratives, scoring overlays, and structured observation pipelines
 - Used automatically when no local override is present in `insight_XXX.py` modules
 
-🧠 AI Persona Alignment Notes:
+AI Persona Alignment Notes:
 - Insight functions return:
     • Textual insight strings (e.g., "Growth remains above trend")
     • Bias labels (e.g., "Growth Supportive", "Neutral", "Warning")
@@ -29,16 +29,16 @@ insight panels, macro alignment scoring, and external DSS agents.
     • DSS macro condition summaries
     • AI persona reflection and export modules
 
-⚙️ System Structure & Compatibility:
-1️⃣ **Strict String Matching**
+System Structure & Compatibility:
+**Strict String Matching**
     - Signal names must match exactly the outputs from `indicator_map_XXX.py` functions.
     - No inference or dynamic mapping allowed.
 
-2️⃣ **Bias Labels Aligned to Scoring Framework**
+**Bias Labels Aligned to Scoring Framework**
     - Valid bias tags: `"Growth Supportive"`, `"Neutral"`, `"Contraction Warning"`
     (or approved equivalents)
 
-3️⃣ **Dispatcher Consistency**
+**Dispatcher Consistency**
     - Interface includes:
         - `indicator` (signal key)
         - `value` (signal string)
@@ -46,11 +46,11 @@ insight panels, macro alignment scoring, and external DSS agents.
         - `extra_value` (optional; unused for universal module but preserved for
         interface consistency)
 
-4️⃣ **No Embedded Logic**
+**No Embedded Logic**
     - This module performs no calculations or evaluations.
     - All inputs are fully processed signal strings passed from upstream evaluation logic.
 
-🧭 Governance Note:
+Governance Note:
 - This universal insight map is system-stable and globally applied.
 - Country-specific or theme-specific extensions occur via local `insight_XXX.py` files only.
 """
@@ -219,7 +219,232 @@ insights = {
             "text": "The yield curve spread is compressing relative to recent levels, suggesting "
             "a tighter liquidity regime and a more constrained financial backdrop."
         }
-    }
+    },
+
+        "Government Debt Burden": {
+        "Debt Burden Rising": {
+            "bias": "Contraction Warning",
+            "text": "Sovereign debt relative to output is increasing, suggesting a heavier debt burden and a potentially more constrained fiscal backdrop under changing macro conditions."
+        },
+        "Debt Burden Stable": {
+            "bias": "Neutral",
+            "text": "Sovereign debt relative to output is broadly stable, indicating little recent change in overall debt burden positioning."
+        },
+        "Debt Burden Easing": {
+            "bias": "Growth Supportive",
+            "text": "Sovereign debt relative to output is easing, suggesting some improvement in debt burden conditions versus recent levels."
+        }
+    },
+
+    "Fiscal Balance Pressure": {
+        "Fiscal Pressure Rising": {
+            "bias": "Contraction Warning",
+            "text": "Fiscal balance conditions are deteriorating relative to recent levels, suggesting greater sovereign funding pressure and reduced fiscal flexibility."
+        },
+        "Fiscal Pressure Stable": {
+            "bias": "Neutral",
+            "text": "Fiscal balance conditions are broadly stable, indicating limited recent change in sovereign fiscal pressure."
+        },
+        "Fiscal Pressure Easing": {
+            "bias": "Growth Supportive",
+            "text": "Fiscal balance conditions are improving relative to recent levels, suggesting some easing in sovereign fiscal pressure."
+        }
+    },
+
+    "Interest Burden on Output": {
+        "Interest Burden Rising": {
+            "bias": "Contraction Warning",
+            "text": "Government interest outlays are rising relative to recent levels, suggesting a heavier servicing burden on sovereign resources and a tighter financing backdrop."
+        },
+        "Interest Burden Stable": {
+            "bias": "Neutral",
+            "text": "Government interest outlays are broadly stable, indicating little recent change in sovereign interest burden dynamics."
+        },
+        "Interest Burden Easing": {
+            "bias": "Growth Supportive",
+            "text": "Government interest outlays are easing relative to recent levels, suggesting some relief in sovereign servicing pressure."
+        }
+    },
+
+    "Sovereign Yield Pressure": {
+        "Yield Pressure Rising": {
+            "bias": "Contraction Warning",
+            "text": "Long-term sovereign yields are rising relative to recent levels, suggesting tighter refinancing conditions and greater funding pressure across the public balance sheet."
+        },
+        "Yield Pressure Stable": {
+            "bias": "Neutral",
+            "text": "Long-term sovereign yields are broadly stable, indicating little recent change in benchmark refinancing conditions."
+        },
+        "Yield Pressure Easing": {
+            "bias": "Growth Supportive",
+            "text": "Long-term sovereign yields are easing relative to recent levels, suggesting some relief in refinancing pressure and a less restrictive financing backdrop."
+        }
+    },
+
+    "Interest Servicing Pressure": {
+        "Servicing Pressure Rising": {
+            "bias": "Contraction Warning",
+            "text": "Interest servicing demands are increasing relative to recent levels, suggesting greater strain on sovereign cash flow and funding flexibility."
+        },
+        "Servicing Pressure Stable": {
+            "bias": "Neutral",
+            "text": "Interest servicing demands are broadly stable, indicating limited recent change in sovereign debt servicing pressure."
+        },
+        "Servicing Pressure Easing": {
+            "bias": "Growth Supportive",
+            "text": "Interest servicing demands are easing relative to recent levels, suggesting some improvement in sovereign servicing conditions."
+        }
+    },
+
+    "Liquidity Cover Conditions": {
+        "Liquidity Cover Weakening": {
+            "bias": "Contraction Warning",
+            "text": "Government liquidity cover conditions are weakening, suggesting a thinner receipts cushion relative to financing demands and a more constrained refinancing profile."
+        },
+        "Liquidity Cover Stable": {
+            "bias": "Neutral",
+            "text": "Government liquidity cover conditions are broadly stable, indicating limited recent change in sovereign cash-flow resilience."
+        },
+        "Liquidity Cover Improving": {
+            "bias": "Growth Supportive",
+            "text": "Government liquidity cover conditions are improving, suggesting a stronger receipts cushion relative to financing demands."
+        }
+    },
+
+    "Public Debt Expansion": {
+        "Debt Expansion Rising": {
+            "bias": "Contraction Warning",
+            "text": "Public debt expansion is increasing relative to recent levels, suggesting growing sovereign balance sheet pressure and reduced room for fiscal flexibility."
+        },
+        "Debt Expansion Stable": {
+            "bias": "Neutral",
+            "text": "Public debt expansion is broadly stable, indicating little recent change in sovereign balance sheet growth."
+        },
+        "Debt Expansion Easing": {
+            "bias": "Growth Supportive",
+            "text": "Public debt expansion is easing relative to recent levels, suggesting a less aggressive pace of sovereign balance sheet accumulation."
+        }
+    },
+
+    "Central Bank Balance Sheet Expansion": {
+        "Balance Sheet Expanding": {
+            "bias": "Growth Supportive",
+            "text": "Central bank assets are expanding relative to recent levels, suggesting greater balance sheet support and a less constrained policy liquidity backdrop."
+        },
+        "Balance Sheet Stable": {
+            "bias": "Neutral",
+            "text": "Central bank assets are broadly stable, indicating little recent change in balance sheet support conditions."
+        },
+        "Balance Sheet Contracting": {
+            "bias": "Contraction Warning",
+            "text": "Central bank assets are contracting relative to recent levels, suggesting reduced balance sheet support and a potentially tighter system liquidity environment."
+        }
+    },
+
+    "System Financing Constraint": {
+        "Financing Constraint Tightening": {
+            "bias": "Contraction Warning",
+            "text": "System financing conditions are tightening, suggesting a more restrictive funding environment across sovereign balance sheet and refinancing structures."
+        },
+        "Financing Constraint Stable": {
+            "bias": "Neutral",
+            "text": "System financing conditions are broadly stable, indicating limited recent change in overall public financing constraint."
+        },
+        "Financing Constraint Easing": {
+            "bias": "Growth Supportive",
+            "text": "System financing conditions are easing, suggesting a somewhat less restrictive funding backdrop across the wider public balance sheet."
+        }
+    },
+
+    "Investment Grade Spread Pressure": {
+        "Investment Grade Pressure Rising": {
+            "bias": "Contraction Warning",
+            "text": "Investment grade credit spreads are widening relative to recent levels, suggesting tighter financing conditions and greater caution in higher-quality credit markets."
+        },
+        "Investment Grade Pressure Stable": {
+            "bias": "Neutral",
+            "text": "Investment grade credit spreads are broadly stable, indicating limited recent change in higher-quality financing conditions."
+        },
+        "Investment Grade Pressure Easing": {
+            "bias": "Growth Supportive",
+            "text": "Investment grade credit spreads are easing relative to recent levels, suggesting a more supportive financing backdrop in higher-quality credit markets."
+        }
+    },
+
+    "High Yield Spread Pressure": {
+        "High Yield Pressure Rising": {
+            "bias": "Contraction Warning",
+            "text": "High yield credit spreads are widening relative to recent levels, suggesting increased financing pressure and greater risk sensitivity across lower-quality credit markets."
+        },
+        "High Yield Pressure Stable": {
+            "bias": "Neutral",
+            "text": "High yield credit spreads are broadly stable, indicating little recent change in speculative-grade financing conditions."
+        },
+        "High Yield Pressure Easing": {
+            "bias": "Growth Supportive",
+            "text": "High yield credit spreads are easing relative to recent levels, suggesting some improvement in financing conditions across speculative-grade credit."
+        }
+    },
+
+    "Distressed Credit Pressure": {
+        "Distressed Pressure Rising": {
+            "bias": "Contraction Warning",
+            "text": "Distressed credit spreads are widening relative to recent levels, suggesting elevated financing strain and deeper stress in the lowest-quality credit tier."
+        },
+        "Distressed Pressure Stable": {
+            "bias": "Neutral",
+            "text": "Distressed credit spreads are broadly stable, indicating little recent change in the most vulnerable segment of credit conditions."
+        },
+        "Distressed Pressure Easing": {
+            "bias": "Growth Supportive",
+            "text": "Distressed credit spreads are easing relative to recent levels, suggesting some relief in the most stressed segment of the credit market."
+        }
+    },
+
+    "Bank Cash Liquidity Conditions": {
+        "Cash Liquidity Improving": {
+            "bias": "Growth Supportive",
+            "text": "Bank cash asset levels are improving relative to recent history, suggesting stronger near-term liquidity capacity within the banking system."
+        },
+        "Cash Liquidity Stable": {
+            "bias": "Neutral",
+            "text": "Bank cash asset levels are broadly stable, indicating limited recent change in banking system liquidity positioning."
+        },
+        "Cash Liquidity Weakening": {
+            "bias": "Contraction Warning",
+            "text": "Bank cash asset levels are weakening relative to recent history, suggesting reduced near-term liquidity flexibility within the banking system."
+        }
+    },
+
+    "Bank Asset Capacity": {
+        "Asset Capacity Expanding": {
+            "bias": "Growth Supportive",
+            "text": "Bank total asset capacity is expanding relative to recent levels, suggesting broader balance sheet support for financial intermediation and credit capacity."
+        },
+        "Asset Capacity Stable": {
+            "bias": "Neutral",
+            "text": "Bank total asset capacity is broadly stable, indicating little recent change in aggregate banking balance sheet scale."
+        },
+        "Asset Capacity Contracting": {
+            "bias": "Contraction Warning",
+            "text": "Bank total asset capacity is contracting relative to recent levels, suggesting a less supportive banking balance sheet environment for credit extension."
+        }
+    },
+
+    "Bank Defensive Positioning": {
+        "Defensive Positioning Rising": {
+            "bias": "Contraction Warning",
+            "text": "Holdings of treasury and agency securities are increasing relative to recent levels, suggesting a more defensive banking system positioning."
+        },
+        "Defensive Positioning Stable": {
+            "bias": "Neutral",
+            "text": "Holdings of treasury and agency securities are broadly stable, indicating limited recent change in defensive banking balance sheet posture."
+        },
+        "Defensive Positioning Easing": {
+            "bias": "Growth Supportive",
+            "text": "Holdings of treasury and agency securities are easing relative to recent levels, suggesting a somewhat less defensive banking system posture."
+        }
+    },
 }
 
 # -------------------------------------------------------------------------------------------------
