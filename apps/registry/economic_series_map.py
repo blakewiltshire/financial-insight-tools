@@ -5243,7 +5243,7 @@ ECONOMIC_SERIES_MAP = {
                     "value_type": "Component",
                     "country": "United Kingdom",
                     "source": "ONS",
-                    "source_url": "https://www.ons.gov.uk/businessindustryandtrade/internationaltrade/timeseries/p2te/mq10",
+                    "source_url": "https://www.ons.gov.uk/businessindustryandtrade/internationaltrade/timeseries/p2te",
                     "folder": "100_gdp",
                     "filename": "uk_q_100_structural.csv",
                     "release_schedule_final": "85 days after quarter-end (ONS Quarterly National Accounts)",
@@ -5269,7 +5269,7 @@ ECONOMIC_SERIES_MAP = {
                     "value_type": "Component",
                     "country": "United Kingdom",
                     "source": "ONS",
-                    "source_url": "https://www.ons.gov.uk/businessindustryandtrade/internationaltrade/timeseries/p27i/mq10",
+                    "source_url": "https://www.ons.gov.uk/businessindustryandtrade/internationaltrade/timeseries/p27i",
                     "folder": "100_gdp",
                     "filename": "uk_q_100_structural.csv",
                     "release_schedule_final": "85 days after quarter-end (ONS Quarterly National Accounts)",
@@ -7671,7 +7671,7 @@ ECONOMIC_SERIES_MAP = {
                     "release_schedule_final": "Derived from standard ABS GDP release calendar (quarterly, ~65–70 days lag)",
                     "note": "This series captures the total market value of all goods and services produced "
                     "in Australia, measured in current prices without adjusting for inflation."
-                    "Table 2 or Table 6 depending on aggregation",
+                    "Table 1. Key National Accounts Aggregates",
                     "allow_correlation": True,
                     "allow_relative_macro_transmission": True,
                     "relative_series_type": "macro",
