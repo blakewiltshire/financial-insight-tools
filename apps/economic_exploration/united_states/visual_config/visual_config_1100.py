@@ -448,7 +448,7 @@ def plot_aear_vs_central_bank_funds_rate_chart(
     overlay = _build_standardised_overlay(
         aear_df=df_quarterly,
         comparator_df=df_monthly,
-        comparator_col="Central Bank Funds Rate",
+        comparator_col="Central Bank Policy Rate",
     )
 
     if overlay.empty:
@@ -465,13 +465,13 @@ def plot_aear_vs_central_bank_funds_rate_chart(
 
     fig.add_trace(go.Scatter(
         x=overlay["date"],
-        y=overlay["Central Bank Funds Rate"],
+        y=overlay["Central Bank Policy Rate"],
         mode="lines",
-        name="Central Bank Funds Rate",
+        name="Central Bank Policy Rate",
     ))
 
     fig.update_layout(
-        title="AEAR vs Central Bank Funds Rate",
+        title="AEAR vs Central Bank Policy Rate",
         xaxis_title="Date",
         yaxis_title="Standardised Level",
         height=420,
@@ -591,7 +591,7 @@ def render_all_charts_local(selected_use_case, tabs_dict, tab_mapping, df_map):
                         "AEAR",
                         "AEAR vs Country Equity Proxy",
                         "AEAR vs Long-Term Sovereign Yield (10Y)",
-                        "AEAR vs Central Bank Funds Rate",
+                        "AEAR vs Central Bank Policy Rate",
                     ])
 
                     with inner1:
@@ -626,7 +626,7 @@ def render_all_charts_local(selected_use_case, tabs_dict, tab_mapping, df_map):
 
                     with inner4:
                         st.caption(
-                            "📌 Standardised comparison of full-history AEAR and quarterly-aligned Central Bank Funds Rate."
+                            "📌 Standardised comparison of full-history AEAR and quarterly-aligned Central Bank Policy Rate."
                         )
                         display_chart_with_fallback(
                             plot_aear_vs_central_bank_funds_rate_chart(
