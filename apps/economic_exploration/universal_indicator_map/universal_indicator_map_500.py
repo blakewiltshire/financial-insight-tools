@@ -187,15 +187,15 @@ options_money_supply_and_velocity_dynamics_map = {
 # -------------------------------------------------------------------------------------------------
 def policy_rate_positioning_signal(df, period=12):
     """
-    Evaluates the central bank funds rate relative to the recent average.
+    Evaluates the central bank policy rate relative to the recent average.
 
     Returns:
         str: Policy rate positioning signal.
     """
-    if df is None or "Central Bank Funds Rate" not in df.columns:
+    if df is None or "Central Bank Policy Rate" not in df.columns:
         return "Insufficient Data"
 
-    series = df["Central Bank Funds Rate"].dropna()
+    series = df["Central Bank Policy Rate"].dropna()
     if len(series) < period:
         return "Insufficient Data"
 
@@ -312,10 +312,10 @@ def real_policy_rate_proxy_signal(df, period=12):
     Returns:
         str: Real policy rate proxy signal.
     """
-    if df is None or "Proxy Central Bank Funds Rate" not in df.columns:
+    if df is None or "Policy Rate Proxy" not in df.columns:
         return "Insufficient Data"
 
-    series = df["Proxy Central Bank Funds Rate"].dropna()
+    series = df["Policy Rate Proxy"].dropna()
     if len(series) < period:
         return "Insufficient Data"
 
