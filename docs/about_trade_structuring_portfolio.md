@@ -5,6 +5,7 @@ The **Trade & Portfolio Structuring suite** provides a modular workflow for desi
 This dashboard serves as the entry point to the suite’s core modules:
 
 - **Market & Volatility Scanner:** Screen for volatility signals, dispersion shifts, and asset-level anomalies
+- **Company Structure Review:** Compare valuation, growth, profitability, and market expectation metrics across companies and peer groups
 - **Asset Snapshot Scanner:** Inspect preloaded or user-defined assets for structural trends
 - **Trade Timing & Confirmation:** Assess alignment across timeframes and timing setups
 - **Price Action & Trend Confirmation:** Explore momentum signals, trend quality, and reversal patterns

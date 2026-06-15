@@ -169,13 +169,13 @@ with col1:
         st.markdown("### Kelly Criterion Calculator")
         st.write("Estimate optimal bet sizing for expected value.")
         if st.button("Kelly Criterion Calculator"):
-            st.switch_page("pages/16_kelly_criterion.py")
+            st.switch_page("pages/17_kelly_criterion.py")
 with col2:
     with st.container(border=True):
         st.markdown("### Compounding Calculator")
         st.write("Visualise the impact of recurring investment growth.")
         if st.button("Compounding Calculator"):
-            st.switch_page("pages/17_compounding_calculator.py")
+            st.switch_page("pages/18_compounding_calculator.py")
 
 col1, col2 = st.columns(2, gap="small")
 
@@ -184,13 +184,13 @@ with col1:
         st.markdown("### Break-Even Distance Calculator")
         st.write("Calculate the move needed to reach profitability.")
         if st.button("Break-Even Distance Calculator"):
-            st.switch_page("pages/18_break-even_distance_calculator.py")
+            st.switch_page("pages/19_break-even_distance_calculator.py")
 with col2:
     with st.container(border=True):
         st.markdown("### ATR-Based Stop Calculator")
         st.write("Calculate volatility-based stop-loss buffers.")
         if st.button("ATR-Based Stop Calculator"):
-            st.switch_page("pages/19_atr_based_stop_calculator.py")
+            st.switch_page("pages/20_atr_based_stop_calculator.py")
 
 col1, col2 = st.columns(2, gap="small")
 
@@ -199,13 +199,13 @@ with col1:
         st.markdown("### Value at Risk (VaR) Calculator")
         st.write("Quantify potential downside under normal conditions.")
         if st.button("Value at Risk (VaR) Calculator"):
-            st.switch_page("pages/20_var_calculator.py")
+            st.switch_page("pages/21_var_calculator.py")
 with col2:
     with st.container(border=True):
         st.markdown("### Standard Deviation Calculator")
         st.write("Evaluate variability for target or buffer setting.")
         if st.button("Standard Deviation Calculator"):
-            st.switch_page("pages/21_standard_deviation_calculator.py")
+            st.switch_page("pages/22_standard_deviation_calculator.py")
 
 col1, col2 = st.columns(2, gap="small")
 
@@ -214,13 +214,13 @@ with col1:
         st.markdown("### Data Cleaner & Inspector")
         st.write("Upload and review financial data for errors.")
         if st.button("Data Cleaner & Inspector"):
-            st.switch_page("pages/22_data_cleaner_and_inspector.py")
+            st.switch_page("pages/23_data_cleaner_and_inspector.py")
 with col2:
     with st.container(border=True):
         st.markdown("### Historical Data Currency Converter")
         st.write("Convert OHLC pricing to a consistent currency.")
         if st.button("Launch Currency Converter"):
-            st.switch_page("pages/23_historical_data_currency_converter.py")
+            st.switch_page("pages/24_historical_data_currency_converter.py")
 
 
 # -------------------------------------------------------------------------------------------------

@@ -13,7 +13,7 @@ Trade & Portfolio Structuring — Insight Launcher
 Modular dashboard for managing trade workflows and post-trade portfolio diagnostics
 within the Financial Insight Tools suite.
 
-Unlike other launchers (e.g., 🌍 Economic Exploration), this app uses
+Unlike other launchers (e.g., Economic Exploration), this app uses
 **inline page transitions** via `st.switch_page()` — enabling seamless movement
 between modules without launching subprocesses.
 
@@ -35,7 +35,7 @@ Structure
 User Considerations
 - Single Streamlit session: fast transitions without window switching
 - Ideal for end-to-end trade workflows in one tab
-- For multi-window work, use 🚀 Financial Insight Tools launcher
+- For multi-window work, use Financial Insight Tools launcher
 
 Developer Notes
 - All tools are self-contained and aligned with shared interface logic
@@ -186,52 +186,50 @@ with col1:
         st.markdown("### Asset Snapshot Scanner")
         st.write("Summarise metrics across asset categories.")
         if st.button("Open Asset Snapshot Scanner", key="open_asset_snapshot"):
-            st.switch_page("pages/04_asset_snapshot_generator.py")
-
-with col2:
-    with st.container(border=True):
-        st.markdown("### Trade Timing & Confirmation")
-        st.write("Confirm timing signals and technical strength.")
-        if st.button("Open Trade Timing & Confirmation", key="open_trade_timing"):
-            st.switch_page("pages/05_trade_timing_and_confirmation.py")
+            st.switch_page("pages/05_asset_snapshot_generator.py")
 
     with st.container(border=True):
         st.markdown("### Price Action & Trend Confirmation")
         st.write("Reinforce trend logic through structure analysis.")
         if st.button("Open Price Action & Trend Confirmation", key="open_price_action"):
-            st.switch_page("pages/06_price_action_and_trend_confirmation.py")
+            st.switch_page("pages/07_price_action_and_trend_confirmation.py")
 
-col1, col2 = st.columns(2, gap="small")
-
-with col1:
-    with st.container(border=True):
-        st.markdown("### Trade Structuring & Risk Planning")
-        st.write("Build trades with sizing and margin logic.")
-        if st.button("Open Trade Structuring & Risk Planning", key="open_trade_structuring"):
-            st.switch_page("pages/07_trade_structuring_and_risk_planning.py")
-
-with col2:
     with st.container(border=True):
         st.markdown("### User Asset Manager")
         st.write("Inspect and snapshot your own datasets.")
         if st.button("Open User Asset Manager", key="open_user_asset_manager"):
-            st.switch_page("pages/08_user_asset_manager.py")
+            st.switch_page("pages/09_user_asset_manager.py")
 
-col1, col2 = st.columns(2, gap="small")
-
-with col1:
-    with st.container(border=True):
-        st.markdown("### Trade History & Strategy")
-        st.write("Review, validate, and learn from past trades.")
-        if st.button("Open Trade History & Strategy", key="open_trade_history"):
-            st.switch_page("pages/09_trade_history_and_strategy.py")
-
-with col2:
     with st.container(border=True):
         st.markdown("### Live Portfolio Monitor")
         st.write("Track current positioning and risk exposure.")
         if st.button("Open Live Portfolio Monitor", key="open_live_portfolio"):
-            st.switch_page("pages/10_live_portfolio_monitor.py")
+            st.switch_page("pages/11_live_portfolio_monitor.py")
+
+with col2:
+    with st.container(border=True):
+        st.markdown("### Company Structure Review")
+        st.write("Compare valuation, growth, quality, and market expectations across companies.")
+        if st.button("Open Company Structure Review", key="open_company_structure_review"):
+            st.switch_page("pages/04_company_structure_review.py")
+
+    with st.container(border=True):
+        st.markdown("### Trade Timing & Confirmation")
+        st.write("Confirm timing signals and technical strength.")
+        if st.button("Open Trade Timing & Confirmation", key="open_trade_timing"):
+            st.switch_page("pages/06_trade_timing_and_confirmation.py")
+
+    with st.container(border=True):
+        st.markdown("### Trade Structuring & Risk Planning")
+        st.write("Build trades with sizing and margin logic.")
+        if st.button("Open Trade Structuring & Risk Planning", key="open_trade_structuring"):
+            st.switch_page("pages/08_trade_structuring_and_risk_planning.py")
+
+    with st.container(border=True):
+        st.markdown("### Trade History & Strategy")
+        st.write("Review, validate, and learn from past trades.")
+        if st.button("Open Trade History & Strategy", key="open_trade_history"):
+            st.switch_page("pages/10_trade_history_and_strategy.py")
 
 # -------------------------------------------------------------------------------------------------
 # Footer

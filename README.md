@@ -1,8 +1,8 @@
 # Financial Insight Tools (FIT) — Structured Financial Reasoning Environment
 
-Financial Insight Tools (FIT) is a modular research environment for exploring financial markets, macroeconomic structure, portfolio construction, cross-asset relationships, transmission dynamics, positioning structure, and structured decision workflows through a consistent analytical model.
+Financial Insight Tools (FIT) is a modular research environment for exploring financial markets, macroeconomic structure, portfolio construction, cross-asset relationships, transmission dynamics, positioning structure, company analysis, and structured reasoning workflows through a consistent analytical framework.
 
-FIT provides consistent structure across distribution analysis, trade modelling, macroeconomic exploration, thematic correlation, relative macro transmission, positioning analysis, and observation capture so that material can be examined, aligned, and carried forward into documentation, research workflows, or AI-assisted reasoning environments.
+FIT provides consistent structure across distribution analysis, trade modelling, macroeconomic exploration, thematic correlation, relative macro transmission, positioning analysis, company structure review, and observation capture so that information can be organised, examined, aligned, and carried forward into documentation, research workflows, or AI-assisted reasoning environments.
 
 ---
 
@@ -115,6 +115,7 @@ These modules frame macro conditions, systemic relationships, transmission pathw
 ### Financial Application
 
 - Market & Volatility Scanner
+- Company Structure Review
 - Asset Snapshot Generator
 - Trade Timing & Confirmation
 - Price Action & Trend Confirmation

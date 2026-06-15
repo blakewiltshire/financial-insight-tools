@@ -60,6 +60,8 @@ asset_files = {
         "equities_constituents", "Visa A Stock Price History.csv"),#v - https://www.investing.com/equities/visa-inc-historical-data
         "Walt Disney Company (Communication Services)": resolve_data_file_path(
         "equities_constituents", "Walt Disney Stock Price History.csv"),#dis - https://www.investing.com/equities/disney-historical-data
+        # "SpaceX (Communication Services)": resolve_data_file_path(
+        # "equities_constituents", "SpaceX Stock Price History.csv"),#spcx - https://www.investing.com/equities/spacex-historical-data
     },
     "Market Indices": {
         "VIX": resolve_data_file_path(

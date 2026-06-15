@@ -96,7 +96,7 @@ from relative_transmission_interpretation import (  # pylint: disable=import-err
 # -------------------------------------------------------------------------------------------------
 # Macro Interaction Tools — Sidebar + Observation Panel Integration
 # -------------------------------------------------------------------------------------------------
-from render_macro_interaction_tools_panel_intermarket_correlation import render_macro_interaction_tools_panel
+from render_macro_interaction_tools_panel_relative_macro_transmission import render_macro_interaction_tools_panel
 from macro_insight_sidebar_panel_relative_macro_transmission import render_macro_sidebar_tools
 
 from observation_handler_relative_macro_transmission import (
@@ -407,7 +407,7 @@ def _classify_surface_type(item):
 
     if "Sector" in label or "Market Volatility Index" in label:
         return "market_structure"
-        
+
     return None
 
 

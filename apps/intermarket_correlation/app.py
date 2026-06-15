@@ -172,14 +172,14 @@ with col1:
         st.markdown("### Cross-Asset Correlation")
         st.write("Explore correlation strength between asset classes.")
         if st.button("Explore Cross-Asset Correlations"):
-            st.switch_page("pages/11_cross_asset_correlation.py")
+            st.switch_page("pages/12_cross_asset_correlation.py")
 
 with col2:
     with st.container(border=True):
         st.markdown("### Spread & Ratio Insights")
         st.write("Analyse relative pricing across instruments and themes.")
         if st.button("Launch Spread & Ratio Analysis"):
-            st.switch_page("pages/12_spread_ratio_insights.py")
+            st.switch_page("pages/13_spread_ratio_insights.py")
 
 col1, col2 = st.columns(2, gap="small")
 
@@ -188,14 +188,14 @@ with col1:
         st.markdown("### Correlation Heatmaps & Themes")
         st.write("Visualise multi-asset correlation matrices by theme.")
         if st.button("View Heatmaps & Macro Themes"):
-            st.switch_page("pages/13_correlation_heatmaps_and_themes.py")
+            st.switch_page("pages/14_correlation_heatmaps_and_themes.py")
 
 with col2:
     with st.container(border=True):
         st.markdown("### Relative Macro Transmission")
         st.write("Track exogenous differentials across systems, including growth, rates, spreads, FX pressure, and macro-asset divergence.")
         if st.button("Launch Relative Macro Transmission"):
-            st.switch_page("pages/14_relative_macro_transmission.py")
+            st.switch_page("pages/15_relative_macro_transmission.py")
 
 col1, col2 = st.columns(2, gap="small")
 
@@ -204,7 +204,7 @@ with col1:
         st.markdown("### Positioning & Crowding")
         st.write("Review leveraged positioning, crowding, percentile extremes, and flip behaviour across core futures markets.")
         if st.button("Launch Positioning & Crowding"):
-            st.switch_page("pages/15_positioning_and_crowding.py")
+            st.switch_page("pages/16_positioning_and_crowding.py")
 
 with col2:
     st.empty()

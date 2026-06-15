@@ -46,7 +46,7 @@ def get_preloaded_assets():
             "Coca-Cola (Consumer Staples)", "Exxon Mobil (Energy)", "Visa (Financials)",
             "Pfizer (Health Care)", "Boeing Co (Industrials)", "Linde Plc (Materials)",
             "Prologis Inc (Real Estate)", "Oracle Corp (Technology)",
-            "NextEra Energy Inc (Utilities)"
+            "NextEra Energy Inc (Utilities)" # "SpaceX (Communication Services)"
         ],
         "Market Indices": [
             "VIX", "Euro Stoxx 50", "FTSE 100", "MSCI World", "Nasdaq 100", "S&P 500",
