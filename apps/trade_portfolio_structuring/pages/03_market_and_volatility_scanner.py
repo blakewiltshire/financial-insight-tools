@@ -953,7 +953,16 @@ for header, (options_map, categories) in options_maps.items():
                     st.info("Correlation analysis can only be applied to the 'Interday' timeline.")
                 else:
                     if 'return' in filtered_df.columns:
-                        correlation_df, volatility_df, returns_df = data_loader_function()
+                        try:
+                            correlation_df, volatility_df, returns_df = data_loader_function()
+                        except ValueError as e:
+                            if "No objects to concatenate" in str(e):
+                                st.info(
+                                    "This comparison group could not be loaded in the current custom/user asset context. "
+                                    "For custom comparison assets, please use Correlation with User Uploads."
+                                )
+                                continue
+                            raise
 
                         correlation_data_df = pd.merge(
                             correlation_df,
@@ -1196,7 +1205,16 @@ for header, (options_map, categories) in options_maps.items():
                 else:
                     if 'return' in filtered_df.columns:
                         # Dynamically load the data for the selected option
-                        correlation_df, volatility_df, returns_df = data_loader_function()
+                        try:
+                            correlation_df, volatility_df, returns_df = data_loader_function()
+                        except ValueError as e:
+                            if "No objects to concatenate" in str(e):
+                                st.info(
+                                    "This comparison group could not be loaded in the current custom/user asset context. "
+                                    "For custom comparison assets, please use Returns with User Uploads."
+                                )
+                                continue
+                            raise
 
                         # Ensure 'date' and 'return' are in the merged data
                         if 'date' in filtered_df.columns and 'return' in filtered_df.columns:
