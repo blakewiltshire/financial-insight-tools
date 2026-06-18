@@ -1,13 +1,13 @@
 # -------------------------------------------------------------------------------------------------
-# Observation Handler — Company Structure Review.
+# Observation Handler — Market Structure Review.
 # -------------------------------------------------------------------------------------------------
 # pylint: disable=import-error, wrong-import-position, wrong-import-order
 
 """
-Handles observation storage, retrieval, and log editing for Company Structure Review.
+Handles observation storage, retrieval, and log editing for Market Structure Review.
 
 Observations are saved centrally to:
-/observation_engine/storage/user_observations/trade_portfolio_structuring/company_structure_review/default__company_structure_review__user_observations.csv
+/observation_engine/storage/user_observations/trade_portfolio_structuring/market_structure_review/default__market_structure_review__user_observations.csv
 """
 
 import os
@@ -23,8 +23,8 @@ import streamlit as st
 CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
 STORAGE_FOLDER = os.path.join(CURRENT_DIR, "storage")
 USER_OBSERVATION_FOLDER = os.path.join(STORAGE_FOLDER, "user_observations")
-MODULE_TYPE = "trade_portfolio_structuring/company_structure_review"
-FIXED_FILENAME = "default__company_structure_review__user_observations.csv"
+MODULE_TYPE = "trade_portfolio_structuring/market_structure_review"
+FIXED_FILENAME = "default__market_structure_review__user_observations.csv"
 
 # -------------------------------------------------------------------------------------------------
 # Ensure Folder Exists
@@ -44,7 +44,7 @@ def observation_input_form(
     form_key: str = "observation_form"
 ) -> None:
     """
-    Renders the observation input form and saves entries with company-structure metadata.
+    Renders the observation input form and saves entries with market-structure metadata.
     """
 
     clear_key = f"{form_key}_clear"
@@ -59,9 +59,9 @@ def observation_input_form(
         st.subheader("Record Your Observation")
 
         st.caption(
-            "**Observation Text** — Record an insight linked to the selected company group. "
-            "Highlight valuation, growth, profitability, peer positioning, market scepticism, "
-            "or any factor that may affect interpretation."
+            "**Observation Text** — Record an insight linked to the selected market "
+            "structure review. Consider ownership, float, supply events, index eligibility, "
+            "institutional participation, liquidity, or price-discovery context."
         )
 
         observation_text = st.text_area(
@@ -72,7 +72,7 @@ def observation_input_form(
 
         st.caption(
             "**Relevance Level** — How important is this observation for the current "
-            "company structure review?"
+            "market structure review?"
         )
 
         relevance_tag = st.selectbox(
@@ -80,8 +80,8 @@ def observation_input_form(
             [
                 "None",
                 "Initial Observation",
-                "Relevant to Peer Review",
-                "Material Structural Consideration",
+                "Relevant to Structure Review",
+                "Material Market Structure Consideration",
             ],
             key=f"{form_key}_relevance"
         )
@@ -118,26 +118,28 @@ def observation_input_form(
         )
 
         st.caption(
-            "**Optional Tags** — Attach tags to improve future AI referencing and "
+            "**Optional Tags** — Attach tags to improve future referencing and "
             "cross-context mapping."
         )
 
         optional_tags = st.multiselect(
             "Optional Tags",
             [
-                "Valuation",
-                "Growth",
-                "Profitability",
-                "Operating Margin",
-                "Peer Comparison",
-                "Market Expectations",
-                "Short Interest",
-                "Market Scepticism",
-                "Outlier",
-                "AI Review",
-                "Equities",
-                "Sector Comparison",
-                "Company Quality",
+                "Ownership Structure",
+                "Float Structure",
+                "Supply Events",
+                "Supply Expansion",
+                "Lock-Up Expiration",
+                "Employee Sale Window",
+                "Secondary Offering",
+                "Direct Listing",
+                "Index Eligibility",
+                "Institutional Participation",
+                "Liquidity",
+                "Price Discovery",
+                "IPO Structure",
+                "Market Participation",
+                "Ownership Concentration",
                 "User Assumption",
             ],
             key=f"{form_key}_tags"
@@ -156,6 +158,7 @@ def observation_input_form(
                 tags=optional_tags
             )
             st.success("Observation saved.")
+
 
 # -------------------------------------------------------------------------------------------------
 # Save Observation Entry

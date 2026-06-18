@@ -183,10 +183,10 @@ with col1:
             st.switch_page("pages/03_market_and_volatility_scanner.py")
 
     with st.container(border=True):
-        st.markdown("### Asset Snapshot Scanner")
-        st.write("Summarise metrics across asset categories.")
-        if st.button("Open Asset Snapshot Scanner", key="open_asset_snapshot"):
-            st.switch_page("pages/05_asset_snapshot_generator.py")
+        st.markdown("### Market Structure Review")
+        st.write("Review ownership, float, supply events, participation, and index context around selected assets.")
+        if st.button("Open Market Structure Review", key="open_market_structure_review"):
+            st.switch_page("pages/05_market_structure_review.py")
 
     with st.container(border=True):
         st.markdown("### Price Action & Trend Confirmation")
@@ -195,16 +195,16 @@ with col1:
             st.switch_page("pages/07_price_action_and_trend_confirmation.py")
 
     with st.container(border=True):
-        st.markdown("### User Asset Manager")
-        st.write("Inspect and snapshot your own datasets.")
-        if st.button("Open User Asset Manager", key="open_user_asset_manager"):
-            st.switch_page("pages/09_user_asset_manager.py")
+        st.markdown("### Asset Snapshot Scanner")
+        st.write("Summarise metrics across asset categories.")
+        if st.button("Open Asset Snapshot Scanner", key="open_asset_snapshot"):
+            st.switch_page("pages/09_asset_snapshot_generator.py")
 
     with st.container(border=True):
-        st.markdown("### Live Portfolio Monitor")
-        st.write("Track current positioning and risk exposure.")
-        if st.button("Open Live Portfolio Monitor", key="open_live_portfolio"):
-            st.switch_page("pages/11_live_portfolio_monitor.py")
+        st.markdown("### Trade History & Strategy")
+        st.write("Review, validate, and learn from past trades.")
+        if st.button("Open Trade History & Strategy", key="open_trade_history"):
+            st.switch_page("pages/11_trade_history_and_strategy.py")
 
 with col2:
     with st.container(border=True):
@@ -226,10 +226,16 @@ with col2:
             st.switch_page("pages/08_trade_structuring_and_risk_planning.py")
 
     with st.container(border=True):
-        st.markdown("### Trade History & Strategy")
-        st.write("Review, validate, and learn from past trades.")
-        if st.button("Open Trade History & Strategy", key="open_trade_history"):
-            st.switch_page("pages/10_trade_history_and_strategy.py")
+        st.markdown("### User Asset Manager")
+        st.write("Inspect and snapshot your own datasets.")
+        if st.button("Open User Asset Manager", key="open_user_asset_manager"):
+            st.switch_page("pages/10_user_asset_manager.py")
+
+    with st.container(border=True):
+        st.markdown("### Live Portfolio Monitor")
+        st.write("Track current positioning and risk exposure.")
+        if st.button("Open Live Portfolio Monitor", key="open_live_portfolio"):
+            st.switch_page("pages/12_live_portfolio_monitor.py")
 
 # -------------------------------------------------------------------------------------------------
 # Footer
