@@ -1,8 +1,8 @@
 # Financial Insight Tools (FIT) — Structured Financial Reasoning Environment
 
-Financial Insight Tools (FIT) is a modular research environment for exploring financial markets, macroeconomic structure, portfolio construction, cross-asset relationships, transmission dynamics, positioning structure, company analysis, and structured reasoning workflows through a consistent analytical framework.
+Financial Insight Tools (FIT) is a modular research environment for exploring financial markets, macroeconomic structure, portfolio construction, cross-asset relationships, transmission dynamics, positioning structure, company structure, market structure, and structured reasoning workflows through a consistent analytical framework.
 
-FIT provides consistent structure across distribution analysis, trade modelling, macroeconomic exploration, thematic correlation, relative macro transmission, positioning analysis, company structure review, and observation capture so that information can be organised, examined, aligned, and carried forward into documentation, research workflows, or AI-assisted reasoning environments.
+FIT provides consistent structure across distribution analysis, trade modelling, macroeconomic exploration, thematic correlation, relative macro transmission, positioning analysis, company structure review, market structure review, and observation capture so that information can be organised, examined, aligned, and carried forward into documentation, research workflows, or AI-assisted reasoning environments.
 
 ---
 
@@ -116,6 +116,7 @@ These modules frame macro conditions, systemic relationships, transmission pathw
 
 - Market & Volatility Scanner
 - Company Structure Review
+- Market Structure Review
 - Asset Snapshot Generator
 - Trade Timing & Confirmation
 - Price Action & Trend Confirmation
@@ -124,7 +125,7 @@ These modules frame macro conditions, systemic relationships, transmission pathw
 - Cross Asset Correlation
 - Live Portfolio Monitor
 
-These modules apply structural context to scenario analysis, portfolio framing, and market inspection.
+These modules apply structural context to business analysis, ownership and supply review, scenario analysis, portfolio framing, and market inspection.
 
 ---
 
@@ -235,9 +236,40 @@ Provides quantitative grounding for downstream modelling.
 
 ---
 
+### Company Structure Review — Valuation & Business Structure
+
+![Company Structure](docs/screenshots/07-company-structure-review.png)
+
+A structural view across valuation, profitability, efficiency, and business performance characteristics:
+
+- valuation and earnings structure
+- profitability and margin behaviour
+- capital efficiency metrics
+- comparative company analysis
+
+Supports examination of how market pricing aligns with business performance, growth expectations, and operational characteristics.
+
+---
+
+### Market Structure Review — Ownership, Supply & Participation
+
+![Market Structure](docs/screenshots/08-market-structure-review.png)
+
+A structural view across ownership, available supply, liquidity formation, and participation pathways:
+
+- ownership and control structure
+- float and supply-release conditions
+- secondary supply events and lockup structures
+- institutional participation and index-eligibility pathways
+
+Supports review of how market access, tradable supply, and participation mechanisms may evolve through time.
+
+---
+
+
 ### Trade Structuring & Risk Planning — Scenario Architecture
 
-![Trade Structuring](docs/screenshots/07-trade-structuring.png)
+![Trade Structuring](docs/screenshots/09-trade-structuring.png)
 
 A structured view across trade construction and risk framing:
 
@@ -252,7 +284,7 @@ Supports analytical evaluation without automating execution.
 
 ### Build Export Bundle — Structured Artefact Assembly
 
-![Export Bundle](docs/screenshots/08-export-bundle.png)
+![Export Bundle](docs/screenshots/10-export-bundle.png)
 
 The export module organises analytical components into structured bundles for documentation, research artefacts, and AI-assisted workflows.
 
@@ -262,13 +294,21 @@ Outputs preserve linkage to the underlying analytical structure.
 
 ## Where to Start
 
+- **Market & Volatility Scanner** — distribution structure and regime context
+- **Company Structure Review** — valuation, profitability, efficiency, and comparative business structure analysis
+- **Market Structure Review** — ownership, float, supply events, liquidity pathways, and participation structure
+- **Trade Timing & Confirmation** — multi-timeframe alignment, confirmation conditions, and timing context
+- **Price Action & Trend Confirmation** — trend structure, momentum characteristics, and directional behaviour
+- **Trade Structuring & Risk Planning** — scenario modelling, exposure calibration, and risk framing
+
+Additional system-wide exploration modules include:
+
 - **Economic Exploration** — macro system structure and country-level diagnostics
 - **Thematic Correlation** — relationship mapping across macroeconomic themes
 - **Relative Macro Transmission** — exogenous differential analysis and regime divergence
 - **Positioning & Crowding** — leveraged positioning, percentile extremes, and positioning turns
-- **Market & Volatility Scanner** — distribution structure and regime context
-- **Trade Structuring & Risk Planning** — scenario modelling and exposure framing
-- **Observation & Export** — structured artefact assembly for documentation and AI workflows
+
+- **Observation & Export** — structured artefact assembly, observation capture, and AI-ready workflows
 
 Each module presents a different perspective on the same underlying analytical framework without fragmenting or redefining it.
 
