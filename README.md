@@ -128,12 +128,13 @@ Relationship Manager supports the exploration of how observations, themes, busin
 - Asset Snapshot Generator
 - Trade Timing & Confirmation
 - Price Action & Trend Confirmation
-- Trade Structuring & Risk Planning
+- Watchlist, Trade Structuring & Risk Planning
 - Spread Ratio Insights
 - Cross Asset Correlation
 - Live Portfolio Monitor
 
-These modules apply structural context to company analysis, market behaviour, scenario analysis, portfolio framing, and market inspection.
+
+These modules support candidate asset review, market examination, watchlist development, scenario analysis, portfolio framing, and structured trade planning.
 
 ---
 
@@ -275,18 +276,19 @@ Supports review of how market access, tradable supply, and participation mechani
 ---
 
 
-### Trade Structuring & Risk Planning — Scenario Architecture
+### Watchlist, Trade Structuring & Risk Planning — Scenario Architecture
 
 ![Trade Structuring](docs/screenshots/09-trade-structuring.png)
 
-A structured view across trade construction and risk framing:
+A structured environment for maintaining watchlists, developing trade ideas, and examining risk and reward scenarios.
 
-- entry and stop structure
-- exposure calibration
-- position sensitivity
+- watchlist and idea management
+- candidate asset tracking
+- exposure and position planning
 - scenario-based evaluation
+- structured risk framing
 
-Supports analytical evaluation without automating execution.
+Supports the progression from candidate assets to structured market investigation.
 
 ---
 
