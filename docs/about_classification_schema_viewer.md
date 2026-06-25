@@ -5,9 +5,9 @@ This module enables structured exploration of classification systems, governance
 ---
 
 **Purpose**
-• Review country-level classifications (e.g. political stability, forum membership, and market ratings)
-• Explore crosswalks between company identifiers, listing venues, and structural classifications
-• Support internal verification, schema alignment, and contextual flagging for integration into downstream filters and tools
+- Review country-level classifications (e.g. political stability, forum membership, and market ratings)
+- Explore crosswalks between company identifiers, listing venues, and structural classifications
+- Support internal verification, schema alignment, and contextual flagging for integration into downstream filters and tools
 
 ---
 

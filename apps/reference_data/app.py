@@ -144,14 +144,18 @@ col1, col2 = st.columns(2, gap="small")
 with col1:
     with st.container(border=True):
         st.markdown("### Institutional Reference Directory")
-        st.write("Directory of market data platforms, regulators, and statistical portals.")
+        st.write(
+            "Directory of market data platforms, regulators, and statistical portals."
+        )
         if st.button("Launch Institutional Directory"):
             st.switch_page("pages/25_institutional_reference_directory.py")
 
 with col2:
     with st.container(border=True):
         st.markdown("### Classification Schema Viewer")
-        st.write("Visualise economic/industry classification hierarchies.")
+        st.write(
+            "Explore economic, market, sector, industry, and company classifications."
+        )
         if st.button("Launch Classification Viewer"):
             st.switch_page("pages/26_classification_schema_viewer.py")
 
@@ -159,15 +163,30 @@ col1, col2 = st.columns(2, gap="small")
 
 with col1:
     with st.container(border=True):
-        st.markdown("### AI Persona Reference")
-        st.write("Centralised repository of role definitions and exploration frameworks.")
-        if st.button("AI Persona Reference"):
-            st.switch_page("pages/27_ai_persona_reference.py")
+        st.markdown("### Relationship Manager")
+        st.write(
+            "Explore how observations, themes, and narratives may connect to business capabilities and potential market exposures."
+        )
+        if st.button("Launch Relationship Manager"):
+            st.switch_page("pages/29_relationship_manager.py")
 
 with col2:
     with st.container(border=True):
+        st.markdown("### AI Persona Reference")
+        st.write(
+            "Centralised repository of role definitions and exploration frameworks."
+        )
+        if st.button("AI Persona Reference"):
+            st.switch_page("pages/27_ai_persona_reference.py")
+
+col1, col2 = st.columns(2, gap="small")
+
+with col1:
+    with st.container(border=True):
         st.markdown("### Index & Glossary Viewer")
-        st.write("Alphabetical cross-reference of key concepts, terms, and chapter references.")
+        st.write(
+            "Alphabetical cross-reference of key concepts, terms, and chapter references."
+        )
         if st.button("Index & Glossary Viewer"):
             st.switch_page("pages/28_index_glossary_viewer.py")
 

@@ -1,0 +1,213 @@
+relationship_tags:
+- relationship_tag: advertising_cycle
+  relationship_group: Media / Digital
+  description: Exposure to advertising demand, marketing budgets or digital advertising cycles.
+  status: v1_draft
+- relationship_tag: agriculture_cycle
+  relationship_group: Agriculture
+  description: Agricultural demand, crop cycles, farm equipment or inputs.
+  status: v1_draft
+- relationship_tag: ai_adoption
+  relationship_group: Technology
+  description: Exposure to adoption of AI capabilities in products, platforms or operations.
+  status: v1_draft
+- relationship_tag: ai_disruption
+  relationship_group: Technology / Services
+  description: Potential disruption or productivity compression from AI adoption.
+  status: v1_draft
+- relationship_tag: ai_infrastructure
+  relationship_group: Technology / Infrastructure
+  description: AI infrastructure, compute demand, cloud capacity and supporting systems.
+  status: v1_draft
+- relationship_tag: capital_expenditure
+  relationship_group: Industrial / Investment
+  description: Capital spending, equipment replacement, investment cycles and industrial capex.
+  status: v1_draft
+- relationship_tag: catastrophe_risk
+  relationship_group: Insurance / Climate
+  description: Exposure to property, catastrophe, weather or insured loss events.
+  status: v1_draft
+- relationship_tag: commodity_supply
+  relationship_group: Commodities
+  description: Supply exposure for industrial, agricultural or precious commodities.
+  status: v1_draft
+- relationship_tag: compute_demand
+  relationship_group: Technology
+  description: Demand for compute, chips, design tools, processors or supporting capacity.
+  status: v1_draft
+- relationship_tag: consumer_connectivity
+  relationship_group: Communication Services
+  description: Consumer and enterprise connectivity, subscriptions, broadband or mobile access.
+  status: v1_draft
+- relationship_tag: consumer_spending
+  relationship_group: Consumer
+  description: Exposure to household spending, discretionary demand or consumer confidence.
+  status: v1_draft
+- relationship_tag: consumer_travel
+  relationship_group: Consumer / Travel
+  description: Travel, leisure, hospitality and discretionary mobility exposure.
+  status: v1_draft
+- relationship_tag: credit_conditions
+  relationship_group: Financials
+  description: Exposure to lending standards, credit demand, defaults or financing conditions.
+  status: v1_draft
+- relationship_tag: data_centre_growth
+  relationship_group: Infrastructure
+  description: Exposure to data centre growth, colocation, digital infrastructure or related systems.
+  status: v1_draft
+- relationship_tag: defence_spending
+  relationship_group: Industrials / Geopolitics
+  description: Defence, aerospace, military procurement and security spending exposure.
+  status: v1_draft
+- relationship_tag: defensive_consumption
+  relationship_group: Consumer Staples
+  description: Staples, recurring consumption or defensive household demand exposure.
+  status: v1_draft
+- relationship_tag: device_upgrade_cycle
+  relationship_group: Consumer / Technology
+  description: Hardware replacement, upgrade cycles, devices and consumer electronics demand.
+  status: v1_draft
+- relationship_tag: digital_infrastructure
+  relationship_group: Infrastructure / Communication
+  description: Telecom, broadband, wireless, fibre, data or connectivity infrastructure.
+  status: v1_draft
+- relationship_tag: digital_payments
+  relationship_group: FinTech
+  description: Payment networks, digital wallets, transaction processing or card flows.
+  status: v1_draft
+- relationship_tag: digital_platforms
+  relationship_group: Technology / Platforms
+  description: Digital platforms, marketplaces, ecosystems and user-network effects.
+  status: v1_draft
+- relationship_tag: digital_resilience
+  relationship_group: Cyber / Infrastructure
+  description: Cybersecurity, resilience, identity, security architecture and infrastructure protection.
+  status: v1_draft
+- relationship_tag: energy_margins
+  relationship_group: Energy
+  description: Margin sensitivity across energy processing, refining or fuel spreads.
+  status: v1_draft
+- relationship_tag: energy_supply
+  relationship_group: Energy
+  description: Energy production, supply, fuel inputs, natural gas or power supply exposure.
+  status: v1_draft
+- relationship_tag: enterprise_it_spending
+  relationship_group: Technology
+  description: Enterprise software, cloud, productivity, security and IT spend exposure.
+  status: v1_draft
+- relationship_tag: enterprise_spending
+  relationship_group: Enterprise / Services
+  description: Enterprise budgets, consulting, services, implementation or outsourcing spend.
+  status: v1_draft
+- relationship_tag: geopolitical_risk
+  relationship_group: Macro / Geopolitics
+  description: Potential exposure to geopolitical tension, defence posture or national-security shifts.
+  status: v1_draft
+- relationship_tag: grid_infrastructure
+  relationship_group: Utilities / Industrials
+  description: Transmission, distribution, electrification, grid equipment or power infrastructure.
+  status: v1_draft
+- relationship_tag: healthcare_demand
+  relationship_group: Healthcare
+  description: Healthcare demand, treatment volumes, products, services or medicines exposure.
+  status: v1_draft
+- relationship_tag: healthcare_innovation
+  relationship_group: Healthcare / Innovation
+  description: Healthcare technology, biotech, research tools and therapeutic innovation.
+  status: v1_draft
+- relationship_tag: housing_cycle
+  relationship_group: Housing
+  description: Housing, renovation, home improvement, construction and property-related cycles.
+  status: v1_draft
+- relationship_tag: industrial_cycle
+  relationship_group: Relationship
+  description: Industrial Cycle
+  status: v1_draft
+- relationship_tag: industrial_input_costs
+  relationship_group: Industrial / Materials
+  description: Exposure to raw material, chemical, metals, packaging or input-cost pressure.
+  status: v1_draft
+- relationship_tag: industrial_production
+  relationship_group: Industrial
+  description: Industrial activity, manufacturing, production cycles or plant demand.
+  status: v1_draft
+- relationship_tag: inflation_sensitivity
+  relationship_group: Macro / Prices
+  description: Sensitivity to inflation, input costs or consumer price transmission.
+  status: v1_draft
+- relationship_tag: infrastructure_spending
+  relationship_group: Infrastructure
+  description: Infrastructure construction, engineering, grid, transport or public/private investment.
+  status: v1_draft
+- relationship_tag: innovation_cycle
+  relationship_group: Innovation
+  description: Innovation, product development, R&D or technology-cycle exposure.
+  status: v1_draft
+- relationship_tag: interest_rate_sensitivity
+  relationship_group: Rates / Financials
+  description: Exposure to interest rates, yield curves or rate-sensitive revenue/cost dynamics.
+  status: v1_draft
+- relationship_tag: laboratory_demand
+  relationship_group: Healthcare / Life Sciences
+  description: Laboratory workflows, diagnostics, testing, instruments and research demand.
+  status: v1_draft
+- relationship_tag: liquidity
+  relationship_group: Capital Markets
+  description: Market liquidity, flow, financing and risk appetite conditions.
+  status: v1_draft
+- relationship_tag: manufacturing_cycle
+  relationship_group: Industrial / Materials
+  description: Manufacturing cycle sensitivity, industrial demand and production conditions.
+  status: v1_draft
+- relationship_tag: market_activity
+  relationship_group: Capital Markets
+  description: Trading volumes, market issuance, exchange activity or transaction demand.
+  status: v1_draft
+- relationship_tag: oil_price_sensitivity
+  relationship_group: Energy / Transport
+  description: Sensitivity to oil, jet fuel or transport energy costs.
+  status: v1_draft
+- relationship_tag: oil_supply_chain
+  relationship_group: Energy
+  description: Oil production, transport, refining and downstream exposure.
+  status: v1_draft
+- relationship_tag: power_demand
+  relationship_group: Energy / Utilities
+  description: Electricity demand, grid strain, utility load growth or energy use from industrial/digital activity.
+  status: v1_draft
+- relationship_tag: productivity_tools
+  relationship_group: Technology / Enterprise
+  description: Software and tools that support workplace productivity or enterprise workflow.
+  status: v1_draft
+- relationship_tag: property_cycle
+  relationship_group: Real Estate
+  description: Exposure to real estate leasing, property demand, occupancy or asset values.
+  status: v1_draft
+- relationship_tag: rate_sensitivity
+  relationship_group: Rates / Real Estate
+  description: Exposure to interest rates through real estate, financing, discount rates or borrowing costs.
+  status: v1_draft
+- relationship_tag: regulatory_risk
+  relationship_group: Regulation
+  description: Exposure to approval, policy, compliance, reimbursement or regulatory changes.
+  status: v1_draft
+- relationship_tag: risk_transfer
+  relationship_group: Insurance
+  description: Insurance, reinsurance, underwriting and transfer of financial/operational risk.
+  status: v1_draft
+- relationship_tag: semiconductor_supply_chain
+  relationship_group: Technology / Materials
+  description: Semiconductor tooling, materials, design, production and related supply chain exposure.
+  status: v1_draft
+- relationship_tag: supply_chain
+  relationship_group: Trade / Logistics
+  description: Supply-chain movement, logistics, transport or distribution relationships.
+  status: v1_draft
+- relationship_tag: trade_flows
+  relationship_group: Trade
+  description: Cross-border trade, shipping, freight and movement of goods.
+  status: v1_draft
+- relationship_tag: wage_pressure
+  relationship_group: Labour / Consumer
+  description: Exposure to wage, staffing or labour-cost pressure.
+  status: v1_draft

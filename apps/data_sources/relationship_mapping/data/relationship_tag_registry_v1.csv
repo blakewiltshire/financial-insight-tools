@@ -1,0 +1,54 @@
+relationship_tag,relationship_group,description,status
+advertising_cycle,Media / Digital,"Exposure to advertising demand, marketing budgets or digital advertising cycles.",v1_draft
+agriculture_cycle,Agriculture,"Agricultural demand, crop cycles, farm equipment or inputs.",v1_draft
+ai_adoption,Technology,"Exposure to adoption of AI capabilities in products, platforms or operations.",v1_draft
+ai_disruption,Technology / Services,Potential disruption or productivity compression from AI adoption.,v1_draft
+ai_infrastructure,Technology / Infrastructure,"AI infrastructure, compute demand, cloud capacity and supporting systems.",v1_draft
+capital_expenditure,Industrial / Investment,"Capital spending, equipment replacement, investment cycles and industrial capex.",v1_draft
+catastrophe_risk,Insurance / Climate,"Exposure to property, catastrophe, weather or insured loss events.",v1_draft
+commodity_supply,Commodities,"Supply exposure for industrial, agricultural or precious commodities.",v1_draft
+compute_demand,Technology,"Demand for compute, chips, design tools, processors or supporting capacity.",v1_draft
+consumer_connectivity,Communication Services,"Consumer and enterprise connectivity, subscriptions, broadband or mobile access.",v1_draft
+consumer_spending,Consumer,"Exposure to household spending, discretionary demand or consumer confidence.",v1_draft
+consumer_travel,Consumer / Travel,"Travel, leisure, hospitality and discretionary mobility exposure.",v1_draft
+credit_conditions,Financials,"Exposure to lending standards, credit demand, defaults or financing conditions.",v1_draft
+data_centre_growth,Infrastructure,"Exposure to data centre growth, colocation, digital infrastructure or related systems.",v1_draft
+defence_spending,Industrials / Geopolitics,"Defence, aerospace, military procurement and security spending exposure.",v1_draft
+defensive_consumption,Consumer Staples,"Staples, recurring consumption or defensive household demand exposure.",v1_draft
+device_upgrade_cycle,Consumer / Technology,"Hardware replacement, upgrade cycles, devices and consumer electronics demand.",v1_draft
+digital_infrastructure,Infrastructure / Communication,"Telecom, broadband, wireless, fibre, data or connectivity infrastructure.",v1_draft
+digital_payments,FinTech,"Payment networks, digital wallets, transaction processing or card flows.",v1_draft
+digital_platforms,Technology / Platforms,"Digital platforms, marketplaces, ecosystems and user-network effects.",v1_draft
+digital_resilience,Cyber / Infrastructure,"Cybersecurity, resilience, identity, security architecture and infrastructure protection.",v1_draft
+energy_margins,Energy,"Margin sensitivity across energy processing, refining or fuel spreads.",v1_draft
+energy_supply,Energy,"Energy production, supply, fuel inputs, natural gas or power supply exposure.",v1_draft
+enterprise_it_spending,Technology,"Enterprise software, cloud, productivity, security and IT spend exposure.",v1_draft
+enterprise_spending,Enterprise / Services,"Enterprise budgets, consulting, services, implementation or outsourcing spend.",v1_draft
+geopolitical_risk,Macro / Geopolitics,"Potential exposure to geopolitical tension, defence posture or national-security shifts.",v1_draft
+grid_infrastructure,Utilities / Industrials,"Transmission, distribution, electrification, grid equipment or power infrastructure.",v1_draft
+healthcare_demand,Healthcare,"Healthcare demand, treatment volumes, products, services or medicines exposure.",v1_draft
+healthcare_innovation,Healthcare / Innovation,"Healthcare technology, biotech, research tools and therapeutic innovation.",v1_draft
+housing_cycle,Housing,"Housing, renovation, home improvement, construction and property-related cycles.",v1_draft
+industrial_cycle,Relationship,Industrial Cycle,v1_draft
+industrial_input_costs,Industrial / Materials,"Exposure to raw material, chemical, metals, packaging or input-cost pressure.",v1_draft
+industrial_production,Industrial,"Industrial activity, manufacturing, production cycles or plant demand.",v1_draft
+inflation_sensitivity,Macro / Prices,"Sensitivity to inflation, input costs or consumer price transmission.",v1_draft
+infrastructure_spending,Infrastructure,"Infrastructure construction, engineering, grid, transport or public/private investment.",v1_draft
+innovation_cycle,Innovation,"Innovation, product development, R&D or technology-cycle exposure.",v1_draft
+interest_rate_sensitivity,Rates / Financials,"Exposure to interest rates, yield curves or rate-sensitive revenue/cost dynamics.",v1_draft
+laboratory_demand,Healthcare / Life Sciences,"Laboratory workflows, diagnostics, testing, instruments and research demand.",v1_draft
+liquidity,Capital Markets,"Market liquidity, flow, financing and risk appetite conditions.",v1_draft
+manufacturing_cycle,Industrial / Materials,"Manufacturing cycle sensitivity, industrial demand and production conditions.",v1_draft
+market_activity,Capital Markets,"Trading volumes, market issuance, exchange activity or transaction demand.",v1_draft
+oil_price_sensitivity,Energy / Transport,"Sensitivity to oil, jet fuel or transport energy costs.",v1_draft
+oil_supply_chain,Energy,"Oil production, transport, refining and downstream exposure.",v1_draft
+power_demand,Energy / Utilities,"Electricity demand, grid strain, utility load growth or energy use from industrial/digital activity.",v1_draft
+productivity_tools,Technology / Enterprise,Software and tools that support workplace productivity or enterprise workflow.,v1_draft
+property_cycle,Real Estate,"Exposure to real estate leasing, property demand, occupancy or asset values.",v1_draft
+rate_sensitivity,Rates / Real Estate,"Exposure to interest rates through real estate, financing, discount rates or borrowing costs.",v1_draft
+regulatory_risk,Regulation,"Exposure to approval, policy, compliance, reimbursement or regulatory changes.",v1_draft
+risk_transfer,Insurance,"Insurance, reinsurance, underwriting and transfer of financial/operational risk.",v1_draft
+semiconductor_supply_chain,Technology / Materials,"Semiconductor tooling, materials, design, production and related supply chain exposure.",v1_draft
+supply_chain,Trade / Logistics,"Supply-chain movement, logistics, transport or distribution relationships.",v1_draft
+trade_flows,Trade,"Cross-border trade, shipping, freight and movement of goods.",v1_draft
+wage_pressure,Labour / Consumer,"Exposure to wage, staffing or labour-cost pressure.",v1_draft

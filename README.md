@@ -1,8 +1,8 @@
 # Financial Insight Tools (FIT) — Structured Financial Reasoning Environment
 
-Financial Insight Tools (FIT) is a modular research environment for exploring financial markets, macroeconomic structure, portfolio construction, cross-asset relationships, transmission dynamics, positioning structure, company structure, market structure, and structured reasoning workflows through a consistent analytical framework.
+Financial Insight Tools (FIT) is a modular research environment for exploring financial markets, macroeconomic structure, relationship mapping, portfolio construction, cross-asset relationships, transmission dynamics, positioning structure, company structure, market structure, and structured reasoning workflows through a consistent analytical framework.
 
-FIT provides consistent structure across distribution analysis, trade modelling, macroeconomic exploration, thematic correlation, relative macro transmission, positioning analysis, company structure review, market structure review, and observation capture so that information can be organised, examined, aligned, and carried forward into documentation, research workflows, or AI-assisted reasoning environments.
+FIT provides consistent structure across relationship exploration, distribution analysis, trade modelling, macroeconomic exploration, thematic correlation, relative macro transmission, positioning analysis, company structure review, market structure review, and observation capture so that information can be organised, examined, aligned, and carried forward into documentation, research workflows, or AI-assisted reasoning environments.
 
 ---
 
@@ -99,7 +99,7 @@ All outputs are structural and exploratory in nature.
 
 ## Platform Architecture
 
-FIT is structured across three connected analytical layers.
+FIT is structured across four connected analytical layers.
 
 ### System Foundation
 
@@ -109,6 +109,14 @@ FIT is structured across three connected analytical layers.
 - Positioning & Crowding
 
 These modules frame macro conditions, systemic relationships, transmission pathways, and market participation structure.
+
+---
+
+### Relationship & Investigation
+
+- Relationship Manager
+
+Relationship Manager supports the exploration of how observations, themes, business activities, and market narratives may connect to candidate assets.
 
 ---
 
@@ -125,7 +133,7 @@ These modules frame macro conditions, systemic relationships, transmission pathw
 - Cross Asset Correlation
 - Live Portfolio Monitor
 
-These modules apply structural context to business analysis, ownership and supply review, scenario analysis, portfolio framing, and market inspection.
+These modules apply structural context to company analysis, market behaviour, scenario analysis, portfolio framing, and market inspection.
 
 ---
 
@@ -139,7 +147,7 @@ These modules apply structural context to business analysis, ownership and suppl
 - Data Cleaner & Inspector
 - Observation & Export Bundle Builder
 
-These modules support operational consistency, validation, and structured documentation workflows.
+These modules support operational consistency, validation, observation continuity, and structured documentation workflows.
 
 ---
 

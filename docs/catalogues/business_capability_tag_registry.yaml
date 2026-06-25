@@ -1,0 +1,237 @@
+business_capability_tags:
+- business_tag: aerospace_defense
+  tag_group: Industrials
+  description: Aerospace Defense
+  match_basis: generated_from_company_description_keywords
+- business_tag: agriculture_inputs
+  tag_group: Materials / Agriculture
+  description: Agriculture Inputs
+  match_basis: generated_from_company_description_keywords
+- business_tag: airlines
+  tag_group: Transportation
+  description: Airlines
+  match_basis: generated_from_company_description_keywords
+- business_tag: apparel_luxury
+  tag_group: Consumer
+  description: Apparel Luxury
+  match_basis: generated_from_company_description_keywords
+- business_tag: artificial_intelligence
+  tag_group: Technology
+  description: Artificial Intelligence
+  match_basis: generated_from_company_description_keywords
+- business_tag: automotive
+  tag_group: Consumer / Industrials
+  description: Automotive
+  match_basis: generated_from_company_description_keywords
+- business_tag: banking
+  tag_group: Financials
+  description: Banking
+  match_basis: generated_from_company_description_keywords
+- business_tag: biotechnology
+  tag_group: Healthcare
+  description: Biotechnology
+  match_basis: generated_from_company_description_keywords
+- business_tag: capital_markets
+  tag_group: Financials
+  description: Capital Markets
+  match_basis: generated_from_company_description_keywords
+- business_tag: chemicals
+  tag_group: Materials
+  description: Chemicals
+  match_basis: generated_from_company_description_keywords
+- business_tag: cloud_services
+  tag_group: Technology
+  description: Cloud Services
+  match_basis: generated_from_company_description_keywords
+- business_tag: construction_engineering
+  tag_group: Industrials
+  description: Construction Engineering
+  match_basis: generated_from_company_description_keywords
+- business_tag: consumer_electronics
+  tag_group: Technology / Consumer
+  description: Consumer Electronics
+  match_basis: generated_from_company_description_keywords
+- business_tag: consumer_staples
+  tag_group: Consumer Staples
+  description: Consumer Staples
+  match_basis: generated_from_company_description_keywords
+- business_tag: cybersecurity
+  tag_group: Technology
+  description: Cybersecurity
+  match_basis: generated_from_company_description_keywords
+- business_tag: data_centre_reits
+  tag_group: Real Estate / Technology
+  description: Data Centre Reits
+  match_basis: generated_from_company_description_keywords
+- business_tag: data_centres
+  tag_group: Technology / Infrastructure
+  description: Data Centres
+  match_basis: generated_from_company_description_keywords
+- business_tag: diagnostics
+  tag_group: Healthcare
+  description: Diagnostics
+  match_basis: generated_from_company_description_keywords
+- business_tag: digital_advertising
+  tag_group: Technology / Media
+  description: Digital Advertising
+  match_basis: generated_from_company_description_keywords
+- business_tag: digital_content
+  tag_group: Technology / Media
+  description: Digital Content
+  match_basis: generated_from_company_description_keywords
+- business_tag: ecommerce
+  tag_group: Consumer / Technology
+  description: Ecommerce
+  match_basis: generated_from_company_description_keywords
+- business_tag: education_services
+  tag_group: Services
+  description: Education Services
+  match_basis: generated_from_company_description_keywords
+- business_tag: electric_utilities
+  tag_group: Utilities
+  description: Electric Utilities
+  match_basis: generated_from_company_description_keywords
+- business_tag: electrical_equipment
+  tag_group: Industrials / Utilities
+  description: Electrical Equipment
+  match_basis: generated_from_company_description_keywords
+- business_tag: electronic_design_automation
+  tag_group: Technology
+  description: Electronic Design Automation
+  match_basis: generated_from_company_description_keywords
+- business_tag: employment_services
+  tag_group: Services
+  description: Employment Services
+  match_basis: generated_from_company_description_keywords
+- business_tag: energy_services
+  tag_group: Energy / Utilities
+  description: Energy Services
+  match_basis: generated_from_company_description_keywords
+- business_tag: enterprise_software
+  tag_group: Technology
+  description: Enterprise Software
+  match_basis: generated_from_company_description_keywords
+- business_tag: financial_data_analytics
+  tag_group: Financials / Data
+  description: Financial Data Analytics
+  match_basis: generated_from_company_description_keywords
+- business_tag: healthcare_services
+  tag_group: Healthcare
+  description: Healthcare Services
+  match_basis: generated_from_company_description_keywords
+- business_tag: home_improvement
+  tag_group: Consumer
+  description: Home Improvement
+  match_basis: generated_from_company_description_keywords
+- business_tag: hotels_travel
+  tag_group: Consumer / Travel
+  description: Hotels Travel
+  match_basis: generated_from_company_description_keywords
+- business_tag: industrial_gases
+  tag_group: Materials
+  description: Industrial Gases
+  match_basis: generated_from_company_description_keywords
+- business_tag: industrial_machinery
+  tag_group: Industrials
+  description: Industrial Machinery
+  match_basis: generated_from_company_description_keywords
+- business_tag: insurance
+  tag_group: Financials
+  description: Insurance
+  match_basis: generated_from_company_description_keywords
+- business_tag: investment_management
+  tag_group: Financials
+  description: Investment Management
+  match_basis: generated_from_company_description_keywords
+- business_tag: life_sciences_tools
+  tag_group: Healthcare
+  description: Life Sciences Tools
+  match_basis: generated_from_company_description_keywords
+- business_tag: logistics_transport
+  tag_group: Transportation
+  description: Logistics Transport
+  match_basis: generated_from_company_description_keywords
+- business_tag: media_entertainment
+  tag_group: Communication Services
+  description: Media Entertainment
+  match_basis: generated_from_company_description_keywords
+- business_tag: medical_devices
+  tag_group: Healthcare
+  description: Medical Devices
+  match_basis: generated_from_company_description_keywords
+- business_tag: mining_metals
+  tag_group: Materials
+  description: Mining Metals
+  match_basis: generated_from_company_description_keywords
+- business_tag: natural_gas_utilities
+  tag_group: Utilities
+  description: Natural Gas Utilities
+  match_basis: generated_from_company_description_keywords
+- business_tag: networking_equipment
+  tag_group: Technology
+  description: Networking Equipment
+  match_basis: generated_from_company_description_keywords
+- business_tag: oil_gas
+  tag_group: Energy
+  description: Oil Gas
+  match_basis: generated_from_company_description_keywords
+- business_tag: packaging
+  tag_group: Materials / Industrials
+  description: Packaging
+  match_basis: generated_from_company_description_keywords
+- business_tag: payments
+  tag_group: Financial Technology
+  description: Payments
+  match_basis: generated_from_company_description_keywords
+- business_tag: pharmaceuticals
+  tag_group: Healthcare
+  description: Pharmaceuticals
+  match_basis: generated_from_company_description_keywords
+- business_tag: professional_services
+  tag_group: Industrials / Services
+  description: Professional Services
+  match_basis: generated_from_company_description_keywords
+- business_tag: real_estate
+  tag_group: Real Estate
+  description: Real Estate
+  match_basis: generated_from_company_description_keywords
+- business_tag: refining
+  tag_group: Energy
+  description: Refining
+  match_basis: generated_from_company_description_keywords
+- business_tag: renewable_energy
+  tag_group: Energy / Utilities
+  description: Renewable Energy
+  match_basis: generated_from_company_description_keywords
+- business_tag: restaurants
+  tag_group: Consumer
+  description: Restaurants
+  match_basis: generated_from_company_description_keywords
+- business_tag: retail
+  tag_group: Consumer
+  description: Retail
+  match_basis: generated_from_company_description_keywords
+- business_tag: semiconductors
+  tag_group: Technology
+  description: Semiconductors
+  match_basis: generated_from_company_description_keywords
+- business_tag: social_media
+  tag_group: Communication Services / Technology
+  description: Social Media
+  match_basis: generated_from_company_description_keywords
+- business_tag: software_platforms
+  tag_group: Technology
+  description: Software Platforms
+  match_basis: generated_from_company_description_keywords
+- business_tag: telecommunications
+  tag_group: Communication Services
+  description: Telecommunications
+  match_basis: generated_from_company_description_keywords
+- business_tag: waste_management
+  tag_group: Industrials
+  description: Waste Management
+  match_basis: generated_from_company_description_keywords
+- business_tag: water_utilities
+  tag_group: Utilities
+  description: Water Utilities
+  match_basis: generated_from_company_description_keywords
