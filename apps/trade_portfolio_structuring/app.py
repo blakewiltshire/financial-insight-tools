@@ -220,10 +220,10 @@ with col2:
             st.switch_page("pages/06_trade_timing_and_confirmation.py")
 
     with st.container(border=True):
-        st.markdown("### Trade Structuring & Risk Planning")
+        st.markdown("### Watchlist, Trade Structuring & Risk Planning")
         st.write("Build trades with sizing and margin logic.")
-        if st.button("Open Trade Structuring & Risk Planning", key="open_trade_structuring"):
-            st.switch_page("pages/08_trade_structuring_and_risk_planning.py")
+        if st.button("Open Watchlist, Trade Structuring & Risk Planning", key="open_trade_structuring"):
+            st.switch_page("pages/08_watchlist_and_trade_planning.py")
 
     with st.container(border=True):
         st.markdown("### User Asset Manager")

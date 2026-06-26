@@ -10,7 +10,7 @@
 # Docstring
 # -------------------------------------------------------------------------------------------------
 """
-Trade Structuring & Risk Planning App
+Watchlist, Trade Structuring & Risk Planning App
 
 Streamlit-based module for designing structured trade setups using preloaded or user-uploaded data.
 Supports single-asset (Shares, CFDs, Spread Betting) and dual-asset (Pairs, Spreads)
@@ -140,10 +140,10 @@ from trade_structuring_modules.trade_dashboard import (
 # -------------------------------------------------------------------------------------------------
 # Streamlit Page Setup
 # -------------------------------------------------------------------------------------------------
-st.set_page_config(page_title="Trade Structuring & Risk Planning", layout="wide")
-st.title("Trade Structuring & Risk Planning")
+st.set_page_config(page_title="Watchlist, Trade Structuring & Risk Planning", layout="wide")
+st.title("Watchlist, Trade Structuring & Risk Planning")
 st.caption(
-    "*Design setups using stop loss, entry, reward ratio, and capital allocation.*"
+    "*Maintain watchlists, explore trade ideas, and structure scenarios using risk and reward frameworks.*"
 )
 
 # -------------------------------------------------------------------------------------------------
@@ -186,22 +186,25 @@ SAMPLE_FILE = os.path.join(
 )
 
 
-st.sidebar.title("Upload Trade Journal (Optional Reference)")
-with st.sidebar.expander("Optional Journal Reference Upload", expanded=False):
+st.sidebar.title("Watchlist & Journal")
+with st.sidebar.expander("Optional Watchlist / Journal Upload", expanded=False):
     st.markdown("""
-    Upload a CSV file containing an external trade journal, idea tracker, or watchlist.
+    Upload a CSV file containing an external watchlist, idea tracker, or trade journal.
 
-    This file is **not required** — it simply acts as a **reference table** alongside this module's structured dashboard.
-    You can use it to:
+    If no file is uploaded, a sample watchlist is shown so the editor can still be used.
 
-    - Cross-reference external trade ideas
-    - Track trades from other platforms or strategies
+    You can use this section to:
+
+    - Record assets you may want to examine further
+    - Maintain a watchlist of candidate ideas
+    - Cross-reference external trade ideas or strategy notes
+    - Track ideas before they become structured trade scenarios
     - Annotate with reflections using the Macro Interaction Tools panel below
 
-    **Accepted Format:** CSV, max 200MB. Key columns may include `Asset`, `Entry Date`, `Strategy`, `Notes`, etc.
+    **Accepted Format:** CSV, max 200MB. Suggested columns include `Asset`, `Direction`, `Strategy Tag`, `Sector`, `Country`, and `Notes`.
     """)
 
-uploaded_journal = st.sidebar.file_uploader("Upload Trade Journal (CSV)", type="csv")
+uploaded_journal = st.sidebar.file_uploader("Upload Watchlist / Journal CSV", type="csv")
 
 use_sample = False
 if uploaded_journal:
@@ -216,13 +219,18 @@ else:
 
 if journal_df is not None:
     caption_msg = (
-        "Sample journal loaded — modify as needed to reflect strategic intent."
+        "Sample watchlist provided — download the updated file to keep your changes."
         if use_sample else
-        "Review and edit your journal — row highlights guide you through focused assets."
+        "Download the updated file to keep any changes made during this session."
     )
     st.caption(caption_msg)
 
-    with st.expander("Trade Journal Editor"):
+    with st.expander("Watchlist & Journal Editor"):
+        st.info(
+            "Changes made here are not saved automatically. "
+            "Download the updated CSV to keep your changes and re-upload it in future sessions."
+        )
+
         edited_journal_df = st.data_editor(
             journal_df,
             width='stretch',
@@ -231,9 +239,9 @@ if journal_df is not None:
 
         csv_download = edited_journal_df.to_csv(index=False).encode("utf-8")
         st.download_button(
-            label="Download Updated Journal (CSV)",
+            label="Download Updated Watchlist & Journal (CSV)",
             data=csv_download,
-            file_name="updated_trade_journal.csv",
+            file_name="updated_watchlist_journal.csv",
             mime="text/csv",
         )
 
