@@ -4,8 +4,6 @@ Financial Insight Tools (FIT) is a modular decision-support environment for buil
 
 FIT provides consistent structure across relationship exploration, distribution analysis, trade modelling, macroeconomic exploration, thematic correlation, relative macro transmission, positioning analysis, company structure review, market structure review, and observation capture so that information can be organised, examined, aligned, and preserved as structured investigations that can be revisited, extended, documented, or reviewed through AI-assisted investigation workflows.
 
----
-
 ## Companion References (PDF)
 
 FIT includes companion documents under `docs/`:
@@ -17,13 +15,9 @@ These documents provide architectural framing and consolidated reference materia
 
 Note: GitHub’s in-browser PDF preview may not render complex code-block formatting reliably; download for the best viewing experience.
 
----
-
 ## Python Version
 
 Python (tested on 3.12.x)
-
----
 
 ## Quick Start
 
@@ -83,8 +77,6 @@ The application will launch at:
 
 http://localhost:8501
 
----
-
 ## What This Is (and Isn’t)
 
 **Is:**  
@@ -94,8 +86,6 @@ A structured, modular environment for examining financial data, macroeconomic in
 A brokerage platform, automated trading system, signal engine, portfolio manager, advisory service, or predictive model. FIT does not execute trades, provide financial advice, or generate investment recommendations.
 
 All outputs are structural and exploratory in nature.
-
----
 
 ## Platform Architecture
 
@@ -108,13 +98,9 @@ FIT is structured across connected analytical layers.
 - Relative Macro Transmission
 - Positioning & Crowding
 
----
-
 ### Relationship & Investigation
 
 - Relationship Manager
-
----
 
 ### Financial Application
 
@@ -129,13 +115,9 @@ FIT is structured across connected analytical layers.
 - Cross Asset Correlation
 - Live Portfolio Monitor
 
----
-
 ### Investigation Workflow
 
 - Observation & AI Export
-
----
 
 ### Utilities
 
@@ -146,11 +128,7 @@ FIT is structured across connected analytical layers.
 - Historical Data Currency Converter
 - Data Cleaner & Inspector
 
----
-
 ## Screenshots
-
----
 
 ### Unified Launcher — Structural Orientation
 
@@ -163,8 +141,6 @@ The unified launcher presents FIT’s modular architecture and clarifies:
 - where configuration, observation, and export functions reside
 
 This is the orientation layer before moving into structured analysis.
-
----
 
 ### Economic Exploration — Macro System View
 
@@ -179,8 +155,6 @@ A structural view across macroeconomic conditions and country-level indicators:
 
 Provides the macro foundation for downstream analytical workflows.
 
----
-
 ### Thematic Correlation — Relationship Mapping
 
 ![Thematic Correlation](docs/screenshots/03-thematic-correlation.png)
@@ -193,8 +167,6 @@ A structural view across macroeconomic themes and systemic relationships:
 - cross-country and cross-theme co-movement
 
 This provides the relationship layer before transmission analysis.
-
----
 
 ### Relative Macro Transmission — Exogenous Differential Architecture
 
@@ -209,8 +181,6 @@ Tracks exogenous differentials across systems and how macro pressure transmits t
 
 This moves beyond correlation into structural transmission analysis.
 
----
-
 ### Positioning & Crowding — Position Architecture
 
 ![Positioning & Crowding](docs/screenshots/05-positioning-crowding.png)
@@ -223,8 +193,6 @@ A structural view across leveraged positioning, percentile extremes, and market 
 - market overlay and regime interpretation
 
 This provides the participant behaviour layer across major futures markets.
-
----
 
 ### Market & Volatility Scanner — Distribution Backbone
 
@@ -239,8 +207,6 @@ A structural view across market behaviour and volatility conditions:
 
 Provides quantitative grounding for downstream modelling.
 
----
-
 ### Company Structure Review — Valuation & Business Structure
 
 ![Company Structure](docs/screenshots/07-company-structure-review.png)
@@ -254,8 +220,6 @@ A structural view across valuation, profitability, efficiency, and business perf
 
 Supports examination of how market pricing aligns with business performance, growth expectations, and operational characteristics.
 
----
-
 ### Market Structure Review — Ownership, Supply & Participation
 
 ![Market Structure](docs/screenshots/08-market-structure-review.png)
@@ -268,9 +232,6 @@ A structural view across ownership, available supply, liquidity formation, and p
 - institutional participation and index-eligibility pathways
 
 Supports review of how market access, tradable supply, and participation mechanisms may evolve through time.
-
----
-
 
 ### Watchlist, Trade Structuring & Risk Planning — Scenario Architecture
 
@@ -286,14 +247,11 @@ A structured environment for maintaining watchlists, developing trade ideas, and
 
 Supports the progression from candidate assets to structured market investigation.
 
----
-
 ### Observation & AI Export — Investigation Workflow
 
 ![Investigation Bundle](docs/screenshots/10-export-bundle.png)
 
 Observation & AI Export consolidates Decision Support Snapshots, structured observations, Research Notes, and contextual metadata into portable investigation bundles. Investigations can then be reviewed through AI personas, preserved for future analysis, or restored as understanding develops.
----
 
 ## Where to Start
 
@@ -310,12 +268,9 @@ Additional system-wide exploration modules include:
 - **Thematic Correlation** — relationship mapping across macroeconomic themes
 - **Relative Macro Transmission** — exogenous differential analysis and regime divergence
 - **Positioning & Crowding** — leveraged positioning, percentile extremes, and positioning turns
-
 - **Observation & AI Export** — Decision Support Snapshots, structured observations, investigation bundles, AI personas, and AI-assisted investigation workflows.
 
 Each module presents a different perspective on the same underlying analytical framework without fragmenting or redefining it.
-
----
 
 ## Structure (High-Level)
 
@@ -337,8 +292,6 @@ financial-insight-tools/
 
 Canonical resources live alongside the modules that use them.  
 Generated artefacts are produced locally during use.
-
----
 
 ## Updating & Extending FIT
 
@@ -365,8 +318,6 @@ Regular updates include:
 If you have modified local files, commit or back them up before pulling updates to avoid merge conflicts.
 
 After pulling updated historical asset data, rerun the **Asset Snapshot Scanner** to regenerate summary outputs where applicable.
-
----
 
 ### Universal and Country Layers
 
@@ -396,8 +347,6 @@ If extending the system with additional indicators or jurisdictions, implement c
 
 If a new indicator requires shared scoring, routing, or visual logic across the system, corresponding updates may also be required in the universal layer.
 
----
-
 ### Data Update Policy
 
 - Historical financial asset datasets are refreshed on a regular cadence.
@@ -407,11 +356,7 @@ If a new indicator requires shared scoring, routing, or visual logic across the 
 
 Local artefacts (exports, snapshots, observations) are not modified by repository updates.
 
----
-
 FIT is designed as an open, extensible system. Users may extend or adapt the framework as required. Structural coherence is maintained by preserving the distinction between universal layers and local implementations.
-
----
 
 ## License & Use
 
@@ -421,8 +366,6 @@ All outputs are structural and exploratory in nature.
 No advisory, brokerage, portfolio management, or automated trading services are provided.
 
 Refer to LICENSE for details.
-
----
 
 ## Ecosystem Context
 
@@ -440,8 +383,6 @@ Financial Insight Tools operationalises these concepts within a structured inves
 
 Further context:  
 https://blakewiltshire.com
-
----
 
 Financial Insight Tools by Blake Wiltshire  
 © Blake Media Ltd.
