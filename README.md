@@ -1,8 +1,8 @@
 # Financial Insight Tools (FIT) — Structured Financial Reasoning Environment
 
-Financial Insight Tools (FIT) is a modular research environment for exploring financial markets, macroeconomic structure, relationship mapping, portfolio construction, cross-asset relationships, transmission dynamics, positioning structure, company structure, market structure, and structured reasoning workflows through a consistent analytical framework.
+Financial Insight Tools (FIT) is a modular decision-support environment for building structured investigations across financial markets, macroeconomics, company analysis, and related analytical domains. Economic signals, market observations, supporting evidence, and human reasoning remain connected throughout the investigation, allowing context to evolve as new information becomes available. AI contributes through structured investigation review while human judgement remains central to the decision-making process.
 
-FIT provides consistent structure across relationship exploration, distribution analysis, trade modelling, macroeconomic exploration, thematic correlation, relative macro transmission, positioning analysis, company structure review, market structure review, and observation capture so that information can be organised, examined, aligned, and carried forward into documentation, research workflows, or AI-assisted reasoning environments.
+FIT provides consistent structure across relationship exploration, distribution analysis, trade modelling, macroeconomic exploration, thematic correlation, relative macro transmission, positioning analysis, company structure review, market structure review, and observation capture so that information can be organised, examined, aligned, and preserved as structured investigations that can be revisited, extended, documented, or reviewed through AI-assisted investigation workflows.
 
 ---
 
@@ -99,7 +99,7 @@ All outputs are structural and exploratory in nature.
 
 ## Platform Architecture
 
-FIT is structured across four connected analytical layers.
+FIT is structured across connected analytical layers.
 
 ### System Foundation
 
@@ -108,15 +108,11 @@ FIT is structured across four connected analytical layers.
 - Relative Macro Transmission
 - Positioning & Crowding
 
-These modules frame macro conditions, systemic relationships, transmission pathways, and market participation structure.
-
 ---
 
 ### Relationship & Investigation
 
 - Relationship Manager
-
-Relationship Manager supports the exploration of how observations, themes, business activities, and market narratives may connect to candidate assets.
 
 ---
 
@@ -133,12 +129,15 @@ Relationship Manager supports the exploration of how observations, themes, busin
 - Cross Asset Correlation
 - Live Portfolio Monitor
 
+---
 
-These modules support candidate asset review, market examination, watchlist development, scenario analysis, portfolio framing, and structured trade planning.
+### Investigation Workflow
+
+- Observation & AI Export
 
 ---
 
-### Utility & Decision Support
+### Utilities
 
 - Kelly Criterion
 - VaR Calculator
@@ -146,9 +145,6 @@ These modules support candidate asset review, market examination, watchlist deve
 - Standard Deviation Calculator
 - Historical Data Currency Converter
 - Data Cleaner & Inspector
-- Observation & Export Bundle Builder
-
-These modules support operational consistency, validation, observation continuity, and structured documentation workflows.
 
 ---
 
@@ -292,14 +288,11 @@ Supports the progression from candidate assets to structured market investigatio
 
 ---
 
-### Build Export Bundle — Structured Artefact Assembly
+### Observation & AI Export — Investigation Workflow
 
-![Export Bundle](docs/screenshots/10-export-bundle.png)
+![Investigation Bundle](docs/screenshots/10-export-bundle.png)
 
-The export module organises analytical components into structured bundles for documentation, research artefacts, and AI-assisted workflows.
-
-Outputs preserve linkage to the underlying analytical structure.
-
+Observation & AI Export consolidates Decision Support Snapshots, structured observations, Research Notes, and contextual metadata into portable investigation bundles. Investigations can then be reviewed through AI personas, preserved for future analysis, or restored as understanding develops.
 ---
 
 ## Where to Start
@@ -318,7 +311,7 @@ Additional system-wide exploration modules include:
 - **Relative Macro Transmission** — exogenous differential analysis and regime divergence
 - **Positioning & Crowding** — leveraged positioning, percentile extremes, and positioning turns
 
-- **Observation & Export** — structured artefact assembly, observation capture, and AI-ready workflows
+- **Observation & AI Export** — Decision Support Snapshots, structured observations, investigation bundles, AI personas, and AI-assisted investigation workflows.
 
 Each module presents a different perspective on the same underlying analytical framework without fragmenting or redefining it.
 
@@ -441,7 +434,9 @@ The series spans six thematic areas: Foundational Knowledge, Practical Economics
 
 Each guide functions as a self-contained analytical unit while aligning to a broader modular architecture that supports structured reasoning, comparative analysis, and cross-domain exploration.
 
-Financial Insight Tools operationalises elements of this framework in an applied research environment. The application can be used independently; the guides provide deeper architectural framing for those exploring the underlying structural model.
+The companion guides introduce the analytical frameworks and mental models that underpin the wider ecosystem. Triangular Navigation extends each guide through practical application, AI-assisted perspective testing, and decision-support tools. Financial Insight Tools provides the environment in which those concepts become structured investigations, preserving evidence, observations, and reasoning as understanding develops.
+
+Financial Insight Tools operationalises these concepts within a structured investigation environment. The application can be used independently; the guides provide deeper architectural framing for those exploring the underlying structural model.
 
 Further context:  
 https://blakewiltshire.com

@@ -1,6 +1,6 @@
-## Trade Structuring & Risk Planning
+## Watchlist, Trade Structuring & Risk Planning
 
-The **Trade Structuring & Risk Planning** module enables the design and preparation of structured trades — including single-asset, multi-leg, and leveraged strategies. It forms a core part of the *Trade & Portfolio Structuring* suite within the Financial Insight Tools system.
+The **Watchlist, Trade Structuring & Risk Planning** module supports the progression from candidate assets and strategic ideas through to structured trade scenarios and risk planning.
 
 Rather than prescribing strategies or simulating execution, this tool provides a structured interface for configuring trade setups using real-world asset data, position sizing logic, and capital-based risk parameters. Outputs are formatted for planning, scenario comparison, and integration with the system’s observation, export, and journal tracking components.
 
