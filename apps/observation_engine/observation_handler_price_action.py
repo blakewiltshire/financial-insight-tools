@@ -104,8 +104,27 @@ def observation_input_form(
 
         optional_tags = st.multiselect(
             "Optional Tags (select applicable themes):", [
-            "Macroeconomy", "Volatility", "Commodities", "Equities", "Bonds", "Currencies",
-            "Rates", "Inflation", "Geopolitics", "Liquidity", "Sector Rotation", "Risk-On", "Risk-Off"
+            "Trend",
+            "Momentum",
+            "Breakout",
+            "Breakdown",
+            "Reversal",
+            "Mean Reversion",
+            "Support",
+            "Resistance",
+            "Trend Confirmation",
+            "Failed Breakout",
+            "Volatility Compression",
+            "Volatility Expansion",
+            "Long Candidate",
+            "Short Candidate",
+            "Trade Timing",
+            "Monitoring",
+            "Confirmation",
+            "Contradiction",
+            "User Assumption",
+            "Uncertainty Preserved",
+            "AI Review",
         ], key=f"{form_key}_tags")
         help="Tags assist AI engines to cluster observations."
 

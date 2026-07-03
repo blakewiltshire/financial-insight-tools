@@ -133,25 +133,36 @@ def load_all_snapshots() -> List[Dict]:
     return bundles
 
 def resolve_snapshot_metadata(content: Dict, filepath: str) -> Dict:
-    theme = content.get("theme", {})
+    # Support both full DSS snapshots (theme at root)
+    # and lightweight snapshots (theme inside snapshot_metadata)
+
+    if "theme" in content:
+        theme = content.get("theme", {})
+    elif "snapshot_metadata" in content:
+        theme = content.get("snapshot_metadata", {}).get("theme", {})
+    else:
+        theme = {}
+
     theme_title = theme.get("title", "Unknown Module")
     module_code = theme.get("code", "unknown")
 
     if "snapshot_metadata" in content:
-        # Market & Volatility Scanner
-        asset = content["snapshot_metadata"].get("base_asset", "Unknown Asset")
-        use_case = content.get("macro_signals", [{}])[0].get("section", "Unknown")
-        timestamp = content["snapshot_metadata"].get("snapshot_timestamp")
+        meta = content["snapshot_metadata"]
+
+        asset = meta.get("base_asset", "Unknown Asset")
+        use_case = meta.get("use_case", "Statistics")
+        if isinstance(use_case, str):
+            use_case = use_case.replace("_", " ").title()
+
+        timestamp = meta.get("snapshot_timestamp")
 
     elif "use_cases" in content:
-        # Economic Modules
         use_case_block = content.get("use_cases", [{}])[0]
         use_case = use_case_block.get("name", "Unknown")
         asset = content.get("country", "Unknown Country")
         timestamp = use_case_block.get("macro_signals", [{}])[0].get("timestamp")
 
     else:
-        # Trade Timing or Price Action
         use_case = content.get("use_case", "Naked Charts")
         asset = content.get("base_asset", "Unknown")
         timestamp = content.get("snapshot_timestamp")
@@ -163,7 +174,7 @@ def resolve_snapshot_metadata(content: Dict, filepath: str) -> Dict:
         "asset": asset,
         "timestamp": timestamp or os.path.getmtime(filepath),
         "source_file": os.path.relpath(filepath, BASE_PATH),
-        "raw": content  # 🛑 Do not remove — required for downstream inspection
+        "raw": content,
     }
 
 def load_snapshot_json(relative_path: str) -> dict:

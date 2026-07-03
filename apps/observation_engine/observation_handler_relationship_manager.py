@@ -32,29 +32,6 @@ USER_OBSERVATION_FOLDER = os.path.join(STORAGE_FOLDER, "user_observations")
 MODULE_TYPE = "reference_data"
 FILENAME = "default__relationship_manager__user_observations.csv"
 
-# -------------------------------------------------------------------------------------------------
-# Relationship Manager Observation Tags
-# -------------------------------------------------------------------------------------------------
-RELATIONSHIP_MANAGER_TAGS = [
-    "AI Infrastructure",
-    "AI Disruption",
-    "Brain Drain",
-    "Talent Migration",
-    "Human Capital",
-    "Competitive Positioning",
-    "Narrative Shift",
-    "Market Expectations",
-    "Candidate Asset Review",
-    "Cross-Sector Relationship",
-    "Intra-Sector Relationship",
-    "Supply Chain Exposure",
-    "Business Capability Mapping",
-    "Sector Mapping",
-    "Data Availability Gap",
-    "User Asset Required",
-    "Uncertainty Preserved",
-]
-
 
 def ensure_module_folder() -> str:
     """
@@ -98,10 +75,27 @@ def observation_input_form(form_key: str = "relationship_manager_observation_for
         )
 
         optional_tags = st.multiselect(
-            "Optional Tags",
-            RELATIONSHIP_MANAGER_TAGS,
-            key=f"{form_key}_tags",
-        )
+            "Optional Tags", [
+            "AI Infrastructure",
+            "AI Disruption",
+            "Brain Drain",
+            "Talent Migration",
+            "Human Capital",
+            "Competitive Positioning",
+            "Narrative Shift",
+            "Market Expectations",
+            "Candidate Asset Review",
+            "Cross-Sector Relationship",
+            "Intra-Sector Relationship",
+            "Supply Chain Exposure",
+            "Business Capability Mapping",
+            "Sector Mapping",
+            "Data Availability Gap",
+            "Monitoring",
+            "User Assumption",
+            "Uncertainty Preserved",
+            "AI Review"
+        ], key=f"{form_key}_tags",)
 
         submitted = st.form_submit_button("Save Observation")
         if submitted and observation_text.strip():

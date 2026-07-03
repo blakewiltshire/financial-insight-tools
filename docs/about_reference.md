@@ -1,4 +1,4 @@
-## Reference Data & Trusted Sources
+## Reference & Investigation Resources
 
 This module provides access to foundational tools for inspecting, validating, and navigating core reference components within the Financial Insight Tools system.
 

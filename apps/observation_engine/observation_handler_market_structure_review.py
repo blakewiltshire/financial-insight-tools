@@ -129,6 +129,8 @@ def observation_input_form(
                 "Float Structure",
                 "Supply Events",
                 "Supply Expansion",
+                "Supply Pressure",
+                "Demand Absorption",
                 "Lock-Up Expiration",
                 "Employee Sale Window",
                 "Secondary Offering",
@@ -136,11 +138,15 @@ def observation_input_form(
                 "Index Eligibility",
                 "Institutional Participation",
                 "Liquidity",
+                "Liquidity Constraint",
                 "Price Discovery",
+                "Participation Shift",
                 "IPO Structure",
-                "Market Participation",
                 "Ownership Concentration",
+                "Monitoring",
                 "User Assumption",
+                "Uncertainty Preserved",
+                "AI Review"
             ],
             key=f"{form_key}_tags"
         )

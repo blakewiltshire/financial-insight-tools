@@ -3,62 +3,35 @@
 # -------------------------------------------------------------------------------------------------
 
 import os
-import sys
-import json
 import streamlit as st
 
-# Add path to access emoji flags
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "constants")))
-from emoji import FLAGS  # Flag emoji mapping
-
-# Add path to access file utilities
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__))))
-from insight_loader import list_all_files
-
-# -------------------------------------------------------------------------------------------------
-# Canonical Module Group Labels
-# -------------------------------------------------------------------------------------------------
-
-MODULE_GROUP_LABELS = {
-    "price_action": "Trade & Portfolio Structuring",
-    "trade_timing": "Trade & Portfolio Structuring",
-    "trade_structuring": "Trade & Portfolio Structuring",
-    "trade_history": "Trade & Portfolio Structuring",
-    "live_portfolio": "Trade & Portfolio Structuring",
-    "market_scanner": "Trade & Portfolio Structuring",
-    "economic_exploration": "Economic Exploration",
-    "intermarket_correlation": "Intermarket Correlation",
-    "reference_data": "Reference Data",
-    "thematic_correlation": "Thematic Correlation",
-}
+from insight_loader import list_all_files, resolve_snapshot_metadata
+from snapshot_browser_panel import extract_metadata, build_snapshot_label
 
 # -------------------------------------------------------------------------------------------------
 # Snapshot Display Label
 # -------------------------------------------------------------------------------------------------
-
 def build_snapshot_display_label(filepath: str) -> str:
-    filename = os.path.basename(filepath).replace(".json", "")
-    parts = filename.split("__")
+    """
+    Builds a clean, human-readable display label using the same metadata
+    resolution path as Snapshot Browser.
+    """
+    try:
+        with open(filepath, "r", encoding="utf-8") as f:
+            import json
+            content = json.load(f)
 
-    if filename.startswith("economic_exploration__") and len(parts) >= 5:
-        _, country, theme, use_case, timeframe = parts
-        country_name = country.replace("_", " ").title()
-        theme_title = theme.replace("_", " ").title()
-        emoji_flag = FLAGS.get(country_name, "🌐")
-        return f"{emoji_flag} {country_name} — {theme_title} (Economic Exploration)"
+        bundle = resolve_snapshot_metadata(content, filepath)
+        meta = extract_metadata(bundle)
+        return build_snapshot_label(meta)
 
-    if filename.startswith("trade_and_portfolio_structuring__") and len(parts) >= 4:
-        _, theme, use_case, asset = parts
-        theme_title = theme.replace("_", " ").title()
-        asset_name = asset.replace("_", " ").title()
-        return f"🗂️ {theme_title} — {asset_name} (Trade & Portfolio Structuring)"
-
-    return f"🗂️ {filename.replace('_', ' ').title()}"
+    except Exception:
+        filename = os.path.basename(filepath).replace(".json", "")
+        return f"🗂️ {filename.replace('_', ' ').title()}"
 
 # -------------------------------------------------------------------------------------------------
 # Manage AI Snapshots Panel
 # -------------------------------------------------------------------------------------------------
-
 def render_manage_snapshots_panel():
     st.header("Manage Snapshots")
     st.caption("Review or delete AI-generated snapshot files across modules.")
@@ -66,18 +39,26 @@ def render_manage_snapshots_panel():
     if st.button("Reload Snapshot List", key="reload_snapshot_list"):
         st.rerun()
 
-    # Locate root path
-    base_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "storage", "ai_bundles"))
+    base_path = os.path.abspath(
+        os.path.join(os.path.dirname(__file__), "storage", "ai_bundles")
+    )
 
-    # Walk recursively
     all_json_files = list_all_files(base_path, extension=".json")
 
     if not all_json_files:
         st.warning("No snapshot files found.")
         return
 
-    # Label mapping
-    label_map = {build_snapshot_display_label(f): f for f in all_json_files}
+    label_map = {}
+    for file_path in all_json_files:
+        label = build_snapshot_display_label(file_path)
+
+        # Avoid accidental collisions if two files produce the same label.
+        if label in label_map:
+            label = f"{label} — {os.path.basename(file_path)}"
+
+        label_map[label] = file_path
+
     selected_label = st.selectbox("Select Snapshot File", options=list(label_map.keys()))
     selected_file = label_map[selected_label]
 

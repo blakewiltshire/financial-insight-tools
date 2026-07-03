@@ -89,9 +89,24 @@ def observation_input_form(
         st.caption("**Optional Tags** — Attach thematic tags to improve future AI referencing and cross-theme context mapping.")
 
         optional_tags = st.multiselect("Optional Tags:", [
-            "Macroeconomy", "AI", "Automation", "Geopolitics", "Supply Chain",
-            "Consumer Sentiment", "Manufacturing", "Finance", "Retail",
-            "Energy", "Tech", "Rates", "Dollar", "Commodities"
+            "Macro Driver",
+            "Correlation Shift",
+            "Divergence",
+            "Transmission Channel",
+            "Regime Relationship",
+            "Lead-Lag Relationship",
+            "Rates",
+            "Inflation",
+            "Dollar",
+            "Commodities",
+            "Equities",
+            "Bonds",
+            "Confirmation",
+            "Contradiction",
+            "Monitoring",
+            "User Assumption",
+            "Uncertainty Preserved",
+            "AI Review"
         ], key=f"{form_key}_tags")
         help="Tags assist AI engines to cluster observations into sectors, drivers, and macro themes."
 

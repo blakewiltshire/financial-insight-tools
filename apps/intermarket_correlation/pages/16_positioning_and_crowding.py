@@ -126,7 +126,7 @@ with st.expander("ℹ️ About This App"):
 # Sidebar Navigation
 # -------------------------------------------------------------------------------------------------
 st.sidebar.title("📂 Navigation Menu")
-st.sidebar.page_link("app.py", label="Intermarket & Correlation Dashboard")
+st.sidebar.page_link("app.py", label="Intermarket & Correlation")
 for path, label in build_sidebar_links():
     st.sidebar.page_link(path, label=label)
 st.sidebar.divider()

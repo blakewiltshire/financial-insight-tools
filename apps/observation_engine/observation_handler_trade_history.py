@@ -31,8 +31,25 @@ def observation_input_form(form_key: str = "th_observation_form") -> None:
         observation_text = st.text_area("Reflection Note", height=120, key=f"{form_key}_text")
 
         optional_tags = st.multiselect("Optional Tags:", [
-            "Overconfidence", "Perfect Entry", "Missed Exit", "Chased Trade",
-            "Followed Plan", "Ignored Signal", "Good Risk Control"
+            "Good Process",
+            "Poor Process",
+            "Overconfidence",
+            "Chased Trade",
+            "Followed Plan",
+            "Ignored Signal",
+            "Perfect Entry",
+            "Missed Entry",
+            "Early Exit",
+            "Missed Exit",
+            "Late Exit",
+            "Position Sizing Error",
+            "Good Risk Control",
+            "Risk Discipline",
+            "Emotional Decision",
+            "Process Improvement",
+            "User Assumption",
+            "Uncertainty Preserved",
+            "AI Review"
         ], key=f"{form_key}_tags")
 
         submitted = st.form_submit_button("Save Reflection")

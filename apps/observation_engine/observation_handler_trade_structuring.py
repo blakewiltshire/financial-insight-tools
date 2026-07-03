@@ -37,8 +37,27 @@ def observation_input_form(form_key: str = "ts_observation_form") -> None:
         observation_text = st.text_area("Planning Note", height=120, key=f"{form_key}_text")
 
         optional_tags = st.multiselect("Optional Tags:", [
-            "Confluence", "Macro Setup", "Price Action", "Reversal", "Breakout",
-            "Sentiment Signal", "Technical Structure", "Event Risk", "Sector Play"
+            "Trade Structuring",
+            "Macro Setup",
+            "Confluence",
+            "Price Action",
+            "Breakout",
+            "Reversal",
+            "Mean Reversion",
+            "Entry Planning",
+            "Exit Planning",
+            "Stop Placement",
+            "Position Sizing",
+            "Risk Reward",
+            "Invalidation Level",
+            "Execution Risk",
+            "Event Risk",
+            "Long Candidate",
+            "Short Candidate",
+            "Risk Management",
+            "User Assumption",
+            "Uncertainty Preserved",
+            "AI Review"
         ], key=f"{form_key}_tags")
 
         submitted = st.form_submit_button("Save Reflection")

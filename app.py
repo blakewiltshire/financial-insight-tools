@@ -83,9 +83,9 @@ ABOUT_SUPPORT_MD = os.path.join(ROOT_PATH, "docs", "about_and_support.md")
 st.set_page_config(page_title=" Financial Insight Tools", layout="wide")
 st.title("Financial Insight Tools")
 st.caption(
-    "*A structured launcher for the core Financial Insight Tools environments — "
-    "connecting macroeconomic exploration, market observation, trade and portfolio "
-    "workflows, and supporting reference surfaces within a disciplined decision-support framework.*"
+    "*A modular investigation platform for exploring financial markets, macroeconomics, \
+    and related analytical domains through connected observations, structured reasoning, \
+    and AI-assisted reflection.*"
 )
 
 # -------------------------------------------------------------------------------------------------
@@ -104,11 +104,11 @@ if os.path.isfile(IMAGE_PATH):
 
 # --- Quick Overview ---
 st.sidebar.caption(
-    "*Structured access across macro, markets, trade workflow, and supporting tools.*"
+    "*Explore, organise, investigate, and preserve ideas across the Financial Insight Tools suite.*"
 )
 
 st.sidebar.info(
-    "Each module opens in a new window. Keep this launcher open for quick re-entry across the suite."
+    "Each module opens in a new window. Keep this launcher open for quick access across the Financial Insight Tools suite."
 )
 
 # --- About & Support ---
@@ -154,52 +154,53 @@ with st.expander("ℹ️ About This Platform"):
 MODULES = [
     {
         "title": "🌍 Economic Exploration",
-        "description": "Country-level macro dashboards and thematic navigation.",
+        "description": "Explore macroeconomic conditions, country-level indicators, and thematic relationships.",
         "path": os.path.join(ROOT_PATH, "apps", "economic_exploration"),
         "filename": "app.py",
         "button": "Open Economic Exploration",
         "column": 1,
     },
     {
-        "title": "📈 Trade & Portfolio Structuring",
-        "description": "Structured workflows across asset review, trade framing, and portfolio analysis.",
-        "path": os.path.join(ROOT_PATH, "apps", "trade_portfolio_structuring"),
+        "title": "📚 Reference & Investigation Resources",
+        "description": "Expand observations, organise candidate assets, validate information, and support structured investigations.",
+        "path": os.path.join(ROOT_PATH, "apps", "reference_data"),
         "filename": "app.py",
-        "button": "Open Trade & Portfolio Structuring",
+        "button": "Open Reference & Investigation Resources",
         "column": 2,
     },
     {
         "title": "🔗 Intermarket & Correlation",
-        "description": "Explore cross-asset, macro, and thematic relationships across linked markets.",
+        "description": "Explore relationships across markets, macro conditions, positioning, and thematic connections.",
         "path": os.path.join(ROOT_PATH, "apps", "intermarket_correlation"),
         "filename": "app.py",
         "button": "Open Intermarket & Correlation",
         "column": 1,
     },
     {
-        "title": "🛠 Toolbox & Calculators",
-        "description": "Standalone utility functions for sizing, ratios, conversion, and supporting calculations.",
-        "path": os.path.join(ROOT_PATH, "apps", "toolbox_calculators"),
+        "title": "📈 Trade & Portfolio Structuring",
+        "description": "Investigate companies, markets, and trade structures before further action is considered.",
+        "path": os.path.join(ROOT_PATH, "apps", "trade_portfolio_structuring"),
         "filename": "app.py",
-        "button": "Open Toolbox & Calculators",
-        "column": 1,
+        "button": "Open Trade & Portfolio Structuring",
+        "column": 2,
     },
     {
         "title": "🧠 Observation & AI Export",
-        "description": "Capture structured observations and export context-ready insight bundles.",
+        "description": "Preserve investigations through structured observations, supporting evidence, and AI-ready context.",
         "path": os.path.join(ROOT_PATH, "apps", "observation_ai_export"),
         "filename": "app.py",
         "button": "Open Observation & AI Export",
-        "column": 2,
+        "column": 1,
     },
     {
-        "title": "📚 Reference Data & Sources",
-        "description": "Centralised access to source references, supporting materials, and trusted data surfaces.",
-        "path": os.path.join(ROOT_PATH, "apps", "reference_data"),
+        "title": "🛠 Toolbox & Calculators",
+        "description": "Supporting utilities for calculations, validation, planning, and analytical workflows.",
+        "path": os.path.join(ROOT_PATH, "apps", "toolbox_calculators"),
         "filename": "app.py",
-        "button": "Open Reference Data & Sources",
+        "button": "Open Toolbox & Calculators",
         "column": 2,
     },
+
 ]
 
 # --- Render Module Dashboard ---

@@ -42,9 +42,22 @@ def observation_input_form(form_key: str = "classification_observation_form") ->
         observation_text = st.text_area("Observation", height=120, key=f"{form_key}_text")
 
         optional_tags = st.multiselect("Optional Tags", [
-            "Emerging Markets", "Geopolitical Risk", "Sector Mapping Conflict",
-            "Index Eligibility", "Strategic Importance", "Fragmented Governance",
-            "Misaligned Ratings", "Classification Gap", "Dual Listings"
+            "Candidate Asset Review",
+            "Theme Alignment",
+            "Sector Classification",
+            "Industry Classification",
+            "Market Classification",
+            "Country Classification",
+            "Index Eligibility",
+            "Industry Concentration",
+            "Sector Diversification",
+            "Cross-Market Exposure",
+            "Geographic Exposure",
+            "Strategic Importance",
+            "Data Availability Gap",
+            "User Assumption",
+            "Uncertainty Preserved",
+            "AI Review"
         ], key=f"{form_key}_tags")
 
         submitted = st.form_submit_button("Save Observation")

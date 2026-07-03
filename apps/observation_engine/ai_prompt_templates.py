@@ -84,7 +84,9 @@ AI_PROMPT_TEMPLATES = {
     "Default Persona": {
         "prompt": (
             "Using the provided insight bundle, return a structured analysis as a qualified strategist. "
-            "Highlight relevant macro signals, tactical opportunities, and risk flags. "
+            "Using the provided investigation bundle, return a structured analysis. Identify relevant macro signals, \
+            structural relationships, areas of uncertainty, and risk considerations. Respond in Markdown using \
+            the supplied persona charter. "
             "Respond in JSON or Markdown."
         ),
         "description": "General framing for users not selecting a specialised persona."

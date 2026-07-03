@@ -77,24 +77,13 @@ def deduplicate_prompts(prompts: list[str]) -> str:
 # -------------------------------------------------------------------------------------------------
 # Helpers — Persona Sections
 # -------------------------------------------------------------------------------------------------
-def _with_dss_assessment(sections: list[str]) -> list[str]:
-    """
-    Append the standard DSS Assessment closing section to a response outline.
-    """
-    dss_section = "DSS Assessment"
-    if dss_section not in sections:
-        return sections + [dss_section]
-    return sections
-
-
 def _sections_for(persona_short: str) -> list[str]:
     """
     Return default response sections by persona.
     Falls back to a neutral DSS structure when no specialised persona is matched.
-    Every persona closes with a DSS Assessment section.
     """
     common = [
-        "Executive overview (maximum five concise bullets summarising the complete investigation)",
+        "Executive overview (3–5 bullets)",
         "Signals & evidence / mechanics",
         "Interpretation & structure",
         "Risks & uncertainties",
@@ -103,28 +92,28 @@ def _sections_for(persona_short: str) -> list[str]:
 
     by_role = {
         "Quantitative Analyst": [
-            "Executive overview (maximum five concise bullets summarising the complete investigation)",
+            "Executive overview (3–5 bullets)",
             "Signals & distributions",
             "Correlation & regime structure",
             "Uncertainty & interpretation limits",
             "What to watch",
         ],
         "Behavioural Economist": [
-            "Executive overview (maximum five concise bullets summarising the complete investigation)",
+            "Executive overview (3–5 bullets)",
             "Key biases & signals",
             "Feedback loops & narratives",
             "Interpretation risks",
             "What to watch",
         ],
         "Portfolio Manager": [
-            "Executive overview (maximum five concise bullets summarising the complete investigation)",
+            "Executive overview (3–5 bullets)",
             "Diversification & exposures",
             "Regime/rotation cues",
             "Constraints & trade-offs",
             "What to watch",
         ],
         "Risk Analyst": [
-            "Executive overview (maximum five concise bullets summarising the complete investigation)",
+            "Executive overview (3–5 bullets)",
             "Stress sources & pathways",
             "Scenario structure",
             "Fragility & buffers",
@@ -132,7 +121,7 @@ def _sections_for(persona_short: str) -> list[str]:
         ],
     }
 
-    return _with_dss_assessment(by_role.get(persona_short, common))
+    return by_role.get(persona_short, common)
 
 
 def _role_line_for(persona_short: str) -> str:
@@ -184,19 +173,6 @@ def _role_line_for(persona_short: str) -> str:
 # -------------------------------------------------------------------------------------------------
 # Helpers — DSS Investigation Prompting
 # -------------------------------------------------------------------------------------------------
-def build_dss_assessment_section() -> str:
-    """
-    Standard DSS Assessment instruction included in the AI Persona Instructions.
-    """
-    return """DSS ASSESSMENT
-- End with a DSS Assessment section.
-- Classify the current level of structural alignment as one of: High, Moderate, Low, or Inconclusive.
-- Explain the classification in 2–4 concise sentences.
-- State whether the current evidence demonstrates sufficient structural alignment to justify progressing to the next stage of the Financial Insight Tools workflow.
-- Do not recommend buying, selling, holding, sizing, or taking a position.
-- If progression is not supported, explain what evidence would need to improve before further workflow progression."""
-
-
 def build_investigation_method_section() -> str:
     """
     DSS investigation method included in the AI Persona Instructions.
@@ -212,8 +188,7 @@ def build_investigation_method_section() -> str:
 - Where evidence conflicts, explain the competing interpretations rather than selecting one without justification.
 - If a snapshot contributes relatively little to the investigation, explain why.
 - Clearly distinguish observed evidence from interpretation.
-- Base conclusions on the combined investigation rather than individual modules.
-- The objective is to determine whether the current investigation demonstrates sufficient structural alignment to justify progressing to the next stage of the Financial Insight Tools workflow."""
+- Base conclusions on the combined investigation rather than individual modules."""
 
 
 def build_decision_support_principles_section() -> str:
@@ -253,9 +228,7 @@ Identify:
 
 Do not ignore snapshots because they contain less information than others.
 
-Only after reviewing the complete investigation should you respond using the selected persona framework.
-
-Conclude with a DSS Assessment that classifies structural alignment as High, Moderate, Low, or Inconclusive, explains the classification, and states whether the investigation appears suitable to progress to the next stage of the Financial Insight Tools workflow without providing investment advice."""
+Only after reviewing the complete investigation should you respond using the selected persona framework."""
 
 
 # -------------------------------------------------------------------------------------------------
@@ -317,8 +290,6 @@ CONSTRAINTS
 
 {build_decision_support_principles_section()}
 
-{build_dss_assessment_section()}
-
 FOOTER
 - Append: “{footer_line}”
 """.strip()
@@ -356,15 +327,6 @@ def build_json_envelope_v2(
             "State uncertainty, missing information, and assumptions.",
             "Produce the persona response only after reviewing the complete investigation.",
         ],
-        "dss_assessment": {
-            "required": True,
-            "alignment_scale": ["High", "Moderate", "Low", "Inconclusive"],
-            "instructions": (
-                "End with a DSS Assessment that classifies structural alignment, explains the classification, "
-                "and states whether the investigation appears suitable to progress to the next stage of the FIT workflow. "
-                "Do not provide investment advice."
-            ),
-        },
         "footer": f"{short} • DSS (non-advisory) • v1.0" if footer_enabled else "",
     }
 
@@ -559,9 +521,6 @@ def render_ai_prompt_response_panel():
             "4. Identify supporting evidence, conflicting evidence, recurring themes, and structural dependencies.\n"
             "5. Highlight uncertainty, assumptions, missing evidence, and areas requiring additional investigation.\n"
             "6. Only after reviewing the complete investigation, produce the requested response using the selected persona.\n\n"
-            "End with a DSS Assessment that classifies structural alignment as High, Moderate, Low, or Inconclusive, "
-            "explains the classification, and states whether the investigation appears suitable to progress to the next "
-            "stage of the Financial Insight Tools workflow.\n\n"
             "Do not ignore snapshots because they contain less information.\n"
             "Do not provide investment advice.\n"
             "Return Markdown using the required output sections.\n\n"
@@ -597,48 +556,36 @@ def render_ai_prompt_response_panel():
         # API path intentionally disabled in this phase
         st.info(
             """
-        ### Using Your AI Export
+### Using Your AI Export
 
-        Your investigation is now ready.
+Your investigation is now ready.
 
-        #### ChatGPT Reference Personas
+#### ChatGPT Reference Personas
 
-        If you are using ChatGPT, open the selected **AI Persona by Blake Wiltshire**.
+If you are using ChatGPT, open the selected **AI Persona by Blake Wiltshire** and provide the **Investigation Prompt & Decision Support Bundle**.
 
-        Upload or paste the **Investigation Prompt & Decision Support Bundle**.
+The selected AI Persona already contains the behavioural instructions, handbook, glossary, and supporting reference material.
 
-        Then submit a short instruction such as:
+#### Other AI Assistants
 
-        > **Review the attached Decision Support System investigation using the selected AI Persona. Return the complete response inside a single fenced markdown code block using the required output sections and conclude with the DSS Assessment.**
+The AI Personas by Blake Wiltshire are implemented as ChatGPT reference personas.
 
-        The selected AI Persona already contains the behavioural instructions, handbook, glossary, and supporting reference material.
+When using another AI assistant, first provide the **AI Persona Instructions**, followed by the **Investigation Prompt & Decision Support Bundle**.
 
-        #### Other AI Assistants
+The embedded persona instructions provide a portable analytical framework. Supporting handbook, glossary, and reference material available within the ChatGPT reference implementation may not be available on other platforms.
 
-        The AI Personas by Blake Wiltshire are implemented as ChatGPT reference personas.
+#### Investigation Context
 
-        When using another AI assistant:
+The exported bundle preserves the evidence, observations, Decision Support Snapshots, and investigation context developed throughout Financial Insight Tools.
 
-        1. Provide the **AI Persona Instructions**.
-        2. Upload or paste the **Investigation Prompt & Decision Support Bundle**.
-        3. Submit a short instruction requesting the AI to review the complete Decision Support System investigation using the supplied persona instructions.
+Rather than beginning with a blank prompt, AI receives the structured investigation assembled during your analysis.
 
-        Ask it to return valid GitHub-Flavoured Markdown using the required output sections and to conclude with the DSS Assessment.
+Interpretation remains human.
 
-        The embedded persona instructions provide a portable analytical framework. Supporting handbook, glossary, and reference material available within the ChatGPT reference implementation may not be available on other platforms.
+Agency remains human.
 
-        #### Investigation Context
-
-        The exported bundle preserves the evidence, observations, Decision Support Snapshots, and investigation context developed throughout Financial Insight Tools.
-
-        Rather than beginning with a blank prompt, AI receives the structured investigation assembled during your analysis.
-
-        Interpretation remains human.
-
-        Agency remains human.
-
-        AI expands capability.
-        """
+AI expands capability.
+"""
         )
 
     # Persona Help
@@ -651,7 +598,6 @@ def render_ai_prompt_response_panel():
 - Add multiple persona prompts when you want a blended perspective.
 - Use **Investigation Context** to add specific questions, assumptions, or areas of uncertainty.
 - The AI Investigation Package is designed to review the complete bundle, not only the largest snapshot.
-- The final **DSS Assessment** summarises structural alignment and workflow readiness without providing advice.
 
 For ChatGPT reference personas, open the selected Blake Wiltshire AI Persona and provide the Investigation Prompt & Decision Support Bundle.
 
@@ -662,7 +608,7 @@ For other AI assistants, provide the AI Persona Instructions first, then the Inv
     st.markdown(
         """
 ---
-⚠️ **Disclaimer**
+⚠️ **Disclaimer**  
 This tool does not provide investment advice. All decisions remain the responsibility of the end user.
 """
     )

@@ -1,5 +1,5 @@
 # -------------------------------------------------------------------------------------------------
-# Load Investigation Panel — Insight Bundles, AI Responses, and Research Notes
+# Load / Restore Panel — Insight Bundles, AI Responses, and Research Notes
 # -------------------------------------------------------------------------------------------------
 
 import os
@@ -34,7 +34,7 @@ RESEARCH_NOTES_FOLDER.mkdir(parents=True, exist_ok=True)
 # -------------------------------------------------------------------------------------------------
 def _safe_filename(value: str, suffix: str = ".md") -> str:
     """
-    Converts a user-facing title into a safe Markdown filename.
+    Converts a user-facing note title into a safe markdown filename.
     """
     if not value:
         return f"untitled{suffix}"
@@ -88,23 +88,6 @@ def _write_text_file(path: Path, content: str) -> None:
         f.write(content)
 
 
-def _research_note_template() -> str:
-    return """# Research Note
-
-## Things to Remember
-
--
-
-## Open Questions
-
--
-
-## Context to Revisit
-
--
-"""
-
-
 # -------------------------------------------------------------------------------------------------
 # Tab 1 — Insight Bundles
 # -------------------------------------------------------------------------------------------------
@@ -112,11 +95,7 @@ def _render_insight_bundles_tab():
     st.subheader("Insight Bundles")
     st.caption("Review exported investigation bundles created from selected snapshots and observations.")
 
-    bundle_files = sorted(
-        EXPORT_FOLDER.glob("*.json"),
-        key=lambda p: p.stat().st_mtime,
-        reverse=True,
-    )
+    bundle_files = sorted(EXPORT_FOLDER.glob("*.json"), key=lambda p: p.stat().st_mtime, reverse=True)
 
     selected = st.selectbox(
         "Select JSON Bundle",
@@ -187,11 +166,7 @@ def _render_ai_responses_tab():
 
     st.markdown("### Saved AI Responses")
 
-    md_files = sorted(
-        RETURN_FOLDER.glob("*.md"),
-        key=lambda p: p.stat().st_mtime,
-        reverse=True,
-    )
+    md_files = sorted(RETURN_FOLDER.glob("*.md"), key=lambda p: p.stat().st_mtime, reverse=True)
 
     selected_md = st.selectbox(
         "Select Markdown File",
@@ -239,10 +214,7 @@ def _render_research_notes_tab():
         "Research Notes are stored as simple Markdown files and can be copied into future AI bundles or prompts."
     )
 
-    # -------------------------------------------------------------------------------------------------
-    # Create New Research Note
-    # -------------------------------------------------------------------------------------------------
-    st.markdown("### Create New Research Note")
+    st.markdown("### Create or Update Research Note")
 
     default_template = """# Research Note
 
@@ -259,35 +231,51 @@ def _render_research_notes_tab():
 -
 """
 
+    # Initialise editor state before widgets are instantiated.
+    if "research_note_title" not in st.session_state:
+        st.session_state["research_note_title"] = ""
+
+    if "research_note_draft" not in st.session_state:
+        st.session_state["research_note_draft"] = default_template
+
+    # Handle requested state changes before widgets are instantiated.
+    if st.session_state.get("research_note_clear_requested"):
+        st.session_state["research_note_title"] = ""
+        st.session_state["research_note_draft"] = default_template
+        st.session_state["research_note_clear_requested"] = False
+
     note_title = st.text_input(
         "Note Title",
-        value="",
         placeholder="Example: Tesla, Gold, AI Infrastructure, Labour Markets",
-        key="research_note_create_title",
+        key="research_note_title",
     )
 
     note_body = st.text_area(
         "Markdown Note",
-        value=default_template,
         height=300,
-        key="research_note_create_body",
+        key="research_note_draft",
     )
 
-    if st.button("Save Research Note", key="save_research_note"):
-        if not note_title.strip():
-            st.error("Please provide a note title before saving.")
-        else:
-            filename = _safe_filename(note_title)
-            save_path = RESEARCH_NOTES_FOLDER / filename
-            _write_text_file(save_path, note_body.strip() + "\n")
-            st.success(f"Saved research note to `{filename}`.")
+    col_save, col_clear = st.columns([1, 1])
+
+    with col_save:
+        if st.button("Save Research Note", key="save_research_note"):
+            if not note_title.strip():
+                st.error("Please provide a note title before saving.")
+            else:
+                filename = _safe_filename(note_title)
+                save_path = RESEARCH_NOTES_FOLDER / filename
+                _write_text_file(save_path, note_body.strip() + "\n")
+                st.success(f"Saved research note to `{filename}`.")
+                st.rerun()
+
+    with col_clear:
+        if st.button("Clear Draft", key="clear_research_note_draft"):
+            st.session_state["research_note_clear_requested"] = True
             st.rerun()
 
     st.divider()
 
-    # -------------------------------------------------------------------------------------------------
-    # Upload Research Note
-    # -------------------------------------------------------------------------------------------------
     st.markdown("### Upload Research Note")
 
     uploaded_note = st.file_uploader(
@@ -310,9 +298,6 @@ def _render_research_notes_tab():
 
     st.divider()
 
-    # -------------------------------------------------------------------------------------------------
-    # Saved Research Notes
-    # -------------------------------------------------------------------------------------------------
     st.markdown("### Saved Research Notes")
 
     note_files = sorted(
@@ -347,7 +332,7 @@ def _render_research_notes_tab():
     with st.expander("Preview Research Note", expanded=True):
         st.markdown(note_content)
 
-    col1, col2 = st.columns([1, 1])
+    col1, col2, col3 = st.columns([1, 1, 1])
 
     with col1:
         st.download_button(
@@ -359,6 +344,14 @@ def _render_research_notes_tab():
         )
 
     with col2:
+        if st.button("Load Into Editor", key=f"load_research_note_{filepath.name}"):
+            st.session_state["research_note_load_requested"] = {
+                "title": _display_name_from_file(filepath),
+                "content": note_content,
+            }
+            st.rerun()
+
+    with col3:
         if st.button("🗑️ Delete Note", key=f"delete_research_note_{filepath.name}"):
             filepath.unlink()
             st.success(f"Deleted `{filepath.name}`.")
@@ -366,10 +359,10 @@ def _render_research_notes_tab():
 
 
 # -------------------------------------------------------------------------------------------------
-# Load Investigation Panel
+# Load / Restore Panel
 # -------------------------------------------------------------------------------------------------
 def render_load_restore_panel():
-    st.header("Load Investigation")
+    st.header("Load / Restore")
     st.caption(
         "Manage exported investigation bundles, saved AI responses, and longer-term research notes."
     )

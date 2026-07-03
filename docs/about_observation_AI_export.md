@@ -1,6 +1,6 @@
 ## Observation & AI Export
 
-**Observation & AI Export** Export brings together structured investigations assembled across Financial Insight Tools. Decision Support Snapshots, observations, research notes, and contextual metadata are consolidated into investigation bundles that preserve evidence and reasoning throughout the analytical process.
+**Observation & AI Export** brings together structured investigations assembled across Financial Insight Tools. Decision Support Snapshots, observations, research notes, and contextual metadata are consolidated into investigation bundles that preserve evidence and reasoning throughout the analytical process.
 
 Investigations remain connected as they evolve, allowing observations to be revisited, expanded, and reviewed through different analytical perspectives.
 
@@ -12,7 +12,7 @@ Investigations remain connected as they evolve, allowing observations to be revi
 - **Research Notes:** Preserve longer-form investigation notes and developing ideas.
 - **Build Investigation Bundle:** Assemble snapshots, observations, metadata, and supporting context into portable investigation bundles.
 - **AI Personas & Investigation:** Load AI personas, generate investigation prompts, and review structured investigations.
-- **BLoad & Restore:** Restore previous investigations and continue analytical workflows.
+- **Load & Restore:** Restore previous investigations and continue analytical workflows.
 
 ---
 

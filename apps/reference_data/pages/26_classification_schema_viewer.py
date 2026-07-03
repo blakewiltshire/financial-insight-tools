@@ -19,6 +19,8 @@ and US large-cap corporate profiling.
 # -------------------------------------------------------------------------------------------------
 import os
 import sys
+import json
+from datetime import datetime
 
 # -------------------------------------------------------------------------------------------------
 # Path Setup
@@ -95,6 +97,127 @@ def safe_get(df_dict, key):
     """
     return df_dict.get(key, pd.DataFrame())
 
+
+def _safe_records(df: pd.DataFrame, columns: list) -> list:
+    """
+    Return JSON-safe records for selected columns that exist in a dataframe.
+    """
+    existing_columns = [column for column in columns if column in df.columns]
+    if df.empty or not existing_columns:
+        return []
+    return df[existing_columns].fillna("").to_dict(orient="records")
+
+
+def render_selectable_asset_export(
+    source_df: pd.DataFrame,
+    display_df: pd.DataFrame,
+    source_columns: list,
+    table_key: str,
+    export_prefix: str,
+    bundle_metadata: dict,
+    workflow_note: str,
+) -> pd.DataFrame:
+    """
+    Render a selectable dataframe and export controls for candidate assets.
+
+    This mirrors the Relationship Manager interaction pattern:
+    - filter dataset
+    - select candidate rows
+    - review selected assets
+    - export selected rows as CSV or JSON bundle
+
+    Args:
+        source_df (pd.DataFrame): Filtered source dataframe used for bundle records.
+        display_df (pd.DataFrame): Presentation dataframe shown to the user.
+        source_columns (list): Source columns to include in JSON bundle.
+        table_key (str): Unique Streamlit key for the selectable table.
+        export_prefix (str): Prefix used for exported files.
+        bundle_metadata (dict): Additional context fields for the JSON bundle.
+        workflow_note (str): Workflow note included in the JSON bundle.
+
+    Returns:
+        pd.DataFrame: Selected display dataframe.
+    """
+    if display_df.empty:
+        st.info("No records match the current filters.")
+        return display_df.iloc[0:0].copy()
+
+    selection_event = st.dataframe(
+        display_df,
+        width="stretch",
+        hide_index=True,
+        selection_mode="multi-row",
+        on_select="rerun",
+        key=table_key,
+    )
+
+    selection_state = getattr(selection_event, "selection", None)
+    selected_rows = getattr(selection_state, "rows", []) if selection_state else []
+
+    selected_source_df = (
+        source_df.iloc[selected_rows].copy() if selected_rows else source_df.iloc[0:0].copy()
+    )
+    selected_display_df = (
+        display_df.iloc[selected_rows].copy() if selected_rows else display_df.iloc[0:0].copy()
+    )
+
+    if selected_rows:
+        ticker_column = "Ticker" if "Ticker" in selected_display_df.columns else None
+        if ticker_column:
+            selected_summary = " • ".join(
+                selected_display_df[ticker_column].dropna().astype(str).tolist()
+            )
+            st.success(f"Selected assets ({len(selected_rows)}): {selected_summary}")
+        else:
+            st.success(f"Selected records ({len(selected_rows)}) prepared for export.")
+    else:
+        st.info("Select one or more rows to prepare an export.")
+
+    with st.expander("View selected asset details", expanded=bool(selected_rows)):
+        if selected_rows:
+            st.dataframe(selected_display_df, width="stretch", hide_index=True)
+        else:
+            st.caption("No candidate assets selected yet.")
+
+    st.markdown("### Export")
+
+    bundle = {
+        "created_at": datetime.utcnow().isoformat() + "Z",
+        "module": "classification_schema_viewer",
+        **bundle_metadata,
+        "filtered_record_count": int(len(display_df)),
+        "selected_asset_count": int(len(selected_source_df)),
+        "selected_assets": _safe_records(selected_source_df, source_columns),
+        "workflow_note": workflow_note,
+    }
+
+    if selected_rows:
+        st.download_button(
+            "Download Selected Assets CSV",
+            data=selected_display_df.to_csv(index=False),
+            file_name=f"{export_prefix}_selected_assets.csv",
+            mime="text/csv",
+            width="stretch",
+            key=f"{table_key}_csv_download",
+        )
+
+        st.download_button(
+            "Download Classification Bundle JSON",
+            data=json.dumps(bundle, indent=2),
+            file_name=f"{export_prefix}_classification_bundle.json",
+            mime="application/json",
+            width="stretch",
+            key=f"{table_key}_json_download",
+        )
+    else:
+        st.caption("Select rows from the table to enable downloads.")
+
+    with st.expander("View Classification Bundle JSON"):
+        st.json(bundle)
+
+    return selected_display_df
+
+
 df_forum = safe_get(classification_data, "forum")
 df_political = safe_get(classification_data, "political")
 df_market = safe_get(classification_data, "market")
@@ -107,8 +230,8 @@ df_largecap = safe_get(classification_data, "company_largecap")
 st.set_page_config(page_title="Classification Schema Viewer", layout="wide")
 st.title("Classification Schema Viewer")
 st.caption(
-    "*Explore political, economic, market, and company classifications across "
-    "countries and sectors.*"
+    "*Organise candidate assets using market, sector, industry, company, and "
+    "reference classification frameworks.*"
 )
 
 # -------------------------------------------------------------------------------------------------
@@ -125,7 +248,7 @@ with st.expander("ℹ️ About This App"):
 # Sidebar Navigation
 # -------------------------------------------------------------------------------------------------
 st.sidebar.title("📂 Navigation Menu")
-st.sidebar.page_link("app.py", label="Reference Data & Trusted Sources")
+st.sidebar.page_link("app.py", label="Reference & Investigation Resources")
 for path, label in build_sidebar_links():
     st.sidebar.page_link(path, label=label)
 st.sidebar.divider()
@@ -150,9 +273,10 @@ with st.sidebar.expander("ℹ️ App Usage Notes"):
         "All classification and reference data shown are sourced from publicly available datasets. "
         "No values are generated, rated, or interpreted by this tool.\n\n"
         "**Usage Tip**  \n"
+        "Use company register and classification views to organise candidate assets before "
+        "continuing market examination in the wider FIT environment.\n\n"
         "If you encounter display issues (e.g., blank tables or errors), use the navigation sidebar to "
-        "return to the main Reference Data & Trusted Sources module, then re-enter this viewer.\n\n"
-        "This can help reset the rendering state if filters or tabs were changed rapidly."
+        "return to the main Reference & Investigation Resources module, then re-enter this viewer."
     )
 
 
@@ -419,12 +543,38 @@ def render_company_base_view(df):
                 df_filtered["Ticker"].str.lower().str.contains(term, na=False)
             ]
 
-        st.dataframe(
-            df_filtered[[
-                "Ticker", "Company Name", "Industry Tag", "Exchange",
-                "Country", "Market Currency"
-            ]],
-            width='stretch'
+        display_columns = [
+            "Ticker", "Company Name", "Industry Tag", "Exchange",
+            "Country", "Market Currency"
+        ]
+        df_display = df_filtered[display_columns].copy()
+
+        st.markdown("### Candidate Assets")
+        st.caption(
+            "Select companies from the filtered global register for export or later observation. "
+            "This view organises candidates by region, country, exchange, currency, and industry tag."
+        )
+
+        render_selectable_asset_export(
+            source_df=df_filtered,
+            display_df=df_display,
+            source_columns=display_columns,
+            table_key="global_company_overview_selection",
+            export_prefix="global_company_register",
+            bundle_metadata={
+                "classification_view": "company_register_global",
+                "tab": "company_overview",
+                "selected_regions": region,
+                "selected_countries": country,
+                "selected_exchanges": exchange,
+                "selected_currencies": currency,
+                "selected_industry_tags": industry,
+                "search_term": search_term,
+            },
+            workflow_note=(
+                "Global Company Register organises candidate assets by region, country, "
+                "exchange, market currency, and broad industry tag before further review."
+            ),
         )
 
     # --------------------------------
@@ -544,16 +694,18 @@ def render_company_largecap_view(df):
     Renders a tabbed view of US large-cap companies, segmented into:
     - Profile: metadata, index inclusion, and firm info.
     - Social & Links: verified external media and websites.
-    - Classification Crosswalk: SIC and NAICS-based sector/industry matching.
+    - Sector & Industry Classification: SIC and NAICS-based sector/industry matching.
 
     Args:
         df (pd.DataFrame): Large-cap company register with classification and index tags.
     """
     st.subheader("🇺🇸 US Large-Cap Classification Viewer")
-    st.markdown("Structured exploration of S&P 500, DJIA, and Nasdaq 100 constituents with "
-    "sector and industry crosswalks.")
+    st.markdown(
+        "Organise US large-cap candidate assets by market, index membership, sector, "
+        "industry, and company classification before continuing the investigation."
+    )
 
-    tab1, tab2, tab3 = st.tabs(["Profile", "Social & Links", "Classification Crosswalk"])
+    tab1, tab2, tab3 = st.tabs(["Profile", "Social & Links", "Sector & Industry Classification"])
 
     # ------------------------
     # PROFILE TAB
@@ -627,7 +779,7 @@ def render_company_largecap_view(df):
         )
 
     # ------------------------
-    # CLASSIFICATION CROSSWALK TAB
+    # SECTOR & INDUSTRY CLASSIFICATION TAB
     # ------------------------
     with tab3:
         with st.expander("Filter Options – Classification"):
@@ -658,7 +810,7 @@ def render_company_largecap_view(df):
             naics_national
         )
 
-        st.dataframe(df_class[[
+        display_columns = [
             "Ticker", "Company Name",
             "Sec SIC Code", "Sec SIC Industry Title",
             "NAICS Sector Code", "NAICS Sector",
@@ -666,8 +818,40 @@ def render_company_largecap_view(df):
             "NAICS Industry Group Code", "NAICS Industry Group",
             "NAICS Industry Code", "NAICS Industry",
             "NAICS National Industry Code", "NAICS National Industry",
-            "DJIA", "Nasdaq 100", "Regions", "Country"
-        ]], width='stretch')
+            "S&P 500", "DJIA", "Nasdaq 100", "Regions", "Country"
+        ]
+        display_columns = [column for column in display_columns if column in df_class.columns]
+        df_display = df_class[display_columns].copy()
+
+        st.markdown("### Candidate Assets")
+        st.caption(
+            "Select companies from the filtered classification view for export or later observation. "
+            "This view organises US large-cap candidates by SIC and NAICS sector and industry structure."
+        )
+
+        render_selectable_asset_export(
+            source_df=df_class,
+            display_df=df_display,
+            source_columns=display_columns,
+            table_key="us_largecap_classification_selection",
+            export_prefix="us_largecap_classification",
+            bundle_metadata={
+                "classification_view": "company_register_us_largecap",
+                "tab": "sector_and_industry_classification",
+                "search_ticker": search_ticker,
+                "search_company_name": search_name,
+                "sic_code": sic_code,
+                "sic_industry_title": sic_title,
+                "naics_sector_code": naics_sector_code,
+                "naics_sector": naics_sector,
+                "naics_national_industry_code": naics_national_code,
+                "naics_national_industry": naics_national,
+            },
+            workflow_note=(
+                "US Large-Cap Classification Viewer organises candidate assets by market, "
+                "index membership, SIC, and NAICS sector and industry structure before market examination."
+            ),
+        )
 
 
 # -------------------------------------------------------------------------------------------------

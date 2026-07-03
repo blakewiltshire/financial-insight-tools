@@ -116,7 +116,7 @@ st.logo(BRAND_LOGO_PATH)  # pylint: disable=no-member
 
 # --- Getting Started, Branding Image and Caption ---
 st.sidebar.caption(
-    "*Structured workflows across trade setup, risk planning, and performance review.*"
+    "*Structured environments for examining markets, companies, trade ideas, and portfolio positioning.*"
 )
 
 st.sidebar.info(

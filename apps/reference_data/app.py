@@ -7,18 +7,20 @@
 # Docstring
 # -------------------------------------------------------------------------------------------------
 """
-Reference Data & Trusted Sources — Insight Launcher
+Reference & Investigation Resources — Insight Launcher
 
-Central hub for accessing institutional-grade sources, classification systems,
+Central hub for accessing institutional-grade sources, classification systems, reference manager
 and indicator metadata that support system-wide validation and contextual insight.
 
 Purpose
 Provide fast navigation to non-interactive data directories and structural inspection tools.
 
 Key Modules
-- Institutional Reference Directory
-- Thematic Registry Explorer
+- - Reference Manager
 - Classification Schema Viewer
+- Institutional Reference Directory
+- AI Persona Reference
+- Index & Glossary Viewer
 
 Structure
 - Button-driven layout using `st.switch_page()`
@@ -74,9 +76,10 @@ BRAND_LOGO_PATH = os.path.join(ROOT_PATH, "brand", "blake_logo.png")
 # -------------------------------------------------------------------------------------------------
 # Streamlit Page Setup
 # -------------------------------------------------------------------------------------------------
-st.set_page_config(page_title="Reference Data & Trusted Sources", layout="wide")
-st.title("📚 Reference Data & Trusted Sources")
-st.caption("*Central hub for reliable data sources, theme mapping, and classification schemas.*")
+st.set_page_config(page_title="Reference & Investigation Resources", layout="wide")
+st.title("📚 Reference & Investigation Resources")
+st.caption("*Supporting resources for expanding observations, organising candidate assets, \
+validating information, and maintaining analytical consistency.*")
 
 # -------------------------------------------------------------------------------------------------
 # Sidebar Configuration
@@ -86,16 +89,21 @@ st.caption("*Central hub for reliable data sources, theme mapping, and classific
 st.logo(BRAND_LOGO_PATH)  # pylint: disable=no-member
 
 # --- Getting Started ---
-st.sidebar.caption("*Institutional-grade reference support for validation, sourcing, \
-and system architecture.*")
+st.sidebar.caption("*Supporting resources for structured investigation and analytical consistency.*")
 
 st.sidebar.info("""
-**Reference Data & Trusted Sources**
+**Reference & Investigation Resources**
 
-This launcher provides structured access to validated links, classification viewers,
-and the internal thematic registry system used across the Financial Insight Tools suite.
+This launcher provides the supporting resources used throughout Financial Insight Tools.
 
-Use this module to validate metadata, inspect mappings, and cross-reference official data sources.
+Use these modules to:
+
+- expand observations into candidate assets
+- organise investigations through structured classifications
+- validate information using institutional sources
+- maintain consistent terminology and analytical perspectives
+
+These resources support investigation before market examination and AI-assisted reflection.
 """)
 
 
@@ -143,52 +151,52 @@ col1, col2 = st.columns(2, gap="small")
 
 with col1:
     with st.container(border=True):
-        st.markdown("### Institutional Reference Directory")
+        st.markdown("### Relationship Manager")
         st.write(
-            "Directory of market data platforms, regulators, and statistical portals."
+            "Expand observations into relationship themes and candidate assets for further investigation."
         )
-        if st.button("Launch Institutional Directory"):
-            st.switch_page("pages/25_institutional_reference_directory.py")
+        if st.button("Launch Relationship Manager"):
+            st.switch_page("pages/25_relationship_manager.py")
 
 with col2:
     with st.container(border=True):
         st.markdown("### Classification Schema Viewer")
         st.write(
-            "Explore economic, market, sector, industry, and company classifications."
+            "Organise candidate assets using market, sector, industry, and company classification frameworks."
         )
-        if st.button("Launch Classification Viewer"):
+        if st.button("Launch Classification Schema Viewer"):
             st.switch_page("pages/26_classification_schema_viewer.py")
 
 col1, col2 = st.columns(2, gap="small")
 
 with col1:
     with st.container(border=True):
-        st.markdown("### Relationship Manager")
+        st.markdown("### Institutional Reference Directory")
         st.write(
-            "Explore how observations, themes, and narratives may connect to business capabilities and potential market exposures."
+            "Validate investigations using institutional market data, regulators, and official statistical sources."
         )
-        if st.button("Launch Relationship Manager"):
-            st.switch_page("pages/29_relationship_manager.py")
+        if st.button("Launch Institutional Directory"):
+            st.switch_page("pages/27_institutional_reference_directory.py")
 
 with col2:
     with st.container(border=True):
         st.markdown("### AI Persona Reference")
         st.write(
-            "Centralised repository of role definitions and exploration frameworks."
+            "Explore structured analytical perspectives for reviewing investigations through different professional lenses."
         )
         if st.button("AI Persona Reference"):
-            st.switch_page("pages/27_ai_persona_reference.py")
+            st.switch_page("pages/28_ai_persona_reference.py")
 
 col1, col2 = st.columns(2, gap="small")
 
 with col1:
     with st.container(border=True):
-        st.markdown("### Index & Glossary Viewer")
+        st.markdown("### Index & Glossary")
         st.write(
-            "Alphabetical cross-reference of key concepts, terms, and chapter references."
+            "Shared terminology, concepts, and cross-references used throughout Financial Insight Tools."
         )
-        if st.button("Index & Glossary Viewer"):
-            st.switch_page("pages/28_index_glossary_viewer.py")
+        if st.button("Index & Glossary"):
+            st.switch_page("pages/29_index_glossary.py")
 
 # -------------------------------------------------------------------------------------------------
 # Footer

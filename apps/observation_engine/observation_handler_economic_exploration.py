@@ -108,9 +108,24 @@ def observation_input_form(
 
         optional_tags = st.multiselect(
             "Optional Tags (select applicable themes):", [
-                "Macroeconomy", "AI", "Automation", "Geopolitics", "Supply Chain",
-                "Consumer Sentiment", "Manufacturing", "Finance", "Retail",
-                "Energy", "Tech", "Rates", "Dollar", "Commodities"
+                "Macro Driver",
+                "Growth",
+                "Inflation",
+                "Rates",
+                "Labour Market",
+                "Consumer Sentiment",
+                "Manufacturing",
+                "Energy",
+                "Dollar",
+                "Commodities",
+                "Policy Risk",
+                "Potential Macro Shift",
+                "Confirmation",
+                "Contradiction",
+                "Monitoring",
+                "User Assumption",
+                "Uncertainty Preserved",
+                "AI Review"
             ],
             key=f"{form_key}_tags",
             help="Tags assist AI engines to cluster observations into sectors, drivers, and macro themes."

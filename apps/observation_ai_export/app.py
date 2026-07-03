@@ -102,7 +102,7 @@ st.set_page_config(
     layout="wide"
 )
 st.title("🧠 Observation & AI Export")
-st.caption("")
+st.caption("*Preserve observations, assemble evidence, and prepare structured investigations for AI-assisted review.*")
 
 # -------------------------------------------------------------------------------------------------
 # Load About Markdown (auto-skips if not replaced)
@@ -129,16 +129,18 @@ st.sidebar.caption("*Consolidate your insights. Review, bundle, and export AI-re
 # Sidebar — Info
 # -------------------------------------------------------------------------------------------------
 st.sidebar.info("""
-**Observation & AI Export Dashboard**
 
-- **Snapshot Browser:** View saved macro snapshots with metadata.
-- **Observation Browser:** Review notes and insights across modules.
-- **Manage Snapshots / Observations:** Organise or remove saved entries.
-- **Build Export Bundle:** Package insights into structured AI-ready files.
-- **AI Prompt & Response:** Load personas and generate AI interactions.
-- **Load / Restore:** Upload, preview, and manage saved files.
+**Observation & AI Export**
 
-Designed as a modular workspace for structured insight and analysis.
+- **Decision Support Snapshots:** Review saved investigation snapshots with module context and metadata.
+- **Observations:** Browse structured observations and supporting reasoning across modules.
+- **Manage Snapshots:** Organise, inspect, or remove saved Decision Support Snapshots.
+- **Manage Observations:** Review, edit, or remove saved observation entries.
+- **Investigation Bundle:** Assemble snapshots, observations, notes, and metadata into a portable bundle.
+- **AI Investigation:** Load AI personas, generate prompts, and review structured AI responses.
+- **Load Investigation:** Upload, preview, restore, or continue saved investigation files.
+
+The investigation hub for preserving context, organising evidence, and supporting AI-assisted interpretation.
 """)
 
 # -------------------------------------------------------------------------------------------------
@@ -157,13 +159,13 @@ if "ai_bundle_current" not in st.session_state:
 # Main Tab Navigation
 # -------------------------------------------------------------------------------------------------
 tabs = st.tabs([
-    "Snapshot Browser",          # 0 — Insight Browsing
-    "Observation Browser",       # 1
-    "Manage Snapshots",          # 2 — Insight Management
-    "Manage Observations",       # 3
-    "Build Export Bundle",       # 4 — Insight Operations
-    "AI Prompt & Response",      # 5
-    "Load / Restore"             # 6
+    "Decision Support Snapshots",   # 0 — Insight Browsing
+    "Observations",                 # 1
+    "Manage Snapshots",             # 2 — Insight Management
+    "Manage Observations",          # 3
+    "Investigation Bundle",         # 4 — Insight Operations
+    "AI Investigation",             # 5
+    "Load Investigation"            # 6
 ])
 
 # -------------------------------------------------------------------------------------------------

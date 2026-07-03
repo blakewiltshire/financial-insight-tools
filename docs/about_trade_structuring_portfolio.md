@@ -1,6 +1,6 @@
 ## Trade & Portfolio Structuring
 
-The **Trade & Portfolio Structuring suite** provides a modular workflow for designing, timing, executing, and reviewing trades within a structured decision-support environment. It supports the full trade lifecycle — from pre-trade screening to post-trade diagnostics — with system-based tools designed to enhance clarity, consistency, and insight.
+The **Trade & Portfolio Structuring suite** provides a modular workflow for designing, timing, executing, and reviewing trades within a structured decision-support environment. It supports the trade planning and review lifecycle — from pre-trade screening to post-trade diagnostics — with system-based tools designed to enhance clarity, consistency, and insight.
 
 This dashboard serves as the entry point to the suite’s core modules:
 

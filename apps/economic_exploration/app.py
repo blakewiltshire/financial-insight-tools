@@ -104,8 +104,7 @@ from constants.regions import regions, country_coordinates  # pylint: disable=im
 # -------------------------------------------------------------------------------------------------
 st.set_page_config(page_title="Economic Exploration", layout="wide")
 st.title("🌍 Economic Exploration")
-st.caption("*Navigate country-level macro dashboards and thematic economic indicators \
-through a structured lens.*")
+st.caption("*Explore country-level macroeconomic conditions, thematic indicators, and systemic relationships.*")
 
 # -------------------------------------------------------------------------------------------------
 # Sidebar Configuration
@@ -134,7 +133,7 @@ st.sidebar.divider()
 
 
 # --- Getting Started ---
-st.sidebar.caption("*Modular, structured dashboards for navigating macro themes by country.*")
+st.sidebar.caption("*Structured exploration of macroeconomic conditions across regions and countries.*")
 
 # if os.path.isfile(IMAGE_PATH):
 #     st.sidebar.image(IMAGE_PATH, width='stretch')

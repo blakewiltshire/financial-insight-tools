@@ -90,8 +90,7 @@ BRAND_LOGO_PATH = os.path.join(ROOT_PATH, "brand", "blake_logo.png")
 st.set_page_config(page_title="Toolbox & Calculators", layout="wide")
 st.title("🛠 Toolbox & Calculators")
 st.caption(
-"*Quick-access utilities for precision trade planning, risk evaluation, \
-and structural financial analysis.*")
+"*Supporting calculations, scenario testing, validation, and analytical planning.*")
 
 # -------------------------------------------------------------------------------------------------
 # Sidebar Configuration

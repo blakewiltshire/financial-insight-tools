@@ -15,6 +15,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 
 from core.helpers import get_named_paths  # Canonical import
+from observation_engine.json_helpers import make_json_safe
 
 # -------------------------------------------------------------------------------------------------
 # Resolve Project and App Paths
@@ -156,6 +157,6 @@ def render_ai_export_panel(snapshot_results: dict, base_asset: str, asset_type_d
             return
 
         with open(save_path, "w", encoding="utf-8") as f:
-            json.dump(export_bundle, f, indent=4)
+            json.dump(make_json_safe(export_bundle), f, indent=4)
 
         st.success(f"📁 Snapshot saved to `{save_path}`")

@@ -1,5 +1,5 @@
 # -------------------------------------------------------------------------------------------------
-# 🧠 AI Export UI Panel — Platinum Production Build (Standalone Snapshot System)
+# AI Export UI Panel — Platinum Production Build (Standalone Snapshot System)
 # -------------------------------------------------------------------------------------------------
 # pylint: disable=import-error, wrong-import-position, wrong-import-order
 

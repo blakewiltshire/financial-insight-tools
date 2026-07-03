@@ -31,8 +31,25 @@ def observation_input_form(form_key: str = "lp_observation_form") -> None:
         observation_text = st.text_area("Portfolio Note", height=120, key=f"{form_key}_text")
 
         optional_tags = st.multiselect("Optional Tags:", [
-            "Overexposed", "Hedged", "Earnings Risk", "Diversified", "High Conviction",
-            "Macro Headwinds", "Sector Imbalance", "Low Liquidity"
+            "Overexposed",
+            "Underexposed",
+            "Hedged",
+            "Unhedged",
+            "Concentration Risk",
+            "Diversified",
+            "Sector Imbalance",
+            "Macro Headwinds",
+            "Earnings Risk",
+            "Event Risk",
+            "Liquidity Risk",
+            "Drawdown Risk",
+            "High Conviction",
+            "Risk Management",
+            "Portfolio Review",
+            "Monitoring",
+            "User Assumption",
+            "Uncertainty Preserved",
+            "AI Review"
         ], key=f"{form_key}_tags")
 
         submitted = st.form_submit_button("Save Note")

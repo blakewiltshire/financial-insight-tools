@@ -9,8 +9,8 @@
 """
 Intermarket & Correlation — Insight Launcher
 
-Modular dashboard for analysing cross-asset relationships, macro linkages, and volatility dynamics
-within the Financial Insight Tools suite.
+Modular dashboard for analysing cross-asset relationships, macro linkages, volatility dynamics,
+transmission and positioning within the Financial Insight Tools suite.
 
 Purpose
 To facilitate exploration of how financial assets, economic signals, and thematic spreads interact
@@ -23,6 +23,10 @@ spreads, and correlation matrices
 - Statistical diagnostics including Pearson/Spearman correlations, z-scores, lag analysis,
 and volatility comparisons
 - Visual workflows for thematic heatmaps, inter-asset grids, and macro consistency checks
+- Track exogenous differentials across systems, including growth, rates, spreads, FX pressure,
+and macro-asset divergence.
+- Review leveraged positioning, crowding, percentile extremes, and flip behaviour across core
+futures markets.
 
 Structure
 - Modules accessed via the main window using `st.switch_page()` (no sidebar navigation)
@@ -94,9 +98,8 @@ BRAND_LOGO_PATH = os.path.join(ROOT_PATH, "brand", "blake_logo.png")
 # -------------------------------------------------------------------------------------------------
 st.set_page_config(page_title="Intermarket & Correlation Dashboard", layout="wide")
 st.title("🔗 Intermarket & Correlation Dashboard")
-st.caption("*This launcher supports structured comparison of asset behaviour across macro "
-"signals, themes, and markets. Modules focus on intermarket flow, cross-asset correlation, and "
-"relationship diagnostics to enhance systemic awareness and strategy alignment.*")
+st.caption("*Explore relationships across markets, macro conditions, positioning, and \
+thematic behaviour.*")
 
 # -------------------------------------------------------------------------------------------------
 # Sidebar Configuration
