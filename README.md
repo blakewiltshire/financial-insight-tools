@@ -1,8 +1,14 @@
 # Financial Insight Tools (FIT) — Structured Financial Reasoning Environment
 
-Financial Insight Tools (FIT) is a modular decision-support environment for building structured investigations across financial markets, macroeconomics, company analysis, and related analytical domains. Economic signals, market observations, supporting evidence, and human reasoning remain connected throughout the investigation, allowing context to evolve as new information becomes available. AI contributes through structured investigation review while human judgement remains central to the decision-making process.
+Financial Insight Tools (FIT) is a modular decision-support environment for building structured investigations across financial markets, macroeconomics, company analysis, and related analytical domains. Observations, evidence, and reasoning remain connected as investigations evolve, allowing context to develop alongside new information. AI contributes through structured investigation review while human judgement remains central to interpretation and decision-making.
 
 FIT provides consistent structure across relationship exploration, distribution analysis, trade modelling, macroeconomic exploration, thematic correlation, relative macro transmission, positioning analysis, company structure review, market structure review, and observation capture so that information can be organised, examined, aligned, and preserved as structured investigations that can be revisited, extended, documented, or reviewed through AI-assisted investigation workflows.
+
+## Learn More
+
+To understand the investigation philosophy behind Financial Insight Tools (FIT):
+
+- [Why We Built Financial Insight Tools (FIT)](https://blakewiltshire.substack.com/p/financial-insight-tools-fit)
 
 ## Companion References (PDF)
 
@@ -101,6 +107,7 @@ FIT is structured across connected analytical layers.
 ### Relationship & Investigation
 
 - Relationship Manager
+- Reference & Investigation Resources
 
 ### Financial Application
 
@@ -112,10 +119,10 @@ FIT is structured across connected analytical layers.
 - Price Action & Trend Confirmation
 - Watchlist, Trade Structuring & Risk Planning
 - Spread Ratio Insights
-- Cross Asset Correlation
+- Cross-Asset Correlation
 - Live Portfolio Monitor
 
-### Investigation Workflow
+### Investigation Preservation
 
 - Observation & AI Export
 
@@ -255,22 +262,27 @@ Observation & AI Export consolidates Decision Support Snapshots, structured obse
 
 ## Where to Start
 
-- **Market & Volatility Scanner** — distribution structure and regime context
-- **Company Structure Review** — valuation, profitability, efficiency, and comparative business structure analysis
-- **Market Structure Review** — ownership, float, supply events, liquidity pathways, and participation structure
-- **Trade Timing & Confirmation** — multi-timeframe alignment, confirmation conditions, and timing context
-- **Price Action & Trend Confirmation** — trend structure, momentum characteristics, and directional behaviour
-- **Trade Structuring & Risk Planning** — scenario modelling, exposure calibration, and risk framing
+Investigations may begin from any module. Different analytical questions naturally lead to different investigation paths, while observations, evidence, and reasoning remain connected throughout the process.
 
-Additional system-wide exploration modules include:
+### Markets & Companies
 
-- **Economic Exploration** — macro system structure and country-level diagnostics
-- **Thematic Correlation** — relationship mapping across macroeconomic themes
-- **Relative Macro Transmission** — exogenous differential analysis and regime divergence
-- **Positioning & Crowding** — leveraged positioning, percentile extremes, and positioning turns
-- **Observation & AI Export** — Decision Support Snapshots, structured observations, investigation bundles, AI personas, and AI-assisted investigation workflows.
+- **Market & Volatility Scanner** — distribution structure, volatility, and market behaviour
+- **Company Structure Review** — valuation, profitability, efficiency, and comparative business analysis
+- **Market Structure Review** — ownership, supply, participation, and liquidity structure
 
-Each module presents a different perspective on the same underlying analytical framework without fragmenting or redefining it.
+### Macroeconomic & System Exploration
+
+- **Economic Exploration** — macroeconomic indicators and country-level diagnostics
+- **Thematic Correlation** — relationships across macroeconomic themes
+- **Relative Macro Transmission** — structural transmission between economies and markets
+- **Positioning & Crowding** — leveraged positioning, percentile extremes, and market participation
+
+### Trade Planning & Investigation
+
+- **Trade Timing & Confirmation** — multi-timeframe alignment and confirmation
+- **Price Action & Trend Confirmation** — trend, momentum, and directional structure
+- **Trade Structuring & Risk Planning** — scenario planning, exposure, and risk calibration
+- **Observation & AI Export** — preserve observations, assemble investigation bundles, and support AI-assisted review
 
 ## Structure (High-Level)
 
