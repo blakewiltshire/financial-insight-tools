@@ -54,6 +54,16 @@ def build_macro_insight_snapshot_relative_macro_transmission(
             }
         },
         "metadata": {
-            "snapshot_notes": "Generated from Relative Macro Transmission."
-        }
+            "snapshot_notes": (
+                "Generated from Relative Macro Transmission."
+            ),
+            "ai_review_instruction": (
+                "Review this Relative Macro Transmission snapshot as comparative structural context. "
+                "Interpret the current differential, percentile, rolling state, transformation, and "
+                "selected window together. Do not infer causation, stable transmission, predictive "
+                "power, or trade direction from relative movement alone. Identify whether the observed "
+                "relationship appears persistent, changing, unusual, or incomplete, and note which "
+                "additional evidence would be required for interpretation."
+            ),
+        },
     }

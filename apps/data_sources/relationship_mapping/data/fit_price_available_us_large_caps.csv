@@ -1,19 +1,19 @@
-ticker,company_name,business_tags,relationship_candidates_draft
-AAPL,Apple Inc.,enterprise_software; software_platforms; digital_content; payments; ecommerce; consumer_electronics; retail; apparel_luxury; education_services,enterprise_it_spending; productivity_tools; digital_platforms; consumer_spending; digital_payments; device_upgrade_cycle
-AMZN,"Amazon.Com, Inc.",cloud_services; enterprise_software; digital_advertising; digital_content; consumer_electronics; medical_devices; retail; media_entertainment,ai_infrastructure; enterprise_it_spending; productivity_tools; advertising_cycle; digital_platforms; consumer_spending; device_upgrade_cycle; healthcare_demand; innovation_cycle
-BA,The Boeing Company,software_platforms; aerospace_defense; airlines; logistics_transport; industrial_machinery; construction_engineering,digital_platforms; enterprise_it_spending; defence_spending; geopolitical_risk; oil_price_sensitivity; consumer_travel; supply_chain; trade_flows; industrial_cycle; capital_expenditure
-DIS,The Walt Disney Company,digital_content; electric_utilities; retail; hotels_travel; consumer_staples; media_entertainment; real_estate,power_demand; grid_infrastructure; consumer_spending; defensive_consumption; inflation_sensitivity; advertising_cycle; rate_sensitivity; property_cycle
-GOOGL,Alphabet Inc.,artificial_intelligence; cloud_services; software_platforms; cybersecurity; digital_advertising; financial_data_analytics; industrial_machinery; construction_engineering; home_improvement; education_services,ai_adoption; ai_infrastructure; enterprise_it_spending; digital_platforms; digital_resilience; advertising_cycle; industrial_cycle; capital_expenditure; infrastructure_spending; housing_cycle
-HD,"The Home Depot, Inc.",industrial_machinery; retail; home_improvement; real_estate,industrial_cycle; capital_expenditure; consumer_spending; housing_cycle; rate_sensitivity; property_cycle
-KO,The Coca-Cola Company,mining_metals; consumer_staples,commodity_supply; industrial_input_costs; defensive_consumption; inflation_sensitivity
-LIN,Linde Public Limited Company,enterprise_software; oil_gas; chemicals; industrial_gases; industrial_machinery; construction_engineering,enterprise_it_spending; productivity_tools; energy_supply; inflation_sensitivity; industrial_input_costs; manufacturing_cycle; industrial_production; semiconductor_supply_chain; industrial_cycle; capital_expenditure
-META,"Meta Platforms, Inc.",software_platforms; consumer_electronics; medical_devices; retail; social_media,digital_platforms; enterprise_it_spending; consumer_spending; device_upgrade_cycle; healthcare_demand; innovation_cycle
-MSFT,Microsoft Corporation,cloud_services; digital_advertising; digital_content; consumer_electronics; medical_devices; professional_services; media_entertainment; real_estate,ai_infrastructure; enterprise_it_spending; advertising_cycle; digital_platforms; consumer_spending; device_upgrade_cycle; healthcare_demand; innovation_cycle; enterprise_spending; ai_disruption
-NEE,"Nextera Energy, Inc.",renewable_energy; electric_utilities; construction_engineering; electrical_equipment,power_demand; grid_infrastructure; infrastructure_spending; housing_cycle
-NVDA,Nvidia Corporation,artificial_intelligence; cloud_services; enterprise_software; software_platforms; semiconductors; data_centres; networking_equipment; digital_content; consumer_electronics; mining_metals; construction_engineering; automotive; media_entertainment; data_centre_reits,ai_adoption; ai_infrastructure; enterprise_it_spending; productivity_tools; digital_platforms; compute_demand; data_centre_growth; power_demand; consumer_spending; device_upgrade_cycle
-ORCL,Oracle Corporation,cloud_services; enterprise_software; construction_engineering; professional_services,ai_infrastructure; enterprise_it_spending; productivity_tools; infrastructure_spending; housing_cycle; enterprise_spending; ai_disruption
-PFE,Pfizer Inc.,pharmaceuticals; biotechnology; electric_utilities,healthcare_demand; regulatory_risk; innovation_cycle; power_demand; grid_infrastructure
-PLD,"Prologis, Inc.",logistics_transport; real_estate,supply_chain; trade_flows; rate_sensitivity; property_cycle
-TSLA,"Tesla, Inc.",insurance; renewable_energy; mining_metals; retail; automotive; real_estate,risk_transfer; catastrophe_risk; commodity_supply; industrial_input_costs; consumer_spending; industrial_cycle; rate_sensitivity; property_cycle
-V,Visa Inc.,payments; banking; investment_management; capital_markets; professional_services,consumer_spending; digital_payments; interest_rate_sensitivity; credit_conditions; market_activity; liquidity; enterprise_spending; ai_disruption
-XOM,Exxon Mobil Corporation,oil_gas; chemicals,energy_supply; inflation_sensitivity; industrial_input_costs; manufacturing_cycle
+﻿ticker,company_name,fit_price_available,availability_status
+AAPL,Apple Inc.,True,core_daily_price_data
+AMZN,"Amazon.Com, Inc.",True,core_daily_price_data
+BA,The Boeing Company,True,core_daily_price_data
+DIS,The Walt Disney Company,True,core_daily_price_data
+GOOGL,Alphabet Inc.,True,core_daily_price_data
+HD,"The Home Depot, Inc.",True,core_daily_price_data
+KO,The Coca-Cola Company,True,core_daily_price_data
+LIN,Linde Public Limited Company,True,core_daily_price_data
+META,"Meta Platforms, Inc.",True,core_daily_price_data
+MSFT,Microsoft Corporation,True,core_daily_price_data
+NEE,"Nextera Energy, Inc.",True,core_daily_price_data
+NVDA,Nvidia Corporation,True,core_daily_price_data
+ORCL,Oracle Corporation,True,core_daily_price_data
+PFE,Pfizer Inc.,True,core_daily_price_data
+PLD,"Prologis, Inc.",True,core_daily_price_data
+TSLA,"Tesla, Inc.",True,core_daily_price_data
+V,Visa Inc.,True,core_daily_price_data
+XOM,Exxon Mobil Corporation,True,core_daily_price_data

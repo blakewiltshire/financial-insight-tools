@@ -74,6 +74,18 @@ def build_macro_insight_snapshot_market_structure_review(
             "snapshot_notes": (
                 "Generated from Market Structure Review. Outputs are observational "
                 "and non-advisory."
-            )
+            ),
+            "ai_review_instruction": (
+                "Review this Market Structure Review snapshot as structural context around "
+                "ownership, float, participation, index eligibility, and potential supply events. "
+                "Identify which structural features may affect liquidity, available supply, market "
+                "participation, or future investigation, while distinguishing confirmed conditions "
+                "from scheduled, conditional, or uncertain events. Do not assume that a lock-up "
+                "expiry, registration, offering, insider eligibility, or other supply event will "
+                "result in selling or determine price direction. Treat comparison assets as context "
+                "rather than direct equivalents unless the supplied evidence supports that conclusion. "
+                "Highlight missing information, timing dependencies, and questions requiring further "
+                "verification. Do not recommend investments, predict performance, or select trades."
+            ),
         },
     }

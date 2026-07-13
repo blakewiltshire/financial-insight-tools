@@ -47,6 +47,17 @@ def build_macro_insight_snapshot_positioning_and_crowding(
             }
         },
         "metadata": {
-            "snapshot_notes": "Generated from Positioning & Crowding."
-        }
+            "snapshot_notes": (
+                "Generated from Positioning & Crowding."
+        ),
+            "ai_review_instruction": (
+                "Review this Positioning & Crowding snapshot as timing and participation context. "
+                "Interpret net positioning, percentile extremes, and positioning turns relative to "
+                "the selected historical window. Do not treat crowded positioning as an automatic "
+                "reversal signal, a positioning flip as confirmation of direction, or percentile "
+                "extremes as standalone trade evidence. Identify where positioning may reinforce, "
+                "complicate, or challenge a wider investigation, and distinguish observed positioning "
+                "from inferred market intent. Do not recommend investments or select trades."
+            ),
+        },
     }

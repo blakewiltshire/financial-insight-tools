@@ -73,6 +73,20 @@ def build_macro_insight_snapshot_company_structure_review(
             "snapshot_notes": (
                 "Generated from Company Structure Review. "
                 "Outputs are observational and non-advisory."
-            )
+            ),
+            "ai_review_instruction": (
+                "Review this Company Structure Review snapshot as relative structural "
+                "evidence within the supplied peer group. Use the valuation, growth, "
+                "profitability, short-interest, peer-average, median, ranking, and "
+                "missing-data context to identify what the market may appear prepared "
+                "to reward or discount, which differences require explanation, and "
+                "which companies or structural questions warrant further examination. "
+                "Treat rankings as descriptive peer context rather than investment "
+                "rankings. Do not infer that a low valuation is automatically attractive, "
+                "that a high valuation is automatically unattractive, or that any company "
+                "is expected to outperform. Distinguish clearly between observed data, "
+                "interpretation, and missing information. Do not recommend investments "
+                "or select trades."
+            ),
         },
     }

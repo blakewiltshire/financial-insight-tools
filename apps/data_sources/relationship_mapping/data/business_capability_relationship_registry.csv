@@ -1,0 +1,313 @@
+business_tag,related_business_tag,relationship_group,relationship_direction,relationship_description,display_order,relationship_status,relationship_scope,source_valid,destination_valid
+artificial_intelligence,semiconductors,Supply,Upstream,Semiconductors provide compute capacity used to train and operate AI systems.,1,curated_working,illustrative_not_exhaustive,True,True
+artificial_intelligence,cloud_services,Infrastructure,Supporting,"Cloud platforms provide scalable computing, storage and deployment environments for AI.",2,curated_working,illustrative_not_exhaustive,True,True
+artificial_intelligence,data_centre_reits,Infrastructure,Supporting,Data-centre property supports the physical deployment of AI compute infrastructure.,3,curated_working,illustrative_not_exhaustive,True,True
+artificial_intelligence,networking_equipment,Infrastructure,Supporting,"Networking equipment connects accelerated compute, storage and distributed AI workloads.",4,curated_working,illustrative_not_exhaustive,True,True
+artificial_intelligence,enterprise_software,Application,Downstream,Enterprise software embeds AI capabilities within organisational workflows and applications.,5,curated_working,illustrative_not_exhaustive,True,True
+artificial_intelligence,software_platforms,Application,Downstream,Software platforms distribute AI capabilities through developer and user ecosystems.,6,curated_working,illustrative_not_exhaustive,True,True
+artificial_intelligence,cybersecurity,Service,Adjacent,AI adoption changes security requirements while also supporting detection and response capabilities.,7,curated_working,illustrative_not_exhaustive,True,True
+artificial_intelligence,electric_utilities,Economic,Infrastructure,AI infrastructure can increase electricity demand and power-system investment requirements.,8,curated_working,illustrative_not_exhaustive,True,True
+artificial_intelligence,electrical_equipment,Infrastructure,Supporting,"Electrical equipment supports power distribution, control and resilience within compute environments.",9,curated_working,illustrative_not_exhaustive,True,True
+semiconductors,electronic_design_automation,Service,Upstream,"Electronic-design-automation tools support chip architecture, verification and development.",1,curated_working,illustrative_not_exhaustive,True,True
+semiconductors,chemicals,Supply,Upstream,Specialty chemicals and materials support semiconductor fabrication and packaging.,2,curated_working,illustrative_not_exhaustive,True,True
+semiconductors,industrial_machinery,Supply,Upstream,"Specialised manufacturing equipment supports semiconductor fabrication, assembly and testing.",3,curated_working,illustrative_not_exhaustive,True,True
+semiconductors,consumer_electronics,Customer,Downstream,"Consumer devices are a major end market for processors, memory and specialised chips.",4,curated_working,illustrative_not_exhaustive,True,True
+semiconductors,automotive,Customer,Downstream,"Vehicles use semiconductors for control, electrification, connectivity and advanced driver systems.",5,curated_working,illustrative_not_exhaustive,True,True
+semiconductors,networking_equipment,Customer,Downstream,"Networking systems depend on processors, switching silicon and connectivity components.",6,curated_working,illustrative_not_exhaustive,True,True
+semiconductors,cloud_services,Customer,Downstream,"Cloud infrastructure is a major customer environment for compute, memory and accelerator chips.",7,curated_working,illustrative_not_exhaustive,True,True
+semiconductors,aerospace_defense,Customer,Downstream,"Aerospace and defence systems use specialised, high-reliability semiconductor components.",8,curated_working,illustrative_not_exhaustive,True,True
+cloud_services,data_centre_reits,Infrastructure,Upstream,Data-centre property provides physical capacity for cloud computing infrastructure.,1,curated_working,illustrative_not_exhaustive,True,True
+cloud_services,networking_equipment,Infrastructure,Upstream,"Networking systems connect cloud compute, storage and customer workloads.",2,curated_working,illustrative_not_exhaustive,True,True
+cloud_services,enterprise_software,Application,Downstream,Enterprise applications are increasingly delivered and integrated through cloud environments.,3,curated_working,illustrative_not_exhaustive,True,True
+cloud_services,cybersecurity,Service,Supporting,"Cloud adoption creates demand for identity, workload, data and network security.",4,curated_working,illustrative_not_exhaustive,True,True
+cloud_services,electric_utilities,Economic,Infrastructure,Cloud infrastructure depends on reliable electricity supply and can contribute to power-demand growth.,5,curated_working,illustrative_not_exhaustive,True,True
+enterprise_software,cloud_services,Infrastructure,Upstream,"Cloud services provide hosting, compute and delivery infrastructure for enterprise applications.",1,curated_working,illustrative_not_exhaustive,True,True
+enterprise_software,professional_services,Service,Supporting,"Consulting and implementation services support software deployment, integration and organisational change.",2,curated_working,illustrative_not_exhaustive,True,True
+enterprise_software,cybersecurity,Service,Adjacent,"Enterprise software environments require security across identities, applications, endpoints and data.",3,curated_working,illustrative_not_exhaustive,True,True
+enterprise_software,financial_data_analytics,Data,Supporting,Financial and analytical data can be embedded within enterprise decision and workflow systems.,4,curated_working,illustrative_not_exhaustive,True,True
+software_platforms,cloud_services,Infrastructure,Upstream,"Cloud infrastructure supports platform hosting, scaling and developer services.",1,curated_working,illustrative_not_exhaustive,True,True
+software_platforms,digital_advertising,Monetisation,Downstream,"Digital advertising monetises user, developer and business activity across selected platforms.",2,curated_working,illustrative_not_exhaustive,True,True
+software_platforms,digital_content,Content,Downstream,"Digital content supports engagement, subscriptions and ecosystem participation.",3,curated_working,illustrative_not_exhaustive,True,True
+software_platforms,payments,Service,Supporting,Payment capabilities support transactions within software and digital-platform ecosystems.,4,curated_working,illustrative_not_exhaustive,True,True
+software_platforms,cybersecurity,Service,Supporting,"Platform ecosystems require identity, application, developer and transaction security.",5,curated_working,illustrative_not_exhaustive,True,True
+networking_equipment,telecommunications,Customer,Downstream,"Telecommunications operators deploy networking equipment across fixed, mobile and data networks.",1,curated_working,illustrative_not_exhaustive,True,True
+networking_equipment,data_centre_reits,Infrastructure,Downstream,"Data-centre environments require switching, routing, optical and connectivity systems.",2,curated_working,illustrative_not_exhaustive,True,True
+networking_equipment,semiconductors,Supply,Upstream,"Networking hardware depends on processors, switching silicon and specialised connectivity chips.",3,curated_working,illustrative_not_exhaustive,True,True
+networking_equipment,cybersecurity,Service,Adjacent,Network infrastructure and network security are closely connected operating environments.,4,curated_working,illustrative_not_exhaustive,True,True
+cybersecurity,cloud_services,Customer,Adjacent,"Cloud adoption expands the environments requiring identity, workload and data protection.",1,curated_working,illustrative_not_exhaustive,True,True
+cybersecurity,enterprise_software,Customer,Adjacent,"Enterprise applications create security requirements across users, data and workflows.",2,curated_working,illustrative_not_exhaustive,True,True
+cybersecurity,telecommunications,Infrastructure,Adjacent,"Communications networks require protection of infrastructure, identities and data flows.",3,curated_working,illustrative_not_exhaustive,True,True
+cybersecurity,professional_services,Service,Supporting,"Advisory, implementation and managed services support cyber-risk assessment and control deployment.",4,curated_working,illustrative_not_exhaustive,True,True
+consumer_electronics,semiconductors,Supply,Upstream,"Consumer devices depend on processors, memory, sensors and connectivity components.",1,curated_working,illustrative_not_exhaustive,True,True
+consumer_electronics,software_platforms,Application,Supporting,Operating systems and software ecosystems extend device functionality and user engagement.,2,curated_working,illustrative_not_exhaustive,True,True
+consumer_electronics,digital_content,Content,Downstream,Digital media and subscription content increase device and ecosystem engagement.,3,curated_working,illustrative_not_exhaustive,True,True
+consumer_electronics,telecommunications,Infrastructure,Supporting,Communications networks provide connectivity for mobile and connected consumer devices.,4,curated_working,illustrative_not_exhaustive,True,True
+consumer_electronics,ecommerce,Distribution,Downstream,Online commerce provides a major sales and distribution channel for consumer devices.,5,curated_working,illustrative_not_exhaustive,True,True
+electronic_design_automation,semiconductors,Customer,Downstream,Semiconductor designers use EDA software and intellectual property to design and verify chips.,1,curated_working,illustrative_not_exhaustive,True,True
+electronic_design_automation,artificial_intelligence,Application,Adjacent,AI techniques can support design optimisation while advanced AI chips increase design complexity.,2,curated_working,illustrative_not_exhaustive,True,True
+ecommerce,payments,Service,Supporting,"Payment networks and processors enable digital checkout, settlement and merchant transactions.",1,curated_working,illustrative_not_exhaustive,True,True
+ecommerce,logistics_transport,Service,Downstream,"Freight, fulfilment and delivery networks support the movement of goods to customers.",2,curated_working,illustrative_not_exhaustive,True,True
+ecommerce,cloud_services,Infrastructure,Supporting,"Cloud infrastructure supports scalable marketplaces, transaction systems and digital services.",3,curated_working,illustrative_not_exhaustive,True,True
+ecommerce,digital_advertising,Customer,Supporting,"Digital advertising supports customer acquisition, product discovery and marketplace monetisation.",4,curated_working,illustrative_not_exhaustive,True,True
+ecommerce,retail,Channel,Adjacent,Physical and digital retail channels increasingly overlap through omnichannel commerce.,5,curated_working,illustrative_not_exhaustive,True,True
+ecommerce,packaging,Supply,Downstream,"Packaging supports fulfilment, product protection and parcel delivery.",6,curated_working,illustrative_not_exhaustive,True,True
+retail,consumer_staples,Supply,Upstream,Consumer-staples producers supply frequently purchased goods through retail channels.,1,curated_working,illustrative_not_exhaustive,True,True
+retail,apparel_luxury,Supply,Upstream,"Apparel, footwear and branded goods are distributed through physical and digital retailers.",2,curated_working,illustrative_not_exhaustive,True,True
+retail,payments,Service,Supporting,Payment systems support in-store and digital consumer transactions.,3,curated_working,illustrative_not_exhaustive,True,True
+retail,ecommerce,Channel,Adjacent,"Online commerce extends retail distribution, fulfilment and customer engagement.",4,curated_working,illustrative_not_exhaustive,True,True
+retail,logistics_transport,Service,Supporting,"Logistics networks support inventory movement, distribution and fulfilment.",5,curated_working,illustrative_not_exhaustive,True,True
+retail,real_estate,Infrastructure,Supporting,"Retail property provides physical locations for stores, centres and customer access.",6,curated_working,illustrative_not_exhaustive,True,True
+consumer_staples,agriculture_inputs,Supply,Upstream,Agricultural inputs support crop and livestock production used in food and beverage supply chains.,1,curated_working,illustrative_not_exhaustive,True,True
+consumer_staples,chemicals,Supply,Upstream,"Ingredients, flavours, fragrances and consumer chemicals support selected staple products.",2,curated_working,illustrative_not_exhaustive,True,True
+consumer_staples,packaging,Supply,Supporting,"Packaging protects, preserves and distributes food, beverage and household products.",3,curated_working,illustrative_not_exhaustive,True,True
+consumer_staples,retail,Distribution,Downstream,Retailers provide major distribution channels for staple consumer products.,4,curated_working,illustrative_not_exhaustive,True,True
+consumer_staples,logistics_transport,Service,Supporting,"Transport and logistics support sourcing, distribution and replenishment.",5,curated_working,illustrative_not_exhaustive,True,True
+consumer_staples,restaurants,Customer,Downstream,"Food-service operators are customers for selected food, beverage and ingredient producers.",6,curated_working,illustrative_not_exhaustive,True,True
+apparel_luxury,retail,Distribution,Downstream,"Retail channels distribute apparel, footwear, accessories and luxury products.",1,curated_working,illustrative_not_exhaustive,True,True
+apparel_luxury,ecommerce,Distribution,Downstream,Digital commerce supports direct-to-consumer and marketplace distribution.,2,curated_working,illustrative_not_exhaustive,True,True
+apparel_luxury,digital_advertising,Service,Supporting,"Digital advertising supports brand awareness, customer acquisition and product launches.",3,curated_working,illustrative_not_exhaustive,True,True
+apparel_luxury,logistics_transport,Service,Supporting,"Global logistics supports sourcing, inventory movement and customer fulfilment.",4,curated_working,illustrative_not_exhaustive,True,True
+apparel_luxury,chemicals,Supply,Upstream,"Chemicals, coatings and performance materials support textiles, footwear and selected consumer products.",5,curated_working,illustrative_not_exhaustive,True,True
+restaurants,consumer_staples,Supply,Upstream,Food and beverage producers supply ingredients and products to restaurant operators.,1,curated_working,illustrative_not_exhaustive,True,True
+restaurants,retail,Channel,Adjacent,Prepared-food retail and restaurant channels can compete for consumer food spending.,2,curated_working,illustrative_not_exhaustive,True,True
+restaurants,real_estate,Infrastructure,Supporting,Restaurant operations depend on leased or owned customer-facing property.,3,curated_working,illustrative_not_exhaustive,True,True
+restaurants,payments,Service,Supporting,"Payment systems enable in-store, online and delivery transactions.",4,curated_working,illustrative_not_exhaustive,True,True
+restaurants,ecommerce,Channel,Adjacent,Digital ordering and delivery platforms extend restaurant distribution and customer access.,5,curated_working,illustrative_not_exhaustive,True,True
+media_entertainment,digital_content,Distribution,Adjacent,Digital content is a principal format for distributing and monetising media and entertainment.,1,curated_working,illustrative_not_exhaustive,True,True
+media_entertainment,digital_advertising,Monetisation,Supporting,"Advertising monetises audiences across broadcast, streaming and digital media.",2,curated_working,illustrative_not_exhaustive,True,True
+media_entertainment,telecommunications,Distribution,Supporting,"Communications networks distribute video, audio and interactive content.",3,curated_working,illustrative_not_exhaustive,True,True
+media_entertainment,software_platforms,Distribution,Supporting,"Software platforms aggregate, distribute and monetise media and entertainment content.",4,curated_working,illustrative_not_exhaustive,True,True
+media_entertainment,hotels_travel,Customer,Adjacent,"Travel, leisure and destination activity can interact with entertainment demand.",5,curated_working,illustrative_not_exhaustive,True,True
+digital_content,software_platforms,Distribution,Supporting,"Software platforms distribute content and connect creators, audiences and developers.",1,curated_working,illustrative_not_exhaustive,True,True
+digital_content,digital_advertising,Monetisation,Supporting,Advertising monetises audiences and engagement across selected content services.,2,curated_working,illustrative_not_exhaustive,True,True
+digital_content,consumer_electronics,Distribution,Downstream,"Consumer devices provide access points for streaming, gaming, publishing and other digital media.",3,curated_working,illustrative_not_exhaustive,True,True
+digital_content,telecommunications,Infrastructure,Supporting,Broadband and mobile networks deliver digital media to users.,4,curated_working,illustrative_not_exhaustive,True,True
+digital_advertising,social_media,Customer,Downstream,Social-media platforms provide audience inventory and engagement data for digital advertising.,1,curated_working,illustrative_not_exhaustive,True,True
+digital_advertising,ecommerce,Customer,Downstream,"Commerce platforms use advertising for customer acquisition, product discovery and merchant monetisation.",2,curated_working,illustrative_not_exhaustive,True,True
+digital_advertising,software_platforms,Customer,Downstream,"Digital platforms provide inventory, data and user ecosystems for advertising.",3,curated_working,illustrative_not_exhaustive,True,True
+digital_advertising,media_entertainment,Customer,Downstream,Media businesses use digital advertising to monetise audiences and content.,4,curated_working,illustrative_not_exhaustive,True,True
+social_media,digital_advertising,Monetisation,Downstream,Advertising is a principal monetisation route for many social-media platforms.,1,curated_working,illustrative_not_exhaustive,True,True
+social_media,digital_content,Content,Adjacent,User-generated and professional digital content supports engagement across social platforms.,2,curated_working,illustrative_not_exhaustive,True,True
+social_media,software_platforms,Infrastructure,Supporting,"Software platforms provide application, creator and developer ecosystems around social interaction.",3,curated_working,illustrative_not_exhaustive,True,True
+social_media,cybersecurity,Service,Supporting,"Social platforms require identity, content, account and data protection capabilities.",4,curated_working,illustrative_not_exhaustive,True,True
+hotels_travel,airlines,Service,Adjacent,"Air travel supports tourism, lodging demand and destination activity.",1,curated_working,illustrative_not_exhaustive,True,True
+hotels_travel,payments,Service,Supporting,"Payment systems support reservations, travel transactions and cross-border spending.",2,curated_working,illustrative_not_exhaustive,True,True
+hotels_travel,ecommerce,Distribution,Supporting,Digital marketplaces and booking platforms distribute travel inventory and services.,3,curated_working,illustrative_not_exhaustive,True,True
+hotels_travel,real_estate,Infrastructure,Supporting,"Hotels, resorts and leisure venues depend on specialised property assets.",4,curated_working,illustrative_not_exhaustive,True,True
+hotels_travel,media_entertainment,Demand,Adjacent,"Entertainment, events and destination experiences can support travel and lodging demand.",5,curated_working,illustrative_not_exhaustive,True,True
+airlines,aerospace_defense,Supply,Upstream,"Aircraft manufacturers and aerospace suppliers provide commercial fleets, components and maintenance systems.",1,curated_working,illustrative_not_exhaustive,True,True
+airlines,oil_gas,Supply,Upstream,Crude-oil markets influence aviation-fuel production and airline operating costs.,2,curated_working,illustrative_not_exhaustive,True,True
+airlines,refining,Supply,Upstream,Refiners produce aviation fuels used by commercial airlines.,3,curated_working,illustrative_not_exhaustive,True,True
+airlines,hotels_travel,Demand,Adjacent,"Passenger travel supports lodging, booking and destination activity.",4,curated_working,illustrative_not_exhaustive,True,True
+airlines,payments,Service,Supporting,"Payment networks support ticketing, ancillary purchases and travel transactions.",5,curated_working,illustrative_not_exhaustive,True,True
+banking,payments,Service,Supporting,"Payment networks and processors support account transactions, cards and merchant activity.",1,curated_working,illustrative_not_exhaustive,True,True
+banking,capital_markets,Service,Adjacent,"Diversified banks may provide underwriting, trading, securities and advisory services.",2,curated_working,illustrative_not_exhaustive,True,True
+banking,investment_management,Service,Adjacent,"Banks may distribute or provide wealth, retirement and investment-management services.",3,curated_working,illustrative_not_exhaustive,True,True
+banking,insurance,Service,Adjacent,Insurance products can be distributed alongside banking and wealth services.,4,curated_working,illustrative_not_exhaustive,True,True
+banking,real_estate,Customer,Downstream,"Property markets influence mortgage lending, collateral values and commercial credit.",5,curated_working,illustrative_not_exhaustive,True,True
+banking,automotive,Customer,Downstream,Vehicle purchases and dealer activity support consumer and commercial lending demand.,6,curated_working,illustrative_not_exhaustive,True,True
+banking,financial_data_analytics,Data,Supporting,"Credit, market, risk and reference data support underwriting and financial decision processes.",7,curated_working,illustrative_not_exhaustive,True,True
+banking,enterprise_software,Infrastructure,Supporting,"Banking operations depend on transaction, risk, compliance and customer software systems.",8,curated_working,illustrative_not_exhaustive,True,True
+capital_markets,investment_management,Customer,Downstream,"Investment managers use trading, custody, issuance, brokerage and market infrastructure.",1,curated_working,illustrative_not_exhaustive,True,True
+capital_markets,financial_data_analytics,Data,Supporting,"Market data, ratings, indices and analytics support trading, issuance and risk assessment.",2,curated_working,illustrative_not_exhaustive,True,True
+capital_markets,banking,Service,Adjacent,"Banks participate in underwriting, advisory, trading and securities services.",3,curated_working,illustrative_not_exhaustive,True,True
+capital_markets,payments,Infrastructure,Adjacent,Payment and settlement systems support the movement of funds across financial markets.,4,curated_working,illustrative_not_exhaustive,True,True
+capital_markets,enterprise_software,Infrastructure,Supporting,"Trading, risk, compliance and workflow software supports capital-markets activity.",5,curated_working,illustrative_not_exhaustive,True,True
+capital_markets,insurance,Customer,Downstream,Insurers allocate investment portfolios across capital markets and use market infrastructure.,6,curated_working,illustrative_not_exhaustive,True,True
+investment_management,capital_markets,Infrastructure,Upstream,"Capital-markets infrastructure supports portfolio trading, custody, issuance and liquidity.",1,curated_working,illustrative_not_exhaustive,True,True
+investment_management,financial_data_analytics,Data,Supporting,"Market data, indices, ratings and analytics support research, allocation and risk management.",2,curated_working,illustrative_not_exhaustive,True,True
+investment_management,enterprise_software,Infrastructure,Supporting,"Portfolio, trading, accounting and risk systems support investment operations.",3,curated_working,illustrative_not_exhaustive,True,True
+investment_management,banking,Distribution,Adjacent,Banks distribute wealth and investment products and provide custody and financing services.,4,curated_working,illustrative_not_exhaustive,True,True
+investment_management,insurance,Customer,Adjacent,Insurance assets and retirement products create institutional investment-management demand.,5,curated_working,illustrative_not_exhaustive,True,True
+insurance,capital_markets,Investment,Supporting,Insurers invest premium reserves and capital across fixed-income and other financial markets.,1,curated_working,illustrative_not_exhaustive,True,True
+insurance,investment_management,Service,Supporting,Investment managers oversee selected insurance general-account and retirement assets.,2,curated_working,illustrative_not_exhaustive,True,True
+insurance,banking,Distribution,Adjacent,Banks can distribute insurance products and provide financing and transaction services.,3,curated_working,illustrative_not_exhaustive,True,True
+insurance,real_estate,Risk,Customer,"Property values, construction costs and catastrophe exposure affect property insurance markets.",4,curated_working,illustrative_not_exhaustive,True,True
+insurance,automotive,Risk,Customer,"Vehicle ownership, repair costs and claims frequency influence motor insurance.",5,curated_working,illustrative_not_exhaustive,True,True
+insurance,healthcare_services,Risk,Customer,Healthcare utilisation and provider costs influence health-insurance economics.,6,curated_working,illustrative_not_exhaustive,True,True
+insurance,financial_data_analytics,Data,Supporting,"Risk, pricing, catastrophe, credit and market data support underwriting and capital management.",7,curated_working,illustrative_not_exhaustive,True,True
+payments,banking,Infrastructure,Upstream,"Banks issue accounts and cards, hold funds and connect customers to payment systems.",1,curated_working,illustrative_not_exhaustive,True,True
+payments,ecommerce,Customer,Downstream,"Digital commerce creates payment-acceptance, processing and settlement demand.",2,curated_working,illustrative_not_exhaustive,True,True
+payments,retail,Customer,Downstream,"Physical retail generates card, wallet and merchant-processing transactions.",3,curated_working,illustrative_not_exhaustive,True,True
+payments,restaurants,Customer,Downstream,Food-service transactions generate payment acceptance and processing activity.,4,curated_working,illustrative_not_exhaustive,True,True
+payments,hotels_travel,Customer,Downstream,"Travel spending supports card, cross-border and digital payment volumes.",5,curated_working,illustrative_not_exhaustive,True,True
+payments,enterprise_software,Application,Adjacent,"Commerce, accounting and business software embeds payment and transaction capabilities.",6,curated_working,illustrative_not_exhaustive,True,True
+financial_data_analytics,capital_markets,Customer,Downstream,"Market participants use pricing, ratings, indices, reference data and analytics.",1,curated_working,illustrative_not_exhaustive,True,True
+financial_data_analytics,investment_management,Customer,Downstream,"Investment managers use financial data for research, benchmarking, portfolio construction and risk.",2,curated_working,illustrative_not_exhaustive,True,True
+financial_data_analytics,banking,Customer,Downstream,"Banks use credit, market, reference and risk data across lending and treasury activities.",3,curated_working,illustrative_not_exhaustive,True,True
+financial_data_analytics,enterprise_software,Distribution,Adjacent,"Financial data is embedded within workflow, risk and decision-support software.",4,curated_working,illustrative_not_exhaustive,True,True
+pharmaceuticals,biotechnology,Research,Adjacent,Biotechnology platforms support therapeutic discovery and can develop into commercial pharmaceutical products.,1,curated_working,illustrative_not_exhaustive,True,True
+pharmaceuticals,life_sciences_tools,Supply,Upstream,"Laboratory instruments, reagents and research services support drug discovery and development.",2,curated_working,illustrative_not_exhaustive,True,True
+pharmaceuticals,diagnostics,Clinical,Adjacent,"Diagnostics can identify, stratify and monitor patients receiving pharmaceutical therapies.",3,curated_working,illustrative_not_exhaustive,True,True
+pharmaceuticals,healthcare_services,Distribution,Downstream,"Healthcare providers and pharmacy services support prescribing, administration and patient access.",4,curated_working,illustrative_not_exhaustive,True,True
+pharmaceuticals,chemicals,Supply,Upstream,Specialty chemicals and ingredients support pharmaceutical manufacturing and formulation.,5,curated_working,illustrative_not_exhaustive,True,True
+pharmaceuticals,packaging,Supply,Supporting,"Specialised packaging supports product protection, dosing, distribution and regulatory requirements.",6,curated_working,illustrative_not_exhaustive,True,True
+biotechnology,life_sciences_tools,Supply,Upstream,"Research instruments, reagents and laboratory services support biological discovery and development.",1,curated_working,illustrative_not_exhaustive,True,True
+biotechnology,pharmaceuticals,Commercialisation,Downstream,"Biotechnology discoveries may be developed, manufactured and commercialised as medicines.",2,curated_working,illustrative_not_exhaustive,True,True
+biotechnology,diagnostics,Clinical,Adjacent,Molecular and biological technologies support diagnostic testing and patient selection.,3,curated_working,illustrative_not_exhaustive,True,True
+biotechnology,healthcare_services,Customer,Downstream,Healthcare providers administer therapies and support patient access.,4,curated_working,illustrative_not_exhaustive,True,True
+biotechnology,chemicals,Supply,Upstream,Specialty materials and process chemicals support selected research and biomanufacturing workflows.,5,curated_working,illustrative_not_exhaustive,True,True
+medical_devices,healthcare_services,Customer,Downstream,"Hospitals, clinics and care providers purchase and use medical devices.",1,curated_working,illustrative_not_exhaustive,True,True
+medical_devices,diagnostics,Clinical,Adjacent,"Diagnostic systems and medical devices overlap across testing, monitoring and intervention.",2,curated_working,illustrative_not_exhaustive,True,True
+medical_devices,life_sciences_tools,Technology,Adjacent,Laboratory and life-science technologies can support device development and clinical workflows.,3,curated_working,illustrative_not_exhaustive,True,True
+medical_devices,semiconductors,Supply,Upstream,"Advanced devices use sensors, processors, connectivity and specialised electronic components.",4,curated_working,illustrative_not_exhaustive,True,True
+medical_devices,enterprise_software,Application,Supporting,"Software supports device operation, clinical workflow, data management and remote monitoring.",5,curated_working,illustrative_not_exhaustive,True,True
+diagnostics,life_sciences_tools,Supply,Upstream,"Laboratory instruments, reagents and consumables support diagnostic testing workflows.",1,curated_working,illustrative_not_exhaustive,True,True
+diagnostics,healthcare_services,Customer,Downstream,"Healthcare providers use diagnostic tests to detect, monitor and manage health conditions.",2,curated_working,illustrative_not_exhaustive,True,True
+diagnostics,pharmaceuticals,Clinical,Adjacent,"Diagnostics can support treatment selection, response monitoring and therapeutic development.",3,curated_working,illustrative_not_exhaustive,True,True
+diagnostics,medical_devices,Technology,Adjacent,Diagnostic instruments overlap with broader medical-device technologies and clinical systems.,4,curated_working,illustrative_not_exhaustive,True,True
+life_sciences_tools,biotechnology,Customer,Downstream,"Biotechnology researchers use instruments, reagents, consumables and laboratory services.",1,curated_working,illustrative_not_exhaustive,True,True
+life_sciences_tools,pharmaceuticals,Customer,Downstream,Pharmaceutical research and manufacturing use laboratory and bioprocessing tools.,2,curated_working,illustrative_not_exhaustive,True,True
+life_sciences_tools,diagnostics,Customer,Downstream,"Diagnostic developers and laboratories use analytical instruments, reagents and consumables.",3,curated_working,illustrative_not_exhaustive,True,True
+life_sciences_tools,chemicals,Supply,Upstream,Specialty chemicals and laboratory materials support research and analytical workflows.,4,curated_working,illustrative_not_exhaustive,True,True
+healthcare_services,pharmaceuticals,Supply,Upstream,"Medicines are prescribed, dispensed and administered across healthcare-service environments.",1,curated_working,illustrative_not_exhaustive,True,True
+healthcare_services,medical_devices,Supply,Upstream,"Providers use medical devices for diagnosis, monitoring, treatment and procedures.",2,curated_working,illustrative_not_exhaustive,True,True
+healthcare_services,diagnostics,Supply,Upstream,Diagnostic testing supports clinical decisions and patient management.,3,curated_working,illustrative_not_exhaustive,True,True
+healthcare_services,insurance,Financial,Supporting,Health insurers finance and manage selected healthcare access and utilisation.,4,curated_working,illustrative_not_exhaustive,True,True
+healthcare_services,enterprise_software,Infrastructure,Supporting,"Clinical, administrative and workflow software supports healthcare delivery.",5,curated_working,illustrative_not_exhaustive,True,True
+automotive,semiconductors,Supply,Upstream,"Semiconductors support vehicle control, electrification, connectivity and advanced driver systems.",1,curated_working,illustrative_not_exhaustive,True,True
+automotive,mining_metals,Supply,Upstream,"Metals and critical minerals support batteries, electronics and vehicle manufacturing.",2,curated_working,illustrative_not_exhaustive,True,True
+automotive,chemicals,Supply,Upstream,"Chemicals and advanced materials support batteries, coatings, plastics and vehicle components.",3,curated_working,illustrative_not_exhaustive,True,True
+automotive,industrial_machinery,Supply,Upstream,Industrial machinery and automation support vehicle and component manufacturing.,4,curated_working,illustrative_not_exhaustive,True,True
+automotive,insurance,Service,Supporting,Insurance supports vehicle ownership and transfers selected operating risks.,5,curated_working,illustrative_not_exhaustive,True,True
+automotive,banking,Financial,Supporting,"Consumer and commercial finance influence vehicle affordability, purchasing and dealer activity.",6,curated_working,illustrative_not_exhaustive,True,True
+automotive,electrical_equipment,Infrastructure,Adjacent,Vehicle electrification connects automotive demand with charging and electrical infrastructure.,7,curated_working,illustrative_not_exhaustive,True,True
+automotive,renewable_energy,Infrastructure,Adjacent,"Electric vehicles can interact with charging, storage and lower-carbon power systems.",8,curated_working,illustrative_not_exhaustive,True,True
+automotive,logistics_transport,Service,Supporting,"Logistics networks support inbound components, finished-vehicle distribution and parts movement.",9,curated_working,illustrative_not_exhaustive,True,True
+industrial_machinery,mining_metals,Supply,Upstream,Metals provide structural and engineered inputs for machinery and industrial equipment.,1,curated_working,illustrative_not_exhaustive,True,True
+industrial_machinery,chemicals,Supply,Upstream,"Industrial chemicals, coatings and engineered materials support equipment manufacturing and operation.",2,curated_working,illustrative_not_exhaustive,True,True
+industrial_machinery,construction_engineering,Customer,Downstream,"Construction and engineering projects use heavy equipment, automation and industrial systems.",3,curated_working,illustrative_not_exhaustive,True,True
+industrial_machinery,energy_services,Customer,Downstream,"Energy-service operations use specialised machinery, pumps, controls and field equipment.",4,curated_working,illustrative_not_exhaustive,True,True
+industrial_machinery,automotive,Customer,Downstream,"Vehicle manufacturing uses automation, production machinery and industrial systems.",5,curated_working,illustrative_not_exhaustive,True,True
+industrial_machinery,electrical_equipment,Technology,Adjacent,Industrial automation increasingly combines mechanical systems with electrical control and power equipment.,6,curated_working,illustrative_not_exhaustive,True,True
+industrial_machinery,professional_services,Service,Supporting,"Engineering, maintenance and technical services support equipment deployment and operation.",7,curated_working,illustrative_not_exhaustive,True,True
+electrical_equipment,electric_utilities,Customer,Downstream,"Utilities deploy electrical distribution, control, protection and grid equipment.",1,curated_working,illustrative_not_exhaustive,True,True
+electrical_equipment,renewable_energy,Customer,Downstream,"Renewable generation and storage require power-conversion, control and interconnection equipment.",2,curated_working,illustrative_not_exhaustive,True,True
+electrical_equipment,data_centre_reits,Customer,Downstream,"Data centres require power distribution, backup, control and thermal-management infrastructure.",3,curated_working,illustrative_not_exhaustive,True,True
+electrical_equipment,industrial_machinery,Technology,Adjacent,"Industrial systems integrate electrical control, motors, automation and power-management equipment.",4,curated_working,illustrative_not_exhaustive,True,True
+electrical_equipment,mining_metals,Supply,Upstream,"Copper, aluminium and other metals are material inputs for electrical equipment.",5,curated_working,illustrative_not_exhaustive,True,True
+electrical_equipment,construction_engineering,Service,Supporting,Engineering and installation services deploy electrical systems across infrastructure projects.,6,curated_working,illustrative_not_exhaustive,True,True
+construction_engineering,industrial_machinery,Supply,Upstream,"Construction projects use heavy machinery, equipment and automation systems.",1,curated_working,illustrative_not_exhaustive,True,True
+construction_engineering,mining_metals,Supply,Upstream,"Steel, aggregates and other materials support buildings and infrastructure.",2,curated_working,illustrative_not_exhaustive,True,True
+construction_engineering,electrical_equipment,Supply,Upstream,"Electrical systems are installed across buildings, utilities and infrastructure projects.",3,curated_working,illustrative_not_exhaustive,True,True
+construction_engineering,real_estate,Customer,Downstream,"Property development creates demand for construction, engineering and installation services.",4,curated_working,illustrative_not_exhaustive,True,True
+construction_engineering,electric_utilities,Customer,Downstream,Utility investment creates engineering and construction demand across generation and networks.,5,curated_working,illustrative_not_exhaustive,True,True
+construction_engineering,renewable_energy,Customer,Downstream,"Renewable projects require civil, electrical and project-engineering capabilities.",6,curated_working,illustrative_not_exhaustive,True,True
+professional_services,enterprise_software,Customer,Adjacent,Consulting and implementation services support enterprise technology deployment and transformation.,1,curated_working,illustrative_not_exhaustive,True,True
+professional_services,capital_markets,Customer,Adjacent,"Advisory, accounting, risk and transaction services support financial-market activity.",2,curated_working,illustrative_not_exhaustive,True,True
+professional_services,construction_engineering,Service,Adjacent,"Technical, engineering and project advisory services support infrastructure development.",3,curated_working,illustrative_not_exhaustive,True,True
+professional_services,employment_services,Service,Adjacent,Workforce and recruitment services complement broader organisational and advisory services.,4,curated_working,illustrative_not_exhaustive,True,True
+professional_services,cybersecurity,Service,Adjacent,"Cyber advisory, implementation and managed services support organisational resilience.",5,curated_working,illustrative_not_exhaustive,True,True
+professional_services,artificial_intelligence,Service,Adjacent,Advisory and implementation services help organisations adopt AI technologies and redesign workflows.,6,curated_working,illustrative_not_exhaustive,True,True
+employment_services,professional_services,Service,Adjacent,"Staffing and workforce services support organisational change, projects and outsourced operations.",1,curated_working,illustrative_not_exhaustive,True,True
+employment_services,enterprise_software,Infrastructure,Supporting,"Human-capital, payroll and workforce software supports employment-service delivery.",2,curated_working,illustrative_not_exhaustive,True,True
+employment_services,healthcare_services,Customer,Downstream,"Healthcare providers use temporary staffing, recruitment and workforce-management services.",3,curated_working,illustrative_not_exhaustive,True,True
+employment_services,industrial_machinery,Customer,Downstream,"Industrial activity influences demand for skilled, temporary and technical labour.",4,curated_working,illustrative_not_exhaustive,True,True
+logistics_transport,ecommerce,Customer,Downstream,"Digital commerce generates fulfilment, parcel and delivery demand.",1,curated_working,illustrative_not_exhaustive,True,True
+logistics_transport,retail,Customer,Downstream,"Retail supply chains depend on freight, warehousing and inventory distribution.",2,curated_working,illustrative_not_exhaustive,True,True
+logistics_transport,consumer_staples,Customer,Downstream,"Food, beverage and household-product supply chains require transport and distribution.",3,curated_working,illustrative_not_exhaustive,True,True
+logistics_transport,automotive,Customer,Downstream,"Automotive supply chains require component, vehicle and aftermarket logistics.",4,curated_working,illustrative_not_exhaustive,True,True
+logistics_transport,oil_gas,Supply,Upstream,Fuel prices and energy availability influence transport operating costs.,5,curated_working,illustrative_not_exhaustive,True,True
+logistics_transport,packaging,Supply,Supporting,"Packaging protects goods and supports handling, storage and parcel distribution.",6,curated_working,illustrative_not_exhaustive,True,True
+packaging,consumer_staples,Customer,Downstream,"Food, beverage, household and personal-care producers are major packaging customers.",1,curated_working,illustrative_not_exhaustive,True,True
+packaging,pharmaceuticals,Customer,Downstream,"Medicines require protective, compliant and specialised packaging.",2,curated_working,illustrative_not_exhaustive,True,True
+packaging,ecommerce,Customer,Downstream,"Online fulfilment creates demand for shipping containers, protective materials and labels.",3,curated_working,illustrative_not_exhaustive,True,True
+packaging,chemicals,Supply,Upstream,"Polymers, coatings, adhesives and specialty chemicals support packaging production.",4,curated_working,illustrative_not_exhaustive,True,True
+packaging,logistics_transport,Customer,Adjacent,"Transport and warehousing systems use packaging for protection, handling and distribution.",5,curated_working,illustrative_not_exhaustive,True,True
+chemicals,agriculture_inputs,Customer,Downstream,"Crop-protection products, fertilisers and soil inputs use chemical technologies and feedstocks.",1,curated_working,illustrative_not_exhaustive,True,True
+chemicals,pharmaceuticals,Customer,Downstream,"Pharmaceutical manufacturing uses active ingredients, intermediates and specialty chemicals.",2,curated_working,illustrative_not_exhaustive,True,True
+chemicals,consumer_staples,Customer,Downstream,"Consumer products use ingredients, fragrances, coatings and specialty formulations.",3,curated_working,illustrative_not_exhaustive,True,True
+chemicals,automotive,Customer,Downstream,"Vehicle production uses coatings, polymers, battery materials and engineered chemicals.",4,curated_working,illustrative_not_exhaustive,True,True
+chemicals,packaging,Customer,Downstream,"Packaging uses polymers, coatings, adhesives and performance materials.",5,curated_working,illustrative_not_exhaustive,True,True
+chemicals,oil_gas,Supply,Upstream,Hydrocarbon feedstocks support petrochemical and selected chemical production.,6,curated_working,illustrative_not_exhaustive,True,True
+mining_metals,industrial_machinery,Supply,Supporting,"Mining operations use heavy equipment, automation and material-handling systems.",1,curated_working,illustrative_not_exhaustive,True,True
+mining_metals,automotive,Customer,Downstream,"Vehicle production uses steel, aluminium, copper and battery-related minerals.",2,curated_working,illustrative_not_exhaustive,True,True
+mining_metals,electrical_equipment,Customer,Downstream,"Electrical equipment uses copper, aluminium, steel and other conductive or structural materials.",3,curated_working,illustrative_not_exhaustive,True,True
+mining_metals,construction_engineering,Customer,Downstream,"Construction and infrastructure use steel, aggregates and other mineral products.",4,curated_working,illustrative_not_exhaustive,True,True
+mining_metals,renewable_energy,Customer,Downstream,"Renewable generation, storage and grid systems use significant mineral and metal inputs.",5,curated_working,illustrative_not_exhaustive,True,True
+mining_metals,chemicals,Service,Supporting,"Chemical products support extraction, processing, refining and materials treatment.",6,curated_working,illustrative_not_exhaustive,True,True
+agriculture_inputs,consumer_staples,Customer,Downstream,"Food and beverage supply chains depend on agricultural production supported by seeds, nutrients and crop protection.",1,curated_working,illustrative_not_exhaustive,True,True
+agriculture_inputs,chemicals,Supply,Upstream,Fertilisers and crop-protection products depend on chemical processes and feedstocks.,2,curated_working,illustrative_not_exhaustive,True,True
+agriculture_inputs,industrial_machinery,Supply,Supporting,"Agricultural production uses machinery, automation and precision equipment.",3,curated_working,illustrative_not_exhaustive,True,True
+agriculture_inputs,logistics_transport,Service,Supporting,Bulk transport and storage support movement of agricultural inputs and outputs.,4,curated_working,illustrative_not_exhaustive,True,True
+industrial_gases,chemicals,Customer,Adjacent,Chemical manufacturing uses industrial gases as feedstocks and process inputs.,1,curated_working,illustrative_not_exhaustive,True,True
+industrial_gases,healthcare_services,Customer,Downstream,"Medical gases support hospitals, clinical care and selected home-health applications.",2,curated_working,illustrative_not_exhaustive,True,True
+industrial_gases,semiconductors,Customer,Downstream,Semiconductor fabrication uses ultra-high-purity process gases.,3,curated_working,illustrative_not_exhaustive,True,True
+industrial_gases,mining_metals,Customer,Downstream,"Metals production and processing use oxygen, nitrogen and other industrial gases.",4,curated_working,illustrative_not_exhaustive,True,True
+industrial_gases,energy_services,Customer,Downstream,"Energy and industrial projects use gases for processing, fabrication and field operations.",5,curated_working,illustrative_not_exhaustive,True,True
+aerospace_defense,semiconductors,Supply,Upstream,"Aerospace and defence systems use specialised processors, sensors and high-reliability electronics.",1,curated_working,illustrative_not_exhaustive,True,True
+aerospace_defense,industrial_machinery,Supply,Upstream,"Precision machinery, automation and production equipment support aerospace manufacturing.",2,curated_working,illustrative_not_exhaustive,True,True
+aerospace_defense,mining_metals,Supply,Upstream,"Specialty alloys, aluminium, titanium and other materials support aircraft and defence systems.",3,curated_working,illustrative_not_exhaustive,True,True
+aerospace_defense,airlines,Customer,Downstream,"Commercial airlines purchase aircraft, components, maintenance and related aerospace services.",4,curated_working,illustrative_not_exhaustive,True,True
+aerospace_defense,cybersecurity,Technology,Adjacent,Defence and mission systems increasingly require cyber protection and secure communications.,5,curated_working,illustrative_not_exhaustive,True,True
+aerospace_defense,professional_services,Service,Supporting,"Engineering, technical and mission-support services complement aerospace and defence platforms.",6,curated_working,illustrative_not_exhaustive,True,True
+oil_gas,energy_services,Service,Supporting,"Energy-service companies provide drilling, completion, equipment and field support to producers.",1,curated_working,illustrative_not_exhaustive,True,True
+oil_gas,refining,Customer,Downstream,Refiners process crude oil and other hydrocarbon feedstocks into fuels and products.,2,curated_working,illustrative_not_exhaustive,True,True
+oil_gas,chemicals,Customer,Downstream,Hydrocarbons provide feedstocks for petrochemical and selected chemical production.,3,curated_working,illustrative_not_exhaustive,True,True
+oil_gas,natural_gas_utilities,Customer,Downstream,"Natural-gas utilities distribute processed gas to residential, commercial and industrial users.",4,curated_working,illustrative_not_exhaustive,True,True
+oil_gas,logistics_transport,Infrastructure,Supporting,"Pipelines, terminals, shipping and transport systems move hydrocarbons and related products.",5,curated_working,illustrative_not_exhaustive,True,True
+oil_gas,industrial_machinery,Supply,Upstream,"Production, processing and transport use pumps, compressors and specialised industrial equipment.",6,curated_working,illustrative_not_exhaustive,True,True
+energy_services,oil_gas,Customer,Downstream,"Oil and gas producers purchase drilling, completion, equipment and field services.",1,curated_working,illustrative_not_exhaustive,True,True
+energy_services,industrial_machinery,Supply,Upstream,"Specialised machinery and equipment support drilling, processing and field operations.",2,curated_working,illustrative_not_exhaustive,True,True
+energy_services,chemicals,Supply,Upstream,"Specialty chemicals support drilling, completion, production and treatment processes.",3,curated_working,illustrative_not_exhaustive,True,True
+energy_services,renewable_energy,Adjacent,Adjacent,Selected engineering and service capabilities can support lower-carbon and renewable projects.,4,curated_working,illustrative_not_exhaustive,True,True
+refining,oil_gas,Supply,Upstream,Crude oil and hydrocarbon feedstocks are processed by refineries.,1,curated_working,illustrative_not_exhaustive,True,True
+refining,chemicals,Customer,Downstream,Refining outputs provide feedstocks for petrochemical and chemical production.,2,curated_working,illustrative_not_exhaustive,True,True
+refining,logistics_transport,Distribution,Downstream,"Pipelines, terminals, shipping and trucking distribute refined products.",3,curated_working,illustrative_not_exhaustive,True,True
+refining,airlines,Customer,Downstream,Aviation-fuel demand links refining activity with commercial air travel.,4,curated_working,illustrative_not_exhaustive,True,True
+refining,consumer_staples,Customer,Downstream,Fuel demand and packaging feedstocks connect refining with consumer-product supply chains.,5,curated_working,illustrative_not_exhaustive,True,True
+renewable_energy,electrical_equipment,Supply,Supporting,"Renewable generation and storage require conversion, control, protection and interconnection equipment.",1,curated_working,illustrative_not_exhaustive,True,True
+renewable_energy,electric_utilities,Customer,Downstream,"Utilities develop, purchase, integrate and distribute renewable electricity.",2,curated_working,illustrative_not_exhaustive,True,True
+renewable_energy,mining_metals,Supply,Upstream,"Solar, wind, storage and grid systems require copper, aluminium and other critical materials.",3,curated_working,illustrative_not_exhaustive,True,True
+renewable_energy,industrial_machinery,Supply,Upstream,"Manufacturing, installation and maintenance use industrial equipment and automation.",4,curated_working,illustrative_not_exhaustive,True,True
+renewable_energy,construction_engineering,Service,Supporting,"Renewable projects require engineering, civil works, installation and project management.",5,curated_working,illustrative_not_exhaustive,True,True
+renewable_energy,data_centre_reits,Customer,Adjacent,Large power users may contract for renewable generation and storage to support energy requirements.,6,curated_working,illustrative_not_exhaustive,True,True
+electric_utilities,electrical_equipment,Supply,Upstream,"Utilities deploy transformers, switchgear, controls, protection and grid-management equipment.",1,curated_working,illustrative_not_exhaustive,True,True
+electric_utilities,renewable_energy,Generation,Upstream,Renewable generation and storage contribute to utility supply portfolios and grid investment.,2,curated_working,illustrative_not_exhaustive,True,True
+electric_utilities,natural_gas_utilities,Energy,Adjacent,"Electric and gas utilities can share customers, infrastructure planning and generation exposure.",3,curated_working,illustrative_not_exhaustive,True,True
+electric_utilities,construction_engineering,Service,Supporting,"Grid, generation and transmission investment creates engineering and construction demand.",4,curated_working,illustrative_not_exhaustive,True,True
+electric_utilities,industrial_machinery,Supply,Supporting,"Generation and network operations use turbines, pumps, controls and industrial equipment.",5,curated_working,illustrative_not_exhaustive,True,True
+electric_utilities,data_centre_reits,Customer,Downstream,Data-centre growth can increase local electricity demand and grid-capacity requirements.,6,curated_working,illustrative_not_exhaustive,True,True
+natural_gas_utilities,oil_gas,Supply,Upstream,Natural-gas production and processing supply regulated distribution networks.,1,curated_working,illustrative_not_exhaustive,True,True
+natural_gas_utilities,electric_utilities,Customer,Adjacent,Gas-fired power generation and integrated utility operations connect gas and electricity systems.,2,curated_working,illustrative_not_exhaustive,True,True
+natural_gas_utilities,construction_engineering,Service,Supporting,"Pipeline, network and infrastructure investment requires engineering and construction.",3,curated_working,illustrative_not_exhaustive,True,True
+natural_gas_utilities,industrial_machinery,Supply,Supporting,"Compression, metering and network operations use specialised industrial equipment.",4,curated_working,illustrative_not_exhaustive,True,True
+water_utilities,construction_engineering,Service,Supporting,"Water and wastewater networks require engineering, construction and infrastructure renewal.",1,curated_working,illustrative_not_exhaustive,True,True
+water_utilities,industrial_machinery,Supply,Upstream,"Pumps, treatment equipment, controls and metering systems support water operations.",2,curated_working,illustrative_not_exhaustive,True,True
+water_utilities,chemicals,Supply,Upstream,Treatment chemicals support water purification and wastewater processing.,3,curated_working,illustrative_not_exhaustive,True,True
+water_utilities,real_estate,Customer,Downstream,Property development and population growth influence water and wastewater demand.,4,curated_working,illustrative_not_exhaustive,True,True
+water_utilities,waste_management,Infrastructure,Adjacent,"Water, wastewater and waste services form related environmental infrastructure systems.",5,curated_working,illustrative_not_exhaustive,True,True
+waste_management,industrial_machinery,Supply,Upstream,"Collection, sorting, recycling and treatment use vehicles, machinery and automation.",1,curated_working,illustrative_not_exhaustive,True,True
+waste_management,chemicals,Service,Supporting,Treatment chemicals and materials processes support selected waste and recycling operations.,2,curated_working,illustrative_not_exhaustive,True,True
+waste_management,packaging,Customer,Adjacent,Packaging volumes influence municipal and commercial waste and recycling streams.,3,curated_working,illustrative_not_exhaustive,True,True
+waste_management,construction_engineering,Customer,Adjacent,Construction activity generates waste while infrastructure projects require remediation and environmental services.,4,curated_working,illustrative_not_exhaustive,True,True
+waste_management,water_utilities,Infrastructure,Adjacent,Wastewater and solid-waste systems are related environmental-service infrastructures.,5,curated_working,illustrative_not_exhaustive,True,True
+real_estate,construction_engineering,Supply,Upstream,"Property development, redevelopment and maintenance create construction and engineering demand.",1,curated_working,illustrative_not_exhaustive,True,True
+real_estate,banking,Financial,Supporting,"Mortgage and commercial lending support property acquisition, development and refinancing.",2,curated_working,illustrative_not_exhaustive,True,True
+real_estate,insurance,Risk,Supporting,"Property insurance transfers selected physical, liability and catastrophe risks.",3,curated_working,illustrative_not_exhaustive,True,True
+real_estate,industrial_machinery,Supply,Supporting,"Building systems, elevators, climate equipment and maintenance machinery support property operations.",4,curated_working,illustrative_not_exhaustive,True,True
+real_estate,retail,Customer,Downstream,"Retailers occupy shopping centres, high streets and other commercial property.",5,curated_working,illustrative_not_exhaustive,True,True
+real_estate,hotels_travel,Customer,Downstream,"Hotels, resorts and leisure venues are specialised operating-property environments.",6,curated_working,illustrative_not_exhaustive,True,True
+real_estate,data_centre_reits,Specialisation,Adjacent,Data-centre REITs represent a specialised property and digital-infrastructure segment.,7,curated_working,illustrative_not_exhaustive,True,True
+data_centre_reits,cloud_services,Customer,Downstream,Cloud providers and digital businesses lease or use data-centre capacity.,1,curated_working,illustrative_not_exhaustive,True,True
+data_centre_reits,networking_equipment,Infrastructure,Supporting,"Data centres require high-capacity switching, routing, optical and interconnection systems.",2,curated_working,illustrative_not_exhaustive,True,True
+data_centre_reits,electrical_equipment,Infrastructure,Supporting,"Power distribution, backup and control equipment support data-centre reliability.",3,curated_working,illustrative_not_exhaustive,True,True
+data_centre_reits,electric_utilities,Supply,Upstream,Data centres depend on reliable electricity supply and local grid capacity.,4,curated_working,illustrative_not_exhaustive,True,True
+data_centre_reits,renewable_energy,Supply,Adjacent,Renewable generation and storage can support data-centre energy procurement and resilience.,5,curated_working,illustrative_not_exhaustive,True,True
+data_centre_reits,real_estate,Structure,Adjacent,Data-centre REITs combine property ownership with specialised digital infrastructure.,6,curated_working,illustrative_not_exhaustive,True,True
+telecommunications,networking_equipment,Infrastructure,Upstream,"Telecommunications networks deploy switching, routing, optical and connectivity equipment.",1,curated_working,illustrative_not_exhaustive,True,True
+telecommunications,semiconductors,Supply,Upstream,"Communications infrastructure and devices depend on processors, radio-frequency and connectivity chips.",2,curated_working,illustrative_not_exhaustive,True,True
+telecommunications,consumer_electronics,Customer,Downstream,Mobile and connected consumer devices generate demand for wireless and broadband services.,3,curated_working,illustrative_not_exhaustive,True,True
+telecommunications,digital_content,Distribution,Downstream,"Broadband and mobile networks distribute streaming, gaming and other digital content.",4,curated_working,illustrative_not_exhaustive,True,True
+telecommunications,cybersecurity,Service,Supporting,"Communications providers require network, identity, device and customer-data protection.",5,curated_working,illustrative_not_exhaustive,True,True
+telecommunications,data_centre_reits,Infrastructure,Adjacent,Network interconnection and data-centre infrastructure support digital traffic and service delivery.,6,curated_working,illustrative_not_exhaustive,True,True
+home_improvement,retail,Distribution,Downstream,"Home-improvement products are distributed through large-format, specialist and digital retail channels.",1,curated_working,illustrative_not_exhaustive,True,True
+home_improvement,construction_engineering,Customer,Adjacent,"Residential renovation and repair activity overlaps with construction, installation and contracting services.",2,curated_working,illustrative_not_exhaustive,True,True
+home_improvement,real_estate,Demand,Downstream,"Housing turnover, property values and renovation activity influence demand for home-improvement products.",3,curated_working,illustrative_not_exhaustive,True,True
+home_improvement,industrial_machinery,Supply,Upstream,"Tools, equipment and building systems support repair, renovation and property maintenance.",4,curated_working,illustrative_not_exhaustive,True,True
+home_improvement,chemicals,Supply,Upstream,"Paints, coatings, adhesives, sealants and other chemical products support renovation and maintenance.",5,curated_working,illustrative_not_exhaustive,True,True
+home_improvement,ecommerce,Distribution,Adjacent,"Digital commerce extends product discovery, ordering and fulfilment for home-improvement goods.",6,curated_working,illustrative_not_exhaustive,True,True
+electronic_design_automation,cloud_services,Infrastructure,Supporting,"Cloud computing supports scalable simulation, verification and collaborative engineering workflows.",3,curated_working,illustrative_not_exhaustive,True,True
+electronic_design_automation,enterprise_software,Application,Adjacent,EDA tools form specialised enterprise engineering software used across complex product-development workflows.,4,curated_working,illustrative_not_exhaustive,True,True
+electronic_design_automation,consumer_electronics,Customer,Downstream,Consumer-device companies use semiconductor and systems-design tools across product development.,5,curated_working,illustrative_not_exhaustive,True,True
+electronic_design_automation,automotive,Customer,Downstream,"Vehicle electrification, connectivity and advanced driver systems increase electronic-system design requirements.",6,curated_working,illustrative_not_exhaustive,True,True

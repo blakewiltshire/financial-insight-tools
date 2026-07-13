@@ -1,60 +1,60 @@
-business_tag,tag_group,description,match_basis
-aerospace_defense,Industrials,Aerospace Defense,generated_from_company_description_keywords
-agriculture_inputs,Materials / Agriculture,Agriculture Inputs,generated_from_company_description_keywords
-airlines,Transportation,Airlines,generated_from_company_description_keywords
-apparel_luxury,Consumer,Apparel Luxury,generated_from_company_description_keywords
-artificial_intelligence,Technology,Artificial Intelligence,generated_from_company_description_keywords
-automotive,Consumer / Industrials,Automotive,generated_from_company_description_keywords
-banking,Financials,Banking,generated_from_company_description_keywords
-biotechnology,Healthcare,Biotechnology,generated_from_company_description_keywords
-capital_markets,Financials,Capital Markets,generated_from_company_description_keywords
-chemicals,Materials,Chemicals,generated_from_company_description_keywords
-cloud_services,Technology,Cloud Services,generated_from_company_description_keywords
-construction_engineering,Industrials,Construction Engineering,generated_from_company_description_keywords
-consumer_electronics,Technology / Consumer,Consumer Electronics,generated_from_company_description_keywords
-consumer_staples,Consumer Staples,Consumer Staples,generated_from_company_description_keywords
-cybersecurity,Technology,Cybersecurity,generated_from_company_description_keywords
-data_centre_reits,Real Estate / Technology,Data Centre Reits,generated_from_company_description_keywords
-data_centres,Technology / Infrastructure,Data Centres,generated_from_company_description_keywords
-diagnostics,Healthcare,Diagnostics,generated_from_company_description_keywords
-digital_advertising,Technology / Media,Digital Advertising,generated_from_company_description_keywords
-digital_content,Technology / Media,Digital Content,generated_from_company_description_keywords
-ecommerce,Consumer / Technology,Ecommerce,generated_from_company_description_keywords
-education_services,Services,Education Services,generated_from_company_description_keywords
-electric_utilities,Utilities,Electric Utilities,generated_from_company_description_keywords
-electrical_equipment,Industrials / Utilities,Electrical Equipment,generated_from_company_description_keywords
-electronic_design_automation,Technology,Electronic Design Automation,generated_from_company_description_keywords
-employment_services,Services,Employment Services,generated_from_company_description_keywords
-energy_services,Energy / Utilities,Energy Services,generated_from_company_description_keywords
-enterprise_software,Technology,Enterprise Software,generated_from_company_description_keywords
-financial_data_analytics,Financials / Data,Financial Data Analytics,generated_from_company_description_keywords
-healthcare_services,Healthcare,Healthcare Services,generated_from_company_description_keywords
-home_improvement,Consumer,Home Improvement,generated_from_company_description_keywords
-hotels_travel,Consumer / Travel,Hotels Travel,generated_from_company_description_keywords
-industrial_gases,Materials,Industrial Gases,generated_from_company_description_keywords
-industrial_machinery,Industrials,Industrial Machinery,generated_from_company_description_keywords
-insurance,Financials,Insurance,generated_from_company_description_keywords
-investment_management,Financials,Investment Management,generated_from_company_description_keywords
-life_sciences_tools,Healthcare,Life Sciences Tools,generated_from_company_description_keywords
-logistics_transport,Transportation,Logistics Transport,generated_from_company_description_keywords
-media_entertainment,Communication Services,Media Entertainment,generated_from_company_description_keywords
-medical_devices,Healthcare,Medical Devices,generated_from_company_description_keywords
-mining_metals,Materials,Mining Metals,generated_from_company_description_keywords
-natural_gas_utilities,Utilities,Natural Gas Utilities,generated_from_company_description_keywords
-networking_equipment,Technology,Networking Equipment,generated_from_company_description_keywords
-oil_gas,Energy,Oil Gas,generated_from_company_description_keywords
-packaging,Materials / Industrials,Packaging,generated_from_company_description_keywords
-payments,Financial Technology,Payments,generated_from_company_description_keywords
-pharmaceuticals,Healthcare,Pharmaceuticals,generated_from_company_description_keywords
-professional_services,Industrials / Services,Professional Services,generated_from_company_description_keywords
-real_estate,Real Estate,Real Estate,generated_from_company_description_keywords
-refining,Energy,Refining,generated_from_company_description_keywords
-renewable_energy,Energy / Utilities,Renewable Energy,generated_from_company_description_keywords
-restaurants,Consumer,Restaurants,generated_from_company_description_keywords
-retail,Consumer,Retail,generated_from_company_description_keywords
-semiconductors,Technology,Semiconductors,generated_from_company_description_keywords
-social_media,Communication Services / Technology,Social Media,generated_from_company_description_keywords
-software_platforms,Technology,Software Platforms,generated_from_company_description_keywords
-telecommunications,Communication Services,Telecommunications,generated_from_company_description_keywords
-waste_management,Industrials,Waste Management,generated_from_company_description_keywords
-water_utilities,Utilities,Water Utilities,generated_from_company_description_keywords
+business_tag,tag_group,description,company_count,primary_company_count,registry_status
+aerospace_defense,Aerospace & Defence,"Designs, manufactures, integrates, maintains, or supplies aircraft, spacecraft, defence systems, military equipment, or related mission-critical technologies and services.",18,17,active
+agriculture_inputs,Materials & Agriculture,"Produces or supplies material inputs used in agriculture, including seeds, fertilisers, crop protection products, agricultural chemicals, and related biological or soil products.",4,3,active
+airlines,Transportation,Provides scheduled or charter passenger and/or cargo air transportation services.,3,3,active
+apparel_luxury,Consumer,"Designs, manufactures, markets, or sells apparel, footwear, accessories, jewellery, beauty, or luxury-branded consumer products.",13,8,active
+artificial_intelligence,Technology,"Develops or commercially provides AI models, AI software, AI-enabled platforms, machine-learning infrastructure, or products whose core value materially depends on artificial intelligence.",20,7,active
+automotive,Consumer & Industrial,"Designs, manufactures, assembles, sells, leases, or provides material systems and services for motor vehicles and automotive markets.",34,15,active
+banking,Financial Services,"Accepts deposits, extends credit, provides lending, transaction accounts, treasury services, or other regulated banking products.",24,17,active
+biotechnology,Healthcare,"Researches, develops, or commercialises therapies, platforms, or products based materially on biological processes, genetic science, or molecular technologies.",12,7,active
+capital_markets,Financial Services,"Provides brokerage, trading, securities issuance, market making, exchange, clearing, custody, underwriting, or other capital-markets services.",37,12,active
+chemicals,Materials,"Manufactures, processes, or supplies commodity, specialty, performance, industrial, or consumer chemical products.",11,6,active
+cloud_services,Technology,"Provides computing, storage, database, networking, hosting, or managed technology resources through cloud-based infrastructure or services.",9,6,active
+construction_engineering,Industrial & Infrastructure,"Provides construction, engineering, design, installation, project management, contracting, or infrastructure development services.",6,6,active
+consumer_electronics,Technology & Consumer,"Designs, manufactures, or sells electronic devices and connected hardware intended primarily for consumer use.",18,15,active
+consumer_staples,Consumer,"Produces, distributes, or sells frequently purchased essential consumer products such as food, beverages, household products, and personal-care goods.",28,21,active
+cybersecurity,Technology,"Develops or provides products and services that protect systems, networks, identities, applications, devices, or data from cyber threats.",5,5,active
+data_centre_reits,Real Estate & Infrastructure,"Owns, develops, leases, or operates data-centre real estate primarily through a real-estate investment trust or comparable property structure.",1,1,active
+data_centres,Digital Infrastructure,"Develops, operates, manages, or provides material infrastructure and services for data-centre environments.",0,0,unused_review
+diagnostics,Healthcare,"Develops, manufactures, performs, or provides tests, instruments, platforms, or services used to detect, identify, monitor, or characterise health conditions.",13,10,active
+digital_advertising,Digital Platforms & Media,"Provides digital advertising inventory, ad technology, campaign management, audience targeting, measurement, or monetisation services.",5,5,active
+digital_content,Digital Platforms & Media,"Creates, licenses, distributes, aggregates, or monetises digital media, entertainment, publishing, gaming, or subscription content.",5,1,active
+ecommerce,Consumer & Digital Platforms,"Operates online marketplaces, digital commerce platforms, or material direct online sales and transaction services.",19,10,active
+education_services,Professional & Consumer Services,"Provides teaching, training, educational programmes, learning platforms, assessment, or education-support services.",0,0,unused_review
+electric_utilities,Utilities,"Generates, transmits, distributes, or sells electricity through regulated or merchant utility operations.",19,18,active
+electrical_equipment,Industrial & Infrastructure,"Designs, manufactures, or supplies electrical power, distribution, control, conversion, protection, or related equipment and components.",3,3,active
+electronic_design_automation,Technology,"Provides software, intellectual property, verification, simulation, or engineering tools used to design semiconductor chips and electronic systems.",2,2,active
+employment_services,Professional & Consumer Services,"Provides staffing, recruitment, workforce placement, human-capital outsourcing, payroll staffing, or employment-related services.",3,1,active
+energy_services,Energy,"Provides equipment, technology, engineering, field, maintenance, drilling, completion, or operational services to energy producers and infrastructure operators.",4,3,active
+enterprise_software,Technology,"Develops and sells software applications used by organisations to manage business processes, data, operations, workflows, or specialised functions.",13,10,active
+financial_data_analytics,Financial Services & Data,"Provides financial, market, credit, risk, pricing, reference, ratings, index, or analytical data and decision-support services.",4,4,active
+healthcare_services,Healthcare,"Provides clinical care, healthcare administration, pharmacy services, managed care, facilities, or other patient- and provider-facing healthcare services.",11,10,active
+home_improvement,Consumer,"Sells products or provides services used to repair, renovate, furnish, maintain, or improve residential properties.",4,3,active
+hotels_travel,Consumer & Travel,"Operates hotels, lodging, travel booking, reservations, travel experiences, or related hospitality and tourism services.",12,11,active
+industrial_gases,Materials,"Produces, distributes, or supplies industrial, medical, specialty, or atmospheric gases and related systems.",2,2,active
+industrial_machinery,Industrial & Infrastructure,"Designs, manufactures, or supplies machinery, equipment, automation systems, or mechanical products used in industrial production and operations.",25,24,active
+insurance,Financial Services,"Underwrites, distributes, administers, brokers, or directly provides insurance and risk-protection products or services.",43,25,active
+investment_management,Financial Services,"Manages investment portfolios, funds, private capital, retirement assets, or institutional and individual investment mandates.",29,16,active
+life_sciences_tools,Healthcare,"Develops or supplies instruments, consumables, software, reagents, or services used in biological research, laboratory workflows, and drug development.",3,3,active
+logistics_transport,Transportation,"Provides freight, parcel, trucking, shipping, warehousing, delivery, logistics, or transport-management services.",8,8,active
+media_entertainment,Digital Platforms & Media,"Creates, owns, licences, broadcasts, distributes, or operates media, entertainment, sports, film, television, music, or live-content businesses.",12,10,active
+medical_devices,Healthcare,"Designs, manufactures, or supplies instruments, implants, equipment, or devices used in medical diagnosis, treatment, monitoring, or procedures.",18,16,active
+mining_metals,Materials,"Extracts, processes, refines, produces, or commercially supplies metals, ores, minerals, or mining products and services.",4,4,active
+natural_gas_utilities,Utilities,"Distributes, transports, stores, or sells natural gas through regulated utility networks to end users.",9,6,active
+networking_equipment,Technology,"Designs, manufactures, or supplies hardware and systems used to connect, route, switch, transmit, or manage digital communications.",4,4,active
+oil_gas,Energy,"Explores for, develops, produces, gathers, processes, transports, or commercially supplies crude oil, natural gas, or related hydrocarbons.",13,13,active
+packaging,Materials & Industrial,"Designs, manufactures, or supplies containers, cartons, labels, films, closures, or other packaging products and systems.",5,5,active
+payments,Financial Technology,"Provides payment acceptance, processing, networks, merchant acquiring, issuing, settlement, digital wallets, or transaction services.",15,10,active
+pharmaceuticals,Healthcare,"Researches, develops, manufactures, markets, or distributes pharmaceutical drugs and therapeutic products.",20,13,active
+professional_services,Professional & Consumer Services,"Provides specialised advisory, consulting, technical, legal, accounting, risk, engineering, outsourcing, or other knowledge-based services.",31,19,active
+real_estate,Real Estate,"Owns, develops, leases, manages, finances, or monetises property as a material commercial business.",28,28,active
+refining,Energy,"Processes crude oil, natural gas liquids, or other feedstocks into fuels, petrochemicals, and refined energy products.",5,4,active
+renewable_energy,Energy & Utilities,"Develops, manufactures, generates, stores, installs, or supplies renewable and low-carbon energy products, systems, or services.",18,13,active
+restaurants,Consumer,"Operates, franchises, or licenses restaurant, food-service, quick-service, casual-dining, or related prepared-food concepts.",12,9,active
+retail,Consumer,"Sells goods directly to consumers through physical stores, dealerships, direct-sales networks, or material multi-category retail operations.",15,12,active
+semiconductors,Technology,"Designs, manufactures, packages, tests, or supplies semiconductor devices, integrated circuits, chips, or specialised semiconductor components.",19,18,active
+social_media,Digital Platforms & Media,"Operates digital platforms centred on user-generated content, social interaction, community networks, or creator participation.",4,3,active
+software_platforms,Technology,"Provides extensible software environments, operating platforms, developer ecosystems, marketplaces, or multi-sided digital systems connecting users, developers, or businesses.",10,4,active
+telecommunications,Communication Services,"Provides fixed, mobile, satellite, broadband, voice, data, or communications-network services to consumers, businesses, or governments.",7,7,active
+waste_management,Industrial & Infrastructure,"Collects, transports, processes, recycles, treats, or disposes of municipal, commercial, industrial, hazardous, or specialised waste.",3,1,active
+water_utilities,Utilities,"Supplies, distributes, treats, or manages water and wastewater through regulated or contracted utility operations.",2,1,active

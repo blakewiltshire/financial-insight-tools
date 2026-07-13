@@ -1308,51 +1308,6 @@ else:
         "Add Current Branch to Exploration."
     )
 
-st.markdown("### Individual Exploration Exports")
-
-if starting_capability:
-    export_col_1, export_col_2 = st.columns(2)
-    with export_col_1:
-        st.download_button(
-            "Download Full Exploration JSON",
-            data=json.dumps(full_exploration_bundle, indent=2),
-            file_name="relationship_manager_full_exploration.json",
-            mime="application/json",
-            width="stretch",
-        )
-    with export_col_2:
-        if active_candidate_capability and not selected_display_df.empty:
-            st.download_button(
-                "Download Focused Investigation JSON",
-                data=json.dumps(focused_investigation_bundle, indent=2),
-                file_name="relationship_manager_focused_investigation.json",
-                mime="application/json",
-                width="stretch",
-            )
-        else:
-            st.button(
-                "Download Focused Investigation JSON",
-                disabled=True,
-                width="stretch",
-                help="Select one or more candidate assets from the active capability universe.",
-            )
-    if not selected_display_df.empty:
-        st.download_button(
-            "Download Selected Assets CSV",
-            data=selected_display_df.to_csv(index=False),
-            file_name="relationship_manager_selected_assets.csv",
-            mime="text/csv",
-            width="stretch",
-        )
-    with st.expander("View Full Exploration JSON"):
-        st.json(full_exploration_bundle)
-    with st.expander("View Focused Investigation JSON"):
-        st.json(focused_investigation_bundle)
-else:
-    st.caption(
-        "Select a starting company or business capability to create the full exploration export."
-    )
-
 # -------------------------------------------------------------------------------------------------
 # Observation and Journal
 # -------------------------------------------------------------------------------------------------
