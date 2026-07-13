@@ -231,9 +231,25 @@ A structural view across market behaviour and volatility conditions:
 
 Provides quantitative grounding for downstream modelling.
 
+### Relationship Manager — Capability & Candidate Pathways
+
+![Company Structure](docs/screenshots/07-relationship-manager.png)
+
+A structured environment for developing observations into capability-led and relationship-led candidate investigations:
+
+- observation and source context
+- company or business-capability entry points
+- direct capability and related capability pathways
+- primary and expanded candidate universes
+- selected exploration branches and candidate provenance
+- AI-assisted opportunity-set and candidate-universe review
+
+Supports the progression from an initial observation towards a broad but structured opportunity set before detailed company and market examination.
+
+
 ### Company Structure Review — Valuation & Business Structure
 
-![Company Structure](docs/screenshots/07-company-structure-review.png)
+![Company Structure](docs/screenshots/08-company-structure-review.png)
 
 A structural view across valuation, profitability, efficiency, and business performance characteristics:
 
@@ -246,7 +262,7 @@ Supports examination of how market pricing aligns with business performance, gro
 
 ### Market Structure Review — Ownership, Supply & Participation
 
-![Market Structure](docs/screenshots/08-market-structure-review.png)
+![Market Structure](docs/screenshots/09-market-structure-review.png)
 
 A structural view across ownership, available supply, liquidity formation, and participation pathways:
 
@@ -259,7 +275,7 @@ Supports review of how market access, tradable supply, and participation mechani
 
 ### Watchlist, Trade Structuring & Risk Planning — Scenario Architecture
 
-![Trade Structuring](docs/screenshots/09-trade-structuring.png)
+![Trade Structuring](docs/screenshots/10-trade-structuring.png)
 
 A structured environment for maintaining watchlists, developing trade ideas, and examining risk and reward scenarios.
 
@@ -273,7 +289,7 @@ Supports the progression from candidate assets to structured market investigatio
 
 ### Observation & AI Export — Investigation Workflow
 
-![Investigation Bundle](docs/screenshots/10-export-bundle.png)
+![Investigation Bundle](docs/screenshots/11-export-bundle.png)
 
 Observation & AI Export consolidates Decision Support Snapshots, structured observations, Research Notes, and contextual metadata into portable investigation bundles. Investigations can then be reviewed through AI personas, preserved for future analysis, or restored as understanding develops.
 
@@ -281,24 +297,29 @@ Observation & AI Export consolidates Decision Support Snapshots, structured obse
 
 Investigations may begin from any module. Different analytical questions naturally lead to different investigation paths, while observations, evidence, and reasoning remain connected throughout the process.
 
+### Observation & Opportunity Exploration
+
+- **Relationship Manager** — develop observations through direct business capabilities, related pathways, and candidate-asset environments
+- **Classification Schema Viewer** — organise companies and economic activity through permitted classification structures
+- **Economic Exploration** — review macroeconomic indicators and country-level conditions
+
 ### Markets & Companies
 
-- **Market & Volatility Scanner** — distribution structure, volatility, and market behaviour
-- **Company Structure Review** — valuation, profitability, efficiency, and comparative business analysis
-- **Market Structure Review** — ownership, supply, participation, and liquidity structure
+- **Market & Volatility Scanner** — examine distribution structure, volatility, returns, and market behaviour
+- **Company Structure Review** — compare valuation, growth, profitability, market expectations, and peer structure
+- **Market Structure Review** — examine ownership, supply, participation, index eligibility, and liquidity structure
 
 ### Macroeconomic & System Exploration
 
-- **Economic Exploration** — macroeconomic indicators and country-level diagnostics
-- **Thematic Correlation** — relationships across macroeconomic themes
-- **Relative Macro Transmission** — structural transmission between economies and markets
-- **Positioning & Crowding** — leveraged positioning, percentile extremes, and market participation
+- **Thematic Correlation** — explore relationships across macroeconomic themes
+- **Relative Macro Transmission** — examine structural differentials between economies and markets
+- **Positioning & Crowding** — review leveraged positioning, percentile extremes, and market participation
 
 ### Trade Planning & Investigation
 
-- **Trade Timing & Confirmation** — multi-timeframe alignment and confirmation
-- **Price Action & Trend Confirmation** — trend, momentum, and directional structure
-- **Trade Structuring & Risk Planning** — scenario planning, exposure, and risk calibration
+- **Trade Timing & Confirmation** — examine multi-timeframe alignment and confirmation
+- **Price Action & Trend Confirmation** — review trend, momentum, and directional structure
+- **Trade Structuring & Risk Planning** — preserve credible candidates and examine possible exposure, scenario, and risk structures
 - **Observation & AI Export** — preserve observations, assemble investigation bundles, and support AI-assisted review
 
 ## Structure (High-Level)
