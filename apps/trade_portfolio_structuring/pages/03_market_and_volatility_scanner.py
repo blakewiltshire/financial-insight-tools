@@ -450,80 +450,198 @@ else:
     )
 
 # -------------------------------------------------------------------------------------------------
+# Asset-Specific Price Formatting
+# -------------------------------------------------------------------------------------------------
+def format_asset_price(value, asset_type):
+    """
+    Format displayed asset prices using asset-sensitive decimal precision.
+    """
+
+    if pd.isna(value):
+        return ""
+
+    numeric_value = float(value)
+    asset_type_normalised = str(asset_type).strip().lower()
+
+    # Cryptocurrency must be checked before currencies because
+    # "cryptocurrency" contains the substring "currency".
+    if asset_type_normalised in {
+        "cryptocurrency",
+        "cryptocurrencies",
+        "crypto",
+    }:
+        if abs(numeric_value) >= 100:
+            return f"{numeric_value:.2f}"
+
+        if abs(numeric_value) >= 1:
+            return f"{numeric_value:.4f}"
+
+        return f"{numeric_value:.6f}"
+
+    # Currency pairs use four decimal places.
+    if asset_type_normalised in {
+        "currencies",
+        "currency",
+        "forex",
+        "fx",
+    }:
+        return f"{numeric_value:.4f}"
+
+    # Equities and other conventional asset types.
+    return f"{numeric_value:.2f}"
+
+# -------------------------------------------------------------------------------------------------
 # Snapshot Group Summary — Only for Preloaded Types
 # -------------------------------------------------------------------------------------------------
-if data_source in ["Preloaded Asset Types (Default)", "Preloaded Asset Types (User)"]:
+if data_source in [
+    "Preloaded Asset Types (Default)",
+    "Preloaded Asset Types (User)",
+]:
     with overview_tab0:
         try:
             snapshot_path = (
-                DEFAULT_ASSET_SNAPSHOT_PATH if data_source == "Preloaded Asset Types (Default)"
+                DEFAULT_ASSET_SNAPSHOT_PATH
+                if data_source == "Preloaded Asset Types (Default)"
                 else USER_ASSET_SNAPSHOT_PATH
             )
 
             if os.path.exists(snapshot_path):
                 snapshot_df = pd.read_pickle(snapshot_path)
+
                 file_timestamp = os.path.getmtime(snapshot_path)
-                snapshot_date = datetime.fromtimestamp(file_timestamp).strftime('%Y-%m-%d %H:%M:%S')
+                snapshot_date = datetime.fromtimestamp(
+                    file_timestamp
+                ).strftime("%Y-%m-%d %H:%M:%S")
 
                 st.info(
-                    f"This group summary was generated using the **Asset Snapshot Scanner**.\n\n"
+                    f"This group summary was generated using the "
+                    f"**Asset Snapshot Scanner**.\n\n"
                     f"Snapshot last updated: **{snapshot_date}**\n\n"
-                    f"⚠️ *Note*: This timestamp reflects when the summary file was saved — "
-                    f"individual assets may still have older data unless all underlying files were updated.\n\n"
-                    f"🔄 To ensure full accuracy, consider rerunning the scanner after modifying or adding asset files."
+                    f"⚠️ *Note*: This timestamp reflects when the summary "
+                    f"file was saved — individual assets may still have older "
+                    f"data unless all underlying files were updated.\n\n"
+                    f"🔄 To ensure full accuracy, consider rerunning the scanner "
+                    f"after modifying or adding asset files."
                 )
 
-                snapshot_df["Asset Name"] = snapshot_df["Asset Name"].astype(str).str.strip()
-                snapshot_df["Category"] = snapshot_df["Category"].astype(str).str.strip().str.lower()
+                snapshot_df["Asset Name"] = (
+                    snapshot_df["Asset Name"]
+                    .astype(str)
+                    .str.strip()
+                )
+
+                snapshot_df["Category"] = (
+                    snapshot_df["Category"]
+                    .astype(str)
+                    .str.strip()
+                    .str.lower()
+                )
+
                 category_name_clean = asset_category.strip().lower()
 
-                group_df = snapshot_df[snapshot_df["Category"] == category_name_clean].copy()
+                group_df = snapshot_df[
+                    snapshot_df["Category"] == category_name_clean
+                ].copy()
 
                 if not group_df.empty:
-                    group_df = group_df.drop(columns=["Category"], errors="ignore")
+                    group_asset_type = asset_category.strip().lower()
+
+                    # Group summaries are designed for quick comparison.
+                    # Use category-level precision rather than per-asset precision.
+                    if "currenc" in group_asset_type or group_asset_type in {
+                        "forex",
+                        "fx",
+                    }:
+                        group_price_format = "%.4f"
+                    elif "crypto" in group_asset_type:
+                        group_price_format = "%.4f"
+                    else:
+                        group_price_format = "%.2f"
+
+                    group_df = group_df.drop(
+                        columns=["Category"],
+                        errors="ignore",
+                    )
+
                     st.subheader("Asset Group Summary")
-                    st.markdown(f"Snapshot metrics for **{asset_category.strip()}**")
+                    st.markdown(
+                        f"Snapshot metrics for **{asset_category.strip()}**"
+                    )
+
                     st.data_editor(
                         group_df,
-                        width='stretch',
+                        width="stretch",
                         column_config={
-                            "1M % Chg": st.column_config.NumberColumn(format="%.2f %%"),
-                            "YTD % Chg": st.column_config.NumberColumn(format="%.2f %%"),
-                            "Last Close": st.column_config.NumberColumn(format="%.2f"),
-                            "52w Low": st.column_config.NumberColumn(format="%.2f"),
-                            "52w High": st.column_config.NumberColumn(format="%.2f"),
-                            "52w Range": st.column_config.NumberColumn(format="%.2f"),
-                            "Last 10 Days Return": st.column_config.BarChartColumn(y_min=-10, y_max=15)
+                            "1M % Chg": st.column_config.NumberColumn(
+                                format="%.2f %%"
+                            ),
+                            "YTD % Chg": st.column_config.NumberColumn(
+                                format="%.2f %%"
+                            ),
+                            "Last Close": st.column_config.NumberColumn(
+                                format=group_price_format
+                            ),
+                            "52w Low": st.column_config.NumberColumn(
+                                format=group_price_format
+                            ),
+                            "52w High": st.column_config.NumberColumn(
+                                format=group_price_format
+                            ),
+                            "52w Range": st.column_config.NumberColumn(
+                                format=group_price_format
+                            ),
+                            "Last 10 Days Return":
+                                st.column_config.BarChartColumn(
+                                    y_min=-10,
+                                    y_max=15,
+                                ),
                         },
                         disabled=True,
-                        hide_index=True
+                        hide_index=True,
                     )
+
                 else:
                     st.info("No snapshot data found for this group.")
+
             else:
-                st.info("No snapshot file found. Please generate it via the **Asset Snapshot Scanner**.")
+                st.info(
+                    "No snapshot file found. Please generate it via the "
+                    "**Asset Snapshot Scanner**."
+                )
+
         except Exception as error:
             st.error(f"❌ Could not load snapshot data: {error}")
 
 
+# Prepare formatted price values for the detailed Asset Snapshot.
+last_price_display = format_asset_price(last_price, ASSET_TYPE)
+max_price_display = format_asset_price(max_price, ASSET_TYPE)
+min_price_display = format_asset_price(min_price, ASSET_TYPE)
+high_price_display = format_asset_price(high_price, ASSET_TYPE)
+low_price_display = format_asset_price(low_price, ASSET_TYPE)
+
 # --- Asset Snapshot ---
 with overview_tab1:
     st.subheader("Asset Snapshot")
-    st.markdown(f"""
-    **Current Data Set**: {DATA_TITLE}<br>
-    **Asset Type**: {asset_type_display}<br>
-    **Analysed Period**: {start_date} to {end_date}<br><br>
-    **Last Price**: {last_price:.2f}<br>
-    :gray[*(Most recent closing price.)*]<br><br>
-    **Days Since Bear Market**: {days_since_bear_market} days<br>
-    :gray[*(Days since a 20%+ decline from the high.)*]<br><br>
-    **Current Drawdown**: {current_drawdown:.2f}%<br>
-    :gray[*(Drop from peak to current price.)*]<br><br>
-    **Max Price**: {max_price:.2f} on {max_price_date.strftime('%m/%d/%Y')}<br>
-    **Min Price**: {min_price:.2f} on {min_price_date.strftime('%m/%d/%Y')}<br>
-    **High Price**: {high_price:.2f} on {high_price_date.strftime('%m/%d/%Y')}<br>
-    **Low Price**: {low_price:.2f} on {low_price_date.strftime('%m/%d/%Y')}<br>
-    """, unsafe_allow_html=True)
+
+    st.markdown(
+        f"""
+        **Current Data Set**: {DATA_TITLE}<br>
+        **Asset Type**: {asset_type_display}<br>
+        **Analysed Period**: {start_date} to {end_date}<br><br>
+        **Last Price**: {last_price_display}<br>
+        :gray[*(Most recent closing price.)*]<br><br>
+        **Current Bear-Market Duration**: {days_since_bear_market} days<br>
+        :gray[*(Number of days in the current continuous 20%+ drawdown period. If no current bear-market drawdown exists, this reflects the time since the most recent one ended.)*]<br><br>
+        **Current Drawdown**: {current_drawdown:.2f}%<br>
+        :gray[*(Drop from peak to current price.)*]<br><br>
+        **Max Price**: {max_price_display} on {max_price_date.strftime('%m/%d/%Y')}<br>
+        **Min Price**: {min_price_display} on {min_price_date.strftime('%m/%d/%Y')}<br>
+        **High Price**: {high_price_display} on {high_price_date.strftime('%m/%d/%Y')}<br>
+        **Low Price**: {low_price_display} on {low_price_date.strftime('%m/%d/%Y')}<br>
+        """,
+        unsafe_allow_html=True,
+    )
 
 # --- Key Metrics ---
 with overview_tab2:
@@ -552,15 +670,18 @@ with overview_tab3:
         )
 
         atr_col1, atr_col2, atr_col3 = st.columns(3)
+
         with atr_col1:
             st.metric("Daily ATR (%)", daily_atr_pct)
-            st.metric("Daily ATR ($)", daily_atr_abs)
+            st.metric("Daily ATR", daily_atr_abs)
+
         with atr_col2:
             st.metric("Weekly ATR (%)", weekly_atr_pct)
-            st.metric("Weekly ATR ($)", weekly_atr_abs)
+            st.metric("Weekly ATR", weekly_atr_abs)
+
         with atr_col3:
             st.metric("Monthly ATR (%)", monthly_atr_pct)
-            st.metric("Monthly ATR ($)", monthly_atr_abs)
+            st.metric("Monthly ATR", monthly_atr_abs)
 
         # Returns
         ret_col1, ret_col2, ret_col3 = st.columns(3)

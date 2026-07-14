@@ -439,28 +439,81 @@ for folder_name in asset_dirs:
             )
 
 # -------------------------------------------------------------------------------------------------
+# Snapshot Price Display Formatting
+# -------------------------------------------------------------------------------------------------
+def format_snapshot_price(value, category):
+    """Format snapshot prices according to asset category."""
+
+    if pd.isna(value):
+        return ""
+
+    category_normalised = str(category).strip().lower()
+
+    if "currenc" in category_normalised:
+        return f"{value:.6f}"
+
+    if "crypto" in category_normalised:
+        if abs(value) >= 1000:
+            return f"{value:.2f}"
+        if abs(value) >= 1:
+            return f"{value:.4f}"
+        return f"{value:.6f}"
+
+    return f"{value:.2f}"
+
+# -------------------------------------------------------------------------------------------------
 # Render Tables
 # -------------------------------------------------------------------------------------------------
 for category, records in category_data.items():
     df = pd.DataFrame(records)
+
     if df.empty:
         continue
 
+    display_df = df.copy()
+
+    mapped_category = (
+        display_df["Category"].iloc[0]
+        if "Category" in display_df.columns
+        else category
+    )
+
+    price_columns = [
+        "Last Close",
+        "52w Low",
+        "52w High",
+        "52w Range",
+    ]
+
+    for column_name in price_columns:
+        if column_name in display_df.columns:
+            display_df[column_name] = display_df[column_name].apply(
+                lambda value: format_snapshot_price(value, mapped_category)
+            )
+
     st.markdown(f"### {category}")
+
     st.data_editor(
-        df,
-        width='stretch',
+        display_df,
+        width="stretch",
         column_config={
-            "1M % Chg": st.column_config.NumberColumn(format="%.2f %%"),
-            "YTD % Chg": st.column_config.NumberColumn(format="%.2f %%"),
-            "Last Close": st.column_config.NumberColumn(format="%.2f"),
-            "52w Low": st.column_config.NumberColumn(format="%.2f"),
-            "52w High": st.column_config.NumberColumn(format="%.2f"),
-            "52w Range": st.column_config.NumberColumn(format="%.2f"),
-            "Last 10 Days Return": st.column_config.BarChartColumn(y_min=-10, y_max=15)
+            "1M % Chg": st.column_config.NumberColumn(
+                format="%.2f %%"
+            ),
+            "YTD % Chg": st.column_config.NumberColumn(
+                format="%.2f %%"
+            ),
+            "Last Close": st.column_config.TextColumn(),
+            "52w Low": st.column_config.TextColumn(),
+            "52w High": st.column_config.TextColumn(),
+            "52w Range": st.column_config.TextColumn(),
+            "Last 10 Days Return": st.column_config.BarChartColumn(
+                y_min=-10,
+                y_max=15,
+            ),
         },
         disabled=True,
-        hide_index=True
+        hide_index=True,
     )
 
 # -------------------------------------------------------------------------------------------------

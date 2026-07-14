@@ -49,12 +49,27 @@ def calculate_asset_metrics_basic(processed_df):
     drawdown = processed_df["close"] / running_peak - 1.0  # negative in drawdowns
     bear_mask = drawdown <= -0.20
 
-    # Most recent bear date (or None)
-    bear_market_start_date = (
-        processed_df.loc[bear_mask, "date"].iloc[-1]
-        if bear_mask.any()
-        else None
-    )
+    # Identify the beginning of each continuous 20%+ drawdown period.
+    bear_market_entry = bear_mask & ~bear_mask.shift(1, fill_value=False)
+
+    if bear_mask.iloc[-1]:
+        # The asset is currently in a bear-market drawdown.
+        # Return the start date of the current continuous bear period.
+        current_bear_group = bear_market_entry.cumsum()
+        active_group = current_bear_group.iloc[-1]
+
+        bear_market_start_date = processed_df.loc[
+            bear_mask & (current_bear_group == active_group),
+            "date"
+        ].iloc[0]
+
+    elif bear_mask.any():
+        # The asset is not currently in a bear market.
+        # Return the final date on which the previous bear period remained active.
+        bear_market_start_date = processed_df.loc[bear_mask, "date"].iloc[-1]
+
+    else:
+        bear_market_start_date = None
 
     # Standard max/min stats (unchanged)
     max_price = processed_df["close"].max()
@@ -274,84 +289,72 @@ def overview_metrics(processed_df, timeline):
 # -------------------------------------------------------------------------------------------------
 # Function: calculate_and_format_atr
 # Purpose: Calculate and return Average True Range (ATR) across daily, weekly, and
-# monthly horizons — in both percentage and absolute terms.
+# monthly horizons — in both percentage and absolute price terms.
 # Use Case: Asset Snapshot - ATR & Returns (Market & Volatility module)
 # -------------------------------------------------------------------------------------------------
 def calculate_and_format_atr(processed_df, weekly_data, monthly_data, asset_type):
     """
-    Calculate and format the Average True Range (ATR) for an asset based on its type.
+    Calculate and format Average True Range (ATR) across daily, weekly,
+    and monthly horizons.
 
-    This function computes the ATR in two formats for the given asset type:
-    - Percentage of the closing price for Equities, Cryptocurrency, and other asset types.
-    - ATR in pips for Forex (Currencies).
-
-    Parameters:
-        processed_df (DataFrame): The processed daily data for the asset.
-        weekly_data (DataFrame): The processed weekly data for the asset.
-        monthly_data (DataFrame): The processed monthly data for the asset.
-        asset_type (str): The type of asset (e.g., 'Equities', 'Cryptocurrency',
-        'Currencies', etc.).
+    Formatting:
+    - Currencies: percentage to 3 decimals; absolute ATR to 4 decimals.
+    - Cryptocurrency: adaptive absolute precision based on value.
+    - Other assets: percentage and absolute ATR to 2 decimals.
 
     Returns:
-        tuple: A tuple containing the daily, weekly, and monthly ATR values in both
-        percentage and absolute terms.
+        tuple: Daily, weekly, and monthly ATR percentages and absolute values.
     """
 
-    # For Equities and Cryptocurrency, calculate ATR as percentage of the closing price
-    if asset_type in ('Equities', 'Cryptocurrency'):
-        daily_atr_pct = (
-            f"{(processed_df['ATR'].iloc[-1] / processed_df['close'].iloc[-1]) * 100:.2f}%"
-        )
-        weekly_atr_pct = (
-            f"{(weekly_data['ATR'].iloc[-1] / weekly_data['close'].iloc[-1]) * 100:.2f}%"
-        )
-        monthly_atr_pct = (
-            f"{(monthly_data['ATR'].iloc[-1] / monthly_data['close'].iloc[-1]) * 100:.2f}%"
-        )
+    asset_type_normalised = str(asset_type).strip().lower()
 
-        # Absolute ATR for Equities and Cryptocurrency (value in dollars)
-        daily_atr_abs = f"{processed_df['ATR'].iloc[-1]:.2f}"
-        weekly_atr_abs = f"{weekly_data['ATR'].iloc[-1]:.2f}"
-        monthly_atr_abs = f"{monthly_data['ATR'].iloc[-1]:.2f}"
+    daily_atr = processed_df["ATR"].iloc[-1]
+    weekly_atr = weekly_data["ATR"].iloc[-1]
+    monthly_atr = monthly_data["ATR"].iloc[-1]
 
-    # For Forex (Currencies), calculate ATR in pips (smallest price movement)
-    elif asset_type == 'Currencies':
-        daily_atr_pct = (
-            f"{(processed_df['ATR'].iloc[-1] / processed_df['close'].iloc[-1]) * 100:.3f}%"
-        )
-        weekly_atr_pct = (
-            f"{(weekly_data['ATR'].iloc[-1] / weekly_data['close'].iloc[-1]) * 100:.3f}%"
-        )
-        monthly_atr_pct = (
-            f"{(monthly_data['ATR'].iloc[-1] / monthly_data['close'].iloc[-1]) * 100:.3f}%"
-        )
+    daily_close = processed_df["close"].iloc[-1]
+    weekly_close = weekly_data["close"].iloc[-1]
+    monthly_close = monthly_data["close"].iloc[-1]
 
-        # ATR for Forex converted to pips (100th of the smallest price movement)
-        daily_atr_abs = f"{processed_df['ATR'].iloc[-1] * 100:.2f}"  # ATR in pips
-        weekly_atr_abs = f"{weekly_data['ATR'].iloc[-1] * 100:.2f}"
-        monthly_atr_abs = f"{monthly_data['ATR'].iloc[-1] * 100:.2f}"
+    # Percentage precision
+    pct_precision = 3 if asset_type_normalised in {
+        "currencies", "currency", "forex", "fx"
+    } else 2
 
-    # For other asset types (Commodities, Bonds, etc.), treat similarly to Equities
-    else:
-        daily_atr_pct = (
-            f"{(processed_df['ATR'].iloc[-1] / processed_df['close'].iloc[-1]) * 100:.2f}%"
-        )
-        weekly_atr_pct = (
-            f"{(weekly_data['ATR'].iloc[-1] / weekly_data['close'].iloc[-1]) * 100:.2f}%"
-        )
-        monthly_atr_pct = (
-            f"{(monthly_data['ATR'].iloc[-1] / monthly_data['close'].iloc[-1]) * 100:.2f}%"
-        )
+    daily_atr_pct = f"{(daily_atr / daily_close) * 100:.{pct_precision}f}%"
+    weekly_atr_pct = f"{(weekly_atr / weekly_close) * 100:.{pct_precision}f}%"
+    monthly_atr_pct = f"{(monthly_atr / monthly_close) * 100:.{pct_precision}f}%"
 
-        # Absolute ATR for all asset types (value in dollars)
-        daily_atr_abs = f"{processed_df['ATR'].iloc[-1]:.2f}"
-        weekly_atr_abs = f"{weekly_data['ATR'].iloc[-1]:.2f}"
-        monthly_atr_abs = f"{monthly_data['ATR'].iloc[-1]:.2f}"
+    def format_absolute_atr(value):
+        """Apply asset-sensitive precision to an absolute ATR value."""
 
-    # Return ATR values as a tuple: percentage and absolute ATR for each time period
+        if asset_type_normalised in {
+            "currencies", "currency", "forex", "fx"
+        }:
+            return f"{value:.4f}"
+
+        if asset_type_normalised in {
+            "cryptocurrency", "cryptocurrencies", "crypto"
+        }:
+            if abs(value) >= 1000:
+                return f"{value:.2f}"
+            if abs(value) >= 1:
+                return f"{value:.4f}"
+            return f"{value:.6f}"
+
+        return f"{value:.2f}"
+
+    daily_atr_abs = format_absolute_atr(daily_atr)
+    weekly_atr_abs = format_absolute_atr(weekly_atr)
+    monthly_atr_abs = format_absolute_atr(monthly_atr)
+
     return (
-        daily_atr_pct, weekly_atr_pct, monthly_atr_pct,
-        daily_atr_abs, weekly_atr_abs, monthly_atr_abs
+        daily_atr_pct,
+        weekly_atr_pct,
+        monthly_atr_pct,
+        daily_atr_abs,
+        weekly_atr_abs,
+        monthly_atr_abs,
     )
 
 # -------------------------------------------------------------------------------------------------
