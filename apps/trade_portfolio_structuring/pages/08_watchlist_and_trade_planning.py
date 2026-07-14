@@ -482,7 +482,7 @@ show_observation, show_log = render_macro_sidebar_tools(
 )
 
 # -------------------------------------------------------------------------------------------------
-# 🎯 Derive Assets In View (Used for Logging Context)
+# Derive Assets In View (Used for Logging Context)
 # -------------------------------------------------------------------------------------------------
 try:
     asset_list_for_observation = [asset_name_main] if asset_name_main else []

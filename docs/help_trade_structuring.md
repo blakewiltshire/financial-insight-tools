@@ -1,52 +1,109 @@
+#### Watchlist, Trade Structuring & Risk Planning — Help
 
-## Trade Structuring & Risk Planning — Help
+This module supports the progression from candidate assets and strategic ideas into structured planning scenarios.
 
-This module allows users to construct structured trade setups — from single-leg instruments like shares or CFDs to more complex multi-leg spreads or mean-reversion pairs. It draws together diagnostic insights from other modules (volatility, timing, trends) into a final planning layer.
+It draws together evidence and observations from other FIT modules—including company structure, market structure, volatility, timing, price behaviour, correlation, and relative relationships—within a final planning and risk-review layer.
 
----
+The module does not generate trading signals, prescribe strategies, connect to brokers, or execute trades.
 
-## What Does This App Do?
+#### What Does This Module Do?
 
-The Trade Structuring & Risk Planning module provides a hands-on interface to configure trades using real asset data. Users define trade type, select assets, determine direction, set price targets and stops, and review structural sizing logic. Outputs are added to a session-based dashboard for download or future evaluation.
+The **Watchlist, Trade Structuring & Risk Planning** module provides a structured interface for maintaining candidate ideas and examining possible trade configurations using historical asset data and user-defined assumptions.
 
----
+Users can:
 
-## Use Case Walkthrough
+- Upload, review, amend, and download an external watchlist, idea tracker, or trade journal
+- Select a supported planning workflow
+- Load assets from default data, user-maintained data, or uploaded CSV files
+- Review current or historical reference prices
+- Define direction, position size, stake, margin, stop, target, and reward-to-risk assumptions where applicable
+- Enter estimated costs, slippage, currency, and other planning assumptions
+- Record contextual observations and planning notes
+- Add structured scenarios to an editable dashboard
+- Download planning records for later review, investigation, or record keeping
 
-**Example:** You’ve uploaded a trade journal and wish to structure a new **Pairs Trade** using user-defined preloaded assets.
+#### Supported Planning Workflows
 
-1. **Step 1:** Select `Pairs Trading (Mean Reversion)` from the trade type menu.
-2. **Step 2:** Choose your **Long** and **Short** legs from your user-preloaded categories.
-3. **Step 3:** Pull insights from other modules (e.g. price divergence from Spread Analysis or timing alignment from Technical Indicators).
-4. **Step 4:** Enter stop-loss, take-profit, capital allocation, and leverage assumptions.
-5. **Step 5:** Add trade to the dashboard for further review or export.
+The module currently supports:
 
-This structured flow enables real-world preparation for execution — aligning trade logic with risk limits and sizing principles.
+- **Shares — No Leverage**: Non-leveraged, long equity scenarios structured through capital allocation, position size, planned downside, target assumptions, and estimated costs
+- **CFDs — Leverage Applied**: Leveraged long or short scenarios incorporating notional exposure, margin, stake, planned risk, reward, spreads, and estimated costs
+- **Spread Betting — Leverage Applied**: Leveraged long or short scenarios using stake-per-point, margin, exposure, planned boundaries, and user-defined cost assumptions
+- **Pairs Trading — Mean Reversion**: Long–short relationship scenarios incorporating both legs, combined exposure, margin, planned risk, correlation, spread behaviour, and Z-score context
+- **Multi-Leg Spread — Sector / Intermarket / Relative Strength**: Relative structures used to examine sector, cross-market, or multi-asset relationships
 
----
+Futures, options and other specialised instruments are examined within the supporting guides but are not currently modelled as dedicated planning workflows.
 
-## Key Concepts
+#### Example Workflow — Pairs Planning Scenario
 
-- **Trade Type:** Affects available calculators and structuring logic (e.g., leverage vs non-leverage).
-- **Long / Short Legs:** Required for Pairs or Multi-Leg strategies.
-- **Reward-to-Risk Ratio:** Used to calculate target distance if not manually specified.
-- **Allocated Capital & Risk %:** Determines position size and risk tiering.
-- **Dashboard:** Aggregates all configured trades for download, review, or export to broker systems.
+1. Select `Pairs Trading (Mean Reversion)` from the trade-type menu.
+2. Choose or upload the assets representing the proposed long and short legs.
+3. Review relevant evidence from other FIT modules, such as correlation, spread behaviour, divergence, volatility, market structure, or timing.
+4. Enter stake, margin, stop-distance, target, and reward-to-risk assumptions for each leg.
+5. Add historical spread context, correlation, Z-score, support, resistance, or observed relationship changes where relevant.
+6. Review combined gross exposure, required margin, planned capital at risk, and potential reward.
+7. Add the scenario to the Trade Planning Dashboard for comparison, amendment, export, or later investigation.
 
----
+A pairs or multi-leg structure may alter or reduce selected common exposures, but it does not remove risk. Relationship change, basis behaviour, leverage, financing, execution, liquidity, and both individual legs remain relevant.
 
-## ⚠️ Advisory Framing
+#### Key Concepts
 
-This module is **non-advisory and structural only**. It does not estimate fees, execution costs, or margin rates specific to your broker. Outputs should be validated using your platform’s execution parameters.
+- **Trade Type**: Selects the planning worksheet and calculation logic appropriate to the proposed exposure or structure
+- **Position Value**: The value of a non-leveraged holding before applicable costs
+- **Notional Exposure**: The underlying market exposure represented by a leveraged position
+- **Margin Required**: The capital required under the user-defined margin assumption; margin is not the same as maximum potential loss
+- **Capital at Risk**: The planned loss implied by the entered position size, stake, and stop distance; actual outcomes may differ
+- **Stop Loss**: A user-defined planning boundary rather than a guarantee of execution at a particular price
+- **Target**: A user-defined planning reference rather than a predicted outcome
+- **Reward-to-Risk Ratio**: A comparison between planned target distance and planned downside distance; it does not estimate the probability of either outcome
+- **Known Costs**: User-entered broker fees, spread estimates, and transaction costs included within the planning scenario
+- **Estimated Costs**: Additional assumptions, such as slippage, used to examine possible execution friction
+- **Break-Even Price**: An estimated price required to offset the entered cost assumptions; tax effects and unmodelled costs may remain
+- **Dashboard**: An editable session-based planning register used to compare, preserve, and export structured scenarios
 
-- Supports decision planning
-- Does not replace live pricing or broker systems
-- Reflects user inputs only
+#### Cost, Margin & Execution Framing
 
----
+The module estimates outcomes only from the assumptions entered by the user. It does not retrieve live broker charges, financing rates, margin requirements, spreads, exchange rates, tax treatment, or execution conditions.
 
-## Output Options
+Before any independent execution decision, review the relevant broker or platform for:
 
-- Real-time trade preview with calculator feedback
-- Editable trade dashboard (session state)
-- CSV download of structured trades for record keeping or onward processing
+- Current bid–offer spread
+- Commission or dealing fees
+- Currency-conversion charges
+- Margin requirements
+- Overnight financing or rollover charges
+- Borrowing or short-position costs
+- Minimum trade or stake sizes
+- Stop-order terms
+- Slippage and gap risk
+- Market hours and liquidity
+- Applicable account, legal, and tax treatment
+
+#### Advisory Framing
+
+This module is **non-advisory and structural**.
+
+It:
+
+- Supports planning and scenario examination
+- Makes user-defined exposure, risk, reward, cost, and margin assumptions more visible
+- Preserves reasoning for later review
+- Supports comparison between user-created scenarios
+
+It does not:
+
+- Recommend an asset, instrument, strategy, direction, entry, stop, target, or position size
+- Determine whether a trade should be placed
+- Generate trading signals or predicted returns
+- Replace current broker information or execution systems
+- Guarantee that planned stops, targets, costs, or outcomes will be achieved
+
+Interpretation remains human. Execution decisions remain human.
+
+#### Output Options
+
+- Planning summaries and execution references
+- Editable Trade Planning Dashboard
+- CSV download of structured scenarios
+- Updated watchlist or journal download
+- Observation capture for wider FIT investigation and AI-assisted review
