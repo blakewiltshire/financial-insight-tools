@@ -61,7 +61,7 @@ asset_files = {
         "Walt Disney Company (Communication Services)": resolve_data_file_path(
         "equities_constituents", "Walt Disney Stock Price History.csv"),#dis - https://www.investing.com/equities/disney-historical-data
         # "SpaceX (Communication Services)": resolve_data_file_path(
-        # "equities_constituents", "SpaceX Stock Price History.csv"),#spcx - https://www.investing.com/equities/spacex-historical-data
+
     },
     "Market Indices": {
         "VIX": resolve_data_file_path(
@@ -355,3 +355,14 @@ def get_asset_path(category: str, name: str) -> str:
 # VIX FUTURES - CBOE FUTURES EXCHANGE -> VIX
 # GOLD - COMMODITY EXCHANGE INC. -> Gold
 # SILVER - COMMODITY EXCHANGE INC. -> Silver
+
+
+# Equities - Sector Constituents (User) - Market Structure
+
+# "equities_constituents_user", "Accenture Stock Price History.csv"),#acn - https://www.investing.com/equities/accenture-ltd-historical-data
+# "equities_constituents_user", "Arm Stock Price History.csv"),#arm - https://www.investing.com/equities/arm-historical-data
+# "equities_constituents_user", "Circle Internet Stock Price History.csv"),#crcl - https://www.investing.com/equities/circle-internet-group-inc-historical-data
+# "equities_constituents_user", "Coinbase Global Stock Price History.csv"),#coin - https://www.investing.com/equities/coinbase-global-historical-data
+# "equities_constituents_user", "Reddit Stock Price History.csv"),#rddt - https://www.investing.com/equities/reddit-historical-data
+# "equities_constituents_user", "Rivian Automotive Stock Price History.csv"),#rivn - https://www.investing.com/equities/rivian-automotive-historical-data
+# "equities_constituents_user", "SpaceX Stock Price History.csv"),#spcx - https://www.investing.com/equities/spacex-historical-data
