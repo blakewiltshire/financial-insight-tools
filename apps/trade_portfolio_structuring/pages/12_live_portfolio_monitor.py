@@ -102,8 +102,14 @@ from observation_handler_live_monitor import (
     display_observation_log
 )
 
-from render_macro_interaction_tools_panel_live_monitor import render_macro_interaction_tools_panel
-from macro_insight_sidebar_panel_trade_portfolio_structuring import render_macro_sidebar_tools
+from render_macro_interaction_tools_panel_live_portfolio_monitor import (
+    render_macro_interaction_tools_panel,
+)
+from macro_insight_sidebar_panel_live_portfolio_monitor import render_macro_sidebar_tools
+from ai_export_ui_panel_live_portfolio_monitor import render_ai_export_panel
+from ai_export_builder_live_portfolio_monitor import (
+    build_macro_insight_snapshot_live_portfolio_monitor,
+)
 
 # -------------------------------------------------------------------------------------------------
 # Live Portfolio Monitor Template + Validator
@@ -118,6 +124,19 @@ from portfolio_trade_modules.live_trade_validator import validate_live_trade_log
 # This marks them as Python packages and allows import resolution (especially important when
 # running via Streamlit or exporting to other Python environments).
 # -------------------------------------------------------------------------------------------------
+
+# -------------------------------------------------------------------------------------------------
+# Helper
+# -------------------------------------------------------------------------------------------------
+def format_currency(value: float, currency_code: str) -> str:
+    currency_symbols = {
+        "USD": "$",
+        "GBP": "£",
+        "EUR": "€",
+    }
+
+    prefix = currency_symbols.get(currency_code, f"{currency_code} ")
+    return f"{prefix}{value:,.2f}"
 
 # -------------------------------------------------------------------------------------------------
 # Streamlit Page Setup
@@ -214,56 +233,171 @@ else:
 # Apply Validation and Compute Metrics
 # -------------------------------------------------------------------------------------------------
 validation = None
+df = None
+df_filtered = pd.DataFrame()
+
+capital = 0.0
+global_leverage = 1.0
+
+portfolio_summary_payload = {}
+exposure_summary_payload = {}
+diagnostic_summary_payload = {}
+
 if df_portfolio is not None:
     validation = validate_live_trade_log(df_portfolio)
+
     if not validation["valid"]:
         st.error("⚠️ Issues found in Live Portfolio log:")
+
         for err in validation["errors"]:
             st.markdown(f"- {err}")
+
         st.divider()
+
         df = None
         df_filtered = pd.DataFrame()
+
     else:
         df_clean = validation["cleaned_df"]
         df = df_clean.copy()
 
+        # -------------------------------------------------------------------------------------------------
         # Capital Configuration
+        # -------------------------------------------------------------------------------------------------
         st.sidebar.markdown("### Capital Configuration")
-        capital = st.sidebar.number_input("Account Capital ($)", min_value=1000,
-        value=100000, step=1000,
-            help=("Used to calculate each position’s % of portfolio. "
-                  "This represents your total available account size or funding base. "
-                  "Adjusting this changes exposure diagnostics but does not alter P&L or \
-                  trade-level metrics."))
-        global_leverage = st.sidebar.slider("Global Leverage (default)", min_value=1.0,
-        max_value=10.0, value=1.0, step=0.1)
+
+        base_currency = st.sidebar.selectbox(
+            "Base Currency",
+            options=["GBP", "USD", "EUR"],
+            index=1,
+            help=(
+                "Currency used to interpret account capital, portfolio values, "
+                "exposure totals, and P&L within this portfolio view."
+            ),
+        )
+
+        capital = st.sidebar.number_input(
+            "Account Capital",
+            min_value=1000,
+            value=100000,
+            step=1000,
+            help=(
+                "Total capital allocated to the portfolio, expressed in the "
+                "selected base currency."
+            ),
+        )
+
+        global_leverage = st.sidebar.slider(
+            "Global Leverage (default)",
+            min_value=1.0,
+            max_value=10.0,
+            value=1.0,
+            step=0.1,
+        )
 
         with st.sidebar.expander("ℹ️ Leverage Rules Explained"):
-            st.markdown("""
-        - A value of `1.0` for **Leverage Used** means **no leverage** — full capital backing.
-        - A value of `0` or a blank cell will default to the configured \
-        **Global Leverage** (slider).
-        - If **Global Leverage** is set to `1.0`, then no fallback leverage is applied.
-        - This structure ensures clarity across mixed product types: equity, crypto, CFDs, and FX.
+            st.markdown(
+                """
+- A value of `1.0` for **Leverage Used** means **no leverage** — full capital backing.
+- A value of `0` or a blank cell defaults to the configured **Global Leverage**.
+- If **Global Leverage** is `1.0`, no additional leverage is applied.
+- This supports mixed product types such as equities, crypto, CFDs, and FX.
 
-        Use `1.0` for capital-only exposure.
-        Use `>1.0` for leveraged positions.
-        Avoid `0` — it triggers fallback logic.
-            """)
+Use `1.0` for capital-only exposure.
+Use values above `1.0` for leveraged exposure.
+Avoid `0`, because it activates the fallback setting.
+                """
+            )
 
-        # Apply leverage fallback
+        # -------------------------------------------------------------------------------------------------
+        # Apply Leverage Fallback
+        # -------------------------------------------------------------------------------------------------
         if "Leverage Used" in df.columns:
-            df["Leverage Used"] = pd.to_numeric(df["Leverage Used"], errors="coerce")
-            df["Leverage Used"] = df["Leverage Used"].replace(0, pd.NA).fillna(global_leverage)
+            df["Leverage Used"] = pd.to_numeric(
+                df["Leverage Used"],
+                errors="coerce",
+            )
+
+            df["Leverage Used"] = (
+                df["Leverage Used"]
+                .replace(0, pd.NA)
+                .fillna(global_leverage)
+            )
+
         else:
             df["Leverage Used"] = global_leverage
 
-        # Calculations
-        df["Unrealised P&L"] = (df["Current Price"] - df["Entry Price"]) * df["Position Size"]
-        df["Return %"] = (df["Unrealised P&L"] / (df["Entry Price"] * df["Position Size"])) * 100
-        df["Position Value"] = df["Current Price"] * df["Position Size"]
-        df["Leverage-Adjusted Value"] = df["Position Value"] * df["Leverage Used"]
-        df["Percent of Portfolio"] = (df["Leverage-Adjusted Value"] / capital) * 100
+        # -------------------------------------------------------------------------------------------------
+        # Normalise Direction
+        # -------------------------------------------------------------------------------------------------
+        df["Direction"] = (
+            df["Direction"]
+            .astype(str)
+            .str.strip()
+            .str.title()
+        )
+
+        direction_multiplier = df["Direction"].map({
+            "Long": 1.0,
+            "Short": -1.0,
+        })
+
+        invalid_directions = direction_multiplier.isna()
+
+        if invalid_directions.any():
+            invalid_values = sorted(
+                df.loc[invalid_directions, "Direction"]
+                .dropna()
+                .astype(str)
+                .unique()
+                .tolist()
+            )
+
+            st.error(
+                "Unsupported Direction values detected: "
+                f"{', '.join(invalid_values)}. "
+                "Use either 'Long' or 'Short'."
+            )
+
+            df = None
+            df_filtered = pd.DataFrame()
+
+        else:
+            # -------------------------------------------------------------------------------------------------
+            # Portfolio Calculations
+            # -------------------------------------------------------------------------------------------------
+            entry_notional = (
+                df["Entry Price"]
+                * df["Position Size"].abs()
+            )
+
+            df["Unrealised P&L"] = (
+                (df["Current Price"] - df["Entry Price"])
+                * df["Position Size"].abs()
+                * direction_multiplier
+            )
+
+            df["Return %"] = (
+                df["Unrealised P&L"]
+                .div(entry_notional.where(entry_notional != 0))
+                .mul(100)
+            )
+
+            df["Position Value"] = (
+                df["Current Price"].abs()
+                * df["Position Size"].abs()
+            )
+
+            df["Leverage-Adjusted Value"] = (
+                df["Position Value"]
+                * df["Leverage Used"]
+            )
+
+            df["Percent of Portfolio"] = (
+                df["Leverage-Adjusted Value"]
+                .div(float(capital))
+                .mul(100)
+            )
 
 # -------------------------------------------------------------------------------------------------
 # Global Filter: Apply Once to Shared df
@@ -279,6 +413,152 @@ if df_portfolio is not None:
                 help="Select which Symbol to include in all portfolio views."
             )
             df_filtered = df[df["Symbol"].isin(selected_assets)].copy()
+
+        # AI Export Payloads — deterministic portfolio state and diagnostics
+        export_df = df_filtered.copy()
+
+        gross_exposure = export_df["Position Value"].sum() if not export_df.empty else 0.0
+        leverage_adjusted = (
+            export_df["Leverage-Adjusted Value"].sum() if not export_df.empty else 0.0
+        )
+        unrealised_pnl = export_df["Unrealised P&L"].sum() if not export_df.empty else 0.0
+        avg_return = export_df["Return %"].mean() if not export_df.empty else 0.0
+
+        long_exposure = 0.0
+        short_exposure = 0.0
+        if not export_df.empty and "Direction" in export_df.columns:
+            long_exposure = export_df.loc[
+                export_df["Direction"].eq("Long"), "Leverage-Adjusted Value"
+            ].sum()
+            short_exposure = export_df.loc[
+                export_df["Direction"].eq("Short"), "Leverage-Adjusted Value"
+            ].sum()
+
+        portfolio_summary_payload = {
+            "account_capital": float(capital),
+            "position_count": int(len(export_df)),
+            "gross_position_value": float(gross_exposure),
+            "leverage_adjusted_exposure": float(leverage_adjusted),
+            "long_leverage_adjusted_exposure": float(long_exposure),
+            "short_leverage_adjusted_exposure": float(short_exposure),
+            "net_leverage_adjusted_exposure": float(long_exposure - short_exposure),
+            "unrealised_pnl": float(unrealised_pnl),
+            "average_return_percent": float(avg_return),
+            "capital_utilisation_percent": (
+                float(leverage_adjusted / capital * 100) if capital else None
+            ),
+        }
+
+        exposure_summary_payload = {}
+        for dimension in ["Sector", "Country", "Strategy Tag", "Direction"]:
+            if dimension in export_df.columns and not export_df.empty:
+                grouped = (
+                    export_df.groupby(dimension, dropna=False)["Leverage-Adjusted Value"]
+                    .sum()
+                    .sort_values(ascending=False)
+                )
+                total = grouped.sum()
+                exposure_summary_payload[dimension] = [
+                    {
+                        "label": str(label),
+                        "leverage_adjusted_value": float(value),
+                        "share_of_selected_exposure_percent": (
+                            float(value / total * 100) if total else 0.0
+                        ),
+                        "share_of_account_capital_percent": (
+                            float(value / capital * 100) if capital else None
+                        ),
+                    }
+                    for label, value in grouped.items()
+                ]
+
+        max_pct_per_position = 25
+        max_pct_asset = 25
+        max_pct_sector = 50
+
+        diagnostic_df = export_df.copy()
+        if not diagnostic_df.empty:
+            diagnostic_df["Over Max Exposure"] = (
+                diagnostic_df["Leverage-Adjusted Value"] / capital * 100
+            ) > max_pct_per_position
+
+            def _export_risk_tier(pct):
+                if pct >= 15:
+                    return "High"
+                if pct >= 10:
+                    return "Moderate"
+                if pct >= 5:
+                    return "Light"
+                return "Low"
+
+            diagnostic_df["Risk Tier"] = diagnostic_df["Percent of Portfolio"].apply(
+                _export_risk_tier
+            )
+
+        oversized_positions = []
+        if not diagnostic_df.empty:
+            oversized_positions = diagnostic_df.loc[
+                diagnostic_df["Over Max Exposure"],
+                [
+                    column
+                    for column in [
+                        "Asset",
+                        "Symbol",
+                        "Direction",
+                        "Leverage-Adjusted Value",
+                        "Percent of Portfolio",
+                        "Leverage Used",
+                        "Sector",
+                        "Country",
+                        "Strategy Tag",
+                        "Risk Tier",
+                    ]
+                    if column in diagnostic_df.columns
+                ],
+            ].to_dict(orient="records")
+
+        asset_concentration_flags = []
+        if not diagnostic_df.empty and "Asset" in diagnostic_df.columns:
+            asset_groups = diagnostic_df.groupby("Asset")["Leverage-Adjusted Value"].sum()
+            asset_concentration_flags = [
+                {
+                    "asset": str(asset),
+                    "percent_of_account_capital": float(value / capital * 100),
+                }
+                for asset, value in asset_groups.items()
+                if capital and (value / capital * 100) > max_pct_asset
+            ]
+
+        sector_concentration_flags = []
+        if not diagnostic_df.empty and "Sector" in diagnostic_df.columns:
+            sector_groups = diagnostic_df.groupby("Sector")["Leverage-Adjusted Value"].sum()
+            sector_concentration_flags = [
+                {
+                    "sector": str(sector),
+                    "percent_of_account_capital": float(value / capital * 100),
+                }
+                for sector, value in sector_groups.items()
+                if capital and (value / capital * 100) > max_pct_sector
+            ]
+
+        risk_tier_distribution = {}
+        if not diagnostic_df.empty and "Risk Tier" in diagnostic_df.columns:
+            risk_tier_distribution = {
+                str(label): int(count)
+                for label, count in diagnostic_df["Risk Tier"].value_counts().items()
+            }
+
+        diagnostic_summary_payload = {
+            "configured_thresholds": {
+                "max_position_percent_of_capital": max_pct_per_position,
+                "max_asset_percent_of_capital": max_pct_asset,
+                "max_sector_percent_of_capital": max_pct_sector,
+            },
+            "oversized_positions": oversized_positions,
+            "asset_concentration_flags": asset_concentration_flags,
+            "sector_concentration_flags": sector_concentration_flags,
+            "risk_tier_distribution": risk_tier_distribution,
+        }
 
         # Sidebar Summary
         st.sidebar.markdown("### Portfolio Summary")
@@ -299,9 +579,9 @@ if df_portfolio is not None:
         avg_return = df["Return %"].mean()
 
         col1, col2, col3, col4 = st.columns(4)
-        col1.metric("Gross Exposure", f"${gross_exposure:,.2f}")
-        col2.metric("Leverage-Adjusted", f"${leverage_adjusted:,.2f}")
-        col3.metric("Unrealised P&L", f"${unrealised_pnl:,.2f}")
+        col1.metric("Gross Exposure", format_currency(gross_exposure, base_currency))
+        col2.metric("Leverage-Adjusted", format_currency(leverage_adjusted, base_currency))
+        col3.metric("Unrealised P&L", format_currency(unrealised_pnl, base_currency))
         col4.metric("Avg Return %", f"{avg_return:.2f}%")
 
         st.caption("Returns shown are unrealised. Per-position leverage is applied where \
@@ -630,26 +910,66 @@ selected_use_case = "Portfolio Health Snapshot"
 # -------------------------------------------------------------------------------------------------
 # Activate Observation + Journal Toggles
 # -------------------------------------------------------------------------------------------------
-show_observation, show_log = render_macro_sidebar_tools(
+show_observation, show_ai_export, show_log = render_macro_sidebar_tools(
     theme_readable=theme_title,
     theme_code=theme_code,
-    selected_use_case=selected_use_case
 )
 
-# No fixed assets selected in live dashboard — use empty list
-asset_list_for_observation = []
+selected_symbols_for_observation = (
+    df_filtered["Symbol"].dropna().astype(str).tolist()
+    if df_filtered is not None
+    and not df_filtered.empty
+    and "Symbol" in df_filtered.columns
+    else []
+)
 
 if show_observation or show_log:
     st.markdown("## Macro Interaction Tools")
-    st.caption("*Capture general reflections on trading performance, decision patterns, "
-    "or strategic lessons from this review window.*")
+    st.caption(
+        "*Capture general reflections on portfolio structure, exposure, decision patterns, "
+        "or strategic lessons from this review window.*"
+    )
 
 render_macro_interaction_tools_panel(
     show_observation=show_observation,
     show_log=show_log,
+    panel_title=theme_title,
+    selected_themes=[theme_code, selected_use_case],
+    selected_indicators=selected_symbols_for_observation,
     observation_input_callback=observation_input_form,
-    observation_log_callback=display_observation_log
+    observation_log_callback=display_observation_log,
 )
+
+# -------------------------------------------------------------------------------------------------
+# AI Export Panel
+# -------------------------------------------------------------------------------------------------
+if show_ai_export:
+    if df is None or df_filtered is None or df_filtered.empty:
+        st.info("A valid portfolio snapshot is required before the AI export can be previewed.")
+    else:
+        portfolio_source = "Sample Portfolio" if use_sample else "User Upload"
+        live_portfolio_snapshot_insight = (
+            build_macro_insight_snapshot_live_portfolio_monitor(
+                theme_code=theme_code,
+                theme_title=theme_title,
+                portfolio_df=df,
+                filtered_portfolio_df=df_filtered,
+                portfolio_summary=portfolio_summary_payload,
+                exposure_summary=exposure_summary_payload,
+                diagnostic_summary=diagnostic_summary_payload,
+                validation=validation,
+                capital=capital,
+                base_currency=base_currency,
+                global_leverage=global_leverage,
+                source_label=portfolio_source,
+            )
+        )
+
+        render_ai_export_panel(
+            snapshot_results=live_portfolio_snapshot_insight,
+            base_asset=portfolio_source,
+            asset_type_display=theme_title,
+        )
 
 # -------------------------------------------------------------------------------------------------
 # About & Support

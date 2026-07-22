@@ -154,6 +154,33 @@ def extract_metadata(bundle: Dict) -> Dict:
             "source_file": source,
         }
 
+    # Live Portfolio Monitor
+    if "live_portfolio_monitor" in source:
+        portfolio_source = (
+            raw.get("snapshot_metadata", {}).get("dataset")
+            or raw.get("snapshot_metadata", {}).get("base_asset")
+            or raw.get("analysis_summary", {})
+                .get("account_configuration", {})
+                .get("source")
+            or asset
+            or "Portfolio Snapshot"
+        )
+
+        return {
+            "title": "Live Portfolio Monitor",
+            "module": "Live Portfolio Monitor",
+            "theme_title": "",
+            "use_case": "",
+            "country": "",
+            "asset": "",
+            "context_label": "Portfolio",
+            "context_value": pretty_label(portfolio_source),
+            "timeframe": timeframe,
+            "timestamp": timestamp,
+            "source_file": source,
+            "module_group": "Trade & Portfolio Structuring",
+        }
+
     # Relative Macro Transmission
     if "relative_macro_transmission" in source:
         relationship = (
