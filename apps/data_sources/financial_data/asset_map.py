@@ -271,18 +271,16 @@ def get_asset_path(category: str, name: str) -> str:
 
 # Weekly asset map for COTS - cots_assets_default.csv
 
+#AUD positioning - AUD/USD -  https://www.investing.com/currencies/aud-usd-historical-data
+#EUR positioning - EUR/USD - https://www.investing.com/currencies/eur-usd-historical-data
+#GBP positioning - GBP/USD -  https://www.investing.com/currencies/gbp-usd-historical-data
+#JPY positioning - USD/JPY - https://www.investing.com/currencies/usd-jpy-historical-data
+#USD Index positioning - DXY - https://www.investing.com/indices/usdollar-historical-data?cid=1224074
 #UST 2Y positioning - US2YT=X - https://www.investing.com/rates-bonds/u.s.-2-year-bond-yield-historical-data
 #UST 10Y positioning - US10YT=X - https://www.investing.com/rates-bonds/u.s.-10-year-bond-yield-historical-data
-#AUD positioning - AUD/USD -  https://www.investing.com/currencies/aud-usd-historical-data
-#GBP positioning - GBP/USD -  https://www.investing.com/currencies/gbp-usd-historical-data
 #Russell 2000 positioning - #US2000 - https://www.investing.com/indices/smallcap-2000-historical-data (E-Mini Russell)
-#EUR positioning - EUR/USD - https://www.investing.com/currencies/eur-usd-historical-data
-#JPY positioning - USD/JPY - https://www.investing.com/currencies/usd-jpy-historical-data
 #S&P 500 positioning - us500 - https://www.investing.com/indices/us-spx-500-historical-data
-#USD Index positioning - DXY - https://www.investing.com/indices/usdollar-historical-data?cid=1224074
 #VIX positioning - VIX - https://www.investing.com/indices/volatility-s-p-500-historical-data
-
-
 #Gold positioning - GC - https://www.investing.com/commodities/gold-historical-data
 #Silver positioning - SI - https://www.investing.com/commodities/silver-historical-data
 
