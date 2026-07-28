@@ -297,6 +297,21 @@ def _safe_float(value):
         return np.nan
 
 
+def _format_ordinal(value):
+    """Return a correctly suffixed ordinal such as 1st, 2nd, 3rd, or 43rd."""
+    try:
+        number = int(round(float(value)))
+    except (TypeError, ValueError):
+        return "N/A"
+
+    if 10 <= number % 100 <= 20:
+        suffix = "th"
+    else:
+        suffix = {1: "st", 2: "nd", 3: "rd"}.get(number % 10, "th")
+
+    return f"{number}{suffix}"
+
+
 def _filter_pool_by_mode(pool, comparison_mode):
     """
     High-level mode filter.
@@ -733,6 +748,9 @@ observation_context = {
     "state": result.get("regime_label"),
     "rolling_state": result.get("rolling_state"),
     "percentile": result.get("percentile"),
+    "current_correlation": result.get("current_corr"),
+    "correlation_change": result.get("current_corr_change"),
+    "correlation_lookback": result.get("correlation_lookback"),
 }
 
 summary_df = build_summary_table(result)
@@ -766,7 +784,18 @@ st.markdown(
 
 st.subheader("Transmission Conditions Summary")
 
-metric_label = "Current Correlation" if transformation == "rolling_corr" else "Current Differential"
+METRIC_LABELS = {
+    "difference": "Current Difference",
+    "ratio": "Current Ratio",
+    "relative_pct": "Current Relative %",
+    "zscore_spread": "Current Z-Score",
+    "rolling_corr": "Current Correlation",
+}
+
+metric_label = METRIC_LABELS.get(
+    transformation,
+    "Current"
+)
 
 col1, col2, col3, col4 = st.columns(4)
 
@@ -787,7 +816,7 @@ with col3:
     st.metric(
         "Percentile",
         (
-            f"{result['percentile']:.0f}th pct"
+            f"{_format_ordinal(result['percentile'])} pct"
             if pd.notna(result["percentile"])
             else "N/A"
         )

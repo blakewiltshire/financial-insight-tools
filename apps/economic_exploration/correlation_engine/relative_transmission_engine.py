@@ -7,21 +7,69 @@ import pandas as pd
 
 from relative_transmission_labels import (
     get_regime_label,
-    get_rolling_state
+    get_rolling_state,
 )
 
 
+# -------------------------------------------------------------------------------------------------
+# Helpers
+# -------------------------------------------------------------------------------------------------
 def zscore(series):
-    return (series - series.mean()) / series.std()
+    """
+    Standardise a series across its available history.
+    """
+    std_dev = series.std()
+
+    if pd.isna(std_dev) or std_dev == 0:
+        return pd.Series(np.nan, index=series.index, dtype=float)
+
+    return (series - series.mean()) / std_dev
 
 
+def _safe_last(series):
+    """
+    Return the last non-null value from a series, otherwise NaN.
+    """
+    clean_series = series.replace([np.inf, -np.inf], np.nan).dropna()
+
+    if clean_series.empty:
+        return np.nan
+
+    return clean_series.iloc[-1]
+
+
+def _rolling_change(rolling_corr, lookback=6):
+    """
+    Return the recent rolling-correlation change over the selected lookback.
+    """
+    clean_corr = rolling_corr.replace([np.inf, -np.inf], np.nan).dropna()
+
+    if len(clean_corr) <= lookback:
+        return np.nan
+
+    return float(clean_corr.iloc[-1] - clean_corr.iloc[-(lookback + 1)])
+
+
+# -------------------------------------------------------------------------------------------------
+# Public Engine
+# -------------------------------------------------------------------------------------------------
 def compute_transmission(pair_df, transformation="difference", window=12):
     """
     Core comparative transmission engine.
-    """
 
-    a = pair_df.iloc[:, 0]
-    b = pair_df.iloc[:, 1]
+    The rolling-correlation result separates:
+    - current relationship level;
+    - historical percentile;
+    - recent strengthening / weakening / stability.
+    """
+    if pair_df is None or pair_df.empty or pair_df.shape[1] < 2:
+        raise ValueError("pair_df must contain at least two aligned series")
+
+    if window < 2:
+        raise ValueError("window must be at least 2")
+
+    a = pd.to_numeric(pair_df.iloc[:, 0], errors="coerce")
+    b = pd.to_numeric(pair_df.iloc[:, 1], errors="coerce")
 
     if transformation == "difference":
         derived = a - b
@@ -42,14 +90,24 @@ def compute_transmission(pair_df, transformation="difference", window=12):
         raise ValueError("Invalid transformation")
 
     rolling_corr = a.rolling(window).corr(b)
-
     spread_z = zscore(a - b)
 
-    current_value = derived.iloc[-1]
-    current_z = spread_z.iloc[-1]
-    current_corr = rolling_corr.iloc[-1]
+    current_value = _safe_last(derived)
+    current_z = _safe_last(spread_z)
+    current_corr = _safe_last(rolling_corr)
 
-    percentile = derived.rank(pct=True).iloc[-1] * 100
+    valid_derived = derived.replace([np.inf, -np.inf], np.nan).dropna()
+
+    if valid_derived.empty:
+        percentile = np.nan
+    else:
+        percentile = float(valid_derived.rank(pct=True).iloc[-1] * 100)
+
+    correlation_lookback = 6
+    current_corr_change = _rolling_change(
+        rolling_corr=rolling_corr,
+        lookback=correlation_lookback,
+    )
 
     result = {
         "overlay_df": pair_df,
@@ -58,6 +116,8 @@ def compute_transmission(pair_df, transformation="difference", window=12):
         "current_value": current_value,
         "current_z": current_z,
         "current_corr": current_corr,
+        "current_corr_change": current_corr_change,
+        "correlation_lookback": correlation_lookback,
         "percentile": percentile,
         "regime_label": get_regime_label(
             transformation=transformation,
@@ -65,14 +125,17 @@ def compute_transmission(pair_df, transformation="difference", window=12):
             current_z=current_z,
             current_corr=current_corr,
         ),
-        "rolling_state": get_rolling_state(current_corr),
+        "rolling_state": get_rolling_state(
+            rolling_corr=rolling_corr,
+            lookback=correlation_lookback,
+        ),
         "summary": {
-            "max": derived.max(),
-            "min": derived.min(),
-            "mean": derived.mean(),
-            "std_dev": derived.std(),
+            "max": valid_derived.max() if not valid_derived.empty else np.nan,
+            "min": valid_derived.min() if not valid_derived.empty else np.nan,
+            "mean": valid_derived.mean() if not valid_derived.empty else np.nan,
+            "std_dev": valid_derived.std() if not valid_derived.empty else np.nan,
             "current": current_value,
-        }
+        },
     }
 
     return result

@@ -57,7 +57,8 @@ def load_all_classification_data(base_path):
         "amer": "amer_company_register.csv",
         "apac": "apac_company_register.csv",
         "emea": "emea_company_register.csv",
-        "largecap_combined": "us_large_cap_combined.csv"
+        "largecap_combined": "us_large_cap_combined.csv",
+        "european_company": "european_company_classification.csv"
     }
 
     # Validate existence
@@ -70,6 +71,7 @@ def load_all_classification_data(base_path):
     df_forum = pd.read_csv(os.path.join(data_path, expected_files["forum"]))
     df_political = pd.read_csv(os.path.join(data_path, expected_files["political"]))
     df_market = pd.read_csv(os.path.join(data_path, expected_files["market"]))
+    df_company_europe = pd.read_csv(os.path.join(data_path, expected_files["european_company"]))
 
     # Load global company register
     amer = pd.read_csv(os.path.join(data_path, expected_files["amer"]))
@@ -85,5 +87,6 @@ def load_all_classification_data(base_path):
         "political": df_political,
         "market": df_market,
         "company_base": df_company_base,
-        "company_largecap": df_company_largecap
+        "company_largecap": df_company_largecap,
+        "company_europe": df_company_europe,
     }

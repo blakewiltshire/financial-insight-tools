@@ -3,31 +3,61 @@
 # -------------------------------------------------------------------------------------------------
 
 import numpy as np
+import pandas as pd
 
 
+# -------------------------------------------------------------------------------------------------
+# Rolling Correlation — Current Relationship Level
+# -------------------------------------------------------------------------------------------------
+def _get_correlation_level_label(current_corr):
+    """
+    Classify the current rolling-correlation level.
+
+    Important:
+    - This describes the present relationship level only.
+    - It does not infer strengthening, weakening, decoupling, or re-coupling.
+    """
+    if current_corr is None or np.isnan(current_corr):
+        return "N/A"
+
+    if current_corr >= 0.70:
+        return "Strong Positive Transmission"
+
+    if current_corr >= 0.40:
+        return "Moderate Positive Transmission"
+
+    if current_corr >= 0.10:
+        return "Weak Positive Transmission"
+
+    if current_corr > -0.10:
+        return "Low Transmission"
+
+    if current_corr > -0.40:
+        return "Weak Inverse Transmission"
+
+    if current_corr > -0.70:
+        return "Moderate Inverse Transmission"
+
+    return "Strong Inverse Transmission"
+
+
+# -------------------------------------------------------------------------------------------------
+# Public Regime Classification
+# -------------------------------------------------------------------------------------------------
 def get_regime_label(transformation, current_value=None, current_z=None, current_corr=None):
     """
     Transformation-aware regime classification.
 
-    Why:
-    - Difference / Ratio / Relative % / Relative Z-Score are spread-style comparisons
-    - Rolling Correlation is relationship-state analysis and must be classified separately
+    Rolling Correlation:
+    - classifies the current relationship level using the current correlation.
+
+    Difference / Ratio / Relative % / Relative Z-Score:
+    - retain the existing spread-style classification using the absolute
+      standardised spread value.
     """
-
     if transformation == "rolling_corr":
-        if current_corr is None or np.isnan(current_corr):
-            return "N/A"
+        return _get_correlation_level_label(current_corr)
 
-        if current_corr >= 0.70:
-            return "Aligned"
-        elif current_corr >= 0.40:
-            return "Mild Divergence"
-        elif current_corr >= 0.10:
-            return "Material Divergence"
-        else:
-            return "Regime Shift"
-
-    # Default spread-style classification
     if current_z is None or np.isnan(current_z):
         return "N/A"
 
@@ -35,26 +65,64 @@ def get_regime_label(transformation, current_value=None, current_z=None, current
 
     if z_abs < 0.5:
         return "Aligned"
-    elif z_abs < 1.0:
+
+    if z_abs < 1.0:
         return "Mild Divergence"
-    elif z_abs < 2.0:
+
+    if z_abs < 2.0:
         return "Material Divergence"
-    else:
-        return "Regime Shift"
+
+    return "Regime Shift"
 
 
-def get_rolling_state(corr_value):
+# -------------------------------------------------------------------------------------------------
+# Rolling Correlation — Recent Direction
+# -------------------------------------------------------------------------------------------------
+def get_rolling_state(rolling_corr, lookback=6, change_threshold=0.10):
     """
-    Relationship-state classification for the rolling correlation panel.
-    """
+    Classify the recent direction of the rolling-correlation relationship.
 
-    if np.isnan(corr_value):
+    Parameters
+    ----------
+    rolling_corr : pandas.Series
+        Full rolling-correlation series.
+    lookback : int
+        Number of observations used to compare the current relationship with
+        its recent past.
+    change_threshold : float
+        Minimum absolute correlation change required to classify the recent
+        path as strengthening or weakening.
+
+    Returns
+    -------
+    str
+        Strengthening Transmission, Weakening Transmission,
+        Stable Transmission, or N/A.
+
+    Notes
+    -----
+    This deliberately avoids "re-coupling" and "decoupling" because those
+    labels require a stronger transition model than a single lookback change.
+    """
+    if rolling_corr is None:
         return "N/A"
 
-    if corr_value >= 0.70:
-        return "Re-coupling"
+    if not isinstance(rolling_corr, pd.Series):
+        rolling_corr = pd.Series(rolling_corr)
 
-    if corr_value <= 0.30:
-        return "Decoupling"
+    clean_corr = rolling_corr.replace([np.inf, -np.inf], np.nan).dropna()
 
-    return "Mixed Transmission"
+    if len(clean_corr) <= lookback:
+        return "N/A"
+
+    current_corr = float(clean_corr.iloc[-1])
+    prior_corr = float(clean_corr.iloc[-(lookback + 1)])
+    change = current_corr - prior_corr
+
+    if change >= change_threshold:
+        return "Strengthening Transmission"
+
+    if change <= -change_threshold:
+        return "Weakening Transmission"
+
+    return "Stable Transmission"

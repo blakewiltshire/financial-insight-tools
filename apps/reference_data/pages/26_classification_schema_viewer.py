@@ -223,6 +223,7 @@ df_political = safe_get(classification_data, "political")
 df_market = safe_get(classification_data, "market")
 df_company = safe_get(classification_data, "company_base")
 df_largecap = safe_get(classification_data, "company_largecap")
+df_europe = safe_get(classification_data, "company_europe")
 
 # -------------------------------------------------------------------------------------------------
 # Streamlit Setup
@@ -262,7 +263,8 @@ classification_view = st.sidebar.radio(
         "Political Stability",
         "Market Ratings",
         "Company Register — Global",
-        "Company Register — US Large-Cap"
+        "Company Register — US Large-Cap",
+        "Company Register — Europe"
     ],
     key="view_selector"
 )
@@ -498,11 +500,11 @@ def render_market_view(df):
 def render_company_base_view(df):
     """
     Renders the Global Company Register with tabbed views:
-    - Company Overview: filters by region, exchange, industry tag, and name/ticker.
+    - Company Overview: filters by region, exchange, FIT industry tags, and name/ticker.
     - Identifiers & Listings: includes CUSIP, ISIN, SEDOL, FIGI, CIK, Exchange, MIC.
     """
     st.subheader("Global Company Register")
-    st.markdown("Explore company records across global regions, exchanges, industry tags, and listings.")
+    st.markdown("Explore company records across global regions, exchanges, FIT industry tags, and listings.")
 
     tab1, tab2 = st.tabs(["Company Overview", "Identifiers & Listings"])
 
@@ -522,7 +524,7 @@ def render_company_base_view(df):
                 currency = st.multiselect("Market Currency", sorted(df["Market Currency"].dropna().unique()), key="currency_base")
 
             with col3:
-                industry = st.multiselect("Industry Tag", sorted(df["Industry Tag"].dropna().unique()), key="industry_base")
+                industry = st.multiselect("FIT Industry", sorted(df["FIT Industry"].dropna().unique()), key="industry_base")
                 search_term = st.text_input("Search Ticker or Name", key="search_base")
 
         df_filtered = df.copy()
@@ -535,7 +537,7 @@ def render_company_base_view(df):
         if currency:
             df_filtered = df_filtered[df_filtered["Market Currency"].isin(currency)]
         if industry:
-            df_filtered = df_filtered[df_filtered["Industry Tag"].isin(industry)]
+            df_filtered = df_filtered[df_filtered["FIT Industry"].isin(industry)]
         if search_term:
             term = search_term.lower()
             df_filtered = df_filtered[
@@ -544,7 +546,7 @@ def render_company_base_view(df):
             ]
 
         display_columns = [
-            "Ticker", "Company Name", "Industry Tag", "Exchange",
+            "Ticker", "Company Name", "FIT Industry", "Exchange",
             "Country", "Market Currency"
         ]
         df_display = df_filtered[display_columns].copy()
@@ -552,7 +554,7 @@ def render_company_base_view(df):
         st.markdown("### Candidate Assets")
         st.caption(
             "Select companies from the filtered global register for export or later observation. "
-            "This view organises candidates by region, country, exchange, currency, and industry tag."
+            "This view organises candidates by region, country, exchange, currency, and FIT industry tags."
         )
 
         render_selectable_asset_export(
@@ -573,7 +575,7 @@ def render_company_base_view(df):
             },
             workflow_note=(
                 "Global Company Register organises candidate assets by region, country, "
-                "exchange, market currency, and broad industry tag before further review."
+                "exchange, market currency, and broad FIT industry tags before further review."
             ),
         )
 
@@ -880,6 +882,242 @@ def apply_classification_filters(df, ticker, name, sic_code, sic_title,
         df = df[df["NAICS National Industry"].str.contains(naics_nat, case=False, na=False)]
     return df
 
+
+# -------------------------------------------------------------------------------------------------
+# --- EUROPEAN COMPANY CLASSIFICATION VIEW ---
+# -------------------------------------------------------------------------------------------------
+def render_company_europe_view(df):
+    """
+    Renders the European Company Classification dataset.
+
+    Provides two tabs:
+    - Company Overview
+    - Identifiers & Listings
+
+    Supports filtering by index membership, geography, industry
+    classifications, exchange, currency and company search.
+    """
+
+    st.subheader("European Company Classification")
+    st.markdown(
+        "Explore European companies across major indices using FIT Industry, "
+        "NACE Industry, ESI Survey Components, and security identifiers."
+    )
+
+    tab1, tab2 = st.tabs(["Company Overview", "Identifiers & Listings"])
+
+    # ---------------------------------------------------------------------------------------------
+    # COMPANY OVERVIEW
+    # ---------------------------------------------------------------------------------------------
+    with tab1:
+
+        with st.expander("Filter Options – European Company Classification"):
+
+            col1, col2, col3 = st.columns(3)
+
+            with col1:
+                index_membership = st.multiselect(
+                    "Index Membership",
+                    sorted(df["Index Membership"].dropna().unique()),
+                    key="eu_index"
+                )
+
+                country = st.multiselect(
+                    "Country",
+                    sorted(df["Country"].dropna().unique()),
+                    key="eu_country"
+                )
+
+            with col2:
+                fit_industry = st.multiselect(
+                    "FIT Industry",
+                    sorted(df["FIT Industry"].dropna().unique()),
+                    key="eu_fit"
+                )
+
+                nace = st.multiselect(
+                    "NACE Industry",
+                    sorted(df["NACE Industry"].dropna().unique()),
+                    key="eu_nace"
+                )
+
+            with col3:
+                esi = st.multiselect(
+                    "ESI Survey Component",
+                    sorted(df["ESI Survey Component"].dropna().unique()),
+                    key="eu_esi"
+                )
+
+                exchange = st.multiselect(
+                    "Exchange",
+                    sorted(df["Exchange"].dropna().unique()),
+                    key="eu_exchange"
+                )
+
+        col4, col5 = st.columns(2)
+
+        with col4:
+            currency = st.multiselect(
+                "Market Currency",
+                sorted(df["Market Currency"].dropna().unique()),
+                key="eu_currency"
+            )
+
+        with col5:
+            search_term = st.text_input(
+                "Search Ticker or Company",
+                key="eu_search"
+            )
+
+        df_filtered = df.copy()
+
+        if index_membership:
+            df_filtered = df_filtered[
+                df_filtered["Index Membership"].isin(index_membership)
+            ]
+
+        if country:
+            df_filtered = df_filtered[
+                df_filtered["Country"].isin(country)
+            ]
+
+        if fit_industry:
+            df_filtered = df_filtered[
+                df_filtered["FIT Industry"].isin(fit_industry)
+            ]
+
+        if nace:
+            df_filtered = df_filtered[
+                df_filtered["NACE Industry"].isin(nace)
+            ]
+
+        if esi:
+            df_filtered = df_filtered[
+                df_filtered["ESI Survey Component"].isin(esi)
+            ]
+
+        if exchange:
+            df_filtered = df_filtered[
+                df_filtered["Exchange"].isin(exchange)
+            ]
+
+        if currency:
+            df_filtered = df_filtered[
+                df_filtered["Market Currency"].isin(currency)
+            ]
+
+        if search_term:
+            term = search_term.lower()
+
+            df_filtered = df_filtered[
+                df_filtered["Company Name"].str.lower().str.contains(term, na=False)
+                |
+                df_filtered["Ticker"].str.lower().str.contains(term, na=False)
+            ]
+
+        display_columns = [
+            "Ticker",
+            "Company Name",
+            "Index Membership",
+            "FIT Industry",
+            "NACE Industry",
+            "Country",
+            "Exchange"
+        ]
+
+        df_display = df_filtered[display_columns].copy()
+
+        st.markdown("### Candidate Assets")
+
+        st.caption(
+            "Select European companies from the filtered classification "
+            "view for export or later investigation."
+        )
+
+        render_selectable_asset_export(
+            source_df=df_filtered,
+            display_df=df_display,
+            source_columns=df_filtered.columns.tolist(),
+            table_key="europe_company_selection",
+            export_prefix="europe_company_classification",
+            bundle_metadata={
+                "classification_view": "company_register_europe",
+                "tab": "company_overview",
+                "selected_index_membership": index_membership,
+                "selected_country": country,
+                "selected_fit_industry": fit_industry,
+                "selected_nace_industry": nace,
+                "selected_esi_component": esi,
+                "selected_exchange": exchange,
+                "selected_currency": currency,
+                "search_term": search_term,
+            },
+            workflow_note=(
+                "European Company Classification organises candidate assets "
+                "using index membership, FIT Industry, NACE Industry and "
+                "ESI Survey classifications before continuing market investigation."
+            ),
+        )
+
+    # ---------------------------------------------------------------------------------------------
+    # IDENTIFIERS
+    # ---------------------------------------------------------------------------------------------
+    with tab2:
+
+        with st.expander("Filter Options – Identifiers"):
+
+            col1, col2 = st.columns(2)
+
+            search = col1.text_input(
+                "Search Ticker or Company",
+                key="eu_id_search"
+            )
+
+            mic = col2.text_input(
+                "MIC Code",
+                key="eu_mic"
+            )
+
+        df_ids = df.copy()
+
+        if search:
+
+            term = search.lower()
+
+            df_ids = df_ids[
+                df_ids["Company Name"].str.lower().str.contains(term, na=False)
+                |
+                df_ids["Ticker"].str.lower().str.contains(term, na=False)
+            ]
+
+        if mic:
+
+            df_ids = df_ids[
+                df_ids["MIC Code"].str.upper().str.contains(
+                    mic.upper(),
+                    na=False
+                )
+            ]
+
+        st.dataframe(
+            df_ids[
+                [
+                    "Ticker",
+                    "Company Name",
+                    "Country",
+                    "Exchange",
+                    "MIC Code",
+                    "CUSIP",
+                    "ISIN",
+                    "SEDOL",
+                    "FIGI",
+                    "CIK"
+                ]
+            ],
+            width="stretch",
+            hide_index=True,
+        )
+
 # -------------------------------------------------------------------------------------------------
 # View Dispatcher
 # -------------------------------------------------------------------------------------------------
@@ -893,6 +1131,8 @@ elif classification_view == "Company Register — Global":
     render_company_base_view(df_company)
 elif classification_view == "Company Register — US Large-Cap":
     render_company_largecap_view(df_largecap)
+elif classification_view == "Company Register — Europe":
+    render_company_europe_view(df_europe)
 
 st.divider()
 

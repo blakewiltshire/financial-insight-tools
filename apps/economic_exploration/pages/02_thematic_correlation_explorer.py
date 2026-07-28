@@ -187,12 +187,33 @@ if not selected_objects:
 # -------------------------------------------------------------------------------------------------
 # Metadata Diagnostics Summary
 # -------------------------------------------------------------------------------------------------
-for category, label in [("seasonal", "Seasonal Adjustment"),
-                        ("value_type", "Value Type"),
-                        ("unit_type", "Unit Scale")]:
+for category, label in [
+    ("seasonal", "Seasonal Adjustment"),
+    ("value_type", "Value Type"),
+    ("unit_type", "Unit Scale"),
+]:
     unique_vals = sorted(set(obj[category] for obj in selected_objects))
-    if len(unique_vals) > 1:
-        st.sidebar.warning(f"⚠ Mixed {label}: {', '.join(unique_vals)}")
+
+    if len(unique_vals) <= 1:
+        continue
+
+    values = set(unique_vals)
+
+    # Expected differences when market-price series are compared with macroeconomic data.
+    if category == "seasonal" and values.issubset({"SA", "SAAR", "NA"}):
+        st.sidebar.info(
+            f"ℹ Mixed {label}: {', '.join(unique_vals)}"
+        )
+
+    elif category == "unit_type" and "Market Price" in values:
+        st.sidebar.info(
+            f"ℹ Mixed {label}: {', '.join(unique_vals)}"
+        )
+
+    else:
+        st.sidebar.warning(
+            f"⚠ Mixed {label}: {', '.join(unique_vals)}"
+        )
 
 with st.sidebar.expander("ℹ️ Harmonisation Signals"):
     st.markdown("""
@@ -235,18 +256,45 @@ full_df = pd.concat(harmonised_series, axis=1, join="inner")
 standardised_df = (full_df - full_df.mean()) / full_df.std()
 
 # -------------------------------------------------------------------------------------------------
+# Correlation Relationship Helper
+# -------------------------------------------------------------------------------------------------
+def extract_distinct_correlations(corr_matrix):
+    """
+    Return each unique pairwise correlation once.
+
+    Excludes:
+    - diagonal self-correlations;
+    - duplicate lower-triangle relationships.
+    """
+    upper_triangle_mask = np.triu(
+        np.ones(corr_matrix.shape, dtype=bool),
+        k=1,
+    )
+
+    return (
+        corr_matrix
+        .where(upper_triangle_mask)
+        .stack()
+        .to_numpy()
+    )
+
+
+# -------------------------------------------------------------------------------------------------
 # Structural Correlation Summary
 # -------------------------------------------------------------------------------------------------
 full_corr = standardised_df.corr()
-off_diag = full_corr.where(~np.eye(full_corr.shape[0], dtype=bool)).stack().values
-if len(off_diag) > 0:
-    direct_count = sum(off_diag > 0.3)
-    inverse_count = sum(off_diag < -0.3)
-    max_corr = np.nanmax(off_diag)
-    min_corr = np.nanmin(off_diag)
+distinct_correlations = extract_distinct_correlations(full_corr)
+
+if len(distinct_correlations) > 0:
+    direct_count = int(np.sum(distinct_correlations > 0.3))
+    inverse_count = int(np.sum(distinct_correlations < -0.3))
+    max_corr = float(np.nanmax(distinct_correlations))
+    min_corr = float(np.nanmin(distinct_correlations))
 else:
-    direct_count = inverse_count = 0
-    max_corr = min_corr = np.nan
+    direct_count = 0
+    inverse_count = 0
+    max_corr = np.nan
+    min_corr = np.nan
 
 # -------------------------------------------------------------------------------------------------
 # Generate Summary Table (for AI Bundle Compatibility)
@@ -301,11 +349,36 @@ for i, (tab, label, window) in enumerate(zip(tabs[1:4], ["Short-Term", "Medium-T
         col1, col2 = st.columns([1, 1])
         with col1:
             st.write(f"**Summary Statistics ({label}):**")
-            values = corr_matrix.values.flatten()
-            st.write(f"- Mean Correlation: {round(np.nanmean(values), 3)}")
-            st.write(f"- Std Dev Correlation: {round(np.nanstd(values), 3)}")
-            st.write(f"- Max: {round(np.nanmax(values), 3)}")
-            st.write(f"- Min: {round(np.nanmin(values), 3)}")
+
+            distinct_window_correlations = extract_distinct_correlations(corr_matrix)
+            relationship_count = len(distinct_window_correlations)
+
+            if relationship_count == 1:
+                pairwise_correlation = float(distinct_window_correlations[0])
+                st.write(f"- Distinct Relationships: {relationship_count}")
+                st.write(f"- Pairwise Correlation: {round(pairwise_correlation, 3)}")
+
+            elif relationship_count > 1:
+                st.write(f"- Distinct Relationships: {relationship_count}")
+                st.write(
+                    f"- Mean Correlation: "
+                    f"{round(float(np.nanmean(distinct_window_correlations)), 3)}"
+                )
+                st.write(
+                    f"- Std Dev Correlation: "
+                    f"{round(float(np.nanstd(distinct_window_correlations)), 3)}"
+                )
+                st.write(
+                    f"- Max: "
+                    f"{round(float(np.nanmax(distinct_window_correlations)), 3)}"
+                )
+                st.write(
+                    f"- Min: "
+                    f"{round(float(np.nanmin(distinct_window_correlations)), 3)}"
+                )
+
+            else:
+                st.write("- Relationship statistics require at least two indicators.")
         with col2:
             render_correlation_heatmap(corr_matrix, key_suffix=f"{i}")
 

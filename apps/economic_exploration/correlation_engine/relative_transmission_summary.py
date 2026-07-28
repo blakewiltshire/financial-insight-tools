@@ -15,8 +15,8 @@ def build_summary_table(result):
             "Mean",
             "Std Dev",
             "Current",
-            "Regime",
-            "Rolling State",
+            "Regime State",
+            "Relationship Trend",
             "Percentile"
         ],
         "Value": [

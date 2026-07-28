@@ -20,7 +20,8 @@ SEASONAL_STANDARDISATION_MAP = {
     "Not Seasonally Adjusted": "NSA",
     "Non seasonal adjustment annual": "NSA",
     "Not adjusted": "NSA",
-    "Not Applicable": "NA", 
+    "Not Applicable": "NA",
+    "Not Appicable": "NA",  # Defensive support for legacy typo
     "": "Unknown",
 }
 
@@ -72,6 +73,11 @@ UNIT_TYPE_STANDARDISATION_MAP = {
     # Earnings / flow rates
     "Dollars per Hour": "Currency Rate",
     "USD per Hour": "Currency Rate",
+
+    # Market data
+    "Price": "Market Price",
+    "Prices": "Market Price",
+    "Market Price": "Market Price",
 
     # Standard scalar classes
     "Percent": "Percent",
