@@ -60,7 +60,7 @@ asset_files = {
         "equities_constituents", "Visa A Stock Price History.csv"),#v - https://www.investing.com/equities/visa-inc-historical-data
         "Walt Disney Company (Communication Services)": resolve_data_file_path(
         "equities_constituents", "Walt Disney Stock Price History.csv"),#dis - https://www.investing.com/equities/disney-historical-data
-        # "SpaceX (Communication Services)": resolve_data_file_path(
+
 
     },
     "Market Indices": {
@@ -81,7 +81,7 @@ asset_files = {
         "US Dollar Index": resolve_data_file_path(
         "market_indices", "US Dollar Index Historical Data.csv"), #DXY - https://www.investing.com/indices/usdollar-historical-data?cid=1224074 - Daily (Financials) and Monthly (US - Economics)
         "Dow Jones Industrial Average": resolve_data_file_path(
-        "market_indices", "Dow Jones Industrial Average Historical Data.csv"), #DJI - https://www.investing.com/indices/us-30-historical-data - Daily (Financials) and Monthly (World - Economics)
+        "market_indices", "Dow Jones Industrial Average Historical Data.csv"), #DJI - https://www.investing.com/indices/us-30-historical-data - Daily (Financials) and Monthly (US - Economics)
     },
     "Currencies": {
         "EUR_USD": resolve_data_file_path("currencies", "EUR_USD Historical Data.csv"), #EUR/USD - https://www.investing.com/currencies/eur-usd-historical-data - Daily (Financials) and Monthly (World - Economics)
