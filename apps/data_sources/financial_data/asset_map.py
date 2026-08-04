@@ -136,15 +136,13 @@ asset_files = {
         "commodities", "US Wheat Futures Historical Data.csv"),#ZW - https://www.investing.com/commodities/us-wheat-historical-data - Daily (Financials) and Monthly (World - Economics)
     },
     "ETFs - Popular": {
-        "ARK Innovation": resolve_data_file_path(
-        "etf_popular", "ARKK ETF Stock Price History.csv"),#ARKK - https://www.investing.com/etfs/ark-innovation-historical-data
         "S&P GSCI Commodity-Indexed Trust": resolve_data_file_path(
         "etf_popular", "GSG ETF Stock Price History.csv"),#GSG - https://www.investing.com/etfs/ishares-s-p-gsci-commod-historical-data
         "SPY S&P 500": resolve_data_file_path(
         "etf_popular", "SPY ETF Stock Price History.csv"),#SPY - https://www.investing.com/etfs/spdr-s-p-500-historical-data
         "Vanguard FTSE Developed Markets Index": resolve_data_file_path(
         "etf_popular", "VEA ETF Stock Price History.csv"),#VEA - https://www.investing.com/etfs/vanguard-europe-pacific-historical-data
-        "MSCI Emerging Markets": resolve_data_file_path(
+        "iShares MSCI Emerging Markets ETF": resolve_data_file_path(
         "etf_popular", "EEM ETF Stock Price History.csv"),#EEM - https://www.investing.com/etfs/ishares-msci-emg-markets-historical-data
         "Invesco QQQ Trust": resolve_data_file_path(
         "etf_popular", "QQQ ETF Stock Price History.csv"),#QQQ - https://www.investing.com/etfs/powershares-qqqq-historical-data
@@ -152,6 +150,18 @@ asset_files = {
         "etf_popular", "USMV ETF Stock Price History.csv"),#USMV - https://www.investing.com/etfs/ishares-msci-usa-min-volatility-historical-data
         "Vanguard Total Stock Market Index": resolve_data_file_path(
         "etf_popular", "VTI ETF Stock Price History.csv"),#VTI - https://www.investing.com/etfs/vanguard-total-stkmkt-historical-data
+        "S&P MIDCAP 400 ETF Trust": resolve_data_file_path(
+        "etf_popular", "MDY ETF Stock Price History.csv"),#MDY - https://www.investing.com/etfs/spdr-midcap-trust-series-i-historical-data
+        "SPDR S&P 600 Small Cap ETF": resolve_data_file_path(
+        "etf_popular", "SLY ETF Stock Price History.csv"),#SLY - https://www.investing.com/etfs/spdr-s-p-600-small-cap-historical-data
+        "iShares Core U.S. Aggregate Bond ETF": resolve_data_file_path(
+        "etf_popular", "AGG ETF Stock Price History.csv"),#AGG - https://www.investing.com/etfs/ishares-barclays-agg-historical-data
+        "iShares TIPS Bond ETF": resolve_data_file_path(
+        "etf_popular", "TIP ETF Stock Price History.csv"),#TIP - https://www.investing.com/etfs/ishares-barclays-tip-historical-data
+        "State Street SPDR Bloomberg 1-3 Month T-Bill ETF": resolve_data_file_path(
+        "etf_popular", "BIL ETF Stock Price History.csv"),#BIL - https://www.investing.com/etfs/spdr-lehman-1-3-month-t-bill-historical-data
+        "Vanguard Real Estate Index Fund ETF Shares": resolve_data_file_path(
+        "etf_popular", "VNQ ETF Stock Price History.csv"),#VNQ - https://www.investing.com/etfs/vanguard-reit-historical-data
     },
     "ETFs - Sectors": {
         "Communication Services": resolve_data_file_path(

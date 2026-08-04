@@ -63,9 +63,12 @@ def get_preloaded_assets():
             "Silver", "US Coffee", "US Wheat"
         ],
         "ETFs - Popular": [
-            "ARK Innovation", "S&P GSCI Commodity-Indexed Trust", "SPY S&P 500",
-            "Vanguard FTSE Developed Markets Index", "MSCI Emerging Markets", "Invesco QQQ Trust",
-            "MSCI USA Min Vol Factor", "Vanguard Total Stock Market Index"
+            "S&P GSCI Commodity-Indexed Trust", "SPY S&P 500",
+            "Vanguard FTSE Developed Markets Index", "iShares MSCI Emerging Markets ETF", "Invesco QQQ Trust",
+            "MSCI USA Min Vol Factor", "Vanguard Total Stock Market Index",
+            "S&P MIDCAP 400 ETF Trust", "SPDR S&P 600 Small Cap ETF", "iShares Core U.S. Aggregate Bond ETF",
+            "iShares TIPS Bond ETF", "State Street SPDR Bloomberg 1-3 Month T-Bill ETF",
+            "Vanguard Real Estate Index Fund ETF Shares"
         ],
         "ETFs - Sectors": [
             "Communication Services", "Consumer Discretionary", "Consumer Staples", "Energy",
