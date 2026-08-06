@@ -14,7 +14,7 @@ Purpose:
 - Begin with a company or business capability
 - Show the company's primary and material additional capabilities
 - Examine the starting capability directly or traverse curated capability-to-capability pathways
-- Surface candidate US large-cap companies at the active investigation capability
+- Surface candidate companies from the selected regional coverage at the active investigation capability
 - Distinguish primary capability matches from additional capability matches
 - Preserve the full exploration environment and any selected pathway
 
@@ -63,10 +63,16 @@ DATA_PATH = os.path.join(
 )
 BRAND_LOGO_PATH = os.path.join(PROJECT_PATH, "brand", "blake_logo.png")
 
-COMPANY_CAPABILITY_FILE = os.path.join(
-    DATA_PATH,
-    "us_large_business_capability_map.csv",
-)
+REGIONAL_CAPABILITY_FILES = {
+    "United States": os.path.join(
+        DATA_PATH,
+        "us_large_business_capability_map.csv",
+    ),
+    "Europe": os.path.join(
+        DATA_PATH,
+        "emea_large_business_capability_map.csv",
+    ),
+}
 BUSINESS_REGISTRY_FILE = os.path.join(
     DATA_PATH,
     "business_capability_tag_registry.csv",
@@ -75,7 +81,7 @@ RELATIONSHIP_FILE = os.path.join(
     DATA_PATH,
     "business_capability_relationship_registry.csv",
 )
-PRICE_AVAILABILITY_FILE = os.path.join(
+US_PRICE_AVAILABILITY_FILE = os.path.join(
     DATA_PATH,
     "fit_price_available_us_large_caps.csv",
 )
@@ -211,8 +217,10 @@ def load_price_availability(file_path: str) -> pd.DataFrame:
 
 
 def build_company_label(row) -> str:
-    """Create a stable company selector label."""
-    return f"{row['company_name']} ({row['ticker']})"
+    """Create a stable company selector label with lightweight location context."""
+    country = str(row.get("country", "")).strip()
+    suffix = f" · {country}" if country else ""
+    return f"{row['company_name']} ({row['ticker']}){suffix}"
 
 
 def prepare_candidate_display(
@@ -244,6 +252,7 @@ def prepare_candidate_display(
     return display[[
         "ticker",
         "company_name",
+        "country",
         "Capability Role",
         "Primary Capability",
         "Material Capabilities",
@@ -252,6 +261,7 @@ def prepare_candidate_display(
     ]].rename(columns={
         "ticker": "Ticker",
         "company_name": "Company",
+        "country": "Country",
     })
 
 
@@ -288,6 +298,17 @@ for path, label in build_sidebar_links():
 st.sidebar.divider()
 st.logo(BRAND_LOGO_PATH)  # pylint: disable=no-member
 
+st.sidebar.subheader("Relationship Coverage")
+selected_region = st.sidebar.radio(
+    "Region",
+    ["United States", "Europe"],
+    horizontal=True,
+    help=(
+        "Select the regional company capability map. The capability vocabulary "
+        "and relationship pathways remain shared across regions."
+    ),
+)
+
 st.sidebar.subheader("Candidate View")
 include_additional_matches = st.sidebar.toggle(
     "Include additional-capability matches",
@@ -297,10 +318,22 @@ include_additional_matches = st.sidebar.toggle(
         "On: also include companies for which it is a material additional capability."
     ),
 )
-fit_available_only = st.sidebar.toggle(
-    "Show only core daily price data assets",
-    value=False,
-)
+if selected_region == "United States":
+    fit_available_only = st.sidebar.toggle(
+        "Show only core daily price data assets",
+        value=False,
+        help=(
+            "Uses the existing US price-availability registry for the default "
+            "Magnificent Seven and sector-constituent equity coverage."
+        ),
+    )
+else:
+    fit_available_only = False
+    st.sidebar.caption(
+        "Europe does not currently have a dedicated FIT price-availability registry. "
+        "European candidates remain available for relationship investigation and may "
+        "require user-supplied price data in downstream modules."
+    )
 
 with st.sidebar.expander("ℹ️ App Usage Notes"):
     st.markdown(
@@ -312,23 +345,30 @@ with st.sidebar.expander("ℹ️ App Usage Notes"):
         "any focused capability or pathway selected for closer review.\n\n"
         "Primary matches form the focused candidate universe. Additional-capability "
         "matches can be included to widen the aperture.\n\n"
+        "The regional selector changes the company universe while retaining the same "
+        "canonical capability vocabulary and relationship pathways.\n\n"
         "Candidate assets are not rankings, signals, or recommendations. Continue the "
         "investigation in the relevant FIT modules before considering trade structure."
     )
 
+st.sidebar.caption(f"Active relationship coverage: {selected_region}")
+
 # -------------------------------------------------------------------------------------------------
 # Load and Prepare Data
 # -------------------------------------------------------------------------------------------------
+company_capability_file = REGIONAL_CAPABILITY_FILES[selected_region]
+
 df_assets = safe_read_csv(
-    COMPANY_CAPABILITY_FILE,
+    company_capability_file,
     {
         "ticker",
         "company_name",
+        "country",
         "primary_business_tag",
         "business_tags",
         "company_overview",
     },
-    "company capability map",
+    f"{selected_region} company capability map",
 )
 df_registry = safe_read_csv(
     BUSINESS_REGISTRY_FILE,
@@ -346,12 +386,39 @@ df_relationships = safe_read_csv(
     },
     "business capability relationship registry",
 )
-df_price = load_price_availability(PRICE_AVAILABILITY_FILE)
+df_price = (
+    load_price_availability(US_PRICE_AVAILABILITY_FILE)
+    if selected_region == "United States"
+    else pd.DataFrame(columns=[
+        "ticker",
+        "company_name",
+        "fit_price_available",
+        "availability_status",
+    ])
+)
 
 df_assets["ticker"] = df_assets["ticker"].str.strip().str.upper()
 df_assets["primary_business_tag"] = df_assets["primary_business_tag"].str.strip()
 df_assets["business_tags"] = df_assets["business_tags"].fillna("")
+df_assets["country"] = df_assets["country"].astype(str).str.strip()
 df_assets["company_label"] = df_assets.apply(build_company_label, axis=1)
+
+available_countries = sorted(
+    country for country in df_assets["country"].dropna().unique().tolist() if country
+)
+if selected_region == "Europe" and available_countries:
+    selected_countries = st.sidebar.multiselect(
+        "Countries",
+        available_countries,
+        default=available_countries,
+        help="Narrow the European relationship universe without changing the shared pathways.",
+    )
+    if selected_countries:
+        df_assets = df_assets.loc[
+            df_assets["country"].isin(selected_countries)
+        ].copy()
+    else:
+        df_assets = df_assets.iloc[0:0].copy()
 
 df_assets = df_assets.drop(
     columns=["fit_price_available", "availability_status"],
@@ -480,7 +547,12 @@ if entry_route == "Start with a company":
             tag for tag in all_company_tags if tag != primary_tag
         ]
 
-        st.markdown(f"### {starting_company['company_name']} · {starting_company['ticker']}")
+        st.markdown(
+            f"### {starting_company['company_name']} · {starting_company['ticker']}"
+        )
+        st.caption(
+            f"{starting_company['country']} · {selected_region} relationship coverage"
+        )
         col_a, col_b = st.columns([1, 2])
         with col_a:
             st.markdown("**Primary Business Capability**")
@@ -526,8 +598,10 @@ if entry_route == "Start with a company":
         )
         source_context = {
             "entry_route": "company",
+            "coverage_region": selected_region,
             "starting_ticker": starting_company["ticker"],
             "starting_company": starting_company["company_name"],
+            "starting_country": starting_company["country"],
             "starting_capability": starting_capability,
             "starting_capability_role": starting_capability_role,
         }
@@ -575,6 +649,7 @@ else:
 
         source_context = {
             "entry_route": "business_capability",
+            "coverage_region": selected_region,
             "starting_capability": starting_capability,
             "starting_capability_role": "selected",
         }
@@ -793,6 +868,7 @@ else:
     current_branch_label = "Current Exploration Branch"
 
 current_context_signature = {
+    "coverage_region": selected_region,
     "observation": investigation_context.get("observation", ""),
     "source_type": investigation_context.get("source_type", ""),
     "source_reference": investigation_context.get("source_reference", ""),
@@ -803,6 +879,7 @@ current_context_signature = {
 }
 
 branch_identity = {
+    "coverage_region": selected_region,
     "investigation_route": investigation_route,
     "starting_capability": starting_capability,
     "active_candidate_capability": active_candidate_capability,
@@ -855,13 +932,14 @@ else:
     st.markdown(f"### {active_capability_label} Candidate Universe")
     search_text = st.text_input(
         "Search candidate companies",
-        placeholder="Search ticker, company, primary capability, or company overview",
+        placeholder="Search ticker, company, country, primary capability, or company overview",
     )
     if search_text.strip():
         query = search_text.strip().lower()
         search_mask = (
             df_candidates["ticker"].str.lower().str.contains(query, regex=False, na=False)
             | df_candidates["company_name"].str.lower().str.contains(query, regex=False, na=False)
+            | df_candidates["country"].str.lower().str.contains(query, regex=False, na=False)
             | df_candidates["primary_business_tag"].str.lower().str.contains(query, regex=False, na=False)
             | df_candidates["company_overview"].str.lower().str.contains(query, regex=False, na=False)
         )
@@ -946,6 +1024,7 @@ else:
                 selected_asset_fields = [
                     "ticker",
                     "company_name",
+                    "country",
                     "primary_business_tag",
                     "business_tags",
                     "capability_role",
@@ -960,6 +1039,7 @@ else:
                     "investigation_context": investigation_context,
                     "pathway": pathway_context,
                     "candidate_view": {
+                        "coverage_region": selected_region,
                         "include_additional_capability_matches": (
                             include_additional_matches
                         ),
@@ -1012,7 +1092,7 @@ st.markdown(
 )
 
 asset_fields = [
-    "ticker", "company_name", "primary_business_tag", "business_tags",
+    "ticker", "company_name", "country", "primary_business_tag", "business_tags",
     "capability_role", "fit_price_available", "availability_status",
 ]
 relationship_fields = [
@@ -1110,6 +1190,7 @@ candidate_curation_instruction = (
 full_exploration_bundle = {
     "created_at": datetime.now(timezone.utc).isoformat(),
     "module": "relationship_manager",
+    "coverage_region": selected_region,
     "workflow": "full_relationship_exploration",
     "investigation_context": investigation_context,
     "entry": source_context,
@@ -1129,6 +1210,7 @@ full_exploration_bundle = {
     },
     "relationship_environment": full_relationships,
     "candidate_environment": {
+        "coverage_region": selected_region,
         "core_daily_price_data_only": fit_available_only,
         "pathway_count": int(len(full_relationships)),
         "pathways": full_candidate_universe,
@@ -1143,6 +1225,7 @@ full_exploration_bundle = {
 focused_investigation_bundle = {
     "created_at": datetime.now(timezone.utc).isoformat(),
     "module": "relationship_manager",
+    "coverage_region": selected_region,
     "workflow": (
         "selected_capability_environment"
         if investigation_route == "examine_starting_capability"
@@ -1151,6 +1234,7 @@ focused_investigation_bundle = {
     "investigation_context": investigation_context,
     "pathway": pathway_context,
     "candidate_view": {
+        "coverage_region": selected_region,
         "include_additional_capability_matches": include_additional_matches,
         "core_daily_price_data_only": fit_available_only,
         "visible_candidate_count": int(len(df_candidates)),
@@ -1255,18 +1339,21 @@ if saved_branches:
         }
         for asset in branch.get("selected_assets", []):
             ticker = str(asset.get("ticker", "")).strip().upper()
+            country = str(asset.get("country", "")).strip()
             if not ticker:
                 continue
-            if ticker not in asset_index:
-                asset_index[ticker] = {
+            asset_key = f"{country}::{ticker}"
+            if asset_key not in asset_index:
+                asset_index[asset_key] = {
                     **asset,
                     "included_through": [],
                 }
-            asset_index[ticker]["included_through"].append(provenance)
+            asset_index[asset_key]["included_through"].append(provenance)
 
     chained_exploration_bundle = {
         "created_at": datetime.now(timezone.utc).isoformat(),
         "module": "relationship_manager",
+        "coverage_region": selected_region,
         "workflow": "chained_relationship_exploration",
         "investigation_context": st.session_state[collection_context_key],
         "branch_count": len(st.session_state[collection_key]),
