@@ -1,0 +1,33 @@
+theme_category,theme,description,display_order,status
+Economic Themes,Economic Growth,Investigate changes in economic growth and business activity.,10,active
+Economic Themes,Inflation,Investigate changes in prices and inflationary pressures.,20,active
+Economic Themes,Interest Rates,Investigate changes in monetary policy and borrowing costs.,30,active
+Economic Themes,Labour Markets,"Investigate employment,  wages and labour market conditions.",40,active
+Economic Themes,Financial Conditions,"Investigate liquidity,  credit and financial conditions.",50,active
+Economic Themes,Currencies,Investigate foreign exchange movements.,60,active
+Economic Themes,Commodity Markets,"Investigate commodity supply,  demand and pricing.",70,active
+Economic Themes,Global Trade,Investigate international trade and economic relations.,80,active
+Economic Themes,Supply Chains,"Investigate logistics,  production and supply chains.",90,active
+Economic Themes,Market Sentiment & Volatility,Investigate market sentiment and volatility conditions.,100,active
+Business Themes,Energy,"Investigate energy production,  distribution and consumption.",110,active
+Business Themes,Technology,"Investigate technology products,  infrastructure and services.",120,active
+Business Themes,Consumer,"Investigate consumer products,  retail and discretionary spending.",130,active
+Business Themes,Healthcare,"Investigate healthcare products,  services and innovation.",140,active
+Business Themes,Industrials,Investigate industrial production  engineering and manufacturing.,150,active
+Business Themes,Materials,Investigate raw materials and industrial inputs.,160,active
+Business Themes,Financial Services,"Investigate banking,  insurance and financial markets.",170,active
+Business Themes,Real Estate,Investigate commercial and residential property markets.,180,active
+Business Themes,Transportation,"Investigate passenger,  freight and logistics industries.",190,active
+Business Themes,Utilities,"Investigate electricity,  gas and water infrastructure.",200,active
+Business Themes,Agriculture,"Investigate farming,  food production and agricultural inputs.",210,active
+Business Themes,Communications & Media,"Investigate communications,  media and digital content.",220,active
+Structural Themes,Artificial Intelligence,"Investigate AI infrastructure,  adoption and commercialisation.",230,active
+Structural Themes,Digital Transformation,Investigate digitisation across industries.,240,active
+Structural Themes,Automation & Robotics,Investigate automation and robotics technologies.,250,active
+Structural Themes,Cybersecurity,Investigate digital resilience and cyber technologies.,260,active
+Structural Themes,Sustainability,Investigate environmental transition and resource efficiency.,270,active
+Structural Themes,Demographic Change,Investigate population and demographic shifts.,280,active
+Structural Themes,Urbanisation,Investigate urban development and infrastructure.,290,active
+Structural Themes,Government & Regulation,Investigate government policy and regulation.,300,active
+Structural Themes,Geopolitics,Investigate geopolitical developments and international relations.,310,active
+Structural Themes,Healthcare Innovation,Investigate advances in biotechnology and medical technology.,320,active

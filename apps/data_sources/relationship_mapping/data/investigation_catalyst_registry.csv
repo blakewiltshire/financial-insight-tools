@@ -1,0 +1,321 @@
+theme,catalyst,description,display_order,status
+Energy,Fuel prices rising,Rising fuel costs affecting businesses and consumers.,10,active
+Energy,Fuel prices falling,Falling fuel costs affecting business costs and demand.,20,active
+Energy,Oil production disruption,Disruption affecting crude oil production or availability.,30,active
+Energy,Natural gas demand increasing,Growing demand for natural gas and related infrastructure.,40,active
+Energy,LNG capacity expansion,Expansion of liquefied natural gas production and transport capacity.,50,active
+Energy,Renewable investment accelerating,Increasing investment in renewable generation and supporting infrastructure.,60,active
+Energy,Grid modernisation,"Investment in electricity transmission, distribution and grid resilience.",70,active
+Energy,Electricity demand increasing,"Growing electricity consumption across commercial, industrial and digital infrastructure.",80,active
+Energy,Energy storage adoption,Increasing deployment of battery and other energy storage technologies.,90,active
+Energy,Refining capacity constraints,Constraints affecting refined fuel production and availability.,100,active
+Technology,AI infrastructure investment,"Investment in compute, connectivity and infrastructure supporting artificial intelligence.",10,active
+Technology,Cloud spending accelerating,Increasing enterprise expenditure on cloud computing and hosted infrastructure.,20,active
+Technology,Semiconductor demand increasing,Broad growth in demand for semiconductor components and capacity.,30,active
+Technology,Enterprise software investment,Increasing business expenditure on enterprise software and digital workflows.,40,active
+Technology,Cybersecurity investment,"Growing expenditure on digital security, resilience and identity protection.",50,active
+Technology,Data centre expansion,Expansion of data centre capacity and associated physical infrastructure.,60,active
+Technology,Consumer electronics demand,Changing demand for connected and personal electronic devices.,70,active
+Technology,Digital payments growth,"Increasing use of digital payment networks, processing and wallets.",80,active
+Technology,Network infrastructure upgrades,Investment in communications and enterprise networking infrastructure.,90,active
+Technology,Technology regulation,"Regulatory developments affecting technology products, platforms and infrastructure.",100,active
+Consumer,Consumer spending strengthening,Improving household expenditure across discretionary goods and services.,10,active
+Consumer,Consumer spending weakening,Softening household expenditure and greater sensitivity to essential spending.,20,active
+Consumer,Luxury demand increasing,Growing demand for premium consumer goods and experiences.,30,active
+Consumer,Travel demand increasing,Higher demand for leisure and business travel.,40,active
+Consumer,Restaurant spending growth,Increasing household expenditure on food service and dining.,50,active
+Consumer,Retail footfall changing,Changing physical retail traffic and store utilisation.,60,active
+Consumer,Ecommerce growth,Increasing consumer spending through online marketplaces and digital retailers.,70,active
+Consumer,Housing-related spending,Changing household expenditure linked to housing and home improvement.,80,active
+Consumer,Advertising demand changing,Changes in marketing expenditure driven by consumer demand and business confidence.,90,active
+Consumer,Disposable income changing,Changes in household purchasing power affecting discretionary and essential expenditure.,100,active
+Healthcare,Ageing population,"Demographic change increasing demand for healthcare products, services and care.",10,active
+Healthcare,Drug approvals,New medicines and therapies progressing to commercial availability.,20,active
+Healthcare,Medical device adoption,Increasing adoption of medical technologies and procedural equipment.,30,active
+Healthcare,Hospital investment,Capital expenditure and infrastructure investment by healthcare providers.,40,active
+Healthcare,Healthcare regulation,Policy and regulatory developments affecting healthcare provision and products.,50,active
+Healthcare,Biotechnology innovation,"Scientific advances supporting new therapies, diagnostics and research tools.",60,active
+Healthcare,Diagnostic demand,"Increasing use of laboratory, molecular and imaging diagnostics.",70,active
+Healthcare,Digital healthcare adoption,"Growing use of software, connected devices and digital delivery in healthcare.",80,active
+Healthcare,Pandemic preparedness,"Investment in healthcare resilience, surveillance, diagnostics and medical supply capacity.",90,active
+Healthcare,Insurance reimbursement changes,"Changes in healthcare reimbursement, coverage and payment models.",100,active
+Industrials,Manufacturing expansion,Growing industrial production and factory activity.,10,active
+Industrials,Manufacturing slowdown,Weakening industrial production and capital utilisation.,20,active
+Industrials,Infrastructure investment,Investment in public and private physical infrastructure.,30,active
+Industrials,Construction activity,"Changes in residential, commercial and infrastructure construction.",40,active
+Industrials,Defence spending,"Government expenditure on defence systems, equipment and capabilities.",50,active
+Industrials,Automation investment,"Investment in robotics, controls and automated industrial processes.",60,active
+Industrials,Logistics demand,"Changes in demand for warehousing, distribution and freight services.",70,active
+Industrials,Freight activity,Changes in the physical movement of goods across transport networks.,80,active
+Industrials,Capital expenditure growth,"Increasing business investment in plant, equipment and infrastructure.",90,active
+Industrials,Industrial reshoring,Expansion or relocation of manufacturing capacity closer to end markets.,100,active
+Materials,Copper demand increasing,"Growing demand for copper across infrastructure, electrification and industrial activity.",10,active
+Materials,Steel demand increasing,"Higher steel consumption across construction, transport and industrial production.",20,active
+Materials,Chemical demand increasing,Growing demand for chemical inputs across industrial and consumer value chains.,30,active
+Materials,Construction materials demand,Changing demand for building and infrastructure materials.,40,active
+Materials,Critical minerals demand,"Growing strategic demand for minerals used in technology, energy and defence.",50,active
+Materials,Agricultural input demand,"Changing demand for fertilisers, chemicals, machinery and agricultural inputs.",60,active
+Materials,Packaging demand,"Changing demand for packaging across consumer, industrial and ecommerce activity.",70,active
+Materials,Mining investment,"Investment in extraction, processing and supporting mining infrastructure.",80,active
+Materials,Commodity shortages,Supply constraints affecting raw materials and industrial inputs.,90,active
+Materials,Recycling demand,Growing demand for material recovery and circular-economy infrastructure.,100,active
+Financial Services,Interest rates rising,Higher policy and market interest rates affecting financial intermediation and asset values.,10,active
+Financial Services,Interest rates falling,"Lower policy and market interest rates affecting borrowing, savings and asset allocation.",20,active
+Financial Services,Credit expansion,Increasing availability of household and corporate credit.,30,active
+Financial Services,Credit tightening,Reduced credit availability and more restrictive lending conditions.,40,active
+Financial Services,Consumer lending growth,"Increasing household borrowing across cards, vehicles and other consumer credit.",50,active
+Financial Services,Commercial lending weakness,Weakness in corporate borrowing and business credit creation.,60,active
+Financial Services,Insurance pricing changes,"Changes in insurance premiums, underwriting conditions and claims economics.",70,active
+Financial Services,Capital markets activity,"Changes in issuance, trading, dealmaking and securities-market activity.",80,active
+Financial Services,Digital banking adoption,Increasing use of digital banking platforms and financial technology.,90,active
+Financial Services,Payment network growth,Increasing electronic payment volumes and merchant acceptance.,100,active
+Real Estate,Commercial property demand,"Changes in demand for offices, retail, industrial and other commercial property.",10,active
+Real Estate,Residential housing demand,Changes in demand for residential property and new housing supply.,20,active
+Real Estate,Interest rate sensitivity,Changes in financing costs and discount rates affecting property markets.,30,active
+Real Estate,Industrial property expansion,"Growth in logistics, warehousing and industrial real estate demand.",40,active
+Real Estate,Data centre development,Expansion of data-centre and digital-infrastructure property.,50,active
+Real Estate,Retail property recovery,"Changes in occupancy, rents and activity across retail property.",60,active
+Real Estate,Office occupancy changes,"Changes in office utilisation, leasing and workplace demand.",70,active
+Real Estate,Construction pipeline,Changes in planned and active property development.,80,active
+Real Estate,Mortgage market activity,"Changes in mortgage origination, refinancing and housing finance.",90,active
+Real Estate,Property regulation,"Policy and regulatory developments affecting property ownership, construction and use.",100,active
+Transportation,Passenger travel demand,"Changes in passenger travel across air, rail, road and leisure transport.",10,active
+Transportation,Passenger travel weakness,Weakening passenger demand affecting travel and transport activity.,20,active
+Transportation,Freight demand increasing,"Growing demand for moving goods across road, rail, sea and air networks.",30,active
+Transportation,Freight demand weakening,"Slowing freight volumes affecting transport, logistics and industrial activity.",40,active
+Transportation,Shipping disruption,"Disruption to maritime freight routes, capacity or vessel availability.",50,active
+Transportation,Port congestion,Congestion affecting cargo throughput and onward distribution.,60,active
+Transportation,Air cargo demand,Changes in demand for time-sensitive and high-value air freight.,70,active
+Transportation,Rail infrastructure investment,"Investment in rail networks, rolling stock and signalling systems.",80,active
+Transportation,Fleet electrification,Adoption of electric and alternative-power commercial vehicle fleets.,90,active
+Transportation,Transportation regulation,Regulatory developments affecting passenger and freight transport.,100,active
+Utilities,Electricity demand increasing,"Higher electricity demand across households, industry and digital infrastructure.",10,active
+Utilities,Grid investment,"Investment in electricity networks, distribution and resilience.",20,active
+Utilities,Renewable integration,Integration of variable renewable generation into electricity systems.,30,active
+Utilities,Power shortages,Electricity supply constraints affecting users and generation markets.,40,active
+Utilities,Water infrastructure investment,"Investment in water supply, treatment and distribution systems.",50,active
+Utilities,Nuclear investment,Investment in nuclear generation and supporting supply chains.,60,active
+Utilities,Transmission upgrades,Expansion and reinforcement of high-voltage electricity transmission.,70,active
+Utilities,Utility regulation changes,Policy and regulatory changes affecting regulated utility economics.,80,active
+Utilities,Climate resilience investment,Investment in infrastructure resilience against weather and climate risks.,90,active
+Utilities,Energy efficiency programmes,Investment in reducing energy consumption across buildings and industry.,100,active
+Agriculture,Crop yield changes,Changes in agricultural yields affecting crop availability and input requirements.,10,active
+Agriculture,Fertiliser demand,Changes in demand for fertilisers and crop nutrients.,20,active
+Agriculture,Food demand increasing,Growing demand for agricultural production and food supply.,30,active
+Agriculture,Livestock production changes,"Changes in livestock supply, feed demand and animal-health requirements.",40,active
+Agriculture,Water availability,Changes in water availability affecting agricultural production.,50,active
+Agriculture,Agricultural technology adoption,"Increasing use of automation, data and precision technologies in farming.",60,active
+Agriculture,Commodity price volatility,Changing agricultural commodity prices affecting producers and downstream users.,70,active
+Agriculture,Agricultural supply disruption,"Disruption to production, storage or transport of agricultural goods.",80,active
+Agriculture,Export demand increasing,Growing international demand for agricultural products.,90,active
+Agriculture,Climate resilience investment,Investment in agricultural resilience to weather and environmental stress.,100,active
+Communications & Media,Advertising demand increasing,Growing advertising expenditure across digital and traditional channels.,10,active
+Communications & Media,Advertising demand weakening,Softening advertising expenditure affecting media and platform monetisation.,20,active
+Communications & Media,Streaming growth,"Increasing consumption of streamed video, audio and digital content.",30,active
+Communications & Media,Mobile data growth,Increasing mobile connectivity and data consumption.,40,active
+Communications & Media,Broadband expansion,Investment in fixed broadband and high-capacity connectivity.,50,active
+Communications & Media,Digital content demand,Growing consumption and monetisation of digital media and content.,60,active
+Communications & Media,Social platform engagement,Changes in user engagement across social and community platforms.,70,active
+Communications & Media,Network investment,Capital expenditure on telecommunications and communications infrastructure.,80,active
+Communications & Media,Satellite communications expansion,Expansion of satellite-based communications and connectivity.,90,active
+Communications & Media,Media regulation,"Regulatory developments affecting broadcasting, digital content and communications.",100,active
+Economic Growth,Economic expansion,"Broad economic activity is expanding across output, demand and business activity.",10,active
+Economic Growth,Economic slowdown,"Broad economic activity is losing momentum across output, demand and investment.",20,active
+Economic Growth,Consumer demand strengthening,Household demand is improving across discretionary and essential spending.,30,active
+Economic Growth,Consumer demand weakening,Household demand is softening across discretionary categories and services.,40,active
+Economic Growth,Business investment increasing,"Business capital expenditure is increasing across equipment, technology and infrastructure.",50,active
+Economic Growth,Business investment slowing,"Business capital expenditure is weakening across equipment, construction and technology.",60,active
+Economic Growth,Manufacturing expansion,"Manufacturing output, orders and utilisation are improving.",70,active
+Economic Growth,Services expansion,Service-sector activity and demand are strengthening.,80,active
+Economic Growth,Productivity improving,Output per worker or unit of input is improving across the economy.,90,active
+Economic Growth,Leading indicators improving,Forward-looking economic indicators are signalling improving activity.,100,active
+Inflation,Inflation accelerating,Consumer and producer price pressures are broadening or intensifying.,10,active
+Inflation,Inflation moderating,Price pressures are easing across consumer and producer categories.,20,active
+Inflation,Producer prices rising,Input and wholesale prices are increasing across business supply chains.,30,active
+Inflation,Producer prices falling,Input and wholesale prices are easing across business supply chains.,40,active
+Inflation,Consumer prices rising,Household-facing prices are increasing across goods and services.,50,active
+Inflation,Consumer prices falling,Household-facing prices are easing across goods and services.,60,active
+Inflation,Input costs increasing,"Businesses are facing higher raw-material, energy or component costs.",70,active
+Inflation,Wage inflation accelerating,Labour costs are rising more quickly across industries.,80,active
+Inflation,Inflation expectations rising,Businesses and households increasingly expect future price growth.,90,active
+Inflation,Disinflation emerging,Inflation remains positive but price growth is slowing.,100,active
+Interest Rates,Policy rates rising,Central-bank policy rates are increasing.,10,active
+Interest Rates,Policy rates falling,Central-bank policy rates are decreasing.,20,active
+Interest Rates,Bond yields rising,Government and market bond yields are increasing.,30,active
+Interest Rates,Bond yields falling,Government and market bond yields are decreasing.,40,active
+Interest Rates,Yield curve steepening,Longer-term yields are rising relative to shorter-term yields.,50,active
+Interest Rates,Yield curve flattening,Longer-term and shorter-term yields are converging.,60,active
+Interest Rates,Corporate borrowing increasing,Companies are increasing debt issuance and bank borrowing.,70,active
+Interest Rates,Corporate borrowing weakening,Companies are reducing debt issuance and borrowing demand.,80,active
+Interest Rates,Mortgage activity strengthening,"Mortgage origination, refinancing or housing finance activity is increasing.",90,active
+Interest Rates,Mortgage activity slowing,"Mortgage origination, refinancing or housing finance activity is weakening.",100,active
+Labour Markets,Employment strengthening,Employment growth and labour demand are improving.,10,active
+Labour Markets,Employment weakening,Employment growth and labour demand are deteriorating.,20,active
+Labour Markets,Labour shortages,Employers are struggling to recruit or retain workers.,30,active
+Labour Markets,Labour market softening,"Job openings, hiring and worker bargaining power are weakening.",40,active
+Labour Markets,Wage growth accelerating,Employee compensation is increasing more quickly.,50,active
+Labour Markets,Wage growth slowing,Employee compensation growth is moderating.,60,active
+Labour Markets,Hiring demand increasing,Businesses are increasing recruitment and workforce expansion.,70,active
+Labour Markets,Hiring demand weakening,Businesses are reducing recruitment and workforce expansion.,80,active
+Labour Markets,Participation improving,A larger share of the working-age population is entering the labour force.,90,active
+Labour Markets,Layoffs increasing,Workforce reductions are becoming more widespread.,100,active
+Financial Conditions,Credit conditions easing,Borrowing availability and financing conditions are becoming more supportive.,10,active
+Financial Conditions,Credit conditions tightening,Borrowing availability and financing conditions are becoming more restrictive.,20,active
+Financial Conditions,Bank lending accelerating,Bank credit creation is increasing across households and businesses.,30,active
+Financial Conditions,Bank lending slowing,Bank credit creation is weakening across households and businesses.,40,active
+Financial Conditions,Corporate spreads widening,Corporate borrowing spreads are increasing relative to government yields.,50,active
+Financial Conditions,Corporate spreads narrowing,Corporate borrowing spreads are decreasing relative to government yields.,60,active
+Financial Conditions,Liquidity improving,Market and funding liquidity are becoming more abundant.,70,active
+Financial Conditions,Liquidity deteriorating,Market and funding liquidity are becoming more constrained.,80,active
+Financial Conditions,Financial stress increasing,"Stress indicators across credit, funding or banking markets are increasing.",90,active
+Financial Conditions,Financial stress easing,"Stress indicators across credit, funding or banking markets are declining.",100,active
+Currencies,Domestic currency strengthening,The domestic currency is appreciating against major trading partners.,10,active
+Currencies,Domestic currency weakening,The domestic currency is depreciating against major trading partners.,20,active
+Currencies,Dollar strengthening,The US dollar is appreciating against a broad basket of currencies.,30,active
+Currencies,Dollar weakening,The US dollar is depreciating against a broad basket of currencies.,40,active
+Currencies,Currency volatility increasing,Foreign-exchange volatility is increasing across major currency pairs.,50,active
+Currencies,Currency volatility declining,Foreign-exchange volatility is decreasing across major currency pairs.,60,active
+Currencies,Export competitiveness improving,Exchange-rate movements are making domestic exports more competitive.,70,active
+Currencies,Import costs increasing,Exchange-rate movements are raising the domestic cost of imported goods and inputs.,80,active
+Currencies,Import costs falling,Exchange-rate movements are reducing the domestic cost of imported goods and inputs.,90,active
+Currencies,Cross-border earnings translation changing,Currency movements are changing the translated value of overseas revenues and profits.,100,active
+Commodity Markets,Energy prices rising,"Oil, gas or refined energy commodity prices are increasing.",10,active
+Commodity Markets,Energy prices falling,"Oil, gas or refined energy commodity prices are decreasing.",20,active
+Commodity Markets,Industrial metals prices rising,"Prices for copper, aluminium, steel inputs or other industrial metals are increasing.",30,active
+Commodity Markets,Industrial metals prices falling,"Prices for copper, aluminium, steel inputs or other industrial metals are decreasing.",40,active
+Commodity Markets,Agricultural commodity prices rising,"Prices for crops, feed and agricultural commodities are increasing.",50,active
+Commodity Markets,Agricultural commodity prices falling,"Prices for crops, feed and agricultural commodities are decreasing.",60,active
+Commodity Markets,Precious metals demand increasing,"Demand for gold, silver and related precious metals is increasing.",70,active
+Commodity Markets,Critical minerals demand increasing,"Demand for strategic minerals used in technology, energy and defence is increasing.",80,active
+Commodity Markets,Commodity volatility increasing,Price volatility is increasing across commodity markets.,90,active
+Commodity Markets,Commodity supply disruption,Physical supply constraints are affecting commodity availability.,100,active
+Global Trade,Export demand strengthening,Foreign demand for domestic goods and services is increasing.,10,active
+Global Trade,Export demand weakening,Foreign demand for domestic goods and services is decreasing.,20,active
+Global Trade,Import demand strengthening,Domestic demand for foreign goods and inputs is increasing.,30,active
+Global Trade,Import demand weakening,Domestic demand for foreign goods and inputs is decreasing.,40,active
+Global Trade,Tariffs increasing,Trade barriers and import tariffs are increasing.,50,active
+Global Trade,Tariffs decreasing,Trade barriers and import tariffs are decreasing.,60,active
+Global Trade,Trade restrictions expanding,"Export controls, sanctions or other restrictions on cross-border trade are increasing.",70,active
+Global Trade,Trade restrictions easing,"Export controls, sanctions or other restrictions on cross-border trade are being reduced.",80,active
+Global Trade,Cross-border investment increasing,International direct investment and cross-border capital deployment are increasing.,90,active
+Global Trade,Trade balances shifting,Import and export balances are changing materially across major economies.,100,active
+Supply Chains,Supply chain disruption increasing,"Disruptions are affecting the movement of goods, components or raw materials.",10,active
+Supply Chains,Supply chain disruption easing,Disruptions are declining and goods are moving more reliably.,20,active
+Supply Chains,Lead times lengthening,Delivery and production lead times are increasing.,30,active
+Supply Chains,Lead times shortening,Delivery and production lead times are decreasing.,40,active
+Supply Chains,Inventory accumulation,Businesses are building inventories across supply chains.,50,active
+Supply Chains,Inventory destocking,Businesses are reducing inventories across supply chains.,60,active
+Supply Chains,Freight costs rising,Transport and logistics costs are increasing.,70,active
+Supply Chains,Freight costs falling,Transport and logistics costs are decreasing.,80,active
+Supply Chains,Reshoring increasing,Businesses are moving production closer to domestic or regional end markets.,90,active
+Supply Chains,Supplier concentration risk increasing,Dependence on a small number of suppliers or regions is becoming more material.,100,active
+Market Sentiment & Volatility,Market volatility increasing,Cross-asset and equity-market volatility is rising.,10,active
+Market Sentiment & Volatility,Market volatility declining,Cross-asset and equity-market volatility is falling.,20,active
+Market Sentiment & Volatility,Risk appetite strengthening,Investors are becoming more willing to hold risk assets.,30,active
+Market Sentiment & Volatility,Risk appetite weakening,Investors are becoming less willing to hold risk assets.,40,active
+Market Sentiment & Volatility,Equity market breadth improving,A larger share of listed companies is participating in market gains.,50,active
+Market Sentiment & Volatility,Equity market breadth weakening,Market gains are becoming concentrated in fewer companies or sectors.,60,active
+Market Sentiment & Volatility,Credit market stress increasing,Stress is increasing in corporate or structured credit markets.,70,active
+Market Sentiment & Volatility,Credit market stress easing,Stress is declining in corporate or structured credit markets.,80,active
+Market Sentiment & Volatility,Safe-haven demand increasing,Demand is increasing for assets perceived as defensive or liquid during uncertainty.,90,active
+Market Sentiment & Volatility,Market liquidity deteriorating,"Trading depth, funding conditions or market liquidity are weakening.",100,active
+Artificial Intelligence,AI infrastructure investment,Investment is increasing in the physical and digital infrastructure required to train and deploy artificial intelligence.,10,active
+Artificial Intelligence,AI model development accelerating,Development of foundation models and specialised AI systems is accelerating.,20,active
+Artificial Intelligence,Enterprise AI adoption increasing,"Businesses are embedding artificial intelligence into software, workflows and decision processes.",30,active
+Artificial Intelligence,AI inference moving to the edge,AI processing is increasingly shifting from centralised cloud environments toward devices and edge infrastructure.,40,active
+Artificial Intelligence,AI data demand increasing,"AI development is increasing demand for data collection, storage, management and analytics.",50,active
+Artificial Intelligence,AI power demand increasing,AI compute growth is increasing electricity demand and pressure on power infrastructure.,60,active
+Artificial Intelligence,AI automation expanding,Artificial intelligence is expanding the range of tasks that can be automated across business and industry.,70,active
+Artificial Intelligence,AI regulation increasing,Governments and regulators are increasing oversight of artificial intelligence systems and their deployment.,80,active
+Artificial Intelligence,AI security requirements increasing,"AI adoption is creating additional requirements for model, data, identity and infrastructure security.",90,active
+Artificial Intelligence,AI adoption broadening across industries,Artificial intelligence is spreading into a wider range of sector-specific applications.,100,active
+Digital Transformation,Cloud migration accelerating,"Organisations are moving more workloads, data and applications into cloud environments.",10,active
+Digital Transformation,Enterprise software modernisation,Businesses are replacing legacy applications with modern digital platforms and workflows.,20,active
+Digital Transformation,Data-driven decision making expanding,"Organisations are increasing their use of data platforms, analytics and business intelligence.",30,active
+Digital Transformation,Digital payments adoption increasing,Consumers and businesses are increasing their use of digital payment channels and platforms.,40,active
+Digital Transformation,Ecommerce infrastructure expanding,"Digital commerce growth is increasing demand for software, payments and fulfilment infrastructure.",50,active
+Digital Transformation,Customer experience digitising,Businesses are shifting customer engagement and service processes toward digital channels.,60,active
+Digital Transformation,Digital identity adoption increasing,"Digital services are increasing demand for identity verification, access and authentication capabilities.",70,active
+Digital Transformation,Legacy infrastructure replacement,Organisations are replacing ageing technology infrastructure with modern digital systems.,80,active
+Digital Transformation,Connected devices adoption increasing,The number of connected devices and machine-to-machine systems is increasing.,90,active
+Digital Transformation,Digital transformation spending slowing,Organisations are becoming more selective in digital transformation expenditure.,100,active
+Automation & Robotics,Factory automation investment increasing,Manufacturers are increasing investment in automated production systems.,10,active
+Automation & Robotics,Robotics adoption increasing,Robots are being deployed across a wider range of industrial and service applications.,20,active
+Automation & Robotics,Warehouse automation expanding,Warehouses and distribution centres are adopting more automated handling and fulfilment systems.,30,active
+Automation & Robotics,Labour shortages accelerating automation,Persistent labour constraints are increasing incentives to automate tasks and processes.,40,active
+Automation & Robotics,Autonomous mobility investment increasing,Investment is increasing in autonomous and digitally controlled transportation systems.,50,active
+Automation & Robotics,Industrial software integration increasing,Industrial operators are integrating software more deeply with physical production systems.,60,active
+Automation & Robotics,Machine vision adoption increasing,Vision and sensing technologies are being deployed more widely in industrial automation.,70,active
+Automation & Robotics,Automation reaching service industries,Automation is moving beyond manufacturing into administrative and service workflows.,80,active
+Automation & Robotics,Robotic healthcare adoption increasing,Healthcare providers are adopting robotic and automated technologies in treatment and care.,90,active
+Automation & Robotics,Automation capital spending slowing,Businesses are delaying or reducing automation investment.,100,active
+Cybersecurity,Cybersecurity spending increasing,Organisations are increasing expenditure on digital security and resilience.,10,active
+Cybersecurity,Cloud security demand increasing,Migration to cloud environments is increasing demand for cloud-native security capabilities.,20,active
+Cybersecurity,Identity security becoming more important,Digital services and distributed work are increasing the importance of identity and access controls.,30,active
+Cybersecurity,Ransomware activity increasing,"Ransomware and extortion risks are increasing demand for protection, recovery and insurance.",40,active
+Cybersecurity,Critical infrastructure protection increasing,Governments and operators are increasing protection of essential physical and digital infrastructure.,50,active
+Cybersecurity,Cyber regulation tightening,"Regulatory requirements for cyber controls, disclosure and resilience are increasing.",60,active
+Cybersecurity,Fraud prevention demand increasing,Digital commerce and financial activity are increasing demand for fraud detection and prevention.,70,active
+Cybersecurity,Security monitoring expanding,Organisations are increasing continuous monitoring of digital and physical environments.,80,active
+Cybersecurity,Supply-chain cyber risk increasing,Dependence on third parties and interconnected technology is increasing cyber exposure through supply chains.,90,active
+Cybersecurity,Cyber insurance demand increasing,Businesses are increasingly transferring cyber-related financial risk through insurance.,100,active
+Sustainability,Renewable energy investment increasing,Investment in renewable electricity generation and supporting infrastructure is increasing.,10,active
+Sustainability,Energy efficiency investment increasing,Businesses and households are investing more in reducing energy use.,20,active
+Sustainability,Electrification accelerating,"Transport, buildings and industrial processes are increasingly shifting toward electricity.",30,active
+Sustainability,Circular economy investment increasing,"Businesses are increasing reuse, recycling and material recovery.",40,active
+Sustainability,Water infrastructure investment increasing,"Investment is increasing in water supply, treatment and resilience.",50,active
+Sustainability,Climate resilience spending increasing,Businesses and governments are investing more in infrastructure resilient to environmental risks.,60,active
+Sustainability,Sustainable materials demand increasing,Demand is increasing for lower-impact and recycled materials.,70,active
+Sustainability,Environmental monitoring increasing,"More organisations are measuring environmental conditions, emissions and resource use.",80,active
+Sustainability,Sustainability regulation increasing,Policy and reporting requirements related to environmental performance are increasing.,90,active
+Sustainability,Clean energy investment slowing,Capital deployment into renewable and clean-energy projects is slowing.,100,active
+Demographic Change,Population ageing,"A rising share of older people is changing demand for healthcare, housing and financial services.",10,active
+Demographic Change,Birth rates declining,"Lower birth rates are changing long-term demand for education, housing and consumer services.",20,active
+Demographic Change,Longevity increasing,"Longer lifespans are changing healthcare, retirement and wealth-management needs.",30,active
+Demographic Change,Urban populations increasing,Population growth is becoming increasingly concentrated in cities.,40,active
+Demographic Change,Migration increasing,Population movement across regions and countries is changing labour and service demand.,50,active
+Demographic Change,Household formation changing,Changes in household size and composition are affecting housing and consumption patterns.,60,active
+Demographic Change,Middle-class consumption increasing,Income growth is expanding demand for discretionary goods and services in developing markets.,70,active
+Demographic Change,Healthcare demand increasing,Demographic pressures are increasing demand for healthcare services and products.,80,active
+Demographic Change,Retirement assets increasing,Ageing populations are increasing the scale and importance of retirement savings.,90,active
+Demographic Change,Workforce participation changing,Changes in age structure and participation are altering labour availability.,100,active
+Urbanisation,Urban population growth,"Population growth is increasing demand for urban housing, infrastructure and services.",10,active
+Urbanisation,Smart city investment increasing,"Cities are investing in connected infrastructure, sensors and digital services.",20,active
+Urbanisation,Public transport investment increasing,Urban growth is increasing investment in mass-transit systems.,30,active
+Urbanisation,Urban housing demand increasing,City growth is increasing demand for residential development and housing services.,40,active
+Urbanisation,Commercial property demand changing,"Changes in urban activity are shifting demand across offices, retail and mixed-use property.",50,active
+Urbanisation,Urban logistics demand increasing,Dense population centres are increasing demand for distribution and last-mile logistics.,60,active
+Urbanisation,Water demand increasing,Urban growth is increasing pressure on water supply and treatment infrastructure.,70,active
+Urbanisation,Urban energy demand increasing,Cities are consuming more electricity and energy as populations and digital infrastructure grow.,80,active
+Urbanisation,Urban resilience investment increasing,"Cities are investing in resilience against climate, security and infrastructure risks.",90,active
+Urbanisation,Urban digital connectivity expanding,"Cities are expanding broadband, wireless and digital infrastructure.",100,active
+Government & Regulation,Infrastructure spending increasing,Governments are increasing expenditure on physical infrastructure.,10,active
+Government & Regulation,Defence spending increasing,Governments are increasing defence procurement and capability investment.,20,active
+Government & Regulation,Industrial policy expanding,"Governments are using subsidies, incentives and procurement to shape domestic industry.",30,active
+Government & Regulation,Financial regulation tightening,Financial institutions are facing increased regulatory requirements.,40,active
+Government & Regulation,Technology regulation tightening,"Governments are increasing oversight of digital platforms, data and technology systems.",50,active
+Government & Regulation,Environmental regulation tightening,"Governments are increasing requirements related to emissions, resources and environmental impact.",60,active
+Government & Regulation,Healthcare policy changing,"Government healthcare policy is changing reimbursement, access or regulation.",70,active
+Government & Regulation,Trade policy becoming more restrictive,"Governments are increasing tariffs, export controls or other trade barriers.",80,active
+Government & Regulation,Public digital services expanding,Governments are increasing use of digital platforms and technology in public services.,90,active
+Government & Regulation,Tax policy changing,"Changes in taxation are affecting business investment, consumption and capital allocation.",100,active
+Geopolitics,Military tensions increasing,"Rising geopolitical tensions are increasing defence, security and supply-chain considerations.",10,active
+Geopolitics,Sanctions expanding,Governments are increasing financial and trade sanctions.,20,active
+Geopolitics,Trade blocs fragmenting,Global trade and production are becoming more regionalised.,30,active
+Geopolitics,Strategic reshoring increasing,Governments and companies are relocating critical production closer to domestic markets.,40,active
+Geopolitics,Energy security concerns increasing,Geopolitical risk is increasing focus on domestic and diversified energy supply.,50,active
+Geopolitics,Critical mineral security increasing,"Governments are prioritising access to minerals essential for technology, energy and defence.",60,active
+Geopolitics,Shipping route disruption increasing,Geopolitical developments are disrupting major maritime trade routes.,70,active
+Geopolitics,Cyber conflict increasing,State-linked cyber activity is increasing security risk across governments and critical industries.,80,active
+Geopolitics,Defence alliances strengthening,Countries are increasing coordinated defence investment and procurement.,90,active
+Geopolitics,Cross-border capital restrictions increasing,Governments are increasing scrutiny or restriction of international investment and capital flows.,100,active
+Healthcare Innovation,Drug discovery accelerating,New scientific tools and platforms are accelerating drug discovery.,10,active
+Healthcare Innovation,Precision medicine expanding,"Treatment is becoming more targeted using genomic, diagnostic and patient-specific information.",20,active
+Healthcare Innovation,Digital health adoption increasing,"Healthcare delivery is increasingly incorporating software, connectivity and digital services.",30,active
+Healthcare Innovation,Robotic surgery adoption increasing,Healthcare providers are expanding the use of robotic-assisted procedures.,40,active
+Healthcare Innovation,Medical diagnostics improving,"Advances in testing, imaging and molecular diagnostics are expanding diagnostic capability.",50,active
+Healthcare Innovation,Biotechnology investment increasing,Capital and research investment in biotechnology is increasing.,60,active
+Healthcare Innovation,Vaccine technology advancing,New vaccine platforms and manufacturing approaches are expanding.,70,active
+Healthcare Innovation,Chronic disease treatment expanding,Innovation is improving treatment options for long-duration health conditions.,80,active
+Healthcare Innovation,Healthcare data use increasing,Healthcare organisations are making greater use of clinical and operational data.,90,active
+Healthcare Innovation,Healthcare innovation regulation evolving,"Regulatory frameworks are adapting to new medicines, devices and digital health technologies.",100,active

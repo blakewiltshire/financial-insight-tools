@@ -1,9 +1,4 @@
 ﻿date,market_name,leveraged_long,leveraged_short,change_long,change_short,open_interest_long_pct,open_interest_short_pct
-2020-01-07,Australian Dollar,42542,65479,6541,-4496,27,41.5
-2020-01-14,Australian Dollar,39012,42412,-3530,-23067,27,29.3
-2020-01-21,Australian Dollar,37790,34130,-1222,-8282,27.1,24.5
-2020-01-28,Australian Dollar,41534,27206,3744,-6924,26.5,17.4
-2020-02-04,Australian Dollar,46336,40305,4802,13099,25.6,22.3
 2020-02-11,Australian Dollar,45950,33547,-386,-6758,25.9,18.9
 2020-02-18,Australian Dollar,46436,36570,486,3023,24.8,19.5
 2020-02-25,Australian Dollar,55391,38068,8955,1498,26,17.8
@@ -342,3 +337,4 @@
 2026-07-14,Australian Dollar,55916,28694,-3384,-923,26.8,13.8
 2026-07-21,Australian Dollar,53631,28843,-2285,149,23.8,12.8
 2026-07-28,Australian Dollar,57490,29872,3859,1029,25,13
+2026-08-04,Australian Dollar,64639,24002,7149,-5870,26.9,10

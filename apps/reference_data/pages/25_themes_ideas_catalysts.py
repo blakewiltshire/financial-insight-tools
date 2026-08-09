@@ -5,19 +5,21 @@
 # pylint: disable=invalid-name, non-ascii-file-name
 
 """
-Relationship Manager — Financial Insight Tools
+Themes, Ideas & Catalysts — Financial Insight Tools
 
-A pathway-led investigation workspace.
+A structured investigation workspace for moving from broad themes and curated
+catalysts into business capabilities, relationship pathways and candidate assets.
 
 Purpose:
-- Record the observation or idea that prompted the investigation
-- Begin with a company or business capability
-- Show the company's primary and material additional capabilities
-- Examine the starting capability directly or traverse curated capability-to-capability pathways
-- Surface candidate companies from the selected regional coverage at the active investigation capability
+- Explore curated themes and catalysts or choose a named company
+- Use curated catalysts and investigation pathways to reduce entry friction
+- Resolve selected pathways into the canonical business capability vocabulary
+- Examine the active capability directly or traverse curated capability-to-capability pathways
+- Surface candidate companies from the selected regional coverage
 - Distinguish primary capability matches from additional capability matches
-- Preserve the full exploration environment and any selected pathway
+- Preserve the wider exploration environment and any selected relationship branch
 
+Relationship Manager remains part of the underlying investigation workflow.
 This module does not rank, score, recommend, or analyse securities.
 """
 
@@ -45,6 +47,13 @@ import streamlit as st
 # Core Utilities
 # -------------------------------------------------------------------------------------------------
 from core.helpers import load_markdown_file, build_sidebar_links, get_named_paths
+
+from data_sources.relationship_mapping.relationship_mapping_loader import (
+    load_investigation_theme_registry,
+    load_investigation_catalyst_registry,
+    load_investigation_pathway_registry,
+    load_investigation_pathway_mapping_registry,
+)
 
 # -------------------------------------------------------------------------------------------------
 # Resolve Paths
@@ -191,6 +200,34 @@ def safe_read_csv(file_path: str, required_columns: set, label: str) -> pd.DataF
     return df
 
 
+def safe_load_investigation_registry(loader, label: str) -> pd.DataFrame:
+    """Load an investigation registry and stop the page with a useful message if invalid."""
+    try:
+        return loader(DATA_PATH)
+    except (FileNotFoundError, ValueError) as exc:
+        st.error(f"{label}: {exc}")
+        st.stop()
+
+
+def sort_registry(df: pd.DataFrame) -> pd.DataFrame:
+    """Return active registry rows in configured display order."""
+    result = df.copy()
+
+    if "status" in result.columns:
+        result = result.loc[
+            result["status"].astype(str).str.strip().str.lower().eq("active")
+        ].copy()
+
+    if "display_order" in result.columns:
+        result["_display_order"] = pd.to_numeric(
+            result["display_order"],
+            errors="coerce",
+        ).fillna(999999)
+        result = result.sort_values("_display_order").drop(columns="_display_order")
+
+    return result.reset_index(drop=True)
+
+
 def load_price_availability(file_path: str) -> pd.DataFrame:
     """Load the independent FIT price-availability registry."""
     required = {
@@ -268,10 +305,10 @@ def prepare_candidate_display(
 # -------------------------------------------------------------------------------------------------
 # Streamlit Setup
 # -------------------------------------------------------------------------------------------------
-st.set_page_config(page_title="Relationship Manager", layout="wide")
-st.title("Relationship Manager")
+st.set_page_config(page_title="Themes, Ideas & Catalysts", layout="wide")
+st.title("Themes, Ideas & Catalysts")
 st.caption(
-    "*Traverse business-capability pathways to surface candidate assets for further investigation.*"
+    "*Explore curated themes and catalysts, follow business pathways, and surface candidate assets for further investigation.*"
 )
 
 # -------------------------------------------------------------------------------------------------
@@ -283,16 +320,17 @@ with st.expander("ℹ️ About This App"):
         st.markdown(content, unsafe_allow_html=True)
     else:
         st.markdown(
-            "Relationship Manager connects companies, material business capabilities, "
-            "and curated relationship pathways. It surfaces candidate assets for further "
-            "investigation; it does not rank, score, recommend, or predict securities."
+            "Themes, Ideas & Catalysts provides structured entry points into the existing "
+            "business capability and relationship environment. Curated themes and catalysts "
+            "help frame an investigation before candidate assets are surfaced for further "
+            "examination. It does not rank, score, recommend, or predict securities."
         )
 
 # -------------------------------------------------------------------------------------------------
 # Sidebar
 # -------------------------------------------------------------------------------------------------
 st.sidebar.title("📂 Navigation Menu")
-st.sidebar.page_link("app.py", label="Reference Data & Trusted Sources")
+st.sidebar.page_link("app.py", label="Reference & Investigation Resources")
 for path, label in build_sidebar_links():
     st.sidebar.page_link(path, label=label)
 st.sidebar.divider()
@@ -337,18 +375,17 @@ else:
 
 with st.sidebar.expander("ℹ️ App Usage Notes"):
     st.markdown(
-        "Record the observation or idea that prompted the investigation, then enter "
-        "through a company or business capability.\n\n"
-        "The starting capability can be examined directly or used as a gateway to "
-        "a related capability environment.\n\n"
-        "Relationship Manager preserves both the complete exploration environment and "
-        "any focused capability or pathway selected for closer review.\n\n"
+        "Explore curated themes and catalysts, or choose a company to examine its "
+        "business relationships.\n\n"
+        "Theme exploration moves from category to theme, catalyst and investigation "
+        "pathway before entering the shared business capability environment.\n\n"
+        "The active capability can be examined directly or used as a gateway to related "
+        "capabilities through the Relationship Manager layer.\n\n"
         "Primary matches form the focused candidate universe. Additional-capability "
         "matches can be included to widen the aperture.\n\n"
         "The regional selector changes the company universe while retaining the same "
         "canonical capability vocabulary and relationship pathways.\n\n"
-        "Candidate assets are not rankings, signals, or recommendations. Continue the "
-        "investigation in the relevant FIT modules before considering trade structure."
+        "Candidate assets are not rankings, signals, predictions, or recommendations."
     )
 
 st.sidebar.caption(f"Active relationship coverage: {selected_region}")
@@ -366,7 +403,7 @@ df_assets = safe_read_csv(
         "country",
         "primary_business_tag",
         "business_tags",
-        "company_overview",
+        "business_overview",
     },
     f"{selected_region} company capability map",
 )
@@ -385,6 +422,29 @@ df_relationships = safe_read_csv(
         "relationship_description",
     },
     "business capability relationship registry",
+)
+
+df_themes = sort_registry(
+    safe_load_investigation_registry(
+        load_investigation_theme_registry,
+        "Investigation theme registry",
+    )
+)
+df_catalysts = sort_registry(
+    safe_load_investigation_registry(
+        load_investigation_catalyst_registry,
+        "Investigation catalyst registry",
+    )
+)
+df_investigation_pathways = sort_registry(
+    safe_load_investigation_registry(
+        load_investigation_pathway_registry,
+        "Investigation pathway registry",
+    )
+)
+df_investigation_pathway_mappings = safe_load_investigation_registry(
+    load_investigation_pathway_mapping_registry,
+    "Investigation pathway mapping registry",
 )
 df_price = (
     load_price_availability(US_PRICE_AVAILABILITY_FILE)
@@ -458,64 +518,20 @@ business_group_map = {
 }
 
 # -------------------------------------------------------------------------------------------------
-# 1. Investigation Context
+# 1. Themes, Ideas & Catalysts
 # -------------------------------------------------------------------------------------------------
-st.subheader("1. Investigation Context")
+st.subheader("1. Themes, Ideas & Catalysts")
 st.markdown(
-    "Record the observation, idea, or development that prompted the investigation. "
-    "This context is preserved with the relationship environment for later AI review."
-)
-
-context_col_1, context_col_2 = st.columns([2, 1])
-with context_col_1:
-    investigation_observation = st.text_area(
-        "Observation or investigative premise",
-        placeholder=(
-            "Example: Continued manufacturing expansion may extend beyond industrial "
-            "manufacturing into electrical equipment, semiconductors, machinery, and "
-            "other connected business environments."
-        ),
-        height=130,
-    )
-with context_col_2:
-    source_type = st.selectbox(
-        "Source type",
-        [
-            "User observation",
-            "Economic indicator",
-            "Company announcement",
-            "Company research",
-            "Technological development",
-            "Political or regulatory development",
-            "Geopolitical development",
-            "Market narrative",
-            "Other",
-        ],
-    )
-    source_reference = st.text_input(
-        "Source reference",
-        placeholder="Optional source, release, article, filing, or date",
-    )
-
-investigation_context = {
-    "observation": investigation_observation.strip(),
-    "source_type": source_type,
-    "source_reference": source_reference.strip(),
-}
-
-# -------------------------------------------------------------------------------------------------
-# 2. Investigation Entry
-# -------------------------------------------------------------------------------------------------
-st.subheader("2. Investigation Entry")
-st.markdown(
-    "Begin with a company when the investigation starts from a named asset, "
-    "or begin with a business capability when the idea starts from an industry, "
-    "theme, economic observation, or operating environment."
+    "Explore curated themes and catalysts, or choose a company to examine its "
+    "business relationships and candidate assets."
 )
 
 entry_route = st.radio(
-    "Starting point",
-    ["Start with a company", "Start with a business capability"],
+    "Exploration",
+    [
+        "Explore Themes",
+        "Choose Company",
+    ],
     horizontal=True,
     label_visibility="collapsed",
 )
@@ -525,10 +541,190 @@ starting_capability = ""
 starting_capability_role = ""
 source_context = {}
 
-if entry_route == "Start with a company":
+selected_theme_category = ""
+selected_theme = ""
+selected_catalyst = ""
+selected_investigation_pathway = ""
+
+investigation_context = {
+    "observation": "",
+    "source_type": "",
+    "source_reference": "",
+    "theme_category": "",
+    "theme": "",
+    "catalyst": "",
+    "investigation_pathway": "",
+}
+
+if entry_route == "Explore Themes":
+    category_options = list(dict.fromkeys(
+        df_themes["theme_category"].astype(str).str.strip().tolist()
+    ))
+
+    selected_theme_category = st.selectbox(
+        "Theme category",
+        category_options,
+        index=None,
+        placeholder="Select a theme category",
+    )
+
+    if selected_theme_category:
+        theme_rows = df_themes.loc[
+            df_themes["theme_category"].eq(selected_theme_category)
+        ].copy()
+
+        selected_theme = st.selectbox(
+            "Theme",
+            theme_rows["theme"].tolist(),
+            index=None,
+            placeholder="Select a theme",
+        )
+
+        if selected_theme:
+            theme_row = theme_rows.loc[
+                theme_rows["theme"].eq(selected_theme)
+            ].iloc[0]
+
+            st.markdown(f"### {selected_theme}")
+            st.write(theme_row["description"])
+
+            catalyst_rows = df_catalysts.loc[
+                df_catalysts["theme"].eq(selected_theme)
+            ].copy()
+
+            if catalyst_rows.empty:
+                st.info(
+                    "No curated catalysts are currently available for this theme. "
+                    "The theme remains available as the registry is expanded."
+                )
+            else:
+                selected_catalyst = st.selectbox(
+                    "Catalyst",
+                    catalyst_rows["catalyst"].tolist(),
+                    index=None,
+                    placeholder="Select a catalyst",
+                )
+
+                if selected_catalyst:
+                    catalyst_row = catalyst_rows.loc[
+                        catalyst_rows["catalyst"].eq(selected_catalyst)
+                    ].iloc[0]
+
+                    st.caption(catalyst_row["description"])
+
+                    investigation_rows = df_investigation_pathways.loc[
+                        df_investigation_pathways["theme"].eq(selected_theme)
+                        & df_investigation_pathways["catalyst"].eq(selected_catalyst)
+                    ].copy()
+
+                    if investigation_rows.empty:
+                        st.info(
+                            "No curated investigation pathways are currently available "
+                            "for this catalyst."
+                        )
+                    else:
+                        selected_investigation_pathway = st.selectbox(
+                            "Investigation pathway",
+                            investigation_rows["investigation_pathway"].tolist(),
+                            index=None,
+                            placeholder="Select an investigation pathway",
+                        )
+
+                        if selected_investigation_pathway:
+                            mapping_rows = df_investigation_pathway_mappings.loc[
+                                df_investigation_pathway_mappings["theme"].eq(
+                                    selected_theme
+                                )
+                                & df_investigation_pathway_mappings["catalyst"].eq(
+                                    selected_catalyst
+                                )
+                                & df_investigation_pathway_mappings[
+                                    "investigation_pathway"
+                                ].eq(selected_investigation_pathway)
+                                & df_investigation_pathway_mappings[
+                                    "mapping_status"
+                                ].astype(str).str.lower().eq("active")
+                            ].copy()
+
+                            mapped_capabilities = (
+                                mapping_rows["business_tag"]
+                                .astype(str)
+                                .str.strip()
+                                .loc[lambda series: series.ne("")]
+                                .drop_duplicates()
+                                .tolist()
+                            )
+
+                            if not mapped_capabilities:
+                                st.warning(
+                                    "This investigation pathway does not currently have an "
+                                    "active canonical business capability mapping."
+                                )
+                            elif len(mapped_capabilities) == 1:
+                                starting_capability = mapped_capabilities[0]
+                                starting_capability_role = "theme_pathway"
+                            else:
+                                starting_capability = st.selectbox(
+                                    "Business capability",
+                                    mapped_capabilities,
+                                    format_func=lambda tag: business_label_map.get(
+                                        tag,
+                                        humanise_tag(tag),
+                                    ),
+                                    help=(
+                                        "This pathway maps to more than one canonical business "
+                                        "capability. Select the capability you want to examine."
+                                    ),
+                                )
+                                starting_capability_role = "theme_pathway"
+
+                            if starting_capability:
+                                capability_label = business_label_map.get(
+                                    starting_capability,
+                                    humanise_tag(starting_capability),
+                                )
+                                capability_group = business_group_map.get(
+                                    starting_capability,
+                                    "",
+                                )
+
+                                st.markdown(f"### {capability_label}")
+                                if capability_group:
+                                    st.caption(capability_group)
+                                st.write(
+                                    business_description_map.get(
+                                        starting_capability,
+                                        "No capability description is available.",
+                                    )
+                                )
+
+                                source_context = {
+                                    "entry_route": "theme",
+                                    "coverage_region": selected_region,
+                                    "theme_category": selected_theme_category,
+                                    "theme": selected_theme,
+                                    "catalyst": selected_catalyst,
+                                    "investigation_pathway": selected_investigation_pathway,
+                                    "mapped_business_capabilities": mapped_capabilities,
+                                    "starting_capability": starting_capability,
+                                    "starting_capability_role": starting_capability_role,
+                                }
+
+                                investigation_context = {
+                                    "observation": selected_catalyst,
+                                    "source_type": "Curated catalyst",
+                                    "source_reference": "",
+                                    "theme_category": selected_theme_category,
+                                    "theme": selected_theme,
+                                    "catalyst": selected_catalyst,
+                                    "investigation_pathway": selected_investigation_pathway,
+                                }
+
+elif entry_route == "Choose Company":
     company_options = (
         df_assets.sort_values(["company_name", "ticker"])["company_label"].tolist()
     )
+
     selected_company_label = st.selectbox(
         "Company",
         company_options,
@@ -553,6 +749,7 @@ if entry_route == "Start with a company":
         st.caption(
             f"{starting_company['country']} · {selected_region} relationship coverage"
         )
+
         col_a, col_b = st.columns([1, 2])
         with col_a:
             st.markdown("**Primary Business Capability**")
@@ -565,6 +762,7 @@ if entry_route == "Start with a company":
                     "No capability description is available.",
                 )
             )
+
         with col_b:
             st.markdown("**Material Additional Capabilities**")
             if additional_tags:
@@ -577,8 +775,8 @@ if entry_route == "Start with a company":
             else:
                 st.caption("No material additional capabilities are currently assigned.")
 
-        with st.expander("View detailed company overview"):
-            st.write(starting_company["company_overview"])
+        with st.expander("View detailed business overview"):
+            st.write(starting_company["business_overview"])
 
         capability_choices = [primary_tag] + additional_tags
         capability_display = {
@@ -588,14 +786,17 @@ if entry_route == "Start with a company":
             )
             for tag in capability_choices
         }
+
         starting_capability = st.selectbox(
             "Capability to explore",
             capability_choices,
             format_func=lambda tag: capability_display[tag],
         )
+
         starting_capability_role = (
             "primary" if starting_capability == primary_tag else "additional"
         )
+
         source_context = {
             "entry_route": "company",
             "coverage_region": selected_region,
@@ -606,58 +807,10 @@ if entry_route == "Start with a company":
             "starting_capability_role": starting_capability_role,
         }
 
-else:
-    capability_options = sorted(
-        df_registry["business_tag"].tolist(),
-        key=lambda tag: business_label_map.get(tag, humanise_tag(tag)),
-    )
-    starting_capability = st.selectbox(
-        "Business capability",
-        capability_options,
-        index=None,
-        placeholder="Select a business capability",
-        format_func=lambda tag: business_label_map.get(tag, humanise_tag(tag)),
-    )
-
-    if starting_capability:
-        capability_label = business_label_map.get(
-            starting_capability,
-            humanise_tag(starting_capability),
-        )
-        capability_group = business_group_map.get(starting_capability, "")
-        st.markdown(f"### {capability_label}")
-        if capability_group:
-            st.caption(capability_group)
-        st.write(
-            business_description_map.get(
-                starting_capability,
-                "No capability description is available.",
-            )
-        )
-
-        focused_count = int(
-            df_assets["primary_business_tag"].eq(starting_capability).sum()
-        )
-        expanded_count = int(
-            df_assets["business_tags"].apply(
-                lambda value: starting_capability in split_tags(value)
-            ).sum()
-        )
-        col_a, col_b = st.columns(2)
-        col_a.metric("Primary company universe", focused_count)
-        col_b.metric("Expanded company universe", expanded_count)
-
-        source_context = {
-            "entry_route": "business_capability",
-            "coverage_region": selected_region,
-            "starting_capability": starting_capability,
-            "starting_capability_role": "selected",
-        }
-
 # -------------------------------------------------------------------------------------------------
-# 3. Investigation Pathway
+# 2. Relationship Manager
 # -------------------------------------------------------------------------------------------------
-st.subheader("3. Investigation Pathway")
+st.subheader("2. Relationship Manager")
 
 selected_relationship = None
 destination_capability = ""
@@ -667,8 +820,8 @@ full_pathway_df = pd.DataFrame()
 
 if not starting_capability:
     st.info(
-        "Select a starting company or business capability to reveal its candidate "
-        "environment and related pathways."
+        "Select a theme pathway or company to continue exploring business relationships "
+        "and candidate assets."
     )
 else:
     starting_label = business_label_map.get(
@@ -677,15 +830,15 @@ else:
     )
 
     pathway_choice = st.radio(
-        "How would you like to continue?",
+        "Explore the selected business capability directly or follow its business relationships.",
         [
-            "Examine the starting capability",
-            "Follow a relationship",
+            "Examine Business Capability",
+            "Follow Relationship Pathway",
         ],
         horizontal=True,
     )
 
-    if pathway_choice == "Examine the starting capability":
+    if pathway_choice == "Examine Business Capability":
         investigation_route = "examine_starting_capability"
         active_candidate_capability = starting_capability
 
@@ -872,6 +1025,13 @@ current_context_signature = {
     "observation": investigation_context.get("observation", ""),
     "source_type": investigation_context.get("source_type", ""),
     "source_reference": investigation_context.get("source_reference", ""),
+    "theme_category": investigation_context.get("theme_category", ""),
+    "theme": investigation_context.get("theme", ""),
+    "catalyst": investigation_context.get("catalyst", ""),
+    "investigation_pathway": investigation_context.get(
+        "investigation_pathway",
+        "",
+    ),
     "entry_route": source_context.get("entry_route", ""),
     "starting_company": source_context.get("starting_company", ""),
     "starting_ticker": source_context.get("starting_ticker", ""),
@@ -889,9 +1049,9 @@ branch_identity = {
 branch_key = json.dumps(branch_identity, sort_keys=True)
 
 # -------------------------------------------------------------------------------------------------
-# 4. Candidate Assets
+# 3. Candidate Assets
 # -------------------------------------------------------------------------------------------------
-st.subheader("4. Candidate Assets")
+st.subheader("3. Candidate Assets")
 st.caption(
     "Primary matches form the focused capability universe. "
     "Enable additional-capability matches in the sidebar to widen the candidate set."
@@ -905,7 +1065,7 @@ if not active_candidate_capability:
     if investigation_route == "follow_relationship":
         st.info("Select a relationship pathway to surface candidate companies.")
     else:
-        st.info("Select a starting company or business capability to surface candidate companies.")
+        st.info("Select a theme pathway or company to surface candidate companies.")
 else:
     active_capability_label = business_label_map.get(
         active_candidate_capability, humanise_tag(active_candidate_capability)
@@ -932,7 +1092,7 @@ else:
     st.markdown(f"### {active_capability_label} Candidate Universe")
     search_text = st.text_input(
         "Search candidate companies",
-        placeholder="Search ticker, company, country, primary capability, or company overview",
+        placeholder="Search ticker, company, country, primary capability, or business overview",
     )
     if search_text.strip():
         query = search_text.strip().lower()
@@ -941,7 +1101,7 @@ else:
             | df_candidates["company_name"].str.lower().str.contains(query, regex=False, na=False)
             | df_candidates["country"].str.lower().str.contains(query, regex=False, na=False)
             | df_candidates["primary_business_tag"].str.lower().str.contains(query, regex=False, na=False)
-            | df_candidates["company_overview"].str.lower().str.contains(query, regex=False, na=False)
+            | df_candidates["business_overview"].str.lower().str.contains(query, regex=False, na=False)
         )
         df_candidates = df_candidates.loc[search_mask].copy()
 
@@ -1082,10 +1242,10 @@ else:
                     current_context_signature
                 )
 # -------------------------------------------------------------------------------------------------
-# 5. Preserve Exploration
+# 4. Preserve Exploration
 # -------------------------------------------------------------------------------------------------
 st.divider()
-st.subheader("5. Preserve Exploration")
+st.subheader("4. Preserve Exploration")
 st.markdown(
     "Review the branches saved during this session and download the combined exploration "
     "when required. Individual full and focused exports remain available below."
@@ -1157,9 +1317,10 @@ if not full_pathway_df.empty:
         })
 
 candidate_curation_instruction = (
-    "Review the supplied Relationship Manager exploration as an opportunity-set "
-    "and candidate-universe review. Use the investigation observation, starting "
-    "capability, investigation route, selected relationship context where applicable, "
+    "Review the supplied FIT investigation exploration as an opportunity-set "
+    "and candidate-universe review. Use the investigation theme, catalyst, selected "
+    "investigation pathway, starting capability, investigation route, and relationship "
+    "context where applicable, "
     "company capability roles, and candidate assets to assess whether the exploration "
     "captures sufficiently relevant and differentiated capabilities, relationships, "
     "and candidate exposures associated with the observation. "
@@ -1181,8 +1342,9 @@ candidate_curation_instruction = (
     "Investigation Candidates, Distinct or Diversifying Candidates, Secondary or "
     "Ambiguous Candidates, Deprioritised Candidates, Missing Pathways or Candidate Types, "
     "and Information Requiring Verification. Conclude by stating whether the supplied "
-    "universe should be retained, retained but organised, expanded, or narrowed before "
-    "further examination through Financial Insight Tools. Do not recommend investments, "
+    "universe should be retained, expanded, organised, consolidated "
+    "where appropriate, or narrowed before further examination through the relevant "
+    "Financial Insight Tools modules. Do not recommend investments, "
     "predict performance, select trades, or imply that a retained company is expected "
     "to outperform."
 )
@@ -1365,7 +1527,7 @@ if saved_branches:
         "deduplicated_assets": list(asset_index.values()),
         "ai_review_instruction": candidate_curation_instruction,
         "workflow_note": (
-            "This bundle preserves selected branches from one Relationship Manager "
+            "This bundle preserves selected branches from one Themes, Ideas & Catalysts "
             "investigation. Review each branch independently before considering their "
             "combined coverage. Multiple appearances preserve pathway provenance and do "
             "not imply greater attractiveness or expected performance."
@@ -1401,8 +1563,8 @@ else:
 st.divider()
 
 theme_code = "relationship_manager"
-theme_title = "Relationship Manager"
-selected_use_case = "Relationship Exploration"
+theme_title = "Themes, Ideas & Catalysts"
+selected_use_case = "Theme & Relationship Exploration"
 
 show_observation, show_log = render_macro_sidebar_tools(
     theme_readable=theme_title,

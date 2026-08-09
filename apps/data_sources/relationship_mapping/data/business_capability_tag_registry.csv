@@ -1,62 +1,590 @@
 business_tag,tag_group,description
-aerospace_defense,Aerospace & Defence,"Designs, manufactures, integrates, maintains, or supplies aircraft, spacecraft, defence systems, military equipment, or related mission-critical technologies and services."
-agriculture_inputs,Materials & Agriculture,"Produces or supplies material inputs used in agriculture, including seeds, fertilisers, crop protection products, agricultural chemicals, and related biological or soil products."
-airlines,Transportation,Provides scheduled or charter passenger and/or cargo air transportation services.
-apparel_luxury,Consumer,"Designs, manufactures, markets, or sells apparel, footwear, accessories, jewellery, beauty, or luxury-branded consumer products."
-artificial_intelligence,Technology,"Develops or commercially provides AI models, AI software, AI-enabled platforms, machine-learning infrastructure, or products whose core value materially depends on artificial intelligence."
-automotive,Consumer & Industrial,"Designs, manufactures, assembles, sells, leases, or provides material systems and services for motor vehicles and automotive markets."
-banking,Financial Services,"Accepts deposits, extends credit, provides lending, transaction accounts, treasury services, or other regulated banking products."
-biotechnology,Healthcare,"Researches, develops, or commercialises therapies, platforms, or products based materially on biological processes, genetic science, or molecular technologies."
-capital_markets,Financial Services,"Provides brokerage, trading, securities issuance, market making, exchange, clearing, custody, underwriting, or other capital-markets services."
-chemicals,Materials,"Manufactures, processes, or supplies commodity, specialty, performance, industrial, or consumer chemical products."
-cloud_services,Technology,"Provides computing, storage, database, networking, hosting, or managed technology resources through cloud-based infrastructure or services."
-construction_engineering,Industrial & Infrastructure,"Provides construction, engineering, design, installation, project management, contracting, or infrastructure development services."
-consumer_electronics,Technology & Consumer,"Designs, manufactures, or sells electronic devices and connected hardware intended primarily for consumer use."
-consumer_staples,Consumer,"Produces, distributes, or sells frequently purchased essential consumer products such as food, beverages, household products, and personal-care goods."
-cybersecurity,Technology,"Develops or provides products and services that protect systems, networks, identities, applications, devices, or data from cyber threats."
-data_centre_reits,Real Estate & Infrastructure,"Owns, develops, leases, or operates data-centre real estate primarily through a real-estate investment trust or comparable property structure."
-data_centres,Digital Infrastructure,"Develops, operates, manages, or provides material infrastructure and services for data-centre environments."
-diagnostics,Healthcare,"Develops, manufactures, performs, or provides tests, instruments, platforms, or services used to detect, identify, monitor, or characterise health conditions."
-digital_advertising,Digital Platforms & Media,"Provides digital advertising inventory, ad technology, campaign management, audience targeting, measurement, or monetisation services."
-digital_content,Digital Platforms & Media,"Creates, licenses, distributes, aggregates, or monetises digital media, entertainment, publishing, gaming, or subscription content."
-digital_marketplaces,Digital Platforms,"Operates digital marketplace platforms that connect buyers and sellers, facilitate transactions, listings or reservations, and generate revenue through commissions, subscriptions, advertising or related platform services."
-ecommerce,Consumer & Digital Platforms,"Operates online marketplaces, digital commerce platforms, or material direct online sales and transaction services."
-education_services,Professional & Consumer Services,"Provides teaching, training, educational programmes, learning platforms, assessment, or education-support services."
-electric_utilities,Utilities,"Generates, transmits, distributes, or sells electricity through regulated or merchant utility operations."
-electrical_equipment,Industrial & Infrastructure,"Designs, manufactures, or supplies electrical power, distribution, control, conversion, protection, or related equipment and components."
-electronic_design_automation,Technology,"Provides software, intellectual property, verification, simulation, or engineering tools used to design semiconductor chips and electronic systems."
-employment_services,Professional & Consumer Services,"Provides staffing, recruitment, workforce placement, human-capital outsourcing, payroll staffing, or employment-related services."
-energy_services,Energy,"Provides equipment, technology, engineering, field, maintenance, drilling, completion, or operational services to energy producers and infrastructure operators."
-enterprise_software,Technology,"Develops and sells software applications used by organisations to manage business processes, data, operations, workflows, or specialised functions."
-financial_data_analytics,Financial Services & Data,"Provides financial, market, credit, risk, pricing, reference, ratings, index, or analytical data and decision-support services."
-healthcare_services,Healthcare,"Provides clinical care, healthcare administration, pharmacy services, managed care, facilities, or other patient- and provider-facing healthcare services."
-home_improvement,Consumer,"Sells products or provides services used to repair, renovate, furnish, maintain, or improve residential properties."
-hotels_travel,Consumer & Travel,"Operates hotels, lodging, travel booking, reservations, travel experiences, or related hospitality and tourism services."
-industrial_gases,Materials,"Produces, distributes, or supplies industrial, medical, specialty, or atmospheric gases and related systems."
-industrial_distribution,Industrials,"Distributes industrial products, components, equipment or materials through specialist supply-chain, logistics and value-added support services, without being the primary manufacturer of those products."
-industrial_machinery,Industrial & Infrastructure,"Designs, manufactures, or supplies machinery, equipment, automation systems, or mechanical products used in industrial production and operations."
-insurance,Financial Services,"Underwrites, distributes, administers, brokers, or directly provides insurance and risk-protection products or services."
-investment_management,Financial Services,"Manages investment portfolios, funds, private capital, retirement assets, or institutional and individual investment mandates."
-life_sciences_tools,Healthcare,"Develops or supplies instruments, consumables, software, reagents, or services used in biological research, laboratory workflows, and drug development."
-logistics_transport,Transportation,"Provides freight, parcel, trucking, shipping, warehousing, delivery, logistics, or transport-management services."
-media_entertainment,Digital Platforms & Media,"Creates, owns, licences, broadcasts, distributes, or operates media, entertainment, sports, film, television, music, or live-content businesses."
-medical_devices,Healthcare,"Designs, manufactures, or supplies instruments, implants, equipment, or devices used in medical diagnosis, treatment, monitoring, or procedures."
-mining_metals,Materials,"Extracts, processes, refines, produces, or commercially supplies metals, ores, minerals, or mining products and services."
-natural_gas_utilities,Utilities,"Distributes, transports, stores, or sells natural gas through regulated utility networks to end users."
-networking_equipment,Technology,"Designs, manufactures, or supplies hardware and systems used to connect, route, switch, transmit, or manage digital communications."
-oil_gas,Energy,"Explores for, develops, produces, gathers, processes, transports, or commercially supplies crude oil, natural gas, or related hydrocarbons."
-packaging,Materials & Industrial,"Designs, manufactures, or supplies containers, cartons, labels, films, closures, or other packaging products and systems."
-payments,Financial Technology,"Provides payment acceptance, processing, networks, merchant acquiring, issuing, settlement, digital wallets, or transaction services."
-pharmaceuticals,Healthcare,"Researches, develops, manufactures, markets, or distributes pharmaceutical drugs and therapeutic products."
-professional_services,Professional & Consumer Services,"Provides specialised advisory, consulting, technical, legal, accounting, risk, engineering, outsourcing, or other knowledge-based services."
-real_estate,Real Estate,"Owns, develops, leases, manages, finances, or monetises property as a material commercial business."
-refining,Energy,"Processes crude oil, natural gas liquids, or other feedstocks into fuels, petrochemicals, and refined energy products."
-renewable_energy,Energy & Utilities,"Develops, manufactures, generates, stores, installs, or supplies renewable and low-carbon energy products, systems, or services."
-restaurants,Consumer,"Operates, franchises, or licenses restaurant, food-service, quick-service, casual-dining, or related prepared-food concepts."
-retail,Consumer,"Sells goods directly to consumers through physical stores, dealerships, direct-sales networks, or material multi-category retail operations."
-semiconductors,Technology,"Designs, manufactures, packages, tests, or supplies semiconductor devices, integrated circuits, chips, or specialised semiconductor components."
-social_media,Digital Platforms & Media,"Operates digital platforms centred on user-generated content, social interaction, community networks, or creator participation."
-software_platforms,Technology,"Provides extensible software environments, operating platforms, developer ecosystems, marketplaces, or multi-sided digital systems connecting users, developers, or businesses."
-telecommunications,Communication Services,"Provides fixed, mobile, satellite, broadband, voice, data, or communications-network services to consumers, businesses, or governments."
-waste_management,Industrial & Infrastructure,"Collects, transports, processes, recycles, treats, or disposes of municipal, commercial, industrial, hazardous, or specialised waste."
-water_utilities,Utilities,"Supplies, distributes, treats, or manages water and wastewater through regulated or contracted utility operations."
+academic_publishing,Professional Services,"Publishes academic research, journals and educational content."
+access_control,Security & Safety,Develops or provides physical and electronic access-control systems and technologies.
+accounting_software,Technology,"Develops accounting, bookkeeping and financial management software."
+adhesives,Materials,"Develops and manufactures industrial, construction and specialty adhesive products."
+advanced_materials,Materials,"Develops advanced materials used across industrial, technology and scientific applications."
+advertising,Media & Entertainment,"Provides advertising, marketing and brand communication services."
+advertising_technology,Media & Entertainment,"Develops digital advertising platforms, technologies and campaign management solutions."
+aerospace,Aerospace & Defence,Develops and manufactures commercial aerospace products and technologies.
+aerospace_components,Aerospace & Defence,Designs and manufactures components used in aerospace systems and aircraft.
+aerospace_defence,Aerospace & Defence,"Develops aerospace, defence and national security technologies."
+aerospace_manufacturing,Aerospace & Defence,"Manufactures aircraft, aerospace structures and related systems."
+aerospace_propulsion,Aerospace & Defence,"Develops aircraft engines, propulsion systems and related technologies."
+aerospace_systems,Aerospace & Defence,"Develops integrated aerospace systems, avionics and flight technologies."
+aggregates,Materials,Produces aggregates and raw construction materials.
+agricultural_equipment,Agriculture,Designs and manufactures agricultural machinery and farming equipment.
+agriculture,Agriculture,Produces agricultural products and farming-related goods and services.
+agriculture_inputs,Agriculture,"Supplies fertilisers, crop protection products,  seeds and agricultural inputs."
+agriculture_retail,Agriculture,Provides agricultural retail products and services to farming customers.
+aircraft_engines,Aerospace & Defence,Develops and manufactures aircraft engines and propulsion technologies.
+aircraft_maintenance,Aerospace & Defence,"Provides aircraft maintenance, repair and overhaul services."
+aircraft_services,Aerospace & Defence,"Provides operational, engineering and support services for aircraft."
+aircraft_systems,Aerospace & Defence,"Develops aircraft systems, avionics and flight-control technologies."
+airlines,Transportation,Provides passenger and cargo airline transportation services.
+airport_operations,Transportation,"Owns, operates and manages airport infrastructure and aviation services."
+alternative_asset_management,Financial Services,Manages alternative investment strategies across multiple asset classes.
+alternative_investments,Financial Services,Provides investment products and strategies outside traditional asset classes.
+aluminium,Materials,"Produces, processes and supplies aluminium products and materials."
+analog_semiconductors,Technology,Designs and manufactures analogue semiconductor devices.
+analytical_testing,Professional Services,"Provides analytical testing, laboratory and certification services."
+analytics,Technology,"Develops data analytics, reporting and decision-support technologies."
+analytics_platforms,Technology,"Develops software platforms for analytics, business intelligence and decision support."
+animal_health,Healthcare,"Develops animal health medicines, vaccines and veterinary products."
+apparel,Consumer,"Designs, manufactures and markets clothing and apparel products."
+apparel_retail,Retail,Operates retail businesses specialising in clothing and fashion products.
+artificial_intelligence,Technology,"Develops or applies artificial intelligence models, platforms and enabling technologies."
+assessment,Professional Services,"Provides assessment, examination and evaluation services."
+asset_management,Financial Services,Manages investment portfolios and assets on behalf of individuals and institutions.
+asset_tracking,Technology,"Develops technologies for tracking, monitoring and managing physical assets."
+automotive,Automotive,"Designs, manufactures and supplies passenger and commercial vehicles."
+automotive_aftermarket,Automotive,"Provides replacement parts, servicing and aftermarket automotive products."
+automotive_components,Automotive,Designs and manufactures components used in vehicle production.
+automotive_electronics,Automotive,Develops electronic systems and technologies for automotive applications.
+automotive_parts,Automotive,Manufactures and supplies automotive parts and replacement components.
+automotive_retail,Retail,Operates retail businesses specialising in vehicle sales and related services.
+automotive_services,Automotive,"Provides servicing, maintenance and operational support for vehicles."
+automotive_technology,Automotive,"Develops technologies supporting connected, autonomous and electric mobility."
+banking,Financial Services,"Provides retail, commercial,  corporate and investment banking services."
+banking_software,Technology,Develops software platforms and systems for banking and financial institutions.
+battery_materials,Materials,Produces and supplies materials used in battery manufacturing and energy storage.
+battery_storage,Energy,Develops and operates battery energy storage technologies and infrastructure.
+beauty,Consumer,"Develops, manufactures and markets beauty and personal-care products."
+beauty_products,Consumer,"Develops, manufactures and markets cosmetics,  skincare and beauty products."
+beauty_retail,Retail,Operates retail businesses specialising in beauty and cosmetic products.
+beer,Consumer,"Brews, markets and distributes beer and related alcoholic beverages."
+behavioural_health,Healthcare,"Provides behavioural health, mental health and related care services."
+betting,Media & Entertainment,"Provides sports betting, gaming and wagering services."
+betting_services,Media & Entertainment,"Develops and operates betting, gaming and online wagering platforms."
+beverage_manufacturing,Consumer,Manufactures and produces alcoholic and non-alcoholic beverages.
+beverages,Consumer,"Produces, markets and distributes beverage products."
+bioinformatics,Healthcare,Develops computational technologies and software for biological and genomic analysis.
+biotechnology,Healthcare,"Researches, develops and commercialises biotechnology products and therapies."
+bottled_water,Consumer,"Produces, markets and distributes bottled water products."
+bottling,Consumer,"Bottles, packages and distributes beverages for consumer markets."
+broadband,Communication Services,Provides broadband internet connectivity and related communications services.
+broadcasting,Media & Entertainment,"Produces, distributes and broadcasts television,  radio and digital media content."
+brokerage,Financial Services,"Provides brokerage, securities trading and investment execution services."
+building_automation,Construction & Infrastructure,Develops automation and smart-building control technologies.
+building_infrastructure,Construction & Infrastructure,"Develops, constructs and operates building infrastructure and associated systems."
+building_products,Construction & Infrastructure,Manufactures and supplies products used in residential and commercial construction.
+building_services,Construction & Infrastructure,"Provides engineering, facilities management and building support services."
+building_systems,Construction & Infrastructure,"Develops integrated systems supporting building operations, safety and efficiency."
+buses,Transportation,"Designs, manufactures and supplies buses and public transport vehicles."
+business_information,Professional Services,"Provides business information, research and decision-support services."
+business_intelligence,Technology,"Develops business intelligence, reporting and analytics software platforms."
+business_process_outsourcing,Professional Services,Provides outsourced business process and operational support services.
+business_services,Professional Services,"Provides professional, operational and specialist business support services."
+business_software,Technology,Develops enterprise software supporting business operations and management.
+capital_markets,Financial Services,"Provides capital markets, securities issuance,  trading and investment services."
+cardiovascular_devices,Healthcare,Develops cardiovascular medical devices and related healthcare technologies.
+cargo,Transportation,"Provides cargo handling, freight movement and logistics services."
+cargo_transport,Transportation,Provides transportation services for cargo and freight.
+casinos,Media & Entertainment,"Owns and operates casino, gaming and integrated resort businesses."
+cement,Materials,Produces cement and related construction materials.
+chemicals,Materials,"Develops, manufactures and supplies chemical products and industrial compounds."
+climate_control,Construction & Infrastructure,"Develops heating, ventilation,  air conditioning and climate-control systems"
+climate_technology,Construction & Infrastructure,"Develops technologies supporting energy efficiency, climate control and sustainable buildings."
+clinical_research,Healthcare,"Provides clinical research, drug development and contract research services."
+cloud_computing,Technology,"Develops cloud computing platforms, infrastructure and services."
+cloud_infrastructure,Technology,Develops and operates cloud infrastructure supporting digital services.
+cloud_platforms,Technology,Develops cloud-based software platforms and digital ecosystems.
+cloud_security,Technology,Develops cybersecurity technologies for cloud environments and digital infrastructure.
+cloud_services,Technology,"Provides cloud-hosting, computing and managed cloud services."
+coatings,Materials,"Develops and manufactures industrial, protective and specialty coating products."
+coffee_retail,Consumer,Operates retail businesses specialising in coffee and related beverages.
+commercial_aircraft,Aerospace & Defence,"Designs, manufactures and supports commercial aircraft and aviation technologies."
+commercial_banking,Financial Services,Provides commercial banking and lending services to businesses.
+commercial_real_estate,Real Estate,"Owns, develops and manages commercial real-estate assets."
+commercial_vehicles,Automotive,"Designs, manufactures and supplies commercial vehicles and transport equipment."
+commodity_trading,Financial Services,Trades physical commodities and commodity-related financial products.
+communications_equipment,Communication Services,Develops communications equipment supporting network connectivity.
+communications_infrastructure,Communication Services,"Owns, develops and operates communications infrastructure."
+computer_hardware,Technology,Designs and manufactures computer hardware and computing devices.
+connectivity,Communication Services,"Provides digital connectivity, networking and communications services."
+construction_equipment,Construction & Infrastructure,Designs and manufactures construction machinery and equipment.
+construction_materials,Construction & Infrastructure,"Produces materials used in residential, commercial and infrastructure construction."
+construction_technology,Construction & Infrastructure,Develops digital technologies supporting construction and engineering projects.
+consulting,Professional Services,"Provides consulting, advisory and strategic business services."
+consumer_beverages,Consumer,"Produces, markets and distributes consumer beverage products."
+consumer_brands,Consumer,"Develops, owns and markets consumer product brands."
+consumer_electronics,Consumer,"Designs, manufactures and markets consumer electronic products and devices."
+consumer_finance,Financial Services,"Provides consumer lending, credit and personal finance services."
+consumer_food,Consumer,"Produces, manufactures and markets consumer food products."
+consumer_goods,Consumer,"Develops, manufactures and markets consumer goods."
+consumer_health,Healthcare,Develops and markets consumer health and wellness products.
+consumer_healthcare,Healthcare,"Develops and markets consumer healthcare, wellness and over-the-counter products."
+consumer_products,Consumer,"Develops, manufactures and markets consumer products across multiple categories."
+consumer_tools,Consumer,"Designs, manufactures and markets consumer and professional tools."
+contract_manufacturing,Industrials,Provides outsourced manufacturing and production services.
+copper,Materials,"Produces, processes and supplies copper and related products."
+corporate_banking,Financial Services,"Provides banking, financing and treasury services to corporate clients."
+corporate_payments,Financial Technology,Provides payment processing and transaction services for businesses.
+cosmetics,Consumer,"Develops, manufactures and markets cosmetic and beauty products."
+credit_analytics,Financial Services,"Provides credit analysis, risk assessment and financial analytics services."
+credit_cards,Financial Technology,"Provides credit card issuing, processing and payment network services."
+credit_ratings,Financial Services,"Provides credit ratings, financial research and risk assessments."
+credit_services,Financial Services,Provides consumer and commercial credit products and related financial services.
+critical_minerals,Materials,Produces and develops critical minerals used in industrial and technology applications.
+cruise_lines,Consumer,Operates cruise lines and passenger holiday travel services.
+cruise_operations,Consumer,"Operates cruise ships, passenger services and maritime tourism businesses."
+cryptocurrency,Financial Technology,"Develops, operates or supports cryptocurrency and digital-asset technologies."
+custody,Financial Services,Provides custody and safekeeping services for financial assets.
+custody_services,Financial Services,"Provides institutional custody, settlement and asset-servicing solutions."
+customer_experience,Professional Services,"Provides customer experience, engagement and business support services."
+cyber_insurance,Financial Services,Provides insurance products covering cybersecurity and digital risks.
+cybersecurity,Technology,"Develops cybersecurity software, platforms and digital security technologies."
+data_analytics,Technology,"Develops data analytics, reporting and decision-support solutions."
+data_centre_infrastructure,Technology,Develops and operates infrastructure supporting data centres and digital computing.
+data_centres,Technology,"Owns, develops or operates data centre facilities and computing infrastructure."
+data_infrastructure,Technology,"Develops infrastructure supporting data storage, processing and digital connectivity."
+data_storage,Technology,Develops hardware and technologies for storing and managing digital data.
+databases,Technology,Develops database platforms and data management technologies.
+defence_electronics,Aerospace & Defence,Develops electronic systems and technologies for defence applications.
+defence_services,Aerospace & Defence,"Provides operational, engineering and support services for defence organisations."
+defence_systems,Aerospace & Defence,Develops integrated defence systems and military technologies.
+defence_technology,Aerospace & Defence,"Develops technologies supporting defence, intelligence and national security."
+defense_manufacturing,Aerospace & Defence,"Manufactures defence equipment, systems and military hardware."
+defense_systems,Aerospace & Defence,Develops integrated defence systems and military technologies.
+defense_technology,Aerospace & Defence,"Develops technologies supporting defence, intelligence and national security."
+defense_vehicles,Aerospace & Defence,Designs and manufactures military and defence vehicles.
+diabetes_care,Healthcare,Develops products and technologies supporting diabetes treatment and care.
+diagnostics,Healthcare,"Develops diagnostic technologies, testing products and laboratory solutions."
+dialysis,Healthcare,Develops products and technologies supporting renal dialysis treatment.
+dialysis_services,Healthcare,Provides dialysis treatment and renal care services.
+digital_advertising,Media & Entertainment,"Develops digital advertising platforms, technologies and marketing solutions."
+digital_assets,Financial Technology,"Develops, manages or supports digital assets and tokenised financial technologies."
+digital_banking,Financial Technology,Provides banking services through digital and online platforms.
+digital_brokerage,Financial Technology,"Provides digital investment, brokerage and securities trading platforms."
+digital_connectivity,Communication Services,"Provides digital connectivity, networking and communications infrastructure."
+digital_content,Media & Entertainment,"Creates, publishes and distributes digital content and media."
+digital_finance,Financial Technology,"Develops digital financial services, platforms and payment technologies."
+digital_gaming,Media & Entertainment,Develops and operates digital gaming platforms and interactive entertainment.
+digital_health,Healthcare,Develops digital technologies supporting healthcare delivery and patient care.
+digital_identification,Technology,Develops digital identification and identity verification technologies.
+digital_identity,Technology,"Develops identity management, authentication and digital identity technologies."
+digital_infrastructure,Technology,Develops and operates digital infrastructure supporting computing and connectivity.
+digital_learning,Professional Services,"Develops digital education, learning and assessment platforms."
+digital_marketplaces,Technology,Develops and operates digital marketplace and online platform businesses.
+digital_media,Media & Entertainment,"Creates, distributes and monetises digital media content."
+digital_payments,Financial Technology,Develops and operates digital payment platforms and transaction technologies.
+digital_services,Technology,"Provides digital products, platforms and technology-enabled services."
+digital_transformation,Technology,Provides technologies and consulting supporting digital transformation initiatives.
+digital_wallets,Financial Technology,Develops digital wallet technologies and electronic payment solutions.
+discount_retail,Retail,Operates retail businesses focused on value and discount merchandise.
+distribution,Industrials,"Provides distribution, wholesale and supply-chain services across multiple industries."
+domain_services,Technology,Provides internet domain registration and domain management services.
+drug_delivery,Healthcare,Develops drug delivery systems and pharmaceutical administration technologies.
+drug_development,Healthcare,"Researches, develops and commercialises pharmaceutical therapies."
+drug_discovery,Healthcare,Researches and develops new pharmaceutical compounds and therapeutic technologies.
+ecommerce,Retail,Operates online retail businesses selling products and services through digital channels.
+ecommerce_platforms,Technology,Develops and operates ecommerce platforms supporting online commerce.
+education_services,Professional Services,"Provides education, training and learning services."
+electric_vehicles,Automotive,"Designs, manufactures and supplies electric vehicles and related mobility technologies."
+electrical_equipment,Industrials,"Designs, manufactures and supplies electrical equipment and industrial power systems."
+electricity_generation,Utilities,Generates electricity through conventional and renewable energy sources.
+electricity_transmission,Utilities,Operates electricity transmission networks and grid infrastructure.
+electronic_components,Technology,"Designs, manufactures and supplies electronic components and devices."
+electronic_design_automation,Technology,Develops software supporting electronic circuit and semiconductor design.
+electronic_test_equipment,Technology,Designs and manufactures electronic testing and measurement equipment.
+electronics,Technology,"Designs, manufactures and supplies electronic products and technologies."
+electronics_manufacturing,Technology,Provides electronic manufacturing and assembly services.
+electronics_materials,Materials,Produces specialised materials used in electronic manufacturing.
+embedded_systems,Technology,Develops embedded computing systems and integrated hardware-software solutions.
+employee_benefits,Financial Services,"Provides employee benefits, pensions and workplace financial solutions."
+energy_distribution,Utilities,"Distributes electricity, gas and related energy services."
+energy_drinks,Consumer,"Develops, manufactures and markets energy drink products."
+energy_equipment,Energy,"Designs, manufactures and supplies equipment used across the energy sector."
+energy_generation,Energy,Develops and operates energy generation assets across multiple technologies.
+energy_infrastructure,Energy,"Owns, develops and operates energy infrastructure assets."
+energy_management,Energy,Develops technologies and services supporting energy management and efficiency.
+energy_services,Energy,"Provides engineering, operational and technical services to the energy sector."
+energy_storage,Energy,Develops energy storage technologies and infrastructure.
+energy_supply,Utilities,"Supplies electricity, gas and related energy products to customers."
+energy_systems,Energy,Develops integrated energy systems and supporting technologies.
+energy_technology,Energy,"Develops technologies supporting energy production, storage and distribution."
+energy_trading,Energy,"Trades electricity, natural gas,  oil and other energy commodities."
+engine_manufacturing,Industrials,"Designs and manufactures industrial, automotive and aerospace engines."
+engineering_services,Construction & Infrastructure,"Provides engineering, technical and project delivery services."
+engineering_software,Technology,"Develops engineering, design and simulation software platforms."
+enterprise_connectivity,Communication Services,Provides enterprise networking and connectivity solutions.
+enterprise_infrastructure,Technology,Develops infrastructure technologies supporting enterprise computing environments.
+enterprise_software,Technology,Develops enterprise software supporting business operations and management.
+environmental_monitoring,Professional Services,"Provides environmental monitoring, testing and analytical services."
+environmental_services,Professional Services,"Provides environmental consulting, waste management and sustainability services."
+equipment_rental,Construction & Infrastructure,"Provides construction, industrial and specialist equipment rental services."
+equity_investing,Financial Services,Invests in publicly listed and private equity securities.
+esg,Financial Services,"Provides environmental, social and governance investment,  advisory or analytical services."
+events,Media & Entertainment,"Organises and operates business, consumer and live events."
+exchange_operations,Financial Services,"Operates securities, derivatives and financial market exchanges."
+exchange_services,Financial Services,"Provides exchange, clearing and financial market infrastructure services."
+expense_management,Financial Technology,Develops software and platforms for managing business expenses and payments.
+express_delivery,Transportation,"Provides time-critical parcel, courier and express delivery services."
+eyewear,Consumer,"Designs, manufactures and markets eyewear and vision-related consumer products."
+facilities_services,Construction & Infrastructure,"Provides facilities management, maintenance and operational support services."
+fashion,Consumer,"Designs, manufactures and markets fashion products and lifestyle brands."
+fashion_retail,Retail,Operates retail businesses specialising in fashion and apparel products.
+film,Media & Entertainment,"Produces, distributes and finances film and motion picture content."
+financial_advice,Financial Services,"Provides financial planning, investment and advisory services."
+financial_analytics,Financial Services,"Provides financial analysis, modelling and decision-support solutions."
+financial_data,Financial Services,"Provides financial market data, pricing and investment information."
+financial_education,Financial Services,"Provides financial education, training and investment learning services."
+financial_information,Financial Services,"Provides financial information, research and market intelligence."
+financial_services,Financial Services,Provides diversified financial products and services.
+financial_technology,Financial Technology,"Develops technology supporting financial products, payments and digital finance."
+fintech,Financial Technology,Develops financial technology platforms and digital financial solutions.
+flash_memory,Technology,Designs and manufactures flash memory and data storage technologies.
+flavours,Consumer,Develops and manufactures flavour ingredients for food and beverage products.
+fluid_control,Industrials,Develops fluid control technologies and industrial flow systems.
+fluid_management,Industrials,Develops systems and technologies for fluid management and handling.
+fluid_technology,Industrials,"Develops industrial fluid technologies, pumps and engineered flow solutions."
+food_beverage,Consumer,"Produces, manufactures and markets food and beverage products."
+food_delivery,Consumer,Provides food delivery platforms and logistics services.
+food_distribution,Consumer,Distributes food products through wholesale and supply-chain networks.
+food_ingredients,Consumer,Develops and supplies ingredients for food and beverage manufacturing.
+food_manufacturing,Consumer,Manufactures processed food products for consumer and commercial markets.
+food_processing,Consumer,Processes agricultural products into food and beverage products.
+food_products,Consumer,"Develops, manufactures and markets food products."
+food_retail,Retail,"Operates supermarkets, grocery stores and food retail businesses."
+food_service,Consumer,"Provides food preparation, catering and hospitality food services."
+food_services,Consumer,"Provides food preparation, catering and hospitality food services."
+footwear,Consumer,"Designs, manufactures and markets footwear products."
+forest_products,Materials,"Produces timber, wood,  paper and forest-derived products."
+foundry_services,Technology,Provides semiconductor foundry manufacturing and fabrication services.
+fragrances,Consumer,Develops and manufactures fragrance ingredients and consumer fragrance products.
+franchising,Professional Services,"Develops, manages and supports franchise business networks."
+fraud_detection,Financial Technology,"Develops technologies for fraud detection, risk monitoring and transaction security."
+freight,Transportation,Provides freight transportation and logistics services.
+freight_forwarding,Transportation,Provides freight forwarding and international logistics services.
+freight_transport,Transportation,"Provides road, rail,  sea and air freight transportation services."
+fuel_distribution,Energy,Distributes fuel products through wholesale and commercial supply networks.
+fuel_retail,Energy,Operates fuel retail networks supplying transport and commercial customers.
+gaming,Media & Entertainment,"Develops, publishes and operates gaming and interactive entertainment products."
+gaming_real_estate,Real Estate,"Owns, develops and manages real estate supporting gaming and entertainment operations."
+gas_distribution,Utilities,"Distributes natural gas to residential, commercial and industrial customers."
+gas_infrastructure,Energy,"Owns, develops and operates natural gas infrastructure assets."
+gas_transmission,Utilities,Operates natural gas transmission networks and pipeline infrastructure.
+general_merchandise,Retail,Operates retail businesses selling a broad range of consumer merchandise.
+general_retail,Retail,Operates diversified retail businesses across multiple consumer categories.
+generic_medicines,Healthcare,"Develops, manufactures and markets generic pharmaceutical products."
+geospatial,Technology,"Develops geospatial technologies, mapping,  positioning and location intelligence solutions."
+glass,Materials,"Manufactures and supplies glass products for industrial, construction and consumer markets."
+global_equities,Financial Services,Provides investment products and strategies focused on global equity markets.
+gold_mining,Materials,"Explores, develops and produces gold and precious metal resources."
+government_services,Government & Public Services,"Provides operational, administrative and support services to government organisations."
+government_technology,Government & Public Services,Develops digital technologies and software supporting government and public-sector operations.
+grid_infrastructure,Utilities,"Develops, operates and maintains electricity grid infrastructure."
+grid_technology,Utilities,"Develops technologies supporting electricity transmission, distribution and smart grid operations."
+hard_disk_drives,Technology,"Designs, manufactures and supplies hard disk drives and data storage technologies."
+health_insurance,Financial Services,Provides health insurance products and healthcare risk coverage.
+healthcare_analytics,Healthcare,Develops analytics and data solutions supporting healthcare providers and life sciences.
+healthcare_distribution,Healthcare,"Distributes pharmaceuticals, medical devices and healthcare products."
+healthcare_products,Healthcare,"Develops, manufactures and supplies healthcare products and medical solutions."
+healthcare_property,Real Estate,"Owns, develops and manages healthcare property and medical facilities."
+healthcare_real_estate,Real Estate,"Owns, develops and manages healthcare-related real-estate assets."
+healthcare_services,Healthcare,"Provides healthcare services, clinical care and patient support."
+healthcare_technology,Healthcare,"Develops technologies supporting healthcare delivery, diagnostics and patient care."
+hearing_care,Healthcare,"Develops hearing care products, hearing aids and related technologies."
+helicopters,Aerospace & Defence,"Designs, manufactures and supports commercial and military helicopters."
+high_performance_materials,Materials,"Develops advanced, high-performance materials for industrial and technology applications."
+hobby_products,Consumer,"Designs, manufactures and markets hobby,  leisure and enthusiast products."
+holding_companies,Diversified Holdings,Owns and manages strategic investments across multiple businesses and industries.
+home_furnishings,Consumer,"Designs, manufactures and markets home furnishing products."
+home_improvement,Consumer,Develops and supplies products supporting home improvement and renovation.
+home_improvement_retail,Retail,Operates retail businesses specialising in home improvement products.
+homebuilding,Construction & Infrastructure,Develops and constructs residential housing and communities.
+hospital_services,Healthcare,"Provides operational, clinical and support services to hospitals."
+hospitality,Consumer,"Provides hospitality, accommodation and guest services."
+hospitality_real_estate,Real Estate,"Owns, develops and manages hospitality and accommodation real-estate assets."
+hospitals,Healthcare,"Owns, operates and manages hospitals and acute care facilities."
+hotel_management,Consumer,"Manages hotel operations, brands and hospitality services."
+hotels,Consumer,"Owns, operates and franchises hotel and accommodation businesses."
+household_products,Consumer,"Develops, manufactures and markets household and home-care products."
+hr_services,Professional Services,"Provides human resources, recruitment and workforce support services."
+human_capital_management,Professional Services,Develops software and services supporting workforce and human capital management.
+human_capital_services,Professional Services,Provides consulting and outsourced services supporting workforce management.
+hvac,Construction & Infrastructure,"Develops heating, ventilation and air-conditioning systems and technologies."
+hygiene_services,Professional Services,"Provides hygiene, sanitation and workplace health services."
+identity_protection,Technology,"Develops technologies protecting digital identities, credentials and personal information."
+identity_security,Technology,"Develops identity security, authentication and access management solutions."
+industrial_automation,Industrials,Develops automation systems and technologies for industrial operations.
+industrial_chemicals,Materials,"Develops, manufactures and supplies industrial chemical products."
+industrial_components,Industrials,"Designs, manufactures and supplies industrial components and assemblies."
+industrial_distribution,Industrials,"Distributes industrial equipment, products and engineered solutions."
+industrial_electronics,Industrials,"Designs, manufactures and supplies industrial electronic systems and components."
+industrial_engineering,Industrials,"Provides industrial engineering, design and technical services."
+industrial_equipment,Industrials,"Designs, manufactures and supplies industrial equipment."
+industrial_gases,Materials,"Produces and supplies industrial, medical and specialty gases."
+industrial_instrumentation,Industrials,"Develops industrial instrumentation, measurement and process control technologies."
+industrial_machinery,Industrials,"Designs, manufactures and services industrial machinery and production equipment."
+industrial_materials,Materials,Produces and supplies materials used in industrial manufacturing.
+industrial_processing,Industrials,Provides industrial processing technologies and production systems.
+industrial_products,Industrials,"Designs, manufactures and supplies diversified industrial products."
+industrial_property,Real Estate,"Owns, develops and manages industrial property and logistics facilities."
+industrial_services,Industrials,"Provides engineering, maintenance and operational services to industrial customers."
+industrial_software,Technology,"Develops software supporting industrial operations, automation and manufacturing."
+industrial_supplies,Industrials,"Supplies industrial products, equipment and maintenance materials."
+industrial_systems,Industrials,Develops integrated industrial systems and engineered solutions.
+industrial_tools,Industrials,"Designs, manufactures and supplies industrial tools and equipment."
+information_management,Technology,"Develops information management, document management and enterprise content solutions."
+information_services,Professional Services,"Provides information, research and business intelligence services."
+infrastructure,Construction & Infrastructure,"Develops, owns and operates infrastructure assets and projects."
+infrastructure_engineering,Construction & Infrastructure,Provides engineering services supporting infrastructure development.
+infrastructure_investment,Financial Services,Invests in infrastructure assets and infrastructure-related investment strategies.
+ingredients,Consumer,"Develops and supplies ingredients used in food, beverage and consumer products."
+inspection,Professional Services,"Provides inspection, testing and certification services."
+insurance,Financial Services,Provides insurance products and risk management solutions.
+insurance_brokerage,Financial Services,"Provides insurance brokerage, advisory and intermediary services."
+insurance_technology,Financial Technology,Develops technology platforms supporting insurance products and services.
+integrated_energy,Energy,"Produces, distributes and manages integrated energy businesses across multiple energy markets."
+integrated_utilities,Utilities,"Provides integrated electricity, gas and utility services."
+intermodal,Transportation,Provides intermodal freight transportation and logistics services.
+internet_infrastructure,Technology,Develops and operates internet infrastructure supporting digital connectivity.
+investment_advisory,Financial Services,Provides investment advisory and portfolio consulting services.
+investment_banking,Financial Services,"Provides corporate finance, capital raising and advisory services."
+investment_holding,Diversified Holdings,Owns and manages strategic investments across multiple businesses and industries.
+investment_management,Financial Services,Manages investment portfolios and institutional assets.
+investment_services,Financial Services,"Provides investment products, execution and portfolio services."
+investment_solutions,Financial Services,Develops investment products and wealth management solutions.
+investment_trust,Financial Services,Owns and manages investment trust structures and listed investment vehicles.
+iot,Technology,"Develops Internet of Things technologies, connected devices and industrial connectivity solutions."
+iron_ore,Materials,"Explores, develops and produces iron ore resources."
+it_consulting,Technology,"Provides information technology consulting, implementation and advisory services."
+it_services,Technology,"Provides managed information technology, outsourcing and digital support services."
+jewellery,Consumer,"Designs, manufactures and markets jewellery and luxury accessories."
+kitchen_products,Consumer,"Designs, manufactures and markets kitchen appliances,  cookware and household kitchen products."
+laboratory_equipment,Healthcare,"Designs, manufactures and supplies laboratory equipment for research and diagnostics."
+laboratory_instruments,Healthcare,Develops scientific instruments supporting laboratory testing and research.
+laboratory_services,Healthcare,"Provides laboratory, diagnostic and analytical testing services."
+laboratory_testing,Healthcare,Provides laboratory testing and analytical diagnostic services.
+launch_services,Aerospace & Defence,Provides commercial and government space launch services.
+launch_systems,Aerospace & Defence,"Develops launch vehicles, propulsion and space launch systems."
+legal_information,Professional Services,"Provides legal information, research and compliance solutions."
+life_insurance,Financial Services,Provides life insurance and long-term protection products.
+life_science_real_estate,Real Estate,"Owns, develops and manages real estate supporting life science organisations."
+life_sciences,Healthcare,"Develops products, technologies and services supporting life science research."
+life_sciences_software,Technology,Develops software supporting life science research and laboratory operations.
+live_entertainment,Media & Entertainment,Produces and operates live entertainment experiences and venues.
+live_events,Media & Entertainment,"Organises and operates business, cultural and consumer events."
+lng,Energy,"Produces, transports and supplies liquefied natural gas."
+logistics,Transportation,"Provides logistics, supply-chain and freight management services."
+logistics_real_estate,Real Estate,"Owns, develops and manages logistics and warehouse property."
+logistics_reit,Real Estate,Owns and manages logistics-focused real estate investment trusts.
+loyalty_programmes,Retail,Develops and operates customer loyalty and rewards programmes.
+luxury_goods,Consumer,"Designs, manufactures and markets luxury consumer products and brands."
+luxury_vehicles,Automotive,"Designs, manufactures and markets premium and luxury vehicles."
+managed_services,Technology,"Provides managed technology, cloud and infrastructure services."
+market_data,Financial Services,Provides financial market data and pricing information.
+market_indices,Financial Services,Develops and maintains financial market indices and benchmarks.
+market_infrastructure,Financial Services,Provides infrastructure supporting financial markets and trading.
+marketing,Media & Entertainment,"Provides marketing, advertising and brand management services."
+materials,Materials,Produces and supplies industrial and construction materials.
+media_entertainment,Media & Entertainment,"Creates, distributes and monetises media and entertainment content."
+medical_devices,Healthcare,"Develops, manufactures and supplies medical devices and equipment."
+medical_gases,Healthcare,Produces and supplies medical gases for healthcare applications.
+medical_imaging,Healthcare,Develops medical imaging systems and diagnostic technologies.
+memory,Technology,Designs and manufactures memory technologies and semiconductor memory products.
+merchant_services,Financial Technology,Provides payment acceptance and merchant transaction services.
+metals,Materials,"Produces, processes and supplies industrial and specialty metals."
+midstream,Energy,Owns and operates midstream energy infrastructure including pipelines and storage.
+midstream_energy,Energy,"Provides transportation, storage and processing services across energy markets."
+military_support,Aerospace & Defence,"Provides operational, engineering and logistics support for military organisations."
+military_systems,Aerospace & Defence,Develops integrated military systems and defence technologies.
+military_vehicles,Aerospace & Defence,Designs and manufactures military vehicles and defence platforms.
+mineral_processing,Materials,Processes and refines mined minerals into industrial materials.
+mining,Materials,"Explores, develops and produces mineral resources."
+mining_equipment,Industrials,"Designs, manufactures and services equipment used in mining operations."
+missile_systems,Aerospace & Defence,"Develops missile systems, guided weapons and defence technologies."
+mixed_use_property,Real Estate,"Owns, develops and manages mixed-use real estate assets."
+mobile_chipsets,Technology,Designs and manufactures semiconductor chipsets for mobile devices.
+mobile_networks,Communication Services,Provides mobile communications networks and wireless connectivity services.
+mobile_payments,Financial Technology,Develops mobile payment platforms and transaction technologies.
+mobility,Transportation,"Provides mobility products, services and transport solutions."
+mobility_platforms,Transportation,Develops digital platforms supporting mobility and transport services.
+molecular_diagnostics,Healthcare,Develops molecular diagnostic technologies and genomic testing solutions.
+mortgage_services,Financial Services,"Provides mortgage lending, servicing and property finance solutions."
+motion_control,Industrials,"Develops motion control technologies, drives and industrial automation systems."
+motor_insurance,Financial Services,Provides insurance products covering motor vehicles and transport risks.
+motorcycles,Automotive,"Designs, manufactures and markets motorcycles and related mobility products."
+natural_gas,Energy,"Produces, processes,  transports and supplies natural gas."
+natural_gas_pipelines,Energy,Owns and operates natural gas pipeline infrastructure.
+naval_vessels,Aerospace & Defence,"Designs, manufactures and supports naval vessels and maritime defence platforms."
+navigation,Technology,"Develops navigation, positioning and location technologies."
+networking,Technology,Develops networking technologies supporting digital connectivity.
+networking_equipment,Technology,"Designs, manufactures and supplies networking equipment and communications hardware."
+news_media,Media & Entertainment,Produces and distributes news and journalism across multiple media platforms.
+news_services,Media & Entertainment,"Provides news, information and media services."
+nutrition,Consumer,Develops nutrition products supporting consumer health and wellness.
+office_property,Real Estate,"Owns, develops and manages office real-estate assets."
+offshore_energy,Energy,"Explores, develops and operates offshore energy assets."
+oil_gas,Energy,"Explores, produces,  refines and markets oil and natural gas."
+oil_gas_royalties,Energy,Owns and manages royalty interests in oil and gas assets.
+oilfield_equipment,Energy,"Designs, manufactures and supplies oilfield equipment."
+oilfield_services,Energy,"Provides engineering, drilling and operational services to the oil and gas industry."
+online_gaming,Media & Entertainment,Develops and operates online gaming and interactive entertainment platforms.
+orthopaedics,Healthcare,"Develops orthopaedic implants, devices and musculoskeletal healthcare solutions."
+outerwear,Consumer,"Designs, manufactures and markets outerwear and performance apparel."
+packaging,Materials,Develops and manufactures packaging products and packaging solutions.
+paper_products,Materials,"Manufactures paper, tissue and related paper-based products."
+parcel_delivery,Transportation,"Provides parcel collection, distribution and delivery services."
+passenger_transport,Transportation,Provides passenger transportation services across multiple transport modes.
+payment_networks,Financial Technology,Operates payment networks supporting electronic transactions.
+payment_processing,Financial Technology,Processes electronic payments and financial transactions.
+payments,Financial Technology,"Provides payment products, platforms and transaction services."
+payroll,Professional Services,Provides payroll processing and workforce payment services.
+payroll_software,Technology,Develops payroll and workforce management software.
+pensions,Financial Services,"Provides pension products, retirement planning and pension administration services."
+personal_care,Consumer,"Develops, manufactures and markets personal care products."
+pest_control,Professional Services,Provides pest control and environmental hygiene services.
+pet_food,Consumer,"Develops, manufactures and markets pet food products."
+pet_products,Consumer,"Develops, manufactures and markets pet care and companion animal products."
+petrochemicals,Materials,Produces petrochemicals and chemical feedstocks.
+pharmaceutical_distribution,Healthcare,Distributes pharmaceutical products to healthcare providers and pharmacies.
+pharmaceuticals,Healthcare,"Researches, develops,  manufactures and markets pharmaceutical products."
+pharmacy_benefits,Healthcare,Provides pharmacy benefit management and prescription administration services.
+pharmacy_retail,Retail,Operates pharmacy and healthcare retail businesses.
+photonics,Technology,"Develops photonics, optical technologies and laser systems."
+physical_security,Security & Safety,"Develops physical security systems, surveillance and protection technologies."
+pipeline_infrastructure,Energy,"Owns, develops and operates energy pipeline infrastructure."
+pipelines,Energy,"Owns and operates pipeline networks transporting oil, gas and related products."
+plasma_therapeutics,Healthcare,Develops plasma-derived therapies and specialty biopharmaceutical products.
+pool_equipment,Consumer,"Designs, manufactures and supplies swimming pool equipment and systems."
+portfolio_management,Financial Services,Provides portfolio management and investment management services.
+postal_services,Transportation,"Provides postal delivery, mail and logistics services."
+power_cables,Industrials,"Designs, manufactures and supplies electrical power cables and transmission systems."
+power_generation,Utilities,Generates electricity through conventional and renewable energy sources.
+power_management,Industrials,Develops technologies managing electrical power distribution and efficiency.
+power_semiconductors,Technology,Designs and manufactures power semiconductor devices.
+power_systems,Industrials,Develops integrated electrical power systems and industrial energy solutions.
+powertrain_systems,Automotive,Develops vehicle powertrain systems and propulsion technologies.
+precious_metals,Materials,"Explores, develops and produces precious metals and related resources."
+precision_instruments,Industrials,"Designs, manufactures and supplies precision instruments and measurement technologies."
+printing,Technology,"Develops printing technologies, equipment and document solutions."
+private_banking,Financial Services,Provides private banking and wealth management services.
+private_credit,Financial Services,Provides private credit financing and alternative lending solutions.
+private_equity,Financial Services,Invests in and manages private equity investment strategies.
+product_lifecycle_management,Technology,Develops software supporting product lifecycle management and engineering processes.
+property_casualty,Financial Services,Provides property and casualty insurance products.
+property_development,Real Estate,"Develops residential, commercial and mixed-use property projects."
+property_management,Real Estate,Provides property management and real-estate operational services.
+property_technology,Real Estate,Develops digital technologies supporting property ownership and management.
+protein,Consumer,Develops and manufactures protein ingredients and nutrition products.
+public_safety,Government & Public Services,Provides products and services supporting public safety and emergency response.
+public_safety_technology,Government & Public Services,"Develops technologies supporting public safety, emergency services and law enforcement."
+publishing,Media & Entertainment,"Publishes books, journals,  educational and digital content."
+quality_assurance,Professional Services,"Provides quality assurance, testing and certification services."
+rail_equipment,Transportation,"Designs, manufactures and supplies railway equipment and rolling stock."
+rail_logistics,Transportation,Provides rail-based freight logistics and transport services.
+rail_transport,Transportation,Provides passenger and freight rail transportation services.
+rare_diseases,Healthcare,"Researches, develops and commercialises therapies for rare diseases."
+real_estate_development,Real Estate,"Develops residential, commercial and mixed-use real estate projects."
+real_estate_services,Real Estate,"Provides real estate advisory, brokerage and property services."
+recycling,Materials,"Collects, processes and recycles industrial and consumer materials."
+refining,Energy,Processes crude oil and other feedstocks into refined energy products.
+reinsurance,Financial Services,Provides reinsurance and specialist risk transfer solutions.
+renal_care,Healthcare,Develops products and services supporting renal care and kidney treatment.
+renewable_energy,Energy,"Develops, generates and operates renewable energy assets."
+renewable_fuels,Energy,"Develops, produces and supplies renewable fuel products."
+research_services,Professional Services,"Provides research, analytical and specialist advisory services."
+reservation_systems,Technology,"Develops reservation, booking and scheduling software platforms."
+residential_construction,Construction & Infrastructure,Develops and constructs residential housing and communities.
+residential_real_estate,Real Estate,"Owns, develops and manages residential real estate assets."
+resorts,Consumer,"Owns, operates and manages resort and leisure destinations."
+restaurants,Consumer,"Owns, operates and franchises restaurant businesses."
+retail,Retail,Operates businesses selling goods and services directly to consumers.
+retail_banking,Financial Services,Provides retail banking and personal financial services.
+retail_property,Real Estate,"Owns, develops and manages retail property assets."
+retail_real_estate,Real Estate,"Owns, develops and manages retail-focused real estate assets."
+retirement_services,Financial Services,"Provides retirement planning, pension administration and retirement solutions."
+rf_components,Technology,Designs and manufactures radio frequency components and communication technologies.
+risk_analytics,Financial Services,Develops risk analytics and financial risk management solutions.
+risk_management,Financial Services,"Provides risk management products, technologies and advisory services."
+road_freight,Transportation,Provides road freight transportation and logistics services.
+robotic_surgery,Healthcare,Develops robotic surgical systems and healthcare technologies.
+robotics,Technology,"Develops robotic systems, automation technologies and intelligent machines."
+safety_technology,Security & Safety,"Develops technologies supporting workplace, industrial and public safety."
+satellite_communications,Communication Services,Provides satellite communications and connectivity services.
+satellites,Aerospace & Defence,"Designs, manufactures and operates satellite systems and space infrastructure."
+self_storage,Real Estate,"Owns, develops and manages self-storage real estate facilities."
+semiconductor_analytics,Technology,Develops analytics and software supporting semiconductor design and manufacturing.
+semiconductor_design,Technology,Designs semiconductor devices and integrated circuits.
+semiconductor_design_software,Technology,Develops software supporting semiconductor and integrated circuit design.
+semiconductor_equipment,Technology,Designs and manufactures equipment used in semiconductor fabrication.
+semiconductor_materials,Materials,Produces specialised materials used in semiconductor manufacturing.
+semiconductors,Technology,"Designs, manufactures and supplies semiconductor devices."
+senior_housing,Real Estate,"Owns, develops and manages senior housing and retirement communities."
+sensors,Technology,Designs and manufactures sensing technologies and intelligent sensor systems.
+server_hardware,Technology,Designs and manufactures enterprise server hardware and computing systems.
+shipbuilding,Transportation,"Designs, constructs and maintains commercial and specialist vessels."
+shopping_centres,Real Estate,"Owns, develops and manages shopping centre real estate."
+silver_mining,Materials,"Explores, develops and produces silver resources."
+simulation,Technology,"Develops simulation, modelling and digital engineering software."
+smart_infrastructure,Construction & Infrastructure,Develops intelligent infrastructure technologies supporting connected buildings and cities.
+snack_foods,Consumer,"Develops, manufactures and markets snack food products."
+snacks,Consumer,"Develops, manufactures and markets snack food and convenience products."
+social_platforms,Media & Entertainment,Develops and operates social networking and digital community platforms.
+solar_energy,Energy,"Develops, generates and operates solar energy projects."
+space,Aerospace & Defence,"Develops space systems, exploration technologies and orbital infrastructure."
+space_technology,Aerospace & Defence,Develops technologies supporting commercial and government space activities.
+specialty_chemicals,Materials,Develops and manufactures specialty chemical products and advanced chemical solutions.
+spirits,Consumer,"Produces, markets and distributes distilled spirit beverages."
+sports_media,Media & Entertainment,"Produces and distributes sports media, broadcasting and digital sports content."
+sports_retail,Retail,Operates retail businesses specialising in sporting goods and equipment.
+sportswear,Consumer,"Designs, manufactures and markets sportswear and athletic apparel."
+steel,Materials,"Produces, processes and supplies steel products."
+steel_tubing,Materials,Manufactures steel tubing and engineered steel products.
+sterilisation,Healthcare,Develops sterilisation products and infection prevention technologies.
+streaming,Media & Entertainment,Develops and operates digital streaming platforms and content services.
+supply_chain,Industrials,Develops solutions supporting supply chain management and industrial logistics.
+supply_chain_services,Industrials,"Provides supply chain, procurement and operational support services."
+surgical_equipment,Healthcare,"Designs, manufactures and supplies surgical instruments and operating theatre equipment."
+technology_distribution,Technology,"Distributes technology products, hardware,  software and digital solutions."
+technology_investing,Financial Services,Invests in technology businesses and technology-focused investment strategies.
+technology_platforms,Technology,Develops and operates technology platforms supporting digital products and services.
+technology_reseller,Technology,"Resells and integrates technology hardware, software and IT solutions."
+telecommunications,Communication Services,Provides telecommunications and communications network services.
+telecommunications_infrastructure,Communication Services,"Owns, develops and operates telecommunications infrastructure."
+television,Media & Entertainment,"Produces, broadcasts and distributes television content and services."
+testing_certification,Professional Services,"Provides testing, inspection and certification services."
+theme_parks,Consumer,"Owns, operates and manages theme parks and leisure attractions."
+thermal_management,Industrials,Develops thermal management technologies for industrial and electronic applications.
+ticketing,Media & Entertainment,Develops and operates ticketing platforms and event access services.
+timber,Materials,"Produces, processes and supplies timber and wood products."
+tobacco,Consumer,"Produces, manufactures and markets tobacco products."
+tobacco_products,Consumer,"Develops, manufactures and distributes tobacco and nicotine products."
+towers,Communication Services,"Owns, develops and operates telecommunications tower infrastructure."
+toys_games,Consumer,"Designs, manufactures and markets toys and games."
+trading_platforms,Financial Technology,Develops electronic trading platforms for financial markets.
+transportation,Transportation,"Provides transportation services across passenger, freight and logistics markets."
+transportation_infrastructure,Transportation,"Owns, develops and operates transportation infrastructure assets."
+travel_services,Consumer,"Provides travel, tourism and booking services."
+travel_technology,Technology,Develops technology platforms supporting travel and tourism services.
+tyres,Automotive,"Designs, manufactures and supplies tyres and related vehicle products."
+urban_development,Construction & Infrastructure,Develops large-scale urban regeneration and infrastructure projects.
+utilities,Utilities,"Provides essential utility services including electricity, gas and water."
+vaccines,Healthcare,"Researches, develops and manufactures vaccines for human and animal health."
+vehicle_finance,Financial Services,Provides financing and leasing solutions for vehicle purchases.
+vertical_software,Technology,Develops software designed for specific industries and business sectors.
+veterinary_health,Healthcare,Develops products and services supporting animal health and veterinary care.
+video_security,Security & Safety,"Develops video surveillance, monitoring and security technologies."
+vision_care,Healthcare,Develops products and technologies supporting vision care and eye health.
+waste_management,Utilities,"Provides waste collection, recycling and environmental management services."
+wastewater,Utilities,"Provides wastewater collection, treatment and environmental services."
+water_infrastructure,Utilities,"Owns, develops and operates water infrastructure assets."
+water_technology,Utilities,"Develops technologies supporting water treatment, monitoring and distribution."
+water_treatment,Utilities,Provides water treatment systems and purification technologies.
+water_utilities,Utilities,Provides regulated water supply and distribution services.
+wealth_management,Financial Services,Provides wealth management and private client investment services.
+weapons_systems,Aerospace & Defence,Develops weapons systems and defence technologies.
+wearables,Technology,"Designs, manufactures and markets wearable technology devices."
+web_hosting,Technology,"Provides web hosting, cloud hosting and internet infrastructure services."
+wellness,Consumer,"Develops products and services supporting health, wellness and lifestyle."
+wholesale,Industrials,Provides wholesale distribution of products across multiple industries.
+wholesale_distribution,Industrials,Provides wholesale distribution and supply-chain services.
+wine,Consumer,"Produces, markets and distributes wine products."
+wines_spirits,Consumer,"Produces, markets and distributes wines and distilled spirits."
+wireless,Communication Services,Provides wireless communications products and services.
+wireless_networks,Communication Services,Develops and operates wireless communications networks.
+workflow_automation,Technology,Develops workflow automation software and business process technologies.
+workplace_services,Professional Services,"Provides workplace management, facilities and business support services."
+wound_care,Healthcare,Develops wound care products and advanced healing technologies.

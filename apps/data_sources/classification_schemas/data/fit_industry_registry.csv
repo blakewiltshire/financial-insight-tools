@@ -1,0 +1,51 @@
+﻿fit_industry,industry_group,description,status
+Aerospace & Defense,Industrials,"Companies developing aerospace, defence and security products and services.",Approved
+Automotive,Industrials,"Companies designing, manufacturing or supplying passenger,  commercial and specialist vehicles and related technologies.",Approved
+Banking,Financial Services,"Companies providing retail, commercial and investment banking services.",Approved
+Biotechnology,Healthcare,"Companies developing biotechnology-based therapies, diagnostics and life-science technologies.",Approved
+Capital Markets & Advisory,Financial Services,"Companies providing capital-markets infrastructure,  exchange,  brokerage,  advisory and securities services.",Approved
+Chemicals,Materials,"Companies producing industrial, specialty and performance chemicals and related materials.",Approved
+Communications Equipment,Technology,Companies developing communications networking equipment and supporting technologies.,Review
+Construction & Engineering,Industrials,"Companies designing, constructing and maintaining buildings and infrastructure.",Approved
+Construction Materials,Materials,"Companies producing cement, aggregates,  glass and other construction materials.",Approved
+Consumer Electronics,Technology,Companies developing consumer electronic devices and related technologies.,Approved
+Diversified Consumer Goods,Consumer,Companies producing diversified consumer products across multiple categories.,Approved
+Education Services,Services,"Companies providing education, training and related learning services.",Approved
+Energy Equipment & Services,Energy,"Companies supplying equipment, engineering and technical services to energy markets.",Approved
+FinTech,Financial Services,"Companies providing digital financial technologies, payment platforms and financial infrastructure.",Approved
+Food & Beverage,Consumer,"Companies producing food, beverages and tobacco products.",Approved
+Food Retail,Consumer,"Companies operating grocery, food and convenience retail businesses.",Approved
+Healthcare Providers & Services,Healthcare,Companies providing healthcare delivery and related medical services.,Approved
+Holding Companies,Financial Services,Companies primarily holding strategic investments across multiple businesses.,Approved
+Household Products,Consumer,"Companies producing household, personal-care and consumer products.",Approved
+Industrial Distribution,Industrials,"Companies distributing industrial products, equipment and materials through specialist supply-chain networks.",Approved
+Insurance,Financial Services,Companies providing insurance and risk-transfer services.,Approved
+Investment Services,Financial Services,"Companies providing investment management, asset management and related financial services.",Approved
+Leisure Products,Consumer,"Companies producing leisure, sporting and recreational products.",Approved
+Leisure,Hospitality & Travel,"Consumer Services,Companies providing hospitality,  accommodation,  travel and related leisure services.",Approved
+Logistics,Industrials,"Companies providing freight, logistics,  delivery and supply-chain services.",Approved
+Machinery,Industrials,Companies designing and manufacturing industrial machinery and equipment.,Approved
+Media,Communication Services,"Companies producing, publishing or distributing media and related content.",Approved
+Medical Devices,Healthcare,Companies developing and supplying medical devices and healthcare equipment.,Approved
+Mining,Materials,"Companies extracting, processing and supplying metals and mining products.",Approved
+Office Equipment,Industrials,Companies producing office equipment and workplace technologies.,Approved
+Oil & Gas,Energy,"Companies exploring, producing,  refining and distributing oil and natural gas.",Approved
+Packaging,Materials,Companies producing packaging products and related materials.,Approved
+Paper & Forest Products,Materials,"Companies producing paper, timber and forest products.",Approved
+Pharmaceuticals,Healthcare,"Companies developing, manufacturing and marketing pharmaceutical products.",Approved
+Professional Services,Services,"Companies providing consulting, professional and commercial services.",Approved
+Real Estate,Real Estate,"Companies owning, developing and operating real-estate assets.",Approved
+Real Estate Investment Trusts (REITs),Real Estate,Companies operating listed real-estate investment trusts.,Approved
+Renewable Energy,Energy,Companies generating or supplying renewable-energy technologies and services.,Approved
+Residential Construction,Industrials,Companies building residential property and related infrastructure.,Approved
+Retail,Consumer,Companies operating general and specialist retail businesses.,Approved
+Semiconductors,Technology,"Companies designing, manufacturing or supplying semiconductor technologies.",Approved
+Software & Digital Services,Technology,"Companies developing software, cloud platforms and digital technology services.",Approved
+Technology Platforms,Technology,Companies operating large-scale technology platforms and digital ecosystems.,Review
+Telecommunications,Communication Services,"Companies providing fixed-line, mobile and digital communications services.",Approved
+Textiles & Apparel,Consumer,"Companies designing, manufacturing and distributing apparel and textile products.",Approved
+Transportation,Industrials,Companies providing passenger transportation services.,Approved
+Transportation Infrastructure,Industrials,Companies operating transportation infrastructure assets.,Approved
+Utilities,Utilities,"Companies generating, transmitting or distributing electricity,  gas or integrated utility services.",Approved
+Uranium,Energy,Companies producing or supplying uranium and related nuclear-fuel materials.,Approved
+Water Utilities,Utilities,"Companies providing water supply, treatment and wastewater services.",Approved

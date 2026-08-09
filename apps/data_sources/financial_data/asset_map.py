@@ -323,6 +323,9 @@ def get_asset_path(category: str, name: str) -> str:
 # Pct_of_OI_M_Money_Long_All
 # Pct_of_OI_M_Money_Short_All
 
+# Excel columns - C, O, P, AF, AG, AW, AX
+# C -> A, [Remove Row C], C -> M, E -> S, G -> U, I -> AP
+
 # These are then added to each of these files.
 
 # aud_positioning.csv

@@ -746,7 +746,7 @@ def render_company_largecap_view(df):
 
         st.dataframe(df_filtered[[
             "Ticker", "Company Name", "S&P 500", "DJIA", "Nasdaq 100",
-            "Regions", "Country", "Company Description", "Year Incorporated", "Headquarters"
+            "Regions", "Country", "FIT Industry", "Business Overview", "Year Incorporated", "Headquarters"
         ]], width='stretch')
 
     # ------------------------
@@ -1018,9 +1018,10 @@ def render_company_europe_view(df):
         display_columns = [
             "Ticker",
             "Company Name",
-            "Index Membership",
+            "Business Overview",
             "FIT Industry",
             "NACE Industry",
+            "Index Membership",
             "Country",
             "Exchange"
         ]

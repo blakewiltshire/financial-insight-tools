@@ -1,23 +1,30 @@
-## Relationship Manager
+## Themes, Ideas & Catalysts
 
-Relationship Manager supports the structured exploration of how themes, narratives, observations, and business activities may connect to companies and potential market exposures.
+Themes, Ideas & Catalysts provides structured entry points for exploring how broad themes, catalysts, companies, and business relationships may develop into candidate assets for further examination.
 
-Rather than beginning with a stock, the module begins with relationships.
+Users may explore through:
 
-Users may explore:
-
-- relationship areas
+- curated themes
+- catalysts
+- investigation pathways
 - business capabilities
-- company activities
-- potential market exposures
+- relationship pathways
+- candidate assets
 
-Candidate assets can then be examined using the wider Financial Insight Tools environment.
+Themes provide the initial context.
 
-This module does not rank, score, recommend, or analyse securities.
+Business capabilities describe the activities associated with an idea.
 
-Its purpose is to support exploration and preserve context for later review.
+Relationship pathways expand those activities into connected business environments before candidate assets are assembled for further examination.
+
+Candidate assets can then be examined using the wider Financial Insight Tools environment, including Classification Schema Viewer, Company Structure Review (CSR), Market Structure Review (MSR), and Trade & Portfolio Structuring.
+
+This module supports structured exploration. It does not rank, score, recommend, or analyse securities.
+
+Its purpose is to broaden the opportunity set, preserve investigation context, and support disciplined decision-making throughout the wider Financial Insight Tools workflow.
 
 ---
 
 © 2026 Blake Media Ltd. | Financial Insight Tools by Blake Wiltshire
+
 No trading, investment, or policy advice provided.

@@ -151,18 +151,18 @@ col1, col2 = st.columns(2, gap="small")
 
 with col1:
     with st.container(border=True):
-        st.markdown("### Relationship Manager")
+        st.markdown("### Themes, Ideas & Catalysts")
         st.write(
-            "Expand observations into relationship themes and candidate assets for further investigation."
+            "Start investigations from observations, investment ideas, or market catalysts, expanding them into business capabilities, relationship pathways, and candidate assets."
         )
-        if st.button("Launch Relationship Manager"):
-            st.switch_page("pages/25_relationship_manager.py")
+        if st.button("Launch Themes, Ideas & Catalysts"):
+            st.switch_page("pages/25_themes_ideas_catalysts.py")
 
 with col2:
     with st.container(border=True):
         st.markdown("### Classification Schema Viewer")
         st.write(
-            "Organise candidate assets using market, sector, industry, and company classification frameworks."
+            "Explore companies through market, sector, industry, and classification frameworks, helping structure investigations and identify candidate assets."
         )
         if st.button("Launch Classification Schema Viewer"):
             st.switch_page("pages/26_classification_schema_viewer.py")
@@ -173,7 +173,7 @@ with col1:
     with st.container(border=True):
         st.markdown("### Institutional Reference Directory")
         st.write(
-            "Validate investigations using institutional market data, regulators, and official statistical sources."
+            "Validate investigations using institutional market data, regulators, government statistics, and trusted reference sources."
         )
         if st.button("Launch Institutional Directory"):
             st.switch_page("pages/27_institutional_reference_directory.py")
@@ -182,7 +182,7 @@ with col2:
     with st.container(border=True):
         st.markdown("### AI Persona Reference")
         st.write(
-            "Explore structured analytical perspectives for reviewing investigations through different professional lenses."
+            "Review investigations through structured analytical perspectives representing different professional disciplines and decision-making approaches."
         )
         if st.button("AI Persona Reference"):
             st.switch_page("pages/28_ai_persona_reference.py")
@@ -193,7 +193,7 @@ with col1:
     with st.container(border=True):
         st.markdown("### Index & Glossary")
         st.write(
-            "Shared terminology, concepts, and cross-references used throughout Financial Insight Tools."
+            "Shared terminology, concepts, definitions, and cross-references used throughout Financial Insight Tools."
         )
         if st.button("Index & Glossary"):
             st.switch_page("pages/29_index_glossary.py")

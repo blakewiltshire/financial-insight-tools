@@ -195,7 +195,7 @@ with st.expander("ℹ️ About This App", expanded=False):
 
 # Sidebar: nav + brand (mirrors your pattern)
 st.sidebar.title("📂 Navigation Menu")
-st.sidebar.page_link('app.py', label='Reference Data & Trusted Sources')
+st.sidebar.page_link("app.py", label="Reference & Investigation Resources")
 for path, label in build_sidebar_links():
     st.sidebar.page_link(path, label=label)
 st.sidebar.divider()
