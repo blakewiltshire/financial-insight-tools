@@ -1,6 +1,6 @@
 # Financial Insight Tools (FIT) — Structured Financial Reasoning Environment
 
-Financial Insight Tools (FIT) is a modular decision-support environment for building structured investigations across financial markets, macroeconomics, company analysis, and related analytical domains. Observations, evidence, and reasoning remain connected as investigations evolve, allowing context to develop alongside new information. AI contributes through structured investigation review while human judgement remains central to interpretation and decision-making.
+Financial Insight Tools (FIT) is a modular decision-support environment for building structured investigations across financial markets, macroeconomics, company analysis, and related analytical domains. Investigations may begin from curated themes and catalysts, or directly from companies and business activities. Observations, evidence, and reasoning remain connected as investigations evolve, allowing context to develop alongside new information. AI contributes through structured investigation review while human judgement remains central to interpretation and decision-making.
 
 FIT provides consistent structure across relationship exploration, distribution analysis, trade modelling, macroeconomic exploration, thematic correlation, relative macro transmission, positioning analysis, company structure review, market structure review, and observation capture so that information can be organised, examined, aligned, and preserved as structured investigations that can be revisited, extended, documented, or reviewed through AI-assisted investigation workflows.
 
@@ -123,7 +123,9 @@ FIT is structured across connected analytical layers.
 
 ### Relationship & Investigation
 
+- Themes, Ideas & Catalysts
 - Relationship Manager
+- Classification Schema Viewer
 - Reference & Investigation Resources
 
 ### Financial Application
@@ -231,20 +233,20 @@ A structural view across market behaviour and volatility conditions:
 
 Provides quantitative grounding for downstream modelling.
 
-### Relationship Manager — Capability & Candidate Pathways
+### Themes, Ideas & Catalysts — Opportunity Exploration
 
-![Company Structure](docs/screenshots/07-relationship-manager.png)
+![Company Structure](docs/screenshots/07-themes-ideas-catalysts.png)
 
-A structured environment for developing observations into capability-led and relationship-led candidate investigations:
+A structured starting point for exploring curated themes, catalysts and investigation pathways before expanding into business relationships, representative companies and the wider Financial Insight Tools investigation environment:
 
-- observation and source context
-- company or business-capability entry points
-- direct capability and related capability pathways
-- primary and expanded candidate universes
-- selected exploration branches and candidate provenance
-- AI-assisted opportunity-set and candidate-universe review
+- curated Economic, Business and Structural Themes
+- investigation catalysts and pathways
+- opportunity-set exploration
+- company and business capability entry points
+- progression into Relationship Manager
+- structured investigation before detailed company and market examination
 
-Supports the progression from an initial observation towards a broad but structured opportunity set before detailed company and market examination.
+Supports structured investigation after selecting a curated theme, catalyst, company, or business capability, before detailed company and market examination.
 
 
 ### Company Structure Review — Valuation & Business Structure
@@ -299,9 +301,10 @@ Investigations may begin from any module. Different analytical questions natural
 
 ### Observation & Opportunity Exploration
 
-- **Relationship Manager** — develop observations through direct business capabilities, related pathways, and candidate-asset environments
-- **Classification Schema Viewer** — organise companies and economic activity through permitted classification structures
-- **Economic Exploration** — review macroeconomic indicators and country-level conditions
+- **Themes, Ideas & Catalysts** — explore curated economic, business, and structural themes before developing investigation pathways.
+- **Relationship Manager** — expand investigation pathways through business relationships and representative candidate assets.
+- **Classification Schema Viewer** — organise companies and economic activity through permitted classification structures.
+- **Economic Exploration** — review macroeconomic indicators and country-level conditions.
 
 ### Markets & Companies
 
